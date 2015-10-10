@@ -1,0 +1,183 @@
+/usr/lib64/python2.6/site-packages/scipy/lib/_util.py:34: DeprecationWarning: Module scipy.linalg.blas.fblas is deprecated, use scipy.linalg.blas instead
+  DeprecationWarning)
+Using gpu device 0: GeForce GTX 780 (CNMeM is disabled)
+/home/xd/projects/pylearn2/pylearn2/datasets/if_monthly.py:30: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  high = sorted[-cutoff_len]
+/home/xd/projects/pylearn2/pylearn2/datasets/if_monthly.py:28: DeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  low = sorted[cutoff_len]
+X.shape, Y.shape = (583216, 79) (583216, 20)
+Final: X.shape, y.shape = (388810, 79) (388810, 1)
+Final: X.shape, y.shape = (194406, 79) (194406, 1)
+Train on 388810 samples, validate on 194406 samples
+Epoch 1/100
+{'monitor_misclass': 0.35564928885573932, 'monitor_pred_mean': 0.16981294652794568, 'monitor_val_pred_mean': 0.1973630659910045, 'monitor_val_pred_stdev': 1.1498419896931555, 'monitor_pred_stdev': 1.0671932279516347, 'monitor_val_misclass': 0.36817279302079153, 'val_loss': 26.671502908173899}
+3s - loss: 17.6232 - val_loss: 26.6715
+Epoch 00000: val_loss improved from inf to 26.67150, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 2/100
+{'monitor_misclass': 0.34943031300635274, 'monitor_pred_mean': -0.08036678087036507, 'monitor_val_pred_mean': -0.070362306936523553, 'monitor_val_pred_stdev': 1.2136568750615053, 'monitor_pred_stdev': 1.1183452671280165, 'monitor_val_misclass': 0.365086468524634, 'val_loss': 26.563945548688405}
+3s - loss: 17.3821 - val_loss: 26.5639
+Epoch 00001: val_loss improved from 26.67150 to 26.56395, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 3/100
+{'monitor_misclass': 0.34606105810035748, 'monitor_pred_mean': -0.094455810066762194, 'monitor_val_pred_mean': -0.10503532115757154, 'monitor_val_pred_stdev': 1.2201391233933869, 'monitor_pred_stdev': 1.1218109385521642, 'monitor_val_misclass': 0.36435603839387676, 'val_loss': 26.465031863791904}
+3s - loss: 17.2898 - val_loss: 26.4650
+Epoch 00002: val_loss improved from 26.56395 to 26.46503, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 4/100
+{'monitor_misclass': 0.3457138448085183, 'monitor_pred_mean': 0.054603297213082241, 'monitor_val_pred_mean': 0.095278864847358272, 'monitor_val_pred_stdev': 1.3454686600135488, 'monitor_pred_stdev': 1.2355642207754649, 'monitor_val_misclass': 0.36214931637912412, 'val_loss': 26.354179084104157}
+3s - loss: 17.2291 - val_loss: 26.3542
+Epoch 00003: val_loss improved from 26.46503 to 26.35418, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 5/100
+{'monitor_misclass': 0.34543093027442712, 'monitor_pred_mean': 0.039225042623298803, 'monitor_val_pred_mean': 0.070529610580598645, 'monitor_val_pred_stdev': 1.2023966108765529, 'monitor_pred_stdev': 1.1082697601396359, 'monitor_val_misclass': 0.36319866670781764, 'val_loss': 26.342087895944061}
+3s - loss: 17.1851 - val_loss: 26.3421
+Epoch 00004: val_loss improved from 26.35418 to 26.34209, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 6/100
+{'monitor_misclass': 0.34424011728093412, 'monitor_pred_mean': -0.075550421996297037, 'monitor_val_pred_mean': -0.077041081925054156, 'monitor_val_pred_stdev': 1.3363334059196506, 'monitor_pred_stdev': 1.2315925109938632, 'monitor_val_misclass': 0.36225219386232937, 'val_loss': 26.221964463561374}
+3s - loss: 17.1399 - val_loss: 26.2220
+Epoch 00005: val_loss improved from 26.34209 to 26.22196, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 7/100
+{'monitor_misclass': 0.34250919472235797, 'monitor_pred_mean': -0.011731826673993567, 'monitor_val_pred_mean': 0.0027851167296968505, 'monitor_val_pred_stdev': 1.2205321625530117, 'monitor_pred_stdev': 1.1162292899640511, 'monitor_val_misclass': 0.36013291770830119, 'val_loss': 26.25558044497798}
+3s - loss: 17.1131 - val_loss: 26.2556
+Epoch 00006: val_loss did not improve
+Epoch 8/100
+{'monitor_misclass': 0.3414855584990098, 'monitor_pred_mean': 0.092003203959858823, 'monitor_val_pred_mean': 0.11298564277178785, 'monitor_val_pred_stdev': 1.2527377730309788, 'monitor_pred_stdev': 1.1452868202813646, 'monitor_val_misclass': 0.36060615413104535, 'val_loss': 26.24913498031864}
+3s - loss: 17.0695 - val_loss: 26.2491
+Epoch 00007: val_loss did not improve
+Epoch 9/100
+{'monitor_misclass': 0.34112034155500115, 'monitor_pred_mean': -0.0041964960806590108, 'monitor_val_pred_mean': 0.0028367495943246888, 'monitor_val_pred_stdev': 1.3724973454646656, 'monitor_pred_stdev': 1.2479746376112015, 'monitor_val_misclass': 0.35982428525868543, 'val_loss': 26.143707240776848}
+3s - loss: 17.0490 - val_loss: 26.1437
+Epoch 00008: val_loss improved from 26.22196 to 26.14371, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 10/100
+{'monitor_misclass': 0.33776651835086546, 'monitor_pred_mean': 0.029924384961807989, 'monitor_val_pred_mean': 0.050800096858848717, 'monitor_val_pred_stdev': 1.3128455228087268, 'monitor_pred_stdev': 1.198259027321696, 'monitor_val_misclass': 0.36014320545662171, 'val_loss': 26.251557167092233}
+3s - loss: 17.0221 - val_loss: 26.2516
+Epoch 00009: val_loss did not improve
+Epoch 11/100
+{'monitor_misclass': 0.33766106838815874, 'monitor_pred_mean': -0.0041230561338417389, 'monitor_val_pred_mean': 0.010765344841959372, 'monitor_val_pred_stdev': 1.3284766470901652, 'monitor_pred_stdev': 1.2020165552245146, 'monitor_val_misclass': 0.35951565280906966, 'val_loss': 26.192011033610701}
+3s - loss: 17.0015 - val_loss: 26.1920
+Epoch 00010: val_loss did not improve
+Epoch 12/100
+{'monitor_misclass': 0.33852009979167202, 'monitor_pred_mean': -0.035016010932488094, 'monitor_val_pred_mean': -0.023295951064364044, 'monitor_val_pred_stdev': 1.3667543608432244, 'monitor_pred_stdev': 1.2342047637199589, 'monitor_val_misclass': 0.35922759585609498, 'val_loss': 26.133376374913862}
+3s - loss: 16.9773 - val_loss: 26.1334
+Epoch 00011: val_loss improved from 26.14371 to 26.13338, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 13/100
+{'monitor_misclass': 0.33806486458681617, 'monitor_pred_mean': 0.029932233964779696, 'monitor_val_pred_mean': 0.042360162428125951, 'monitor_val_pred_stdev': 1.3194705708586638, 'monitor_pred_stdev': 1.2026323601620754, 'monitor_val_misclass': 0.35931504171681944, 'val_loss': 26.147118441826997}
+3s - loss: 16.9614 - val_loss: 26.1471
+Epoch 00012: val_loss did not improve
+Epoch 14/100
+{'monitor_misclass': 0.33619762866181424, 'monitor_pred_mean': 0.0048835089526504654, 'monitor_val_pred_mean': 0.023562145507115648, 'monitor_val_pred_stdev': 1.2640871309102597, 'monitor_pred_stdev': 1.1457132204420077, 'monitor_val_misclass': 0.35942820694834521, 'val_loss': 26.196803579227133}
+3s - loss: 16.9369 - val_loss: 26.1968
+Epoch 00013: val_loss did not improve
+Epoch 15/100
+{'monitor_misclass': 0.33648054319590548, 'monitor_pred_mean': -0.053817731942366845, 'monitor_val_pred_mean': -0.03377295940036424, 'monitor_val_pred_stdev': 1.3162793418970458, 'monitor_pred_stdev': 1.1908015801979495, 'monitor_val_misclass': 0.35958252317315309, 'val_loss': 26.171349525343736}
+3s - loss: 16.9208 - val_loss: 26.1713
+Epoch 00014: val_loss did not improve
+Epoch 16/100
+{'monitor_misclass': 0.33564465934518145, 'monitor_pred_mean': 0.075415857770988956, 'monitor_val_pred_mean': 0.10303691418239264, 'monitor_val_pred_stdev': 1.3228422147374637, 'monitor_pred_stdev': 1.1943817888432418, 'monitor_val_misclass': 0.35946421406746704, 'val_loss': 26.183582848308447}
+3s - loss: 16.9212 - val_loss: 26.1836
+Epoch 00015: val_loss did not improve
+Epoch 17/100
+{'monitor_misclass': 0.33747845991615444, 'monitor_pred_mean': -0.18527973054952698, 'monitor_val_pred_mean': -0.1938370275822186, 'monitor_val_pred_stdev': 1.3337010668171334, 'monitor_pred_stdev': 1.2059905643703019, 'monitor_val_misclass': 0.35986029237780726, 'val_loss': 26.224737081079045}
+3s - loss: 16.8874 - val_loss: 26.2247
+Epoch 00016: val_loss did not improve
+Epoch 18/100
+{'monitor_misclass': 0.33462873897276307, 'monitor_pred_mean': 0.055868359211912674, 'monitor_val_pred_mean': 0.098699258448880084, 'monitor_val_pred_stdev': 1.3789679997583186, 'monitor_pred_stdev': 1.2347319003476738, 'monitor_val_misclass': 0.35858461158606214, 'val_loss': 26.226935457406}
+3s - loss: 16.8699 - val_loss: 26.2269
+Epoch 00017: val_loss did not improve
+Epoch 19/100
+{'monitor_misclass': 0.33749646356832386, 'monitor_pred_mean': 0.061749962181884215, 'monitor_val_pred_mean': 0.093810638787937675, 'monitor_val_pred_stdev': 1.4421755221138195, 'monitor_pred_stdev': 1.3092290793005807, 'monitor_val_misclass': 0.35939219982922338, 'val_loss': 26.086814330828325}
+3s - loss: 16.8696 - val_loss: 26.0868
+Epoch 00018: val_loss improved from 26.13338 to 26.08681, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 20/100
+{'monitor_misclass': 0.33516627658753634, 'monitor_pred_mean': 0.00071237079293476281, 'monitor_val_pred_mean': 0.011758045788825656, 'monitor_val_pred_stdev': 1.4148425651246854, 'monitor_pred_stdev': 1.2803607649170461, 'monitor_val_misclass': 0.35798277830931147, 'val_loss': 26.078367031970959}
+3s - loss: 16.8563 - val_loss: 26.0784
+Epoch 00019: val_loss improved from 26.08681 to 26.07837, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 21/100
+{'monitor_misclass': 0.33525372289807359, 'monitor_pred_mean': 0.059308364688897892, 'monitor_val_pred_mean': 0.09536939280581562, 'monitor_val_pred_stdev': 1.3955565642698822, 'monitor_pred_stdev': 1.261558873338656, 'monitor_val_misclass': 0.35806508029587564, 'val_loss': 26.120724838834676}
+3s - loss: 16.8369 - val_loss: 26.1207
+Epoch 00020: val_loss did not improve
+Epoch 22/100
+{'monitor_misclass': 0.33482935109693679, 'monitor_pred_mean': -0.010707223642565629, 'monitor_val_pred_mean': -0.0052681330337164406, 'monitor_val_pred_stdev': 1.43928261538839, 'monitor_pred_stdev': 1.2855242137564806, 'monitor_val_misclass': 0.35763299486641359, 'val_loss': 26.029611694603428}
+3s - loss: 16.8351 - val_loss: 26.0296
+Epoch 00021: val_loss improved from 26.07837 to 26.02961, saving model to /tmp/ifshort_mlp_weights.hdf5
+Epoch 23/100
+{'monitor_misclass': 0.33466217432679202, 'monitor_pred_mean': 0.079723219066189135, 'monitor_val_pred_mean': 0.13847711704858484, 'monitor_val_pred_stdev': 1.3819902252981944, 'monitor_pred_stdev': 1.2411056018305524, 'monitor_val_misclass': 0.35865148195014557, 'val_loss': 26.167821038217319}
+3s - loss: 16.8325 - val_loss: 26.1678
+Epoch 00022: val_loss did not improve
+Epoch 24/100
+{'monitor_misclass': 0.33456701216532497, 'monitor_pred_mean': -0.061129034835153369, 'monitor_val_pred_mean': -0.037501249199955865, 'monitor_val_pred_stdev': 1.4174530848359606, 'monitor_pred_stdev': 1.2724064327028901, 'monitor_val_misclass': 0.35838400049381192, 'val_loss': 26.081099759739761}
+3s - loss: 16.7988 - val_loss: 26.0811
+Epoch 00023: val_loss did not improve
+Epoch 25/100
+{'monitor_misclass': 0.33483706694786658, 'monitor_pred_mean': 0.016848227018729726, 'monitor_val_pred_mean': 0.045208350145228927, 'monitor_val_pred_stdev': 1.4141100342219284, 'monitor_pred_stdev': 1.2714139858172364, 'monitor_val_misclass': 0.35847659022869666, 'val_loss': 26.134880696932623}
+3s - loss: 16.8026 - val_loss: 26.1349
+Epoch 00024: val_loss did not improve
+Epoch 26/100
+{'monitor_misclass': 0.3338494380288573, 'monitor_pred_mean': -0.071508375758083428, 'monitor_val_pred_mean': -0.046316367541797736, 'monitor_val_pred_stdev': 1.4478976473784202, 'monitor_pred_stdev': 1.29248540512816, 'monitor_val_misclass': 0.35784389370698433, 'val_loss': 26.118043619309741}
+3s - loss: 16.7843 - val_loss: 26.1180
+Epoch 00025: val_loss did not improve
+Epoch 27/100
+{'monitor_misclass': 0.33374141611584063, 'monitor_pred_mean': -0.019559767415658371, 'monitor_val_pred_mean': -0.0038880074440601842, 'monitor_val_pred_stdev': 1.3375818229730452, 'monitor_pred_stdev': 1.2055748284811996, 'monitor_val_misclass': 0.35831198625556826, 'val_loss': 26.128031129728033}
+3s - loss: 16.7696 - val_loss: 26.1280
+Epoch 00026: val_loss did not improve
+Epoch 28/100
+{'monitor_misclass': 0.33400632699776239, 'monitor_pred_mean': 0.065029586589568492, 'monitor_val_pred_mean': 0.093726409326867779, 'monitor_val_pred_stdev': 1.4045212553475663, 'monitor_pred_stdev': 1.26757035484156, 'monitor_val_misclass': 0.35980885363620463, 'val_loss': 26.119856575112436}
+3s - loss: 16.7822 - val_loss: 26.1199
+Epoch 00027: val_loss did not improve
+Epoch 29/100
+{'monitor_misclass': 0.3329106761657365, 'monitor_pred_mean': 0.10201721549760762, 'monitor_val_pred_mean': 0.13767781113642169, 'monitor_val_pred_stdev': 1.3743281821579716, 'monitor_pred_stdev': 1.2247370832100875, 'monitor_val_misclass': 0.35773587234961884, 'val_loss': 26.167585202740401}
+3s - loss: 16.7453 - val_loss: 26.1676
+Epoch 00028: val_loss did not improve
+Epoch 30/100
+{'monitor_misclass': 0.33140094133381343, 'monitor_pred_mean': -0.055633749597406752, 'monitor_val_pred_mean': -0.03226001564888422, 'monitor_val_pred_stdev': 1.4490580301552733, 'monitor_pred_stdev': 1.2935051381669231, 'monitor_val_misclass': 0.3576587142372149, 'val_loss': 26.144191332896419}
+3s - loss: 16.7579 - val_loss: 26.1442
+Epoch 00029: val_loss did not improve
+Epoch 31/100
+{'monitor_misclass': 0.33191018749517759, 'monitor_pred_mean': -0.042127834004835656, 'monitor_val_pred_mean': -0.036717114239520496, 'monitor_val_pred_stdev': 1.4092628614547553, 'monitor_pred_stdev': 1.2618813151995103, 'monitor_val_misclass': 0.35663508327932264, 'val_loss': 26.084256902101146}
+3s - loss: 16.7409 - val_loss: 26.0843
+Epoch 00030: val_loss did not improve
+Epoch 32/100
+{'monitor_misclass': 0.33171471927162366, 'monitor_pred_mean': -0.037134022186541042, 'monitor_val_pred_mean': -0.029082650539090517, 'monitor_val_pred_stdev': 1.4389218197471498, 'monitor_pred_stdev': 1.2882813969020481, 'monitor_val_misclass': 0.35775644784625987, 'val_loss': 26.122036383227872}
+3s - loss: 16.7319 - val_loss: 26.1220
+Epoch 00031: val_loss did not improve
+Epoch 33/100
+{'monitor_misclass': 0.33117718165685039, 'monitor_pred_mean': 0.069150643604908274, 'monitor_val_pred_mean': 0.11628822554636593, 'monitor_val_pred_stdev': 1.378460098125782, 'monitor_pred_stdev': 1.2284390493079573, 'monitor_val_misclass': 0.35790047632274724, 'val_loss': 26.204465910965119}
+3s - loss: 16.7194 - val_loss: 26.2045
+Epoch 00032: val_loss did not improve
+Epoch 34/100
+{'monitor_misclass': 0.33168128391759472, 'monitor_pred_mean': 0.0063809275777328492, 'monitor_val_pred_mean': 0.022974532674041266, 'monitor_val_pred_stdev': 1.4766920711722329, 'monitor_pred_stdev': 1.3064811025939205, 'monitor_val_misclass': 0.35733465016511834, 'val_loss': 26.177424224959946}
+3s - loss: 16.7327 - val_loss: 26.1774
+Epoch 00033: val_loss did not improve
+Epoch 35/100
+{'monitor_misclass': 0.33174815462565266, 'monitor_pred_mean': -0.094061211726062785, 'monitor_val_pred_mean': -0.095384273233841022, 'monitor_val_pred_stdev': 1.4263690211157931, 'monitor_pred_stdev': 1.2761999954838452, 'monitor_val_misclass': 0.35761756324393279, 'val_loss': 26.118836910650099}
+3s - loss: 16.7166 - val_loss: 26.1188
+Epoch 00034: val_loss did not improve
+Epoch 36/100
+{'monitor_misclass': 0.33021012834032049, 'monitor_pred_mean': 0.08310194229456333, 'monitor_val_pred_mean': 0.12308454066783626, 'monitor_val_pred_stdev': 1.403486103036208, 'monitor_pred_stdev': 1.2581994635863625, 'monitor_val_misclass': 0.35767928973385593, 'val_loss': 26.219733502601581}
+3s - loss: 16.7000 - val_loss: 26.2197
+Epoch 00035: val_loss did not improve
+Epoch 37/100
+{'monitor_misclass': 0.33297754687379438, 'monitor_pred_mean': 0.025989034480783036, 'monitor_val_pred_mean': 0.053275885264624366, 'monitor_val_pred_stdev': 1.4328391015399022, 'monitor_pred_stdev': 1.2840997473827676, 'monitor_val_misclass': 0.35870806456590848, 'val_loss': 26.087743427361421}
+3s - loss: 16.6805 - val_loss: 26.0877
+Epoch 00036: val_loss did not improve
+Epoch 38/100
+{'monitor_misclass': 0.33204650086160337, 'monitor_pred_mean': -0.047679145501301409, 'monitor_val_pred_mean': -0.037673716732136375, 'monitor_val_pred_stdev': 1.3923844778553571, 'monitor_pred_stdev': 1.2529513248258319, 'monitor_val_misclass': 0.3583582811230106, 'val_loss': 26.101058578228272}
+3s - loss: 16.6884 - val_loss: 26.1011
+Epoch 00037: val_loss did not improve
+Epoch 39/100
+{'monitor_misclass': 0.33109230729662303, 'monitor_pred_mean': 0.054179466449323865, 'monitor_val_pred_mean': 0.096600757979684232, 'monitor_val_pred_stdev': 1.3172475957095893, 'monitor_pred_stdev': 1.1743753418167329, 'monitor_val_misclass': 0.35852802897029928, 'val_loss': 26.234331827515035}
+3s - loss: 16.6704 - val_loss: 26.2343
+Epoch 00038: val_loss did not improve
+Epoch 40/100
+{'monitor_misclass': 0.3326329055322651, 'monitor_pred_mean': -0.011092587936364808, 'monitor_val_pred_mean': 0.0065708130287407008, 'monitor_val_pred_stdev': 1.4219500441627884, 'monitor_pred_stdev': 1.2768475979168761, 'monitor_val_misclass': 0.3592378836044155, 'val_loss': 26.110004769381348}
+3s - loss: 16.6928 - val_loss: 26.1100
+Epoch 00039: val_loss did not improve
+Epoch 41/100
+{'monitor_misclass': 0.33229083614104576, 'monitor_pred_mean': -0.029214727649405942, 'monitor_val_pred_mean': -0.029268308289830208, 'monitor_val_pred_stdev': 1.427714362281385, 'monitor_pred_stdev': 1.2665457840242496, 'monitor_val_misclass': 0.35858975546022243, 'val_loss': 26.100481255273287}
+3s - loss: 16.6669 - val_loss: 26.1005
+Epoch 00040: val_loss did not improve
+Epoch 42/100
+{'monitor_misclass': 0.33151410714744989, 'monitor_pred_mean': -0.0045570502160143141, 'monitor_val_pred_mean': 0.012341728693866601, 'monitor_val_pred_stdev': 1.4666163346924967, 'monitor_pred_stdev': 1.3066291138914945, 'monitor_val_misclass': 0.35858461158606214, 'val_loss': 26.124641959836914}
+3s - loss: 16.6571 - val_loss: 26.1246
+Epoch 00041: val_loss did not improve
+Epoch 43/100
+{'monitor_misclass': 0.33140865718474322, 'monitor_pred_mean': -0.0032573092545180441, 'monitor_val_pred_mean': -0.0015237335750215683, 'monitor_val_pred_stdev': 1.4867370182458075, 'monitor_pred_stdev': 1.327838427640722, 'monitor_val_misclass': 0.35844572698373506, 'val_loss': 26.104228011698638}
+3s - loss: 16.6578 - val_loss: 26.1042
+Epoch 00042: val_loss did not improve

@@ -9,8 +9,8 @@ from .. import activations, initializations, regularizers, constraints
 from ..utils.theano_utils import shared_zeros, on_gpu
 from ..layers.core import Layer
 
-if on_gpu():
-    from theano.sandbox.cuda import dnn
+#if on_gpu():
+#    from theano.sandbox.cuda import dnn   #XD
 
 
 def conv_output_length(input_length, filter_size, border_mode, stride):

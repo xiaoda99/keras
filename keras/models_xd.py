@@ -156,7 +156,7 @@ def get_function_name(o):
 
 class Model(object):
     def _fit(self, f, ins, out_labels=[], batch_size=128, nb_epoch=100, verbose=1, callbacks=[],
-             val_f=None, val_ins=None, shuffle=True, metrics=[]):
+             val_f=None, val_ins=None, monitor_f=None, monitor_labels=[], shuffle=True, metrics=[]):
         '''
             Abstract fit function for f(*ins). Assume that f returns a list, labelled by out_labels.
         '''
@@ -227,6 +227,20 @@ class Model(object):
                         # same labels assumed
                         for l, o in zip(out_labels, val_outs):
                             epoch_logs['val_' + l] = o
+                            
+                    # monitoring XD
+                    if True:
+                        monitor_outs = self._test_loop(monitor_f, ins, batch_size=batch_size, verbose=0, shuffle=True)
+                        if type(monitor_outs) != list:
+                            monitor_outs = [monitor_outs]
+                        for l, o in zip(monitor_labels, monitor_outs):
+                            epoch_logs['monitor_' + l] = o
+                        monitor_val_outs = self._test_loop(monitor_f, val_ins, batch_size=batch_size, verbose=0, shuffle=True)
+                        if type(monitor_val_outs) != list:
+                            monitor_val_outs = [monitor_val_outs]
+                        for l, o in zip(monitor_labels, monitor_val_outs):
+                            epoch_logs['monitor_val_' + l] = o
+                    print(epoch_logs)
 
             callbacks.on_epoch_end(epoch, epoch_logs)
             if self.stop_training:
@@ -245,6 +259,7 @@ class Model(object):
             progbar = Progbar(target=nb_sample)
         batches = make_batches(nb_sample, batch_size)
         index_array = np.arange(nb_sample)
+                
         for batch_index, (batch_start, batch_end) in enumerate(batches):
             batch_ids = index_array[batch_start:batch_end]
             ins_batch = slice_X(ins, batch_ids)
@@ -263,7 +278,7 @@ class Model(object):
                 progbar.update(batch_end)
         return outs
 
-    def _test_loop(self, f, ins, batch_size=128, verbose=0):
+    def _test_loop(self, f, ins, batch_size=128, verbose=0, shuffle=False):
         '''
             Abstract method to loop over some data in batches.
         '''
@@ -273,6 +288,10 @@ class Model(object):
             progbar = Progbar(target=nb_sample)
         batches = make_batches(nb_sample, batch_size)
         index_array = np.arange(nb_sample)
+        #XD
+        if shuffle:
+            np.random.shuffle(index_array)
+            
         for batch_index, (batch_start, batch_end) in enumerate(batches):
             batch_ids = index_array[batch_start:batch_end]
             ins_batch = slice_X(ins, batch_ids)
@@ -369,6 +388,14 @@ class Sequential(Model, containers.Sequential):
         train_loss.name = 'train_loss'
         test_loss.name = 'test_loss'
         self.y.name = 'y'
+        
+        #XD
+        misclass = (self.y * self.y_test * self.weights < 0).mean()  # * self.weights to get rid of Theano UnusedInputWarnings 
+        pred_mean = self.y_test.mean()
+        pred_stdev = T.sqrt(T.square(self.y_test - pred_mean).mean())
+        misclass.name = 'misclass'
+        pred_mean.name = 'pred_mean'
+        pred_stdev.name = 'pred_stdev'
 
         if class_mode == "categorical":
             train_accuracy = T.mean(T.eq(T.argmax(self.y, axis=-1), T.argmax(self.y_train, axis=-1)))
@@ -405,6 +432,9 @@ class Sequential(Model, containers.Sequential):
         self._test = theano.function(test_ins, test_loss,
                                      allow_input_downcast=True, mode=theano_mode)
         self._test_with_acc = theano.function(test_ins, [test_loss, test_accuracy],
+                                              allow_input_downcast=True, mode=theano_mode)
+        #XD
+        self._monitor = theano.function(test_ins, [misclass, pred_mean, pred_stdev],
                                               allow_input_downcast=True, mode=theano_mode)
 
     def train_on_batch(self, X, y, accuracy=False, class_weight=None, sample_weight=None):
@@ -480,13 +510,16 @@ class Sequential(Model, containers.Sequential):
         else:
             f = self._train
             out_labels = ['loss']
+        
+        monitor_labels = ['misclass', 'pred_mean', 'pred_stdev']  #XD
 
         sample_weight = standardize_weights(y, class_weight=class_weight, sample_weight=sample_weight)
         ins = X + [y, sample_weight]
         metrics = ['loss', 'acc', 'val_loss', 'val_acc']
         return self._fit(f, ins, out_labels=out_labels, batch_size=batch_size, nb_epoch=nb_epoch,
                          verbose=verbose, callbacks=callbacks,
-                         val_f=val_f, val_ins=val_ins,
+                         val_f=val_f, val_ins=val_ins, 
+                         monitor_f=self._monitor, monitor_labels=monitor_labels,  #XD
                          shuffle=shuffle, metrics=metrics)
 
     def predict(self, X, batch_size=128, verbose=0):
@@ -542,11 +575,11 @@ class Sequential(Model, containers.Sequential):
         f = h5py.File(filepath, 'w')
         f.attrs['nb_layers'] = len(self.layers)
         for k, l in enumerate(self.layers):
-            g = f.create_group('layer_{}'.format(k))
+            g = f.create_group('layer_{0}'.format(k))  #XD
             weights = l.get_weights()
             g.attrs['nb_params'] = len(weights)
             for n, param in enumerate(weights):
-                param_name = 'param_{}'.format(n)
+                param_name = 'param_{0}'.format(n)  #XD
                 param_dset = g.create_dataset(param_name, param.shape, dtype=param.dtype)
                 param_dset[:] = param
         f.flush()
@@ -561,8 +594,8 @@ class Sequential(Model, containers.Sequential):
         import h5py
         f = h5py.File(filepath)
         for k in range(f.attrs['nb_layers']):
-            g = f['layer_{}'.format(k)]
-            weights = [g['param_{}'.format(p)] for p in range(g.attrs['nb_params'])]
+            g = f['layer_{0}'.format(k)]  #XD
+            weights = [g['param_{0}'.format(p)] for p in range(g.attrs['nb_params'])]  #XD
             self.layers[k].set_weights(weights)
         f.close()
 

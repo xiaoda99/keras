@@ -5,7 +5,8 @@ import theano
 import theano.tensor as T
 import numpy as np
 
-from collections import OrderedDict
+#from collections import OrderedDict
+from ordereddict import OrderedDict  #XD
 import copy
 
 from .. import activations, initializations, regularizers, constraints
@@ -20,7 +21,8 @@ from six.moves import zip
 class Layer(object):
     def __init__(self, **kwargs):
         for kwarg in kwargs:
-            assert kwarg in {'input_shape'}, "Keyword argument not understood: " + kwarg
+#            assert kwarg in {'input_shape'}, "Keyword argument not understood: " + kwarg
+            assert kwarg in ['input_shape'], "Keyword argument not understood: " + kwarg  #XD 
         if 'input_shape' in kwargs:
             self.set_input_shape(kwargs['input_shape'])
         if not hasattr(self, 'params'):
@@ -267,7 +269,8 @@ class Merge(Layer):
         '''
         if len(layers) < 2:
             raise Exception("Please specify two or more input layers (or containers) to merge")
-        if mode not in {'sum', 'mul', 'concat', 'ave'}:
+#        if mode not in {'sum', 'mul', 'concat', 'ave'}:
+        if mode not in ['sum', 'mul', 'concat', 'ave']:  #XD
             raise Exception("Invalid merge mode: " + str(mode))
         self.mode = mode
         self.concat_axis = concat_axis
