@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<root>
+    <StageBegin>20150301</StageBegin>
+	<StageEnd>20150331</StageEnd>
+	<PathCTPQuote>dq</PathCTPQuote>
+    <PathCTPFiles>dt</PathCTPFiles>
+    <Instruments>
+        <item Exchange="0" VolumeMultiple="300" PriceTick="0.2" MarginRate="0.1" CommissionM="2.6e-05" CommissionMClose="2.6e-05" CommissionMCloseTD="0" CommissionV="0" CommissionVClose="0" CommissionVCloseTD="0" _key="IF" />
+    </Instruments>
+</root>

@@ -240,7 +240,7 @@ class Model(object):
                             monitor_val_outs = [monitor_val_outs]
                         for l, o in zip(monitor_labels, monitor_val_outs):
                             epoch_logs['monitor_val_' + l] = o
-                    print(epoch_logs)
+#                    print(epoch_logs)
 
             callbacks.on_epoch_end(epoch, epoch_logs)
             if self.stop_training:
