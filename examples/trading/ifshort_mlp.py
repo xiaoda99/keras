@@ -24,7 +24,7 @@ from keras.callbacks import EarlyStopping, ModelCheckpoint
 #X_test = test.X
 #y_test = test.y
 
-def train_model(dataset, h0_dim, h1_dim):
+def train_model(dataset, h0_dim, h1_dim, y_dim):
     X_train, y_train, X_test, y_test = dataset
     batch_size = 512
     nb_epoch = 100
@@ -37,7 +37,7 @@ def train_model(dataset, h0_dim, h1_dim):
                     init='uniform', 
                     W_regularizer=l2(0.0005),
                     activation='relu'))
-    model.add(Dense(1,  
+    model.add(Dense(y_dim,  
                     init='uniform', 
                     W_regularizer=l2(0.0005)))
     

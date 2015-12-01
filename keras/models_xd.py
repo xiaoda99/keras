@@ -16,6 +16,7 @@ from .utils.layer_utils import container_from_config
 from .utils.generic_utils import Progbar, printv
 from .layers import containers
 
+from ordereddict import OrderedDict
 
 def standardize_y(y):
     if not hasattr(y, 'shape'):
@@ -153,7 +154,6 @@ def get_function_name(o):
     else:
         return o.__name__
 
-
 class Model(object):
     def _fit(self, f, ins, out_labels=[], batch_size=128, nb_epoch=100, verbose=1, callbacks=[],
              val_f=None, val_ins=None, monitor_f=None, monitor_labels=[], shuffle=True, metrics=[]):
@@ -165,6 +165,10 @@ class Model(object):
             do_validation = True
             if verbose:
                 print("Train on %d samples, validate on %d samples" % (len(ins[0]), len(val_ins[0])))
+        #XD
+        do_monitoring = False
+        if monitor_f:
+            do_monitoring = True
 
         nb_train_sample = len(ins[0])
         index_array = np.arange(nb_train_sample)
@@ -187,6 +191,17 @@ class Model(object):
         })
         callbacks.on_train_begin()
 
+        #XD
+        print('Before training:')
+        val_outs = self._test_loop(val_f, val_ins, batch_size=batch_size, verbose=0)
+        if type(val_outs) != list:
+            val_outs = [val_outs]
+        # same labels assumed
+        epoch_logs = {}
+        for l, o in zip(out_labels, val_outs):
+            epoch_logs['val_' + l] = o
+        print(epoch_logs)
+                            
         self.stop_training = False
         for epoch in range(nb_epoch):
             callbacks.on_epoch_begin(epoch)
@@ -229,18 +244,19 @@ class Model(object):
                             epoch_logs['val_' + l] = o
                             
                     # monitoring XD
-                    if True:
+                    if do_monitoring:
+                        monitor_logs = OrderedDict()
                         monitor_outs = self._test_loop(monitor_f, ins, batch_size=batch_size, verbose=0, shuffle=True)
                         if type(monitor_outs) != list:
                             monitor_outs = [monitor_outs]
                         for l, o in zip(monitor_labels, monitor_outs):
-                            epoch_logs['monitor_' + l] = o
+                            monitor_logs['train_' + l] = o
                         monitor_val_outs = self._test_loop(monitor_f, val_ins, batch_size=batch_size, verbose=0, shuffle=True)
                         if type(monitor_val_outs) != list:
                             monitor_val_outs = [monitor_val_outs]
                         for l, o in zip(monitor_labels, monitor_val_outs):
-                            epoch_logs['monitor_val_' + l] = o
-#                    print(epoch_logs)
+                            monitor_logs['val_' + l] = o
+                        print(monitor_logs)
 
             callbacks.on_epoch_end(epoch, epoch_logs)
             if self.stop_training:
@@ -390,13 +406,31 @@ class Sequential(Model, containers.Sequential):
         self.y.name = 'y'
         
         #XD
-        misclass = (self.y * self.y_test * self.weights < 0).mean()  # * self.weights to get rid of Theano UnusedInputWarnings 
-        pred_mean = self.y_test.mean()
-        pred_stdev = T.sqrt(T.square(self.y_test - pred_mean).mean())
-        misclass.name = 'misclass'
-        pred_mean.name = 'pred_mean'
-        pred_stdev.name = 'pred_stdev'
-
+#        misclass = (self.y * self.y_test * self.weights < 0).mean()  # * self.weights to get rid of Theano UnusedInputWarnings 
+#        pred_mean = self.y_test.mean()
+#        pred_stdev = T.sqrt(T.square(self.y_test - pred_mean).mean())
+#        misclass.name = 'misclass'
+#        pred_mean.name = 'pred_mean'
+#        pred_stdev.name = 'pred_stdev'
+        def mean_gain(y_true, y_pred):
+            max_pred_gain = y_pred.max(axis=1).dimshuffle(0, 'x') * T.ones_like(y_pred)
+            max_mask = T.cast(y_pred >= max_pred_gain, 'float32')
+            return ((y_true * max_mask).sum(axis=1) * (y_pred.max(axis=1) > 0.)).mean()
+        
+        def gain_per_trade(y_true, y_pred):
+            max_pred_gain = y_pred.max(axis=1).dimshuffle(0, 'x') * T.ones_like(y_pred)
+            max_mask = T.cast(y_pred >= max_pred_gain, 'float32')
+            return ((y_true * max_mask).sum(axis=1) * (y_pred.max(axis=1) > 0.)).sum() / (y_pred.max(axis=1) > 0.).sum()
+        
+        def optimal_mean_gain(y_true):
+            return (y_true.max(axis=1) * (y_true.max(axis=1) > 0.)).mean()
+        
+        def optimal_gain_per_trade(y_true):
+            return (y_true.max(axis=1) * (y_true.max(axis=1) > 0.)).sum() / (y_true.max(axis=1) > 0.).sum()
+    
+        trade_freq = (self.y_test.max(axis=1) > 0.).mean()
+        optimal_trade_freq = (self.y.max(axis=1) > 0.).mean()
+        
         if class_mode == "categorical":
             train_accuracy = T.mean(T.eq(T.argmax(self.y, axis=-1), T.argmax(self.y_train, axis=-1)))
             test_accuracy = T.mean(T.eq(T.argmax(self.y, axis=-1), T.argmax(self.y_test, axis=-1)))
@@ -414,6 +448,25 @@ class Sequential(Model, containers.Sequential):
         updates = self.optimizer.get_updates(self.params, self.constraints, train_loss)
         updates += self.updates
 
+        #XD, learnable hidden state and cell initialization for LSTM 
+#        for layer in self.layers:
+#            if hasattr(layer, 'hidden_init_model'):
+#                train_ins += layer.hidden_init_model.get_input(train=True)
+#                test_ins += layer.hidden_init_model.get_input(train=False)
+#                predict_ins += layer.hidden_init_model.get_input(train=False)
+#            if hasattr(layer, 'cell_init_model'):
+#                train_ins += layer.cell_init_model.get_input(train=True)
+#                test_ins += layer.cell_init_model.get_input(train=False)
+#                predict_ins += layer.cell_init_model.get_input(train=False)
+        if type(self.X_train) != list:
+            self.X_train = [self.X_train]
+        if type(self.X_test) != list:
+            self.X_test = [self.X_test]
+        for layer in self.layers:
+            if hasattr(layer, 'get_init_input'):
+                self.X_train += layer.get_init_input()
+                self.X_test += layer.get_init_input()
+                
         if type(self.X_train) == list:
             train_ins = self.X_train + [self.y, self.weights]
             test_ins = self.X_test + [self.y, self.weights]
@@ -422,7 +475,7 @@ class Sequential(Model, containers.Sequential):
             train_ins = [self.X_train, self.y, self.weights]
             test_ins = [self.X_test, self.y, self.weights]
             predict_ins = [self.X_test]
-
+            
         self._train = theano.function(train_ins, train_loss, updates=updates,
                                       allow_input_downcast=True, mode=theano_mode)
         self._train_with_acc = theano.function(train_ins, [train_loss, train_accuracy], updates=updates,
@@ -434,8 +487,14 @@ class Sequential(Model, containers.Sequential):
         self._test_with_acc = theano.function(test_ins, [test_loss, test_accuracy],
                                               allow_input_downcast=True, mode=theano_mode)
         #XD
-        self._monitor = theano.function(test_ins, [misclass, pred_mean, pred_stdev],
-                                              allow_input_downcast=True, mode=theano_mode)
+        self._monitor = None
+#        self._monitor = theano.function(test_ins, [mean_gain(self.y, self.y_test), 
+#                                                   optimal_mean_gain(self.y),
+##                                                   gain_per_trade(self.y, self.y_test),
+##                                                   optimal_gain_per_trade(self.y),
+#                                                   trade_freq,
+#                                                   optimal_trade_freq],
+#                                              allow_input_downcast=True, mode=theano_mode, on_unused_input='warn')
 
     def train_on_batch(self, X, y, accuracy=False, class_weight=None, sample_weight=None):
         X = standardize_X(X)
@@ -511,7 +570,13 @@ class Sequential(Model, containers.Sequential):
             f = self._train
             out_labels = ['loss']
         
-        monitor_labels = ['misclass', 'pred_mean', 'pred_stdev']  #XD
+        #XD
+        monitor_labels = ['mean_gain', 
+                          'optimal_mean_gain', 
+#                          'gain_per_trade', 
+#                          'optimal_gain_per_trade',
+                          'trade_freq',
+                          'optimal_trade_freq']  
 
         sample_weight = standardize_weights(y, class_weight=class_weight, sample_weight=sample_weight)
         ins = X + [y, sample_weight]

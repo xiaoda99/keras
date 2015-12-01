@@ -1,0 +1,38 @@
+class_mode: categorical
+layers:
+- W_constraint: null
+  W_regularizer: {l1: 0.0, l2: 0.00050000000000000001, name: WeightRegularizer}
+  activation: relu
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  init: uniform
+  input_dim: null
+  input_shape: !!python/tuple [24]
+  name: Dense
+  output_dim: 40
+- W_constraint: null
+  W_regularizer: {l1: 0.0, l2: 0.00050000000000000001, name: WeightRegularizer}
+  activation: relu
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  init: uniform
+  input_dim: null
+  name: Dense
+  output_dim: 40
+- W_constraint: null
+  W_regularizer: {l1: 0.0, l2: 0.00050000000000000001, name: WeightRegularizer}
+  activation: linear
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  init: uniform
+  input_dim: null
+  name: Dense
+  output_dim: 1
+loss: mean_squared_error
+name: Sequential
+optimizer: {epsilon: 9.9999999999999995e-07, lr: 0.0010000000474974513, name: RMSprop,
+  rho: 0.89999997615814209}
+theano_mode: null

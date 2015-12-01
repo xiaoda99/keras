@@ -1,0 +1,679 @@
+Running game...
+Building mlp80_40...
+
+Training mlp80_40...
+Train on 388810 samples, validate on 194406 samples
+Epoch 1/100
+5s - loss: 13.1608 - val_loss: 20.1293
+Epoch 00000: val_loss improved from inf to 20.12927, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+5s - loss: 13.0271 - val_loss: 20.1049
+Epoch 00001: val_loss improved from 20.12927 to 20.10486, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 3/100
+5s - loss: 12.9743 - val_loss: 19.9767
+Epoch 00002: val_loss improved from 20.10486 to 19.97674, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 4/100
+5s - loss: 12.9322 - val_loss: 20.0197
+Epoch 00003: val_loss did not improve
+Epoch 5/100
+5s - loss: 12.8983 - val_loss: 19.9585
+Epoch 00004: val_loss improved from 19.97674 to 19.95854, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 6/100
+5s - loss: 12.8703 - val_loss: 19.9962
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+5s - loss: 12.8548 - val_loss: 19.8943
+Epoch 00006: val_loss improved from 19.95854 to 19.89429, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 8/100
+5s - loss: 12.8339 - val_loss: 19.8899
+Epoch 00007: val_loss improved from 19.89429 to 19.88986, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 9/100
+5s - loss: 12.8197 - val_loss: 19.8612
+Epoch 00008: val_loss improved from 19.88986 to 19.86124, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 10/100
+5s - loss: 12.8053 - val_loss: 19.8577
+Epoch 00009: val_loss improved from 19.86124 to 19.85774, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 11/100
+5s - loss: 12.7917 - val_loss: 19.8250
+Epoch 00010: val_loss improved from 19.85774 to 19.82496, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 12/100
+5s - loss: 12.7802 - val_loss: 19.8731
+Epoch 00011: val_loss did not improve
+Epoch 13/100
+5s - loss: 12.7649 - val_loss: 19.8593
+Epoch 00012: val_loss did not improve
+Epoch 14/100
+5s - loss: 12.7526 - val_loss: 19.8349
+Epoch 00013: val_loss did not improve
+Epoch 15/100
+5s - loss: 12.7430 - val_loss: 19.8576
+Epoch 00014: val_loss did not improve
+Epoch 16/100
+5s - loss: 12.7365 - val_loss: 19.8187
+Epoch 00015: val_loss improved from 19.82496 to 19.81873, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 17/100
+5s - loss: 12.7261 - val_loss: 19.8674
+Epoch 00016: val_loss did not improve
+Epoch 18/100
+5s - loss: 12.7176 - val_loss: 19.8109
+Epoch 00017: val_loss improved from 19.81873 to 19.81093, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 19/100
+5s - loss: 12.7089 - val_loss: 19.8615
+Epoch 00018: val_loss did not improve
+Epoch 20/100
+5s - loss: 12.7020 - val_loss: 19.8487
+Epoch 00019: val_loss did not improve
+Epoch 21/100
+5s - loss: 12.6946 - val_loss: 19.8591
+Epoch 00020: val_loss did not improve
+Epoch 22/100
+5s - loss: 12.6886 - val_loss: 19.8215
+Epoch 00021: val_loss did not improve
+Epoch 23/100
+5s - loss: 12.6776 - val_loss: 19.8929
+Epoch 00022: val_loss did not improve
+Epoch 24/100
+5s - loss: 12.6771 - val_loss: 19.9137
+Epoch 00023: val_loss did not improve
+Epoch 25/100
+5s - loss: 12.6656 - val_loss: 19.8910
+Epoch 00024: val_loss did not improve
+Epoch 26/100
+5s - loss: 12.6572 - val_loss: 19.9463
+Epoch 00025: val_loss did not improve
+Epoch 27/100
+5s - loss: 12.6533 - val_loss: 19.8464
+Epoch 00026: val_loss did not improve
+Epoch 28/100
+5s - loss: 12.6476 - val_loss: 19.9661
+Epoch 00027: val_loss did not improve
+Epoch 29/100
+5s - loss: 12.6431 - val_loss: 19.8550
+Epoch 00028: val_loss did not improve
+Building lstm40...
+
+Training lstm40, last 5...
+Train on 388797 samples, validate on 194399 samples
+Epoch 1/100
+24s - loss: 13.0326 - val_loss: 20.0228
+Epoch 00000: val_loss improved from inf to 20.02284, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+24s - loss: 12.8537 - val_loss: 19.9335
+Epoch 00001: val_loss improved from 20.02284 to 19.93354, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 3/100
+24s - loss: 12.7819 - val_loss: 19.8971
+Epoch 00002: val_loss improved from 19.93354 to 19.89707, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 4/100
+24s - loss: 12.7322 - val_loss: 19.9678
+Epoch 00003: val_loss did not improve
+Epoch 5/100
+24s - loss: 12.6846 - val_loss: 19.9472
+Epoch 00004: val_loss did not improve
+Epoch 6/100
+24s - loss: 12.6509 - val_loss: 19.9261
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+24s - loss: 12.6186 - val_loss: 19.9429
+Epoch 00006: val_loss did not improve
+Epoch 8/100
+24s - loss: 12.5876 - val_loss: 19.9689
+Epoch 00007: val_loss did not improve
+Epoch 9/100
+24s - loss: 12.5549 - val_loss: 20.0077
+Epoch 00008: val_loss did not improve
+Epoch 10/100
+24s - loss: 12.5271 - val_loss: 20.1318
+Epoch 00009: val_loss did not improve
+Epoch 11/100
+24s - loss: 12.4996 - val_loss: 20.1551
+Epoch 00010: val_loss did not improve
+Epoch 12/100
+24s - loss: 12.4738 - val_loss: 20.0535
+Epoch 00011: val_loss did not improve
+Epoch 13/100
+24s - loss: 12.4465 - val_loss: 20.2106
+Epoch 00012: val_loss did not improve
+Epoch 14/100
+24s - loss: 12.4246 - val_loss: 20.1256
+Epoch 00013: val_loss did not improve
+
+Training lstm40, last 10...
+Train on 388797 samples, validate on 194399 samples
+Epoch 1/100
+33s - loss: 12.3947 - val_loss: 20.4183
+Epoch 00000: val_loss improved from inf to 20.41834, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+33s - loss: 12.2807 - val_loss: 20.4459
+Epoch 00001: val_loss did not improve
+Epoch 3/100
+33s - loss: 12.2081 - val_loss: 20.5387
+Epoch 00002: val_loss did not improve
+Epoch 4/100
+33s - loss: 12.1403 - val_loss: 20.7209
+Epoch 00003: val_loss did not improve
+Epoch 5/100
+33s - loss: 12.0811 - val_loss: 20.8270
+Epoch 00004: val_loss did not improve
+Epoch 6/100
+33s - loss: 12.0215 - val_loss: 21.0036
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+33s - loss: 11.9678 - val_loss: 21.0299
+Epoch 00006: val_loss did not improve
+Epoch 8/100
+33s - loss: 11.9221 - val_loss: 21.1425
+Epoch 00007: val_loss did not improve
+Epoch 9/100
+33s - loss: 11.8775 - val_loss: 21.1741
+Epoch 00008: val_loss did not improve
+Epoch 10/100
+33s - loss: 11.8348 - val_loss: 21.2988
+Epoch 00009: val_loss did not improve
+Epoch 11/100
+33s - loss: 11.7929 - val_loss: 21.3849
+Epoch 00010: val_loss did not improve
+Epoch 12/100
+33s - loss: 11.7550 - val_loss: 21.5944
+Epoch 00011: val_loss did not improve
+Building lstm40_rs...
+
+Training lstm40_rs, last 10...
+Train on 388797 samples, validate on 194399 samples
+Epoch 1/100
+40s - loss: 12.9916 - val_loss: 19.9629
+Epoch 00000: val_loss improved from inf to 19.96292, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+36s - loss: 12.8145 - val_loss: 19.9143
+Epoch 00001: val_loss improved from 19.96292 to 19.91428, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 3/100
+36s - loss: 12.7375 - val_loss: 19.9140
+Epoch 00002: val_loss improved from 19.91428 to 19.91404, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 4/100
+36s - loss: 12.6790 - val_loss: 19.9186
+Epoch 00003: val_loss did not improve
+Epoch 5/100
+36s - loss: 12.6307 - val_loss: 19.9429
+Epoch 00004: val_loss did not improve
+Epoch 6/100
+36s - loss: 12.5890 - val_loss: 19.9579
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+36s - loss: 12.5503 - val_loss: 20.0456
+Epoch 00006: val_loss did not improve
+Epoch 8/100
+35s - loss: 12.5123 - val_loss: 20.0656
+Epoch 00007: val_loss did not improve
+Epoch 9/100
+36s - loss: 12.4797 - val_loss: 20.1332
+Epoch 00008: val_loss did not improve
+Epoch 10/100
+36s - loss: 12.4478 - val_loss: 20.1455
+Epoch 00009: val_loss did not improve
+Epoch 11/100
+36s - loss: 12.4173 - val_loss: 20.2123
+Epoch 00010: val_loss did not improve
+Epoch 12/100
+36s - loss: 12.3881 - val_loss: 20.2078
+Epoch 00011: val_loss did not improve
+Epoch 13/100
+35s - loss: 12.3612 - val_loss: 20.2659
+Epoch 00012: val_loss did not improve
+Epoch 14/100
+36s - loss: 12.3377 - val_loss: 20.2882
+Epoch 00013: val_loss did not improve
+
+Training lstm40_rs, last 20...
+Train on 388797 samples, validate on 194399 samples
+Epoch 1/100
+57s - loss: 12.1086 - val_loss: 20.6657
+Epoch 00000: val_loss improved from inf to 20.66567, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+57s - loss: 12.0228 - val_loss: 20.8244
+Epoch 00001: val_loss did not improve
+Epoch 3/100
+57s - loss: 11.9625 - val_loss: 20.9603
+Epoch 00002: val_loss did not improve
+Epoch 4/100
+57s - loss: 11.9124 - val_loss: 21.0580
+Epoch 00003: val_loss did not improve
+Epoch 5/100
+57s - loss: 11.8663 - val_loss: 21.3039
+Epoch 00004: val_loss did not improve
+Epoch 6/100
+57s - loss: 11.8293 - val_loss: 21.3914
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+57s - loss: 11.7924 - val_loss: 21.3116
+Epoch 00006: val_loss did not improve
+Epoch 8/100
+57s - loss: 11.7638 - val_loss: 21.4856
+Epoch 00007: val_loss did not improve
+Epoch 9/100
+57s - loss: 11.7336 - val_loss: 21.4768
+Epoch 00008: val_loss did not improve
+Epoch 10/100
+57s - loss: 11.7078 - val_loss: 21.6094
+Epoch 00009: val_loss did not improve
+Epoch 11/100
+57s - loss: 11.6850 - val_loss: 21.7444
+Epoch 00010: val_loss did not improve
+Epoch 12/100
+57s - loss: 11.6630 - val_loss: 21.6662
+Epoch 00011: val_loss did not improve
+Building srnn40...
+
+Training srnn40, last 5...
+Train on 388797 samples, validate on 194399 samples
+Epoch 1/100
+13s - loss: 13.1568 - val_loss: 20.2405
+Epoch 00000: val_loss improved from inf to 20.24051, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+13s - loss: 13.0739 - val_loss: 20.1819
+Epoch 00001: val_loss improved from 20.24051 to 20.18192, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 3/100
+13s - loss: 13.0146 - val_loss: 20.1167
+Epoch 00002: val_loss improved from 20.18192 to 20.11673, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 4/100
+13s - loss: 12.9744 - val_loss: 20.0373
+Epoch 00003: val_loss improved from 20.11673 to 20.03734, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 5/100
+13s - loss: 12.9473 - val_loss: 20.0086
+Epoch 00004: val_loss improved from 20.03734 to 20.00861, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 6/100
+13s - loss: 12.9248 - val_loss: 20.0102
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+13s - loss: 12.9063 - val_loss: 19.9840
+Epoch 00006: val_loss improved from 20.00861 to 19.98397, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 8/100
+13s - loss: 12.8899 - val_loss: 19.9462
+Epoch 00007: val_loss improved from 19.98397 to 19.94620, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 9/100
+13s - loss: 12.8757 - val_loss: 19.9432
+Epoch 00008: val_loss improved from 19.94620 to 19.94322, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 10/100
+13s - loss: 12.8655 - val_loss: 19.9621
+Epoch 00009: val_loss did not improve
+Epoch 11/100
+13s - loss: 12.8539 - val_loss: 19.9176
+Epoch 00010: val_loss improved from 19.94322 to 19.91764, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 12/100
+13s - loss: 12.8426 - val_loss: 19.9223
+Epoch 00011: val_loss did not improve
+Epoch 13/100
+13s - loss: 12.8355 - val_loss: 19.8858
+Epoch 00012: val_loss improved from 19.91764 to 19.88579, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 14/100
+13s - loss: 12.8254 - val_loss: 19.9265
+Epoch 00013: val_loss did not improve
+Epoch 15/100
+13s - loss: 12.8190 - val_loss: 19.8627
+Epoch 00014: val_loss improved from 19.88579 to 19.86266, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 16/100
+13s - loss: 12.8119 - val_loss: 19.9646
+Epoch 00015: val_loss did not improve
+Epoch 17/100
+13s - loss: 12.8055 - val_loss: 19.8724
+Epoch 00016: val_loss did not improve
+Epoch 18/100
+13s - loss: 12.7986 - val_loss: 19.9134
+Epoch 00017: val_loss did not improve
+Epoch 19/100
+13s - loss: 12.7933 - val_loss: 19.9071
+Epoch 00018: val_loss did not improve
+Epoch 20/100
+13s - loss: 12.7892 - val_loss: 19.8941
+Epoch 00019: val_loss did not improve
+Epoch 21/100
+13s - loss: 12.7834 - val_loss: 19.8809
+Epoch 00020: val_loss did not improve
+Epoch 22/100
+13s - loss: 12.7785 - val_loss: 19.9184
+Epoch 00021: val_loss did not improve
+Epoch 23/100
+13s - loss: 12.7736 - val_loss: 19.8701
+Epoch 00022: val_loss did not improve
+Epoch 24/100
+13s - loss: 12.7709 - val_loss: 19.8556
+Epoch 00023: val_loss improved from 19.86266 to 19.85564, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 25/100
+13s - loss: 12.7666 - val_loss: 19.8537
+Epoch 00024: val_loss improved from 19.85564 to 19.85366, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 26/100
+13s - loss: 12.7619 - val_loss: 19.8781
+Epoch 00025: val_loss did not improve
+Epoch 27/100
+13s - loss: 12.7578 - val_loss: 19.8516
+Epoch 00026: val_loss improved from 19.85366 to 19.85156, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 28/100
+13s - loss: 12.7530 - val_loss: 19.8858
+Epoch 00027: val_loss did not improve
+Epoch 29/100
+13s - loss: 12.7517 - val_loss: 19.8825
+Epoch 00028: val_loss did not improve
+Epoch 30/100
+13s - loss: 12.7465 - val_loss: 19.8712
+Epoch 00029: val_loss did not improve
+Epoch 31/100
+13s - loss: 12.7432 - val_loss: 19.8544
+Epoch 00030: val_loss did not improve
+Epoch 32/100
+13s - loss: 12.7399 - val_loss: 20.0005
+Epoch 00031: val_loss did not improve
+Epoch 33/100
+13s - loss: 12.7373 - val_loss: 19.8405
+Epoch 00032: val_loss improved from 19.85156 to 19.84046, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 34/100
+13s - loss: 12.7339 - val_loss: 19.8674
+Epoch 00033: val_loss did not improve
+Epoch 35/100
+13s - loss: 12.7313 - val_loss: 19.9029
+Epoch 00034: val_loss did not improve
+Epoch 36/100
+13s - loss: 12.7292 - val_loss: 19.9279
+Epoch 00035: val_loss did not improve
+Epoch 37/100
+13s - loss: 12.7264 - val_loss: 19.9178
+Epoch 00036: val_loss did not improve
+Epoch 38/100
+13s - loss: 12.7246 - val_loss: 19.8909
+Epoch 00037: val_loss did not improve
+Epoch 39/100
+13s - loss: 12.7203 - val_loss: 19.9006
+Epoch 00038: val_loss did not improve
+Epoch 40/100
+13s - loss: 12.7178 - val_loss: 19.8968
+Epoch 00039: val_loss did not improve
+Epoch 41/100
+13s - loss: 12.7152 - val_loss: 19.9219
+Epoch 00040: val_loss did not improve
+Epoch 42/100
+13s - loss: 12.7134 - val_loss: 19.8840
+Epoch 00041: val_loss did not improve
+Epoch 43/100
+13s - loss: 12.7096 - val_loss: 19.8650
+Epoch 00042: val_loss did not improve
+Epoch 44/100
+13s - loss: 12.7061 - val_loss: 19.8856
+Epoch 00043: val_loss did not improve
+
+Training srnn40, last 10...
+Train on 388797 samples, validate on 194399 samples
+Epoch 1/100
+16s - loss: 12.6949 - val_loss: 19.9129
+Epoch 00000: val_loss improved from inf to 19.91293, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+16s - loss: 12.6866 - val_loss: 19.9998
+Epoch 00001: val_loss did not improve
+Epoch 3/100
+16s - loss: 12.6812 - val_loss: 19.9597
+Epoch 00002: val_loss did not improve
+Epoch 4/100
+16s - loss: 12.6759 - val_loss: 19.9305
+Epoch 00003: val_loss did not improve
+Epoch 5/100
+16s - loss: 12.6704 - val_loss: 19.9138
+Epoch 00004: val_loss did not improve
+Epoch 6/100
+16s - loss: 12.6663 - val_loss: 20.0111
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+16s - loss: 12.6602 - val_loss: 19.9237
+Epoch 00006: val_loss did not improve
+Epoch 8/100
+16s - loss: 12.6575 - val_loss: 19.9026
+Epoch 00007: val_loss improved from 19.91293 to 19.90262, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 9/100
+16s - loss: 12.6535 - val_loss: 19.8976
+Epoch 00008: val_loss improved from 19.90262 to 19.89760, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 10/100
+16s - loss: 12.6460 - val_loss: 19.9226
+Epoch 00009: val_loss did not improve
+Epoch 11/100
+16s - loss: 12.6441 - val_loss: 19.8742
+Epoch 00010: val_loss improved from 19.89760 to 19.87417, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 12/100
+16s - loss: 12.6401 - val_loss: 20.0163
+Epoch 00011: val_loss did not improve
+Epoch 13/100
+16s - loss: 12.6363 - val_loss: 19.9427
+Epoch 00012: val_loss did not improve
+Epoch 14/100
+16s - loss: 12.6333 - val_loss: 19.9477
+Epoch 00013: val_loss did not improve
+Epoch 15/100
+16s - loss: 12.6277 - val_loss: 19.9535
+Epoch 00014: val_loss did not improve
+Epoch 16/100
+16s - loss: 12.6225 - val_loss: 20.0395
+Epoch 00015: val_loss did not improve
+Epoch 17/100
+16s - loss: 12.6177 - val_loss: 19.9324
+Epoch 00016: val_loss did not improve
+Epoch 18/100
+16s - loss: 12.6163 - val_loss: 19.9994
+Epoch 00017: val_loss did not improve
+Epoch 19/100
+16s - loss: 12.6087 - val_loss: 19.9235
+Epoch 00018: val_loss did not improve
+Epoch 20/100
+16s - loss: 12.6058 - val_loss: 19.9454
+Epoch 00019: val_loss did not improve
+Epoch 21/100
+16s - loss: 12.6003 - val_loss: 19.9700
+Epoch 00020: val_loss did not improve
+Epoch 22/100
+16s - loss: 12.5987 - val_loss: 19.9670
+Epoch 00021: val_loss did not improve
+Building srnn40_rs...
+
+Training srnn40_rs, last 10...
+Train on 388797 samples, validate on 194399 samples
+Epoch 1/100
+16s - loss: 13.1108 - val_loss: 20.1386
+Epoch 00000: val_loss improved from inf to 20.13859, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+16s - loss: 12.9996 - val_loss: 20.0725
+Epoch 00001: val_loss improved from 20.13859 to 20.07252, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 3/100
+16s - loss: 12.9595 - val_loss: 20.0672
+Epoch 00002: val_loss improved from 20.07252 to 20.06715, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 4/100
+16s - loss: 12.9266 - val_loss: 20.0009
+Epoch 00003: val_loss improved from 20.06715 to 20.00093, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 5/100
+16s - loss: 12.8992 - val_loss: 19.9570
+Epoch 00004: val_loss improved from 20.00093 to 19.95701, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 6/100
+16s - loss: 12.8784 - val_loss: 19.9796
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+16s - loss: 12.8602 - val_loss: 19.9643
+Epoch 00006: val_loss did not improve
+Epoch 8/100
+16s - loss: 12.8452 - val_loss: 19.9700
+Epoch 00007: val_loss did not improve
+Epoch 9/100
+16s - loss: 12.8346 - val_loss: 19.9387
+Epoch 00008: val_loss improved from 19.95701 to 19.93872, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 10/100
+16s - loss: 12.8237 - val_loss: 19.9097
+Epoch 00009: val_loss improved from 19.93872 to 19.90968, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 11/100
+16s - loss: 12.8162 - val_loss: 19.9164
+Epoch 00010: val_loss did not improve
+Epoch 12/100
+16s - loss: 12.8084 - val_loss: 19.8942
+Epoch 00011: val_loss improved from 19.90968 to 19.89422, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 13/100
+16s - loss: 12.8019 - val_loss: 19.9021
+Epoch 00012: val_loss did not improve
+Epoch 14/100
+16s - loss: 12.7948 - val_loss: 19.8974
+Epoch 00013: val_loss did not improve
+Epoch 15/100
+16s - loss: 12.7885 - val_loss: 19.8999
+Epoch 00014: val_loss did not improve
+Epoch 16/100
+16s - loss: 12.7837 - val_loss: 19.9628
+Epoch 00015: val_loss did not improve
+Epoch 17/100
+16s - loss: 12.7782 - val_loss: 19.8918
+Epoch 00016: val_loss improved from 19.89422 to 19.89182, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 18/100
+16s - loss: 12.7751 - val_loss: 19.8722
+Epoch 00017: val_loss improved from 19.89182 to 19.87221, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 19/100
+16s - loss: 12.7703 - val_loss: 19.8956
+Epoch 00018: val_loss did not improve
+Epoch 20/100
+16s - loss: 12.7651 - val_loss: 19.8869
+Epoch 00019: val_loss did not improve
+Epoch 21/100
+16s - loss: 12.7616 - val_loss: 19.8604
+Epoch 00020: val_loss improved from 19.87221 to 19.86041, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 22/100
+16s - loss: 12.7581 - val_loss: 19.8660
+Epoch 00021: val_loss did not improve
+Epoch 23/100
+16s - loss: 12.7547 - val_loss: 19.8575
+Epoch 00022: val_loss improved from 19.86041 to 19.85747, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 24/100
+16s - loss: 12.7512 - val_loss: 19.9492
+Epoch 00023: val_loss did not improve
+Epoch 25/100
+16s - loss: 12.7487 - val_loss: 19.8932
+Epoch 00024: val_loss did not improve
+Epoch 26/100
+21s - loss: 12.7467 - val_loss: 19.8545
+Epoch 00025: val_loss improved from 19.85747 to 19.85452, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 27/100
+16s - loss: 12.7427 - val_loss: 19.8603
+Epoch 00026: val_loss did not improve
+Epoch 28/100
+16s - loss: 12.7390 - val_loss: 19.9250
+Epoch 00027: val_loss did not improve
+Epoch 29/100
+16s - loss: 12.7356 - val_loss: 19.8672
+Epoch 00028: val_loss did not improve
+Epoch 30/100
+16s - loss: 12.7341 - val_loss: 19.9354
+Epoch 00029: val_loss did not improve
+Epoch 31/100
+16s - loss: 12.7322 - val_loss: 19.9039
+Epoch 00030: val_loss did not improve
+Epoch 32/100
+16s - loss: 12.7300 - val_loss: 19.8902
+Epoch 00031: val_loss did not improve
+Epoch 33/100
+16s - loss: 12.7278 - val_loss: 19.8486
+Epoch 00032: val_loss improved from 19.85452 to 19.84861, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 34/100
+16s - loss: 12.7255 - val_loss: 19.9256
+Epoch 00033: val_loss did not improve
+Epoch 35/100
+16s - loss: 12.7235 - val_loss: 19.8802
+Epoch 00034: val_loss did not improve
+Epoch 36/100
+16s - loss: 12.7201 - val_loss: 19.9696
+Epoch 00035: val_loss did not improve
+Epoch 37/100
+16s - loss: 12.7177 - val_loss: 19.9207
+Epoch 00036: val_loss did not improve
+Epoch 38/100
+16s - loss: 12.7149 - val_loss: 19.8472
+Epoch 00037: val_loss improved from 19.84861 to 19.84723, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 39/100
+16s - loss: 12.7147 - val_loss: 19.8624
+Epoch 00038: val_loss did not improve
+Epoch 40/100
+16s - loss: 12.7128 - val_loss: 19.9568
+Epoch 00039: val_loss did not improve
+Epoch 41/100
+16s - loss: 12.7106 - val_loss: 19.9488
+Epoch 00040: val_loss did not improve
+Epoch 42/100
+16s - loss: 12.7078 - val_loss: 19.9483
+Epoch 00041: val_loss did not improve
+Epoch 43/100
+16s - loss: 12.7064 - val_loss: 19.8686
+Epoch 00042: val_loss did not improve
+Epoch 44/100
+16s - loss: 12.7040 - val_loss: 19.8439
+Epoch 00043: val_loss improved from 19.84723 to 19.84392, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 45/100
+16s - loss: 12.7030 - val_loss: 19.8775
+Epoch 00044: val_loss did not improve
+Epoch 46/100
+16s - loss: 12.7015 - val_loss: 19.9006
+Epoch 00045: val_loss did not improve
+Epoch 47/100
+16s - loss: 12.7007 - val_loss: 19.8607
+Epoch 00046: val_loss did not improve
+Epoch 48/100
+16s - loss: 12.6975 - val_loss: 19.8871
+Epoch 00047: val_loss did not improve
+Epoch 49/100
+16s - loss: 12.6967 - val_loss: 19.8741
+Epoch 00048: val_loss did not improve
+Epoch 50/100
+16s - loss: 12.6966 - val_loss: 19.8995
+Epoch 00049: val_loss did not improve
+Epoch 51/100
+16s - loss: 12.6935 - val_loss: 19.8727
+Epoch 00050: val_loss did not improve
+Epoch 52/100
+16s - loss: 12.6921 - val_loss: 19.8734
+Epoch 00051: val_loss did not improve
+Epoch 53/100
+16s - loss: 12.6906 - val_loss: 19.8981
+Epoch 00052: val_loss did not improve
+Epoch 54/100
+16s - loss: 12.6884 - val_loss: 19.8494
+Epoch 00053: val_loss did not improve
+Epoch 55/100
+16s - loss: 12.6881 - val_loss: 19.9421
+Epoch 00054: val_loss did not improve
+
+Training srnn40_rs, last 20...
+Train on 388797 samples, validate on 194399 samples
+Epoch 1/100
+24s - loss: 12.6526 - val_loss: 19.8495
+Epoch 00000: val_loss improved from inf to 19.84953, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 2/100
+24s - loss: 12.6496 - val_loss: 19.8442
+Epoch 00001: val_loss improved from 19.84953 to 19.84416, saving model to /tmp/ifshort_rnn_weights.hdf5
+Epoch 3/100
+24s - loss: 12.6467 - val_loss: 19.8639
+Epoch 00002: val_loss did not improve
+Epoch 4/100
+24s - loss: 12.6438 - val_loss: 19.8768
+Epoch 00003: val_loss did not improve
+Epoch 5/100
+24s - loss: 12.6422 - val_loss: 19.9324
+Epoch 00004: val_loss did not improve
+Epoch 6/100
+24s - loss: 12.6396 - val_loss: 19.8801
+Epoch 00005: val_loss did not improve
+Epoch 7/100
+24s - loss: 12.6364 - val_loss: 19.9331
+Epoch 00006: val_loss did not improve
+Epoch 8/100
+24s - loss: 12.6341 - val_loss: 19.9162
+Epoch 00007: val_loss did not improve
+Epoch 9/100
+24s - loss: 12.6316 - val_loss: 19.9173
+Epoch 00008: val_loss did not improve
+Epoch 10/100
+24s - loss: 12.6295 - val_loss: 19.9156
+Epoch 00009: val_loss did not improve
+Epoch 11/100
+24s - loss: 12.6276 - val_loss: 19.9225
+Epoch 00010: val_loss did not improve
+Epoch 12/100
+24s - loss: 12.6267 - val_loss: 19.9151
+Epoch 00011: val_loss did not improve
+Epoch 13/100
+24s - loss: 12.6230 - val_loss: 19.9617
+Epoch 00012: val_loss did not improve
+

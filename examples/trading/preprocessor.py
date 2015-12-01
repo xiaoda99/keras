@@ -104,6 +104,7 @@ class KD(object):
         self.__dict__.update(locals())
         del self.self
         self.K_SMA = SMA(m1)
+        self.K_EMA = EMA(m1)
         self.D_SMA = SMA(m2)
         self.history = []
         self.hist_len = 0
@@ -122,10 +123,13 @@ class KD(object):
         else:
             RSV = (x - min(self.history)) * 1. / (max(self.history) - min(self.history))
         K = self.K_SMA.step(RSV) 
+        KE = self.K_EMA.step(RSV) 
         D = self.D_SMA.step(K)
+        RSV = RSV*2. - 1.
         K = K*2. - 1.
+        KE = KE*2. - 1.
         D = D*2. - 1.
-        return K, D
+        return RSV, K, KE
      
 class ATR(object):
     def __init__(self, t, n):
@@ -572,10 +576,24 @@ class TestPreprocessor(object):
             self.price_delta_EMA = {}
         if not hasattr(self, 'true_price_delta_EMA'):
             self.true_price_delta_EMA = {}
+        if not hasattr(self, 'true_price_delta_EMA2'):
+            self.true_price_delta_EMA2 = {}
+        if not hasattr(self, 'price_Momentum'):
+            self.price_Momentum = {}
+        if not hasattr(self, 'price_momentum_EMA'):
+            self.price_momentum_EMA = {}
+        if not hasattr(self, 'price_momentum_SMA'):
+            self.price_momentum_SMA = {}
+        if not hasattr(self, 'price_momentum_SMA2'):
+            self.price_momentum_SMA2 = {}
         x.price_ema = {}
 #        x.price_delta = {}
         x.price_delta_ema = {}
         x.true_price_delta_ema = {}
+        x.price_momentum = {}
+        x.price_momentum_ema = {}
+        x.price_momentum_sma = {}
+        x.price_momentum_sma2 = {}
         for t in [5, 10, 20, 40, 80]:
             if not t in self.price_EMA:
                 self.price_EMA[t] = EMA(t)
@@ -591,8 +609,24 @@ class TestPreprocessor(object):
             
             if not t in self.true_price_delta_EMA:
                 self.true_price_delta_EMA[t] = EMA(t)
-            x.true_price_delta_ema[t] = self.true_price_delta_EMA[t].step(x.price_delta1)
+            true_price_delta_ema = self.true_price_delta_EMA[t].step(x.price_delta1)
             
+            if not t in self.true_price_delta_EMA2:
+                self.true_price_delta_EMA2[t] = EMA(t/2)
+            x.true_price_delta_ema[t] = self.true_price_delta_EMA2[t].step(true_price_delta_ema)
+            
+            if not t in self.price_Momentum:
+                self.price_Momentum[t] = Momentum(t)
+            x.price_momentum[t] = self.price_Momentum[t].step(d.price)
+            if not t in self.price_momentum_EMA:
+                self.price_momentum_EMA[t] = EMA(t/2)
+            x.price_momentum_ema[t] = self.price_momentum_EMA[t].step(x.price_momentum[t])
+            if not t in self.price_momentum_SMA:
+                self.price_momentum_SMA[t] = SMA(t/2)
+            x.price_momentum_sma[t] = self.price_momentum_SMA[t].step(x.price_momentum[t])
+            if not t in self.price_momentum_SMA2:
+                self.price_momentum_SMA2[t] = SMA(t/4)
+            x.price_momentum_sma2[t] = self.price_momentum_SMA2[t].step(x.price_momentum[t])
 #        if not hasattr(self, 'BOLL'):
 #            self.BOLL = {}
 #        if not hasattr(self, 'ATR'):
@@ -610,17 +644,17 @@ class TestPreprocessor(object):
         
         if not hasattr(self, 'KD'):
             self.KD = {}
-        x.k = {}; x.d = {}
-        for t in [5, 10, 20]:
+        x.rsv = {}; x.k = {}; x.ke = {}; x.d = {}
+        for t in [10, 20, 40]:
             if not t in self.KD:
                 self.KD[t] = KD(t, t/2, t/2)
-            x.k[t], x.d[t] = self.KD[t].step(d.price)
+            x.rsv[t], x.k[t], x.ke[t] = self.KD[t].step(d.price)
                         
         price_up = max(0, x.price_delta1)
         price_down = max(0, -x.price_delta1)
         x.deal_vol_obv = {}
         x.price_rsi = {}
-        for t in [5, 10, 20]:
+        for t in [5, 10, 20, 40]:
             if not t in self.deal_vol_OBV:
                 self.deal_vol_OBV[t] = OBV(t)
             x.deal_vol_obv[t] = self.deal_vol_OBV[t].step(buy_vol, sell_vol)
@@ -629,26 +663,47 @@ class TestPreprocessor(object):
                 self.price_RSI[t] = RSI(t)
             x.price_rsi[t] = self.price_RSI[t].step(price_up, price_down) 
             
+        if not hasattr(self, 'ATR'):
+            self.ATR = {}
+        x.atr = {}
+        for t in [10, 20]:
+            if not t in self.ATR:
+                self.ATR[t] = ATR(t, t*4)
+            x.atr[t] = self.ATR[t].step(d.price)
+            
         # vol
         if not hasattr(self, 'vol_Delta1'):
             self.vol_Delta1 = Delta()
         x.vol_delta1 = self.vol_Delta1.step(d.deal_vol)
         if not hasattr(self, 'vol_EMA'):
             self.vol_EMA = {}
+        if not hasattr(self, 'vol_SMA'):
+            self.vol_SMA = {}
         if not hasattr(self, 'vol_Delta'):
             self.vol_Delta = {}
         if not hasattr(self, 'vol_delta_EMA'):
             self.vol_delta_EMA = {}
         if not hasattr(self, 'true_vol_delta_EMA'):
             self.true_vol_delta_EMA = {}
+        if not hasattr(self, 'vol_Momentum'):
+            self.vol_Momentum = {}
+        if not hasattr(self, 'vol_momentum_SMA'):
+            self.vol_momentum_SMA = {}
         x.vol_ema = {}
+        x.vol_sma = {}
 #        x.vol_delta = {}
         x.vol_delta_ema = {}
         x.true_vol_delta_ema = {}
-        for t in [5, 10]:
+        x.vol_momentum = {}
+        x.vol_momentum_sma = {}
+        for t in [5, 10, 20]:
             if not t in self.vol_EMA:
                 self.vol_EMA[t] = EMA(t)
             x.vol_ema[t] = self.vol_EMA[t].step(d.deal_vol)
+            
+            if not t in self.vol_SMA:
+                self.vol_SMA[t] = SMA(t)
+            x.vol_sma[t] = self.vol_SMA[t].step(d.deal_vol)
             
             if not t in self.vol_Delta:
                 self.vol_Delta[t] = Delta()
@@ -662,6 +717,12 @@ class TestPreprocessor(object):
                 self.true_vol_delta_EMA[t] = EMA(t)
             x.true_vol_delta_ema[t] = self.true_vol_delta_EMA[t].step(x.vol_delta1)
             
+            if not t in self.vol_Momentum:
+                self.vol_Momentum[t] = Momentum(t)
+            x.vol_momentum[t] = self.vol_Momentum[t].step(d.deal_vol)
+            if not t in self.vol_momentum_SMA:
+                self.vol_momentum_SMA[t] = SMA(t/4)
+            x.vol_momentum_sma[t] = self.vol_momentum_SMA[t].step(x.vol_momentum[t])
         order_info = []
         if len(self.x_hist) == 0:
             order_info += [0] * 10

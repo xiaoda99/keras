@@ -98,7 +98,8 @@ while len(questions) < TRAINING_SIZE:
         continue
     seen.add(key)
     # Pad the data with spaces such that it is always MAXLEN
-    q = '{}+{}'.format(a, b)
+#    q = '{}+{}'.format(a, b)
+    q = '{0}+{1}'.format(a, b)   #XD
     query = q + ' ' * (MAXLEN - len(q))
     ans = str(a + b)
     # Answers can be of maximum size DIGITS + 1
