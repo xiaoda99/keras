@@ -192,15 +192,22 @@ class Model(object):
         callbacks.on_train_begin()
 
         #XD
+        from examples.pm25.test_pm25 import test_model  #XD
+#        from examples.pm25.test_pm25 import data, targets, targets_mean  #XD
         print('Before training:')
-        val_outs = self._test_loop(val_f, val_ins, batch_size=batch_size, verbose=0)
-        if type(val_outs) != list:
-            val_outs = [val_outs]
-        # same labels assumed
-        epoch_logs = {}
-        for l, o in zip(out_labels, val_outs):
-            epoch_logs['val_' + l] = o
-        print(epoch_logs)
+        print('test on training set')
+        test_model(self, train=True)
+        print('test on test set')
+        test_model(self, train=False)
+        print(self.layers[-1].U_c.get_value(), self.layers[-1].U_f.get_value(), self.layers[-1].b_f.get_value())
+#        val_outs = self._test_loop(val_f, val_ins, batch_size=batch_size, verbose=0)
+#        if type(val_outs) != list:
+#            val_outs = [val_outs]
+#        # same labels assumed
+#        epoch_logs = {}
+#        for l, o in zip(out_labels, val_outs):
+#            epoch_logs['val_' + l] = o
+#        print(epoch_logs)
                             
         self.stop_training = False
         for epoch in range(nb_epoch):
@@ -244,19 +251,19 @@ class Model(object):
                             epoch_logs['val_' + l] = o
                             
                     # monitoring XD
-                    if do_monitoring:
-                        monitor_logs = OrderedDict()
-                        monitor_outs = self._test_loop(monitor_f, ins, batch_size=batch_size, verbose=0, shuffle=True)
-                        if type(monitor_outs) != list:
-                            monitor_outs = [monitor_outs]
-                        for l, o in zip(monitor_labels, monitor_outs):
-                            monitor_logs['train_' + l] = o
-                        monitor_val_outs = self._test_loop(monitor_f, val_ins, batch_size=batch_size, verbose=0, shuffle=True)
-                        if type(monitor_val_outs) != list:
-                            monitor_val_outs = [monitor_val_outs]
-                        for l, o in zip(monitor_labels, monitor_val_outs):
-                            monitor_logs['val_' + l] = o
-                        print(monitor_logs)
+#                    if do_monitoring:
+#                        monitor_logs = OrderedDict()
+#                        monitor_outs = self._test_loop(monitor_f, ins, batch_size=batch_size, verbose=0, shuffle=True)
+#                        if type(monitor_outs) != list:
+#                            monitor_outs = [monitor_outs]
+#                        for l, o in zip(monitor_labels, monitor_outs):
+#                            monitor_logs['train_' + l] = o
+#                        monitor_val_outs = self._test_loop(monitor_f, val_ins, batch_size=batch_size, verbose=0, shuffle=True)
+#                        if type(monitor_val_outs) != list:
+#                            monitor_val_outs = [monitor_val_outs]
+#                        for l, o in zip(monitor_labels, monitor_val_outs):
+#                            monitor_logs['val_' + l] = o
+#                        print(monitor_logs)
 
             callbacks.on_epoch_end(epoch, epoch_logs)
             if self.stop_training:
@@ -487,7 +494,9 @@ class Sequential(Model, containers.Sequential):
         self._test_with_acc = theano.function(test_ins, [test_loss, test_accuracy],
                                               allow_input_downcast=True, mode=theano_mode)
         #XD
-        self._monitor = None
+#        self._monitor = None
+        self._monitor = theano.function(predict_ins, [self.layers[-1].forgets, self.layers[-1].increments],
+                                      allow_input_downcast=True, mode=theano_mode)
 #        self._monitor = theano.function(test_ins, [mean_gain(self.y, self.y_test), 
 #                                                   optimal_mean_gain(self.y),
 ##                                                   gain_per_trade(self.y, self.y_test),
@@ -522,6 +531,11 @@ class Sequential(Model, containers.Sequential):
         ins = standardize_X(X)
         return self._predict(*ins)
 
+    #XD
+    def monitor_on_batch(self, X):
+        ins = standardize_X(X)
+        return self._monitor(*ins)
+    
     def fit(self, X, y, batch_size=128, nb_epoch=100, verbose=1, callbacks=[],
             validation_split=0., validation_data=None, shuffle=True, show_accuracy=False,
             class_weight=None, sample_weight=None):

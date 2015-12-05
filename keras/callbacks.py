@@ -171,7 +171,7 @@ class History(Callback):
                 self.history[k] = []
             self.history[k].append(v)
 
-
+from examples.pm25.test_pm25 import test_model #XD
 class ModelCheckpoint(Callback):
     def __init__(self, filepath, monitor='val_loss', verbose=0, save_best_only=False):
 
@@ -195,6 +195,13 @@ class ModelCheckpoint(Callback):
                               % (epoch, self.monitor, self.best, current, filepath))
                     self.best = current
                     self.model.save_weights(filepath, overwrite=True)
+                    
+                    #XD
+                    print('test on training set')
+                    test_model(self.model, train=True)
+                    print('test on test set')
+                    test_model(self.model, train=False)
+                    
                 else:
                     if self.verbose > 0:
                         print("Epoch %05d: %s did not improve" % (epoch, self.monitor))

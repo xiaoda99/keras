@@ -2,7 +2,7 @@ import numpy as np
 import cPickle
 import gzip 
 from profilehooks import profile
-#from keras.layers.recurrent_xd import LSTM, SimpleRNN
+from keras.layers.recurrent_xd import LSTM, SimpleRNN, ReducedLSTM, ReducedLSTM2, ReducedLSTM3
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
 
@@ -60,11 +60,31 @@ def rlstm_predict_batch(pm25, gfs, date_time, pm25_mean, pred_range, downsample=
 #    print 'predicting...'
     X[0] = normalize_batch(X[0])
     yp = rlstm_predict_batch.model.predict_on_batch(X)
+    forgets, increments = rlstm_predict_batch.model.monitor_on_batch(X)
 #    print 'done.'
     assert yp.ndim == 3 and yp.shape[2] == 1
     pred_pm25 = yp.reshape((yp.shape[0], yp.shape[1]))
 #    pred_pm25 += pm25_mean[:, pred_range[0]:pred_range[1], 0]
-    return pred_pm25
+    forgets = forgets.reshape((forgets.shape[0], forgets.shape[1]))
+    increments = increments.reshape((increments.shape[0], increments.shape[1]))
+    return pred_pm25, forgets, increments
+
+#def rlstm_predict_batch(pm25, gfs, date_time, pm25_mean, pred_range, downsample=1):
+##    pm25 = pm25 - pm25_mean
+#    X, y = transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range)
+#    n_steps = pred_range[1] - pred_range[0]
+#    if rlstm_predict_batch.model is None:
+#        print 'loading rlstm...'
+#        rlstm_predict_batch.model = load_rlstm()
+#        print 'done.'
+##    print 'predicting...'
+#    X[0] = normalize_batch(X[0])
+#    yp = rlstm_predict_batch.model.predict_on_batch(X)
+##    print 'done.'
+#    assert yp.ndim == 3 and yp.shape[2] == 1
+#    pred_pm25 = yp.reshape((yp.shape[0], yp.shape[1]))
+##    pred_pm25 += pm25_mean[:, pred_range[0]:pred_range[1], 0]
+#    return pred_pm25
 rlstm_predict_batch.model = None
 
 def predict_all(data, predict_fn, pred_range=[2, 42]):
@@ -81,6 +101,8 @@ def predict_all(data, predict_fn, pred_range=[2, 42]):
 
 def predict_all_batch(data, predict_fn, pred_range=[2, 42], batch_size=1024):
     predictions = []
+    fgts = []
+    incs = []
     for i in range(0, data.shape[0], batch_size):
         start = i
         stop = min(data.shape[0], i + batch_size)
@@ -88,10 +110,14 @@ def predict_all_batch(data, predict_fn, pred_range=[2, 42], batch_size=1024):
         gfs = data[start:stop, :, :6]
         date_time = data[start:stop, :, 6:-2]
         pm25_mean = data[start:stop, :, -2:-1]
-        pred_pm25 = predict_fn(pm25, gfs, date_time, pm25_mean, pred_range)
+        pred_pm25, forgets, increments = predict_fn(pm25, gfs, date_time, pm25_mean, pred_range)
         predictions.append(pred_pm25)
+        fgts.append(forgets)
+        incs.append(increments)
     predictions = np.vstack(predictions)
-    return predictions
+    fgts = np.vstack(fgts)
+    incs = np.vstack(incs)
+    return predictions, fgts, incs
 
 def mean_square_error(predictions, targets):
     return np.square(predictions - targets).mean(axis=0)
@@ -174,9 +200,9 @@ def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3)
     init_pm25 = pm25[:,pred_range[0]-1,:]
     init_gfs = gfs[:,:pred_range[0],:].reshape((gfs.shape[0], -1))
 #    X_init = np.hstack([init_pm25, init_gfs])
-    X_init = init_pm25
-    X = np.dstack(X).transpose((0, 2, 1))
-    y = np.dstack(y).transpose((0, 2, 1))
+    X_init = init_pm25.astype('float32')
+    X = np.dstack(X).transpose((0, 2, 1)).astype('float32')
+    y = np.dstack(y).transpose((0, 2, 1)).astype('float32')
 #    print 'X.shape, X_init.shape, y.shape =', X.shape, X_init.shape, y.shape
     return [X, X_init, X_init], y
 
@@ -202,7 +228,7 @@ def normalize(X_train, X_test):
         np.save('rlstm_X_stdev.npy', X_stdev)
         X_train = X_train.reshape((X_train.shape[0] / n_steps, n_steps, X_train.shape[1]))
         X_test = X_test.reshape((X_test.shape[0] / n_steps, n_steps, X_test.shape[1]))
-    return X_train.astype('float32'), X_test.astype('float32')
+    return X_train, X_test
      
 def normalize_batch(Xb):
     reshaped = False
@@ -247,7 +273,7 @@ def build_lstm_dataset(data, pred_range=[2,42], valid_pct=1./4, hist_len=3):
 #    data = np.copy(data)
     train_pct = 1. - valid_pct
     train_data = data[:data.shape[0]*train_pct]
-    valid_data = data[data.shape[0]*train_pct:]
+    valid_data = data[data.shape[0]*train_pct:data.shape[0]]
     print 'trainset.shape, testset.shape =', train_data.shape, valid_data.shape
     X_train, y_train = transform_sequences(*(parse_data(train_data) + (pred_range, hist_len)))
     X_valid, y_valid = transform_sequences(*(parse_data(valid_data) + (pred_range, hist_len)))
@@ -261,11 +287,28 @@ def clear_init(X):
 #        X[i] *= 0.
     return [X[0], X[1]*0., X[2]*0.]
 
-def test_model(model):
+def test_model2(model):
+    gdata = model.gdata
+    gtargets = gdata[:, 2:42, -1]
+    gtargets_mean = gdata[:, 2:42, -2]
     rlstm_predict_batch.model = model
-    targets = data[data.shape[0]*3./4:, 2:42, -1]
-    targets_mean = data[data.shape[0]*3./4:, 2:42, -2]
-    pred = predict_all_batch(data[data.shape[0]*3./4:], rlstm_predict_batch)
+    
+    data = gdata[:gdata.shape[0]*3./4]
+    targets = gtargets[:gtargets.shape[0]*3./4]
+    targets_mean = gtargets_mean[:gtargets_mean.shape[0]*3./4]
+    if gtargets.min() >= 0:
+        targets_mean = None
+        
+    pred, fgts, incs = predict_all_batch(data, rlstm_predict_batch)
+    mse_train = mean_square_error(pred, targets).mean()
+    
+    data = gdata[gdata.shape[0]*3./4:gdata.shape[0]*8./8]
+    targets = gtargets[gtargets.shape[0]*3./4:gtargets.shape[0]*8./8]
+    targets_mean = gtargets_mean[gtargets_mean.shape[0]*3./4:gtargets_mean.shape[0]*8./8]
+    if gtargets.min() >= 0:
+        targets_mean = None
+        
+    pred, fgts, incs = predict_all_batch(data, rlstm_predict_batch)
     mse = mean_square_error(pred, targets).mean()
     res = detection_error(pred, targets, targets_mean=targets_mean, pool_size=1)
     pod1 = res[0].mean()
@@ -279,41 +322,137 @@ def test_model(model):
     pod8 = res[0].mean()
     far8 = res[1].mean()
     csi8 = res[2].mean()
-    print '%20s%8.1f%10.2f%6.2f%6.2f%10.2f%6.2f%6.2f%10.2f%6.2f%6.2f' % (model.name, mse, 
+    print '%20s%8.1f%8.1f%10.2f%6.2f%6.2f%10.2f%6.2f%6.2f%10.2f%6.2f%6.2f' % (model.name, mse, mse_train, 
                                                                   pod1, far1, csi1, 
                                                                   pod4, far4, csi4,
                                                                   pod8, far8, csi8)
+    print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
+    print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
 #    return mse, pod1, far1, csi1, pod4, far4, csi4, pod8, far8, csi8
+    print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
     
-f = gzip.open('/home/xd/data/pm25data/forXiaodaDataset20151022_t100p100.pkl.gz', 'rb')   
-data = cPickle.load(f)
-data[:,:,-2:] -= 80
-data[:,:,2] = np.sqrt(data[:,:,2]**2 + data[:,:,3]**2)
-data[:,:,3] = data[:,:,2]
-data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target 
-f.close()
+def test_model(model, train=False):
+    gdata = model.gdata
+    gtargets = gdata[:, 2:42, -1]
+    gtargets_mean = gdata[:, 2:42, -2]
+    if train:
+        data = gdata[:gdata.shape[0]*3./4]
+        targets = gtargets[:gtargets.shape[0]*3./4]
+        targets_mean = gtargets_mean[:gtargets_mean.shape[0]*3./4]
+    else:
+        data = gdata[gdata.shape[0]*3./4:gdata.shape[0]*8./8]
+        targets = gtargets[gtargets.shape[0]*3./4:gtargets.shape[0]*8./8]
+        targets_mean = gtargets_mean[gtargets_mean.shape[0]*3./4:gtargets_mean.shape[0]*8./8]
+        
+    if gtargets.min() >= 0:
+        targets_mean = None
+        
+    rlstm_predict_batch.model = model
+    pred, fgts, incs = predict_all_batch(data, rlstm_predict_batch)
+    mse = mean_square_error(pred, targets).mean()
+    res = detection_error(pred, targets, targets_mean=targets_mean, pool_size=1)
+    pod1 = res[0].mean()
+    far1 = res[1].mean()
+    csi1 = res[2].mean()
+    res = detection_error(pred, targets, targets_mean=targets_mean, pool_size=4)
+    pod4 = res[0].mean()
+    far4 = res[1].mean()
+    csi4 = res[2].mean()
+    res = detection_error(pred, targets, targets_mean=targets_mean, pool_size=8)
+    pod8 = res[0].mean()
+    far8 = res[1].mean()
+    csi8 = res[2].mean()
+    print '%20s%8.1f%8.1f%10.2f%6.2f%6.2f%10.2f%6.2f%6.2f%10.2f%6.2f%6.2f' % (model.name, mse, 
+                                                                  pod1, far1, csi1, 
+                                                                  pod4, far4, csi4,
+                                                                  pod8, far8, csi8)
+    print 'fgts.min(axis=0) =\n', fgts.min(axis=0)
+    print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
+    print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
+#    return mse, pod1, far1, csi1, pod4, far4, csi4, pod8, far8, csi8
+    print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
+    
+gdata = None
 
-#X_train, y_train, X_valid, y_valid = build_mlp_dataset(data)
-#mlp = build_mlp(X_train.shape[-1], y_train.shape[-1], 40, 40)
-#mlp.name = 'mlp'
-#train(X_train, y_train, X_valid, y_valid, mlp, batch_size=4096)
-
-X_train, y_train, X_valid, y_valid = build_lstm_dataset(data, hist_len=3)
-for i in range(10):
-    name = 'rlstm2h' + str(i)
-    rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, name=name)
-    rlstm.name = name
-    batch_size = 128
-    print '\ntraining', rlstm.name
-    train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
-
-#rlstms = []
-#for i in range(10):
-#    rlstm = load_rlstm('rlstm'+str(i))
-#    rlstms.append(rlstm)
+if __name__ == '__main__':
+    f = gzip.open('/home/xd/data/pm25data/forXiaodaDataset20151022_t100p100.pkl.gz', 'rb')   
+    gdata = cPickle.load(f)
+    gdata[:,:,-2:] -= 80
+    gdata[:,:,2] = np.sqrt(gdata[:,:,2]**2 + gdata[:,:,3]**2)
+    gdata[:,:,3] = gdata[:,:,2]
+    gdata[:,:,-1] -= gdata[:,:,-2] # subtract pm25 mean from pm25 target
+    gdata = np.roll(gdata, -13925, axis=0) 
+    f.close()
+    
+    #X_train, y_train, X_valid, y_valid = build_mlp_dataset(data)
+    #mlp = build_mlp(X_train.shape[-1], y_train.shape[-1], 40, 40)
+    #mlp.name = 'mlp'
+    #train(X_train, y_train, X_valid, y_valid, mlp, batch_size=4096)
+    
+#    X_train, y_train, X_valid, y_valid = build_lstm_dataset(gdata, hist_len=3)
 #    
-#for rlstm in rlstms:
-#    test_model(rlstm)
-#    print rlstm.layers[-1].U_c.get_value(), rlstm.layers[-1].U_f.get_value(), rlstm.layers[-1].b_f.get_value()
-#pred_mlp = predict_all_batch(data[data.shape[0]*3./4:], mlp_predict_batch)  
-#pred = predict_all_batch(data[data.shape[0]*3./4:], rlstm_predict_batch)
+#    for i in range(10):
+#        name = 'rlstm_no_forget' + str(i)
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTM3, name='rlstm_no_forget')
+#        rlstm.name = name
+#        rlstm.gdata = gdata
+#        batch_size = 128
+#        print '\ntraining', rlstm.name
+#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
+#        
+#    for i in range(10):
+#        name = 'rlstm_old_forget' + str(i)
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTM2, name='rlstm_old_forget')
+#        rlstm.name = name
+#        rlstm.gdata = gdata
+#        batch_size = 128
+#        print '\ntraining', rlstm.name  
+#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
+#        
+#    for i in range(10):
+#        name = 'rlstm_new_forget' + str(i)
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTM, name='rlstm_new_forget')
+#        rlstm.name = name
+#        rlstm.gdata = gdata
+#        batch_size = 128
+#        print '\ntraining', rlstm.name
+#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
+        
+    name = 'rlstm_no_forget'    
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.gdata = gdata
+        test_model2(rlstm)
+    name = 'rlstm_old_forget'
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.gdata = gdata
+        test_model2(rlstm)
+    name = 'rlstm_new_forget'
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.gdata = gdata
+        test_model2(rlstm)
+#    rlstms = []
+#    for i in range(10):
+#        rlstm = load_rlstm('rlstm'+str(i))
+#        rlstms.append(rlstm)
+#        rlstm.gdata = gdata
+#        test_model(rlstm, train=True)
+#        test_model(rlstm, train=False)
+#        print rlstm.layers[-1].U_c.get_value(), rlstm.layers[-1].U_f.get_value(), rlstm.layers[-1].b_f.get_value()
+        
+    #for rlstm in rlstms:
+    #    test_model(rlstm)
+    #    print rlstm.layers[-1].U_c.get_value(), rlstm.layers[-1].U_f.get_value(), rlstm.layers[-1].b_f.get_value()
+    #pred_mlp = predict_all_batch(data[data.shape[0]*3./4:], mlp_predict_batch)  
+    #pred = predict_all_batch(data[data.shape[0]*3./4:], rlstm_predict_batch)
+    
+#y = y_valid[((y_valid[:,:,0].min(axis=1) < 60) & (y_valid[:,:,0].max(axis=1) > 100)), :, 0]
+#i = np.random.randint(y.shape[0]); yp = rlstm.predict_on_batch([X_valid[0][i:i+1], X_valid[1][i:i+1], X_valid[2][i:i+1]])[0,:,0]; plt.plot(yp, label='yp'); plt.plot(y[i], label='y'); plt.legend(); plt.show()
