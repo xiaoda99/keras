@@ -194,12 +194,12 @@ class Model(object):
         #XD
         from examples.pm25.test_pm25 import test_model  #XD
 #        from examples.pm25.test_pm25 import data, targets, targets_mean  #XD
-        print('Before training:')
-        print('test on training set')
-        test_model(self, train=True)
-        print('test on test set')
-        test_model(self, train=False)
-        print(self.layers[-1].U_c.get_value(), self.layers[-1].U_f.get_value(), self.layers[-1].b_f.get_value())
+#        print('Before training:')
+#        print('test on training set')
+#        test_model(self, train=True)
+#        print('test on test set')
+#        test_model(self, train=False)
+#        print(self.layers[-1].U_c.get_value(), self.layers[-1].U_f.get_value(), self.layers[-1].b_f.get_value())
 #        val_outs = self._test_loop(val_f, val_ins, batch_size=batch_size, verbose=0)
 #        if type(val_outs) != list:
 #            val_outs = [val_outs]
