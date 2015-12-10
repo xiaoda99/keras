@@ -1,0 +1,3171 @@
+
+training rlstm_forget0
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 404.2968 - val_loss: 724.8855
+Epoch 00000: val_loss improved from inf to 724.88547, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   299.7      0.39  0.27  0.34      0.39  0.21  0.36      0.39  0.16  0.37
+fgts.min(axis=0) =
+[ 0.02683392  0.03416637  0.04298167  0.12353104]
+fgts.mean() = 0.992038 fgts.min() = 0.0268339
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.0474417 1.53052 1.44038 1.62618
+U_c = [[-0.06572615]] U_f = [[ 0.12271645]] b_f = [ 1.27942181]
+Valid:
+       rlstm_forget0   724.9      0.28  0.29  0.24      0.32  0.19  0.30      0.35  0.12  0.33
+fgts.min(axis=0) =
+[ 0.10240788  0.22782046  0.22256891  0.12142134]
+fgts.mean() = 0.98663 fgts.min() = 0.00946912
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.77593 2.00506 1.50322 2.35211
+U_c = [[-0.06572615]] U_f = [[ 0.12271645]] b_f = [ 1.27942181]
+Test:
+       rlstm_forget0  3077.7      0.27  0.55  0.23      0.31  0.50  0.26      0.34  0.44  0.29
+fgts.min(axis=0) =
+[ 0.17744233  0.22007219  0.05310918  0.50433612]
+fgts.mean() = 0.994634 fgts.min() = 0.0388023
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.569273 2.47791 2.02985 2.87548
+U_c = [[-0.06572615]] U_f = [[ 0.12271645]] b_f = [ 1.27942181]
+Epoch 2/300
+20s - loss: 281.3588 - val_loss: 794.9848
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+20s - loss: 252.9815 - val_loss: 668.9305
+Epoch 00002: val_loss improved from 724.88547 to 668.93052, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   243.6      0.49  0.28  0.41      0.47  0.21  0.42      0.46  0.16  0.43
+fgts.min(axis=0) =
+[ 0.09735628  0.07090213  0.08686244  0.08350825]
+fgts.mean() = 0.959294 fgts.min() = 0.0709021
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.568107 2.52784 2.0598 2.95252
+U_c = [[-0.06647579]] U_f = [[ 0.04398484]] b_f = [ 1.02292454]
+Valid:
+       rlstm_forget0   668.9      0.48  0.27  0.41      0.51  0.19  0.46      0.53  0.14  0.49
+fgts.min(axis=0) =
+[ 0.06203386  0.05187224  0.05186115  0.0523469 ]
+fgts.mean() = 0.971607 fgts.min() = 0.0518611
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.992168 3.41271 2.57428 4.15663
+U_c = [[-0.06647579]] U_f = [[ 0.04398484]] b_f = [ 1.02292454]
+Test:
+       rlstm_forget0  2923.0      0.34  0.50  0.28      0.41  0.44  0.33      0.45  0.38  0.37
+fgts.min(axis=0) =
+[ 0.41117796  0.52316946  0.52452165  0.59942287]
+fgts.mean() = 0.996568 fgts.min() = 0.138757
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.521153 3.3868 2.86574 3.90784
+U_c = [[-0.06647579]] U_f = [[ 0.04398484]] b_f = [ 1.02292454]
+Epoch 4/300
+20s - loss: 236.8193 - val_loss: 661.9701
+Epoch 00003: val_loss improved from 668.93052 to 661.97008, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   231.7      0.51  0.27  0.43      0.49  0.20  0.44      0.49  0.16  0.45
+fgts.min(axis=0) =
+[ 0.04457257  0.03588339  0.03971553  0.0434945 ]
+fgts.mean() = 0.943882 fgts.min() = 0.0287866
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.762125 2.71121 2.09146 3.25195
+U_c = [[-0.06080719]] U_f = [[ 0.02032028]] b_f = [ 0.99835896]
+Valid:
+       rlstm_forget0   662.0      0.51  0.30  0.42      0.55  0.22  0.48      0.57  0.16  0.52
+fgts.min(axis=0) =
+[ 0.03853978  0.03400547  0.03387574  0.03372361]
+fgts.mean() = 0.966939 fgts.min() = 0.0337236
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.06092 3.64733 2.7699 4.41573
+U_c = [[-0.06080719]] U_f = [[ 0.02032028]] b_f = [ 0.99835896]
+Test:
+       rlstm_forget0  3455.0      0.32  0.46  0.27      0.39  0.40  0.32      0.43  0.35  0.37
+fgts.min(axis=0) =
+[ 0.46999183  0.49215126  0.52188224  0.5101496 ]
+fgts.mean() = 0.99382 fgts.min() = 0.159593
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.923922 3.66684 3.14427 4.07111
+U_c = [[-0.06080719]] U_f = [[ 0.02032028]] b_f = [ 0.99835896]
+Epoch 5/300
+20s - loss: 225.1146 - val_loss: 717.7885
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+19s - loss: 215.7886 - val_loss: 728.6281
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+20s - loss: 207.7335 - val_loss: 745.6851
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+19s - loss: 200.8584 - val_loss: 747.5055
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+19s - loss: 194.3493 - val_loss: 765.5123
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+19s - loss: 188.8391 - val_loss: 719.9756
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+19s - loss: 183.7714 - val_loss: 754.4371
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+19s - loss: 179.3725 - val_loss: 669.1663
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+19s - loss: 175.4609 - val_loss: 641.4324
+Epoch 00012: val_loss improved from 661.97008 to 641.43237, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   175.2      0.55  0.21  0.48      0.52  0.16  0.48      0.52  0.12  0.49
+fgts.min(axis=0) =
+[ 0.00577588  0.00569277  0.00572358  0.00584577]
+fgts.mean() = 0.909376 fgts.min() = 0.00569277
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.35649 3.62903 2.70706 4.29597
+U_c = [[-0.03682073]] U_f = [[ 0.00134178]] b_f = [ 1.18547714]
+Valid:
+       rlstm_forget0   641.4      0.54  0.42  0.40      0.61  0.35  0.47      0.65  0.29  0.52
+fgts.min(axis=0) =
+[ 0.00192533  0.00186787  0.0018045   0.00178932]
+fgts.mean() = 0.918183 fgts.min() = 0.00174334
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.48897 4.76465 3.80775 5.4869
+U_c = [[-0.03682073]] U_f = [[ 0.00134178]] b_f = [ 1.18547714]
+Test:
+       rlstm_forget0  4598.0      0.27  0.39  0.23      0.33  0.37  0.28      0.38  0.34  0.32
+fgts.min(axis=0) =
+[ 0.00048771  0.00050678  0.00049969  0.00048995]
+fgts.mean() = 0.919043 fgts.min() = 0.000279532
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.18077 6.69952 5.3679 7.34877
+U_c = [[-0.03682073]] U_f = [[ 0.00134178]] b_f = [ 1.18547714]
+Epoch 14/300
+19s - loss: 171.2126 - val_loss: 626.5091
+Epoch 00013: val_loss improved from 641.43237 to 626.50911, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   168.6      0.59  0.24  0.50      0.57  0.19  0.51      0.58  0.15  0.53
+fgts.min(axis=0) =
+[ 0.0020247   0.00197987  0.00199391  0.00204832]
+fgts.mean() = 0.891859 fgts.min() = 0.00197987
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.24373 3.63299 2.79152 4.26248
+U_c = [[-0.03048779]] U_f = [[ 0.00150589]] b_f = [ 1.19683754]
+Valid:
+       rlstm_forget0   626.5      0.53  0.43  0.38      0.61  0.35  0.46      0.66  0.30  0.52
+fgts.min(axis=0) =
+[ 0.00270766  0.00262246  0.00252475  0.00250152]
+fgts.mean() = 0.875748 fgts.min() = 0.00243906
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.41701 4.83079 3.87445 5.58388
+U_c = [[-0.03048779]] U_f = [[ 0.00150589]] b_f = [ 1.19683754]
+Test:
+       rlstm_forget0  3839.4      0.23  0.44  0.20      0.33  0.38  0.28      0.40  0.33  0.34
+fgts.min(axis=0) =
+[ 0.00039981  0.00039344  0.00039028  0.00038561]
+fgts.mean() = 0.863977 fgts.min() = 0.000187193
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.87922 6.51137 5.31097 7.13515
+U_c = [[-0.03048779]] U_f = [[ 0.00150589]] b_f = [ 1.19683754]
+Epoch 15/300
+19s - loss: 165.9960 - val_loss: 620.1064
+Epoch 00014: val_loss improved from 626.50911 to 620.10636, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   166.5      0.56  0.21  0.49      0.54  0.16  0.49      0.53  0.12  0.50
+fgts.min(axis=0) =
+[ 0.00278491  0.0027005   0.00275024  0.00275405]
+fgts.mean() = 0.888873 fgts.min() = 0.0027005
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.43572 3.71035 2.80929 4.32327
+U_c = [[-0.02463659]] U_f = [[ 0.0018362]] b_f = [ 1.20364928]
+Valid:
+       rlstm_forget0   620.1      0.44  0.42  0.35      0.54  0.34  0.43      0.59  0.29  0.48
+fgts.min(axis=0) =
+[ 0.00309305  0.00298044  0.00284815  0.00281695]
+fgts.mean() = 0.857868 fgts.min() = 0.00273191
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.69729 4.91529 3.8262 5.70564
+U_c = [[-0.02463659]] U_f = [[ 0.0018362]] b_f = [ 1.20364928]
+Test:
+       rlstm_forget0  3738.9      0.18  0.42  0.16      0.27  0.36  0.24      0.35  0.31  0.31
+fgts.min(axis=0) =
+[ 0.00054342  0.00053344  0.00052856  0.00052164]
+fgts.mean() = 0.828572 fgts.min() = 0.000254158
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.08976 6.53852 5.21349 7.19338
+U_c = [[-0.02463659]] U_f = [[ 0.0018362]] b_f = [ 1.20364928]
+Epoch 16/300
+19s - loss: 161.9526 - val_loss: 640.5091
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+19s - loss: 159.0926 - val_loss: 634.5628
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+19s - loss: 156.6337 - val_loss: 645.8551
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+19s - loss: 154.7123 - val_loss: 653.5423
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+19s - loss: 152.8368 - val_loss: 622.6846
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+19s - loss: 151.1424 - val_loss: 628.3648
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+19s - loss: 149.5790 - val_loss: 620.4298
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+19s - loss: 147.9153 - val_loss: 629.2582
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+19s - loss: 146.5938 - val_loss: 628.0714
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+19s - loss: 145.2209 - val_loss: 622.9734
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+19s - loss: 144.0282 - val_loss: 656.5495
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+19s - loss: 142.8255 - val_loss: 646.4495
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+19s - loss: 141.6651 - val_loss: 636.3275
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+19s - loss: 140.4246 - val_loss: 650.1331
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+19s - loss: 139.5736 - val_loss: 632.2250
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+19s - loss: 138.4036 - val_loss: 642.8130
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+19s - loss: 137.4365 - val_loss: 644.0558
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+19s - loss: 136.5866 - val_loss: 629.6553
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+19s - loss: 135.5983 - val_loss: 633.7430
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+19s - loss: 134.6617 - val_loss: 645.5772
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+19s - loss: 133.9114 - val_loss: 630.9102
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+19s - loss: 133.3857 - val_loss: 623.0108
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+19s - loss: 132.5991 - val_loss: 625.8641
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+19s - loss: 131.9654 - val_loss: 636.6181
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+19s - loss: 131.1898 - val_loss: 618.9764
+Epoch 00039: val_loss improved from 620.10636 to 618.97641, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   127.3      0.64  0.20  0.55      0.63  0.15  0.56      0.64  0.12  0.59
+fgts.min(axis=0) =
+[ 0.00025545  0.00024859  0.00025297  0.00026514]
+fgts.mean() = 0.864159 fgts.min() = 0.000248589
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.6789 4.27859 3.27975 4.93436
+U_c = [[-0.00419447]] U_f = [[ 0.00272314]] b_f = [ 1.33969188]
+Valid:
+       rlstm_forget0   619.0      0.37  0.41  0.30      0.46  0.33  0.39      0.52  0.26  0.45
+fgts.min(axis=0) =
+[ 0.00092023  0.00091538  0.00089775  0.00089603]
+fgts.mean() = 0.818071 fgts.min() = 0.000892374
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.1204 5.403 4.01591 6.36173
+U_c = [[-0.00419447]] U_f = [[ 0.00272314]] b_f = [ 1.33969188]
+Test:
+       rlstm_forget0  3648.8      0.15  0.40  0.14      0.22  0.35  0.20      0.29  0.29  0.26
+fgts.min(axis=0) =
+[ 0.00213965  0.0021148   0.00210011  0.00208229]
+fgts.mean() = 0.782654 fgts.min() = 0.000418081
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.14816 6.5804 4.75441 7.61178
+U_c = [[-0.00419447]] U_f = [[ 0.00272314]] b_f = [ 1.33969188]
+Epoch 41/300
+19s - loss: 130.5630 - val_loss: 608.8940
+Epoch 00040: val_loss improved from 618.97641 to 608.89403, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   128.5      0.67  0.21  0.56      0.65  0.16  0.58      0.66  0.12  0.60
+fgts.min(axis=0) =
+[ 0.00020758  0.00020255  0.00020586  0.00021497]
+fgts.mean() = 0.86927 fgts.min() = 0.000202548
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.53855 4.2027 3.30553 4.80828
+U_c = [[-0.00325653]] U_f = [[ 0.00253171]] b_f = [ 1.34207618]
+Valid:
+       rlstm_forget0   608.9      0.39  0.40  0.32      0.47  0.33  0.39      0.53  0.27  0.45
+fgts.min(axis=0) =
+[ 0.0010298   0.00101919  0.00099392  0.00099226]
+fgts.mean() = 0.814528 fgts.min() = 0.000987977
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.88826 5.21276 3.99079 6.08508
+U_c = [[-0.00325653]] U_f = [[ 0.00253171]] b_f = [ 1.34207618]
+Test:
+       rlstm_forget0  3693.4      0.14  0.40  0.13      0.21  0.35  0.19      0.28  0.29  0.25
+fgts.min(axis=0) =
+[ 0.00191657  0.00191551  0.00192348  0.00191551]
+fgts.mean() = 0.774227 fgts.min() = 0.00044599
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.23761 6.5348 4.72444 7.50512
+U_c = [[-0.00325653]] U_f = [[ 0.00253171]] b_f = [ 1.34207618]
+Epoch 42/300
+19s - loss: 129.7957 - val_loss: 614.4758
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+19s - loss: 129.2803 - val_loss: 629.2359
+Epoch 00042: val_loss did not improve
+Epoch 44/300
+19s - loss: 128.4990 - val_loss: 659.1220
+Epoch 00043: val_loss did not improve
+Epoch 45/300
+19s - loss: 127.9212 - val_loss: 619.1681
+Epoch 00044: val_loss did not improve
+Epoch 46/300
+19s - loss: 127.4090 - val_loss: 620.9636
+Epoch 00045: val_loss did not improve
+Epoch 47/300
+19s - loss: 126.7809 - val_loss: 623.7252
+Epoch 00046: val_loss did not improve
+Epoch 48/300
+19s - loss: 126.1863 - val_loss: 623.1719
+Epoch 00047: val_loss did not improve
+Epoch 49/300
+19s - loss: 125.8062 - val_loss: 606.0128
+Epoch 00048: val_loss improved from 608.89403 to 606.01280, saving model to rlstm_forget0_weights.hdf5
+Train:
+       rlstm_forget0   139.3      0.68  0.22  0.57      0.67  0.18  0.59      0.69  0.15  0.62
+fgts.min(axis=0) =
+[  1.86409161e-05   1.82905769e-05   1.86337893e-05   1.95169669e-05]
+fgts.mean() = 0.850122 fgts.min() = 1.82906e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.51327 4.31528 3.44304 4.91371
+U_c = [[-0.00281555]] U_f = [[ 0.0030403]] b_f = [ 1.35764933]
+Valid:
+       rlstm_forget0   606.0      0.37  0.40  0.31      0.46  0.33  0.38      0.53  0.28  0.45
+fgts.min(axis=0) =
+[ 0.00118529  0.00118162  0.00116634  0.00116292]
+fgts.mean() = 0.789072 fgts.min() = 0.00116292
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.88915 5.34817 4.08131 6.27982
+U_c = [[-0.00281555]] U_f = [[ 0.0030403]] b_f = [ 1.35764933]
+Test:
+       rlstm_forget0  3513.9      0.14  0.45  0.13      0.21  0.38  0.19      0.28  0.32  0.25
+fgts.min(axis=0) =
+[ 0.00071547  0.00072325  0.00072815  0.00073892]
+fgts.mean() = 0.760039 fgts.min() = 0.000158846
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.93089 6.47171 4.80482 7.44425
+U_c = [[-0.00281555]] U_f = [[ 0.0030403]] b_f = [ 1.35764933]
+Epoch 50/300
+19s - loss: 125.3506 - val_loss: 615.5413
+Epoch 00049: val_loss did not improve
+Epoch 51/300
+19s - loss: 124.9578 - val_loss: 629.3963
+Epoch 00050: val_loss did not improve
+Epoch 52/300
+19s - loss: 124.4639 - val_loss: 633.9767
+Epoch 00051: val_loss did not improve
+Epoch 53/300
+19s - loss: 123.9769 - val_loss: 644.0854
+Epoch 00052: val_loss did not improve
+Epoch 54/300
+19s - loss: 123.6548 - val_loss: 652.1709
+Epoch 00053: val_loss did not improve
+Epoch 55/300
+19s - loss: 123.2951 - val_loss: 636.1457
+Epoch 00054: val_loss did not improve
+Epoch 56/300
+19s - loss: 122.7548 - val_loss: 625.2071
+Epoch 00055: val_loss did not improve
+Epoch 57/300
+19s - loss: 122.4355 - val_loss: 633.6847
+Epoch 00056: val_loss did not improve
+Epoch 58/300
+19s - loss: 122.1025 - val_loss: 614.2688
+Epoch 00057: val_loss did not improve
+Epoch 59/300
+19s - loss: 121.7785 - val_loss: 657.9717
+Epoch 00058: val_loss did not improve
+Epoch 60/300
+19s - loss: 121.4320 - val_loss: 622.7305
+Epoch 00059: val_loss did not improve
+Epoch 61/300
+19s - loss: 121.0278 - val_loss: 623.8596
+Epoch 00060: val_loss did not improve
+Epoch 62/300
+19s - loss: 120.7287 - val_loss: 632.8015
+Epoch 00061: val_loss did not improve
+Epoch 63/300
+19s - loss: 120.5067 - val_loss: 623.9534
+Epoch 00062: val_loss did not improve
+Epoch 64/300
+19s - loss: 120.1505 - val_loss: 644.2061
+Epoch 00063: val_loss did not improve
+Epoch 65/300
+19s - loss: 119.8500 - val_loss: 658.5133
+Epoch 00064: val_loss did not improve
+Epoch 66/300
+19s - loss: 119.5436 - val_loss: 637.6727
+Epoch 00065: val_loss did not improve
+Epoch 67/300
+19s - loss: 119.1197 - val_loss: 623.2889
+Epoch 00066: val_loss did not improve
+Epoch 68/300
+19s - loss: 118.8019 - val_loss: 623.1494
+Epoch 00067: val_loss did not improve
+Epoch 69/300
+19s - loss: 118.7430 - val_loss: 640.3082
+Epoch 00068: val_loss did not improve
+Epoch 70/300
+19s - loss: 118.3766 - val_loss: 642.9164
+Epoch 00069: val_loss did not improve
+Epoch 71/300
+19s - loss: 118.0953 - val_loss: 624.4142
+Epoch 00070: val_loss did not improve
+Epoch 72/300
+19s - loss: 117.9126 - val_loss: 628.3288
+Epoch 00071: val_loss did not improve
+Epoch 73/300
+19s - loss: 117.5696 - val_loss: 673.5786
+Epoch 00072: val_loss did not improve
+Epoch 74/300
+19s - loss: 117.3666 - val_loss: 639.0356
+Epoch 00073: val_loss did not improve
+Epoch 75/300
+19s - loss: 117.1374 - val_loss: 641.4599
+Epoch 00074: val_loss did not improve
+Epoch 76/300
+19s - loss: 116.7364 - val_loss: 639.2068
+Epoch 00075: val_loss did not improve
+Epoch 77/300
+19s - loss: 116.6319 - val_loss: 662.7222
+Epoch 00076: val_loss did not improve
+Epoch 78/300
+19s - loss: 116.3931 - val_loss: 645.2881
+Epoch 00077: val_loss did not improve
+Epoch 79/300
+19s - loss: 116.1410 - val_loss: 659.9868
+Epoch 00078: val_loss did not improve
+Epoch 80/300
+19s - loss: 115.8740 - val_loss: 653.3589
+Epoch 00079: val_loss did not improve
+
+training rlstm_forget1
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 405.3768 - val_loss: 707.3053
+Epoch 00000: val_loss improved from inf to 707.30530, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   300.6      0.42  0.30  0.36      0.42  0.22  0.38      0.41  0.17  0.38
+fgts.min(axis=0) =
+[ 0.03509183  0.04702443  0.05888969  0.09433936]
+fgts.mean() = 0.989612 fgts.min() = 0.0350918
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.0659595 1.56845 1.46352 1.67911
+U_c = [[-0.06467853]] U_f = [[ 0.11440884]] b_f = [ 1.27022314]
+Valid:
+       rlstm_forget1   707.3      0.32  0.28  0.27      0.36  0.19  0.33      0.39  0.12  0.37
+fgts.min(axis=0) =
+[ 0.15942234  0.21015583  0.14866349  0.18650782]
+fgts.mean() = 0.987628 fgts.min() = 0.0211771
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.70506 2.01804 1.55312 2.35845
+U_c = [[-0.06467853]] U_f = [[ 0.11440884]] b_f = [ 1.27022314]
+Test:
+       rlstm_forget1  3000.3      0.31  0.56  0.25      0.36  0.51  0.28      0.39  0.45  0.31
+fgts.min(axis=0) =
+[ 0.21512882  0.22277707  0.17514548  0.35874465]
+fgts.mean() = 0.996089 fgts.min() = 0.0164427
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.357936 2.46985 2.14605 2.78352
+U_c = [[-0.06467853]] U_f = [[ 0.11440884]] b_f = [ 1.27022314]
+Epoch 2/300
+20s - loss: 278.7453 - val_loss: 860.3603
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+20s - loss: 251.0828 - val_loss: 693.4780
+Epoch 00002: val_loss improved from 707.30530 to 693.47804, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   241.5      0.50  0.29  0.42      0.48  0.21  0.42      0.46  0.16  0.42
+fgts.min(axis=0) =
+[ 0.02973522  0.03314957  0.03276481  0.03276327]
+fgts.mean() = 0.949611 fgts.min() = 0.0297352
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.683231 2.49687 1.94108 2.98418
+U_c = [[-0.06307438]] U_f = [[ 0.03686693]] b_f = [ 0.92609125]
+Valid:
+       rlstm_forget1   693.5      0.50  0.28  0.42      0.53  0.20  0.47      0.55  0.14  0.50
+fgts.min(axis=0) =
+[ 0.04099848  0.03982396  0.03978728  0.04018218]
+fgts.mean() = 0.967864 fgts.min() = 0.0387442
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.01408 3.33194 2.52452 4.01717
+U_c = [[-0.06307438]] U_f = [[ 0.03686693]] b_f = [ 0.92609125]
+Test:
+       rlstm_forget1  3148.3      0.27  0.52  0.24      0.33  0.45  0.28      0.37  0.38  0.32
+fgts.min(axis=0) =
+[ 0.35425815  0.3370882   0.31445527  0.36703196]
+fgts.mean() = 0.991178 fgts.min() = 0.17317
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.838363 3.25657 2.74343 3.66094
+U_c = [[-0.06307438]] U_f = [[ 0.03686693]] b_f = [ 0.92609125]
+Epoch 4/300
+20s - loss: 234.4600 - val_loss: 732.9294
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+20s - loss: 221.1380 - val_loss: 718.6564
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+20s - loss: 210.4971 - val_loss: 784.5743
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+20s - loss: 202.5849 - val_loss: 750.0302
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 196.4590 - val_loss: 835.1754
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 191.6538 - val_loss: 846.6922
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 187.3453 - val_loss: 858.1324
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 183.6308 - val_loss: 895.2831
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 180.1303 - val_loss: 938.3612
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+20s - loss: 176.8123 - val_loss: 933.0562
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 172.7230 - val_loss: 944.2976
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 168.9672 - val_loss: 844.2214
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 165.9388 - val_loss: 776.2186
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+20s - loss: 162.7943 - val_loss: 686.6895
+Epoch 00016: val_loss improved from 693.47804 to 686.68947, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   167.9      0.64  0.26  0.52      0.62  0.21  0.54      0.63  0.16  0.56
+fgts.min(axis=0) =
+[  2.91268243e-05   2.84931739e-05   2.88692027e-05   3.02390436e-05]
+fgts.mean() = 0.896182 fgts.min() = 2.84932e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.20723 3.75812 2.94606 4.37809
+U_c = [[-0.03427937]] U_f = [[ 0.00246848]] b_f = [ 1.071226]
+Valid:
+       rlstm_forget1   686.7      0.51  0.42  0.38      0.56  0.33  0.45      0.59  0.28  0.49
+fgts.min(axis=0) =
+[ 0.00058913  0.00061033  0.00061581  0.00061578]
+fgts.mean() = 0.880036 fgts.min() = 0.000589129
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.12973 5.08593 3.73938 5.96611
+U_c = [[-0.03427937]] U_f = [[ 0.00246848]] b_f = [ 1.071226]
+Test:
+       rlstm_forget1  3992.7      0.24  0.27  0.22      0.28  0.26  0.25      0.31  0.24  0.28
+fgts.min(axis=0) =
+[  2.21637256e-05   2.19008580e-05   2.19760495e-05   2.28280405e-05]
+fgts.mean() = 0.821432 fgts.min() = 1.96652e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.81735 7.70428 4.73186 9.00904
+U_c = [[-0.03427937]] U_f = [[ 0.00246848]] b_f = [ 1.071226]
+Epoch 18/300
+20s - loss: 159.8041 - val_loss: 725.1874
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+20s - loss: 157.2991 - val_loss: 725.6783
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+20s - loss: 155.1607 - val_loss: 688.0732
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 153.2612 - val_loss: 742.8907
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 151.6873 - val_loss: 754.2434
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+20s - loss: 150.1158 - val_loss: 746.6733
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 148.7818 - val_loss: 722.4773
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 147.5305 - val_loss: 782.5702
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+20s - loss: 146.2961 - val_loss: 711.8295
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+20s - loss: 145.2794 - val_loss: 691.0683
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+20s - loss: 144.1958 - val_loss: 712.9832
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+20s - loss: 143.1442 - val_loss: 709.2050
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+20s - loss: 141.9337 - val_loss: 716.8971
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+20s - loss: 140.8597 - val_loss: 735.5333
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+20s - loss: 139.8325 - val_loss: 655.1248
+Epoch 00031: val_loss improved from 686.68947 to 655.12476, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   138.2      0.63  0.23  0.53      0.61  0.17  0.54      0.61  0.13  0.56
+fgts.min(axis=0) =
+[  3.55150377e-07   3.51242107e-07   3.54068504e-07   3.54487128e-07]
+fgts.mean() = 0.875831 fgts.min() = 3.48427e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.58575 4.12291 3.22268 4.70733
+U_c = [[-0.00838802]] U_f = [[ 0.00105815]] b_f = [ 1.1241591]
+Valid:
+       rlstm_forget1   655.1      0.43  0.40  0.35      0.50  0.32  0.41      0.53  0.27  0.45
+fgts.min(axis=0) =
+[ 0.00015098  0.00013963  0.00013957  0.00013957]
+fgts.mean() = 0.831568 fgts.min() = 0.000139561
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.53479 5.31342 3.70169 6.28176
+U_c = [[-0.00838802]] U_f = [[ 0.00105815]] b_f = [ 1.1241591]
+Test:
+       rlstm_forget1  3803.2      0.17  0.29  0.16      0.23  0.27  0.21      0.28  0.23  0.26
+fgts.min(axis=0) =
+[ 0.00014837  0.00015011  0.00015029  0.00015031]
+fgts.mean() = 0.738654 fgts.min() = 0.00014837
+incs mean, abs_mean, abs_mean+, abs_mean-: -5.20916 8.04531 4.77789 9.42439
+U_c = [[-0.00838802]] U_f = [[ 0.00105815]] b_f = [ 1.1241591]
+Epoch 33/300
+20s - loss: 139.0083 - val_loss: 652.5943
+Epoch 00032: val_loss improved from 655.12476 to 652.59425, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   137.5      0.62  0.22  0.53      0.61  0.16  0.54      0.61  0.12  0.56
+fgts.min(axis=0) =
+[  4.66669871e-06   4.57970282e-06   4.64137293e-06   4.65049152e-06]
+fgts.mean() = 0.873555 fgts.min() = 4.55355e-06
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.62278 4.13269 3.21523 4.72005
+U_c = [[-0.00890672]] U_f = [[ 0.00173009]] b_f = [ 1.12268567]
+Valid:
+       rlstm_forget1   652.6      0.41  0.39  0.33      0.47  0.32  0.40      0.51  0.26  0.44
+fgts.min(axis=0) =
+[ 0.00020414  0.00018018  0.00017964  0.00017959]
+fgts.mean() = 0.826562 fgts.min() = 0.000179447
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.64871 5.31895 3.64772 6.2838
+U_c = [[-0.00890672]] U_f = [[ 0.00173009]] b_f = [ 1.12268567]
+Test:
+       rlstm_forget1  3745.4      0.16  0.28  0.15      0.22  0.25  0.20      0.27  0.21  0.25
+fgts.min(axis=0) =
+[ 0.00014398  0.00014679  0.00014704  0.00014706]
+fgts.mean() = 0.715796 fgts.min() = 0.000114462
+incs mean, abs_mean, abs_mean+, abs_mean-: -5.4549 8.19773 4.79385 9.56171
+U_c = [[-0.00890672]] U_f = [[ 0.00173009]] b_f = [ 1.12268567]
+Epoch 34/300
+20s - loss: 138.0462 - val_loss: 619.1134
+Epoch 00033: val_loss improved from 652.59425 to 619.11340, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   144.8      0.65  0.23  0.54      0.64  0.18  0.56      0.65  0.14  0.58
+fgts.min(axis=0) =
+[  5.56405553e-07   5.48674393e-07   5.55978602e-07   5.57898716e-07]
+fgts.mean() = 0.857706 fgts.min() = 5.48674e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.53573 4.1787 3.28213 4.783
+U_c = [[-0.00859349]] U_f = [[ 0.00162674]] b_f = [ 1.11925173]
+Valid:
+       rlstm_forget1   619.1      0.45  0.40  0.35      0.51  0.32  0.42      0.54  0.27  0.46
+fgts.min(axis=0) =
+[  9.52477421e-05   8.44232418e-05   8.43018497e-05   8.42947702e-05]
+fgts.mean() = 0.813547 fgts.min() = 8.42764e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.55061 5.434 3.8039 6.42887
+U_c = [[-0.00859349]] U_f = [[ 0.00162674]] b_f = [ 1.11925173]
+Test:
+       rlstm_forget1  3595.6      0.18  0.35  0.16      0.24  0.31  0.22      0.29  0.27  0.27
+fgts.min(axis=0) =
+[  9.55827491e-05   9.74494615e-05   9.76488955e-05   9.76738520e-05]
+fgts.mean() = 0.71359 fgts.min() = 6.05079e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.81154 7.88906 4.86863 9.28482
+U_c = [[-0.00859349]] U_f = [[ 0.00162674]] b_f = [ 1.11925173]
+Epoch 35/300
+20s - loss: 137.1067 - val_loss: 661.9648
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+20s - loss: 136.4694 - val_loss: 635.1548
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+20s - loss: 135.7971 - val_loss: 672.6748
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+20s - loss: 134.8105 - val_loss: 624.9067
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+20s - loss: 134.1601 - val_loss: 645.0941
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+20s - loss: 133.5238 - val_loss: 635.6842
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+20s - loss: 132.8283 - val_loss: 646.5002
+Epoch 00040: val_loss did not improve
+Epoch 42/300
+20s - loss: 132.2108 - val_loss: 626.5384
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+20s - loss: 131.7237 - val_loss: 632.9673
+Epoch 00042: val_loss did not improve
+Epoch 44/300
+20s - loss: 131.1691 - val_loss: 636.2065
+Epoch 00043: val_loss did not improve
+Epoch 45/300
+20s - loss: 130.6225 - val_loss: 617.2205
+Epoch 00044: val_loss improved from 619.11340 to 617.22054, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   127.4      0.64  0.21  0.55      0.62  0.15  0.55      0.62  0.11  0.57
+fgts.min(axis=0) =
+[  6.36375116e-05   6.31929070e-05   6.34814351e-05   6.35217657e-05]
+fgts.mean() = 0.869133 fgts.min() = 6.31929e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.68972 4.31365 3.3606 4.924
+U_c = [[-0.00614929]] U_f = [[ 0.00056813]] b_f = [ 1.08615875]
+Valid:
+       rlstm_forget1   617.2      0.44  0.37  0.35      0.49  0.30  0.41      0.52  0.25  0.45
+fgts.min(axis=0) =
+[ 0.00035608  0.00035045  0.00035046  0.00035046]
+fgts.mean() = 0.810609 fgts.min() = 0.000350454
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.46122 5.27388 3.70367 6.23511
+U_c = [[-0.00614929]] U_f = [[ 0.00056813]] b_f = [ 1.08615875]
+Test:
+       rlstm_forget1  3462.7      0.14  0.35  0.13      0.21  0.30  0.19      0.27  0.25  0.25
+fgts.min(axis=0) =
+[  3.78036420e-05   3.75223062e-05   3.75228410e-05   3.75228410e-05]
+fgts.mean() = 0.659544 fgts.min() = 1.23697e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.87688 7.94313 4.91029 9.31995
+U_c = [[-0.00614929]] U_f = [[ 0.00056813]] b_f = [ 1.08615875]
+Epoch 46/300
+20s - loss: 130.0603 - val_loss: 600.9700
+Epoch 00045: val_loss improved from 617.22054 to 600.96996, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   129.0      0.66  0.22  0.56      0.65  0.17  0.57      0.65  0.13  0.60
+fgts.min(axis=0) =
+[ 0.0002181   0.0002138   0.00021718  0.00021811]
+fgts.mean() = 0.862587 fgts.min() = 0.0002138
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.5734 4.30438 3.40159 4.90983
+U_c = [[-0.00390268]] U_f = [[ 0.00165698]] b_f = [ 1.08172596]
+Valid:
+       rlstm_forget1   601.0      0.44  0.38  0.36      0.50  0.31  0.42      0.53  0.25  0.46
+fgts.min(axis=0) =
+[ 0.00029054  0.0002773   0.00027731  0.00027731]
+fgts.mean() = 0.807468 fgts.min() = 0.000277302
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.379 5.28911 3.75719 6.25735
+U_c = [[-0.00390268]] U_f = [[ 0.00165698]] b_f = [ 1.08172596]
+Test:
+       rlstm_forget1  3398.0      0.15  0.40  0.14      0.23  0.34  0.20      0.29  0.28  0.27
+fgts.min(axis=0) =
+[  5.48399366e-05   5.38116619e-05   5.37913947e-05   5.37912420e-05]
+fgts.mean() = 0.670595 fgts.min() = 2.2465e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.26967 7.61517 4.92061 9.00295
+U_c = [[-0.00390268]] U_f = [[ 0.00165698]] b_f = [ 1.08172596]
+Epoch 47/300
+20s - loss: 129.6520 - val_loss: 607.6183
+Epoch 00046: val_loss did not improve
+Epoch 48/300
+20s - loss: 129.1485 - val_loss: 617.3388
+Epoch 00047: val_loss did not improve
+Epoch 49/300
+20s - loss: 128.8121 - val_loss: 652.3790
+Epoch 00048: val_loss did not improve
+Epoch 50/300
+20s - loss: 128.1634 - val_loss: 638.6079
+Epoch 00049: val_loss did not improve
+Epoch 51/300
+20s - loss: 127.6862 - val_loss: 661.0794
+Epoch 00050: val_loss did not improve
+Epoch 52/300
+20s - loss: 127.2724 - val_loss: 626.1586
+Epoch 00051: val_loss did not improve
+Epoch 53/300
+20s - loss: 126.8975 - val_loss: 639.0956
+Epoch 00052: val_loss did not improve
+Epoch 54/300
+20s - loss: 126.5348 - val_loss: 633.6237
+Epoch 00053: val_loss did not improve
+Epoch 55/300
+20s - loss: 125.9935 - val_loss: 633.2422
+Epoch 00054: val_loss did not improve
+Epoch 56/300
+20s - loss: 125.7440 - val_loss: 606.4913
+Epoch 00055: val_loss did not improve
+Epoch 57/300
+20s - loss: 125.3082 - val_loss: 611.5927
+Epoch 00056: val_loss did not improve
+Epoch 58/300
+20s - loss: 124.8234 - val_loss: 666.3292
+Epoch 00057: val_loss did not improve
+Epoch 59/300
+20s - loss: 124.4473 - val_loss: 619.9909
+Epoch 00058: val_loss did not improve
+Epoch 60/300
+20s - loss: 124.1054 - val_loss: 643.2265
+Epoch 00059: val_loss did not improve
+Epoch 61/300
+20s - loss: 123.7071 - val_loss: 617.8427
+Epoch 00060: val_loss did not improve
+Epoch 62/300
+20s - loss: 123.3143 - val_loss: 626.5265
+Epoch 00061: val_loss did not improve
+Epoch 63/300
+20s - loss: 122.8603 - val_loss: 625.5226
+Epoch 00062: val_loss did not improve
+Epoch 64/300
+20s - loss: 122.6022 - val_loss: 597.9543
+Epoch 00063: val_loss improved from 600.96996 to 597.95427, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   119.3      0.66  0.20  0.56      0.64  0.15  0.57      0.65  0.12  0.60
+fgts.min(axis=0) =
+[  1.19692641e-05   1.19075439e-05   1.17441086e-05   1.16687070e-05]
+fgts.mean() = 0.860307 fgts.min() = 1.16609e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.69693 4.4807 3.5481 5.08272
+U_c = [[-0.00113386]] U_f = [[ 0.00128788]] b_f = [ 1.01950407]
+Valid:
+       rlstm_forget1   598.0      0.41  0.34  0.35      0.47  0.28  0.40      0.51  0.23  0.45
+fgts.min(axis=0) =
+[  3.94297276e-05   3.80184247e-05   3.80186102e-05   3.80186102e-05]
+fgts.mean() = 0.768136 fgts.min() = 3.80184e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.59857 5.48619 3.78413 6.53624
+U_c = [[-0.00113386]] U_f = [[ 0.00128788]] b_f = [ 1.01950407]
+Test:
+       rlstm_forget1  3361.6      0.12  0.45  0.11      0.20  0.37  0.18      0.26  0.30  0.24
+fgts.min(axis=0) =
+[  4.80121207e-06   4.69148654e-06   4.69078441e-06   4.69077986e-06]
+fgts.mean() = 0.616942 fgts.min() = 1.03101e-06
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.33355 7.79501 5.12991 9.15199
+U_c = [[-0.00113386]] U_f = [[ 0.00128788]] b_f = [ 1.01950407]
+Epoch 65/300
+20s - loss: 122.0711 - val_loss: 612.2480
+Epoch 00064: val_loss did not improve
+Epoch 66/300
+20s - loss: 121.7885 - val_loss: 613.0064
+Epoch 00065: val_loss did not improve
+Epoch 67/300
+20s - loss: 121.3178 - val_loss: 624.6332
+Epoch 00066: val_loss did not improve
+Epoch 68/300
+20s - loss: 120.9549 - val_loss: 615.3635
+Epoch 00067: val_loss did not improve
+Epoch 69/300
+20s - loss: 120.5500 - val_loss: 630.9017
+Epoch 00068: val_loss did not improve
+Epoch 70/300
+20s - loss: 120.2688 - val_loss: 619.9520
+Epoch 00069: val_loss did not improve
+Epoch 71/300
+20s - loss: 119.9521 - val_loss: 603.0903
+Epoch 00070: val_loss did not improve
+Epoch 72/300
+20s - loss: 119.4344 - val_loss: 607.8855
+Epoch 00071: val_loss did not improve
+Epoch 73/300
+20s - loss: 119.2645 - val_loss: 603.0522
+Epoch 00072: val_loss did not improve
+Epoch 74/300
+20s - loss: 118.9646 - val_loss: 602.5451
+Epoch 00073: val_loss did not improve
+Epoch 75/300
+20s - loss: 118.6401 - val_loss: 589.6789
+Epoch 00074: val_loss improved from 597.95427 to 589.67887, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   121.4      0.65  0.18  0.57      0.64  0.15  0.58      0.65  0.12  0.60
+fgts.min(axis=0) =
+[  5.94330402e-07   5.96964526e-07   5.90924742e-07   1.73044100e-05]
+fgts.mean() = 0.849958 fgts.min() = 5.90925e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.73195 4.52477 3.58528 5.12414
+U_c = [[-0.0003374]] U_f = [[ 0.0018353]] b_f = [ 0.9800576]
+Valid:
+       rlstm_forget1   589.7      0.40  0.32  0.34      0.46  0.26  0.40      0.49  0.22  0.44
+fgts.min(axis=0) =
+[  2.13551102e-05   2.02655265e-05   2.02654464e-05   2.02654464e-05]
+fgts.mean() = 0.755501 fgts.min() = 2.02654e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.857 5.70319 3.83161 6.80903
+U_c = [[-0.0003374]] U_f = [[ 0.0018353]] b_f = [ 0.9800576]
+Test:
+       rlstm_forget1  3349.3      0.10  0.44  0.10      0.18  0.36  0.17      0.25  0.29  0.23
+fgts.min(axis=0) =
+[  1.21939559e-06   1.17952982e-06   1.17930824e-06   1.17930824e-06]
+fgts.mean() = 0.592348 fgts.min() = 2.53514e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.53913 7.89379 5.21158 9.16675
+U_c = [[-0.0003374]] U_f = [[ 0.0018353]] b_f = [ 0.9800576]
+Epoch 76/300
+20s - loss: 118.2632 - val_loss: 603.4398
+Epoch 00075: val_loss did not improve
+Epoch 77/300
+20s - loss: 118.0126 - val_loss: 614.4495
+Epoch 00076: val_loss did not improve
+Epoch 78/300
+20s - loss: 117.6294 - val_loss: 589.2548
+Epoch 00077: val_loss improved from 589.67887 to 589.25477, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   123.7      0.68  0.21  0.58      0.68  0.17  0.60      0.69  0.14  0.62
+fgts.min(axis=0) =
+[  3.98970940e-07   4.00625254e-07   3.96376095e-07   7.83558335e-06]
+fgts.mean() = 0.851462 fgts.min() = 3.96376e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.61432 4.53631 3.63559 5.14145
+U_c = [[ 0.00101158]] U_f = [[ 0.00204581]] b_f = [ 0.96821302]
+Valid:
+       rlstm_forget1   589.3      0.40  0.32  0.34      0.46  0.26  0.40      0.50  0.22  0.44
+fgts.min(axis=0) =
+[  1.88566355e-05   1.77473339e-05   1.77469265e-05   1.77469774e-05]
+fgts.mean() = 0.754226 fgts.min() = 1.77469e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.95833 5.842 3.87129 7.01159
+U_c = [[ 0.00101158]] U_f = [[ 0.00204581]] b_f = [ 0.96821302]
+Test:
+       rlstm_forget1  3364.9      0.11  0.46  0.10      0.18  0.37  0.17      0.25  0.29  0.23
+fgts.min(axis=0) =
+[  1.10692190e-06   1.06675725e-06   1.06634332e-06   1.06634127e-06]
+fgts.mean() = 0.604523 fgts.min() = 2.63848e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.48551 7.88491 5.22262 9.16938
+U_c = [[ 0.00101158]] U_f = [[ 0.00204581]] b_f = [ 0.96821302]
+Epoch 79/300
+20s - loss: 117.3421 - val_loss: 603.3868
+Epoch 00078: val_loss did not improve
+Epoch 80/300
+20s - loss: 117.0752 - val_loss: 597.1549
+Epoch 00079: val_loss did not improve
+Epoch 81/300
+20s - loss: 116.9133 - val_loss: 596.5830
+Epoch 00080: val_loss did not improve
+Epoch 82/300
+20s - loss: 116.5865 - val_loss: 595.9120
+Epoch 00081: val_loss did not improve
+Epoch 83/300
+20s - loss: 116.2843 - val_loss: 609.9646
+Epoch 00082: val_loss did not improve
+Epoch 84/300
+20s - loss: 115.9569 - val_loss: 579.3718
+Epoch 00083: val_loss improved from 589.25477 to 579.37183, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   116.6      0.65  0.19  0.57      0.63  0.14  0.57      0.63  0.10  0.59
+fgts.min(axis=0) =
+[  2.10631882e-07   2.11429438e-07   2.09016449e-07   2.67522751e-06]
+fgts.mean() = 0.858778 fgts.min() = 2.09016e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.84241 4.61673 3.67567 5.18715
+U_c = [[ 0.00146342]] U_f = [[ 0.00223993]] b_f = [ 0.94792819]
+Valid:
+       rlstm_forget1   579.4      0.42  0.32  0.36      0.47  0.26  0.41      0.50  0.22  0.45
+fgts.min(axis=0) =
+[  1.70257554e-05   1.59595711e-05   1.59591145e-05   1.59591600e-05]
+fgts.mean() = 0.747596 fgts.min() = 1.59591e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.01027 5.86899 3.88914 7.01947
+U_c = [[ 0.00146342]] U_f = [[ 0.00223993]] b_f = [ 0.94792819]
+Test:
+       rlstm_forget1  3442.7      0.10  0.49  0.10      0.17  0.38  0.16      0.24  0.30  0.22
+fgts.min(axis=0) =
+[  5.59599584e-07   5.37569690e-07   5.37287349e-07   5.37285814e-07]
+fgts.mean() = 0.619076 fgts.min() = 2.31448e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.52565 7.84225 5.13242 9.13573
+U_c = [[ 0.00146342]] U_f = [[ 0.00223993]] b_f = [ 0.94792819]
+Epoch 85/300
+19s - loss: 115.7463 - val_loss: 636.5544
+Epoch 00084: val_loss did not improve
+Epoch 86/300
+19s - loss: 115.4879 - val_loss: 629.6431
+Epoch 00085: val_loss did not improve
+Epoch 87/300
+19s - loss: 115.2542 - val_loss: 584.2884
+Epoch 00086: val_loss did not improve
+Epoch 88/300
+19s - loss: 114.9866 - val_loss: 583.1802
+Epoch 00087: val_loss did not improve
+Epoch 89/300
+19s - loss: 114.7364 - val_loss: 636.5079
+Epoch 00088: val_loss did not improve
+Epoch 90/300
+19s - loss: 114.6345 - val_loss: 590.1121
+Epoch 00089: val_loss did not improve
+Epoch 91/300
+19s - loss: 114.2172 - val_loss: 603.8054
+Epoch 00090: val_loss did not improve
+Epoch 92/300
+19s - loss: 114.2836 - val_loss: 575.0472
+Epoch 00091: val_loss improved from 579.37183 to 575.04721, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   140.3      0.69  0.21  0.59      0.69  0.17  0.60      0.70  0.14  0.63
+fgts.min(axis=0) =
+[  1.64339355e-07   1.65612320e-07   1.63481943e-07   5.86427348e-07]
+fgts.mean() = 0.835747 fgts.min() = 1.63482e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.63142 4.58782 3.68256 5.19487
+U_c = [[ 0.00175299]] U_f = [[ 0.00386781]] b_f = [ 0.91258687]
+Valid:
+       rlstm_forget1   575.0      0.42  0.32  0.36      0.48  0.26  0.42      0.51  0.22  0.45
+fgts.min(axis=0) =
+[  1.84004311e-05   1.67933049e-05   1.67908056e-05   1.67929993e-05]
+fgts.mean() = 0.731236 fgts.min() = 1.67908e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.83284 5.81919 3.8862 7.0253
+U_c = [[ 0.00175299]] U_f = [[ 0.00386781]] b_f = [ 0.91258687]
+Test:
+       rlstm_forget1  3377.3      0.11  0.47  0.10      0.18  0.37  0.17      0.25  0.30  0.23
+fgts.min(axis=0) =
+[  4.10396211e-07   3.82868961e-07   3.82565645e-07   3.82564167e-07]
+fgts.mean() = 0.606577 fgts.min() = 1.27552e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.39857 7.88657 5.23984 9.20697
+U_c = [[ 0.00175299]] U_f = [[ 0.00386781]] b_f = [ 0.91258687]
+Epoch 93/300
+19s - loss: 113.9812 - val_loss: 598.4282
+Epoch 00092: val_loss did not improve
+Epoch 94/300
+19s - loss: 113.8027 - val_loss: 588.5752
+Epoch 00093: val_loss did not improve
+Epoch 95/300
+19s - loss: 113.5231 - val_loss: 576.4920
+Epoch 00094: val_loss did not improve
+Epoch 96/300
+19s - loss: 113.2303 - val_loss: 587.7154
+Epoch 00095: val_loss did not improve
+Epoch 97/300
+19s - loss: 113.1093 - val_loss: 569.4587
+Epoch 00096: val_loss improved from 575.04721 to 569.45869, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   115.0      0.65  0.17  0.57      0.65  0.14  0.59      0.66  0.11  0.61
+fgts.min(axis=0) =
+[  2.13473049e-06   2.10044027e-06   2.17100228e-06   2.19116600e-06]
+fgts.mean() = 0.844536 fgts.min() = 2.10044e-06
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.76266 4.63118 3.67748 5.24095
+U_c = [[ 0.00152724]] U_f = [[ 0.00158569]] b_f = [ 0.89480239]
+Valid:
+       rlstm_forget1   569.5      0.41  0.31  0.35      0.47  0.26  0.41      0.50  0.22  0.45
+fgts.min(axis=0) =
+[  1.53120382e-05   1.47437613e-05   1.47431301e-05   1.47438332e-05]
+fgts.mean() = 0.743062 fgts.min() = 1.47431e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.8211 5.85786 3.90379 7.10168
+U_c = [[ 0.00152724]] U_f = [[ 0.00158569]] b_f = [ 0.89480239]
+Test:
+       rlstm_forget1  3332.8      0.10  0.48  0.10      0.18  0.38  0.16      0.25  0.30  0.23
+fgts.min(axis=0) =
+[  2.33645920e-07   2.27232320e-07   2.27172947e-07   2.27172720e-07]
+fgts.mean() = 0.604145 fgts.min() = 1.1017e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.09442 7.70651 5.24901 8.99562
+U_c = [[ 0.00152724]] U_f = [[ 0.00158569]] b_f = [ 0.89480239]
+Epoch 98/300
+20s - loss: 112.8565 - val_loss: 584.0497
+Epoch 00097: val_loss did not improve
+Epoch 99/300
+20s - loss: 112.6462 - val_loss: 570.6565
+Epoch 00098: val_loss did not improve
+Epoch 100/300
+20s - loss: 112.4724 - val_loss: 616.6465
+Epoch 00099: val_loss did not improve
+Epoch 101/300
+20s - loss: 112.3471 - val_loss: 565.4459
+Epoch 00100: val_loss improved from 569.45869 to 565.44594, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   110.2      0.68  0.19  0.58      0.66  0.15  0.59      0.67  0.11  0.62
+fgts.min(axis=0) =
+[  7.45497528e-06   7.47852982e-06   7.40531686e-06   9.09170467e-06]
+fgts.mean() = 0.852869 fgts.min() = 7.40532e-06
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.82788 4.67533 3.71074 5.2758
+U_c = [[ 0.00272975]] U_f = [[ 0.00216153]] b_f = [ 0.88229239]
+Valid:
+       rlstm_forget1   565.4      0.44  0.32  0.37      0.49  0.26  0.43      0.52  0.22  0.46
+fgts.min(axis=0) =
+[  7.83319319e-06   7.42321254e-06   7.42280872e-06   7.42332622e-06]
+fgts.mean() = 0.736797 fgts.min() = 7.42281e-06
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.74847 5.89366 4.01465 7.10368
+U_c = [[ 0.00272975]] U_f = [[ 0.00216153]] b_f = [ 0.88229239]
+Test:
+       rlstm_forget1  3324.5      0.11  0.50  0.10      0.19  0.39  0.17      0.26  0.32  0.24
+fgts.min(axis=0) =
+[  1.40346145e-07   1.35202498e-07   1.35140226e-07   1.35139970e-07]
+fgts.mean() = 0.598363 fgts.min() = 5.08144e-08
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.95797 7.68103 5.29893 8.97106
+U_c = [[ 0.00272975]] U_f = [[ 0.00216153]] b_f = [ 0.88229239]
+Epoch 102/300
+20s - loss: 112.1990 - val_loss: 578.3669
+Epoch 00101: val_loss did not improve
+Epoch 103/300
+19s - loss: 111.9306 - val_loss: 571.0913
+Epoch 00102: val_loss did not improve
+Epoch 104/300
+19s - loss: 111.6914 - val_loss: 567.7575
+Epoch 00103: val_loss did not improve
+Epoch 105/300
+19s - loss: 111.6229 - val_loss: 611.2908
+Epoch 00104: val_loss did not improve
+Epoch 106/300
+19s - loss: 111.4757 - val_loss: 574.8874
+Epoch 00105: val_loss did not improve
+Epoch 107/300
+19s - loss: 111.2359 - val_loss: 565.8394
+Epoch 00106: val_loss did not improve
+Epoch 108/300
+19s - loss: 111.1815 - val_loss: 579.1455
+Epoch 00107: val_loss did not improve
+Epoch 109/300
+19s - loss: 110.8080 - val_loss: 577.4546
+Epoch 00108: val_loss did not improve
+Epoch 110/300
+19s - loss: 110.8459 - val_loss: 594.5595
+Epoch 00109: val_loss did not improve
+Epoch 111/300
+20s - loss: 110.7011 - val_loss: 574.2672
+Epoch 00110: val_loss did not improve
+Epoch 112/300
+20s - loss: 110.4583 - val_loss: 572.9624
+Epoch 00111: val_loss did not improve
+Epoch 113/300
+20s - loss: 110.3050 - val_loss: 562.0693
+Epoch 00112: val_loss improved from 565.44594 to 562.06927, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   107.4      0.68  0.18  0.59      0.67  0.14  0.60      0.68  0.11  0.63
+fgts.min(axis=0) =
+[  1.89009654e-06   1.85883539e-06   1.87814612e-06   1.96138990e-06]
+fgts.mean() = 0.847695 fgts.min() = 1.85884e-06
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.78156 4.6883 3.75746 5.27546
+U_c = [[ 0.0034296]] U_f = [[ 0.00202359]] b_f = [ 0.84082407]
+Valid:
+       rlstm_forget1   562.1      0.44  0.32  0.37      0.49  0.26  0.43      0.52  0.22  0.46
+fgts.min(axis=0) =
+[  2.34799809e-05   2.22959661e-05   2.22943072e-05   2.22963899e-05]
+fgts.mean() = 0.747279 fgts.min() = 2.22943e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.80017 6.03241 4.15299 7.22969
+U_c = [[ 0.0034296]] U_f = [[ 0.00202359]] b_f = [ 0.84082407]
+Test:
+       rlstm_forget1  3355.4      0.10  0.51  0.09      0.18  0.40  0.16      0.25  0.32  0.23
+fgts.min(axis=0) =
+[  9.97843372e-08   9.64284155e-08   9.63683036e-08   9.63679341e-08]
+fgts.mean() = 0.618051 fgts.min() = 5.16236e-08
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.95408 7.76962 5.28737 9.17085
+U_c = [[ 0.0034296]] U_f = [[ 0.00202359]] b_f = [ 0.84082407]
+Epoch 114/300
+20s - loss: 110.0875 - val_loss: 582.1851
+Epoch 00113: val_loss did not improve
+Epoch 115/300
+19s - loss: 110.0626 - val_loss: 573.7409
+Epoch 00114: val_loss did not improve
+Epoch 116/300
+19s - loss: 109.9070 - val_loss: 562.4819
+Epoch 00115: val_loss did not improve
+Epoch 117/300
+20s - loss: 109.5927 - val_loss: 548.2200
+Epoch 00116: val_loss improved from 562.06927 to 548.22002, saving model to rlstm_forget1_weights.hdf5
+Train:
+       rlstm_forget1   113.2      0.68  0.19  0.59      0.67  0.15  0.60      0.68  0.12  0.62
+fgts.min(axis=0) =
+[  1.00819466e-06   9.95596793e-07   1.01991463e-06   1.02580157e-06]
+fgts.mean() = 0.848037 fgts.min() = 9.95597e-07
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.7606 4.71039 3.80459 5.28384
+U_c = [[ 0.00401613]] U_f = [[ 0.00113195]] b_f = [ 0.82873929]
+Valid:
+       rlstm_forget1   548.2      0.47  0.32  0.39      0.52  0.26  0.45      0.55  0.22  0.48
+fgts.min(axis=0) =
+[  1.59199717e-05   1.54609588e-05   1.54602512e-05   1.54611807e-05]
+fgts.mean() = 0.751594 fgts.min() = 1.54603e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.61406 6.03234 4.23353 7.25023
+U_c = [[ 0.00401613]] U_f = [[ 0.00113195]] b_f = [ 0.82873929]
+Test:
+       rlstm_forget1  3350.8      0.11  0.54  0.10      0.20  0.42  0.18      0.27  0.34  0.24
+fgts.min(axis=0) =
+[  1.46028086e-07   1.43341396e-07   1.43277418e-07   1.43276722e-07]
+fgts.mean() = 0.649021 fgts.min() = 6.99172e-08
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.46751 7.59204 5.36703 8.98051
+U_c = [[ 0.00401613]] U_f = [[ 0.00113195]] b_f = [ 0.82873929]
+Epoch 118/300
+20s - loss: 109.6152 - val_loss: 610.1658
+Epoch 00117: val_loss did not improve
+Epoch 119/300
+20s - loss: 109.3339 - val_loss: 573.9983
+Epoch 00118: val_loss did not improve
+Epoch 120/300
+20s - loss: 109.2354 - val_loss: 569.7803
+Epoch 00119: val_loss did not improve
+Epoch 121/300
+19s - loss: 109.0583 - val_loss: 571.8127
+Epoch 00120: val_loss did not improve
+Epoch 122/300
+19s - loss: 108.9443 - val_loss: 558.6017
+Epoch 00121: val_loss did not improve
+Epoch 123/300
+19s - loss: 108.8458 - val_loss: 574.6834
+Epoch 00122: val_loss did not improve
+Epoch 124/300
+19s - loss: 108.6063 - val_loss: 564.8773
+Epoch 00123: val_loss did not improve
+Epoch 125/300
+19s - loss: 108.5783 - val_loss: 578.2933
+Epoch 00124: val_loss did not improve
+Epoch 126/300
+20s - loss: 108.4891 - val_loss: 583.8860
+Epoch 00125: val_loss did not improve
+Epoch 127/300
+20s - loss: 108.3799 - val_loss: 561.7179
+Epoch 00126: val_loss did not improve
+Epoch 128/300
+20s - loss: 108.2403 - val_loss: 555.2140
+Epoch 00127: val_loss did not improve
+Epoch 129/300
+20s - loss: 108.0190 - val_loss: 569.0641
+Epoch 00128: val_loss did not improve
+Epoch 130/300
+20s - loss: 107.8758 - val_loss: 573.0438
+Epoch 00129: val_loss did not improve
+Epoch 131/300
+20s - loss: 107.6760 - val_loss: 569.4801
+Epoch 00130: val_loss did not improve
+Epoch 132/300
+20s - loss: 107.6899 - val_loss: 569.1160
+Epoch 00131: val_loss did not improve
+Epoch 133/300
+19s - loss: 107.5468 - val_loss: 567.6617
+Epoch 00132: val_loss did not improve
+Epoch 134/300
+19s - loss: 107.5231 - val_loss: 555.6497
+Epoch 00133: val_loss did not improve
+Epoch 135/300
+20s - loss: 107.3554 - val_loss: 554.5492
+Epoch 00134: val_loss did not improve
+Epoch 136/300
+20s - loss: 107.1739 - val_loss: 574.7503
+Epoch 00135: val_loss did not improve
+Epoch 137/300
+19s - loss: 107.1150 - val_loss: 552.1090
+Epoch 00136: val_loss did not improve
+Epoch 138/300
+20s - loss: 107.0060 - val_loss: 569.0045
+Epoch 00137: val_loss did not improve
+Epoch 139/300
+19s - loss: 106.9883 - val_loss: 569.4978
+Epoch 00138: val_loss did not improve
+Epoch 140/300
+20s - loss: 106.8796 - val_loss: 559.4937
+Epoch 00139: val_loss did not improve
+Epoch 141/300
+20s - loss: 106.7809 - val_loss: 565.2451
+Epoch 00140: val_loss did not improve
+Epoch 142/300
+19s - loss: 106.6130 - val_loss: 563.6285
+Epoch 00141: val_loss did not improve
+Epoch 143/300
+20s - loss: 106.5543 - val_loss: 569.9869
+Epoch 00142: val_loss did not improve
+Epoch 144/300
+20s - loss: 106.5000 - val_loss: 574.6218
+Epoch 00143: val_loss did not improve
+Epoch 145/300
+19s - loss: 106.3958 - val_loss: 559.4652
+Epoch 00144: val_loss did not improve
+Epoch 146/300
+20s - loss: 106.2339 - val_loss: 551.6744
+Epoch 00145: val_loss did not improve
+Epoch 147/300
+20s - loss: 106.1800 - val_loss: 575.7821
+Epoch 00146: val_loss did not improve
+Epoch 148/300
+20s - loss: 106.0510 - val_loss: 560.7911
+Epoch 00147: val_loss did not improve
+
+training rlstm_forget2
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 405.1728 - val_loss: 745.0869
+Epoch 00000: val_loss improved from inf to 745.08690, saving model to rlstm_forget2_weights.hdf5
+Train:
+       rlstm_forget2   299.9      0.37  0.26  0.33      0.38  0.19  0.35      0.38  0.14  0.35
+fgts.min(axis=0) =
+[ 0.02512373  0.03487761  0.04299369  0.11455993]
+fgts.mean() = 0.991004 fgts.min() = 0.0251237
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.0678171 1.56872 1.48726 1.65169
+U_c = [[-0.06837241]] U_f = [[ 0.11387559]] b_f = [ 1.27947819]
+Valid:
+       rlstm_forget2   745.1      0.24  0.27  0.22      0.29  0.18  0.27      0.32  0.11  0.30
+fgts.min(axis=0) =
+[ 0.14567724  0.20426942  0.20400417  0.12229624]
+fgts.mean() = 0.98524 fgts.min() = 0.0108426
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.806776 2.02188 1.51356 2.36275
+U_c = [[-0.06837241]] U_f = [[ 0.11387559]] b_f = [ 1.27947819]
+Test:
+       rlstm_forget2  3117.3      0.26  0.56  0.22      0.29  0.50  0.25      0.33  0.44  0.28
+fgts.min(axis=0) =
+[ 0.17270057  0.21854694  0.08740541  0.49491084]
+fgts.mean() = 0.99511 fgts.min() = 0.0256818
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.599227 2.48869 2.03949 2.87633
+U_c = [[-0.06837241]] U_f = [[ 0.11387559]] b_f = [ 1.27947819]
+Epoch 2/300
+20s - loss: 281.4326 - val_loss: 762.0952
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+20s - loss: 254.8612 - val_loss: 765.0170
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+20s - loss: 238.7122 - val_loss: 679.9270
+Epoch 00003: val_loss improved from 745.08690 to 679.92696, saving model to rlstm_forget2_weights.hdf5
+Train:
+       rlstm_forget2   232.8      0.51  0.27  0.43      0.48  0.20  0.43      0.48  0.16  0.44
+fgts.min(axis=0) =
+[ 0.01077681  0.00739829  0.00738347  0.00738246]
+fgts.mean() = 0.945343 fgts.min() = 0.00738239
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.724449 2.64997 2.09102 3.12693
+U_c = [[-0.06339955]] U_f = [[ 0.00924329]] b_f = [ 1.05309832]
+Valid:
+       rlstm_forget2   679.9      0.52  0.29  0.43      0.56  0.21  0.49      0.58  0.15  0.52
+fgts.min(axis=0) =
+[ 0.05801267  0.05597204  0.05595372  0.05583329]
+fgts.mean() = 0.964002 fgts.min() = 0.0557113
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.071 3.59756 2.70418 4.3808
+U_c = [[-0.06339955]] U_f = [[ 0.00924329]] b_f = [ 1.05309832]
+Test:
+       rlstm_forget2  3553.9      0.31  0.46  0.26      0.37  0.40  0.31      0.42  0.34  0.36
+fgts.min(axis=0) =
+[ 0.25643429  0.24582233  0.25000706  0.26866618]
+fgts.mean() = 0.985273 fgts.min() = 0.245822
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.07205 3.61984 3.04087 4.03725
+U_c = [[-0.06339955]] U_f = [[ 0.00924329]] b_f = [ 1.05309832]
+Epoch 5/300
+20s - loss: 226.8189 - val_loss: 686.3255
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+20s - loss: 217.1132 - val_loss: 656.5764
+Epoch 00005: val_loss improved from 679.92696 to 656.57639, saving model to rlstm_forget2_weights.hdf5
+Train:
+       rlstm_forget2   212.1      0.51  0.25  0.44      0.48  0.18  0.44      0.47  0.15  0.44
+fgts.min(axis=0) =
+[ 0.00034038  0.00034041  0.00034041  0.00034123]
+fgts.mean() = 0.927777 fgts.min() = 0.000336565
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.00656 3.01148 2.27616 3.5902
+U_c = [[-0.0566396]] U_f = [[-0.00241681]] b_f = [ 1.01154172]
+Valid:
+       rlstm_forget2   656.6      0.54  0.32  0.43      0.58  0.25  0.49      0.61  0.20  0.53
+fgts.min(axis=0) =
+[ 0.00041877  0.00040076  0.00040179  0.00038813]
+fgts.mean() = 0.949895 fgts.min() = 0.00038588
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.27631 4.18156 3.14567 5.07035
+U_c = [[-0.0566396]] U_f = [[-0.00241681]] b_f = [ 1.01154172]
+Test:
+       rlstm_forget2  4775.5      0.30  0.40  0.25      0.35  0.37  0.30      0.38  0.33  0.33
+fgts.min(axis=0) =
+[ 0.02133535  0.02076064  0.02176616  0.0224912 ]
+fgts.mean() = 0.96851 fgts.min() = 0.0207606
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.96044 4.78802 4.01551 5.2078
+U_c = [[-0.0566396]] U_f = [[-0.00241681]] b_f = [ 1.01154172]
+Epoch 7/300
+20s - loss: 208.9556 - val_loss: 653.9749
+Epoch 00006: val_loss improved from 656.57639 to 653.97489, saving model to rlstm_forget2_weights.hdf5
+Train:
+       rlstm_forget2   207.8      0.49  0.22  0.43      0.46  0.16  0.43      0.45  0.13  0.43
+fgts.min(axis=0) =
+[ 0.00078379  0.00078464  0.00078561  0.00078989]
+fgts.mean() = 0.924417 fgts.min() = 0.000778774
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.09955 3.12704 2.33818 3.73084
+U_c = [[-0.05294552]] U_f = [[-0.004075]] b_f = [ 1.02137876]
+Valid:
+       rlstm_forget2   654.0      0.54  0.35  0.42      0.58  0.28  0.48      0.61  0.22  0.53
+fgts.min(axis=0) =
+[ 0.00028513  0.00027042  0.00027452  0.00027528]
+fgts.mean() = 0.945028 fgts.min() = 0.000270421
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.27206 4.29211 3.27021 5.16878
+U_c = [[-0.05294552]] U_f = [[-0.004075]] b_f = [ 1.02137876]
+Test:
+       rlstm_forget2  5431.4      0.28  0.37  0.24      0.32  0.34  0.28      0.36  0.31  0.31
+fgts.min(axis=0) =
+[ 0.02203071  0.02468236  0.02639836  0.0280153 ]
+fgts.mean() = 0.961423 fgts.min() = 0.0220307
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.49991 5.52996 4.48432 6.06347
+U_c = [[-0.05294552]] U_f = [[-0.004075]] b_f = [ 1.02137876]
+Epoch 8/300
+20s - loss: 201.6086 - val_loss: 669.6871
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 195.2279 - val_loss: 762.0813
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 188.8859 - val_loss: 710.2034
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 182.6416 - val_loss: 728.7038
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 176.9121 - val_loss: 623.9161
+Epoch 00011: val_loss improved from 653.97489 to 623.91608, saving model to rlstm_forget2_weights.hdf5
+Train:
+       rlstm_forget2   179.5      0.59  0.26  0.49      0.57  0.20  0.50      0.58  0.16  0.52
+fgts.min(axis=0) =
+[ 0.00042657  0.00042071  0.00042488  0.00042596]
+fgts.mean() = 0.897985 fgts.min() = 0.000417457
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.19732 3.51007 2.67592 4.14487
+U_c = [[-0.03144458]] U_f = [[ 0.00152243]] b_f = [ 1.04951668]
+Valid:
+       rlstm_forget2   623.9      0.54  0.38  0.41      0.60  0.30  0.48      0.63  0.24  0.53
+fgts.min(axis=0) =
+[ 0.00215856  0.00195597  0.00195626  0.00195633]
+fgts.mean() = 0.894472 fgts.min() = 0.00195594
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.80809 4.98123 3.75289 5.88084
+U_c = [[-0.03144458]] U_f = [[ 0.00152243]] b_f = [ 1.04951668]
+Test:
+       rlstm_forget2  5211.6      0.25  0.34  0.22      0.30  0.32  0.26      0.33  0.29  0.29
+fgts.min(axis=0) =
+[ 0.0007992   0.00079966  0.00080453  0.0008204 ]
+fgts.mean() = 0.905322 fgts.min() = 0.000768265
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.16641 7.3835 5.34332 8.26219
+U_c = [[-0.03144458]] U_f = [[ 0.00152243]] b_f = [ 1.04951668]
+Epoch 13/300
+20s - loss: 171.7343 - val_loss: 629.8749
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 167.1094 - val_loss: 674.2208
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 163.7498 - val_loss: 787.5395
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 161.1218 - val_loss: 651.8843
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+20s - loss: 158.9223 - val_loss: 655.5683
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+20s - loss: 157.1581 - val_loss: 657.4268
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+20s - loss: 155.2755 - val_loss: 715.7117
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+20s - loss: 153.7430 - val_loss: 684.4574
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 152.3187 - val_loss: 699.1248
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 150.9022 - val_loss: 723.0155
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+20s - loss: 149.6007 - val_loss: 754.2221
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 148.4599 - val_loss: 737.5834
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 147.2963 - val_loss: 756.0655
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+20s - loss: 146.1972 - val_loss: 778.4503
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+20s - loss: 145.2436 - val_loss: 812.4015
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+20s - loss: 144.2063 - val_loss: 789.1819
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+20s - loss: 143.4020 - val_loss: 756.0622
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+20s - loss: 142.2193 - val_loss: 803.9004
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+20s - loss: 141.4487 - val_loss: 734.7466
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+20s - loss: 140.5215 - val_loss: 737.2969
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+20s - loss: 139.6052 - val_loss: 791.9567
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+20s - loss: 138.8084 - val_loss: 807.8436
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+20s - loss: 137.9653 - val_loss: 796.9602
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+20s - loss: 137.1857 - val_loss: 791.0218
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+20s - loss: 136.4292 - val_loss: 828.1708
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+20s - loss: 135.6005 - val_loss: 792.8917
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+20s - loss: 134.9446 - val_loss: 815.6876
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+20s - loss: 134.3337 - val_loss: 843.5464
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+20s - loss: 133.6526 - val_loss: 836.3190
+Epoch 00040: val_loss did not improve
+Epoch 42/300
+20s - loss: 133.2467 - val_loss: 863.5966
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+20s - loss: 132.4237 - val_loss: 926.0046
+Epoch 00042: val_loss did not improve
+
+training rlstm_forget3
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 398.8192 - val_loss: 692.6535
+Epoch 00000: val_loss improved from inf to 692.65349, saving model to rlstm_forget3_weights.hdf5
+Train:
+       rlstm_forget3   297.9      0.38  0.25  0.33      0.38  0.19  0.35      0.38  0.14  0.35
+fgts.min(axis=0) =
+[ 0.10855     0.12834339  0.19337785  0.22063373]
+fgts.mean() = 0.990268 fgts.min() = 0.10855
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.040624 1.57258 1.49111 1.65864
+U_c = [[-0.07147273]] U_f = [[ 0.09553955]] b_f = [ 1.22196031]
+Valid:
+       rlstm_forget3   692.7      0.29  0.26  0.26      0.34  0.17  0.32      0.37  0.11  0.35
+fgts.min(axis=0) =
+[ 0.29248586  0.34948647  0.29232356  0.21477011]
+fgts.mean() = 0.99021 fgts.min() = 0.0635989
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.597944 1.94951 1.55393 2.25394
+U_c = [[-0.07147273]] U_f = [[ 0.09553955]] b_f = [ 1.22196031]
+Test:
+       rlstm_forget3  2988.1      0.26  0.56  0.22      0.30  0.50  0.25      0.33  0.44  0.28
+fgts.min(axis=0) =
+[ 0.24028015  0.31482694  0.26189005  0.35998154]
+fgts.mean() = 0.995641 fgts.min() = 0.0358627
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.465136 2.34439 1.96942 2.68653
+U_c = [[-0.07147273]] U_f = [[ 0.09553955]] b_f = [ 1.22196031]
+Epoch 2/300
+20s - loss: 279.0280 - val_loss: 688.4477
+Epoch 00001: val_loss improved from 692.65349 to 688.44773, saving model to rlstm_forget3_weights.hdf5
+Train:
+       rlstm_forget3   264.9      0.45  0.28  0.39      0.43  0.20  0.39      0.42  0.15  0.39
+fgts.min(axis=0) =
+[ 0.07874831  0.07533246  0.0883555   0.08195218]
+fgts.mean() = 0.96197 fgts.min() = 0.0753325
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.546118 2.13462 1.7211 2.48898
+U_c = [[-0.06281306]] U_f = [[ 0.05835144]] b_f = [ 1.05410659]
+Valid:
+       rlstm_forget3   688.4      0.45  0.27  0.38      0.49  0.18  0.44      0.50  0.13  0.47
+fgts.min(axis=0) =
+[ 0.29964897  0.26718011  0.26567456  0.18832472]
+fgts.mean() = 0.980666 fgts.min() = 0.117739
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.840813 2.71736 2.11398 3.1989
+U_c = [[-0.06281306]] U_f = [[ 0.05835144]] b_f = [ 1.05410659]
+Test:
+       rlstm_forget3  3055.0      0.26  0.55  0.23      0.31  0.49  0.26      0.34  0.42  0.30
+fgts.min(axis=0) =
+[ 0.20235392  0.14156133  0.16480556  0.3041738 ]
+fgts.mean() = 0.996921 fgts.min() = 0.141561
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.583597 2.88023 2.48556 3.21914
+U_c = [[-0.06281306]] U_f = [[ 0.05835144]] b_f = [ 1.05410659]
+Epoch 3/300
+20s - loss: 251.7997 - val_loss: 688.6043
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+20s - loss: 234.1234 - val_loss: 682.3228
+Epoch 00003: val_loss improved from 688.44773 to 682.32277, saving model to rlstm_forget3_weights.hdf5
+Train:
+       rlstm_forget3   227.4      0.52  0.28  0.43      0.49  0.21  0.44      0.48  0.16  0.44
+fgts.min(axis=0) =
+[ 0.01925985  0.02078586  0.02078249  0.02079388]
+fgts.mean() = 0.933454 fgts.min() = 0.0192598
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.953984 2.87958 2.14178 3.48208
+U_c = [[-0.06043569]] U_f = [[ 0.01092255]] b_f = [ 0.92572606]
+Valid:
+       rlstm_forget3   682.3      0.54  0.34  0.43      0.58  0.25  0.49      0.61  0.19  0.53
+fgts.min(axis=0) =
+[ 0.03428274  0.03262575  0.03264477  0.03271112]
+fgts.mean() = 0.948939 fgts.min() = 0.0326258
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.23475 3.86155 2.89124 4.66925
+U_c = [[-0.06043569]] U_f = [[ 0.01092255]] b_f = [ 0.92572606]
+Test:
+       rlstm_forget3  3222.1      0.28  0.45  0.24      0.35  0.40  0.30      0.39  0.35  0.34
+fgts.min(axis=0) =
+[ 0.00901312  0.01026272  0.00865384  0.00786682]
+fgts.mean() = 0.940819 fgts.min() = 0.00655757
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.62211 4.09606 3.13167 4.72569
+U_c = [[-0.06043569]] U_f = [[ 0.01092255]] b_f = [ 0.92572606]
+Epoch 5/300
+20s - loss: 222.7332 - val_loss: 703.8320
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+20s - loss: 214.7951 - val_loss: 753.5059
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+20s - loss: 208.5639 - val_loss: 787.9681
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 203.3646 - val_loss: 730.3035
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 198.6544 - val_loss: 814.3874
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 194.2357 - val_loss: 822.7021
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 190.0010 - val_loss: 810.8794
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 186.0626 - val_loss: 784.5772
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+20s - loss: 182.6606 - val_loss: 769.2314
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 179.7631 - val_loss: 843.4189
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 177.0803 - val_loss: 738.8305
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 174.2745 - val_loss: 705.5899
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+20s - loss: 171.7092 - val_loss: 696.6815
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+20s - loss: 168.8851 - val_loss: 680.1394
+Epoch 00017: val_loss improved from 682.32277 to 680.13945, saving model to rlstm_forget3_weights.hdf5
+Train:
+       rlstm_forget3   167.9      0.60  0.25  0.50      0.58  0.20  0.51      0.59  0.16  0.53
+fgts.min(axis=0) =
+[  2.77074869e-05   2.81460871e-05   2.81534976e-05   2.81376870e-05]
+fgts.mean() = 0.911219 fgts.min() = 2.77075e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.19339 3.73338 2.92383 4.35504
+U_c = [[-0.04489945]] U_f = [[-0.00149223]] b_f = [ 0.95309323]
+Valid:
+       rlstm_forget3   680.1      0.48  0.40  0.37      0.54  0.33  0.43      0.57  0.27  0.48
+fgts.min(axis=0) =
+[ 0.00168319  0.0017078   0.00171915  0.00171931]
+fgts.mean() = 0.914054 fgts.min() = 0.00168319
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.60139 4.72556 3.74176 5.43059
+U_c = [[-0.04489945]] U_f = [[-0.00149223]] b_f = [ 0.95309323]
+Test:
+       rlstm_forget3  3637.6      0.16  0.27  0.15      0.23  0.24  0.21      0.27  0.21  0.26
+fgts.min(axis=0) =
+[ 0.00012362  0.00014215  0.00014122  0.00014125]
+fgts.mean() = 0.740365 fgts.min() = 0.000123619
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.70563 7.81218 5.25032 8.88852
+U_c = [[-0.04489945]] U_f = [[-0.00149223]] b_f = [ 0.95309323]
+Epoch 19/300
+20s - loss: 166.4974 - val_loss: 668.9025
+Epoch 00018: val_loss improved from 680.13945 to 668.90246, saving model to rlstm_forget3_weights.hdf5
+Train:
+       rlstm_forget3   164.5      0.60  0.25  0.50      0.58  0.19  0.51      0.58  0.15  0.53
+fgts.min(axis=0) =
+[  4.33044988e-05   4.42236342e-05   4.42381861e-05   4.42070195e-05]
+fgts.mean() = 0.909631 fgts.min() = 4.33045e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.19225 3.73361 2.93338 4.34518
+U_c = [[-0.04424036]] U_f = [[-0.00187517]] b_f = [ 0.95619142]
+Valid:
+       rlstm_forget3   668.9      0.50  0.40  0.39      0.56  0.33  0.45      0.59  0.28  0.49
+fgts.min(axis=0) =
+[ 0.00196141  0.00202027  0.00204099  0.00208339]
+fgts.mean() = 0.917177 fgts.min() = 0.00196141
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.47576 4.69923 3.76964 5.39353
+U_c = [[-0.04424036]] U_f = [[-0.00187517]] b_f = [ 0.95619142]
+Test:
+       rlstm_forget3  3557.6      0.17  0.30  0.16      0.24  0.26  0.22      0.30  0.23  0.27
+fgts.min(axis=0) =
+[ 0.00011393  0.00010828  0.00010832  0.00010832]
+fgts.mean() = 0.739389 fgts.min() = 0.00010828
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.50629 7.72573 5.33425 8.75931
+U_c = [[-0.04424036]] U_f = [[-0.00187517]] b_f = [ 0.95619142]
+Epoch 20/300
+20s - loss: 164.3407 - val_loss: 716.3236
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 162.1210 - val_loss: 704.7755
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 159.5138 - val_loss: 729.2136
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+20s - loss: 156.9358 - val_loss: 827.3551
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 154.6861 - val_loss: 801.1430
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 152.6923 - val_loss: 720.5609
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+20s - loss: 151.1295 - val_loss: 698.5446
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+20s - loss: 149.6579 - val_loss: 793.3659
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+20s - loss: 148.2212 - val_loss: 640.7224
+Epoch 00027: val_loss improved from 668.90246 to 640.72241, saving model to rlstm_forget3_weights.hdf5
+Train:
+       rlstm_forget3   149.2      0.64  0.24  0.53      0.62  0.19  0.54      0.62  0.15  0.56
+fgts.min(axis=0) =
+[  1.45385557e-05   1.42075050e-05   1.42047284e-05   1.42108929e-05]
+fgts.mean() = 0.896028 fgts.min() = 1.42047e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.20492 3.90675 3.15972 4.46468
+U_c = [[-0.03080883]] U_f = [[ 0.0017033]] b_f = [ 0.99402332]
+Valid:
+       rlstm_forget3   640.7      0.47  0.37  0.38      0.53  0.31  0.43      0.56  0.25  0.48
+fgts.min(axis=0) =
+[ 0.00036048  0.00035265  0.00035203  0.00035128]
+fgts.mean() = 0.890351 fgts.min() = 0.000350598
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.5155 4.63064 3.72136 5.28518
+U_c = [[-0.03080883]] U_f = [[ 0.0017033]] b_f = [ 0.99402332]
+Test:
+       rlstm_forget3  3457.4      0.14  0.32  0.13      0.21  0.28  0.19      0.27  0.23  0.25
+fgts.min(axis=0) =
+[  9.96312592e-05   1.00910882e-04   1.00844991e-04   1.00841324e-04]
+fgts.mean() = 0.704316 fgts.min() = 6.05603e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.49314 7.53595 5.27689 8.45113
+U_c = [[-0.03080883]] U_f = [[ 0.0017033]] b_f = [ 0.99402332]
+Epoch 29/300
+20s - loss: 146.9986 - val_loss: 700.9718
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+20s - loss: 145.6318 - val_loss: 656.0563
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+20s - loss: 144.6023 - val_loss: 670.6499
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+20s - loss: 143.3978 - val_loss: 665.7696
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+20s - loss: 142.1289 - val_loss: 643.7615
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+20s - loss: 141.0552 - val_loss: 677.4695
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+20s - loss: 139.9342 - val_loss: 649.1002
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+20s - loss: 138.7979 - val_loss: 649.0903
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+20s - loss: 137.9855 - val_loss: 623.9946
+Epoch 00036: val_loss improved from 640.72241 to 623.99457, saving model to rlstm_forget3_weights.hdf5
+Train:
+       rlstm_forget3   141.3      0.65  0.23  0.55      0.64  0.18  0.56      0.65  0.14  0.59
+fgts.min(axis=0) =
+[  9.33405227e-06   9.12948144e-06   9.12880296e-06   9.13002168e-06]
+fgts.mean() = 0.877844 fgts.min() = 9.1288e-06
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.38219 4.14459 3.33194 4.71997
+U_c = [[-0.01546747]] U_f = [[ 0.00174904]] b_f = [ 1.01817763]
+Valid:
+       rlstm_forget3   624.0      0.43  0.38  0.35      0.49  0.31  0.41      0.54  0.26  0.46
+fgts.min(axis=0) =
+[ 0.00026156  0.00025505  0.000255    0.00025494]
+fgts.mean() = 0.868505 fgts.min() = 0.00025487
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.61424 4.78275 3.8235 5.46143
+U_c = [[-0.01546747]] U_f = [[ 0.00174904]] b_f = [ 1.01817763]
+Test:
+       rlstm_forget3  3487.1      0.14  0.29  0.13      0.22  0.26  0.20      0.28  0.23  0.26
+fgts.min(axis=0) =
+[  1.95463617e-05   1.97842892e-05   1.97792142e-05   1.97781010e-05]
+fgts.mean() = 0.729854 fgts.min() = 1.95464e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.49712 7.72943 5.68719 8.54018
+U_c = [[-0.01546747]] U_f = [[ 0.00174904]] b_f = [ 1.01817763]
+Epoch 38/300
+20s - loss: 137.1910 - val_loss: 615.8016
+Epoch 00037: val_loss improved from 623.99457 to 615.80156, saving model to rlstm_forget3_weights.hdf5
+Train:
+       rlstm_forget3   133.8      0.63  0.21  0.54      0.61  0.16  0.55      0.62  0.12  0.57
+fgts.min(axis=0) =
+[  9.15766486e-06   9.07366211e-06   9.07341109e-06   9.07383492e-06]
+fgts.mean() = 0.881854 fgts.min() = 9.07341e-06
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.47059 4.15908 3.30378 4.74581
+U_c = [[-0.01516097]] U_f = [[ 0.00074416]] b_f = [ 1.01979744]
+Valid:
+       rlstm_forget3   615.8      0.41  0.37  0.33      0.47  0.31  0.40      0.52  0.25  0.45
+fgts.min(axis=0) =
+[ 0.00025924  0.00025656  0.00025654  0.00025652]
+fgts.mean() = 0.864208 fgts.min() = 0.000256501
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.5725 4.75444 3.83578 5.40553
+U_c = [[-0.01516097]] U_f = [[ 0.00074416]] b_f = [ 1.01979744]
+Test:
+       rlstm_forget3  3492.9      0.14  0.27  0.13      0.21  0.25  0.20      0.27  0.21  0.25
+fgts.min(axis=0) =
+[  2.04174157e-05   2.05232427e-05   2.05210326e-05   2.05205233e-05]
+fgts.mean() = 0.731872 fgts.min() = 1.86825e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.42062 7.70511 5.76892 8.47564
+U_c = [[-0.01516097]] U_f = [[ 0.00074416]] b_f = [ 1.01979744]
+Epoch 39/300
+20s - loss: 136.3203 - val_loss: 711.2478
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+20s - loss: 135.6316 - val_loss: 636.7124
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+20s - loss: 134.7246 - val_loss: 693.4859
+Epoch 00040: val_loss did not improve
+Epoch 42/300
+20s - loss: 134.1489 - val_loss: 637.0128
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+20s - loss: 133.4078 - val_loss: 677.5660
+Epoch 00042: val_loss did not improve
+Epoch 44/300
+20s - loss: 132.8810 - val_loss: 723.4759
+Epoch 00043: val_loss did not improve
+Epoch 45/300
+20s - loss: 132.3680 - val_loss: 697.5238
+Epoch 00044: val_loss did not improve
+Epoch 46/300
+20s - loss: 131.8852 - val_loss: 699.6264
+Epoch 00045: val_loss did not improve
+Epoch 47/300
+20s - loss: 131.2136 - val_loss: 699.1500
+Epoch 00046: val_loss did not improve
+Epoch 48/300
+20s - loss: 130.7257 - val_loss: 634.9087
+Epoch 00047: val_loss did not improve
+Epoch 49/300
+20s - loss: 130.2680 - val_loss: 656.4506
+Epoch 00048: val_loss did not improve
+Epoch 50/300
+20s - loss: 129.8618 - val_loss: 691.4647
+Epoch 00049: val_loss did not improve
+Epoch 51/300
+20s - loss: 129.3350 - val_loss: 696.6701
+Epoch 00050: val_loss did not improve
+Epoch 52/300
+20s - loss: 128.8832 - val_loss: 709.9347
+Epoch 00051: val_loss did not improve
+Epoch 53/300
+20s - loss: 128.5612 - val_loss: 676.6762
+Epoch 00052: val_loss did not improve
+Epoch 54/300
+20s - loss: 128.1018 - val_loss: 652.8159
+Epoch 00053: val_loss did not improve
+Epoch 55/300
+20s - loss: 127.7365 - val_loss: 683.8290
+Epoch 00054: val_loss did not improve
+Epoch 56/300
+20s - loss: 127.4321 - val_loss: 730.6840
+Epoch 00055: val_loss did not improve
+Epoch 57/300
+20s - loss: 127.0521 - val_loss: 666.0729
+Epoch 00056: val_loss did not improve
+Epoch 58/300
+20s - loss: 126.6673 - val_loss: 723.6367
+Epoch 00057: val_loss did not improve
+Epoch 59/300
+20s - loss: 126.4937 - val_loss: 668.0378
+Epoch 00058: val_loss did not improve
+Epoch 60/300
+20s - loss: 126.0114 - val_loss: 682.6012
+Epoch 00059: val_loss did not improve
+Epoch 61/300
+20s - loss: 125.6490 - val_loss: 711.6446
+Epoch 00060: val_loss did not improve
+Epoch 62/300
+20s - loss: 125.3730 - val_loss: 664.4570
+Epoch 00061: val_loss did not improve
+Epoch 63/300
+20s - loss: 124.9523 - val_loss: 775.4242
+Epoch 00062: val_loss did not improve
+Epoch 64/300
+20s - loss: 124.6432 - val_loss: 693.7229
+Epoch 00063: val_loss did not improve
+Epoch 65/300
+20s - loss: 124.3900 - val_loss: 672.5107
+Epoch 00064: val_loss did not improve
+Epoch 66/300
+20s - loss: 124.1597 - val_loss: 677.3632
+Epoch 00065: val_loss did not improve
+Epoch 67/300
+20s - loss: 123.7766 - val_loss: 683.2442
+Epoch 00066: val_loss did not improve
+Epoch 68/300
+20s - loss: 123.5117 - val_loss: 732.6062
+Epoch 00067: val_loss did not improve
+Epoch 69/300
+20s - loss: 123.2036 - val_loss: 786.3225
+Epoch 00068: val_loss did not improve
+
+training rlstm_forget4
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 407.9244 - val_loss: 720.3546
+Epoch 00000: val_loss improved from inf to 720.35458, saving model to rlstm_forget4_weights.hdf5
+Train:
+       rlstm_forget4   303.8      0.35  0.23  0.31      0.35  0.17  0.33      0.35  0.12  0.33
+fgts.min(axis=0) =
+[ 0.09788277  0.11040522  0.13392149  0.21864505]
+fgts.mean() = 0.992067 fgts.min() = 0.0978828
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.0821449 1.57438 1.46299 1.69033
+U_c = [[-0.07053534]] U_f = [[ 0.09692162]] b_f = [ 1.26459539]
+Valid:
+       rlstm_forget4   720.4      0.26  0.26  0.23      0.31  0.17  0.28      0.34  0.10  0.32
+fgts.min(axis=0) =
+[ 0.26135272  0.35293266  0.29351342  0.23026866]
+fgts.mean() = 0.989974 fgts.min() = 0.052981
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.639377 1.96334 1.50691 2.32094
+U_c = [[-0.07053534]] U_f = [[ 0.09692162]] b_f = [ 1.26459539]
+Test:
+       rlstm_forget4  2959.6      0.25  0.55  0.22      0.29  0.50  0.25      0.32  0.44  0.28
+fgts.min(axis=0) =
+[ 0.22683389  0.26393265  0.16108297  0.50035846]
+fgts.mean() = 0.995387 fgts.min() = 0.0450909
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.494506 2.27976 1.86418 2.66158
+U_c = [[-0.07053534]] U_f = [[ 0.09692162]] b_f = [ 1.26459539]
+Epoch 2/300
+20s - loss: 281.8754 - val_loss: 727.1430
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+20s - loss: 253.3861 - val_loss: 690.5609
+Epoch 00002: val_loss improved from 720.35458 to 690.56090, saving model to rlstm_forget4_weights.hdf5
+Train:
+       rlstm_forget4   244.1      0.47  0.27  0.40      0.45  0.19  0.41      0.44  0.15  0.41
+fgts.min(axis=0) =
+[ 0.02006231  0.02440271  0.02448235  0.02431634]
+fgts.mean() = 0.946131 fgts.min() = 0.0200623
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.812659 2.55712 1.94598 3.05357
+U_c = [[-0.05956949]] U_f = [[ 0.02553198]] b_f = [ 1.02059865]
+Valid:
+       rlstm_forget4   690.6      0.47  0.27  0.40      0.50  0.19  0.45      0.52  0.13  0.48
+fgts.min(axis=0) =
+[ 0.12921795  0.11549997  0.09640955  0.09452875]
+fgts.mean() = 0.97281 fgts.min() = 0.0831048
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.081 3.35892 2.50574 4.06988
+U_c = [[-0.05956949]] U_f = [[ 0.02553198]] b_f = [ 1.02059865]
+Test:
+       rlstm_forget4  3415.0      0.26  0.54  0.22      0.31  0.47  0.27      0.35  0.40  0.30
+fgts.min(axis=0) =
+[ 0.58337379  0.55945557  0.57988203  0.63286281]
+fgts.mean() = 0.995938 fgts.min() = 0.373311
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.836453 3.43074 2.92585 3.83284
+U_c = [[-0.05956949]] U_f = [[ 0.02553198]] b_f = [ 1.02059865]
+Epoch 4/300
+20s - loss: 235.5098 - val_loss: 606.0754
+Epoch 00003: val_loss improved from 690.56090 to 606.07538, saving model to rlstm_forget4_weights.hdf5
+Train:
+       rlstm_forget4   231.6      0.48  0.25  0.41      0.46  0.18  0.41      0.45  0.13  0.42
+fgts.min(axis=0) =
+[ 0.00601526  0.00605666  0.0060486   0.00603411]
+fgts.mean() = 0.933082 fgts.min() = 0.00601526
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.01311 2.8563 2.09163 3.4586
+U_c = [[-0.05666883]] U_f = [[-0.00742384]] b_f = [ 0.97655314]
+Valid:
+       rlstm_forget4   606.1      0.49  0.30  0.41      0.54  0.22  0.47      0.56  0.16  0.51
+fgts.min(axis=0) =
+[ 0.00757491  0.00646707  0.00649634  0.00648166]
+fgts.mean() = 0.959058 fgts.min() = 0.00453102
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.1937 3.71486 2.77755 4.49374
+U_c = [[-0.05666883]] U_f = [[-0.00742384]] b_f = [ 0.97655314]
+Test:
+       rlstm_forget4  3727.0      0.24  0.49  0.21      0.31  0.42  0.27      0.36  0.36  0.31
+fgts.min(axis=0) =
+[ 0.0989451   0.08778464  0.09622674  0.10440683]
+fgts.mean() = 0.976945 fgts.min() = 0.0877846
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.19901 4.09077 3.59722 4.42247
+U_c = [[-0.05666883]] U_f = [[-0.00742384]] b_f = [ 0.97655314]
+Epoch 5/300
+20s - loss: 223.2071 - val_loss: 576.6812
+Epoch 00004: val_loss improved from 606.07538 to 576.68122, saving model to rlstm_forget4_weights.hdf5
+Train:
+       rlstm_forget4   218.1      0.54  0.28  0.45      0.51  0.21  0.45      0.50  0.16  0.45
+fgts.min(axis=0) =
+[ 0.00512739  0.00535799  0.00534406  0.00531947]
+fgts.mean() = 0.929143 fgts.min() = 0.00512739
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.989452 2.98306 2.2389 3.58025
+U_c = [[-0.0551859]] U_f = [[-0.0078482]] b_f = [ 0.96883708]
+Valid:
+       rlstm_forget4   576.7      0.56  0.33  0.45      0.60  0.25  0.51      0.63  0.19  0.55
+fgts.min(axis=0) =
+[ 0.00067314  0.00067943  0.00038139  0.00034263]
+fgts.mean() = 0.946016 fgts.min() = 0.000342633
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.30167 4.0917 3.08554 4.92197
+U_c = [[-0.0551859]] U_f = [[-0.0078482]] b_f = [ 0.96883708]
+Test:
+       rlstm_forget4  3502.6      0.23  0.48  0.20      0.31  0.41  0.26      0.36  0.35  0.31
+fgts.min(axis=0) =
+[ 0.01806794  0.0212593   0.02381773  0.02548501]
+fgts.mean() = 0.937198 fgts.min() = 0.0180679
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.6651 4.83545 4.19761 5.22248
+U_c = [[-0.0551859]] U_f = [[-0.0078482]] b_f = [ 0.96883708]
+Epoch 6/300
+20s - loss: 214.6125 - val_loss: 586.0500
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+20s - loss: 208.4511 - val_loss: 671.4061
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 203.2283 - val_loss: 687.9422
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 198.3950 - val_loss: 667.1891
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 193.8257 - val_loss: 658.8019
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 189.2010 - val_loss: 642.7033
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 184.6965 - val_loss: 659.5439
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+20s - loss: 180.4972 - val_loss: 638.3560
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 175.7791 - val_loss: 630.8205
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 170.6981 - val_loss: 625.9342
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 165.0413 - val_loss: 677.7477
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+20s - loss: 160.8282 - val_loss: 657.2051
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+20s - loss: 157.7318 - val_loss: 672.2064
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+20s - loss: 155.5409 - val_loss: 665.3726
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+20s - loss: 153.2240 - val_loss: 669.3456
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 151.5323 - val_loss: 655.9330
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 149.8281 - val_loss: 704.0236
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+20s - loss: 148.4049 - val_loss: 676.5885
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 146.9332 - val_loss: 707.7508
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 145.6817 - val_loss: 671.5522
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+20s - loss: 144.5003 - val_loss: 667.5760
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+20s - loss: 143.2383 - val_loss: 682.7823
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+20s - loss: 142.0864 - val_loss: 683.6437
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+20s - loss: 141.0106 - val_loss: 634.7997
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+20s - loss: 139.9510 - val_loss: 643.0042
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+20s - loss: 138.9034 - val_loss: 638.7945
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+20s - loss: 137.9539 - val_loss: 662.1941
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+20s - loss: 136.9445 - val_loss: 648.8839
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+20s - loss: 136.0357 - val_loss: 637.5577
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+20s - loss: 135.1662 - val_loss: 657.0536
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+20s - loss: 134.3138 - val_loss: 632.2233
+Epoch 00035: val_loss did not improve
+
+training rlstm_forget5
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 405.0898 - val_loss: 739.2235
+Epoch 00000: val_loss improved from inf to 739.22353, saving model to rlstm_forget5_weights.hdf5
+Train:
+       rlstm_forget5   301.7      0.42  0.29  0.36      0.41  0.22  0.37      0.41  0.16  0.38
+fgts.min(axis=0) =
+[ 0.02934971  0.04585491  0.05682851  0.14888577]
+fgts.mean() = 0.990986 fgts.min() = 0.0293497
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.0646631 1.57941 1.48508 1.67757
+U_c = [[-0.06517114]] U_f = [[ 0.11291949]] b_f = [ 1.28517306]
+Valid:
+       rlstm_forget5   739.2      0.28  0.28  0.25      0.33  0.18  0.30      0.36  0.12  0.34
+fgts.min(axis=0) =
+[ 0.16060799  0.23264198  0.21406253  0.12870547]
+fgts.mean() = 0.985631 fgts.min() = 0.0167882
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.798128 2.03417 1.52787 2.37808
+U_c = [[-0.06517114]] U_f = [[ 0.11291949]] b_f = [ 1.28517306]
+Test:
+       rlstm_forget5  3107.6      0.28  0.56  0.23      0.31  0.51  0.26      0.35  0.45  0.29
+fgts.min(axis=0) =
+[ 0.17857762  0.23899651  0.09840054  0.49558419]
+fgts.mean() = 0.994211 fgts.min() = 0.0292479
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.539845 2.49034 2.07295 2.86117
+U_c = [[-0.06517114]] U_f = [[ 0.11291949]] b_f = [ 1.28517306]
+Epoch 2/300
+20s - loss: 283.6006 - val_loss: 771.1613
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+20s - loss: 256.8291 - val_loss: 750.5483
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+20s - loss: 238.0052 - val_loss: 617.3028
+Epoch 00003: val_loss improved from 739.22353 to 617.30285, saving model to rlstm_forget5_weights.hdf5
+Train:
+       rlstm_forget5   230.5      0.52  0.27  0.43      0.49  0.20  0.44      0.48  0.16  0.44
+fgts.min(axis=0) =
+[ 0.00057195  0.00054613  0.00054588  0.00054604]
+fgts.mean() = 0.930124 fgts.min() = 0.000545881
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.854262 2.72437 2.02007 3.33133
+U_c = [[-0.05792595]] U_f = [[ 0.00286605]] b_f = [ 0.94676614]
+Valid:
+       rlstm_forget5   617.3      0.52  0.28  0.43      0.55  0.21  0.48      0.57  0.16  0.52
+fgts.min(axis=0) =
+[ 0.02815384  0.02420112  0.02404529  0.02398231]
+fgts.mean() = 0.950451 fgts.min() = 0.0239164
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.28951 3.86164 2.78742 4.78182
+U_c = [[-0.05792595]] U_f = [[ 0.00286605]] b_f = [ 0.94676614]
+Test:
+       rlstm_forget5  3479.7      0.28  0.49  0.24      0.34  0.42  0.29      0.38  0.36  0.33
+fgts.min(axis=0) =
+[ 0.33236143  0.32927763  0.33229858  0.33413309]
+fgts.mean() = 0.981697 fgts.min() = 0.328179
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.09618 3.82696 3.19713 4.29644
+U_c = [[-0.05792595]] U_f = [[ 0.00286605]] b_f = [ 0.94676614]
+Epoch 5/300
+20s - loss: 223.2509 - val_loss: 616.4592
+Epoch 00004: val_loss improved from 617.30285 to 616.45921, saving model to rlstm_forget5_weights.hdf5
+Train:
+       rlstm_forget5   218.9      0.49  0.23  0.43      0.46  0.16  0.42      0.45  0.13  0.42
+fgts.min(axis=0) =
+[  9.33149349e-05   9.36196666e-05   9.36100259e-05   9.36491342e-05]
+fgts.mean() = 0.92298 fgts.min() = 9.33149e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.09814 2.97765 2.11995 3.66061
+U_c = [[-0.05218323]] U_f = [[-0.00720709]] b_f = [ 0.92640525]
+Valid:
+       rlstm_forget5   616.5      0.51  0.30  0.42      0.55  0.23  0.48      0.57  0.18  0.51
+fgts.min(axis=0) =
+[ 0.00041511  0.00039345  0.00037403  0.00037282]
+fgts.mean() = 0.93888 fgts.min() = 0.000372815
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.43613 4.17524 2.98143 5.18957
+U_c = [[-0.05218323]] U_f = [[-0.00720709]] b_f = [ 0.92640525]
+Test:
+       rlstm_forget5  4054.4      0.26  0.44  0.22      0.32  0.39  0.28      0.36  0.35  0.31
+fgts.min(axis=0) =
+[ 0.03074995  0.03231866  0.03241744  0.03056593]
+fgts.mean() = 0.966247 fgts.min() = 0.0284153
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.605 4.43246 3.70225 4.88355
+U_c = [[-0.05218323]] U_f = [[-0.00720709]] b_f = [ 0.92640525]
+Epoch 6/300
+20s - loss: 212.3794 - val_loss: 580.7570
+Epoch 00005: val_loss improved from 616.45921 to 580.75696, saving model to rlstm_forget5_weights.hdf5
+Train:
+       rlstm_forget5   209.6      0.57  0.29  0.46      0.55  0.23  0.47      0.54  0.18  0.48
+fgts.min(axis=0) =
+[  4.17616902e-05   4.73368236e-05   4.73735345e-05   4.73533037e-05]
+fgts.mean() = 0.92169 fgts.min() = 4.17617e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.988055 3.12461 2.34143 3.78176
+U_c = [[-0.04986395]] U_f = [[-0.00558369]] b_f = [ 0.93576401]
+Valid:
+       rlstm_forget5   580.8      0.59  0.35  0.45      0.63  0.28  0.51      0.65  0.23  0.55
+fgts.min(axis=0) =
+[  3.93412338e-05   3.76676471e-05   3.72629584e-05   3.72393333e-05]
+fgts.mean() = 0.931141 fgts.min() = 3.72393e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.38719 4.4627 3.2598 5.53687
+U_c = [[-0.04986395]] U_f = [[-0.00558369]] b_f = [ 0.93576401]
+Test:
+       rlstm_forget5  3736.4      0.31  0.45  0.26      0.37  0.41  0.31      0.42  0.37  0.34
+fgts.min(axis=0) =
+[ 0.01116131  0.01100351  0.0110261   0.01071864]
+fgts.mean() = 0.949011 fgts.min() = 0.0103344
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.57938 4.75587 3.9999 5.25374
+U_c = [[-0.04986395]] U_f = [[-0.00558369]] b_f = [ 0.93576401]
+Epoch 7/300
+20s - loss: 204.6756 - val_loss: 607.8773
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 198.1458 - val_loss: 642.9774
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 192.4702 - val_loss: 636.2331
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 187.2157 - val_loss: 736.9570
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 182.0832 - val_loss: 617.7280
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 174.6735 - val_loss: 776.4096
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+20s - loss: 168.1321 - val_loss: 762.6492
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 164.1539 - val_loss: 675.7577
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 160.8682 - val_loss: 673.7151
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 158.1079 - val_loss: 642.4949
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+20s - loss: 155.5019 - val_loss: 704.0269
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+20s - loss: 153.0679 - val_loss: 661.7579
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+20s - loss: 150.9682 - val_loss: 645.6677
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+20s - loss: 149.0320 - val_loss: 648.2164
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 147.1560 - val_loss: 675.6422
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 145.7136 - val_loss: 630.0840
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+20s - loss: 144.2858 - val_loss: 674.6573
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 142.9358 - val_loss: 661.6845
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 141.6949 - val_loss: 644.4907
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+20s - loss: 140.5823 - val_loss: 646.1922
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+20s - loss: 139.5978 - val_loss: 625.5947
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+20s - loss: 138.5783 - val_loss: 640.7511
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+20s - loss: 137.6681 - val_loss: 659.7016
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+20s - loss: 136.8291 - val_loss: 627.2258
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+20s - loss: 135.9783 - val_loss: 631.8661
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+20s - loss: 135.2406 - val_loss: 620.4264
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+20s - loss: 134.6312 - val_loss: 625.4570
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+20s - loss: 133.8035 - val_loss: 652.9875
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+20s - loss: 133.1195 - val_loss: 635.4545
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+20s - loss: 132.6186 - val_loss: 639.7603
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+20s - loss: 132.0394 - val_loss: 624.2634
+Epoch 00036: val_loss did not improve
+
+training rlstm_forget6
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 402.2693 - val_loss: 737.3124
+Epoch 00000: val_loss improved from inf to 737.31240, saving model to rlstm_forget6_weights.hdf5
+Train:
+       rlstm_forget6   298.7      0.39  0.26  0.34      0.38  0.19  0.35      0.38  0.14  0.36
+fgts.min(axis=0) =
+[ 0.07370184  0.09421902  0.12363268  0.1707404 ]
+fgts.mean() = 0.988519 fgts.min() = 0.0737018
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.109715 1.54162 1.42491 1.65949
+U_c = [[-0.06659606]] U_f = [[ 0.10560615]] b_f = [ 1.30237031]
+Valid:
+       rlstm_forget6   737.3      0.27  0.27  0.24      0.32  0.17  0.29      0.34  0.11  0.33
+fgts.min(axis=0) =
+[ 0.22390689  0.24695648  0.2313039   0.28117955]
+fgts.mean() = 0.984975 fgts.min() = 0.0247064
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.815405 2.01519 1.48533 2.37419
+U_c = [[-0.06659606]] U_f = [[ 0.10560615]] b_f = [ 1.30237031]
+Test:
+       rlstm_forget6  3170.0      0.25  0.57  0.22      0.28  0.52  0.24      0.32  0.46  0.27
+fgts.min(axis=0) =
+[ 0.21348792  0.24732824  0.2732265   0.35925263]
+fgts.mean() = 0.993982 fgts.min() = 0.0293774
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.607914 2.42358 1.95785 2.82625
+U_c = [[-0.06659606]] U_f = [[ 0.10560615]] b_f = [ 1.30237031]
+Epoch 2/300
+20s - loss: 280.5556 - val_loss: 719.9774
+Epoch 00001: val_loss improved from 737.31240 to 719.97743, saving model to rlstm_forget6_weights.hdf5
+Train:
+       rlstm_forget6   265.2      0.49  0.31  0.40      0.47  0.23  0.41      0.46  0.18  0.42
+fgts.min(axis=0) =
+[ 0.06825026  0.05238214  0.06213563  0.07013639]
+fgts.mean() = 0.956459 fgts.min() = 0.0440485
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.565311 2.11986 1.66384 2.51966
+U_c = [[-0.06426241]] U_f = [[ 0.06271168]] b_f = [ 1.13043344]
+Valid:
+       rlstm_forget6   720.0      0.40  0.25  0.35      0.44  0.17  0.41      0.47  0.11  0.44
+fgts.min(axis=0) =
+[ 0.09978991  0.0699532   0.05952211  0.05338812]
+fgts.mean() = 0.969877 fgts.min() = 0.0402107
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.246 3.03422 2.10687 3.7179
+U_c = [[-0.06426241]] U_f = [[ 0.06271168]] b_f = [ 1.13043344]
+Test:
+       rlstm_forget6  3451.7      0.25  0.56  0.22      0.29  0.50  0.25      0.32  0.44  0.28
+fgts.min(axis=0) =
+[ 0.42638928  0.38652769  0.45762038  0.49895886]
+fgts.mean() = 0.995278 fgts.min() = 0.359684
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.783907 3.15101 2.52716 3.70054
+U_c = [[-0.06426241]] U_f = [[ 0.06271168]] b_f = [ 1.13043344]
+Epoch 3/300
+20s - loss: 253.7901 - val_loss: 641.0776
+Epoch 00002: val_loss improved from 719.97743 to 641.07760, saving model to rlstm_forget6_weights.hdf5
+Train:
+       rlstm_forget6   243.7      0.48  0.28  0.41      0.46  0.20  0.41      0.45  0.15  0.42
+fgts.min(axis=0) =
+[ 0.01898115  0.02117367  0.02123244  0.02122617]
+fgts.mean() = 0.943472 fgts.min() = 0.0189812
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.807446 2.49988 1.84097 3.06041
+U_c = [[-0.06088728]] U_f = [[ 0.02544034]] b_f = [ 1.00069571]
+Valid:
+       rlstm_forget6   641.1      0.45  0.26  0.39      0.49  0.19  0.44      0.51  0.13  0.47
+fgts.min(axis=0) =
+[ 0.08261849  0.06511962  0.04752896  0.0368407 ]
+fgts.mean() = 0.963596 fgts.min() = 0.0364925
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.284 3.47755 2.4368 4.32937
+U_c = [[-0.06088728]] U_f = [[ 0.02544034]] b_f = [ 1.00069571]
+Test:
+       rlstm_forget6  3548.7      0.24  0.54  0.21      0.29  0.47  0.25      0.32  0.40  0.29
+fgts.min(axis=0) =
+[ 0.44075927  0.38723627  0.3346611   0.40031368]
+fgts.mean() = 0.994511 fgts.min() = 0.190656
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.988108 3.42489 2.77264 3.93619
+U_c = [[-0.06088728]] U_f = [[ 0.02544034]] b_f = [ 1.00069571]
+Epoch 4/300
+20s - loss: 237.2057 - val_loss: 616.0765
+Epoch 00003: val_loss improved from 641.07760 to 616.07647, saving model to rlstm_forget6_weights.hdf5
+Train:
+       rlstm_forget6   229.5      0.50  0.26  0.42      0.47  0.19  0.42      0.46  0.14  0.42
+fgts.min(axis=0) =
+[ 0.00699642  0.00689689  0.00689529  0.00689743]
+fgts.mean() = 0.928031 fgts.min() = 0.00689529
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.01006 2.7806 1.96852 3.44427
+U_c = [[-0.05500773]] U_f = [[-0.00209726]] b_f = [ 0.92084688]
+Valid:
+       rlstm_forget6   616.1      0.48  0.28  0.41      0.52  0.21  0.46      0.54  0.16  0.49
+fgts.min(axis=0) =
+[ 0.09064885  0.09205055  0.09395947  0.09394716]
+fgts.mean() = 0.94987 fgts.min() = 0.0906489
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.40827 3.82566 2.68085 4.7656
+U_c = [[-0.05500773]] U_f = [[-0.00209726]] b_f = [ 0.92084688]
+Test:
+       rlstm_forget6  4223.5      0.23  0.51  0.20      0.28  0.44  0.25      0.32  0.38  0.28
+fgts.min(axis=0) =
+[ 0.19698271  0.19039004  0.1945188   0.19889955]
+fgts.mean() = 0.987051 fgts.min() = 0.19039
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.40961 3.91405 3.20757 4.36649
+U_c = [[-0.05500773]] U_f = [[-0.00209726]] b_f = [ 0.92084688]
+Epoch 5/300
+20s - loss: 224.6911 - val_loss: 615.6525
+Epoch 00004: val_loss improved from 616.07647 to 615.65252, saving model to rlstm_forget6_weights.hdf5
+Train:
+       rlstm_forget6   218.7      0.53  0.27  0.45      0.51  0.21  0.45      0.50  0.16  0.46
+fgts.min(axis=0) =
+[ 0.00325603  0.00310433  0.003101    0.00310479]
+fgts.mean() = 0.923246 fgts.min() = 0.003101
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.995929 2.95471 2.15541 3.62036
+U_c = [[-0.05215911]] U_f = [[-0.00747113]] b_f = [ 0.90873665]
+Valid:
+       rlstm_forget6   615.7      0.50  0.30  0.42      0.54  0.24  0.46      0.56  0.19  0.50
+fgts.min(axis=0) =
+[ 0.03768606  0.03618615  0.03623429  0.03626334]
+fgts.mean() = 0.941715 fgts.min() = 0.0361861
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.52487 4.20945 2.98787 5.2059
+U_c = [[-0.05215911]] U_f = [[-0.00747113]] b_f = [ 0.90873665]
+Test:
+       rlstm_forget6  4965.8      0.23  0.47  0.20      0.29  0.40  0.25      0.33  0.35  0.29
+fgts.min(axis=0) =
+[ 0.09240866  0.08396213  0.09608708  0.10616886]
+fgts.mean() = 0.982619 fgts.min() = 0.0839621
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.7279 4.49174 3.76409 4.91386
+U_c = [[-0.05215911]] U_f = [[-0.00747113]] b_f = [ 0.90873665]
+Epoch 6/300
+20s - loss: 214.7094 - val_loss: 601.5690
+Epoch 00005: val_loss improved from 615.65252 to 601.56904, saving model to rlstm_forget6_weights.hdf5
+Train:
+       rlstm_forget6   210.5      0.53  0.25  0.45      0.51  0.19  0.45      0.50  0.15  0.46
+fgts.min(axis=0) =
+[ 0.00160192  0.00157684  0.00157599  0.00157697]
+fgts.mean() = 0.915724 fgts.min() = 0.00157599
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.06915 3.05694 2.23475 3.7155
+U_c = [[-0.04950297]] U_f = [[-0.00261207]] b_f = [ 0.91910958]
+Valid:
+       rlstm_forget6   601.6      0.51  0.32  0.41      0.55  0.26  0.47      0.58  0.21  0.50
+fgts.min(axis=0) =
+[ 0.0093701   0.00923194  0.00922847  0.00922788]
+fgts.mean() = 0.932433 fgts.min() = 0.00922788
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.60945 4.38434 3.11306 5.4065
+U_c = [[-0.04950297]] U_f = [[-0.00261207]] b_f = [ 0.91910958]
+Test:
+       rlstm_forget6  5141.9      0.23  0.41  0.21      0.29  0.36  0.26      0.33  0.32  0.29
+fgts.min(axis=0) =
+[ 0.04444907  0.0489104   0.05008826  0.05178056]
+fgts.mean() = 0.973003 fgts.min() = 0.0444491
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.1969 5.03713 4.16963 5.48519
+U_c = [[-0.04950297]] U_f = [[-0.00261207]] b_f = [ 0.91910958]
+Epoch 7/300
+20s - loss: 205.7322 - val_loss: 610.9852
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 198.4008 - val_loss: 631.6625
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 189.1604 - val_loss: 683.1155
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 180.6559 - val_loss: 644.6241
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 174.9283 - val_loss: 752.8359
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 170.2417 - val_loss: 713.2460
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+20s - loss: 166.3169 - val_loss: 640.8040
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 162.8997 - val_loss: 602.3650
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 159.9556 - val_loss: 688.3060
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 157.3831 - val_loss: 645.6920
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+19s - loss: 155.2405 - val_loss: 555.3707
+Epoch 00016: val_loss improved from 601.56904 to 555.37073, saving model to rlstm_forget6_weights.hdf5
+Train:
+       rlstm_forget6   160.3      0.62  0.24  0.52      0.60  0.19  0.53      0.61  0.15  0.55
+fgts.min(axis=0) =
+[ 0.00254064  0.00254394  0.00254978  0.00254746]
+fgts.mean() = 0.854228 fgts.min() = 0.00254064
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.71134 4.09696 3.19652 4.63298
+U_c = [[ 0.01570034]] U_f = [[-0.00131729]] b_f = [ 1.04688752]
+Valid:
+       rlstm_forget6   555.4      0.50  0.36  0.40      0.56  0.29  0.46      0.59  0.24  0.50
+fgts.min(axis=0) =
+[ 0.00553684  0.00570307  0.00571802  0.0057179 ]
+fgts.mean() = 0.84946 fgts.min() = 0.00553684
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.99268 5.26427 3.91905 6.22803
+U_c = [[ 0.01570034]] U_f = [[-0.00131729]] b_f = [ 1.04688752]
+Test:
+       rlstm_forget6  5786.7      0.23  0.44  0.20      0.29  0.38  0.26      0.34  0.33  0.30
+fgts.min(axis=0) =
+[ 0.00547458  0.00556943  0.00556955  0.00555981]
+fgts.mean() = 0.900593 fgts.min() = 0.00335068
+incs mean, abs_mean, abs_mean+, abs_mean-: -3.19053 6.50343 5.04152 7.2188
+U_c = [[ 0.01570034]] U_f = [[-0.00131729]] b_f = [ 1.04688752]
+Epoch 18/300
+20s - loss: 153.1866 - val_loss: 641.7647
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+20s - loss: 151.2694 - val_loss: 628.9142
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+20s - loss: 149.5261 - val_loss: 596.8949
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 147.8731 - val_loss: 590.8861
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 146.2995 - val_loss: 576.3209
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+19s - loss: 144.7648 - val_loss: 578.6847
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 143.4804 - val_loss: 579.7348
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 142.0881 - val_loss: 608.9111
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+19s - loss: 141.1281 - val_loss: 622.0636
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+19s - loss: 139.9533 - val_loss: 613.5269
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+19s - loss: 138.8163 - val_loss: 577.8985
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+19s - loss: 137.8284 - val_loss: 582.0574
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+19s - loss: 136.7419 - val_loss: 605.8040
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+19s - loss: 135.8076 - val_loss: 585.4607
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+20s - loss: 135.0555 - val_loss: 682.5692
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+20s - loss: 134.2381 - val_loss: 615.5561
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+20s - loss: 133.5025 - val_loss: 573.2181
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+20s - loss: 132.8134 - val_loss: 600.2669
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+20s - loss: 132.0732 - val_loss: 596.1087
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+20s - loss: 131.6028 - val_loss: 617.3529
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+20s - loss: 130.8605 - val_loss: 627.3611
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+19s - loss: 130.2931 - val_loss: 592.2903
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+20s - loss: 129.7247 - val_loss: 620.2788
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+19s - loss: 129.3897 - val_loss: 632.2112
+Epoch 00040: val_loss did not improve
+Epoch 42/300
+19s - loss: 128.7465 - val_loss: 601.7652
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+19s - loss: 128.1955 - val_loss: 623.1127
+Epoch 00042: val_loss did not improve
+Epoch 44/300
+19s - loss: 127.7576 - val_loss: 684.9573
+Epoch 00043: val_loss did not improve
+Epoch 45/300
+19s - loss: 127.3444 - val_loss: 629.9374
+Epoch 00044: val_loss did not improve
+Epoch 46/300
+19s - loss: 126.7056 - val_loss: 642.9513
+Epoch 00045: val_loss did not improve
+Epoch 47/300
+19s - loss: 126.1942 - val_loss: 618.0032
+Epoch 00046: val_loss did not improve
+Epoch 48/300
+19s - loss: 125.9633 - val_loss: 654.8090
+Epoch 00047: val_loss did not improve
+
+training rlstm_forget7
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 399.1870 - val_loss: 712.8552
+Epoch 00000: val_loss improved from inf to 712.85524, saving model to rlstm_forget7_weights.hdf5
+Train:
+       rlstm_forget7   298.8      0.41  0.27  0.36      0.41  0.20  0.37      0.40  0.15  0.37
+fgts.min(axis=0) =
+[ 0.1784593   0.17625511  0.22826461  0.18443912]
+fgts.mean() = 0.990977 fgts.min() = 0.176255
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.0195207 1.58409 1.51248 1.66081
+U_c = [[-0.07040622]] U_f = [[ 0.0796566]] b_f = [ 1.18641913]
+Valid:
+       rlstm_forget7   712.9      0.33  0.27  0.29      0.38  0.18  0.35      0.41  0.11  0.39
+fgts.min(axis=0) =
+[ 0.37069213  0.40393564  0.52285069  0.4740862 ]
+fgts.mean() = 0.994659 fgts.min() = 0.350141
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.519962 2.03212 1.67312 2.3281
+U_c = [[-0.07040622]] U_f = [[ 0.0796566]] b_f = [ 1.18641913]
+Test:
+       rlstm_forget7  2939.4      0.29  0.55  0.24      0.33  0.50  0.27      0.37  0.44  0.30
+fgts.min(axis=0) =
+[ 0.36806914  0.35351411  0.40110999  0.49558514]
+fgts.mean() = 0.997241 fgts.min() = 0.107637
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.358292 2.39837 2.06961 2.71788
+U_c = [[-0.07040622]] U_f = [[ 0.0796566]] b_f = [ 1.18641913]
+Epoch 2/300
+20s - loss: 281.6405 - val_loss: 635.1895
+Epoch 00001: val_loss improved from 712.85524 to 635.18955, saving model to rlstm_forget7_weights.hdf5
+Train:
+       rlstm_forget7   265.6      0.47  0.29  0.39      0.45  0.21  0.40      0.44  0.16  0.41
+fgts.min(axis=0) =
+[ 0.0334946   0.02721334  0.02952579  0.02952434]
+fgts.mean() = 0.954526 fgts.min() = 0.0272133
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.49944 2.02664 1.65884 2.34037
+U_c = [[-0.06661865]] U_f = [[ 0.03586273]] b_f = [ 0.98561442]
+Valid:
+       rlstm_forget7   635.2      0.44  0.26  0.38      0.48  0.18  0.43      0.50  0.12  0.47
+fgts.min(axis=0) =
+[ 0.31536731  0.30790174  0.30111569  0.29683095]
+fgts.mean() = 0.98061 fgts.min() = 0.276408
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.74313 2.53704 1.99101 2.9847
+U_c = [[-0.06661865]] U_f = [[ 0.03586273]] b_f = [ 0.98561442]
+Test:
+       rlstm_forget7  2925.9      0.27  0.55  0.23      0.31  0.48  0.27      0.35  0.42  0.30
+fgts.min(axis=0) =
+[ 0.68874955  0.66946882  0.70194948  0.71512258]
+fgts.mean() = 0.996415 fgts.min() = 0.669469
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.509837 2.67575 2.26425 3.053
+U_c = [[-0.06661865]] U_f = [[ 0.03586273]] b_f = [ 0.98561442]
+Epoch 3/300
+20s - loss: 253.7550 - val_loss: 566.1382
+Epoch 00002: val_loss improved from 635.18955 to 566.13823, saving model to rlstm_forget7_weights.hdf5
+Train:
+       rlstm_forget7   244.0      0.50  0.29  0.42      0.47  0.21  0.42      0.45  0.16  0.42
+fgts.min(axis=0) =
+[ 0.01651718  0.01595673  0.01593992  0.01594   ]
+fgts.mean() = 0.938431 fgts.min() = 0.0159398
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.672497 2.40526 1.88584 2.8467
+U_c = [[-0.05873775]] U_f = [[-0.01315467]] b_f = [ 0.86525071]
+Valid:
+       rlstm_forget7   566.1      0.50  0.28  0.42      0.54  0.21  0.47      0.55  0.15  0.51
+fgts.min(axis=0) =
+[ 0.10639954  0.10700725  0.10474126  0.10623133]
+fgts.mean() = 0.958784 fgts.min() = 0.0958174
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.867732 3.13722 2.3905 3.81198
+U_c = [[-0.05873775]] U_f = [[-0.01315467]] b_f = [ 0.86525071]
+Test:
+       rlstm_forget7  3068.1      0.26  0.54  0.22      0.33  0.47  0.28      0.38  0.40  0.32
+fgts.min(axis=0) =
+[ 0.03611011  0.15849552  0.16837892  0.15178965]
+fgts.mean() = 0.9786 fgts.min() = 0.0361101
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.447683 2.98567 2.66353 3.27882
+U_c = [[-0.05873775]] U_f = [[-0.01315467]] b_f = [ 0.86525071]
+Epoch 4/300
+20s - loss: 236.4780 - val_loss: 584.9435
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+20s - loss: 223.9566 - val_loss: 631.4288
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+20s - loss: 213.6733 - val_loss: 675.8340
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+20s - loss: 205.2266 - val_loss: 732.4837
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 198.8786 - val_loss: 781.3676
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 193.3204 - val_loss: 762.8008
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 188.2604 - val_loss: 944.8464
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 183.5831 - val_loss: 868.0934
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 179.0465 - val_loss: 941.9878
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+20s - loss: 174.9752 - val_loss: 832.5666
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 171.3230 - val_loss: 773.2091
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 167.8992 - val_loss: 865.5889
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 164.8821 - val_loss: 800.9800
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+20s - loss: 161.5412 - val_loss: 885.9595
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+20s - loss: 157.7906 - val_loss: 803.0727
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+20s - loss: 154.5285 - val_loss: 754.0922
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+20s - loss: 151.8296 - val_loss: 758.7153
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 149.4224 - val_loss: 794.3378
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 147.3096 - val_loss: 820.2819
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+20s - loss: 145.3178 - val_loss: 714.5424
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 143.3296 - val_loss: 697.1586
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 141.7066 - val_loss: 740.7515
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+20s - loss: 139.9667 - val_loss: 761.5548
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+20s - loss: 138.5705 - val_loss: 710.2788
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+20s - loss: 137.2998 - val_loss: 713.1155
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+20s - loss: 136.1283 - val_loss: 726.2401
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+20s - loss: 134.9011 - val_loss: 682.3749
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+20s - loss: 134.1558 - val_loss: 731.4564
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+20s - loss: 133.1319 - val_loss: 733.3949
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+20s - loss: 132.3343 - val_loss: 737.0302
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+20s - loss: 131.4389 - val_loss: 685.6167
+Epoch 00033: val_loss did not improve
+
+training rlstm_forget8
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 404.4328 - val_loss: 746.5881
+Epoch 00000: val_loss improved from inf to 746.58810, saving model to rlstm_forget8_weights.hdf5
+Train:
+       rlstm_forget8   300.1      0.37  0.25  0.33      0.38  0.19  0.35      0.38  0.14  0.35
+fgts.min(axis=0) =
+[ 0.03312052  0.04421977  0.05631568  0.14431657]
+fgts.mean() = 0.991978 fgts.min() = 0.0331205
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.0388873 1.54788 1.45828 1.64393
+U_c = [[-0.06956133]] U_f = [[ 0.11209717]] b_f = [ 1.2943635]
+Valid:
+       rlstm_forget8   746.6      0.25  0.27  0.22      0.29  0.18  0.27      0.32  0.11  0.31
+fgts.min(axis=0) =
+[ 0.18294448  0.28984815  0.22529721  0.14245957]
+fgts.mean() = 0.987287 fgts.min() = 0.0242222
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.771091 2.00081 1.49503 2.35415
+U_c = [[-0.06956133]] U_f = [[ 0.11209717]] b_f = [ 1.2943635]
+Test:
+       rlstm_forget8  3145.1      0.24  0.56  0.21      0.28  0.51  0.24      0.31  0.45  0.27
+fgts.min(axis=0) =
+[ 0.19603176  0.24455094  0.11003029  0.47351009]
+fgts.mean() = 0.995292 fgts.min() = 0.0253916
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.604531 2.44524 1.98403 2.8443
+U_c = [[-0.06956133]] U_f = [[ 0.11209717]] b_f = [ 1.2943635]
+Epoch 2/300
+20s - loss: 282.0993 - val_loss: 816.4308
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+20s - loss: 255.7051 - val_loss: 755.4140
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+20s - loss: 236.8603 - val_loss: 740.2604
+Epoch 00003: val_loss improved from 746.58810 to 740.26041, saving model to rlstm_forget8_weights.hdf5
+Train:
+       rlstm_forget8   229.8      0.48  0.25  0.41      0.46  0.18  0.42      0.45  0.14  0.42
+fgts.min(axis=0) =
+[ 0.00909428  0.01075501  0.01075699  0.01070431]
+fgts.mean() = 0.939287 fgts.min() = 0.00909428
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.855669 2.80652 2.13802 3.36739
+U_c = [[-0.06367528]] U_f = [[ 0.01994262]] b_f = [ 0.87626261]
+Valid:
+       rlstm_forget8   740.3      0.48  0.29  0.40      0.52  0.21  0.46      0.54  0.16  0.50
+fgts.min(axis=0) =
+[ 0.08623523  0.07554555  0.07403676  0.07383102]
+fgts.mean() = 0.969527 fgts.min() = 0.0723591
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.12729 3.74925 2.84355 4.52401
+U_c = [[-0.06367528]] U_f = [[ 0.01994262]] b_f = [ 0.87626261]
+Test:
+       rlstm_forget8  3659.8      0.27  0.49  0.23      0.34  0.42  0.29      0.38  0.36  0.33
+fgts.min(axis=0) =
+[ 0.61727643  0.53847778  0.41312149  0.38578415]
+fgts.mean() = 0.990723 fgts.min() = 0.177263
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.11506 4.03602 3.36534 4.55022
+U_c = [[-0.06367528]] U_f = [[ 0.01994262]] b_f = [ 0.87626261]
+Epoch 5/300
+20s - loss: 224.2826 - val_loss: 810.2941
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+20s - loss: 215.7354 - val_loss: 770.4402
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+20s - loss: 208.7955 - val_loss: 698.5108
+Epoch 00006: val_loss improved from 740.26041 to 698.51078, saving model to rlstm_forget8_weights.hdf5
+Train:
+       rlstm_forget8   204.9      0.54  0.26  0.45      0.51  0.20  0.45      0.50  0.16  0.46
+fgts.min(axis=0) =
+[ 0.00488551  0.00493568  0.00493291  0.00492576]
+fgts.mean() = 0.924091 fgts.min() = 0.00488551
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.11542 3.33181 2.53683 3.94847
+U_c = [[-0.05650804]] U_f = [[-0.00323061]] b_f = [ 0.79651123]
+Valid:
+       rlstm_forget8   698.5      0.55  0.36  0.43      0.60  0.29  0.49      0.63  0.23  0.53
+fgts.min(axis=0) =
+[ 0.02264552  0.02361115  0.02469118  0.02461636]
+fgts.mean() = 0.957377 fgts.min() = 0.0226455
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.18984 4.46573 3.52374 5.28393
+U_c = [[-0.05650804]] U_f = [[-0.00323061]] b_f = [ 0.79651123]
+Test:
+       rlstm_forget8  4141.2      0.30  0.45  0.25      0.37  0.40  0.30      0.41  0.36  0.34
+fgts.min(axis=0) =
+[ 0.00646329  0.00626258  0.00668415  0.00694599]
+fgts.mean() = 0.96684 fgts.min() = 0.00626258
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.66627 5.22529 4.42942 5.75974
+U_c = [[-0.05650804]] U_f = [[-0.00323061]] b_f = [ 0.79651123]
+Epoch 8/300
+20s - loss: 203.3336 - val_loss: 802.2425
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 198.7134 - val_loss: 670.3319
+Epoch 00008: val_loss improved from 698.51078 to 670.33187, saving model to rlstm_forget8_weights.hdf5
+Train:
+       rlstm_forget8   199.9      0.58  0.29  0.47      0.57  0.23  0.49      0.57  0.18  0.50
+fgts.min(axis=0) =
+[ 0.00164361  0.00155171  0.00156422  0.00161   ]
+fgts.mean() = 0.915358 fgts.min() = 0.00155171
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.09378 3.49393 2.70729 4.12029
+U_c = [[-0.05359652]] U_f = [[-0.00259883]] b_f = [ 0.77837735]
+Valid:
+       rlstm_forget8   670.3      0.56  0.39  0.42      0.62  0.31  0.49      0.65  0.25  0.54
+fgts.min(axis=0) =
+[ 0.00317895  0.00328506  0.00340287  0.00339437]
+fgts.mean() = 0.943779 fgts.min() = 0.00317895
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.34021 4.69591 3.68401 5.54221
+U_c = [[-0.05359652]] U_f = [[-0.00259883]] b_f = [ 0.77837735]
+Test:
+       rlstm_forget8  4262.8      0.27  0.43  0.23      0.34  0.38  0.29      0.38  0.34  0.33
+fgts.min(axis=0) =
+[ 0.00240919  0.00238995  0.00252397  0.00258104]
+fgts.mean() = 0.943163 fgts.min() = 0.00101922
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.27406 5.80207 4.68995 6.47255
+U_c = [[-0.05359652]] U_f = [[-0.00259883]] b_f = [ 0.77837735]
+Epoch 10/300
+20s - loss: 194.2743 - val_loss: 694.9094
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 190.4307 - val_loss: 744.7200
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 187.0899 - val_loss: 697.9328
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+20s - loss: 184.2097 - val_loss: 677.7268
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 181.6089 - val_loss: 716.4503
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 179.1308 - val_loss: 809.5560
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 176.7781 - val_loss: 798.8232
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+20s - loss: 174.4518 - val_loss: 735.5199
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+20s - loss: 172.4768 - val_loss: 733.8271
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+20s - loss: 170.4296 - val_loss: 742.2819
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+20s - loss: 168.4196 - val_loss: 732.9771
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 166.5086 - val_loss: 763.8506
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 164.4103 - val_loss: 735.9394
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+20s - loss: 162.2278 - val_loss: 709.0481
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 159.8917 - val_loss: 688.6312
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 157.6074 - val_loss: 678.7956
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+20s - loss: 155.4878 - val_loss: 702.2932
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+20s - loss: 153.4791 - val_loss: 654.2244
+Epoch 00026: val_loss improved from 670.33187 to 654.22443, saving model to rlstm_forget8_weights.hdf5
+Train:
+       rlstm_forget8   152.9      0.61  0.23  0.51      0.59  0.18  0.52      0.59  0.14  0.54
+fgts.min(axis=0) =
+[ 0.00020937  0.00019557  0.00019552  0.0001957 ]
+fgts.mean() = 0.888205 fgts.min() = 0.000195515
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.43038 4.00093 3.10903 4.62949
+U_c = [[-0.03668384]] U_f = [[ 0.00448812]] b_f = [ 0.90836412]
+Valid:
+       rlstm_forget8   654.2      0.34  0.44  0.28      0.42  0.34  0.35      0.47  0.27  0.41
+fgts.min(axis=0) =
+[ 0.00149574  0.00128099  0.00119793  0.00118188]
+fgts.mean() = 0.876785 fgts.min() = 0.00107021
+incs mean, abs_mean, abs_mean+, abs_mean-: -2.07704 4.75835 3.44584 5.59421
+U_c = [[-0.03668384]] U_f = [[ 0.00448812]] b_f = [ 0.90836412]
+Test:
+       rlstm_forget8  3904.4      0.08  0.47  0.08      0.12  0.36  0.11      0.17  0.28  0.16
+fgts.min(axis=0) =
+[ 0.00017586  0.00016872  0.00017507  0.00017705]
+fgts.mean() = 0.753098 fgts.min() = 0.000168718
+incs mean, abs_mean, abs_mean+, abs_mean-: -5.45915 7.91293 4.76335 9.0056
+U_c = [[-0.03668384]] U_f = [[ 0.00448812]] b_f = [ 0.90836412]
+Epoch 28/300
+20s - loss: 151.5732 - val_loss: 682.1439
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+20s - loss: 149.7974 - val_loss: 683.2452
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+20s - loss: 148.2064 - val_loss: 655.7132
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+20s - loss: 146.5422 - val_loss: 653.4943
+Epoch 00030: val_loss improved from 654.22443 to 653.49429, saving model to rlstm_forget8_weights.hdf5
+Train:
+       rlstm_forget8   143.6      0.62  0.23  0.53      0.60  0.18  0.53      0.61  0.14  0.55
+fgts.min(axis=0) =
+[ 0.00035027  0.00035019  0.00031962  0.00033107]
+fgts.mean() = 0.884784 fgts.min() = 0.000319624
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.48771 4.08121 3.18992 4.69171
+U_c = [[-0.02459882]] U_f = [[ 0.00398293]] b_f = [ 0.92391926]
+Valid:
+       rlstm_forget8   653.5      0.34  0.47  0.27      0.42  0.37  0.35      0.48  0.29  0.41
+fgts.min(axis=0) =
+[ 0.00070684  0.0005668   0.00054873  0.00054611]
+fgts.mean() = 0.855934 fgts.min() = 0.000517721
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.85816 4.70612 3.50493 5.52808
+U_c = [[-0.02459882]] U_f = [[ 0.00398293]] b_f = [ 0.92391926]
+Test:
+       rlstm_forget8  3695.8      0.09  0.42  0.09      0.14  0.34  0.13      0.19  0.27  0.18
+fgts.min(axis=0) =
+[ 0.00134771  0.00131333  0.00137987  0.00139035]
+fgts.mean() = 0.758919 fgts.min() = 4.76682e-05
+incs mean, abs_mean, abs_mean+, abs_mean-: -4.77932 7.38622 4.67485 8.43448
+U_c = [[-0.02459882]] U_f = [[ 0.00398293]] b_f = [ 0.92391926]
+Epoch 32/300
+20s - loss: 145.2610 - val_loss: 656.6065
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+20s - loss: 143.9639 - val_loss: 658.1234
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+20s - loss: 142.7646 - val_loss: 671.6028
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+20s - loss: 141.5216 - val_loss: 666.8927
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+20s - loss: 140.4507 - val_loss: 676.7002
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+20s - loss: 139.4622 - val_loss: 667.0151
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+20s - loss: 138.4927 - val_loss: 689.6426
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+20s - loss: 137.6454 - val_loss: 681.2327
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+20s - loss: 136.8712 - val_loss: 698.3165
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+20s - loss: 136.0513 - val_loss: 687.1838
+Epoch 00040: val_loss did not improve
+Epoch 42/300
+20s - loss: 135.4513 - val_loss: 691.1385
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+20s - loss: 134.6603 - val_loss: 694.5529
+Epoch 00042: val_loss did not improve
+Epoch 44/300
+20s - loss: 134.0658 - val_loss: 716.1642
+Epoch 00043: val_loss did not improve
+Epoch 45/300
+20s - loss: 133.4448 - val_loss: 696.9243
+Epoch 00044: val_loss did not improve
+Epoch 46/300
+20s - loss: 132.8259 - val_loss: 702.2888
+Epoch 00045: val_loss did not improve
+Epoch 47/300
+20s - loss: 132.1242 - val_loss: 709.2934
+Epoch 00046: val_loss did not improve
+Epoch 48/300
+20s - loss: 131.7045 - val_loss: 704.8980
+Epoch 00047: val_loss did not improve
+Epoch 49/300
+20s - loss: 131.0912 - val_loss: 703.7224
+Epoch 00048: val_loss did not improve
+Epoch 50/300
+20s - loss: 130.5845 - val_loss: 703.1040
+Epoch 00049: val_loss did not improve
+Epoch 51/300
+20s - loss: 130.1734 - val_loss: 691.3001
+Epoch 00050: val_loss did not improve
+Epoch 52/300
+20s - loss: 129.7768 - val_loss: 699.8218
+Epoch 00051: val_loss did not improve
+Epoch 53/300
+20s - loss: 129.2707 - val_loss: 702.0482
+Epoch 00052: val_loss did not improve
+Epoch 54/300
+20s - loss: 128.8051 - val_loss: 709.8890
+Epoch 00053: val_loss did not improve
+Epoch 55/300
+20s - loss: 128.3910 - val_loss: 701.8301
+Epoch 00054: val_loss did not improve
+Epoch 56/300
+20s - loss: 128.0095 - val_loss: 701.5850
+Epoch 00055: val_loss did not improve
+Epoch 57/300
+20s - loss: 127.5804 - val_loss: 711.1132
+Epoch 00056: val_loss did not improve
+Epoch 58/300
+20s - loss: 127.1348 - val_loss: 728.1143
+Epoch 00057: val_loss did not improve
+Epoch 59/300
+20s - loss: 127.0201 - val_loss: 709.1483
+Epoch 00058: val_loss did not improve
+Epoch 60/300
+20s - loss: 126.4853 - val_loss: 713.2765
+Epoch 00059: val_loss did not improve
+Epoch 61/300
+20s - loss: 126.2992 - val_loss: 702.7615
+Epoch 00060: val_loss did not improve
+Epoch 62/300
+20s - loss: 125.8560 - val_loss: 698.0852
+Epoch 00061: val_loss did not improve
+
+training rlstm_forget9
+Train on 120000 samples, validate on 35200 samples
+Epoch 1/300
+20s - loss: 406.5273 - val_loss: 699.7108
+Epoch 00000: val_loss improved from inf to 699.71077, saving model to rlstm_forget9_weights.hdf5
+Train:
+       rlstm_forget9   300.2      0.39  0.28  0.34      0.39  0.21  0.36      0.39  0.16  0.36
+fgts.min(axis=0) =
+[ 0.026797    0.03117926  0.0403215   0.11281513]
+fgts.mean() = 0.990947 fgts.min() = 0.026797
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.0481832 1.5444 1.4437 1.6527
+U_c = [[-0.0660051]] U_f = [[ 0.11896819]] b_f = [ 1.23426485]
+Valid:
+       rlstm_forget9   699.7      0.29  0.27  0.26      0.34  0.18  0.31      0.37  0.11  0.35
+fgts.min(axis=0) =
+[ 0.16527349  0.20674175  0.18733931  0.09663209]
+fgts.mean() = 0.987285 fgts.min() = 0.0148331
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.727254 1.99206 1.51112 2.33818
+U_c = [[-0.0660051]] U_f = [[ 0.11896819]] b_f = [ 1.23426485]
+Test:
+       rlstm_forget9  3055.6      0.28  0.56  0.24      0.32  0.51  0.26      0.35  0.45  0.29
+fgts.min(axis=0) =
+[ 0.15391855  0.14401448  0.05536934  0.50599557]
+fgts.mean() = 0.995943 fgts.min() = 0.0220619
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.467394 2.44809 2.0546 2.81427
+U_c = [[-0.0660051]] U_f = [[ 0.11896819]] b_f = [ 1.23426485]
+Epoch 2/300
+20s - loss: 281.1906 - val_loss: 716.4648
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+20s - loss: 252.2485 - val_loss: 716.5527
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+20s - loss: 234.8607 - val_loss: 620.4716
+Epoch 00003: val_loss improved from 699.71077 to 620.47160, saving model to rlstm_forget9_weights.hdf5
+Train:
+       rlstm_forget9   227.9      0.48  0.25  0.42      0.46  0.18  0.41      0.44  0.14  0.41
+fgts.min(axis=0) =
+[ 0.00347082  0.00330927  0.00341551  0.00330804]
+fgts.mean() = 0.931782 fgts.min() = 0.00330804
+incs mean, abs_mean, abs_mean+, abs_mean-: -0.96613 2.83292 2.09673 3.42362
+U_c = [[-0.06327009]] U_f = [[ 0.01951951]] b_f = [ 0.90253603]
+Valid:
+       rlstm_forget9   620.5      0.54  0.32  0.43      0.58  0.24  0.49      0.60  0.18  0.53
+fgts.min(axis=0) =
+[ 0.023833    0.03468781  0.03497531  0.03513877]
+fgts.mean() = 0.96017 fgts.min() = 0.023833
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.16931 3.89336 2.94299 4.71212
+U_c = [[-0.06327009]] U_f = [[ 0.01951951]] b_f = [ 0.90253603]
+Test:
+       rlstm_forget9  3129.9      0.30  0.49  0.25      0.37  0.42  0.31      0.41  0.36  0.35
+fgts.min(axis=0) =
+[ 0.17251769  0.15511559  0.16351481  0.19346258]
+fgts.mean() = 0.977312 fgts.min() = 0.0996618
+incs mean, abs_mean, abs_mean+, abs_mean-: -1.08654 3.89549 3.33634 4.302
+U_c = [[-0.06327009]] U_f = [[ 0.01951951]] b_f = [ 0.90253603]
+Epoch 5/300
+20s - loss: 221.9502 - val_loss: 633.5447
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+20s - loss: 212.0553 - val_loss: 635.4169
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+20s - loss: 204.6076 - val_loss: 662.5943
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 198.4209 - val_loss: 685.6717
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 192.9738 - val_loss: 679.9198
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 188.1696 - val_loss: 700.1013
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 183.8170 - val_loss: 728.2886
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 180.1775 - val_loss: 657.0222
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+20s - loss: 176.4078 - val_loss: 780.1190
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+20s - loss: 173.1020 - val_loss: 770.7437
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+20s - loss: 170.1789 - val_loss: 720.6811
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+20s - loss: 167.2134 - val_loss: 719.7576
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+20s - loss: 164.2135 - val_loss: 775.7263
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+20s - loss: 161.0004 - val_loss: 788.8154
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+20s - loss: 157.9345 - val_loss: 857.6137
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+20s - loss: 155.4431 - val_loss: 767.5098
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+20s - loss: 153.2571 - val_loss: 759.4691
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+20s - loss: 151.6831 - val_loss: 770.2365
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+20s - loss: 150.0312 - val_loss: 741.8847
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+20s - loss: 148.6234 - val_loss: 860.4722
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+20s - loss: 147.4184 - val_loss: 723.3016
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+20s - loss: 146.0649 - val_loss: 866.6938
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+20s - loss: 144.9333 - val_loss: 738.8972
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+20s - loss: 143.8502 - val_loss: 712.5334
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+20s - loss: 142.8648 - val_loss: 763.5582
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+20s - loss: 141.9494 - val_loss: 750.2107
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+20s - loss: 141.0541 - val_loss: 828.0173
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+20s - loss: 140.0722 - val_loss: 759.4587
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+20s - loss: 139.2987 - val_loss: 851.0491
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+20s - loss: 138.2965 - val_loss: 726.1419
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+20s - loss: 137.5263 - val_loss: 766.1792
+Epoch 00034: val_loss did not improve

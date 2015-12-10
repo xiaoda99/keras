@@ -2,7 +2,7 @@ import numpy as np
 import cPickle
 import gzip 
 from profilehooks import profile
-from keras.layers.recurrent_xd import LSTM, SimpleRNN, ReducedLSTM, ReducedLSTM2, ReducedLSTM3
+from keras.layers.recurrent_xd import LSTM, SimpleRNN, ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMOld
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
 
@@ -299,7 +299,7 @@ def clear_init(X):
 #        X[i] *= 0.
     return [X[0], X[1]*0., X[2]*0.]
 
-def test_model(model, dataset='test', split_fn=split_data):
+def test_model(model, dataset='test', split_fn=split_data, show_details=True):
     data = model.data
     targets = data[:, 2:42, -1]
     targets_mean = data[:, 2:42, -2]
@@ -331,12 +331,12 @@ def test_model(model, dataset='test', split_fn=split_data):
                                                                   pod1, far1, csi1, 
                                                                   pod4, far4, csi4,
                                                                   pod8, far8, csi8)
-#    print 'fgts.min(axis=0) =\n', 
-#    print fgts[:,:4].min(axis=0)
-#    print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
-#    print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
-#    print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
-#    print 
+    if show_details:
+        print 'fgts.min(axis=0) =\n', 
+        print fgts[:,:4].min(axis=0)
+        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
+        print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
+        print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
     
 gdata = None
 
@@ -359,13 +359,13 @@ if __name__ == '__main__':
 #    X_train, y_train, X_valid, y_valid = build_lstm_dataset(gdata, hist_len=3)
 #    
 #    for i in range(10):
-#        name = 'rlstm_no_forget' + str(i)
-#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTM3, name='rlstm_no_forget')
+#        name = 'rlstm_forget' + str(i)
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMOld, name='rlstm_forget')
 #        rlstm.name = name
 #        rlstm.data = gdata
 #        print '\ntraining', rlstm.name
 #        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
-#        
+        
 #    for i in range(10):
 #        name = 'rlstm_old_forget' + str(i)
 #        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTM2, name='rlstm_old_forget')
@@ -382,32 +382,32 @@ if __name__ == '__main__':
 #        print '\ntraining', rlstm.name
 #        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
         
-    name = 'rlstm_no_forget'    
+    name = 'rlstm_forget'    
     rlstm = model_from_yaml(open(name + '.yaml').read())
     for i in range(10):
         rlstm.load_weights(name + str(i) + '_weights.hdf5')
         rlstm.name = name + str(i)
         rlstm.data = gdata
-        test_model(rlstm, dataset='valid')
-        test_model(rlstm, dataset='test')
+        test_model(rlstm, dataset='valid', show_details=False)
+        test_model(rlstm, dataset='test', show_details=False)
         
-    name = 'rlstm_old_forget'    
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    for i in range(10):
-        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.name = name + str(i)
-        rlstm.data = gdata
-        test_model(rlstm, dataset='valid')
-        test_model(rlstm, dataset='test')
-        
-    name = 'rlstm_new_forget'    
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    for i in range(10):
-        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.name = name + str(i)
-        rlstm.data = gdata
-        test_model(rlstm, dataset='valid')
-        test_model(rlstm, dataset='test')
+#    name = 'rlstm_old_forget'    
+#    rlstm = model_from_yaml(open(name + '.yaml').read())
+#    for i in range(10):
+#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+#        rlstm.name = name + str(i)
+#        rlstm.data = gdata
+#        test_model(rlstm, dataset='valid')
+#        test_model(rlstm, dataset='test')
+#        
+#    name = 'rlstm_new_forget'    
+#    rlstm = model_from_yaml(open(name + '.yaml').read())
+#    for i in range(10):
+#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+#        rlstm.name = name + str(i)
+#        rlstm.data = gdata
+#        test_model(rlstm, dataset='valid')
+#        test_model(rlstm, dataset='test')
         
         
     #for rlstm in rlstms:

@@ -13,7 +13,7 @@ layers:
   name: TimeDistributedDense
   output_dim: 80
 - {activation: linear, forget_bias_init: one, init: zero, inner_activation: sigmoid,
-  inner_init: orthogonal, input_dim: null, input_length: null, name: ReducedLSTM,
+  inner_init: orthogonal, input_dim: null, input_length: null, name: ReducedLSTMOld,
   output_dim: 1, return_sequences: true, truncate_gradient: -1}
 loss: mean_squared_error
 name: Sequential
