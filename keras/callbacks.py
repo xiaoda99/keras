@@ -197,12 +197,9 @@ class ModelCheckpoint(Callback):
                     self.model.save_weights(filepath, overwrite=True)
                     
                     #XD
-                    print('Train:')
                     test_model(self.model, dataset='train')
-                    print('Valid:')
                     test_model(self.model, dataset='valid')
-                    print('Test:')
-                    test_model(self.model, dataset='test')
+#                    test_model(self.model, dataset='test')
                     
                 else:
                     if self.verbose > 0:

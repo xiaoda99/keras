@@ -194,11 +194,9 @@ class Model(object):
         #XD
         from examples.pm25.test_pm25 import test_model  #XD
 #        from examples.pm25.test_pm25 import data, targets, targets_mean  #XD
-#        print('Before training:')
-#        print('test on training set')
-#        test_model(self, train=True)
-#        print('test on test set')
-#        test_model(self, train=False)
+        print('Before training:')
+        test_model(self, dataset='train')
+        test_model(self, dataset='valid')
 #        print(self.layers[-1].U_c.get_value(), self.layers[-1].U_f.get_value(), self.layers[-1].b_f.get_value())
 #        val_outs = self._test_loop(val_f, val_ins, batch_size=batch_size, verbose=0)
 #        if type(val_outs) != list:
@@ -495,7 +493,11 @@ class Sequential(Model, containers.Sequential):
                                               allow_input_downcast=True, mode=theano_mode)
         #XD
 #        self._monitor = None
-        self._monitor = theano.function(predict_ins, [self.layers[-1].forgets, self.layers[-1].increments],
+        self._monitor = theano.function(predict_ins, [self.layers[-1].forgets, 
+                                                      self.layers[-1].increments,
+                                                      self.layers[-1].delta,
+                                                      self.layers[-1].delta_x,
+                                                      self.layers[-1].delta_h],
                                       allow_input_downcast=True, mode=theano_mode)
 #        self._monitor = theano.function(test_ins, [mean_gain(self.y, self.y_test), 
 #                                                   optimal_mean_gain(self.y),

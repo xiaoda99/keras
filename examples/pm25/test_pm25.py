@@ -2,9 +2,10 @@ import numpy as np
 import cPickle
 import gzip 
 from profilehooks import profile
-from keras.layers.recurrent_xd import LSTM, SimpleRNN, ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMOld
+from keras.layers.recurrent_xd import LSTM, SimpleRNN, ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMNew
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
+from data import load_data
 
 def pm25_mean_predict(pm25, gfs, date_time, pm25_mean, pred_range, downsample=1):
     return pm25_mean[pred_range[0]:pred_range[1]]
@@ -60,31 +61,18 @@ def rlstm_predict_batch(pm25, gfs, date_time, pm25_mean, pred_range, downsample=
 #    print 'predicting...'
     X[0] = normalize_batch(X[0])
     yp = rlstm_predict_batch.model.predict_on_batch(X)
-    forgets, increments = rlstm_predict_batch.model.monitor_on_batch(X)
+    forgets, increments, delta, delta_x, delta_h = rlstm_predict_batch.model.monitor_on_batch(X)
 #    print 'done.'
     assert yp.ndim == 3 and yp.shape[2] == 1
     pred_pm25 = yp.reshape((yp.shape[0], yp.shape[1]))
 #    pred_pm25 += pm25_mean[:, pred_range[0]:pred_range[1], 0]
     forgets = forgets.reshape((forgets.shape[0], forgets.shape[1]))
     increments = increments.reshape((increments.shape[0], increments.shape[1]))
-    return pred_pm25, forgets, increments
+    delta = delta.reshape((delta.shape[0], delta.shape[1]))
+    delta_x = delta_x.reshape((delta_x.shape[0], delta_x.shape[1]))
+    delta_h = delta_h.reshape((delta_h.shape[0], delta_h.shape[1]))
+    return pred_pm25, forgets, increments, delta, delta_x, delta_h
 
-#def rlstm_predict_batch(pm25, gfs, date_time, pm25_mean, pred_range, downsample=1):
-##    pm25 = pm25 - pm25_mean
-#    X, y = transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range)
-#    n_steps = pred_range[1] - pred_range[0]
-#    if rlstm_predict_batch.model is None:
-#        print 'loading rlstm...'
-#        rlstm_predict_batch.model = load_rlstm()
-#        print 'done.'
-##    print 'predicting...'
-#    X[0] = normalize_batch(X[0])
-#    yp = rlstm_predict_batch.model.predict_on_batch(X)
-##    print 'done.'
-#    assert yp.ndim == 3 and yp.shape[2] == 1
-#    pred_pm25 = yp.reshape((yp.shape[0], yp.shape[1]))
-##    pred_pm25 += pm25_mean[:, pred_range[0]:pred_range[1], 0]
-#    return pred_pm25
 rlstm_predict_batch.model = None
 
 def predict_all(data, predict_fn, pred_range=[2, 42]):
@@ -103,6 +91,9 @@ def predict_all_batch(data, predict_fn, pred_range=[2, 42], batch_size=1024):
     predictions = []
     fgts = []
     incs = []
+    ds = []
+    dxs = []
+    dhs = []
     for i in range(0, data.shape[0], batch_size):
         start = i
         stop = min(data.shape[0], i + batch_size)
@@ -110,14 +101,20 @@ def predict_all_batch(data, predict_fn, pred_range=[2, 42], batch_size=1024):
         gfs = data[start:stop, :, :6]
         date_time = data[start:stop, :, 6:-2]
         pm25_mean = data[start:stop, :, -2:-1]
-        pred_pm25, forgets, increments = predict_fn(pm25, gfs, date_time, pm25_mean, pred_range)
+        pred_pm25, forgets, increments, delta, delta_x, delta_h = predict_fn(pm25, gfs, date_time, pm25_mean, pred_range)
         predictions.append(pred_pm25)
         fgts.append(forgets)
         incs.append(increments)
+        ds.append(delta)
+        dxs.append(delta_x)
+        dhs.append(delta_h)
     predictions = np.vstack(predictions)
     fgts = np.vstack(fgts)
     incs = np.vstack(incs)
-    return predictions, fgts, incs
+    ds = np.vstack(ds)
+    dxs = np.vstack(dxs)
+    dhs = np.vstack(dhs)
+    return predictions, fgts, incs, ds, dxs, dhs
 
 def mean_square_error(predictions, targets):
     return np.square(predictions - targets).mean(axis=0)
@@ -200,11 +197,12 @@ def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3)
     init_pm25 = pm25[:,pred_range[0]-1,:]
     init_gfs = gfs[:,:pred_range[0],:].reshape((gfs.shape[0], -1))
 #    X_init = np.hstack([init_pm25, init_gfs])
-    X_init = init_pm25 #.astype('float32')
+    hidden_init = init_pm25 
+    cell_init = init_pm25 + pm25_mean[:,pred_range[0]-1,:]
     X = np.dstack(X).transpose((0, 2, 1)) #.astype('float32')
     y = np.dstack(y).transpose((0, 2, 1)) #.astype('float32')
 #    print 'X.shape, X_init.shape, y.shape =', X.shape, X_init.shape, y.shape
-    return [X, X_init, X_init], y
+    return [X, hidden_init, cell_init], y
 
 def normalize(X_train, X_valid):
     reshaped = False
@@ -279,12 +277,12 @@ def split_data(data):
     test_data = data[valid_stop:]
     return train_data, valid_data, test_data
 
-def build_lstm_dataset(data, pred_range=[2,42], split_fn=split_data, hist_len=3):
+def build_lstm_dataset(train_data, valid_data, pred_range=[2,42], split_fn=split_data, hist_len=3):
 #    data = np.copy(data)
 #    train_pct = 1. - valid_pct
 #    train_data = data[:data.shape[0]*train_pct]
 #    valid_data = data[data.shape[0]*train_pct:data.shape[0]]
-    train_data, valid_data, test_data = split_fn(data)
+#    train_data, valid_data, test_data = split_fn(data)
 #    print 'trainset.shape, testset.shape =', train_data.shape, valid_data.shape
     X_train, y_train = transform_sequences(*(parse_data(train_data) + (pred_range, hist_len)))
     X_valid, y_valid = transform_sequences(*(parse_data(valid_data) + (pred_range, hist_len)))
@@ -300,20 +298,17 @@ def clear_init(X):
     return [X[0], X[1]*0., X[2]*0.]
 
 def test_model(model, dataset='test', split_fn=split_data, show_details=True):
-    data = model.data
+    print dataset
+    i = {'train':0, 'valid':1, 'test':2}[dataset]
+    data = model.data[i]
     targets = data[:, 2:42, -1]
     targets_mean = data[:, 2:42, -2]
     
-    dataset_idx = {'train':0, 'valid':1, 'test':2}[dataset]
-    data = split_fn(data)[dataset_idx]
-    targets = split_fn(targets)[dataset_idx]
-    targets_mean = split_fn(targets_mean)[dataset_idx]
-        
     if targets.min() >= 0:
         targets_mean = None
         
     rlstm_predict_batch.model = model
-    pred, fgts, incs = predict_all_batch(data, rlstm_predict_batch)
+    pred, fgts, incs, ds, dxs, dhs = predict_all_batch(data, rlstm_predict_batch)
     mse = mean_square_error(pred, targets).mean()
     res = detection_error(pred, targets, targets_mean=targets_mean, pool_size=1)
     pod1 = res[0].mean()
@@ -332,39 +327,51 @@ def test_model(model, dataset='test', split_fn=split_data, show_details=True):
                                                                   pod4, far4, csi4,
                                                                   pod8, far8, csi8)
     if show_details:
-        print 'fgts.min(axis=0) =\n', 
-        print fgts[:,:4].min(axis=0)
-        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
-        print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
+        print 'abs_err ='
+        print absolute_error(pred, targets)
+        print 'forget =' 
+        print fgts[:,:].mean(axis=0)
+#        print 'pred ='
+#        print np.abs(pred).mean(axis=0)
+#        print 'delta ='
+#        print np.abs(ds).mean(axis=0)
+#        print 'delta_x ='
+#        print np.abs(dxs).mean(axis=0)
+#        print 'delta_h ='
+#        print np.abs(dhs).mean(axis=0)
+#        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
+#        print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
         print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
     
-gdata = None
+data = None
 
 if __name__ == '__main__':
-#    f = gzip.open('/home/xd/data/pm25data/forXiaodaDataset20151022_t100p100.pkl.gz', 'rb')
     f = gzip.open('/home/xd/data/pm25data/forXiaodaDataset20151207_t100p100.pkl.gz', 'rb')   
-    gdata = cPickle.load(f)
-    gdata[:,:,-2:] -= 80
-    gdata[:,:,2] = np.sqrt(gdata[:,:,2]**2 + gdata[:,:,3]**2)
-    gdata[:,:,3] = gdata[:,:,2]
-    gdata[:,:,-1] -= gdata[:,:,-2] # subtract pm25 mean from pm25 target
-#    gdata = np.roll(gdata, -13925, axis=0) 
+    data = cPickle.load(f)
+    data[:,:,-2:] -= 80
+    data[:,:,2] = np.sqrt(data[:,:,2]**2 + data[:,:,3]**2)
+    data[:,:,3] = data[:,:,2]
+#    data[:,:,1:4] = np.random.randn(data.shape[0], data.shape[1], 3)
+    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     f.close()
+    train_data, valid_data, test_data = split_data(data)
+    
+#    data2, train_data2, valid_data2, test_data2 = load_data()
     
     #X_train, y_train, X_valid, y_valid = build_mlp_dataset(data)
     #mlp = build_mlp(X_train.shape[-1], y_train.shape[-1], 40, 40)
     #mlp.name = 'mlp'
     #train(X_train, y_train, X_valid, y_valid, mlp, batch_size=4096)
     
-#    X_train, y_train, X_valid, y_valid = build_lstm_dataset(gdata, hist_len=3)
+    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
 #    
-#    for i in range(10):
-#        name = 'rlstm_forget' + str(i)
-#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMOld, name='rlstm_forget')
-#        rlstm.name = name
-#        rlstm.data = gdata
-#        print '\ntraining', rlstm.name
-#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+    for i in range(1):
+        name = 'rlstm_test' + str(i)
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMNew, name='rlstm_test')
+        rlstm.name = name
+        rlstm.data = [train_data, valid_data, test_data]
+        print '\ntraining', rlstm.name
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
         
 #    for i in range(10):
 #        name = 'rlstm_old_forget' + str(i)
@@ -382,14 +389,14 @@ if __name__ == '__main__':
 #        print '\ntraining', rlstm.name
 #        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
         
-    name = 'rlstm_forget'    
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    for i in range(10):
-        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.name = name + str(i)
-        rlstm.data = gdata
-        test_model(rlstm, dataset='valid', show_details=False)
-        test_model(rlstm, dataset='test', show_details=False)
+#    name = 'rlstm_forget'    
+#    rlstm = model_from_yaml(open(name + '.yaml').read())
+#    for i in range(10):
+#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+#        rlstm.name = name + str(i)
+#        rlstm.data = gdata
+#        test_model(rlstm, dataset='valid', show_details=False)
+#        test_model(rlstm, dataset='test', show_details=False)
         
 #    name = 'rlstm_old_forget'    
 #    rlstm = model_from_yaml(open(name + '.yaml').read())
