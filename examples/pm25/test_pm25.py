@@ -2,7 +2,7 @@ import numpy as np
 import cPickle
 import gzip 
 from profilehooks import profile
-from keras.layers.recurrent_xd import LSTM, SimpleRNN, ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMNew
+from keras.layers.recurrent_xd import ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMA, ReducedLSTMB
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
 from data import load_data
@@ -199,10 +199,11 @@ def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3)
 #    X_init = np.hstack([init_pm25, init_gfs])
     hidden_init = init_pm25 
     cell_init = init_pm25 + pm25_mean[:,pred_range[0]-1,:]
+    cell_mean = pm25_mean[:,pred_range[0]:pred_range[1],:]
     X = np.dstack(X).transpose((0, 2, 1)) #.astype('float32')
     y = np.dstack(y).transpose((0, 2, 1)) #.astype('float32')
 #    print 'X.shape, X_init.shape, y.shape =', X.shape, X_init.shape, y.shape
-    return [X, hidden_init, cell_init], y
+    return [X, hidden_init, cell_init, cell_mean], y
 
 def normalize(X_train, X_valid):
     reshaped = False
@@ -327,8 +328,8 @@ def test_model(model, dataset='test', split_fn=split_data, show_details=True):
                                                                   pod4, far4, csi4,
                                                                   pod8, far8, csi8)
     if show_details:
-        print 'abs_err ='
-        print absolute_error(pred, targets)
+#        print 'abs_err ='
+#        print absolute_error(pred, targets)
         print 'forget =' 
         print fgts[:,:].mean(axis=0)
 #        print 'pred ='
@@ -340,7 +341,7 @@ def test_model(model, dataset='test', split_fn=split_data, show_details=True):
 #        print 'delta_h ='
 #        print np.abs(dhs).mean(axis=0)
 #        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
-#        print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
+        print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
         print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
     
 data = None
@@ -365,56 +366,39 @@ if __name__ == '__main__':
     
     X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
 #    
-    for i in range(1):
-        name = 'rlstm_test' + str(i)
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMNew, name='rlstm_test')
+    for i in range(10):
+        name = 'rlstm_forgetA' + str(i)
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMA, name='rlstm_forgetA')
         rlstm.name = name
         rlstm.data = [train_data, valid_data, test_data]
         print '\ntraining', rlstm.name
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
         
-#    for i in range(10):
-#        name = 'rlstm_old_forget' + str(i)
-#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTM2, name='rlstm_old_forget')
-#        rlstm.name = name
-#        rlstm.data = gdata
-#        print '\ntraining', rlstm.name
-#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)    
-#        
-#    for i in range(10):
-#        name = 'rlstm_new_forget' + str(i)
-#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTM, name='rlstm_new_forget')
-#        rlstm.name = name
-#        rlstm.data = gdata
-#        print '\ntraining', rlstm.name
-#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+    for i in range(10):
+        name = 'rlstm_forgetB' + str(i)
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMB, name='rlstm_forgetB')
+        rlstm.name = name
+        rlstm.data = [train_data, valid_data, test_data]
+        print '\ntraining', rlstm.name
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+              
+    name = 'rlstm_forgetA'    
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        test_model(rlstm, dataset='valid', show_details=False)
+        test_model(rlstm, dataset='test', show_details=False)
         
-#    name = 'rlstm_forget'    
-#    rlstm = model_from_yaml(open(name + '.yaml').read())
-#    for i in range(10):
-#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-#        rlstm.name = name + str(i)
-#        rlstm.data = gdata
-#        test_model(rlstm, dataset='valid', show_details=False)
-#        test_model(rlstm, dataset='test', show_details=False)
-        
-#    name = 'rlstm_old_forget'    
-#    rlstm = model_from_yaml(open(name + '.yaml').read())
-#    for i in range(10):
-#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-#        rlstm.name = name + str(i)
-#        rlstm.data = gdata
-#        test_model(rlstm, dataset='valid')
-#        test_model(rlstm, dataset='test')
-#        
-#    name = 'rlstm_new_forget'    
-#    rlstm = model_from_yaml(open(name + '.yaml').read())
-#    for i in range(10):
-#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-#        rlstm.name = name + str(i)
-#        rlstm.data = gdata
-#        test_model(rlstm, dataset='valid')
-#        test_model(rlstm, dataset='test')
+    name = 'rlstm_forgetB'    
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        test_model(rlstm, dataset='valid', show_details=False)
+        test_model(rlstm, dataset='test', show_details=False)
         
         
     #for rlstm in rlstms:
