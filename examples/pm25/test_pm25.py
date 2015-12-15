@@ -1,4 +1,6 @@
 import numpy as np
+import pylab as plt
+import matplotlib.gridspec as gridspec
 import cPickle
 import gzip 
 from profilehooks import profile
@@ -6,6 +8,7 @@ from keras.layers.recurrent_xd import ReducedLSTM, ReducedLSTM2, ReducedLSTM3, R
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
 from data import load_data
+from errors import *
 
 def pm25_mean_predict(pm25, gfs, date_time, pm25_mean, pred_range, downsample=1):
     return pm25_mean[pred_range[0]:pred_range[1]]
@@ -116,40 +119,6 @@ def predict_all_batch(data, predict_fn, pred_range=[2, 42], batch_size=1024):
     dhs = np.vstack(dhs)
     return predictions, fgts, incs, ds, dxs, dhs
 
-def mean_square_error(predictions, targets):
-    return np.square(predictions - targets).mean(axis=0)
-
-def absolute_percent_error(predictions, targets, targets_mean):
-    return (np.abs(predictions - targets) / np.abs(targets_mean)).mean(axis=0)
-        
-def absolute_error(predictions, targets):
-    return np.abs(predictions - targets).mean(axis=0)
-
-threshold = 80
-    
-def misclass_error(predictions, targets):
-    return ((predictions >= threshold) != (targets >= threshold)).mean(axis=0)
-
-def downsample(sequences, pool_size):
-    assert sequences.ndim == 2
-    assert sequences.shape[1] % pool_size == 0
-    return sequences.reshape((sequences.shape[0], sequences.shape[1] / pool_size, pool_size)).max(axis=2) 
-
-def detection_error(predictions, targets, targets_mean=None, pool_size=1):
-    if targets_mean is not None:
-        predictions = predictions + targets_mean
-        targets = targets + targets_mean
-    if pool_size != 1:
-        predictions = downsample(predictions, pool_size)
-        targets = downsample(targets, pool_size)
-    alarm = (predictions >= threshold).mean(axis=0)
-    occur = (targets >= threshold).mean(axis=0)
-    hit = ((predictions >= threshold) & (targets >= threshold)).mean(axis=0)
-    pod = hit / occur
-    far = 1. - hit / alarm
-    csi = hit / (occur + alarm - hit)
-    return pod, far, csi
-
 def decompose_sequences(gfs, date_time, pm25_mean, pm25, pred_range):
     X = []
     y = []
@@ -204,6 +173,7 @@ def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3)
     y = np.dstack(y).transpose((0, 2, 1)) #.astype('float32')
 #    print 'X.shape, X_init.shape, y.shape =', X.shape, X_init.shape, y.shape
     return [X, hidden_init, cell_init, cell_mean], y
+#    return [X, hidden_init, hidden_init], y
 
 def normalize(X_train, X_valid):
     reshaped = False
@@ -299,7 +269,7 @@ def clear_init(X):
     return [X[0], X[1]*0., X[2]*0.]
 
 def test_model(model, dataset='test', split_fn=split_data, show_details=True):
-    print dataset
+#    print dataset
     i = {'train':0, 'valid':1, 'test':2}[dataset]
     data = model.data[i]
     targets = data[:, 2:42, -1]
@@ -331,33 +301,81 @@ def test_model(model, dataset='test', split_fn=split_data, show_details=True):
 #        print 'abs_err ='
 #        print absolute_error(pred, targets)
         print 'forget =' 
-        print fgts[:,:].mean(axis=0)
+        print fgts.mean(axis=0)
 #        print 'pred ='
 #        print np.abs(pred).mean(axis=0)
 #        print 'delta ='
 #        print np.abs(ds).mean(axis=0)
-#        print 'delta_x ='
-#        print np.abs(dxs).mean(axis=0)
-#        print 'delta_h ='
-#        print np.abs(dhs).mean(axis=0)
+        print 'delta_x ='
+        print np.abs(dxs).mean(axis=0)
+        print 'delta_h ='
+        print np.abs(dhs).mean(axis=0)
 #        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
-        print 'incs mean, abs_mean, abs_mean+, abs_mean-:', incs.mean(), np.abs(incs).mean(), np.abs(incs[incs>0]).mean(), np.abs(incs[incs<0]).mean()
+        print 'delta mean, abs_mean, abs_mean+, abs_mean-:', dxs.mean(), np.abs(dxs).mean(), np.abs(dxs[dxs>0]).mean(), np.abs(dxs[dxs<0]).mean()
         print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
     
-data = None
-
-if __name__ == '__main__':
-    f = gzip.open('/home/xd/data/pm25data/forXiaodaDataset20151207_t100p100.pkl.gz', 'rb')   
-    data = cPickle.load(f)
-    data[:,:,-2:] -= 80
-    data[:,:,2] = np.sqrt(data[:,:,2]**2 + data[:,:,3]**2)
-    data[:,:,3] = data[:,:,2]
-#    data[:,:,1:4] = np.random.randn(data.shape[0], data.shape[1], 3)
-    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
-    f.close()
-    train_data, valid_data, test_data = split_data(data)
+def plot_example(data, predictions, model_labels, feature_indices=[2,], feature_labels=['wind speed'], 
+                 model_states=[], state_labels=[], pred_range=[2,42]):
+    assert len(predictions) == len(model_labels)
+    assert len(feature_indices) == len(feature_labels)
+    assert len(model_states) == len(state_labels)
+    n_subplots = 1 + len(feature_indices) + len(model_states)  
+    gs = gridspec.GridSpec(n_subplots, 1, height_ratios=[2,]*1 + [1]*(len(feature_indices) + len(model_states)))
+    i = 0
     
-#    data2, train_data2, valid_data2, test_data2 = load_data()
+    ax = plt.subplot(gs[i])
+    i += 1
+    pm25_mean = data[:,-2]
+    pm25 = data[:,-1]
+    pm25 = pm25 + pm25_mean
+    predictions = [pred + pm25_mean[pred_range[0]:pred_range[1]] for pred in predictions]
+    plt.plot(pm25, label='pm25')
+    plt.plot(pm25_mean, '--', label='mean')
+    for pred, label in zip(predictions, model_labels):
+        plt.plot(np.hstack([pm25[:pred_range[0]], pred]), label=label)
+    plt.legend(loc='upper right')
+    
+    for state, label in zip(model_states, state_labels):
+        ax = plt.subplot(gs[i])
+        i += 1
+        plt.plot(np.hstack([np.zeros(pred_range[0]), state]), label=label)
+        plt.legend(loc='upper right')
+        
+    for feature_idx, label in zip(feature_indices, feature_labels):
+        ax = plt.subplot(gs[i])
+        i += 1
+        feature = data[:,feature_idx]
+        plt.plot(feature, label=label)
+        plt.legend(loc='upper right')
+        
+    plt.show()
+
+def filter_data(data):
+    pm25 = data[:,:,-1] + data[:,:,-2]
+    cond = (pm25[:,:].max(axis=1) > 200) & (pm25[:,:].min(axis=1) < 40)
+    return data[cond]
+     
+if __name__ == '__main__':
+#    f = gzip.open('/home/xd/data/pm25data/forXiaodaDataset20151207_t100p100.pkl.gz', 'rb')   
+#    data = cPickle.load(f)
+#    data[:,:,-2:] -= 80
+#    data[:,:,2] = np.sqrt(data[:,:,2]**2 + data[:,:,3]**2)
+#    data[:,:,3] = data[:,:,2]
+##    data[:,:,1:4] = np.random.randn(data.shape[0], data.shape[1], 3)
+#    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
+#    f.close()
+#    train_data, valid_data, test_data = split_data(data)
+    
+    train_data, valid_data, test_data = load_data()
+#    rlstm = model_from_yaml(open('rlstm_test.yaml').read())
+#    rlstm.load_weights('rlstm_test0_weights.hdf5')
+#    rlstm.name = 'rlstm_test'
+#    rlstm.data = [train_data, valid_data, test_data]
+#    test_model(rlstm, dataset='valid', show_details=False)
+#    rlstm_predict_batch.model = rlstm
+#    data = filter_data(valid_data)
+#    pred, fgts, incs, ds, dxs, dhs = predict_all_batch(data, rlstm_predict_batch)
+#    i = np.random.randint(data.shape[0]); plot_example(data[i], [pred[i]], ['rlstm'], model_states=[fgts[i], dxs[i], dhs[i]], state_labels=['a', 'dx', 'dh'], pred_range=[2,42])
     
     #X_train, y_train, X_valid, y_valid = build_mlp_dataset(data)
     #mlp = build_mlp(X_train.shape[-1], y_train.shape[-1], 40, 40)
@@ -367,38 +385,38 @@ if __name__ == '__main__':
     X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
 #    
     for i in range(10):
-        name = 'rlstm_forgetA' + str(i)
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMA, name='rlstm_forgetA')
-        rlstm.name = name
+        name = 'rlstm_2h'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=60, h1_dim=60, rec_layer_type=ReducedLSTMA, name=name)
+        rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         print '\ntraining', rlstm.name
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
         
-    for i in range(10):
-        name = 'rlstm_forgetB' + str(i)
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMB, name='rlstm_forgetB')
-        rlstm.name = name
-        rlstm.data = [train_data, valid_data, test_data]
-        print '\ntraining', rlstm.name
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+#    for i in range(10):
+#        name = 'rlstm_forgetB' + str(i)
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMB, name='rlstm_forgetB')
+#        rlstm.name = name
+#        rlstm.data = [train_data, valid_data, test_data]
+#        print '\ntraining', rlstm.name
+#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
               
-    name = 'rlstm_forgetA'    
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    for i in range(10):
-        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        test_model(rlstm, dataset='valid', show_details=False)
-        test_model(rlstm, dataset='test', show_details=False)
-        
-    name = 'rlstm_forgetB'    
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    for i in range(10):
-        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        test_model(rlstm, dataset='valid', show_details=False)
-        test_model(rlstm, dataset='test', show_details=False)
+#    name = 'rlstm_forgetA'    
+#    rlstm = model_from_yaml(open(name + '.yaml').read())
+#    for i in range(10):
+#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+#        rlstm.name = name + str(i)
+#        rlstm.data = [train_data, valid_data, test_data]
+#        test_model(rlstm, dataset='valid', show_details=True)
+#        test_model(rlstm, dataset='test', show_details=True)
+#        
+#    name = 'rlstm_forgetB'    
+#    rlstm = model_from_yaml(open(name + '.yaml').read())
+#    for i in range(10):
+#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+#        rlstm.name = name + str(i)
+#        rlstm.data = [train_data, valid_data, test_data]
+#        test_model(rlstm, dataset='valid', show_details=True)
+#        test_model(rlstm, dataset='test', show_details=True)
         
         
     #for rlstm in rlstms:
