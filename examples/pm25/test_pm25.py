@@ -328,31 +328,32 @@ def plot_example(data, predictions, model_labels, feature_indices=[2,], feature_
     pm25_mean = data[:,-2]
     pm25 = data[:,-1]
     pm25 = pm25 + pm25_mean
-    predictions = [pred + pm25_mean[pred_range[0]:pred_range[1]] for pred in predictions]
-    plt.plot(pm25, label='pm25')
-    plt.plot(pm25_mean, '--', label='mean')
+    predictions = [pred + pm25_mean[pred_range[0] : pred_range[1]] for pred in predictions]
+    plt.plot(pm25[pred_range[0] : pred_range[1]], label='pm25')
+    plt.plot(pm25_mean[pred_range[0] : pred_range[1]], '--', label='mean')
     for pred, label in zip(predictions, model_labels):
-        plt.plot(np.hstack([pm25[:pred_range[0]], pred]), label=label)
+        plt.plot(pred, label=label)
     plt.legend(loc='upper right')
     
     for state, label in zip(model_states, state_labels):
         ax = plt.subplot(gs[i])
         i += 1
-        plt.plot(np.hstack([np.zeros(pred_range[0]), state]), label=label)
+        plt.plot(state, label=label)
+        plt.plot(np.zeros_like(state), color='k')
         plt.legend(loc='upper right')
         
     for feature_idx, label in zip(feature_indices, feature_labels):
         ax = plt.subplot(gs[i])
         i += 1
         feature = data[:,feature_idx]
-        plt.plot(feature, label=label)
+        plt.plot(feature[pred_range[0] : pred_range[1]], label=label)
         plt.legend(loc='upper right')
         
     plt.show()
 
 def filter_data(data):
     pm25 = data[:,:,-1] + data[:,:,-2]
-    cond = (pm25[:,:].max(axis=1) > 200) & (pm25[:,:].min(axis=1) < 40)
+    cond = (pm25[:,:].max(axis=1) > 160) & (pm25[:,:].min(axis=1) < 60)
     return data[cond]
      
 if __name__ == '__main__':
@@ -367,30 +368,30 @@ if __name__ == '__main__':
 #    train_data, valid_data, test_data = split_data(data)
     
     train_data, valid_data, test_data = load_data()
-#    rlstm = model_from_yaml(open('rlstm_test.yaml').read())
-#    rlstm.load_weights('rlstm_test0_weights.hdf5')
-#    rlstm.name = 'rlstm_test'
-#    rlstm.data = [train_data, valid_data, test_data]
-#    test_model(rlstm, dataset='valid', show_details=False)
-#    rlstm_predict_batch.model = rlstm
-#    data = filter_data(valid_data)
-#    pred, fgts, incs, ds, dxs, dhs = predict_all_batch(data, rlstm_predict_batch)
-#    i = np.random.randint(data.shape[0]); plot_example(data[i], [pred[i]], ['rlstm'], model_states=[fgts[i], dxs[i], dhs[i]], state_labels=['a', 'dx', 'dh'], pred_range=[2,42])
+    rlstm = model_from_yaml(open('rlstm_2h.yaml').read())
+    rlstm.load_weights('rlstm_2h0_weights.hdf5')
+    rlstm.name = 'rlstm_2h'
+    rlstm.data = [train_data, valid_data, test_data]
+    test_model(rlstm, dataset='valid', show_details=False)
+    rlstm_predict_batch.model = rlstm
+    data = filter_data(valid_data)
+    pred, fgts, incs, ds, dxs, dhs = predict_all_batch(data, rlstm_predict_batch)
+    i = np.random.randint(data.shape[0]); plot_example(data[i], [pred[i]], ['rlstm'], model_states=[fgts[i], dxs[i], dhs[i]], state_labels=['a', 'dx', 'dh'], pred_range=[2,42])
     
     #X_train, y_train, X_valid, y_valid = build_mlp_dataset(data)
     #mlp = build_mlp(X_train.shape[-1], y_train.shape[-1], 40, 40)
     #mlp.name = 'mlp'
     #train(X_train, y_train, X_valid, y_valid, mlp, batch_size=4096)
     
-    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
-#    
-    for i in range(10):
-        name = 'rlstm_2h'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=60, h1_dim=60, rec_layer_type=ReducedLSTMA, name=name)
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        print '\ntraining', rlstm.name
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+#    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
+##    
+#    for i in range(10):
+#        name = 'rlstm_2h'
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=60, h1_dim=60, rec_layer_type=ReducedLSTMA, name=name)
+#        rlstm.name = name + str(i)
+#        rlstm.data = [train_data, valid_data, test_data]
+#        print '\ntraining', rlstm.name
+#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
         
 #    for i in range(10):
 #        name = 'rlstm_forgetB' + str(i)
