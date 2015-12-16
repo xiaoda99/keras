@@ -172,8 +172,8 @@ def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3)
     X = np.dstack(X).transpose((0, 2, 1)) #.astype('float32')
     y = np.dstack(y).transpose((0, 2, 1)) #.astype('float32')
 #    print 'X.shape, X_init.shape, y.shape =', X.shape, X_init.shape, y.shape
-    return [X, hidden_init, cell_init, cell_mean], y
-#    return [X, hidden_init, hidden_init], y
+#    return [X, hidden_init, cell_init, cell_mean], y
+    return [X, hidden_init, hidden_init], y
 
 def normalize(X_train, X_valid):
     reshaped = False
@@ -368,56 +368,54 @@ if __name__ == '__main__':
 #    train_data, valid_data, test_data = split_data(data)
     
     train_data, valid_data, test_data = load_data()
-    rlstm = model_from_yaml(open('rlstm_2h.yaml').read())
-    rlstm.load_weights('rlstm_2h0_weights.hdf5')
-    rlstm.name = 'rlstm_2h'
-    rlstm.data = [train_data, valid_data, test_data]
-    test_model(rlstm, dataset='valid', show_details=False)
-    rlstm_predict_batch.model = rlstm
-    data = filter_data(valid_data)
-    pred, fgts, incs, ds, dxs, dhs = predict_all_batch(data, rlstm_predict_batch)
-    i = np.random.randint(data.shape[0]); plot_example(data[i], [pred[i]], ['rlstm'], model_states=[fgts[i], dxs[i], dhs[i]], state_labels=['a', 'dx', 'dh'], pred_range=[2,42])
+#    rlstm = model_from_yaml(open('rlstm_2h.yaml').read())
+#    rlstm.load_weights('rlstm_2h0_weights.hdf5')
+#    rlstm.name = 'rlstm_2h'
+#    rlstm.data = [train_data, valid_data, test_data]
+#    test_model(rlstm, dataset='valid', show_details=False)
+#    rlstm_predict_batch.model = rlstm
+#    data = filter_data(valid_data)
+#    pred, fgts, incs, ds, dxs, dhs = predict_all_batch(data, rlstm_predict_batch)
+#    i = np.random.randint(data.shape[0]); plot_example(data[i], [pred[i]], ['rlstm'], model_states=[fgts[i], dxs[i], dhs[i]], state_labels=['a', 'dx', 'dh'], pred_range=[2,42])
     
     #X_train, y_train, X_valid, y_valid = build_mlp_dataset(data)
     #mlp = build_mlp(X_train.shape[-1], y_train.shape[-1], 40, 40)
     #mlp.name = 'mlp'
     #train(X_train, y_train, X_valid, y_valid, mlp, batch_size=4096)
     
-#    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
-##    
-#    for i in range(10):
-#        name = 'rlstm_2h'
-#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=60, h1_dim=60, rec_layer_type=ReducedLSTMA, name=name)
-#        rlstm.name = name + str(i)
-#        rlstm.data = [train_data, valid_data, test_data]
-#        print '\ntraining', rlstm.name
-#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
-        
-#    for i in range(10):
-#        name = 'rlstm_forgetB' + str(i)
-#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=80, rec_layer_type=ReducedLSTMB, name='rlstm_forgetB')
-#        rlstm.name = name
-#        rlstm.data = [train_data, valid_data, test_data]
-#        print '\ntraining', rlstm.name
-#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
+#    
+    for i in range(10):
+        name = 'rlstm_2h_newfgt'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=60, h1_dim=60, rec_layer_type=ReducedLSTM, name=name)
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        print '\ntraining', rlstm.name
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+    for i in range(10):
+        name = 'rlstm_2h_nofgt'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=60, h1_dim=60, rec_layer_type=ReducedLSTM3, name=name)
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        print '\ntraining', rlstm.name
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
               
-#    name = 'rlstm_forgetA'    
-#    rlstm = model_from_yaml(open(name + '.yaml').read())
-#    for i in range(10):
-#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-#        rlstm.name = name + str(i)
-#        rlstm.data = [train_data, valid_data, test_data]
-#        test_model(rlstm, dataset='valid', show_details=True)
-#        test_model(rlstm, dataset='test', show_details=True)
-#        
-#    name = 'rlstm_forgetB'    
-#    rlstm = model_from_yaml(open(name + '.yaml').read())
-#    for i in range(10):
-#        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-#        rlstm.name = name + str(i)
-#        rlstm.data = [train_data, valid_data, test_data]
-#        test_model(rlstm, dataset='valid', show_details=True)
-#        test_model(rlstm, dataset='test', show_details=True)
+    name = 'rlstm_2h_newfgt'    
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        test_model(rlstm, dataset='train', show_details=False)
+        test_model(rlstm, dataset='valid', show_details=False)
+    name = 'rlstm_2h_nofgt'    
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        test_model(rlstm, dataset='train', show_details=False)
+        test_model(rlstm, dataset='valid', show_details=False)
         
         
     #for rlstm in rlstms:

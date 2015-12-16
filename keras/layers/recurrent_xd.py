@@ -1052,7 +1052,10 @@ class ReducedLSTM(Recurrent):
         a_t = T.maximum(f_t, T.cast(T.le(c_mask_tm1, 0), theano.config.floatX)) # disable forget gate when below mean
         c_t = a_t * (c_mask_tm1 + b_t)
         h_t = self.activation(c_t)
-        return h_t, c_t, a_t, b_t     # f_t and b_t added by XD
+        d_t = c_t - c_mask_tm1
+        dh_t = T.dot(h_mask_tm1, u_c)
+        dx_t = d_t - dh_t
+        return h_t, c_t, a_t, b_t, d_t, dx_t, dh_t     # f_t and b_t added by XD
 
     def get_output(self, train=False):
         X = self.get_input(train)
@@ -1064,7 +1067,7 @@ class ReducedLSTM(Recurrent):
         xc = T.dot(X, self.W_c) + self.b_c
 #        xo = T.dot(X, self.W_o) + self.b_o
 
-        [outputs, memories, forgets, increments], updates = theano.scan(
+        [outputs, memories, forgets, increments, delta, delta_x, delta_h], updates = theano.scan(
             self._step,
             sequences=[xf, xc, padded_mask],
 #            outputs_info=[
@@ -1075,6 +1078,9 @@ class ReducedLSTM(Recurrent):
                 self.hidden0,
                 self.cell0,
                 None,
+                None,
+                None,
+                None,
                 None
             ],
             non_sequences=[self.U_f, self.U_c],
@@ -1084,6 +1090,9 @@ class ReducedLSTM(Recurrent):
         if train == False:
             self.forgets = forgets.dimshuffle((1, 0, 2))
             self.increments = increments.dimshuffle((1, 0, 2))
+            self.delta = delta.dimshuffle((1, 0, 2))
+            self.delta_x = delta_x.dimshuffle((1, 0, 2))
+            self.delta_h = delta_h.dimshuffle((1, 0, 2))
 
         if self.return_sequences:
             return outputs.dimshuffle((1, 0, 2))
@@ -1325,7 +1334,10 @@ class ReducedLSTM3(Recurrent):
         a_t = f_t * 0. + 1.
         c_t = a_t * c_mask_tm1 + b_t
         h_t = self.activation(c_t)
-        return h_t, c_t, a_t, b_t     # f_t and b_t added by XD
+        d_t = c_t - c_mask_tm1
+        dh_t = T.dot(h_mask_tm1, u_c)
+        dx_t = d_t - dh_t
+        return h_t, c_t, a_t, b_t, d_t, dx_t, dh_t     # f_t and b_t added by XD
 
     def get_output(self, train=False):
         X = self.get_input(train)
@@ -1337,7 +1349,7 @@ class ReducedLSTM3(Recurrent):
         xc = T.dot(X, self.W_c) + self.b_c
 #        xo = T.dot(X, self.W_o) + self.b_o
 
-        [outputs, memories, forgets, increments], updates = theano.scan(
+        [outputs, memories, forgets, increments, delta, delta_x, delta_h], updates = theano.scan(
             self._step,
             sequences=[xf, xc, padded_mask],
 #            outputs_info=[
@@ -1348,6 +1360,9 @@ class ReducedLSTM3(Recurrent):
                 self.hidden0,
                 self.cell0,
                 None,
+                None,
+                None,
+                None,
                 None
             ],
             non_sequences=[self.U_f, self.U_c],
@@ -1357,6 +1372,9 @@ class ReducedLSTM3(Recurrent):
         if train == False:
             self.forgets = forgets.dimshuffle((1, 0, 2))
             self.increments = increments.dimshuffle((1, 0, 2))
+            self.delta = delta.dimshuffle((1, 0, 2))
+            self.delta_x = delta_x.dimshuffle((1, 0, 2))
+            self.delta_h = delta_h.dimshuffle((1, 0, 2))
 
         if self.return_sequences:
             return outputs.dimshuffle((1, 0, 2))
