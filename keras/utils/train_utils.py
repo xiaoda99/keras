@@ -29,7 +29,7 @@ def build_rnn(in_dim, out_dim, h0_dim, h1_dim=None, layer_type=LSTM, return_sequ
     model.compile(loss="mse", optimizer="rmsprop")  
     return model
 
-def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, rec_layer_type=ReducedLSTM, layer_type=TimeDistributedDense, optimizer='rmsprop', name='rlstm'):
+def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, rec_layer_type=ReducedLSTM, layer_type=TimeDistributedDense, lr=.001, name='rlstm'):
     model = Sequential()  
     model.add(layer_type(h0_dim, input_dim=input_dim, 
                     init='uniform', 
@@ -41,7 +41,7 @@ def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, rec_laye
                     W_regularizer=l2(0.0005),
                     activation='relu'))
     model.add(rec_layer_type(output_dim, return_sequences=True))
-    model.compile(loss="mse", optimizer=optimizer)  
+    model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
     
     yaml_string = model.to_yaml()
 #    print(yaml_string)

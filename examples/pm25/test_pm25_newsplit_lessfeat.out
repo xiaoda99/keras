@@ -1,0 +1,1684 @@
+
+training rlstm15x2_lessfeat0
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat0  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat0 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+10s - loss: 1996.9154 - val_loss: 9306.5635
+Epoch 00000: val_loss improved from inf to 9306.56352, saving model to rlstm15x2_lessfeat0_weights.hdf5
+ rlstm15x2_lessfeat0  1710.2      0.65  0.35  0.49      0.63  0.21  0.54      0.65  0.14  0.58
+forget = 0.947242
+delta_x = 5.03299
+delta_h = 3.16933
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.08694 5.03299 4.39628 6.49099
+U_c = [[-0.13018917]] U_f = [[ 0.]] b_f = [ 0.84657073]
+ rlstm15x2_lessfeat0  9306.6      0.88  0.24  0.68      0.87  0.16  0.74      0.87  0.11  0.78
+forget = 0.958605
+delta_x = 5.562
+delta_h = 4.71617
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.87115 5.562 5.08504 6.85736
+U_c = [[-0.13018917]] U_f = [[ 0.]] b_f = [ 0.84657073]
+Epoch 2/300
+10s - loss: 1697.0797 - val_loss: 9380.5403
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+10s - loss: 1680.8599 - val_loss: 9403.9943
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+10s - loss: 1667.8299 - val_loss: 9282.5682
+Epoch 00003: val_loss improved from 9306.56352 to 9282.56819, saving model to rlstm15x2_lessfeat0_weights.hdf5
+ rlstm15x2_lessfeat0  1660.7      0.67  0.34  0.50      0.65  0.21  0.56      0.67  0.15  0.60
+forget = 0.946619
+delta_x = 5.42446
+delta_h = 2.7929
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.943244 5.42446 4.39542 8.12862
+U_c = [[-0.10962407]] U_f = [[ 0.]] b_f = [ 0.60219157]
+ rlstm15x2_lessfeat0  9282.6      0.87  0.23  0.68      0.85  0.16  0.73      0.86  0.11  0.77
+forget = 0.957199
+delta_x = 5.61182
+delta_h = 4.20496
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.54888 5.61182 4.63503 8.92772
+U_c = [[-0.10962407]] U_f = [[ 0.]] b_f = [ 0.60219157]
+Epoch 5/300
+10s - loss: 1656.1417 - val_loss: 9191.3810
+Epoch 00004: val_loss improved from 9282.56819 to 9191.38104, saving model to rlstm15x2_lessfeat0_weights.hdf5
+ rlstm15x2_lessfeat0  1651.6      0.70  0.35  0.50      0.68  0.22  0.57      0.70  0.16  0.62
+forget = 0.947864
+delta_x = 5.5842
+delta_h = 2.82832
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.1079 5.5842 4.53145 8.5558
+U_c = [[-0.1061405]] U_f = [[ 0.]] b_f = [ 0.56507725]
+ rlstm15x2_lessfeat0  9191.4      0.88  0.24  0.69      0.86  0.16  0.74      0.86  0.11  0.77
+forget = 0.957564
+delta_x = 5.71627
+delta_h = 4.21001
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.66262 5.71627 4.72623 9.23941
+U_c = [[-0.1061405]] U_f = [[ 0.]] b_f = [ 0.56507725]
+Epoch 6/300
+10s - loss: 1645.8942 - val_loss: 9311.4292
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 1636.1571 - val_loss: 9433.5727
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 1627.8701 - val_loss: 9388.1257
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1619.3940 - val_loss: 9448.8227
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+10s - loss: 1610.7360 - val_loss: 9343.8935
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 1604.2421 - val_loss: 9436.4338
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 1598.0804 - val_loss: 9502.0291
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 1592.0187 - val_loss: 9440.7958
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+10s - loss: 1584.4168 - val_loss: 9485.6043
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 1574.9528 - val_loss: 9343.7081
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+10s - loss: 1563.5211 - val_loss: 9239.7850
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+10s - loss: 1550.9098 - val_loss: 9169.2825
+Epoch 00016: val_loss improved from 9191.38104 to 9169.28248, saving model to rlstm15x2_lessfeat0_weights.hdf5
+ rlstm15x2_lessfeat0  1543.9      0.69  0.32  0.52      0.68  0.19  0.58      0.69  0.13  0.63
+forget = 0.945404
+delta_x = 5.58338
+delta_h = 2.43593
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.71407 5.58338 4.42972 8.41911
+U_c = [[-0.09004632]] U_f = [[ 0.]] b_f = [ 0.29707387]
+ rlstm15x2_lessfeat0  9169.3      0.83  0.21  0.68      0.82  0.15  0.71      0.82  0.10  0.75
+forget = 0.946142
+delta_x = 5.87927
+delta_h = 3.65772
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.743544 5.87927 4.46094 9.96503
+U_c = [[-0.09004632]] U_f = [[ 0.]] b_f = [ 0.29707387]
+Epoch 18/300
+10s - loss: 1537.4768 - val_loss: 9216.0588
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+10s - loss: 1521.8771 - val_loss: 9568.3660
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+10s - loss: 1506.6667 - val_loss: 9511.9775
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+10s - loss: 1495.7807 - val_loss: 9676.6985
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+10s - loss: 1488.2642 - val_loss: 9784.8540
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+10s - loss: 1482.6046 - val_loss: 9653.8460
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+10s - loss: 1478.6193 - val_loss: 9809.1406
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+10s - loss: 1474.6114 - val_loss: 9894.9872
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+10s - loss: 1471.8297 - val_loss: 10124.8545
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+10s - loss: 1469.7274 - val_loss: 10015.2444
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+10s - loss: 1467.5162 - val_loss: 9925.3379
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+10s - loss: 1465.7089 - val_loss: 9780.8183
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+10s - loss: 1462.8232 - val_loss: 10011.8896
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+10s - loss: 1458.9146 - val_loss: 9728.2068
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+10s - loss: 1455.9778 - val_loss: 9993.5864
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+10s - loss: 1452.4234 - val_loss: 9360.7241
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+10s - loss: 1449.0168 - val_loss: 9392.3875
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+10s - loss: 1444.4545 - val_loss: 9915.4829
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+10s - loss: 1437.3425 - val_loss: 9461.8108
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+10s - loss: 1432.7707 - val_loss: 9805.2463
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+10s - loss: 1430.2242 - val_loss: 9882.6342
+Epoch 00037: val_loss did not improve
+
+training rlstm15x2_lessfeat1
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat1  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat1 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+10s - loss: 2010.1857 - val_loss: 9244.5280
+Epoch 00000: val_loss improved from inf to 9244.52801, saving model to rlstm15x2_lessfeat1_weights.hdf5
+ rlstm15x2_lessfeat1  1711.0      0.66  0.35  0.49      0.64  0.21  0.55      0.65  0.14  0.59
+forget = 0.948368
+delta_x = 4.99177
+delta_h = 3.14186
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.13818 4.99177 4.40593 6.33081
+U_c = [[-0.12776724]] U_f = [[ 0.]] b_f = [ 0.85501426]
+ rlstm15x2_lessfeat1  9244.5      0.88  0.24  0.69      0.86  0.15  0.74      0.87  0.11  0.78
+forget = 0.958907
+delta_x = 5.55288
+delta_h = 4.65903
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.81047 5.55288 5.07308 6.82242
+U_c = [[-0.12776724]] U_f = [[ 0.]] b_f = [ 0.85501426]
+Epoch 2/300
+10s - loss: 1698.8448 - val_loss: 9181.2985
+Epoch 00001: val_loss improved from 9244.52801 to 9181.29848, saving model to rlstm15x2_lessfeat1_weights.hdf5
+ rlstm15x2_lessfeat1  1689.1      0.65  0.34  0.49      0.63  0.21  0.54      0.64  0.14  0.58
+forget = 0.94815
+delta_x = 5.05623
+delta_h = 2.92164
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.956364 5.05623 4.26529 6.94489
+U_c = [[-0.11860821]] U_f = [[ 0.]] b_f = [ 0.73838067]
+ rlstm15x2_lessfeat1  9181.3      0.87  0.23  0.69      0.86  0.15  0.74      0.86  0.10  0.78
+forget = 0.956711
+delta_x = 5.69136
+delta_h = 4.45394
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.4965 5.69136 4.80495 8.32195
+U_c = [[-0.11860821]] U_f = [[ 0.]] b_f = [ 0.73838067]
+Epoch 3/300
+10s - loss: 1679.9221 - val_loss: 9202.9992
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+10s - loss: 1666.6101 - val_loss: 9242.9293
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+10s - loss: 1657.3491 - val_loss: 9384.0655
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+10s - loss: 1649.3936 - val_loss: 9311.6252
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 1640.1694 - val_loss: 9169.1466
+Epoch 00006: val_loss improved from 9181.29848 to 9169.14662, saving model to rlstm15x2_lessfeat1_weights.hdf5
+ rlstm15x2_lessfeat1  1635.5      0.70  0.35  0.51      0.69  0.22  0.58      0.71  0.15  0.63
+forget = 0.946209
+delta_x = 5.74538
+delta_h = 2.75507
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.05595 5.74538 4.58996 9.04915
+U_c = [[-0.1011871]] U_f = [[ 0.]] b_f = [ 0.59580052]
+ rlstm15x2_lessfeat1  9169.1      0.86  0.23  0.68      0.85  0.15  0.73      0.85  0.11  0.77
+forget = 0.955461
+delta_x = 5.70656
+delta_h = 3.99886
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.34988 5.70656 4.51973 9.9298
+U_c = [[-0.1011871]] U_f = [[ 0.]] b_f = [ 0.59580052]
+Epoch 8/300
+10s - loss: 1627.5802 - val_loss: 9324.4145
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1613.6710 - val_loss: 9057.4755
+Epoch 00008: val_loss improved from 9169.14662 to 9057.47553, saving model to rlstm15x2_lessfeat1_weights.hdf5
+ rlstm15x2_lessfeat1  1603.8      0.67  0.33  0.51      0.66  0.20  0.57      0.68  0.14  0.61
+forget = 0.944194
+delta_x = 5.7262
+delta_h = 2.69498
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.865163 5.7262 4.4487 9.37769
+U_c = [[-0.10285933]] U_f = [[ 0.]] b_f = [ 0.52180994]
+ rlstm15x2_lessfeat1  9057.5      0.83  0.21  0.68      0.82  0.14  0.72      0.82  0.10  0.75
+forget = 0.950836
+delta_x = 5.81113
+delta_h = 4.01375
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.04063 5.81113 4.38044 10.9458
+U_c = [[-0.10285933]] U_f = [[ 0.]] b_f = [ 0.52180994]
+Epoch 10/300
+10s - loss: 1594.5881 - val_loss: 9007.7669
+Epoch 00009: val_loss improved from 9057.47553 to 9007.76691, saving model to rlstm15x2_lessfeat1_weights.hdf5
+ rlstm15x2_lessfeat1  1586.9      0.68  0.33  0.51      0.67  0.20  0.57      0.68  0.14  0.61
+forget = 0.942315
+delta_x = 5.75297
+delta_h = 2.57708
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.778172 5.75297 4.47233 9.21845
+U_c = [[-0.09744789]] U_f = [[ 0.]] b_f = [ 0.47387543]
+ rlstm15x2_lessfeat1  9007.8      0.82  0.20  0.67      0.80  0.14  0.71      0.81  0.09  0.74
+forget = 0.948006
+delta_x = 5.73119
+delta_h = 3.8317
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.783603 5.73119 4.23851 10.687
+U_c = [[-0.09744789]] U_f = [[ 0.]] b_f = [ 0.47387543]
+Epoch 11/300
+10s - loss: 1579.7009 - val_loss: 9138.3274
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 1567.1289 - val_loss: 9157.1276
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 1550.2034 - val_loss: 9595.8333
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+10s - loss: 1529.1108 - val_loss: 9694.8526
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 1514.1077 - val_loss: 9643.2145
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+10s - loss: 1502.3569 - val_loss: 9783.1757
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+10s - loss: 1493.3895 - val_loss: 9935.6742
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+10s - loss: 1485.5128 - val_loss: 9914.1264
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+10s - loss: 1476.1237 - val_loss: 9768.4917
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+10s - loss: 1466.0662 - val_loss: 9997.7866
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+10s - loss: 1458.0246 - val_loss: 9759.8923
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+10s - loss: 1451.5716 - val_loss: 9689.8961
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+10s - loss: 1446.3967 - val_loss: 9556.1335
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+10s - loss: 1441.6073 - val_loss: 9773.8580
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+10s - loss: 1436.5578 - val_loss: 9597.2678
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+10s - loss: 1432.1564 - val_loss: 9915.0431
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+10s - loss: 1427.1754 - val_loss: 9908.3235
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+10s - loss: 1422.9769 - val_loss: 9594.5408
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+10s - loss: 1417.7446 - val_loss: 9953.4476
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+10s - loss: 1410.9110 - val_loss: 9499.9512
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+10s - loss: 1404.3546 - val_loss: 9730.9339
+Epoch 00030: val_loss did not improve
+
+training rlstm15x2_lessfeat2
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat2  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat2 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+11s - loss: 2006.3490 - val_loss: 9323.2046
+Epoch 00000: val_loss improved from inf to 9323.20455, saving model to rlstm15x2_lessfeat2_weights.hdf5
+ rlstm15x2_lessfeat2  1717.3      0.65  0.35  0.48      0.63  0.21  0.54      0.64  0.14  0.58
+forget = 0.945684
+delta_x = 5.00304
+delta_h = 3.15793
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.02798 5.00304 4.38459 6.36522
+U_c = [[-0.129697]] U_f = [[ 0.]] b_f = [ 0.88433045]
+ rlstm15x2_lessfeat2  9323.2      0.87  0.23  0.69      0.86  0.15  0.74      0.86  0.10  0.78
+forget = 0.95611
+delta_x = 5.53248
+delta_h = 4.65548
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.61991 5.53248 5.00977 6.83642
+U_c = [[-0.129697]] U_f = [[ 0.]] b_f = [ 0.88433045]
+Epoch 2/300
+11s - loss: 1702.5239 - val_loss: 9203.1025
+Epoch 00001: val_loss improved from 9323.20455 to 9203.10253, saving model to rlstm15x2_lessfeat2_weights.hdf5
+ rlstm15x2_lessfeat2  1691.9      0.68  0.36  0.49      0.67  0.22  0.56      0.68  0.15  0.60
+forget = 0.950588
+delta_x = 5.1393
+delta_h = 2.90501
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.18164 5.1393 4.4433 6.85401
+U_c = [[-0.11330238]] U_f = [[ 0.]] b_f = [ 0.77148986]
+ rlstm15x2_lessfeat2  9203.1      0.88  0.24  0.69      0.86  0.16  0.74      0.87  0.11  0.78
+forget = 0.960914
+delta_x = 5.53592
+delta_h = 4.30057
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.80464 5.53592 4.86866 7.57955
+U_c = [[-0.11330238]] U_f = [[ 0.]] b_f = [ 0.77148986]
+Epoch 3/300
+11s - loss: 1684.7905 - val_loss: 9241.1809
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+11s - loss: 1671.5098 - val_loss: 9293.6495
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+11s - loss: 1658.1504 - val_loss: 9296.9767
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+11s - loss: 1645.4581 - val_loss: 9290.3354
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+11s - loss: 1637.1479 - val_loss: 9245.4325
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+11s - loss: 1629.8667 - val_loss: 9216.2718
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+11s - loss: 1622.7422 - val_loss: 9177.0123
+Epoch 00008: val_loss improved from 9203.10253 to 9177.01230, saving model to rlstm15x2_lessfeat2_weights.hdf5
+ rlstm15x2_lessfeat2  1620.6      0.70  0.35  0.51      0.69  0.22  0.58      0.70  0.15  0.62
+forget = 0.948674
+delta_x = 5.64565
+delta_h = 2.73833
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.06046 5.64565 4.46962 9.1773
+U_c = [[-0.10289051]] U_f = [[ 0.]] b_f = [ 0.49639389]
+ rlstm15x2_lessfeat2  9177.0      0.85  0.22  0.69      0.84  0.14  0.73      0.84  0.10  0.77
+forget = 0.955336
+delta_x = 5.62911
+delta_h = 3.93474
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.04071 5.62911 4.21631 10.9746
+U_c = [[-0.10289051]] U_f = [[ 0.]] b_f = [ 0.49639389]
+Epoch 10/300
+11s - loss: 1615.8698 - val_loss: 9276.5153
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+11s - loss: 1608.7610 - val_loss: 9339.2683
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+11s - loss: 1600.1379 - val_loss: 9354.3229
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+11s - loss: 1589.4947 - val_loss: 9277.1999
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+11s - loss: 1578.9049 - val_loss: 9185.9849
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+11s - loss: 1562.0899 - val_loss: 8988.7911
+Epoch 00014: val_loss improved from 9177.01230 to 8988.79115, saving model to rlstm15x2_lessfeat2_weights.hdf5
+ rlstm15x2_lessfeat2  1550.4      0.70  0.33  0.52      0.68  0.20  0.58      0.69  0.14  0.62
+forget = 0.94704
+delta_x = 5.59955
+delta_h = 2.60233
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.895756 5.59955 4.21985 10.2086
+U_c = [[-0.09657361]] U_f = [[ 0.]] b_f = [ 0.03785672]
+ rlstm15x2_lessfeat2  8988.8      0.82  0.20  0.68      0.80  0.13  0.71      0.80  0.09  0.75
+forget = 0.951722
+delta_x = 5.57669
+delta_h = 3.68124
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.683426 5.57669 3.9817 11.4388
+U_c = [[-0.09657361]] U_f = [[ 0.]] b_f = [ 0.03785672]
+Epoch 16/300
+11s - loss: 1544.5312 - val_loss: 9065.6328
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+11s - loss: 1533.0397 - val_loss: 9141.7233
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+11s - loss: 1522.8048 - val_loss: 9275.8527
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+11s - loss: 1515.0891 - val_loss: 9497.1038
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+11s - loss: 1506.3017 - val_loss: 9629.3215
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+11s - loss: 1498.2936 - val_loss: 9510.2912
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+11s - loss: 1490.2002 - val_loss: 9452.5423
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+11s - loss: 1484.1020 - val_loss: 9572.6072
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+11s - loss: 1477.8916 - val_loss: 9527.1673
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+11s - loss: 1473.4141 - val_loss: 9620.9603
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+11s - loss: 1468.9497 - val_loss: 9734.0891
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+11s - loss: 1464.3532 - val_loss: 9778.8703
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+11s - loss: 1459.9456 - val_loss: 9367.1496
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+11s - loss: 1455.7157 - val_loss: 9558.7714
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+11s - loss: 1452.1190 - val_loss: 9543.7763
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+11s - loss: 1448.0877 - val_loss: 9381.1611
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+11s - loss: 1444.5870 - val_loss: 9509.6040
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+11s - loss: 1441.6019 - val_loss: 9462.4290
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+11s - loss: 1439.0090 - val_loss: 9525.6400
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+11s - loss: 1436.1167 - val_loss: 9681.2681
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+11s - loss: 1433.7770 - val_loss: 9500.3266
+Epoch 00035: val_loss did not improve
+
+training rlstm15x2_lessfeat3
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat3  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat3 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+11s - loss: 2000.8083 - val_loss: 9338.7953
+Epoch 00000: val_loss improved from inf to 9338.79526, saving model to rlstm15x2_lessfeat3_weights.hdf5
+ rlstm15x2_lessfeat3  1696.0      0.68  0.35  0.49      0.66  0.22  0.56      0.67  0.15  0.60
+forget = 0.947246
+delta_x = 5.23518
+delta_h = 3.26334
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.27345 5.23518 4.64727 6.6087
+U_c = [[-0.12836996]] U_f = [[ 0.]] b_f = [ 0.84022361]
+ rlstm15x2_lessfeat3  9338.8      0.88  0.24  0.69      0.86  0.15  0.74      0.87  0.10  0.78
+forget = 0.958086
+delta_x = 5.54868
+delta_h = 4.62987
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.8107 5.54868 4.98288 7.14627
+U_c = [[-0.12836996]] U_f = [[ 0.]] b_f = [ 0.84022361]
+Epoch 2/300
+11s - loss: 1675.0651 - val_loss: 9559.2969
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+11s - loss: 1645.2163 - val_loss: 9742.5419
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+11s - loss: 1633.0278 - val_loss: 9641.5676
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+11s - loss: 1626.0147 - val_loss: 9674.9092
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+11s - loss: 1619.4216 - val_loss: 9650.1863
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+11s - loss: 1613.5935 - val_loss: 9623.1872
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+11s - loss: 1608.1355 - val_loss: 9646.5922
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+11s - loss: 1601.3887 - val_loss: 9487.2763
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+11s - loss: 1589.6719 - val_loss: 9324.3631
+Epoch 00009: val_loss improved from 9338.79526 to 9324.36314, saving model to rlstm15x2_lessfeat3_weights.hdf5
+ rlstm15x2_lessfeat3  1579.6      0.70  0.34  0.51      0.70  0.22  0.58      0.71  0.15  0.63
+forget = 0.936611
+delta_x = 6.17889
+delta_h = 2.43966
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.925428 6.17889 5.22439 8.20646
+U_c = [[-0.09157473]] U_f = [[ 0.]] b_f = [ 0.21748541]
+ rlstm15x2_lessfeat3  9324.4      0.83  0.23  0.67      0.82  0.15  0.72      0.83  0.10  0.76
+forget = 0.955834
+delta_x = 5.36384
+delta_h = 3.33942
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.965579 5.36384 4.32066 8.21984
+U_c = [[-0.09157473]] U_f = [[ 0.]] b_f = [ 0.21748541]
+Epoch 11/300
+11s - loss: 1574.2436 - val_loss: 9403.7599
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+11s - loss: 1560.0235 - val_loss: 9084.8362
+Epoch 00011: val_loss improved from 9324.36314 to 9084.83617, saving model to rlstm15x2_lessfeat3_weights.hdf5
+ rlstm15x2_lessfeat3  1552.6      0.70  0.34  0.52      0.70  0.22  0.59      0.72  0.15  0.64
+forget = 0.928888
+delta_x = 6.53044
+delta_h = 2.26146
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.798178 6.53044 5.50981 8.55696
+U_c = [[-0.08301626]] U_f = [[ 0.]] b_f = [ 0.12432256]
+ rlstm15x2_lessfeat3  9084.8      0.84  0.23  0.67      0.83  0.16  0.72      0.84  0.11  0.76
+forget = 0.953641
+delta_x = 5.47956
+delta_h = 3.22264
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.06998 5.47956 4.48716 8.16012
+U_c = [[-0.08301626]] U_f = [[ 0.]] b_f = [ 0.12432256]
+Epoch 13/300
+11s - loss: 1546.8634 - val_loss: 9192.1625
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+11s - loss: 1535.0931 - val_loss: 9252.6166
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+11s - loss: 1526.1914 - val_loss: 9094.3448
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+11s - loss: 1517.6081 - val_loss: 9088.4389
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+11s - loss: 1510.3115 - val_loss: 9113.9774
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+11s - loss: 1503.4568 - val_loss: 9008.4243
+Epoch 00017: val_loss improved from 9084.83617 to 9008.42433, saving model to rlstm15x2_lessfeat3_weights.hdf5
+ rlstm15x2_lessfeat3  1494.3      0.70  0.33  0.52      0.70  0.21  0.59      0.72  0.15  0.64
+forget = 0.914161
+delta_x = 7.16254
+delta_h = 1.73267
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.584083 7.16254 6.10423 8.99997
+U_c = [[-0.06497413]] U_f = [[ 0.]] b_f = [-0.06403049]
+ rlstm15x2_lessfeat3  9008.4      0.82  0.23  0.66      0.81  0.15  0.70      0.82  0.10  0.74
+forget = 0.941023
+delta_x = 5.82697
+delta_h = 2.64236
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.872732 5.82697 5.04223 7.38025
+U_c = [[-0.06497413]] U_f = [[ 0.]] b_f = [-0.06403049]
+Epoch 19/300
+11s - loss: 1496.5110 - val_loss: 9207.2425
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+11s - loss: 1489.6614 - val_loss: 9232.2724
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+11s - loss: 1484.2631 - val_loss: 9244.3973
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+11s - loss: 1479.4038 - val_loss: 9222.9760
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+11s - loss: 1474.3506 - val_loss: 8966.0896
+Epoch 00022: val_loss improved from 9008.42433 to 8966.08962, saving model to rlstm15x2_lessfeat3_weights.hdf5
+ rlstm15x2_lessfeat3  1472.7      0.72  0.34  0.53      0.74  0.22  0.61      0.76  0.16  0.66
+forget = 0.907068
+delta_x = 7.64842
+delta_h = 1.41463
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.671151 7.64842 6.63106 9.36091
+U_c = [[-0.0508093]] U_f = [[ 0.]] b_f = [-0.1638886]
+ rlstm15x2_lessfeat3  8966.1      0.83  0.24  0.66      0.83  0.16  0.71      0.84  0.11  0.75
+forget = 0.934352
+delta_x = 6.52026
+delta_h = 2.3074
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.0432 6.52026 5.76427 7.96231
+U_c = [[-0.0508093]] U_f = [[ 0.]] b_f = [-0.1638886]
+Epoch 24/300
+11s - loss: 1468.2459 - val_loss: 9170.2527
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+11s - loss: 1459.3231 - val_loss: 9449.0344
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+11s - loss: 1450.4101 - val_loss: 9542.3020
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+11s - loss: 1444.1475 - val_loss: 9490.3679
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+11s - loss: 1439.1583 - val_loss: 9321.8443
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+11s - loss: 1434.3532 - val_loss: 9708.8721
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+11s - loss: 1430.4464 - val_loss: 9579.4755
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+10s - loss: 1426.3639 - val_loss: 9376.6308
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+11s - loss: 1422.8591 - val_loss: 9566.9817
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+11s - loss: 1420.2651 - val_loss: 9293.9509
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+11s - loss: 1416.5015 - val_loss: 9446.0430
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+11s - loss: 1414.6551 - val_loss: 9179.4647
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+11s - loss: 1412.0357 - val_loss: 9674.5612
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+11s - loss: 1409.2376 - val_loss: 9640.9126
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+11s - loss: 1405.7064 - val_loss: 9552.5283
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+11s - loss: 1403.2364 - val_loss: 9512.6299
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+11s - loss: 1400.8517 - val_loss: 9264.0136
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+11s - loss: 1399.2116 - val_loss: 9525.6239
+Epoch 00040: val_loss did not improve
+Epoch 42/300
+11s - loss: 1397.6524 - val_loss: 9512.0270
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+11s - loss: 1395.8414 - val_loss: 9621.7709
+Epoch 00042: val_loss did not improve
+Epoch 44/300
+11s - loss: 1394.7146 - val_loss: 9253.5956
+Epoch 00043: val_loss did not improve
+
+training rlstm15x2_lessfeat4
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat4  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat4 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+11s - loss: 2008.1087 - val_loss: 9121.2796
+Epoch 00000: val_loss improved from inf to 9121.27957, saving model to rlstm15x2_lessfeat4_weights.hdf5
+ rlstm15x2_lessfeat4  1715.6      0.66  0.35  0.49      0.65  0.22  0.55      0.66  0.15  0.59
+forget = 0.945542
+delta_x = 5.21391
+delta_h = 3.24301
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.20471 5.21391 4.6109 6.59467
+U_c = [[-0.12924244]] U_f = [[ 0.]] b_f = [ 0.86233443]
+ rlstm15x2_lessfeat4  9121.3      0.88  0.24  0.69      0.87  0.16  0.75      0.87  0.11  0.79
+forget = 0.956597
+delta_x = 5.83082
+delta_h = 4.87977
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.98442 5.83082 5.37216 7.0546
+U_c = [[-0.12924244]] U_f = [[ 0.]] b_f = [ 0.86233443]
+Epoch 2/300
+11s - loss: 1700.4803 - val_loss: 9256.6334
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+11s - loss: 1683.4189 - val_loss: 9191.6854
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+11s - loss: 1670.0576 - val_loss: 9345.9173
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+11s - loss: 1659.2139 - val_loss: 9413.6356
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+11s - loss: 1649.0598 - val_loss: 9322.6728
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+11s - loss: 1640.5328 - val_loss: 9459.9428
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+11s - loss: 1632.9610 - val_loss: 9450.2016
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+11s - loss: 1623.8124 - val_loss: 9498.4041
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+11s - loss: 1613.0423 - val_loss: 9432.3977
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+11s - loss: 1604.3207 - val_loss: 9396.7028
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 1593.7281 - val_loss: 9457.0977
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 1579.4177 - val_loss: 9385.4775
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+10s - loss: 1558.3874 - val_loss: 9723.0380
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 1539.3515 - val_loss: 9698.3428
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+10s - loss: 1528.1925 - val_loss: 9619.5159
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+10s - loss: 1521.3187 - val_loss: 9734.8404
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+10s - loss: 1516.4293 - val_loss: 9880.3678
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+10s - loss: 1512.3872 - val_loss: 9766.3847
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+10s - loss: 1508.3397 - val_loss: 9925.4828
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+10s - loss: 1505.2098 - val_loss: 9658.4348
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+10s - loss: 1498.8899 - val_loss: 9952.0936
+Epoch 00021: val_loss did not improve
+
+training rlstm15x2_lessfeat5
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat5  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat5 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+10s - loss: 2004.4201 - val_loss: 9326.7127
+Epoch 00000: val_loss improved from inf to 9326.71273, saving model to rlstm15x2_lessfeat5_weights.hdf5
+ rlstm15x2_lessfeat5  1712.5      0.65  0.34  0.48      0.63  0.21  0.54      0.65  0.14  0.58
+forget = 0.946524
+delta_x = 5.09863
+delta_h = 3.21162
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.08677 5.09863 4.47213 6.50325
+U_c = [[-0.13168716]] U_f = [[ 0.]] b_f = [ 0.84708083]
+ rlstm15x2_lessfeat5  9326.7      0.87  0.23  0.69      0.86  0.15  0.74      0.87  0.10  0.78
+forget = 0.957203
+delta_x = 5.60519
+delta_h = 4.71987
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.7444 5.60519 5.0812 6.97429
+U_c = [[-0.13168716]] U_f = [[ 0.]] b_f = [ 0.84708083]
+Epoch 2/300
+10s - loss: 1697.5052 - val_loss: 9203.9093
+Epoch 00001: val_loss improved from 9326.71273 to 9203.90933, saving model to rlstm15x2_lessfeat5_weights.hdf5
+ rlstm15x2_lessfeat5  1687.1      0.68  0.36  0.49      0.66  0.22  0.56      0.68  0.15  0.60
+forget = 0.95231
+delta_x = 5.09159
+delta_h = 2.87768
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.19927 5.09159 4.38267 6.89392
+U_c = [[-0.11307781]] U_f = [[ 0.]] b_f = [ 0.75195843]
+ rlstm15x2_lessfeat5  9203.9      0.88  0.24  0.69      0.86  0.16  0.74      0.87  0.11  0.78
+forget = 0.961918
+delta_x = 5.53258
+delta_h = 4.28192
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.79405 5.53258 4.79449 7.92285
+U_c = [[-0.11307781]] U_f = [[ 0.]] b_f = [ 0.75195843]
+Epoch 3/300
+10s - loss: 1677.4128 - val_loss: 9166.7318
+Epoch 00002: val_loss improved from 9203.90933 to 9166.73180, saving model to rlstm15x2_lessfeat5_weights.hdf5
+ rlstm15x2_lessfeat5  1666.6      0.67  0.35  0.50      0.66  0.22  0.56      0.67  0.15  0.60
+forget = 0.949897
+delta_x = 5.21921
+delta_h = 2.75604
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.02388 5.21921 4.34755 7.43855
+U_c = [[-0.1077981]] U_f = [[ 0.]] b_f = [ 0.650132]
+ rlstm15x2_lessfeat5  9166.7      0.87  0.23  0.69      0.86  0.15  0.74      0.86  0.11  0.78
+forget = 0.958123
+delta_x = 5.63211
+delta_h = 4.16472
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.46328 5.63211 4.63494 8.8859
+U_c = [[-0.1077981]] U_f = [[ 0.]] b_f = [ 0.650132]
+Epoch 4/300
+10s - loss: 1661.5143 - val_loss: 9162.3356
+Epoch 00003: val_loss improved from 9166.73180 to 9162.33559, saving model to rlstm15x2_lessfeat5_weights.hdf5
+ rlstm15x2_lessfeat5  1654.2      0.67  0.35  0.50      0.66  0.22  0.56      0.68  0.15  0.61
+forget = 0.947082
+delta_x = 5.52097
+delta_h = 2.87378
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.00923 5.52097 4.51171 8.16438
+U_c = [[-0.11080834]] U_f = [[ 0.]] b_f = [ 0.59085155]
+ rlstm15x2_lessfeat5  9162.3      0.87  0.22  0.69      0.85  0.15  0.74      0.86  0.10  0.78
+forget = 0.954394
+delta_x = 5.84881
+delta_h = 4.28713
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.32894 5.84881 4.65621 9.8589
+U_c = [[-0.11080834]] U_f = [[ 0.]] b_f = [ 0.59085155]
+Epoch 5/300
+10s - loss: 1650.1093 - val_loss: 9187.4846
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+10s - loss: 1639.1229 - val_loss: 9335.5748
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 1628.3901 - val_loss: 9318.7282
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 1617.2295 - val_loss: 9343.2782
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1600.2356 - val_loss: 9222.5325
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+10s - loss: 1583.3366 - val_loss: 9174.0963
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 1568.3349 - val_loss: 9314.6051
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 1550.3403 - val_loss: 9391.2614
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 1528.6609 - val_loss: 9249.4959
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+10s - loss: 1514.4128 - val_loss: 9362.6910
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 1504.4887 - val_loss: 9322.5087
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+10s - loss: 1495.0246 - val_loss: 9261.2926
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+10s - loss: 1483.7973 - val_loss: 9221.6841
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+10s - loss: 1471.5600 - val_loss: 9500.2440
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+10s - loss: 1459.7333 - val_loss: 9355.2280
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+10s - loss: 1450.6144 - val_loss: 9303.2959
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+10s - loss: 1443.7880 - val_loss: 9417.6247
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+10s - loss: 1436.8742 - val_loss: 9314.7202
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+10s - loss: 1429.3764 - val_loss: 9494.5151
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+10s - loss: 1423.2835 - val_loss: 9240.2655
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+10s - loss: 1418.1158 - val_loss: 9452.3083
+Epoch 00024: val_loss did not improve
+
+training rlstm15x2_lessfeat6
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat6  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat6 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+10s - loss: 2002.6372 - val_loss: 9263.4011
+Epoch 00000: val_loss improved from inf to 9263.40111, saving model to rlstm15x2_lessfeat6_weights.hdf5
+ rlstm15x2_lessfeat6  1710.9      0.65  0.35  0.49      0.63  0.21  0.54      0.65  0.14  0.58
+forget = 0.945822
+delta_x = 5.08868
+delta_h = 3.18255
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.10157 5.08868 4.47328 6.47078
+U_c = [[-0.13096632]] U_f = [[ 0.]] b_f = [ 0.83437973]
+ rlstm15x2_lessfeat6  9263.4      0.88  0.24  0.68      0.87  0.16  0.74      0.87  0.11  0.78
+forget = 0.958638
+delta_x = 5.61196
+delta_h = 4.77422
+delta mean, abs_mean, abs_mean+, abs_mean-: 2.00332 5.61196 5.23516 6.617
+U_c = [[-0.13096632]] U_f = [[ 0.]] b_f = [ 0.83437973]
+Epoch 2/300
+10s - loss: 1698.7871 - val_loss: 9257.2044
+Epoch 00001: val_loss improved from 9263.40111 to 9257.20436, saving model to rlstm15x2_lessfeat6_weights.hdf5
+ rlstm15x2_lessfeat6  1690.6      0.65  0.34  0.49      0.63  0.21  0.54      0.65  0.14  0.58
+forget = 0.950338
+delta_x = 4.88872
+delta_h = 2.85318
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.963957 4.88872 4.08371 6.92415
+U_c = [[-0.11526737]] U_f = [[ 0.]] b_f = [ 0.73949933]
+ rlstm15x2_lessfeat6  9257.2      0.87  0.23  0.69      0.85  0.15  0.74      0.86  0.10  0.78
+forget = 0.957236
+delta_x = 5.47998
+delta_h = 4.31177
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.42309 5.47998 4.63108 7.96399
+U_c = [[-0.11526737]] U_f = [[ 0.]] b_f = [ 0.73949933]
+Epoch 3/300
+10s - loss: 1685.2680 - val_loss: 9260.2893
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+10s - loss: 1673.9022 - val_loss: 9283.1139
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+10s - loss: 1663.4196 - val_loss: 9209.1294
+Epoch 00004: val_loss improved from 9257.20436 to 9209.12937, saving model to rlstm15x2_lessfeat6_weights.hdf5
+ rlstm15x2_lessfeat6  1658.8      0.69  0.35  0.50      0.67  0.22  0.56      0.69  0.15  0.61
+forget = 0.949031
+delta_x = 5.40294
+delta_h = 2.74989
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.08194 5.40294 4.38786 8.27643
+U_c = [[-0.10455284]] U_f = [[ 0.]] b_f = [ 0.57730293]
+ rlstm15x2_lessfeat6  9209.1      0.88  0.24  0.68      0.86  0.16  0.73      0.86  0.11  0.77
+forget = 0.958273
+delta_x = 5.65685
+delta_h = 4.12749
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.67157 5.65685 4.67986 9.18161
+U_c = [[-0.10455284]] U_f = [[ 0.]] b_f = [ 0.57730293]
+Epoch 6/300
+10s - loss: 1654.2412 - val_loss: 9292.7743
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 1646.3437 - val_loss: 9338.8946
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 1638.1386 - val_loss: 9212.6312
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1626.5072 - val_loss: 9186.3727
+Epoch 00008: val_loss improved from 9209.12937 to 9186.37273, saving model to rlstm15x2_lessfeat6_weights.hdf5
+ rlstm15x2_lessfeat6  1618.8      0.67  0.33  0.50      0.65  0.21  0.56      0.67  0.14  0.60
+forget = 0.944334
+delta_x = 5.55913
+delta_h = 2.73039
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.847826 5.55913 4.38482 8.74353
+U_c = [[-0.10525357]] U_f = [[ 0.]] b_f = [ 0.45301613]
+ rlstm15x2_lessfeat6  9186.4      0.84  0.22  0.68      0.82  0.14  0.72      0.83  0.10  0.76
+forget = 0.950252
+delta_x = 5.75015
+delta_h = 4.04874
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.0199 5.75015 4.37041 10.4899
+U_c = [[-0.10525357]] U_f = [[ 0.]] b_f = [ 0.45301613]
+Epoch 10/300
+10s - loss: 1610.6268 - val_loss: 9375.9344
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 1590.9680 - val_loss: 9207.4650
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 1574.7916 - val_loss: 9426.5210
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 1558.2717 - val_loss: 9171.0774
+Epoch 00012: val_loss improved from 9186.37273 to 9171.07742, saving model to rlstm15x2_lessfeat6_weights.hdf5
+ rlstm15x2_lessfeat6  1549.3      0.70  0.33  0.52      0.69  0.21  0.59      0.71  0.14  0.63
+forget = 0.943595
+delta_x = 5.71866
+delta_h = 2.35297
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.799023 5.71866 5.08737 6.84376
+U_c = [[-0.08677491]] U_f = [[ 0.]] b_f = [ 0.19520624]
+ rlstm15x2_lessfeat6  9171.1      0.81  0.22  0.66      0.80  0.15  0.70      0.81  0.10  0.74
+forget = 0.95039
+delta_x = 5.49342
+delta_h = 3.40096
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.890658 5.49342 4.692 7.19891
+U_c = [[-0.08677491]] U_f = [[ 0.]] b_f = [ 0.19520624]
+Epoch 14/300
+10s - loss: 1542.0757 - val_loss: 9530.1983
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 1522.5079 - val_loss: 9519.1446
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+10s - loss: 1505.8846 - val_loss: 9603.8795
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+10s - loss: 1495.0964 - val_loss: 9453.8854
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+10s - loss: 1487.6496 - val_loss: 9571.1345
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+10s - loss: 1480.8916 - val_loss: 9414.6724
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+10s - loss: 1474.4869 - val_loss: 9325.0569
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+10s - loss: 1467.7283 - val_loss: 9832.4271
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+10s - loss: 1460.9000 - val_loss: 9473.5966
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+10s - loss: 1455.0946 - val_loss: 9594.4990
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+10s - loss: 1449.6136 - val_loss: 9732.9985
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+10s - loss: 1444.7839 - val_loss: 9630.2004
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+10s - loss: 1440.4314 - val_loss: 9683.0838
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+10s - loss: 1435.5671 - val_loss: 9757.6853
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+10s - loss: 1431.4771 - val_loss: 9681.4531
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+10s - loss: 1427.5711 - val_loss: 9725.8851
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+10s - loss: 1423.2423 - val_loss: 9862.3713
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+10s - loss: 1417.9227 - val_loss: 9890.0127
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+10s - loss: 1413.1633 - val_loss: 9955.1284
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+10s - loss: 1406.9846 - val_loss: 10069.1248
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+10s - loss: 1401.9276 - val_loss: 10178.0872
+Epoch 00033: val_loss did not improve
+
+training rlstm15x2_lessfeat7
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat7  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat7 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+10s - loss: 2003.6862 - val_loss: 9229.0645
+Epoch 00000: val_loss improved from inf to 9229.06447, saving model to rlstm15x2_lessfeat7_weights.hdf5
+ rlstm15x2_lessfeat7  1713.5      0.68  0.36  0.49      0.66  0.22  0.56      0.67  0.15  0.60
+forget = 0.948783
+delta_x = 5.16602
+delta_h = 3.29149
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.33346 5.16602 4.60523 6.51047
+U_c = [[-0.13124438]] U_f = [[ 0.]] b_f = [ 0.86986309]
+ rlstm15x2_lessfeat7  9229.1      0.89  0.25  0.68      0.87  0.16  0.74      0.88  0.11  0.79
+forget = 0.958513
+delta_x = 5.73082
+delta_h = 4.87774
+delta mean, abs_mean, abs_mean+, abs_mean-: 2.11673 5.73082 5.35637 6.75642
+U_c = [[-0.13124438]] U_f = [[ 0.]] b_f = [ 0.86986309]
+Epoch 2/300
+10s - loss: 1699.0117 - val_loss: 9138.6995
+Epoch 00001: val_loss improved from 9229.06447 to 9138.69954, saving model to rlstm15x2_lessfeat7_weights.hdf5
+ rlstm15x2_lessfeat7  1688.3      0.67  0.35  0.49      0.65  0.22  0.55      0.66  0.15  0.59
+forget = 0.950141
+delta_x = 5.09294
+delta_h = 2.9679
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.07981 5.09294 4.31524 7.04618
+U_c = [[-0.11743423]] U_f = [[ 0.]] b_f = [ 0.75160694]
+ rlstm15x2_lessfeat7  9138.7      0.88  0.24  0.69      0.87  0.16  0.74      0.87  0.11  0.78
+forget = 0.959514
+delta_x = 5.71716
+delta_h = 4.53941
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.84481 5.71716 5.00162 7.93359
+U_c = [[-0.11743423]] U_f = [[ 0.]] b_f = [ 0.75160694]
+Epoch 3/300
+10s - loss: 1681.9579 - val_loss: 9134.2182
+Epoch 00002: val_loss improved from 9138.69954 to 9134.21817, saving model to rlstm15x2_lessfeat7_weights.hdf5
+ rlstm15x2_lessfeat7  1674.0      0.68  0.35  0.50      0.66  0.22  0.56      0.67  0.15  0.60
+forget = 0.950985
+delta_x = 5.1813
+delta_h = 2.87052
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.09573 5.1813 4.27553 7.68149
+U_c = [[-0.11135005]] U_f = [[ 0.]] b_f = [ 0.64763975]
+ rlstm15x2_lessfeat7  9134.2      0.87  0.23  0.69      0.86  0.15  0.74      0.86  0.11  0.78
+forget = 0.957499
+delta_x = 5.77072
+delta_h = 4.36319
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.64564 5.77072 4.84175 8.80958
+U_c = [[-0.11135005]] U_f = [[ 0.]] b_f = [ 0.64763975]
+Epoch 4/300
+10s - loss: 1668.8761 - val_loss: 9179.8081
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+10s - loss: 1656.8922 - val_loss: 9204.6122
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+10s - loss: 1644.7167 - val_loss: 9199.4001
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 1635.4589 - val_loss: 9125.1353
+Epoch 00006: val_loss improved from 9134.21817 to 9125.13531, saving model to rlstm15x2_lessfeat7_weights.hdf5
+ rlstm15x2_lessfeat7  1629.9      0.69  0.34  0.51      0.68  0.21  0.57      0.69  0.15  0.62
+forget = 0.94738
+delta_x = 5.56308
+delta_h = 2.81021
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.988553 5.56308 4.35417 9.23551
+U_c = [[-0.10614109]] U_f = [[ 0.]] b_f = [ 0.40270036]
+ rlstm15x2_lessfeat7  9125.1      0.85  0.22  0.69      0.84  0.15  0.73      0.84  0.10  0.77
+forget = 0.952063
+delta_x = 5.79536
+delta_h = 4.1223
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.1426 5.79536 4.47045 10.3847
+U_c = [[-0.10614109]] U_f = [[ 0.]] b_f = [ 0.40270036]
+Epoch 8/300
+10s - loss: 1626.3764 - val_loss: 9162.4904
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1617.1559 - val_loss: 9179.3655
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+10s - loss: 1603.3060 - val_loss: 9380.0848
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 1590.3260 - val_loss: 9542.0312
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 1582.6247 - val_loss: 9581.6922
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 1576.5926 - val_loss: 9587.7282
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+10s - loss: 1570.4596 - val_loss: 9573.0650
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 1564.1465 - val_loss: 9692.0514
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+10s - loss: 1557.6249 - val_loss: 9475.5449
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+10s - loss: 1550.7104 - val_loss: 9547.0802
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+10s - loss: 1541.4768 - val_loss: 9444.0984
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+10s - loss: 1529.8018 - val_loss: 9229.3127
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+10s - loss: 1515.0979 - val_loss: 9184.4853
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+10s - loss: 1500.9797 - val_loss: 9263.8000
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+10s - loss: 1491.6996 - val_loss: 9587.7643
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+10s - loss: 1485.7729 - val_loss: 9625.1326
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+10s - loss: 1480.3926 - val_loss: 9290.9925
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+10s - loss: 1476.4096 - val_loss: 9247.3822
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+10s - loss: 1472.0777 - val_loss: 9484.1452
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+10s - loss: 1468.2148 - val_loss: 9380.6890
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+10s - loss: 1463.0852 - val_loss: 9476.4184
+Epoch 00027: val_loss did not improve
+
+training rlstm15x2_lessfeat8
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat8  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat8 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+10s - loss: 2008.9313 - val_loss: 9229.7683
+Epoch 00000: val_loss improved from inf to 9229.76832, saving model to rlstm15x2_lessfeat8_weights.hdf5
+ rlstm15x2_lessfeat8  1711.1      0.68  0.36  0.49      0.66  0.22  0.56      0.67  0.15  0.60
+forget = 0.949337
+delta_x = 5.13793
+delta_h = 3.18505
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.31522 5.13793 4.59626 6.41394
+U_c = [[-0.12630439]] U_f = [[ 0.]] b_f = [ 0.84704125]
+ rlstm15x2_lessfeat8  9229.8      0.88  0.24  0.68      0.87  0.16  0.74      0.87  0.11  0.78
+forget = 0.960742
+delta_x = 5.58615
+delta_h = 4.66475
+delta mean, abs_mean, abs_mean+, abs_mean-: 2.05713 5.58615 5.19233 6.68419
+U_c = [[-0.12630439]] U_f = [[ 0.]] b_f = [ 0.84704125]
+Epoch 2/300
+10s - loss: 1695.9369 - val_loss: 9383.6825
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+10s - loss: 1677.4419 - val_loss: 9189.3053
+Epoch 00002: val_loss improved from 9229.76832 to 9189.30534, saving model to rlstm15x2_lessfeat8_weights.hdf5
+ rlstm15x2_lessfeat8  1669.8      0.66  0.34  0.49      0.64  0.21  0.55      0.65  0.14  0.59
+forget = 0.948464
+delta_x = 5.13955
+delta_h = 2.80583
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.92177 5.13955 4.21281 7.51541
+U_c = [[-0.11198221]] U_f = [[ 0.]] b_f = [ 0.63812476]
+ rlstm15x2_lessfeat8  9189.3      0.87  0.23  0.69      0.85  0.15  0.74      0.86  0.10  0.78
+forget = 0.955374
+delta_x = 5.68506
+delta_h = 4.32039
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.40677 5.68506 4.63951 9.07518
+U_c = [[-0.11198221]] U_f = [[ 0.]] b_f = [ 0.63812476]
+Epoch 4/300
+10s - loss: 1662.2800 - val_loss: 9208.0613
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+10s - loss: 1649.8957 - val_loss: 9346.2290
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+10s - loss: 1640.9062 - val_loss: 9375.1111
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 1633.9084 - val_loss: 9404.0548
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 1627.4162 - val_loss: 9357.9276
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1616.7387 - val_loss: 9503.0086
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+10s - loss: 1601.6882 - val_loss: 9369.2964
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 1588.5360 - val_loss: 9622.4984
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 1576.5654 - val_loss: 9758.5550
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 1566.4375 - val_loss: 9702.2969
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+10s - loss: 1555.5260 - val_loss: 9828.7934
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 1537.8923 - val_loss: 9842.6804
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+10s - loss: 1520.7862 - val_loss: 9975.4898
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+10s - loss: 1507.7533 - val_loss: 10104.0963
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+10s - loss: 1498.3170 - val_loss: 10108.7052
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+10s - loss: 1491.1016 - val_loss: 10089.3655
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+10s - loss: 1484.7738 - val_loss: 10381.6186
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+10s - loss: 1477.5603 - val_loss: 10281.1462
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+10s - loss: 1469.8933 - val_loss: 10401.5125
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+10s - loss: 1464.0067 - val_loss: 10265.8866
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+10s - loss: 1459.1508 - val_loss: 10253.5960
+Epoch 00023: val_loss did not improve
+
+training rlstm15x2_lessfeat9
+Train on 98420 samples, validate on 11655 samples
+Before training:
+ rlstm15x2_lessfeat9  3622.7      0.01  0.28  0.01      0.03  0.15  0.03      0.05  0.08  0.05
+forget = 0.731057
+delta_x = 13.0027
+delta_h = 12.806
+delta mean, abs_mean, abs_mean+, abs_mean-: -13.0027 13.0027 nan 13.0027
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+ rlstm15x2_lessfeat9 18154.8      0.04  0.35  0.04      0.07  0.28  0.07      0.11  0.21  0.11
+forget = 0.731059
+delta_x = 18.0083
+delta_h = 17.9536
+delta mean, abs_mean, abs_mean+, abs_mean-: -18.0083 18.0083 nan 18.0083
+U_c = [[-0.5]] U_f = [[ 0.]] b_f = [ 1.]
+Epoch 1/300
+10s - loss: 2007.9367 - val_loss: 9199.6148
+Epoch 00000: val_loss improved from inf to 9199.61479, saving model to rlstm15x2_lessfeat9_weights.hdf5
+ rlstm15x2_lessfeat9  1712.4      0.65  0.35  0.49      0.64  0.21  0.54      0.65  0.15  0.59
+forget = 0.94637
+delta_x = 5.009
+delta_h = 3.07707
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.06875 5.009 4.39338 6.39018
+U_c = [[-0.12467656]] U_f = [[ 0.]] b_f = [ 0.85022783]
+ rlstm15x2_lessfeat9  9199.6      0.88  0.24  0.69      0.86  0.15  0.74      0.87  0.11  0.78
+forget = 0.956989
+delta_x = 5.55139
+delta_h = 4.6356
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.7528 5.55139 5.04874 6.86578
+U_c = [[-0.12467656]] U_f = [[ 0.]] b_f = [ 0.85022783]
+Epoch 2/300
+10s - loss: 1699.4016 - val_loss: 9373.4625
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+10s - loss: 1682.8340 - val_loss: 9249.6415
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+10s - loss: 1671.0832 - val_loss: 9168.6457
+Epoch 00003: val_loss improved from 9199.61479 to 9168.64573, saving model to rlstm15x2_lessfeat9_weights.hdf5
+ rlstm15x2_lessfeat9  1664.7      0.68  0.35  0.50      0.66  0.22  0.56      0.68  0.15  0.60
+forget = 0.949157
+delta_x = 5.38392
+delta_h = 2.8288
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.07449 5.38392 4.44312 7.88658
+U_c = [[-0.11039229]] U_f = [[ 0.]] b_f = [ 0.60836947]
+ rlstm15x2_lessfeat9  9168.6      0.87  0.23  0.69      0.85  0.15  0.74      0.86  0.11  0.77
+forget = 0.956611
+delta_x = 5.73017
+delta_h = 4.21276
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.41041 5.73017 4.65513 9.2682
+U_c = [[-0.11039229]] U_f = [[ 0.]] b_f = [ 0.60836947]
+Epoch 5/300
+10s - loss: 1659.9834 - val_loss: 9311.1111
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+10s - loss: 1647.9805 - val_loss: 9186.9593
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 1637.2106 - val_loss: 9371.0042
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 1628.1415 - val_loss: 9350.4476
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1618.7082 - val_loss: 9320.9354
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+10s - loss: 1605.3442 - val_loss: 9210.7506
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 1583.6078 - val_loss: 9241.9177
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 1559.6254 - val_loss: 9032.0860
+Epoch 00011: val_loss improved from 9168.64573 to 9032.08598, saving model to rlstm15x2_lessfeat9_weights.hdf5
+ rlstm15x2_lessfeat9  1545.9      0.69  0.33  0.52      0.69  0.20  0.58      0.70  0.14  0.63
+forget = 0.948504
+delta_x = 5.54241
+delta_h = 2.30756
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.803469 5.54241 4.79392 7.00753
+U_c = [[-0.0878526]] U_f = [[ 0.]] b_f = [ 0.17542826]
+ rlstm15x2_lessfeat9  9032.1      0.81  0.22  0.66      0.79  0.14  0.70      0.80  0.10  0.73
+forget = 0.951087
+delta_x = 5.56226
+delta_h = 3.53
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.880506 5.56226 4.37353 8.88593
+U_c = [[-0.0878526]] U_f = [[ 0.]] b_f = [ 0.17542826]
+Epoch 13/300
+10s - loss: 1536.1028 - val_loss: 8960.7251
+Epoch 00012: val_loss improved from 9032.08598 to 8960.72514, saving model to rlstm15x2_lessfeat9_weights.hdf5
+ rlstm15x2_lessfeat9  1523.1      0.70  0.32  0.52      0.69  0.20  0.59      0.70  0.14  0.63
+forget = 0.944557
+delta_x = 5.78269
+delta_h = 2.19722
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.695047 5.78269 5.1493 6.85652
+U_c = [[-0.08127966]] U_f = [[ 0.]] b_f = [ 0.04257351]
+ rlstm15x2_lessfeat9  8960.7      0.80  0.21  0.66      0.79  0.14  0.69      0.79  0.09  0.73
+forget = 0.946949
+delta_x = 5.75218
+delta_h = 3.34551
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.731757 5.75218 4.71559 8.03271
+U_c = [[-0.08127966]] U_f = [[ 0.]] b_f = [ 0.04257351]
+Epoch 14/300
+10s - loss: 1514.0810 - val_loss: 8965.8383
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 1496.2846 - val_loss: 9214.1382
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+10s - loss: 1483.0662 - val_loss: 9128.0555
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+10s - loss: 1474.5108 - val_loss: 9412.5371
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+10s - loss: 1467.3704 - val_loss: 9344.9963
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+10s - loss: 1460.2681 - val_loss: 9348.0325
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+10s - loss: 1451.7787 - val_loss: 9398.3300
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+10s - loss: 1443.2300 - val_loss: 9502.0432
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+10s - loss: 1433.9049 - val_loss: 9482.1134
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+10s - loss: 1426.0367 - val_loss: 9648.9601
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+10s - loss: 1419.2978 - val_loss: 9662.1653
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+10s - loss: 1412.3835 - val_loss: 10040.6647
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+10s - loss: 1406.1551 - val_loss: 9915.3185
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+10s - loss: 1400.9686 - val_loss: 10102.2806
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+10s - loss: 1396.5323 - val_loss: 9887.2200
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+10s - loss: 1392.6516 - val_loss: 10133.7606
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+10s - loss: 1389.0598 - val_loss: 9917.7218
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+10s - loss: 1385.6791 - val_loss: 10407.6143
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+10s - loss: 1382.4057 - val_loss: 10100.4242
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+10s - loss: 1378.6014 - val_loss: 10219.9089
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+10s - loss: 1373.6083 - val_loss: 10164.6998
+Epoch 00033: val_loss did not improve
+ rlstm15x2_lessfeat0  1543.9      0.69  0.32  0.52      0.68  0.19  0.58      0.69  0.13  0.63
+forget = 0.945404
+delta_x = 5.58338
+delta_h = 2.43593
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.71407 5.58338 4.42972 8.41911
+U_c = [[-0.09004632]] U_f = [[ 0.]] b_f = [ 0.29707387]
+ rlstm15x2_lessfeat0  9169.3      0.83  0.21  0.68      0.82  0.15  0.71      0.82  0.10  0.75
+forget = 0.946142
+delta_x = 5.87927
+delta_h = 3.65772
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.743544 5.87927 4.46094 9.96503
+U_c = [[-0.09004632]] U_f = [[ 0.]] b_f = [ 0.29707387]
+ rlstm15x2_lessfeat1  1586.9      0.68  0.33  0.51      0.67  0.20  0.57      0.68  0.14  0.61
+forget = 0.942315
+delta_x = 5.75297
+delta_h = 2.57708
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.778172 5.75297 4.47233 9.21845
+U_c = [[-0.09744789]] U_f = [[ 0.]] b_f = [ 0.47387543]
+ rlstm15x2_lessfeat1  9007.8      0.82  0.20  0.67      0.80  0.14  0.71      0.81  0.09  0.74
+forget = 0.948006
+delta_x = 5.73119
+delta_h = 3.8317
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.783603 5.73119 4.23851 10.687
+U_c = [[-0.09744789]] U_f = [[ 0.]] b_f = [ 0.47387543]
+ rlstm15x2_lessfeat2  1550.4      0.70  0.33  0.52      0.68  0.20  0.58      0.69  0.14  0.62
+forget = 0.94704
+delta_x = 5.59955
+delta_h = 2.60233
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.895756 5.59955 4.21985 10.2086
+U_c = [[-0.09657361]] U_f = [[ 0.]] b_f = [ 0.03785672]
+ rlstm15x2_lessfeat2  8988.8      0.82  0.20  0.68      0.80  0.13  0.71      0.80  0.09  0.75
+forget = 0.951722
+delta_x = 5.57669
+delta_h = 3.68124
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.683426 5.57669 3.9817 11.4388
+U_c = [[-0.09657361]] U_f = [[ 0.]] b_f = [ 0.03785672]
+ rlstm15x2_lessfeat3  1472.7      0.72  0.34  0.53      0.74  0.22  0.61      0.76  0.16  0.66
+forget = 0.907068
+delta_x = 7.64842
+delta_h = 1.41463
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.671151 7.64842 6.63106 9.36091
+U_c = [[-0.0508093]] U_f = [[ 0.]] b_f = [-0.1638886]
+ rlstm15x2_lessfeat3  8966.1      0.83  0.24  0.66      0.83  0.16  0.71      0.84  0.11  0.75
+forget = 0.934352
+delta_x = 6.52026
+delta_h = 2.3074
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.0432 6.52026 5.76427 7.96231
+U_c = [[-0.0508093]] U_f = [[ 0.]] b_f = [-0.1638886]
+ rlstm15x2_lessfeat4  1715.6      0.66  0.35  0.49      0.65  0.22  0.55      0.66  0.15  0.59
+forget = 0.945542
+delta_x = 5.21391
+delta_h = 3.24301
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.20471 5.21391 4.6109 6.59467
+U_c = [[-0.12924244]] U_f = [[ 0.]] b_f = [ 0.86233443]
+ rlstm15x2_lessfeat4  9121.3      0.88  0.24  0.69      0.87  0.16  0.75      0.87  0.11  0.79
+forget = 0.956597
+delta_x = 5.83082
+delta_h = 4.87977
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.98442 5.83082 5.37216 7.0546
+U_c = [[-0.12924244]] U_f = [[ 0.]] b_f = [ 0.86233443]
+ rlstm15x2_lessfeat5  1654.2      0.67  0.35  0.50      0.66  0.22  0.56      0.68  0.15  0.61
+forget = 0.947082
+delta_x = 5.52097
+delta_h = 2.87378
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.00923 5.52097 4.51171 8.16438
+U_c = [[-0.11080834]] U_f = [[ 0.]] b_f = [ 0.59085155]
+ rlstm15x2_lessfeat5  9162.3      0.87  0.22  0.69      0.85  0.15  0.74      0.86  0.10  0.78
+forget = 0.954394
+delta_x = 5.84881
+delta_h = 4.28713
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.32894 5.84881 4.65621 9.8589
+U_c = [[-0.11080834]] U_f = [[ 0.]] b_f = [ 0.59085155]
+ rlstm15x2_lessfeat6  1549.3      0.70  0.33  0.52      0.69  0.21  0.59      0.71  0.14  0.63
+forget = 0.943595
+delta_x = 5.71866
+delta_h = 2.35297
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.799023 5.71866 5.08737 6.84376
+U_c = [[-0.08677491]] U_f = [[ 0.]] b_f = [ 0.19520624]
+ rlstm15x2_lessfeat6  9171.1      0.81  0.22  0.66      0.80  0.15  0.70      0.81  0.10  0.74
+forget = 0.95039
+delta_x = 5.49342
+delta_h = 3.40096
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.890658 5.49342 4.692 7.19891
+U_c = [[-0.08677491]] U_f = [[ 0.]] b_f = [ 0.19520624]
+ rlstm15x2_lessfeat7  1629.9      0.69  0.34  0.51      0.68  0.21  0.57      0.69  0.15  0.62
+forget = 0.94738
+delta_x = 5.56308
+delta_h = 2.81021
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.988553 5.56308 4.35417 9.23551
+U_c = [[-0.10614109]] U_f = [[ 0.]] b_f = [ 0.40270036]
+ rlstm15x2_lessfeat7  9125.1      0.85  0.22  0.69      0.84  0.15  0.73      0.84  0.10  0.77
+forget = 0.952063
+delta_x = 5.79536
+delta_h = 4.1223
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.1426 5.79536 4.47045 10.3847
+U_c = [[-0.10614109]] U_f = [[ 0.]] b_f = [ 0.40270036]
+ rlstm15x2_lessfeat8  1669.8      0.66  0.34  0.49      0.64  0.21  0.55      0.65  0.14  0.59
+forget = 0.948464
+delta_x = 5.13955
+delta_h = 2.80583
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.92177 5.13955 4.21281 7.51541
+U_c = [[-0.11198221]] U_f = [[ 0.]] b_f = [ 0.63812476]
+ rlstm15x2_lessfeat8  9189.3      0.87  0.23  0.69      0.85  0.15  0.74      0.86  0.10  0.78
+forget = 0.955374
+delta_x = 5.68506
+delta_h = 4.32039
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.40677 5.68506 4.63951 9.07518
+U_c = [[-0.11198221]] U_f = [[ 0.]] b_f = [ 0.63812476]
+ rlstm15x2_lessfeat9  1523.1      0.70  0.32  0.52      0.69  0.20  0.59      0.70  0.14  0.63
+forget = 0.944557
+delta_x = 5.78269
+delta_h = 2.19722
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.695047 5.78269 5.1493 6.85652
+U_c = [[-0.08127966]] U_f = [[ 0.]] b_f = [ 0.04257351]
+ rlstm15x2_lessfeat9  8960.7      0.80  0.21  0.66      0.79  0.14  0.69      0.79  0.09  0.73
+forget = 0.946949
+delta_x = 5.75218
+delta_h = 3.34551
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.731757 5.75218 4.71559 8.03271
+U_c = [[-0.08127966]] U_f = [[ 0.]] b_f = [ 0.04257351]

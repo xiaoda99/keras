@@ -20,22 +20,54 @@ def preprocess(data):
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     return data
 
-def load_data2():
+def load_station_data(station_idx):
 #    data = np.load('/home/xd/data/pm25data/raw.npy').astype('float32')
     data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei.pkl.gz'))
-    data[:,:,2] = np.sqrt(data[:,:,2]**2 + data[:,:,3]**2)
-    data[:,:,3] = data[:,:,2]
+    wind_x = data[:,:,2]
+    wind_y = data[:,:,3]
+    rho = np.sqrt(wind_x**2 + wind_y**2)
+    phi = np.arctan2(wind_y, wind_x)
+    data[:,:,2] = rho
+    data[:,:,3] = phi
 #    data[:,:,2:4] = np.random.randn(data.shape[0], data.shape[1], 2)
 #    data[:,:,1] = np.random.randn(data.shape[0], data.shape[1])
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
 
-#    train = segment_data(data[:,250:650,:])
-#    valid = segment_data(data[:,650:790,:])
-#    test = segment_data(data[:,790:,:])
-    train = segment_data(data[:,1310:1750,:])
-    valid = segment_data(data[:,1750:1890,:])
-    test = segment_data(data[:,1890:,:])
-    return train, valid, test
+#    station_idx = station_idx - 1001
+    station_data = data[station_idx:station_idx+1,1890:,:]
+    test = segment_data(station_data)
+    return test, station_data
+
+def load_data2(stations=None, segment=True):
+#    data = np.load('/home/xd/data/pm25data/raw.npy').astype('float32')
+    data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei.pkl.gz'))
+    wind_x = data[:,:,2]
+    wind_y = data[:,:,3]
+    rho = np.sqrt(wind_x**2 + wind_y**2)
+    phi = np.arctan2(wind_y, wind_x)
+    data[:,:,2] = rho
+    data[:,:,3] = phi
+#    data[:,:,2:4] = np.random.randn(data.shape[0], data.shape[1], 2)
+#    data[:,:,1] = np.random.randn(data.shape[0], data.shape[1])
+    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
+
+    if stations is None:
+        train_data = data[:,1310:1890,:]
+    #    valid = segment_data(data[:,1750:1890,:])
+        valid_data = data[:,1890:,:]
+        test_data = data[:,1890:,:]
+    else:
+        station_indices = cPickle.load(open('/home/xd/data/pm25data/stations_index_huabei.pkl'))
+        selected_indices = [station_indices[station] for station in stations if station in station_indices] 
+        if len(selected_indices) == 0:
+            return None, None, None
+        train_data = data[selected_indices,1310:1890,:]
+    #    valid = segment_data(data[:,1750:1890,:])
+        valid_data = data[selected_indices,1890:,:]
+        test_data = data[selected_indices,1890:,:]
+    if segment:
+        train_data = segment_data(train_data); valid_data = segment_data(valid_data); test_data = segment_data(test_data)
+    return train_data, valid_data, test_data
 
 def load_data():
 #    data = np.load('/home/xd/data/pm25data/raw.npy').astype('float32')
@@ -55,7 +87,6 @@ def load_data():
 
     train = segment_data(data[:,340:920,:])
 #    valid = segment_data(data[:,780:920,:])
-#    test = segment_data(data[:,920:,:])
     valid = segment_data(data[:,920:,:])
     test = segment_data(data[:,920:,:])
     return train, valid, test

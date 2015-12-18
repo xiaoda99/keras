@@ -7,7 +7,7 @@ from profilehooks import profile
 from keras.layers.recurrent_xd import ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMA, ReducedLSTMB
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
-from data import load_data
+from data import load_data, load_data2, segment_data
 from errors import *
 
 def pm25_mean_predict(pm25, gfs, date_time, pm25_mean, pred_range, downsample=1):
@@ -148,6 +148,38 @@ def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3)
     y = []
     for i in range(pred_range[0], pred_range[1]):
         if i - hist_len + 1 >= 0:
+            recent_gfs = gfs[:,i-hist_len+1:i+1,1:5]
+        else:
+            assert False
+            print 'shapes:', np.zeros((gfs.shape[0], hist_len-i-1, gfs.shape[2])).shape, gfs[:,0:i+1,:].shape
+            recent_gfs = np.concatenate((np.zeros((gfs.shape[0], hist_len-i-1, gfs.shape[2])), gfs[:,0:i+1,:]), axis=1)
+#        recent_gfs = delta(recent_gfs)
+        recent_gfs = recent_gfs.reshape((recent_gfs.shape[0], -1))
+        current_date_time = date_time[:,i,:-1]
+        current_pm25_mean = pm25_mean[:,i,:]
+        step = np.ones((pm25.shape[0],1)) * (i - pred_range[0] + 1)
+#        Xi = np.hstack([recent_gfs, current_date_time])
+        Xi = np.hstack([recent_gfs, current_date_time, current_pm25_mean])
+        yi = pm25[:,i,:]
+        X.append(Xi)
+        y.append(yi)
+    init_pm25 = pm25[:,pred_range[0]-1,:]
+    init_gfs = gfs[:,:pred_range[0],:].reshape((gfs.shape[0], -1))
+#    X_init = np.hstack([init_pm25, init_gfs])
+    hidden_init = init_pm25 
+    cell_init = init_pm25 + pm25_mean[:,pred_range[0]-1,:]
+    cell_mean = pm25_mean[:,pred_range[0]:pred_range[1],:]
+    X = np.dstack(X).transpose((0, 2, 1)) #.astype('float32')
+    y = np.dstack(y).transpose((0, 2, 1)) #.astype('float32')
+#    print 'X.shape, X_init.shape, y.shape =', X.shape, X_init.shape, y.shape
+    return [X, hidden_init, cell_init, cell_mean], y
+#    return [X, hidden_init, hidden_init], y
+
+def transform_sequences_old(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3):
+    X = []
+    y = []
+    for i in range(pred_range[0], pred_range[1]):
+        if i - hist_len + 1 >= 0:
             recent_gfs = gfs[:,i-hist_len+1:i+1,:]
         else:
             assert False
@@ -172,8 +204,8 @@ def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3)
     X = np.dstack(X).transpose((0, 2, 1)) #.astype('float32')
     y = np.dstack(y).transpose((0, 2, 1)) #.astype('float32')
 #    print 'X.shape, X_init.shape, y.shape =', X.shape, X_init.shape, y.shape
-#    return [X, hidden_init, cell_init, cell_mean], y
-    return [X, hidden_init, hidden_init], y
+    return [X, hidden_init, cell_init, cell_mean], y
+#    return [X, hidden_init, hidden_init], y
 
 def normalize(X_train, X_valid):
     reshaped = False
@@ -248,7 +280,7 @@ def split_data(data):
     test_data = data[valid_stop:]
     return train_data, valid_data, test_data
 
-def build_lstm_dataset(train_data, valid_data, pred_range=[2,42], split_fn=split_data, hist_len=3):
+def build_lstm_dataset(train_data, valid_data, pred_range=[2,42], split_fn=split_data, hist_len=3, external_normalize=False):
 #    data = np.copy(data)
 #    train_pct = 1. - valid_pct
 #    train_data = data[:data.shape[0]*train_pct]
@@ -259,7 +291,11 @@ def build_lstm_dataset(train_data, valid_data, pred_range=[2,42], split_fn=split
     X_valid, y_valid = transform_sequences(*(parse_data(valid_data) + (pred_range, hist_len)))
 #    X_test, y_test = transform_sequences(*(parse_data(test_data) + (pred_range, hist_len)))
     assert type(X_train) == list and type(X_valid) == list
-    X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0])
+    if not external_normalize:
+        X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0])
+    else:
+        X_train[0] = normalize_batch(X_train[0])
+        X_valid[0] = normalize_batch(X_valid[0])
 #    print 'X_train.shape, y_train.shape =', X_train.shape, y_train.shape
     return X_train, y_train, X_valid, y_valid
 
@@ -300,16 +336,16 @@ def test_model(model, dataset='test', split_fn=split_data, show_details=True):
     if show_details:
 #        print 'abs_err ='
 #        print absolute_error(pred, targets)
-        print 'forget =' 
-        print fgts.mean(axis=0)
+        print 'forget =', fgts.mean()
+#        print fgts.mean(axis=0)
 #        print 'pred ='
 #        print np.abs(pred).mean(axis=0)
 #        print 'delta ='
 #        print np.abs(ds).mean(axis=0)
-        print 'delta_x ='
-        print np.abs(dxs).mean(axis=0)
-        print 'delta_h ='
-        print np.abs(dhs).mean(axis=0)
+        print 'delta_x =', np.abs(dxs).mean()
+#        print np.abs(dxs).mean(axis=0)
+        print 'delta_h =', np.abs(dhs).mean()
+#        print np.abs(dhs).mean(axis=0)
 #        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
         print 'delta mean, abs_mean, abs_mean+, abs_mean-:', dxs.mean(), np.abs(dxs).mean(), np.abs(dxs[dxs>0]).mean(), np.abs(dxs[dxs<0]).mean()
         print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
@@ -367,7 +403,7 @@ if __name__ == '__main__':
 #    f.close()
 #    train_data, valid_data, test_data = split_data(data)
     
-    train_data, valid_data, test_data = load_data()
+    train_data, valid_data, test_data = load_data2(segment=True)
 #    rlstm = model_from_yaml(open('rlstm_2h.yaml').read())
 #    rlstm.load_weights('rlstm_2h0_weights.hdf5')
 #    rlstm.name = 'rlstm_2h'
@@ -385,38 +421,22 @@ if __name__ == '__main__':
     
     X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
 #    
-    for i in range(10):
-        name = 'rlstm_2h_newfgt'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=60, h1_dim=60, rec_layer_type=ReducedLSTM, name=name)
+    for i in range(5):
+        name = 'rlstm20x2_lessfeat'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         print '\ntraining', rlstm.name
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
-    for i in range(10):
-        name = 'rlstm_2h_nofgt'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=60, h1_dim=60, rec_layer_type=ReducedLSTM3, name=name)
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        print '\ntraining', rlstm.name
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
-              
-    name = 'rlstm_2h_newfgt'    
+                  
+    name = 'rlstm20x2_lessfeat'    
     rlstm = model_from_yaml(open(name + '.yaml').read())
-    for i in range(10):
+    for i in range(5):
         rlstm.load_weights(name + str(i) + '_weights.hdf5')
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         test_model(rlstm, dataset='train', show_details=False)
-        test_model(rlstm, dataset='valid', show_details=False)
-    name = 'rlstm_2h_nofgt'    
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    for i in range(10):
-        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        test_model(rlstm, dataset='train', show_details=False)
-        test_model(rlstm, dataset='valid', show_details=False)
-        
+        test_model(rlstm, dataset='valid', show_details=False)    
         
     #for rlstm in rlstms:
     #    test_model(rlstm)
