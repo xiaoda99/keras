@@ -739,7 +739,7 @@ class ReducedLSTMA(Recurrent):
 
         self.W_c = self.init((input_dim, self.output_dim))
 #        self.U_c = self.inner_init((self.output_dim, self.output_dim))
-        self.U_c = sharedX(-.5 * np.ones((self.output_dim, self.output_dim)))  #XD
+        self.U_c = sharedX(-.05 * np.ones((self.output_dim, self.output_dim)))  #XD
         self.b_c = shared_zeros((self.output_dim))
 
         self.params = [
@@ -763,9 +763,9 @@ class ReducedLSTMA(Recurrent):
         c_mask_tm1 = c_tm1  #XD
 
         f_t = self.inner_activation(xf_t + 0. * T.dot(h_mask_tm1, u_f))
-        b_t = activations.get('linear')(xc_t) + T.dot(h_mask_tm1, u_c)
+        b_t = activations.get('linear')(xc_t)
         a_t = f_t
-        c_t = a_t * activations.get('relu')(c_mask_tm1 + b_t)
+        c_t = a_t * activations.get('relu')(c_mask_tm1 + b_t + T.dot(h_mask_tm1, u_c))
         h_t = self.activation(c_t) - cm_t
         d_t = c_t - c_mask_tm1
         dh_t = T.dot(h_mask_tm1, u_c)

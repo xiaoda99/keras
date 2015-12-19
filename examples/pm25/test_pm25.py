@@ -148,14 +148,14 @@ def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3)
     y = []
     for i in range(pred_range[0], pred_range[1]):
         if i - hist_len + 1 >= 0:
-            recent_gfs = gfs[:,i-hist_len+1:i+1,1:5]
+            recent_gfs = gfs[:,i-hist_len+1:i+1,1:]  # remove temperature feature 
         else:
             assert False
             print 'shapes:', np.zeros((gfs.shape[0], hist_len-i-1, gfs.shape[2])).shape, gfs[:,0:i+1,:].shape
             recent_gfs = np.concatenate((np.zeros((gfs.shape[0], hist_len-i-1, gfs.shape[2])), gfs[:,0:i+1,:]), axis=1)
 #        recent_gfs = delta(recent_gfs)
         recent_gfs = recent_gfs.reshape((recent_gfs.shape[0], -1))
-        current_date_time = date_time[:,i,:-1]
+        current_date_time = date_time[:,i,:-1] # remove day of year feature
         current_pm25_mean = pm25_mean[:,i,:]
         step = np.ones((pm25.shape[0],1)) * (i - pred_range[0] + 1)
 #        Xi = np.hstack([recent_gfs, current_date_time])
@@ -233,17 +233,17 @@ def normalize(X_train, X_valid):
         X_valid = X_valid.reshape((X_valid.shape[0] / n_steps, n_steps, X_valid.shape[1]))
     return X_train, X_valid
      
-def normalize_batch(Xb):
+def normalize_batch(Xb, base_dir='/home/xd/projects/keras/examples/pm25/'):
     reshaped = False
     if Xb.ndim == 3:
-        X_mean = np.load('X_mean.npy')
-        X_stdev = np.load('X_stdev.npy')
+        X_mean = np.load(base_dir + 'X_mean.npy')
+        X_stdev = np.load(base_dir + 'X_stdev.npy')
         n_steps = Xb.shape[1]
         Xb = Xb.reshape((Xb.shape[0] * Xb.shape[1], Xb.shape[2]))
         reshaped = True
     else:
-        X_mean = np.load('mlp_X_mean.npy')
-        X_stdev = np.load('mlp_X_stdev.npy')
+        X_mean = np.load(base_dir + 'mlp_X_mean.npy')
+        X_stdev = np.load(base_dir + 'mlp_X_stdev.npy')
     Xb -= X_mean
     Xb /= X_stdev
     if reshaped:
@@ -367,6 +367,8 @@ def plot_example(data, predictions, model_labels, feature_indices=[2,], feature_
     predictions = [pred + pm25_mean[pred_range[0] : pred_range[1]] for pred in predictions]
     plt.plot(pm25[pred_range[0] : pred_range[1]], label='pm25')
     plt.plot(pm25_mean[pred_range[0] : pred_range[1]], '--', label='mean')
+#    print 'pm25:',  pm25[pred_range[0] : pred_range[1]]
+#    print 'pm25_mean:', pm25_mean[pred_range[0] : pred_range[1]]
     for pred, label in zip(predictions, model_labels):
         plt.plot(pred, label=label)
     plt.legend(loc='upper right')
@@ -404,39 +406,89 @@ if __name__ == '__main__':
 #    train_data, valid_data, test_data = split_data(data)
     
     train_data, valid_data, test_data = load_data2(segment=True)
-#    rlstm = model_from_yaml(open('rlstm_2h.yaml').read())
-#    rlstm.load_weights('rlstm_2h0_weights.hdf5')
-#    rlstm.name = 'rlstm_2h'
-#    rlstm.data = [train_data, valid_data, test_data]
-#    test_model(rlstm, dataset='valid', show_details=False)
-#    rlstm_predict_batch.model = rlstm
-#    data = filter_data(valid_data)
-#    pred, fgts, incs, ds, dxs, dhs = predict_all_batch(data, rlstm_predict_batch)
-#    i = np.random.randint(data.shape[0]); plot_example(data[i], [pred[i]], ['rlstm'], model_states=[fgts[i], dxs[i], dhs[i]], state_labels=['a', 'dx', 'dh'], pred_range=[2,42])
+    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)  
     
-    #X_train, y_train, X_valid, y_valid = build_mlp_dataset(data)
-    #mlp = build_mlp(X_train.shape[-1], y_train.shape[-1], 40, 40)
-    #mlp.name = 'mlp'
-    #train(X_train, y_train, X_valid, y_valid, mlp, batch_size=4096)
+    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
+    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3, 
+                                                            external_normalize=True)
     
-    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
-#    
-    for i in range(5):
-        name = 'rlstm20x2_lessfeat'
+    for i in range(10):
+        name = 'bj_extnorm_mean'
         rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         print '\ntraining', rlstm.name
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
-                  
-    name = 'rlstm20x2_lessfeat'    
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
+    
+    X_train[0][:,:,-1] = 0 # disable pm25_mean feature
+    X_valid[0][:,:,-1] = 0
+    for i in range(10):
+        name = 'bj_extnorm'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        print '\ntraining', rlstm.name
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
+     
+    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3, 
+                                                            external_normalize=False)
+    for i in range(10):
+        name = 'bj_mean'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        print '\ntraining', rlstm.name
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
+    
+    X_train[0][:,:,-1] = 0 # disable pm25_mean feature
+    X_valid[0][:,:,-1] = 0
+    for i in range(10):
+        name = 'bj'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        print '\ntraining', rlstm.name
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
+              
+    train_data, valid_data, test_data = load_data2(segment=True)
+    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)  
+    
+    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)       
+    name = 'bj_extnorm_mean'    
     rlstm = model_from_yaml(open(name + '.yaml').read())
-    for i in range(5):
+    for i in range(10):
         rlstm.load_weights(name + str(i) + '_weights.hdf5')
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         test_model(rlstm, dataset='train', show_details=False)
         test_model(rlstm, dataset='valid', show_details=False)    
+    name = 'bj_extnorm'    
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        test_model(rlstm, dataset='train', show_details=False)
+        test_model(rlstm, dataset='valid', show_details=False)
+        
+    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3, 
+                                                            external_normalize=False)
+    name = 'bj_mean'    
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        test_model(rlstm, dataset='train', show_details=False)
+        test_model(rlstm, dataset='valid', show_details=False)    
+    name = 'bj'    
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    for i in range(10):
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        test_model(rlstm, dataset='train', show_details=False)
+        test_model(rlstm, dataset='valid', show_details=False)
         
     #for rlstm in rlstms:
     #    test_model(rlstm)
@@ -446,3 +498,13 @@ if __name__ == '__main__':
     
 #y = y_valid[((y_valid[:,:,0].min(axis=1) < 60) & (y_valid[:,:,0].max(axis=1) > 100)), :, 0]
 #i = np.random.randint(y.shape[0]); yp = rlstm.predict_on_batch([X_valid[0][i:i+1], X_valid[1][i:i+1], X_valid[2][i:i+1]])[0,:,0]; plt.plot(yp, label='yp'); plt.plot(y[i], label='y'); plt.legend(); plt.show()
+
+#    rlstm = model_from_yaml(open('rlstm_2h.yaml').read())
+#    rlstm.load_weights('rlstm_2h0_weights.hdf5')
+#    rlstm.name = 'rlstm_2h'
+#    rlstm.data = [train_data, valid_data, test_data]
+#    test_model(rlstm, dataset='valid', show_details=False)
+#    rlstm_predict_batch.model = rlstm
+#    data = filter_data(valid_data)
+#    pred, fgts, incs, ds, dxs, dhs = predict_all_batch(data, rlstm_predict_batch)
+#    i = np.random.randint(data.shape[0]); plot_example(data[i], [pred[i]], ['rlstm'], model_states=[fgts[i], dxs[i], dhs[i]], state_labels=['a', 'dx', 'dh'], pred_range=[2,42])
