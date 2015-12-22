@@ -6,6 +6,7 @@ import numpy as np
 import warnings, time, copy, pprint
 from six.moves import range
 import six
+import cPickle
 
 from . import optimizers
 from . import objectives
@@ -192,7 +193,7 @@ class Model(object):
         callbacks.on_train_begin()
 
         #XD
-        from examples.pm25.test_pm25 import test_model  #XD
+        from examples.pm25.test import test_model  #XD
 #        from examples.pm25.test_pm25 import data, targets, targets_mean  #XD
         print('Before training:')
         test_model(self, dataset='train')
@@ -636,6 +637,21 @@ class Sequential(Model, containers.Sequential):
         else:
             return outs[0]
 
+    #XD
+    def save_normalization_info(self):
+        assert hasattr(self, 'base_name')
+        assert hasattr(self, 'X_mean')
+        assert hasattr(self, 'X_stdev')
+        if not hasattr(self, 'X_mask'):
+            self.X_mask = None
+        with open(self.base_name + '_norm_info.pkl', 'wb') as f: 
+            cPickle.dump((self.X_mean, self.X_stdev, self.X_mask), f)
+            
+    def load_normalization_info(self):
+        assert hasattr(self, 'base_name')
+        with open(self.base_name + '_norm_info.pkl') as f: 
+            self.X_mean, self.X_stdev, self.X_mask = cPickle.load(f)
+        
     def save_weights(self, filepath, overwrite=False):
         # Save weights from all layers to HDF5
         import h5py

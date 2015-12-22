@@ -40,6 +40,7 @@ def load_station_data(station_idx):
 
 def load_data2(stations=None, segment=True):
 #    data = np.load('/home/xd/data/pm25data/raw.npy').astype('float32')
+#    data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei+lonlat.pkl.gz'))
     data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei.pkl.gz'))
     wind_x = data[:,:,2]
     wind_y = data[:,:,3]
@@ -90,3 +91,18 @@ def load_data():
     valid = segment_data(data[:,920:,:])
     test = segment_data(data[:,920:,:])
     return train, valid, test
+
+#station2idx = cPickle.load('stations_index_huabei.pkl')
+#huabei = cPickle.load(gzip.open('forXiaodaDataset-20150401-20151207_huabei.pkl.gz'))
+#station2lonlat = cPickle.load(gzip.open('pm25lonlat.pkl.gz'))
+#a = np.zeros((huabei.shape[0], huabei.shape[1], huabei.shape[2]+2), dtype='float32')
+#for s in station2idx:
+#    idx = station2idx[s]
+#    a[idx,:,:9] = huabei[idx,:,:9]
+#    a[idx,:,-2:] = huabei[idx,:,-2:]
+#    lonlat = station2lonlat[s]
+#    a[idx,:,9] = lonlat[0]
+#    a[idx,:,10] = lonlat[1]
+#f = gzip.open('forXiaodaDataset-20150401-20151207_huabei+lonlat.pkl.gz', 'wb')
+#cPickle.dump(a, f)
+#f.close()

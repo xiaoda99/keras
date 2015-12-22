@@ -6,13 +6,14 @@ import numpy as np
 #from keras.datasets import mnist
 from keras.models_xd import Sequential, model_from_yaml
 from keras.layers.core import Dense, TimeDistributedDense, Dropout, Activation
-from keras.layers.recurrent_xd import ReducedLSTM, ReducedLSTM2, ReducedLSTM3, LSTM, SimpleRNN
+from keras.layers.recurrent_xd import ReducedLSTM, ReducedLSTMA, ReducedLSTM2, ReducedLSTM3, LSTM, SimpleRNN
 from keras.optimizers import SGD, Adam, RMSprop
 from keras.utils import np_utils
 
 from keras.initializations import uniform
 from keras.regularizers import l2
 from keras.callbacks import EarlyStopping, ModelCheckpoint
+from examples.pm25.dataset import normalize #XD
 
 def build_rnn(in_dim, out_dim, h0_dim, h1_dim=None, layer_type=LSTM, return_sequences=False):
     model = Sequential()  
@@ -29,7 +30,7 @@ def build_rnn(in_dim, out_dim, h0_dim, h1_dim=None, layer_type=LSTM, return_sequ
     model.compile(loss="mse", optimizer="rmsprop")  
     return model
 
-def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, rec_layer_type=ReducedLSTM, layer_type=TimeDistributedDense, lr=.001, name='rlstm'):
+def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, rec_layer_type=ReducedLSTMA, layer_type=TimeDistributedDense, lr=.001, base_name='rlstm'):
     model = Sequential()  
     model.add(layer_type(h0_dim, input_dim=input_dim, 
                     init='uniform', 
@@ -43,9 +44,10 @@ def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, rec_laye
     model.add(rec_layer_type(output_dim, return_sequences=True))
     model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
     
+    model.base_name = base_name
     yaml_string = model.to_yaml()
 #    print(yaml_string)
-    with open(name+'.yaml', 'w') as f:
+    with open(model.base_name+'.yaml', 'w') as f:
         f.write(yaml_string)
     return model
 
@@ -77,10 +79,9 @@ def build_mlp(in_dim, out_dim, h0_dim, h1_dim, optimizer='rmsprop'):
         f.write(yaml_string)
     return model
 
-def train(X_train, y_train, X_test, y_test, model, batch_size=128, nb_epoch=300):
+def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=300):
+    
     early_stopping = EarlyStopping(monitor='val_loss', patience=20)
-    if not hasattr(model, 'name'):
-        model.name = 'model'
     filepath = model.name + '_weights.hdf5'
     checkpointer = ModelCheckpoint(filepath=filepath, verbose=1, save_best_only=True)
     model.fit(X_train, y_train, 
@@ -88,7 +89,7 @@ def train(X_train, y_train, X_test, y_test, model, batch_size=128, nb_epoch=300)
               nb_epoch=nb_epoch, 
               show_accuracy=False, 
               verbose=2, 
-              validation_data=(X_test, y_test), 
+              validation_data=(X_valid, y_valid), 
               callbacks=[early_stopping, checkpointer])
 
 def load_mlp():

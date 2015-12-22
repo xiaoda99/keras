@@ -171,7 +171,7 @@ class History(Callback):
                 self.history[k] = []
             self.history[k].append(v)
 
-from examples.pm25.test_pm25 import test_model #XD
+from examples.pm25.test import test_model #XD
 class ModelCheckpoint(Callback):
     def __init__(self, filepath, monitor='val_loss', verbose=0, save_best_only=False):
 
