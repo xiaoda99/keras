@@ -4,7 +4,7 @@ import matplotlib.gridspec as gridspec
 import cPickle
 import gzip 
 from profilehooks import profile
-from keras.layers.recurrent_xd import ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMA, ReducedLSTMB
+from keras.layers.recurrent_xd import RLSTM, ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMA, ReducedLSTMB
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
 from data import load_data, load_data2, segment_data
@@ -63,7 +63,8 @@ def rlstm_predict_batch(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, dow
         rlstm_predict_batch.model = load_rlstm()
         print 'done.'
 #    print 'predicting...'
-    X[0] = normalize_batch(X[0], rlstm_predict_batch.model)
+    if hasattr(rlstm_predict_batch.model, 'X_mean'):
+        X[0] = normalize_batch(X[0], rlstm_predict_batch.model)
     yp = rlstm_predict_batch.model.predict_on_batch(X)
     forgets, increments, delta, delta_x, delta_h = rlstm_predict_batch.model.monitor_on_batch(X)
 #    print 'done.'
@@ -151,10 +152,10 @@ def test_model(model, dataset='test', show_details=True):
                                                                   pod1, far1, csi1, 
                                                                   pod4, far4, csi4,
                                                                   pod8, far8, csi8)
+    print 'forget mean min:', fgts.mean(), fgts.min()
     if show_details:
 #        print 'abs_err ='
 #        print absolute_error(pred, targets)
-        print 'forget =', fgts.mean()
 #        print fgts.mean(axis=0)
 #        print 'pred ='
 #        print np.abs(pred).mean(axis=0)
@@ -167,8 +168,12 @@ def test_model(model, dataset='test', show_details=True):
 #        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
         print 'delta mean, abs_mean, abs_mean+, abs_mean-:', dxs.mean(), np.abs(dxs).mean(), np.abs(dxs[dxs>0]).mean(), np.abs(dxs[dxs<0]).mean()
         print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
+        W_c = model.layers[-1].W_c.get_value()
+        W_f = model.layers[-1].W_f.get_value()
+        print 'W_c max, min, mean, abs_mean:', W_c.max(), W_c.min(), W_c.mean(), np.abs(W_c).mean()
+        print 'W_f max, min, mean, abs_mean:', W_f.max(), W_f.min(), W_f.mean(), np.abs(W_f).mean()  
     
-def plot_example(data, predictions, model_labels, feature_indices=[2,], feature_labels=['wind speed'], 
+def plot_example(data, predictions, model_labels, feature_indices=[2,3,0,1], feature_labels=['wind speed', 'wind dir', 'temperature', 'humidity'], 
                  model_states=[], state_labels=[], pred_range=[2,42]):
     assert len(predictions) == len(model_labels)
     assert len(feature_indices) == len(feature_labels)
@@ -189,21 +194,21 @@ def plot_example(data, predictions, model_labels, feature_indices=[2,], feature_
 #    print 'pm25_mean:', pm25_mean[pred_range[0] : pred_range[1]]
     for pred, label in zip(predictions, model_labels):
         plt.plot(pred, label=label)
-    plt.legend(loc='upper right')
+    plt.legend(loc='upper left')
     
     for state, label in zip(model_states, state_labels):
         ax = plt.subplot(gs[i])
         i += 1
         plt.plot(state, label=label)
         plt.plot(np.zeros_like(state), color='k')
-        plt.legend(loc='upper right')
+        plt.legend(loc='upper left')
         
     for feature_idx, label in zip(feature_indices, feature_labels):
         ax = plt.subplot(gs[i])
         i += 1
         feature = data[:,feature_idx]
         plt.plot(feature[pred_range[0] : pred_range[1]], label=label)
-        plt.legend(loc='upper right')
+        plt.legend(loc='upper left')
         
     plt.show()
 
@@ -225,12 +230,27 @@ if __name__ == '__main__':
     
     train_data, valid_data, test_data = load_data2(segment=True)
 #    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
-      
     
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
-        name = 'huabei40x2'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=40, h1_dim=40, base_name=name)
+        name = 'huabei_zero_init'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
+                                   rec_layer_init='zero', base_name=name)
+        rlstm.name = name + str(i)
+        rlstm.data = [train_data, valid_data, test_data]
+        rlstm.X_mask = np.ones((X_train[0].shape[-1],))
+#        rlstm.X_mask[-1:] = 0.  # pm25 mean
+        rlstm.X_mask[-3:-1] = 0.  # lonlat
+        print '\ntraining', rlstm.name
+        X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
+        rlstm.save_normalization_info()
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+    
+    for i in range(10):
+        X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
+        name = 'huabei_uniform_init'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
+                                   rec_layer_init='uniform', base_name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         rlstm.X_mask = np.ones((X_train[0].shape[-1],))
@@ -241,8 +261,7 @@ if __name__ == '__main__':
         rlstm.save_normalization_info()
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
            
-    name = 'huabei40x2'    
-    rlstm = model_from_yaml(open(name + '.yaml').read())
+    name = 'huabei_zero_init'    
     for i in range(10):
         rlstm.base_name = name
         rlstm.name = name + str(i)
@@ -250,8 +269,17 @@ if __name__ == '__main__':
         rlstm.load_weights(name + str(i) + '_weights.hdf5')
         rlstm.data = [train_data, valid_data, test_data]
         test_model(rlstm, dataset='train', show_details=False)
-        test_model(rlstm, dataset='valid', show_details=False)   
-        
+        test_model(rlstm, dataset='valid', show_details=False)
+    
+    name = 'huabei_uniform_init'    
+    for i in range(10):
+        rlstm.base_name = name
+        rlstm.name = name + str(i)
+        rlstm.load_normalization_info()
+        rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        rlstm.data = [train_data, valid_data, test_data]
+        test_model(rlstm, dataset='train', show_details=False)
+        test_model(rlstm, dataset='valid', show_details=False)
     #for rlstm in rlstms:
     #    test_model(rlstm)
     #    print rlstm.layers[-1].U_c.get_value(), rlstm.layers[-1].U_f.get_value(), rlstm.layers[-1].b_f.get_value()

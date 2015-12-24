@@ -6,7 +6,7 @@ import numpy as np
 #from keras.datasets import mnist
 from keras.models_xd import Sequential, model_from_yaml
 from keras.layers.core import Dense, TimeDistributedDense, Dropout, Activation
-from keras.layers.recurrent_xd import ReducedLSTM, ReducedLSTMA, ReducedLSTM2, ReducedLSTM3, LSTM, SimpleRNN
+from keras.layers.recurrent_xd import RLSTM, ReducedLSTM, ReducedLSTMA, ReducedLSTM2, ReducedLSTM3, LSTM, SimpleRNN, GRU
 from keras.optimizers import SGD, Adam, RMSprop
 from keras.utils import np_utils
 
@@ -30,7 +30,9 @@ def build_rnn(in_dim, out_dim, h0_dim, h1_dim=None, layer_type=LSTM, return_sequ
     model.compile(loss="mse", optimizer="rmsprop")  
     return model
 
-def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, rec_layer_type=ReducedLSTMA, layer_type=TimeDistributedDense, lr=.001, base_name='rlstm'):
+def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, 
+                       rec_layer_type=ReducedLSTMA, rec_layer_init='uniform',
+                       layer_type=TimeDistributedDense, lr=.001, base_name='rlstm'):
     model = Sequential()  
     model.add(layer_type(h0_dim, input_dim=input_dim, 
                     init='uniform', 
@@ -41,7 +43,12 @@ def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, rec_laye
                     init='uniform', 
                     W_regularizer=l2(0.0005),
                     activation='relu'))
-    model.add(rec_layer_type(output_dim, return_sequences=True))
+#    model.add(SimpleRNN(h0_dim, 
+#                   input_dim=input_dim,
+#                   init='uniform',
+#                   inner_activation='sigmoid',
+#                   return_sequences=True))
+    model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
     model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
     
     model.base_name = base_name
@@ -80,7 +87,6 @@ def build_mlp(in_dim, out_dim, h0_dim, h1_dim, optimizer='rmsprop'):
     return model
 
 def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=300):
-    
     early_stopping = EarlyStopping(monitor='val_loss', patience=20)
     filepath = model.name + '_weights.hdf5'
     checkpointer = ModelCheckpoint(filepath=filepath, verbose=1, save_best_only=True)

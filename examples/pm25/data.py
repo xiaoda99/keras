@@ -13,44 +13,27 @@ def filter(data, pm_threshold=80):
     return data[pm.max(axis=1) > pm_threshold]
 
 def preprocess(data):
-    data[:,:,2] = np.sqrt(data[:,:,2]**2 + data[:,:,3]**2)
-    data[:,:,3] = data[:,:,2]
-#    data[:,:,2:4] = np.random.randn(data.shape[0], data.shape[1], 2)
-#    data[:,:,1] = np.random.randn(data.shape[0], data.shape[1])
+    wind_x = data[:,:,2]
+    wind_y = data[:,:,3]
+    rho = np.sqrt(wind_x**2 + wind_y**2)
+    phi = np.arctan2(wind_y, wind_x)
+    data[:,:,2] = rho
+    data[:,:,3] = phi
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     return data
 
-def load_station_data(station_idx):
-#    data = np.load('/home/xd/data/pm25data/raw.npy').astype('float32')
-    data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei.pkl.gz'))
-    wind_x = data[:,:,2]
-    wind_y = data[:,:,3]
-    rho = np.sqrt(wind_x**2 + wind_y**2)
-    phi = np.arctan2(wind_y, wind_x)
-    data[:,:,2] = rho
-    data[:,:,3] = phi
-#    data[:,:,2:4] = np.random.randn(data.shape[0], data.shape[1], 2)
-#    data[:,:,1] = np.random.randn(data.shape[0], data.shape[1])
-    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
-
-#    station_idx = station_idx - 1001
-    station_data = data[station_idx:station_idx+1,1890:,:]
-    test = segment_data(station_data)
-    return test, station_data
-
 def load_data2(stations=None, segment=True):
 #    data = np.load('/home/xd/data/pm25data/raw.npy').astype('float32')
-#    data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei+lonlat.pkl.gz'))
-    data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei.pkl.gz'))
-    wind_x = data[:,:,2]
-    wind_y = data[:,:,3]
-    rho = np.sqrt(wind_x**2 + wind_y**2)
-    phi = np.arctan2(wind_y, wind_x)
-    data[:,:,2] = rho
-    data[:,:,3] = phi
-#    data[:,:,2:4] = np.random.randn(data.shape[0], data.shape[1], 2)
-#    data[:,:,1] = np.random.randn(data.shape[0], data.shape[1])
-    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
+    data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei+lonlat.pkl.gz'))
+#    data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei.pkl.gz'))
+#    wind_x = data[:,:,2]
+#    wind_y = data[:,:,3]
+#    rho = np.sqrt(wind_x**2 + wind_y**2)
+#    phi = np.arctan2(wind_y, wind_x)
+#    data[:,:,2] = rho
+#    data[:,:,3] = phi
+#    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
+    data = preprocess(data)
 
     if stations is None:
         train_data = data[:,1310:1890,:]

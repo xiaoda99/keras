@@ -29,28 +29,57 @@ def delta(gfs):
 
 def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, hist_len=3):
 #    print 'In transform_sequences.', gfs.shape, date_time.shape, lonlat.shape, pm25_mean.shape, pm25.shape
+#    gfs = np.copy(gfs)
+#    gfs[:,:,0] /= 10. # replace temperature with wind speed 0~20
+#    gfs[:,:,1] /= 100. # humidity 20~100
+#    gfs[:,:,2] /= 10. # wind_x -15~15
+#    gfs[:,:,3] /= 10. # wind_y -15~15
+#    gfs[:,:,4] /= 0.001  # rain 0~0.0018
+#    gfs[:,:,5] /= 100.  # cloud 0~100
+#    lonlat = np.copy(lonlat)
+#    lonlat[:,:,:] /= 100.  # lon, lat 20~120
+    
     X = []
     y = []
+    wind = []
     for i in range(pred_range[0], pred_range[1]):
         if i - hist_len + 1 >= 0:
-            recent_gfs = gfs[:,i-hist_len+1:i+1,1:]  # exclude temperature feature 
+            recent_gfs = gfs[:,i-hist_len+1:i+1,0:]  # exclude temperature feature 
         else:
             assert False
             print 'shapes:', np.zeros((gfs.shape[0], hist_len-i-1, gfs.shape[2])).shape, gfs[:,0:i+1,:].shape
             recent_gfs = np.concatenate((np.zeros((gfs.shape[0], hist_len-i-1, gfs.shape[2])), gfs[:,0:i+1,:]), axis=1)
 #        recent_gfs = delta(recent_gfs)
-        recent_gfs = recent_gfs.reshape((recent_gfs.shape[0], -1))
-        recent_pm25_mean = pm25_mean[:,i-hist_len+1:i+1,:]
-        recent_pm25_mean = recent_pm25_mean.reshape((recent_pm25_mean.shape[0], -1))
-        Xi = np.hstack([recent_gfs, 
-                        date_time[:,i,:-1], # exclude day of year feature
+#        recent_gfs = recent_gfs.reshape((recent_gfs.shape[0], -1))
+#        recent_pm25_mean = pm25_mean[:,i-hist_len+1:i+1,:]
+#        recent_pm25_mean = recent_pm25_mean.reshape((recent_pm25_mean.shape[0], -1))
+#        recent_wind = np.hstack([recent_gfs[:,:,0], recent_gfs[:,-1,2:4]])
+#        recent_wind = recent_gfs[:,:,[0, 2, 3]].reshape((recent_gfs.shape[0], -1))
+        recent_wind = np.hstack([recent_gfs[:,:,0], recent_gfs[:,:,2:4].mean(axis=1)])
+        recent_wind_speed = recent_gfs[:,:,2]
+#        recent_wind_dir = recent_gfs[:,:,2:4].reshape((recent_gfs.shape[0], -1))
+#        recent_wind_dir = recent_gfs[:,-1,2:4]
+        recent_wind_dir = recent_gfs[:,:,3]
+        recent_temperature = recent_gfs[:,:,0]
+        recent_humidity = recent_gfs[:,:,1]
+        recent_rain = recent_gfs[:,:,4]
+        recent_cloud = recent_gfs[:,:,5]
+        
+        Xi = np.hstack([
+#                        recent_gfs.reshape((recent_gfs.shape[0], -1)),
+                        recent_wind_speed,
+#                        recent_wind_dir,
+                        recent_humidity,
+                        recent_rain,
+                        recent_cloud, 
+                        date_time[:,i,0:1], # exclude day of year feature
                         lonlat[:,i,:], 
-#                        recent_pm25_mean
                         pm25_mean[:,i,:]
                         ])
         yi = pm25[:,i,:]
         X.append(Xi)
         y.append(yi)
+        wind.append(recent_wind)
     init_pm25 = pm25[:,pred_range[0]-1,:]
     init_gfs = gfs[:,:pred_range[0],:].reshape((gfs.shape[0], -1))
 #    X_init = np.hstack([init_pm25, init_gfs])
@@ -58,7 +87,10 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
     cell_init = init_pm25 + pm25_mean[:,pred_range[0]-1,:]
     cell_mean = pm25_mean[:,pred_range[0]:pred_range[1],:]
     X = np.dstack(X).transpose((0, 2, 1)) #.astype('float32')
+#    X = np.concatenate([gfs, date_time[:,:,:-1]], axis=2)[:,pred_range[0]:pred_range[1],:]
+#    print 'In transform_sequences: X.shape =', X.shape
     y = np.dstack(y).transpose((0, 2, 1)) #.astype('float32')
+    wind = np.dstack(wind).transpose((0, 2, 1))
 #    print 'In transform_sequences. X.shape, y.shape =', X.shape, y.shape
     return [X, hidden_init, cell_init, cell_mean], y
 #    return [X, hidden_init, hidden_init], y
@@ -111,6 +143,7 @@ def normalize_batch(Xb, model):
     return Xb
     
 def parse_data(data):
+    assert data.shape[2] == 6 + 3 + 2 + 1 + 1
     gfs = data[:, :, :6]
     date_time = data[:, :, 6:9]
     lonlat = data[:, :, 9:-2]

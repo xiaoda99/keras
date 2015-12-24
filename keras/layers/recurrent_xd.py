@@ -694,6 +694,7 @@ class RLSTM(Recurrent):
                  weights=None, truncate_gradient=-1, return_sequences=False,
                  input_dim=None, input_length=None, **kwargs):
         self.output_dim = output_dim
+        self.forget_input_dim = forget_input_dim
         self.forget_h0_dim = forget_h0_dim
         self.forget_h1_dim = forget_h1_dim
         init = 'zero'  #XD
@@ -739,7 +740,8 @@ class RLSTM(Recurrent):
         self.W_h1f = initializations.get('uniform')((self.forget_h0_dim, self.forget_h1_dim))
         self.b_h1f = shared_zeros((self.forget_h1_dim))
         
-        self.W_f = self.init((input_dim, self.output_dim))
+#        self.W_f = self.init((input_dim, self.output_dim))
+        self.W_f = self.init((self.forget_h1_dim, self.output_dim))
 #        self.U_f = self.inner_init((self.output_dim, self.output_dim))
         self.U_f = sharedX(.0 * np.ones((self.output_dim, self.output_dim)))  #XD
 #        self.b_f = self.forget_bias_init((self.output_dim))
@@ -774,7 +776,7 @@ class RLSTM(Recurrent):
         h0f_t = activations.get('relu')(T.dot(Xf_t, self.W_h0f) + self.b_h0f)
         h1f_t = activations.get('relu')(T.dot(h0f_t, self.W_h1f) + self.b_h1f)
         xf_t = T.dot(h1f_t, self.W_f) + self.b_f
-        f_t = self.inner_activation(xf_t + 1. * T.dot(c_mask_tm1, u_f))
+        f_t = self.inner_activation(xf_t + 0. * T.dot(c_mask_tm1, u_f))
         b_t = activations.get('linear')(xc_t)
         c_t = f_t * activations.get('relu')(c_mask_tm1 + b_t + T.dot(h_mask_tm1, u_c))
         h_t = self.activation(c_t) - cm_t
@@ -848,7 +850,8 @@ class ReducedLSTMA(Recurrent):
                  weights=None, truncate_gradient=-1, return_sequences=False,
                  input_dim=None, input_length=None, **kwargs):
         self.output_dim = output_dim
-        init = 'zero'  #XD
+#        init = 'zero'  #XD
+#        init = 'uniform'
 #        inner_init = 'uniform'  #XD
         self.init = initializations.get(init)
         self.inner_init = initializations.get(inner_init)

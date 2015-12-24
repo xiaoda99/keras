@@ -63,6 +63,7 @@ def rlstm_predict_batch(pm25, gfs, date_time, pm25_mean, pred_range, downsample=
         print 'done.'
 #    print 'predicting...'
     X[0] = normalize_batch(X[0])
+#    print 'X[0].shape =', X[0].shape
     yp = rlstm_predict_batch.model.predict_on_batch(X)
     forgets, increments, delta, delta_x, delta_h = rlstm_predict_batch.model.monitor_on_batch(X)
 #    print 'done.'
@@ -144,11 +145,18 @@ def delta(gfs):
     return delta_gfs
 
 def transform_sequences(gfs, date_time, pm25_mean, pm25, pred_range, hist_len=3):
+#    gfs = np.copy(gfs)
+#    gfs[:,:,0] /= 10. # replace temperature with wind speed 0~20
+#    gfs[:,:,1] /= 100. # humidity 20~100
+#    gfs[:,:,2] /= 10. # wind_x -15~15
+#    gfs[:,:,3] /= 10. # wind_y -15~15
+#    gfs[:,:,4] /= 0.001  # rain 0~0.0018
+#    gfs[:,:,5] /= 100.  # cloud 0~100
     X = []
     y = []
     for i in range(pred_range[0], pred_range[1]):
         if i - hist_len + 1 >= 0:
-            recent_gfs = gfs[:,i-hist_len+1:i+1,1:]  # remove temperature feature 
+            recent_gfs = gfs[:,i-hist_len+1:i+1,0:]  # remove temperature feature 
         else:
             assert False
             print 'shapes:', np.zeros((gfs.shape[0], hist_len-i-1, gfs.shape[2])).shape, gfs[:,0:i+1,:].shape
@@ -208,6 +216,7 @@ def transform_sequences_old(gfs, date_time, pm25_mean, pm25, pred_range, hist_le
 #    return [X, hidden_init, hidden_init], y
 
 def normalize(X_train, X_valid):
+#    return X_train, X_valid
     reshaped = False
     if X_train.ndim == 3:
         n_steps = X_train.shape[1]
@@ -234,6 +243,7 @@ def normalize(X_train, X_valid):
     return X_train, X_valid
      
 def normalize_batch(Xb, base_dir='/home/xd/projects/keras/examples/pm25/'):
+#    return Xb
     reshaped = False
     if Xb.ndim == 3:
         X_mean = np.load(base_dir + 'X_mean.npy')
@@ -405,46 +415,46 @@ if __name__ == '__main__':
 #    f.close()
 #    train_data, valid_data, test_data = split_data(data)
     
-    train_data, valid_data, test_data = load_data2(segment=True)
-    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)  
+#    train_data, valid_data, test_data = load_data2(segment=True)
+#    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)  
     
     train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
-    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3, 
-                                                            external_normalize=True)
+#    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3, 
+#                                                            external_normalize=True)
     
-    for i in range(10):
-        name = 'bj_extnorm_mean'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        print '\ntraining', rlstm.name
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
-    
-    X_train[0][:,:,-1] = 0 # disable pm25_mean feature
-    X_valid[0][:,:,-1] = 0
-    for i in range(10):
-        name = 'bj_extnorm'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        print '\ntraining', rlstm.name
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
-     
+#    for i in range(10):
+#        name = 'bj_extnorm_mean'
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
+#        rlstm.name = name + str(i)
+#        rlstm.data = [train_data, valid_data, test_data]
+#        print '\ntraining', rlstm.name
+#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
+#    
+#    X_train[0][:,:,-1] = 0 # disable pm25_mean feature
+#    X_valid[0][:,:,-1] = 0
+#    for i in range(10):
+#        name = 'bj_extnorm'
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
+#        rlstm.name = name + str(i)
+#        rlstm.data = [train_data, valid_data, test_data]
+#        print '\ntraining', rlstm.name
+#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
+#     
     X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3, 
                                                             external_normalize=False)
-    for i in range(10):
-        name = 'bj_mean'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        print '\ntraining', rlstm.name
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
+#    for i in range(10):
+#        name = 'bj_mean'
+#        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
+#        rlstm.name = name + str(i)
+#        rlstm.data = [train_data, valid_data, test_data]
+#        print '\ntraining', rlstm.name
+#        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
     
     X_train[0][:,:,-1] = 0 # disable pm25_mean feature
     X_valid[0][:,:,-1] = 0
     for i in range(10):
-        name = 'bj'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, name=name)
+        name = 'test'
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, rec_layer_type=ReducedLSTMA, base_name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         print '\ntraining', rlstm.name
