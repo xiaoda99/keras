@@ -5,8 +5,10 @@ import theano
 import theano.tensor as T
 import numpy as np
 
-#from collections import OrderedDict
-from ordereddict import OrderedDict  #XD
+try: 
+    from collections import OrderedDict
+except:
+    from ordereddict import OrderedDict
 import copy
 
 from .. import activations, initializations, regularizers, constraints

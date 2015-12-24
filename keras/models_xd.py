@@ -17,7 +17,10 @@ from .utils.layer_utils import container_from_config
 from .utils.generic_utils import Progbar, printv
 from .layers import containers
 
-from ordereddict import OrderedDict
+try: 
+    from collections import OrderedDict
+except:
+    from ordereddict import OrderedDict
 
 def standardize_y(y):
     if not hasattr(y, 'shape'):

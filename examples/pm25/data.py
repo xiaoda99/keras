@@ -26,14 +26,8 @@ def load_data2(stations=None, segment=True):
 #    data = np.load('/home/xd/data/pm25data/raw.npy').astype('float32')
     data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei+lonlat.pkl.gz'))
 #    data = cPickle.load(gzip.open('/home/xd/data/pm25data/forXiaodaDataset-20150401-20151207_huabei.pkl.gz'))
-#    wind_x = data[:,:,2]
-#    wind_y = data[:,:,3]
-#    rho = np.sqrt(wind_x**2 + wind_y**2)
-#    phi = np.arctan2(wind_y, wind_x)
-#    data[:,:,2] = rho
-#    data[:,:,3] = phi
-#    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
-    data = preprocess(data)
+#    data = preprocess(data)
+    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
 
     if stations is None:
         train_data = data[:,1310:1890,:]

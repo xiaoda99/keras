@@ -27,6 +27,12 @@ def delta(gfs):
     delta_gfs[:,-1,:] = gfs[:,-1,:]
     return delta_gfs
 
+def compute_wind_direction(u, v, one_hot=True):
+    if not one_hot:
+        return np.arctan2(u, v)
+    else:
+        return np.hstack([(u >= 0) & (v >= 0), (u >= 0) & (v < 0), (u < 0) & (v >= 0), (u < 0) & (v < 0)])  
+    
 def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, hist_len=3):
 #    print 'In transform_sequences.', gfs.shape, date_time.shape, lonlat.shape, pm25_mean.shape, pm25.shape
 #    gfs = np.copy(gfs)
@@ -53,13 +59,13 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
 #        recent_gfs = recent_gfs.reshape((recent_gfs.shape[0], -1))
 #        recent_pm25_mean = pm25_mean[:,i-hist_len+1:i+1,:]
 #        recent_pm25_mean = recent_pm25_mean.reshape((recent_pm25_mean.shape[0], -1))
-#        recent_wind = np.hstack([recent_gfs[:,:,0], recent_gfs[:,-1,2:4]])
-#        recent_wind = recent_gfs[:,:,[0, 2, 3]].reshape((recent_gfs.shape[0], -1))
-        recent_wind = np.hstack([recent_gfs[:,:,0], recent_gfs[:,:,2:4].mean(axis=1)])
-        recent_wind_speed = recent_gfs[:,:,2]
-#        recent_wind_dir = recent_gfs[:,:,2:4].reshape((recent_gfs.shape[0], -1))
-#        recent_wind_dir = recent_gfs[:,-1,2:4]
-        recent_wind_dir = recent_gfs[:,:,3]
+        u = recent_gfs[:,:,2]
+        v = recent_gfs[:,:,3]
+        recent_wind_speed = np.sqrt(u**2 + v**2)
+        recent_wind_direction = np.arctan2(v, u)
+#        recent_wind_direction = compute_wind_direction(u.mean(axis=1, keepdims=True), 
+#                                                       v.mean(axis=1, keepdims=True), 
+#                                                       one_hot=True)
         recent_temperature = recent_gfs[:,:,0]
         recent_humidity = recent_gfs[:,:,1]
         recent_rain = recent_gfs[:,:,4]
@@ -67,19 +73,19 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
         
         Xi = np.hstack([
 #                        recent_gfs.reshape((recent_gfs.shape[0], -1)),
+                        recent_wind_direction,
                         recent_wind_speed,
-#                        recent_wind_dir,
                         recent_humidity,
                         recent_rain,
                         recent_cloud, 
-                        date_time[:,i,0:1], # exclude day of year feature
+                        date_time[:,i,0:2], # exclude day of year feature
                         lonlat[:,i,:], 
                         pm25_mean[:,i,:]
                         ])
         yi = pm25[:,i,:]
         X.append(Xi)
         y.append(yi)
-        wind.append(recent_wind)
+        wind.append(recent_wind_speed)
     init_pm25 = pm25[:,pred_range[0]-1,:]
     init_gfs = gfs[:,:pred_range[0],:].reshape((gfs.shape[0], -1))
 #    X_init = np.hstack([init_pm25, init_gfs])

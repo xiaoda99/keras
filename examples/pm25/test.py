@@ -228,34 +228,39 @@ if __name__ == '__main__':
 #    f.close()
 #    train_data, valid_data, test_data = split_data(data)
     
-    train_data, valid_data, test_data = load_data2(segment=True)
-#    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
+#    train_data, valid_data, test_data = load_data2(segment=True)
+    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
     
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
-        name = 'huabei_zero_init'
+        print 'X_train[0].shape =', X_train[0].shape
+        name = 'bj20151224'
         rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         rlstm.X_mask = np.ones((X_train[0].shape[-1],))
-#        rlstm.X_mask[-1:] = 0.  # pm25 mean
+        rlstm.X_mask[:3] = 0.  # wind direction
+        rlstm.X_mask[-4:-3] = 0.  # day of week
         rlstm.X_mask[-3:-1] = 0.  # lonlat
+        rlstm.X_mask[-1:] = 0.  # pm25 mean
         print '\ntraining', rlstm.name
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
         rlstm.save_normalization_info()
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
     
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
-        name = 'huabei_uniform_init'
+        name = 'test'
         rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
-                                   rec_layer_init='uniform', base_name=name)
+                                   rec_layer_init='zero', base_name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         rlstm.X_mask = np.ones((X_train[0].shape[-1],))
-#        rlstm.X_mask[-1:] = 0.  # pm25 mean
+        rlstm.X_mask[:3] = 0.  # wind direction
+        rlstm.X_mask[-4:-3] = 0.  # day of week
         rlstm.X_mask[-3:-1] = 0.  # lonlat
+        rlstm.X_mask[-1:] = 0.  # pm25 mean
         print '\ntraining', rlstm.name
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
         rlstm.save_normalization_info()
@@ -285,7 +290,7 @@ if __name__ == '__main__':
     #    print rlstm.layers[-1].U_c.get_value(), rlstm.layers[-1].U_f.get_value(), rlstm.layers[-1].b_f.get_value()
     #pred_mlp = predict_all_batch(data[data.shape[0]*3./4:], mlp_predict_batch)  
     #pred = predict_all_batch(data[data.shape[0]*3./4:], rlstm_predict_batch)
-    
+
 #y = y_valid[((y_valid[:,:,0].min(axis=1) < 60) & (y_valid[:,:,0].max(axis=1) > 100)), :, 0]
 #i = np.random.randint(y.shape[0]); yp = rlstm.predict_on_batch([X_valid[0][i:i+1], X_valid[1][i:i+1], X_valid[2][i:i+1]])[0,:,0]; plt.plot(yp, label='yp'); plt.plot(y[i], label='y'); plt.legend(); plt.show()
 
