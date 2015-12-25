@@ -62,10 +62,10 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
         u = recent_gfs[:,:,2]
         v = recent_gfs[:,:,3]
         recent_wind_speed = np.sqrt(u**2 + v**2)
-        recent_wind_direction = np.arctan2(v, u)
-#        recent_wind_direction = compute_wind_direction(u.mean(axis=1, keepdims=True), 
-#                                                       v.mean(axis=1, keepdims=True), 
-#                                                       one_hot=True)
+#        recent_wind_direction = np.arctan2(v, u)
+        recent_wind_direction = compute_wind_direction(u.mean(axis=1, keepdims=True), 
+                                                       v.mean(axis=1, keepdims=True), 
+                                                       one_hot=True)
         recent_temperature = recent_gfs[:,:,0]
         recent_humidity = recent_gfs[:,:,1]
         recent_rain = recent_gfs[:,:,4]

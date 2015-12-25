@@ -173,7 +173,7 @@ def test_model(model, dataset='test', show_details=True):
         print 'W_c max, min, mean, abs_mean:', W_c.max(), W_c.min(), W_c.mean(), np.abs(W_c).mean()
         print 'W_f max, min, mean, abs_mean:', W_f.max(), W_f.min(), W_f.mean(), np.abs(W_f).mean()  
     
-def plot_example(data, predictions, model_labels, feature_indices=[2,3,0,1], feature_labels=['wind speed', 'wind dir', 'temperature', 'humidity'], 
+def plot_example(data, predictions, model_labels, feature_indices=[0,], feature_labels=['wind speed',], 
                  model_states=[], state_labels=[], pred_range=[2,42]):
     assert len(predictions) == len(model_labels)
     assert len(feature_indices) == len(feature_labels)
@@ -206,7 +206,12 @@ def plot_example(data, predictions, model_labels, feature_indices=[2,3,0,1], fea
     for feature_idx, label in zip(feature_indices, feature_labels):
         ax = plt.subplot(gs[i])
         i += 1
-        feature = data[:,feature_idx]
+        if feature_idx == 0:
+            u = data[:,2]
+            v = data[:,3]
+            feature = np.sqrt(u**2 + v**2)
+        else: 
+            feature = data[:,feature_idx]
         plt.plot(feature[pred_range[0] : pred_range[1]], label=label)
         plt.legend(loc='upper left')
         
@@ -217,6 +222,14 @@ def filter_data(data):
     cond = (pm25[:,:].max(axis=1) > 160) & (pm25[:,:].min(axis=1) < 60)
     return data[cond]
      
+def load_rlstm(base_name, i=0):
+    rlstm = model_from_yaml(open(base_name + '.yaml').read())
+    rlstm.base_name = base_name
+    rlstm.name = base_name + str(i)
+    rlstm.load_weights(base_name + str(i) + '_weights.hdf5')
+    rlstm.load_normalization_info()
+    return rlstm
+
 if __name__ == '__main__':
 #    f = gzip.open('/home/xd/data/pm25data/forXiaodaDataset20151207_t100p100.pkl.gz', 'rb')   
 #    data = cPickle.load(f)
@@ -228,31 +241,31 @@ if __name__ == '__main__':
 #    f.close()
 #    train_data, valid_data, test_data = split_data(data)
     
-#    train_data, valid_data, test_data = load_data2(segment=True)
-    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
+    train_data, valid_data, test_data = load_data2(segment=True)
+#    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
     
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
-        name = 'bj20151224'
+        name = 'huabei20151225'
         rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         rlstm.X_mask = np.ones((X_train[0].shape[-1],))
-        rlstm.X_mask[:3] = 0.  # wind direction
-        rlstm.X_mask[-4:-3] = 0.  # day of week
-        rlstm.X_mask[-3:-1] = 0.  # lonlat
-        rlstm.X_mask[-1:] = 0.  # pm25 mean
+#        rlstm.X_mask[:4] = 0.  # wind direction
+#        rlstm.X_mask[-4:-3] = 0.  # day of week
+#        rlstm.X_mask[-3:-1] = 0.  # lonlat
+#        rlstm.X_mask[-1:] = 0.  # pm25 mean
         print '\ntraining', rlstm.name
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
         rlstm.save_normalization_info()
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
     
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
         name = 'test'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
+        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20,
                                    rec_layer_init='zero', base_name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
