@@ -171,7 +171,6 @@ class History(Callback):
                 self.history[k] = []
             self.history[k].append(v)
 
-from examples.pm25.test import test_model #XD
 class ModelCheckpoint(Callback):
     def __init__(self, filepath, monitor='val_loss', verbose=0, save_best_only=False):
 
@@ -197,6 +196,7 @@ class ModelCheckpoint(Callback):
                     self.model.save_weights(filepath, overwrite=True)
                     
                     #XD
+                    from examples.pm25.test import test_model #XD
                     test_model(self.model, dataset='train')
                     test_model(self.model, dataset='valid')
 #                    test_model(self.model, dataset='test')

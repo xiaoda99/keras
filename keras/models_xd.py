@@ -641,18 +641,18 @@ class Sequential(Model, containers.Sequential):
             return outs[0]
 
     #XD
-    def save_normalization_info(self):
-        assert hasattr(self, 'base_name')
+    def save_normalization_info(self, filepath):
+        #assert hasattr(self, 'base_name')
         assert hasattr(self, 'X_mean')
         assert hasattr(self, 'X_stdev')
         if not hasattr(self, 'X_mask'):
             self.X_mask = None
-        with open(self.base_name + '_norm_info.pkl', 'wb') as f: 
+        with open(filepath, 'wb') as f: 
             cPickle.dump((self.X_mean, self.X_stdev, self.X_mask), f)
             
-    def load_normalization_info(self):
-        assert hasattr(self, 'base_name')
-        with open(self.base_name + '_norm_info.pkl') as f: 
+    def load_normalization_info(self, filepath):
+        #assert hasattr(self, 'base_name')
+        with open(filepath) as f: 
             self.X_mean, self.X_stdev, self.X_mask = cPickle.load(f)
         
     def save_weights(self, filepath, overwrite=False):
