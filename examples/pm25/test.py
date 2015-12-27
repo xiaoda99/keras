@@ -57,6 +57,8 @@ mlp_predict_batch.model = None
 def rlstm_predict_batch(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, downsample=1):
 #    pm25 = pm25 - pm25_mean
     X, y = transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range)
+#    print 'In rlstm_predict_batch. X[0] ='
+#    print (X[0][0,:,[3,6,9,12,15,16,17,18,19,20]])
     n_steps = pred_range[1] - pred_range[0]
     if rlstm_predict_batch.model is None:
         print 'loading rlstm...'
@@ -247,53 +249,26 @@ if __name__ == '__main__':
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
-        name = 'bj20151225'
+        name = 'bj_new'
         rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         rlstm.X_mask = np.ones((X_train[0].shape[-1],))
-#        rlstm.X_mask[:4] = 0.  # wind direction
+#        rlstm.X_mask[:6] = 0.  # wind direction
 #        rlstm.X_mask[-4:-3] = 0.  # day of week
 #        rlstm.X_mask[-3:-1] = 0.  # lonlat
-#        rlstm.X_mask[-1:] = 0.  # pm25 mean
-        print '\ntraining', rlstm.name
-        X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
-        rlstm.save_normalization_info()
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
-    
-    for i in range(10):
-        X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
-        name = 'test'
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20,
-                                   rec_layer_init='zero', base_name=name)
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        rlstm.X_mask = np.ones((X_train[0].shape[-1],))
-        rlstm.X_mask[:3] = 0.  # wind direction
-        rlstm.X_mask[-4:-3] = 0.  # day of week
-        rlstm.X_mask[-3:-1] = 0.  # lonlat
         rlstm.X_mask[-1:] = 0.  # pm25 mean
         print '\ntraining', rlstm.name
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
-        rlstm.save_normalization_info()
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=128)
+        rlstm.save_normalization_info(name + '_norm_info.pkl')
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
            
-    name = 'huabei_zero_init'    
+    name = 'bj_new'    
     for i in range(10):
         rlstm.base_name = name
         rlstm.name = name + str(i)
-        rlstm.load_normalization_info()
-        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.data = [train_data, valid_data, test_data]
-        test_model(rlstm, dataset='train', show_details=False)
-        test_model(rlstm, dataset='valid', show_details=False)
-    
-    name = 'huabei_uniform_init'    
-    for i in range(10):
-        rlstm.base_name = name
-        rlstm.name = name + str(i)
-        rlstm.load_normalization_info()
+        rlstm.load_normalization_info(name + '_norm_info.pkl')
         rlstm.load_weights(name + str(i) + '_weights.hdf5')
         rlstm.data = [train_data, valid_data, test_data]
         test_model(rlstm, dataset='train', show_details=False)

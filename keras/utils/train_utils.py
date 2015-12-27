@@ -43,7 +43,7 @@ def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
                     init='uniform', 
                     W_regularizer=l2(0.0005),
                     activation='relu'))
-#    model.add(SimpleRNN(h0_dim, 
+#    model.add(LSTM(h0_dim, 
 #                   input_dim=input_dim,
 #                   init='uniform',
 #                   inner_activation='sigmoid',
