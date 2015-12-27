@@ -243,13 +243,13 @@ if __name__ == '__main__':
 #    f.close()
 #    train_data, valid_data, test_data = split_data(data)
     
-#    train_data, valid_data, test_data = load_data2(segment=True)
-    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
+    train_data, valid_data, test_data = load_data2(segment=True)
+#    train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
     
-    for i in range(10):
+    for i in range(5):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
-        name = 'bj_new'
+        name = 'huabei_new'
         rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name)
         rlstm.name = name + str(i)
@@ -258,14 +258,14 @@ if __name__ == '__main__':
 #        rlstm.X_mask[:6] = 0.  # wind direction
 #        rlstm.X_mask[-4:-3] = 0.  # day of week
 #        rlstm.X_mask[-3:-1] = 0.  # lonlat
-        rlstm.X_mask[-1:] = 0.  # pm25 mean
+#        rlstm.X_mask[-1:] = 0.  # pm25 mean
         print '\ntraining', rlstm.name
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
         rlstm.save_normalization_info(name + '_norm_info.pkl')
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=64)
            
-    name = 'bj_new'    
-    for i in range(10):
+    name = 'huabei_new'    
+    for i in range(5):
         rlstm.base_name = name
         rlstm.name = name + str(i)
         rlstm.load_normalization_info(name + '_norm_info.pkl')
@@ -273,6 +273,7 @@ if __name__ == '__main__':
         rlstm.data = [train_data, valid_data, test_data]
         test_model(rlstm, dataset='train', show_details=False)
         test_model(rlstm, dataset='valid', show_details=False)
+        
     #for rlstm in rlstms:
     #    test_model(rlstm)
     #    print rlstm.layers[-1].U_c.get_value(), rlstm.layers[-1].U_f.get_value(), rlstm.layers[-1].b_f.get_value()
