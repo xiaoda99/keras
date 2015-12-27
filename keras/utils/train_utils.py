@@ -48,6 +48,12 @@ def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
 #                   init='uniform',
 #                   inner_activation='sigmoid',
 #                   return_sequences=True))
+#    if h1_dim is not None:
+#        model.add(LSTM(h1_dim,
+#                       init='uniform',
+#                       inner_activation='sigmoid',
+#                       return_sequences=True))
+        
     model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
     model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
     
