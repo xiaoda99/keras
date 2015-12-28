@@ -197,8 +197,8 @@ class ModelCheckpoint(Callback):
                     
                     #XD
                     from examples.pm25.test import test_model #XD
-#                    test_model(self.model, dataset='train')
-#                    test_model(self.model, dataset='valid')
+                    test_model(self.model, dataset='train')
+                    test_model(self.model, dataset='valid')
 #                    test_model(self.model, dataset='test')
                     
                 else:

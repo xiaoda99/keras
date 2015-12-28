@@ -50,7 +50,7 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
     wind = []
     for i in range(pred_range[0], pred_range[1]):
         if i - hist_len + 1 >= 0:
-            recent_gfs = gfs[:,i-hist_len+1:i+1,0:]  # exclude temperature feature 
+            recent_gfs = gfs[:,i-hist_len+1:i+0,0:]  # exclude temperature feature 
         else:
             assert False
             print 'shapes:', np.zeros((gfs.shape[0], hist_len-i-1, gfs.shape[2])).shape, gfs[:,0:i+1,:].shape

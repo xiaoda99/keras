@@ -1,0 +1,27 @@
+class_mode: categorical
+layers:
+- activation: tanh
+  forget_bias_init: one
+  init: uniform
+  inner_activation: sigmoid
+  inner_init: orthogonal
+  input_dim: 17
+  input_length: null
+  input_shape: !!python/tuple [null, 17]
+  name: LSTM
+  output_dim: 30
+  return_sequences: true
+  truncate_gradient: -1
+- {name: Dropout, p: 0.40000000000000002}
+- {activation: tanh, forget_bias_init: one, init: uniform, inner_activation: sigmoid,
+  inner_init: orthogonal, input_dim: null, input_length: null, name: LSTM, output_dim: 30,
+  return_sequences: true, truncate_gradient: -1}
+- {name: Dropout, p: 0.40000000000000002}
+- {activation: linear, forget_bias_init: one, init: zero, inner_activation: sigmoid,
+  inner_init: orthogonal, input_dim: null, input_length: null, name: ReducedLSTMA,
+  output_dim: 1, return_sequences: true, truncate_gradient: -1}
+loss: mean_squared_error
+name: Sequential
+optimizer: {epsilon: 9.9999999999999995e-07, lr: 0.0010000000474974513, name: RMSprop,
+  rho: 0.89999997615814209}
+theano_mode: null
