@@ -243,13 +243,13 @@ if __name__ == '__main__':
 #    f.close()
 #    train_data, valid_data, test_data = split_data(data)
     
-    beijing_only = False
+    beijing_only = True
     if beijing_only:
         train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
     else:
         train_data, valid_data, test_data = load_data2(segment=True)
     
-    name = 'huabei_lstm20x2+dropout'
+    name = 'bj_online'
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
@@ -267,26 +267,8 @@ if __name__ == '__main__':
         rlstm.save_normalization_info(name + '_norm_info.pkl')
         batch_size = (1 + (not beijing_only)) * 64
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
-    name = 'huabei_lstm30x2+dropout'
-    for i in range(10):
-        X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
-        print 'X_train[0].shape =', X_train[0].shape
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=30, h1_dim=30, 
-                                   rec_layer_init='zero', base_name=name)
-        rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
-        rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
-#        rlstm.X_mask[:6] = 0  # wind direction
-#        rlstm.X_mask[-4:-3] = 0  # day of week
-#        rlstm.X_mask[-3:-1] = 0  # lonlat
-        rlstm.X_mask[-1:] = not beijing_only  # pm25 mean
-        print '\ntraining', rlstm.name
-        X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
-        rlstm.save_normalization_info(name + '_norm_info.pkl')
-        batch_size = (1 + (not beijing_only)) * 64
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
                
-    name = 'huabei_lstm20x2+dropout'
+    name = 'bj_online'
     rlstm = model_from_yaml(open(name + '.yaml').read())
     rlstm.base_name = name    
     for i in range(10):
@@ -297,16 +279,6 @@ if __name__ == '__main__':
         test_model(rlstm, dataset='train', show_details=False)
         test_model(rlstm, dataset='valid', show_details=False)
     
-    name = 'huabei_lstm30x2+dropout'
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    rlstm.base_name = name    
-    for i in range(10):
-        rlstm.name = name + str(i)
-        rlstm.load_normalization_info(name + '_norm_info.pkl')
-        rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.data = [train_data, valid_data, test_data]
-        test_model(rlstm, dataset='train', show_details=False)
-        test_model(rlstm, dataset='valid', show_details=False)    
     #for rlstm in rlstms:
     #    test_model(rlstm)
     #    print rlstm.layers[-1].U_c.get_value(), rlstm.layers[-1].U_f.get_value(), rlstm.layers[-1].b_f.get_value()

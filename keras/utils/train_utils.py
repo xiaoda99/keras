@@ -34,29 +34,29 @@ def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
                        rec_layer_type=ReducedLSTMA, rec_layer_init='uniform',
                        layer_type=TimeDistributedDense, lr=.001, base_name='rlstm'):
     model = Sequential()  
-#    model.add(layer_type(h0_dim, input_dim=input_dim, 
-#                    init='uniform', 
-#                    W_regularizer=l2(0.0005),
-#                    activation='relu'))
+    model.add(layer_type(h0_dim, input_dim=input_dim, 
+                    init='uniform', 
+                    W_regularizer=l2(0.0005),
+                    activation='relu'))
 #    model.add(Dropout(0.6))
-#    if h1_dim is not None:
-#        model.add(layer_type(h1_dim, 
-#                    init='uniform', 
-#                    W_regularizer=l2(0.0005),
-#                    activation='relu'))
-#        model.add(Dropout(0.6))
-    model.add(LSTM(h0_dim, 
-                   input_dim=input_dim,
-                   init='uniform',
-                   inner_activation='sigmoid',
-                   return_sequences=True))
-    model.add(Dropout(0.4))
     if h1_dim is not None:
-        model.add(LSTM(h1_dim,
-                       init='uniform',
-                       inner_activation='sigmoid',
-                       return_sequences=True))
-        model.add(Dropout(0.4))
+        model.add(layer_type(h1_dim, 
+                    init='uniform', 
+                    W_regularizer=l2(0.0005),
+                    activation='relu'))
+#        model.add(Dropout(0.6))
+#    model.add(LSTM(h0_dim, 
+#                   input_dim=input_dim,
+#                   init='uniform',
+#                   inner_activation='sigmoid',
+#                   return_sequences=True))
+#    model.add(Dropout(0.4))
+#    if h1_dim is not None:
+#        model.add(LSTM(h1_dim,
+#                       init='uniform',
+#                       inner_activation='sigmoid',
+#                       return_sequences=True))
+#        model.add(Dropout(0.4))
         
     model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
     model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
