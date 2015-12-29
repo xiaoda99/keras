@@ -169,9 +169,10 @@ def test_model(model, dataset='test', show_details=True):
 #        print np.abs(dhs).mean(axis=0)
 #        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
         print 'delta mean, abs_mean, abs_mean+, abs_mean-:', dxs.mean(), np.abs(dxs).mean(), np.abs(dxs[dxs>0]).mean(), np.abs(dxs[dxs<0]).mean()
-        print 'U_c =', model.layers[-1].U_c.get_value(), 'U_f =', model.layers[-1].U_f.get_value(), 'b_f =', model.layers[-1].b_f.get_value()
-        W_c = model.layers[-1].W_c.get_value()
-        W_f = model.layers[-1].W_f.get_value()
+        layer = model.get_rlstm_layer()
+        print 'U_c =',layer.U_c.get_value(), 'U_f =',layer.U_f.get_value(), 'b_f =',layer.b_f.get_value()
+        W_c =layer.W_c.get_value()
+        W_f =layer.W_f.get_value()
         print 'W_c max, min, mean, abs_mean:', W_c.max(), W_c.min(), W_c.mean(), np.abs(W_c).mean()
         print 'W_f max, min, mean, abs_mean:', W_f.max(), W_f.min(), W_f.mean(), np.abs(W_f).mean()  
     
@@ -249,11 +250,11 @@ if __name__ == '__main__':
     else:
         train_data, valid_data, test_data = load_data2(segment=True)
     
-    name = 'bj_online'
+    name = 'bj_noise'
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
-        rlstm = build_reduced_lstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
+        rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
@@ -268,7 +269,7 @@ if __name__ == '__main__':
         batch_size = (1 + (not beijing_only)) * 64
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
                
-    name = 'bj_online'
+    name = 'bj_noise'
     rlstm = model_from_yaml(open(name + '.yaml').read())
     rlstm.base_name = name    
     for i in range(10):

@@ -385,6 +385,12 @@ class Sequential(Model, containers.Sequential):
             - set_weights
     '''
 
+    def get_rlstm_layer(self):
+        for layer in reversed(self.layers):
+            if hasattr(layer, 'forgets'):
+                return layer
+        return None
+    
     def compile(self, optimizer, loss, class_mode="categorical", theano_mode=None):
         self.optimizer = optimizers.get(optimizer)
 
@@ -497,11 +503,12 @@ class Sequential(Model, containers.Sequential):
                                               allow_input_downcast=True, mode=theano_mode)
         #XD
 #        self._monitor = None
-        self._monitor = theano.function(predict_ins, [self.layers[-1].forgets, 
-                                                      self.layers[-1].increments,
-                                                      self.layers[-1].delta,
-                                                      self.layers[-1].delta_x,
-                                                      self.layers[-1].delta_h],
+        layer = self.get_rlstm_layer()
+        self._monitor = theano.function(predict_ins, [layer.forgets, 
+                                                      layer.increments,
+                                                      layer.delta,
+                                                      layer.delta_x,
+                                                      layer.delta_h],
                                       allow_input_downcast=True, mode=theano_mode)
 #        self._monitor = theano.function(test_ins, [mean_gain(self.y, self.y_test), 
 #                                                   optimal_mean_gain(self.y),

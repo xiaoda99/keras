@@ -6,6 +6,7 @@ import numpy as np
 #from keras.datasets import mnist
 from keras.models_xd import Sequential, model_from_yaml
 from keras.layers.core import Dense, TimeDistributedDense, Dropout, Activation
+from keras.layers.noise import GaussianNoise
 from keras.layers.recurrent_xd import RLSTM, ReducedLSTM, ReducedLSTMA, LSTM, LSTM2, SimpleRNN, GRU
 from keras.optimizers import SGD, Adam, RMSprop
 from keras.utils import np_utils
@@ -30,6 +31,35 @@ def build_rnn(in_dim, out_dim, h0_dim, h1_dim=None, layer_type=LSTM, return_sequ
     model.compile(loss="mse", optimizer="rmsprop")  
     return model
 
+def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, 
+                       rec_layer_type=ReducedLSTMA, rec_layer_init='uniform',
+                       layer_type=TimeDistributedDense, lr=.001, base_name='rlstm',
+                       add_input_noise=True, add_target_noise=True):
+    model = Sequential()  
+    if add_input_noise:
+        model.add(GaussianNoise(.1, input_shape=(None, input_dim)))
+    model.add(layer_type(h0_dim, input_dim=input_dim, 
+                    init='uniform', 
+                    W_regularizer=l2(0.0005),
+                    activation='relu'))
+    if h1_dim is not None:
+        model.add(layer_type(h1_dim, 
+                    init='uniform', 
+                    W_regularizer=l2(0.0005),
+                    activation='relu'))
+        
+    model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
+    if add_target_noise:
+        model.add(GaussianNoise(10.))
+    model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
+    
+    model.base_name = base_name
+    yaml_string = model.to_yaml()
+#    print(yaml_string)
+    with open(model.base_name+'.yaml', 'w') as f:
+        f.write(yaml_string)
+    return model
+
 def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, 
                        rec_layer_type=ReducedLSTMA, rec_layer_init='uniform',
                        layer_type=TimeDistributedDense, lr=.001, base_name='rlstm'):
@@ -38,13 +68,11 @@ def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
                     init='uniform', 
                     W_regularizer=l2(0.0005),
                     activation='relu'))
-#    model.add(Dropout(0.6))
     if h1_dim is not None:
         model.add(layer_type(h1_dim, 
                     init='uniform', 
                     W_regularizer=l2(0.0005),
                     activation='relu'))
-#        model.add(Dropout(0.6))
 #    model.add(LSTM(h0_dim, 
 #                   input_dim=input_dim,
 #                   init='uniform',
