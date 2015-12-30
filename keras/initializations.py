@@ -11,6 +11,9 @@ def get_fans(shape):
     fan_out = shape[1] if len(shape) == 2 else shape[0]
     return fan_in, fan_out
 
+#XD
+def uniform_small(shape, scale=0.005):
+    return sharedX(np.random.uniform(low=-scale, high=scale, size=shape))
 
 def uniform(shape, scale=0.05):
     return sharedX(np.random.uniform(low=-scale, high=scale, size=shape))

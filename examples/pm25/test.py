@@ -250,7 +250,7 @@ if __name__ == '__main__':
     else:
         train_data, valid_data, test_data = load_data2(segment=True)
     
-    name = 'bj_noise'
+    name = 'bj_uniform_small'
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
@@ -269,7 +269,7 @@ if __name__ == '__main__':
         batch_size = (1 + (not beijing_only)) * 64
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
                
-    name = 'bj_noise'
+    name = 'bj_uniform_small'
     rlstm = model_from_yaml(open(name + '.yaml').read())
     rlstm.base_name = name    
     for i in range(10):
