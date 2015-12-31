@@ -11,6 +11,8 @@ from data import load_data, load_data2, segment_data
 from errors import *
 from dataset import *
 
+pred_range = [3, 43]
+
 def pm25_mean_predict(pm25, gfs, date_time, pm25_mean, pred_range, downsample=1):
     return pm25_mean[pred_range[0]:pred_range[1]]
 
@@ -82,7 +84,7 @@ def rlstm_predict_batch(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, dow
 
 rlstm_predict_batch.model = None
 
-def predict_all(data, predict_fn, pred_range=[2, 42]):
+def predict_all(data, predict_fn, pred_range):
     predictions = []
     for i in range(data.shape[0]):
         pm25 = data[i, :, -1]
@@ -94,7 +96,7 @@ def predict_all(data, predict_fn, pred_range=[2, 42]):
     predictions = np.array(predictions)
     return predictions
 
-def predict_all_batch(data, predict_fn, pred_range=[2, 42], batch_size=1024):
+def predict_all_batch(data, predict_fn, pred_range=pred_range, batch_size=1024):
     predictions = []
     fgts = []
     incs = []
@@ -129,8 +131,8 @@ def test_model(model, dataset='test', show_details=True):
 #    print dataset
     i = {'train':0, 'valid':1, 'test':2}[dataset]
     data = model.data[i]
-    targets = data[:, 2:42, -1]
-    targets_mean = data[:, 2:42, -2]
+    targets = data[:, pred_range[0]:pred_range[1], -1]
+    targets_mean = data[:, pred_range[0]:pred_range[1], -2]
     
     if targets.min() >= 0:
         targets_mean = None
@@ -177,7 +179,7 @@ def test_model(model, dataset='test', show_details=True):
         print 'W_f max, min, mean, abs_mean:', W_f.max(), W_f.min(), W_f.mean(), np.abs(W_f).mean()  
     
 def plot_example(data, predictions, model_labels, feature_indices=[0,], feature_labels=['wind speed',], 
-                 model_states=[], state_labels=[], pred_range=[2,42]):
+                 model_states=[], state_labels=[], pred_range=pred_range):
     assert len(predictions) == len(model_labels)
     assert len(feature_indices) == len(feature_labels)
     assert len(model_states) == len(state_labels)
@@ -244,18 +246,19 @@ if __name__ == '__main__':
 #    f.close()
 #    train_data, valid_data, test_data = split_data(data)
     
-    beijing_only = True
+    beijing_only = False
     if beijing_only:
         train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
     else:
         train_data, valid_data, test_data = load_data2(segment=True)
     
-    name = 'bj_uniform_small'
+    name = 'huabei_tm2-t0'
     for i in range(10):
-        X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, hist_len=3)
+        X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
         rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
-                                   rec_layer_init='zero', base_name=name)
+                                   rec_layer_init='zero', base_name=name,
+                                   add_input_noise=False, add_target_noise=False)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data, test_data]
         rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
@@ -269,7 +272,7 @@ if __name__ == '__main__':
         batch_size = (1 + (not beijing_only)) * 64
         train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
                
-    name = 'bj_uniform_small'
+#    name = 'huabei_tm3-tm1'
     rlstm = model_from_yaml(open(name + '.yaml').read())
     rlstm.base_name = name    
     for i in range(10):

@@ -9,7 +9,7 @@ import copy
 savedir = './data_save/'
 Pm_starttime = datetime.datetime(2015, 4, 1, 0)
 start_time_norm = '20150401'
-end_time = (today - datetime.timedelta(days=2)).strftime('%Y%m%d')
+end_time = (datetime.datetime.today() - datetime.timedelta(days=2)).strftime('%Y%m%d')
 start = start_time_norm + '08'
 end = end_time + '08'
 # Pm_stoptime = datetime.datetime(2015, 12, 8, 0)
@@ -28,7 +28,10 @@ class generate_data():
             savedir + 'Dataset'+'-'+start+'-'+end+'.pkl.gz'
             ))
         stations = pickle.load(gzip.open(savedir + 'stations_all_index.pkl.gz'))
-        data = {key: matrix[stations[key]] for key in stations}
+        #data = {key: matrix[stations[key]] for key in stations}
+        data = {}
+        for key in stations:
+            data[key] = matrix[stations[key]]
         d = pd.DataFrame(data.items())
         d.columns = ['station_name', 'pm25_data']
         d.index = d.station_name

@@ -44,7 +44,7 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
 #    gfs[:,:,5] /= 100.  # cloud 0~100
 #    lonlat = np.copy(lonlat)
 #    lonlat[:,:,:] /= 100.  # lon, lat 20~120
-    
+#    print 'pred_range =', pred_range
     X = []
     y = []
     wind = []
@@ -85,6 +85,7 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
                         pm25_mean[:,i,:],
 #                        recent_pm25_mean
                         ])
+#        print 'Xi.shape =', Xi.shape
         yi = pm25[:,i,:]
         X.append(Xi)
         y.append(yi)
@@ -161,7 +162,7 @@ def parse_data(data):
 #    print 'In parse_data.', gfs.shape, date_time.shape, lonlat.shape, pm25_mean.shape, pm25.shape
     return gfs, date_time, lonlat, pm25_mean, pm25
     
-def build_mlp_dataset(data, pred_range=[2,42], valid_pct=1./4):
+def build_mlp_dataset(data, pred_range, valid_pct=1./4):
 #    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target 
     train_pct = 1. - valid_pct
     train_data = data[:data.shape[0]*train_pct]
@@ -184,7 +185,7 @@ def split_data(data):
     test_data = data[valid_stop:]
     return train_data, valid_data, test_data
 
-def build_lstm_dataset(train_data, valid_data, pred_range=[2,42], split_fn=split_data, hist_len=3):
+def build_lstm_dataset(train_data, valid_data, pred_range, split_fn=split_data, hist_len=3):
 #    data = np.copy(data)
 #    train_pct = 1. - valid_pct
 #    train_data = data[:data.shape[0]*train_pct]
