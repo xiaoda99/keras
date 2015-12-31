@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import copy
 
-savedir = './data_save/'
+savedir = '/home/xd/data/pm25data/'
 Pm_starttime = datetime.datetime(2015, 4, 1, 8)
 start_time_norm = '20150401'
 end_time = (datetime.datetime.today() - datetime.timedelta(days=2)).strftime('%Y%m%d')
@@ -43,9 +43,9 @@ class generate_data():
 
         assert len(starttime) == 8 and len(endtime) == 8
         self.starttime = datetime.datetime(
-                int(starttime[0:4]), int(starttime[4:6]), int(starttime[6:8])), 8
+                int(starttime[0:4]), int(starttime[4:6]), int(starttime[6:8]), 8)
         self.endtime = datetime.datetime(
-                int(endtime[0:4]), int(endtime[4:6]), int(endtime[6:8])), 23
+                int(endtime[0:4]), int(endtime[4:6]), int(endtime[6:8]), 23)
 
         if pm_stations:
             assert lon_range == None and lat_range == None
