@@ -7,7 +7,7 @@ import numpy as np
 import copy
 
 savedir = './data_save/'
-Pm_starttime = datetime.datetime(2015, 4, 1, 0)
+Pm_starttime = datetime.datetime(2015, 4, 1, 8)
 start_time_norm = '20150401'
 end_time = (datetime.datetime.today() - datetime.timedelta(days=2)).strftime('%Y%m%d')
 start = start_time_norm + '08'
@@ -41,10 +41,11 @@ class generate_data():
         d['lon'] = d['station_name'].apply(lambda x: stations_lonlat[x][0])
         d['lat'] = d['station_name'].apply(lambda x: stations_lonlat[x][1])
 
+        assert len(starttime) == 8 and len(endtime) == 8
         self.starttime = datetime.datetime(
-                int(starttime[0:4]), int(starttime[4:6]), int(starttime[6:8]))
+                int(starttime[0:4]), int(starttime[4:6]), int(starttime[6:8])), 8
         self.endtime = datetime.datetime(
-                int(endtime[0:4]), int(endtime[4:6]), int(endtime[6:8]))
+                int(endtime[0:4]), int(endtime[4:6]), int(endtime[6:8])), 23
 
         if pm_stations:
             assert lon_range == None and lat_range == None
