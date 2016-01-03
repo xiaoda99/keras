@@ -14,7 +14,7 @@ def segment_data(data, segment_len=44):
         fluctuate_indices = np.where(np.diff(a) != 0)[0] + 1
         fluctuate_indices = np.concatenate([np.array([0,]), fluctuate_indices, np.array([a.shape[0]])])
         if np.diff(fluctuate_indices).max() >= 13: 
-#            print 'filter out segment', i, i + segment_len
+            print 'filter out segment', i, i + segment_len
             continue
         
         segments.append(segment)
@@ -34,14 +34,18 @@ def preprocess(data):
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     return data
 
-def load_data3(stations=None, train_stop=None, segment=True):
+def load_data3(stations=None, train_start=0, train_stop=None, valid_start=None, valid_stop=None, segment=True):
     data = generate_data(pm_stations=stations, starttime='20150901', endtime='20151229').result
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     
     if train_stop is None:
         train_stop = int(data.shape[1] * 3. / 4)
-    train_data = data[:,:train_stop,:]
-    valid_data = data[:,train_stop:,:]
+    if valid_start is None:
+        valid_start = train_stop
+    if valid_stop is None:
+        valid_stop = data.shape[1]
+    train_data = data[:,train_start:train_stop,:]
+    valid_data = data[:,valid_start:valid_stop,:]
     
     if segment:
         train_data = segment_data(train_data)

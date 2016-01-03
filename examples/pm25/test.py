@@ -248,12 +248,15 @@ if __name__ == '__main__':
     
     beijing_only = True
     if beijing_only:
+        beijing_stations = [u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A']
 #        train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
-        train_data, valid_data = load_data3(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], train_stop=800, segment=True)
+        train_data, valid_data = load_data3(stations=beijing_stations, 
+#                                            train_stop=630, valid_start=680, valid_stop=840)
+                                            train_start=200, train_stop=953, valid_start=680, valid_stop=953)
     else:
         train_data, valid_data, test_data = load_data2(segment=True)
     
-    name = 'bj_newdata'
+    name = 'bj_no_valid'
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
@@ -271,7 +274,7 @@ if __name__ == '__main__':
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
         rlstm.save_normalization_info(name + '_norm_info.pkl')
         batch_size = (1 + (not beijing_only)) * 64
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, nb_epoch=20)
                
     rlstm = model_from_yaml(open(name + '.yaml').read())
     rlstm.base_name = name    
