@@ -80,6 +80,7 @@ class generate_data():
     def get_special_area_index(self, data):
         if self.pm_stations:
             d_index = pd.core.index.Index(self.pm_stations)
+            d_index = data.index & d_index
             return d_index.sort_values()
         else:
             da = data[data['lon'] > self.lon_range[0]].index
