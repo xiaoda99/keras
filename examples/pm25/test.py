@@ -7,7 +7,7 @@ from profilehooks import profile
 from keras.layers.recurrent_xd import RLSTM, ReducedLSTM, ReducedLSTM2, ReducedLSTM3, ReducedLSTMA, ReducedLSTMB
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
-from data import load_data, load_data2, segment_data
+from data import load_data, load_data2, load_data3, segment_data
 from errors import *
 from dataset import *
 
@@ -129,7 +129,7 @@ def predict_all_batch(data, predict_fn, pred_range=pred_range, batch_size=1024):
 
 def test_model(model, dataset='test', show_details=True):
 #    print dataset
-    i = {'train':0, 'valid':1, 'test':2}[dataset]
+    i = {'train':0, 'valid':1, 'test':1}[dataset]
     data = model.data[i]
     targets = data[:, pred_range[0]:pred_range[1], -1]
     targets_mean = data[:, pred_range[0]:pred_range[1], -2]
@@ -246,21 +246,25 @@ if __name__ == '__main__':
 #    f.close()
 #    train_data, valid_data, test_data = split_data(data)
     
-    beijing_only = False
+    beijing_only = True
     if beijing_only:
-        train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
+        beijing_stations = [u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A']
+#        train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
+        train_data, valid_data = load_data3(stations=beijing_stations, 
+#                                            train_stop=630, valid_start=680, valid_stop=840)
+                                            train_start=200, train_stop=953, valid_start=680, valid_stop=953)
     else:
         train_data, valid_data, test_data = load_data2(segment=True)
     
-    name = 'huabei_tm2-t0'
+    name = 'bj_no_valid'
     for i in range(10):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
         rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name,
-                                   add_input_noise=False, add_target_noise=False)
+                                   add_input_noise=True, add_target_noise=True)
         rlstm.name = name + str(i)
-        rlstm.data = [train_data, valid_data, test_data]
+        rlstm.data = [train_data, valid_data]
         rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
 #        rlstm.X_mask[:6] = 0  # wind direction
 #        rlstm.X_mask[-4:-3] = 0  # day of week
@@ -270,16 +274,15 @@ if __name__ == '__main__':
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
         rlstm.save_normalization_info(name + '_norm_info.pkl')
         batch_size = (1 + (not beijing_only)) * 64
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size)
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, nb_epoch=20)
                
-#    name = 'huabei_tm3-tm1'
     rlstm = model_from_yaml(open(name + '.yaml').read())
     rlstm.base_name = name    
     for i in range(10):
         rlstm.name = name + str(i)
         rlstm.load_normalization_info(name + '_norm_info.pkl')
         rlstm.load_weights(name + str(i) + '_weights.hdf5')
-        rlstm.data = [train_data, valid_data, test_data]
+        rlstm.data = [train_data, valid_data]
         test_model(rlstm, dataset='train', show_details=False)
         test_model(rlstm, dataset='valid', show_details=False)
     

@@ -32,7 +32,7 @@ def build_rnn(in_dim, out_dim, h0_dim, h1_dim=None, layer_type=LSTM, return_sequ
     return model
 
 def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, 
-                       rec_layer_type=ReducedLSTMA, rec_layer_init='uniform',
+                       rec_layer_type=ReducedLSTMA, rec_layer_init='zero',
                        layer_type=TimeDistributedDense, lr=.001, base_name='rlstm',
                        add_input_noise=True, add_target_noise=True):
     model = Sequential()  
@@ -124,8 +124,8 @@ def build_mlp(in_dim, out_dim, h0_dim, h1_dim, optimizer='rmsprop'):
         f.write(yaml_string)
     return model
 
-def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=500):
-    early_stopping = EarlyStopping(monitor='val_loss', patience=30)
+def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=300):
+    early_stopping = EarlyStopping(monitor='val_loss', patience=20)
     filepath = model.name + '_weights.hdf5'
     checkpointer = ModelCheckpoint(filepath=filepath, verbose=1, save_best_only=True)
     model.fit(X_train, y_train, 
