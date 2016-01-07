@@ -20,8 +20,9 @@ def segment_data(data, segment_len=44):
         segments.append(segment)
     return np.vstack(segments)
 
-def filter(data, pm_threshold=80):
+def filter_data(data, pm_threshold=80):
     pm = data[:,:,-1]
+    print 'filter', (pm.max(axis=1) > pm_threshold).mean()
     return data[pm.max(axis=1) > pm_threshold]
 
 def preprocess(data):
@@ -34,8 +35,11 @@ def preprocess(data):
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     return data
 
-def load_data3(stations=None, train_start=0, train_stop=None, valid_start=None, valid_stop=None, segment=True):
-    data = generate_data(pm_stations=stations, starttime='20150901', endtime='20151229').result
+def load_data3(stations=None, lon_range=None, lat_range=None, 
+               train_start=0, train_stop=None, valid_start=None, valid_stop=None, 
+               segment=True, filter=False):
+    data = generate_data(pm_stations=stations, lon_range=lon_range, lat_range=lat_range, 
+                         starttime='20150901', endtime='20151229').result
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     
     if train_stop is None:
@@ -50,6 +54,9 @@ def load_data3(stations=None, train_start=0, train_stop=None, valid_start=None, 
     if segment:
         train_data = segment_data(train_data)
         valid_data = segment_data(valid_data)
+    if filter:
+        train_data = filter_data(train_data)
+        valid_data = filter_data(valid_data)
     return train_data, valid_data
     
     

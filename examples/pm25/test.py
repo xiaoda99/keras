@@ -11,6 +11,11 @@ from data import load_data, load_data2, load_data3, segment_data
 from errors import *
 from dataset import *
 
+try: 
+    from collections import OrderedDict
+except:
+    from ordereddict import OrderedDict
+    
 pred_range = [3, 43]
 
 def pm25_mean_predict(pm25, gfs, date_time, pm25_mean, pred_range, downsample=1):
@@ -157,22 +162,15 @@ def test_model(model, dataset='test', show_details=True):
                                                                   pod4, far4, csi4,
                                                                   pod8, far8, csi8)
     print 'forget mean min:', fgts.mean(), fgts.min()
+    print 'delta_x =', np.abs(dxs).mean(),
+    print 'delta_h =', np.abs(dhs).mean(),
+    layer = model.get_rlstm_layer()
+    print 'U_c =',layer.U_c.get_value()
+    
     if show_details:
-#        print 'abs_err ='
-#        print absolute_error(pred, targets)
-#        print fgts.mean(axis=0)
-#        print 'pred ='
-#        print np.abs(pred).mean(axis=0)
-#        print 'delta ='
-#        print np.abs(ds).mean(axis=0)
-        print 'delta_x =', np.abs(dxs).mean()
-#        print np.abs(dxs).mean(axis=0)
-        print 'delta_h =', np.abs(dhs).mean()
-#        print np.abs(dhs).mean(axis=0)
-#        print 'fgts.mean() =', fgts.mean(), 'fgts.min() =', fgts.min()
         print 'delta mean, abs_mean, abs_mean+, abs_mean-:', dxs.mean(), np.abs(dxs).mean(), np.abs(dxs[dxs>0]).mean(), np.abs(dxs[dxs<0]).mean()
-        layer = model.get_rlstm_layer()
-        print 'U_c =',layer.U_c.get_value(), 'U_f =',layer.U_f.get_value(), 'b_f =',layer.b_f.get_value()
+        
+#        print 'U_c =',layer.U_c.get_value(), 'U_f =',layer.U_f.get_value(), 'b_f =',layer.b_f.get_value()
         W_c =layer.W_c.get_value()
         W_f =layer.W_f.get_value()
         print 'W_c max, min, mean, abs_mean:', W_c.max(), W_c.min(), W_c.mean(), np.abs(W_c).mean()
@@ -235,34 +233,64 @@ def load_rlstm(base_name, i=0):
     rlstm.load_normalization_info()
     return rlstm
 
+huabei_lon_range=[112.4, 118.3]  #taiyuan to tangshan
+huabei_lat_range=[34., 40.4] # ~ to beijing
+huadong_lon_range=[116.5, 1000.] # hefei to ~
+huadong_lat_range=[28.1, 34.] # changsha to ~
+
+beijing_stations = [str(i)+'A' for i in range(1001, 1013)]  #12
+#langfang_stations = [str(i)+'A' for i in range(1067, 1071)]  #4
+tianjin_stations = [str(i)+'A' for i in range(1013, 1028)]  #15
+tangshan_stations = [str(i)+'A' for i in range(1036, 1042)]  #6
+
+baoding_stations = [str(i)+'A' for i in range(1051, 1057)]  #6
+shijiazhuang_stations = [str(i)+'A' for i in range(1028, 1036)]  #8
+#hengshui_stations = [str(i)+'A' for i in range(1074, 1077)]  #3
+
+xingtai_stations = [str(i)+'A' for i in range(1077, 1081)]  #4
+handan_stations = [str(i)+'A' for i in range(1047, 1051)]  #4
+
+jinan_stations = [str(i)+'A' for i in range(1299, 1307)]  #8
+
+xian_stations = [str(i)+'A' for i in range(1462, 1475)] #13
+
+dirtiest_cities = OrderedDict([
+                   ('beijing', beijing_stations),
+#                   ('langfang', langfang_stations),
+                   ('tianjin', tianjin_stations),
+                   ('tangshan', tangshan_stations),
+                   ('baoding', baoding_stations),
+                   ('shijiazhuang', shijiazhuang_stations),
+#                   ('hengshui', hengshui_stations),
+                   ('xingtai+handan', xingtai_stations + handan_stations),
+                   ('jinan', jinan_stations),
+                   ('xian', xian_stations),
+                   ])
+
 if __name__ == '__main__':
-#    f = gzip.open('/home/xd/data/pm25data/forXiaodaDataset20151207_t100p100.pkl.gz', 'rb')   
-#    data = cPickle.load(f)
-#    data[:,:,-2:] -= 80
-#    data[:,:,2] = np.sqrt(data[:,:,2]**2 + data[:,:,3]**2)
-#    data[:,:,3] = data[:,:,2]
-##    data[:,:,1:4] = np.random.randn(data.shape[0], data.shape[1], 3)
-#    data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
-#    f.close()
-#    train_data, valid_data, test_data = split_data(data)
-    
-    beijing_only = True
+    beijing_only = False
     if beijing_only:
-        beijing_stations = [u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A']
 #        train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
         train_data, valid_data = load_data3(stations=beijing_stations, 
-#                                            train_stop=630, valid_start=680, valid_stop=840)
-                                            train_start=200, train_stop=953, valid_start=680, valid_stop=953)
+#                                            train_stop=740, valid_start=740) 
+                                            train_stop=630, valid_start=680, valid_stop=840,
+                                            filter=False)
+#                                            train_start=200, train_stop=953, valid_start=680, valid_stop=953)
     else:
-        train_data, valid_data, test_data = load_data2(segment=True)
+#        train_data, valid_data, test_data = load_data2(segment=True) 
+        train_data, valid_data = load_data3(
+                                            lon_range=huabei_lon_range, lat_range=huabei_lat_range,
+#                                            lon_range=[110., 117.5], lat_range=[34., 40.4],  
+                                            train_stop=630, valid_start=680, valid_stop=840,
+                                            filter=False)
     
-    name = 'bj_no_valid'
-    for i in range(10):
+    name = 'huabei_filtered'
+    for i in range(1):
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
         rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name,
-                                   add_input_noise=True, add_target_noise=True)
+                                   add_input_noise=beijing_only, add_target_noise=beijing_only)
         rlstm.name = name + str(i)
         rlstm.data = [train_data, valid_data]
         rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
@@ -274,23 +302,23 @@ if __name__ == '__main__':
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
         rlstm.save_normalization_info(name + '_norm_info.pkl')
         batch_size = (1 + (not beijing_only)) * 64
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, nb_epoch=20)
-               
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, nb_epoch=300)
+      
+    name = 'huabei_filtered'         
     rlstm = model_from_yaml(open(name + '.yaml').read())
     rlstm.base_name = name    
-    for i in range(10):
+    for city in dirtiest_cities:
+        i = 0
         rlstm.name = name + str(i)
         rlstm.load_normalization_info(name + '_norm_info.pkl')
         rlstm.load_weights(name + str(i) + '_weights.hdf5')
+        
+        train_data, valid_data = load_data3(stations=dirtiest_cities[city],  
+                                            train_stop=630, valid_start=680, valid_stop=840)
         rlstm.data = [train_data, valid_data]
+        print '\n' + city
         test_model(rlstm, dataset='train', show_details=False)
         test_model(rlstm, dataset='valid', show_details=False)
-    
-    #for rlstm in rlstms:
-    #    test_model(rlstm)
-    #    print rlstm.layers[-1].U_c.get_value(), rlstm.layers[-1].U_f.get_value(), rlstm.layers[-1].b_f.get_value()
-    #pred_mlp = predict_all_batch(data[data.shape[0]*3./4:], mlp_predict_batch)  
-    #pred = predict_all_batch(data[data.shape[0]*3./4:], rlstm_predict_batch)
 
 #y = y_valid[((y_valid[:,:,0].min(axis=1) < 60) & (y_valid[:,:,0].max(axis=1) > 100)), :, 0]
 #i = np.random.randint(y.shape[0]); yp = rlstm.predict_on_batch([X_valid[0][i:i+1], X_valid[1][i:i+1], X_valid[2][i:i+1]])[0,:,0]; plt.plot(yp, label='yp'); plt.plot(y[i], label='y'); plt.legend(); plt.show()

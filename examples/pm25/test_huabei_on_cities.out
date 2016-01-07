@@ -1,0 +1,195 @@
+X_train[0].shape = (106652, 40, 23)
+
+training huabei_filtered0
+Train on 106652 samples, validate on 21112 samples
+Before training:
+    huabei_filtered0  6103.4      0.02  -nan  0.02      0.02  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.731057 0.731059
+delta_x = 3.76391 delta_h = 2.42034 U_c = [[-0.05]]
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.76391 3.76391 nan 3.76391
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+    huabei_filtered0 27746.5      0.04  -nan  0.04      0.05  -nan  0.04      0.04  -nan  0.04
+forget mean min: 0.731059 0.731059
+delta_x = 6.68616 delta_h = 3.93311 U_c = [[-0.05]]
+delta mean, abs_mean, abs_mean+, abs_mean-: -6.68616 6.68616 nan 6.68616
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+11s - loss: 1881.9634 - val_loss: 8522.4747
+Epoch 00000: val_loss improved from inf to 8522.47467, saving model to huabei_filtered0_weights.hdf5
+    huabei_filtered0  1563.3      0.65  0.31  0.51      0.67  0.27  0.54      0.68  0.25  0.56
+forget mean min: 0.910791 0.732946
+delta_x = 5.17795 delta_h = 1.93898 U_c = [[-0.07451335]]
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.548821 5.17795 5.18595 5.16809
+W_c max, min, mean, abs_mean: 0.235172 0.2313 0.234334 0.234334
+W_f max, min, mean, abs_mean: 0.0872401 0.0831152 0.0848377 0.0848377
+    huabei_filtered0  8522.5      0.92  0.19  0.76      0.93  0.16  0.79      0.93  0.14  0.81
+forget mean min: 0.941949 0.732946
+delta_x = 6.36699 delta_h = 3.47194 U_c = [[-0.07451335]]
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.63595 6.36699 5.98252 7.14358
+W_c max, min, mean, abs_mean: 0.235172 0.2313 0.234334 0.234334
+W_f max, min, mean, abs_mean: 0.0872401 0.0831152 0.0848377 0.0848377
+Epoch 2/300
+11s - loss: 1535.6428 - val_loss: 8181.7120
+Epoch 00001: val_loss improved from 8522.47467 to 8181.71201, saving model to huabei_filtered0_weights.hdf5
+    huabei_filtered0  1513.2      0.66  0.30  0.51      0.68  0.27  0.55      0.69  0.24  0.57
+forget mean min: 0.903023 0.684923
+delta_x = 5.67123 delta_h = 1.62212 U_c = [[-0.06099403]]
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.518209 5.67123 5.71206 5.62295
+W_c max, min, mean, abs_mean: 0.270705 0.266636 0.269337 0.269337
+W_f max, min, mean, abs_mean: 0.0951786 0.0896667 0.0916008 0.0916008
+    huabei_filtered0  8181.7      0.93  0.19  0.76      0.93  0.16  0.79      0.94  0.14  0.81
+forget mean min: 0.936327 0.684923
+delta_x = 6.86375 delta_h = 3.08513 U_c = [[-0.06099403]]
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.56088 6.86375 6.46728 7.60437
+W_c max, min, mean, abs_mean: 0.270705 0.266636 0.269337 0.269337
+W_f max, min, mean, abs_mean: 0.0951786 0.0896667 0.0916008 0.0916008
+Epoch 3/300
+11s - loss: 1498.2738 - val_loss: 8215.1804
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+11s - loss: 1474.7042 - val_loss: 8320.5494
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+11s - loss: 1458.4038 - val_loss: 8076.0014
+Epoch 00004: val_loss improved from 8181.71201 to 8076.00135, saving model to huabei_filtered0_weights.hdf5
+    huabei_filtered0  1463.2      0.73  0.33  0.53      0.75  0.31  0.56      0.76  0.28  0.59
+forget mean min: 0.90073 0.597472
+delta_x = 6.78753 delta_h = 1.68864 U_c = [[-0.05634664]]
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.801425 6.78753 6.6914 6.91344
+W_c max, min, mean, abs_mean: 0.331452 0.322555 0.327778 0.327778
+W_f max, min, mean, abs_mean: 0.146585 0.136949 0.139837 0.139837
+    huabei_filtered0  8076.0      0.94  0.19  0.76      0.94  0.16  0.79      0.95  0.15  0.81
+forget mean min: 0.936554 0.597472
+delta_x = 7.66642 delta_h = 3.07672 U_c = [[-0.05634664]]
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.84615 7.66642 7.25109 8.45825
+W_c max, min, mean, abs_mean: 0.331452 0.322555 0.327778 0.327778
+W_f max, min, mean, abs_mean: 0.146585 0.136949 0.139837 0.139837
+Epoch 6/300
+11s - loss: 1444.6616 - val_loss: 8417.4338
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+11s - loss: 1433.3103 - val_loss: 8512.6567
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+11s - loss: 1421.5263 - val_loss: 8932.0342
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+11s - loss: 1409.5575 - val_loss: 8323.7038
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+11s - loss: 1399.0390 - val_loss: 8192.8175
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+11s - loss: 1389.0289 - val_loss: 8440.4341
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+11s - loss: 1382.2143 - val_loss: 8399.2683
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+11s - loss: 1375.4118 - val_loss: 8595.6756
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+11s - loss: 1369.5925 - val_loss: 8803.5012
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+11s - loss: 1364.6071 - val_loss: 8511.4704
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+11s - loss: 1359.1193 - val_loss: 8532.1059
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+11s - loss: 1352.8554 - val_loss: 8398.8601
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+11s - loss: 1347.8246 - val_loss: 8908.8679
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+11s - loss: 1340.9358 - val_loss: 8683.0651
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+11s - loss: 1333.6686 - val_loss: 8447.8952
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+11s - loss: 1328.7545 - val_loss: 8824.0923
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+11s - loss: 1324.4100 - val_loss: 8575.8350
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+11s - loss: 1320.5435 - val_loss: 8795.7594
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+11s - loss: 1317.6751 - val_loss: 9129.8080
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+11s - loss: 1315.1792 - val_loss: 8826.2655
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+11s - loss: 1312.6446 - val_loss: 8790.7278
+Epoch 00025: val_loss did not improve
+
+beijing
+    huabei_filtered0  2224.2      0.92  0.36  0.61      0.93  0.34  0.63      0.94  0.32  0.65
+forget mean min: 0.900084 0.597472
+delta_x = 8.44467 delta_h = 2.64156 U_c = [[-0.05634664]]
+    huabei_filtered0 15124.8      0.98  0.26  0.72      0.98  0.23  0.75      0.98  0.22  0.76
+forget mean min: 0.946897 0.597472
+delta_x = 11.1623 delta_h = 4.76332 U_c = [[-0.05634664]]
+
+tianjin
+    huabei_filtered0  1189.1      0.77  0.27  0.60      0.79  0.22  0.64      0.79  0.17  0.67
+forget mean min: 0.873175 0.597472
+delta_x = 6.84581 delta_h = 1.97756 U_c = [[-0.05634664]]
+    huabei_filtered0  5429.3      0.91  0.28  0.67      0.92  0.27  0.69      0.94  0.24  0.72
+forget mean min: 0.929237 0.597472
+delta_x = 8.57661 delta_h = 3.13368 U_c = [[-0.05634664]]
+
+tangshan
+    huabei_filtered0  1226.1      0.85  0.26  0.65      0.89  0.24  0.69      0.92  0.24  0.71
+forget mean min: 0.889759 0.597472
+delta_x = 8.49611 delta_h = 2.42106 U_c = [[-0.05634664]]
+    huabei_filtered0  4063.4      0.96  0.15  0.82      0.98  0.12  0.86      0.99  0.13  0.87
+forget mean min: 0.93293 0.597472
+delta_x = 9.47302 delta_h = 3.38805 U_c = [[-0.05634664]]
+
+baoding
+    huabei_filtered0  1871.2      0.89  0.28  0.66      0.90  0.27  0.67      0.90  0.27  0.67
+forget mean min: 0.89941 0.597472
+delta_x = 8.1081 delta_h = 2.48762 U_c = [[-0.05634664]]
+    huabei_filtered0 26844.5      0.96  0.13  0.84      0.95  0.09  0.87      0.95  0.07  0.89
+forget mean min: 0.964539 0.697665
+delta_x = 9.00497 delta_h = 5.40278 U_c = [[-0.05634664]]
+
+shijiazhuang
+    huabei_filtered0  1327.5      0.67  0.30  0.52      0.68  0.26  0.55      0.70  0.19  0.60
+forget mean min: 0.892133 0.597472
+delta_x = 6.8071 delta_h = 1.50211 U_c = [[-0.05634664]]
+    huabei_filtered0 10743.5      0.97  0.15  0.83      0.98  0.13  0.86      0.99  0.11  0.88
+forget mean min: 0.948559 0.597472
+delta_x = 9.32456 delta_h = 4.7939 U_c = [[-0.05634664]]
+
+xingtai+handan
+    huabei_filtered0  1224.9      0.71  0.30  0.55      0.74  0.27  0.58      0.76  0.23  0.62
+forget mean min: 0.904964 0.597472
+delta_x = 7.25472 delta_h = 1.58008 U_c = [[-0.05634664]]
+    huabei_filtered0 16265.7      0.96  0.16  0.81      0.97  0.12  0.85      0.97  0.10  0.88
+forget mean min: 0.955657 0.689478
+delta_x = 8.65065 delta_h = 3.54576 U_c = [[-0.05634664]]
+
+jinan
+    huabei_filtered0  2196.8      0.73  0.32  0.55      0.73  0.29  0.57      0.75  0.26  0.60
+forget mean min: 0.916356 0.597472
+delta_x = 7.93163 delta_h = 1.94924 U_c = [[-0.05634664]]
+    huabei_filtered0  5996.2      0.99  0.26  0.74      1.00  0.22  0.78      1.00  0.19  0.81
+forget mean min: 0.958267 0.597472
+delta_x = 8.54171 delta_h = 3.22355 U_c = [[-0.05634664]]
+
+xian
+    huabei_filtered0  2611.6      0.93  0.71  0.28      0.95  0.72  0.27      0.96  0.72  0.27
+forget mean min: 0.950968 0.597472
+delta_x = 5.51332 delta_h = 2.44023 U_c = [[-0.05634664]]
+    huabei_filtered0  4081.4      0.97  0.33  0.66      0.98  0.32  0.67      0.98  0.31  0.68
+forget mean min: 0.967001 0.628609
+delta_x = 6.1915 delta_h = 3.65903 U_c = [[-0.05634664]]

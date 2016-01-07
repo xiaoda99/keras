@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
+encoding//build/lib/keras/layers/core.py=utf-8
 encoding//examples/addition_rnn.py=utf-8
+encoding//examples/pm25/build_data.py=utf-8
 encoding//keras/layers/containers.py=utf-8
 encoding//keras/layers/convolutional.py=utf-8
 encoding//keras/layers/core.py=utf-8

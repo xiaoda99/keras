@@ -17,7 +17,7 @@ def misclass_error(predictions, targets):
 def downsample(sequences, pool_size):
     assert sequences.ndim == 2
     assert sequences.shape[1] % pool_size == 0
-    return sequences.reshape((sequences.shape[0], sequences.shape[1] / pool_size, pool_size)).max(axis=2) 
+    return sequences.reshape((sequences.shape[0], sequences.shape[1] / pool_size, pool_size)).mean(axis=2) 
 
 def detection_error(predictions, targets, targets_mean=None, pool_size=1):
     if targets_mean is not None:
