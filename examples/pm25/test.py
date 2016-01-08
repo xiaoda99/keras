@@ -16,7 +16,7 @@ try:
 except:
     from ordereddict import OrderedDict
     
-pred_range = [3, 43]
+pred_range = [2, 42]
 
 def pm25_mean_predict(pm25, gfs, date_time, pm25_mean, pred_range, downsample=1):
     return pm25_mean[pred_range[0]:pred_range[1]]
