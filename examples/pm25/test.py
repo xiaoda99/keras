@@ -256,15 +256,13 @@ xian_stations = [str(i)+'A' for i in range(1462, 1475)] #13
 
 dirtiest_cities = OrderedDict([
                    ('beijing', beijing_stations),
-#                   ('langfang', langfang_stations),
-                   ('tianjin', tianjin_stations),
-                   ('tangshan', tangshan_stations),
-                   ('baoding', baoding_stations),
-                   ('shijiazhuang', shijiazhuang_stations),
-#                   ('hengshui', hengshui_stations),
-                   ('xingtai+handan', xingtai_stations + handan_stations),
-                   ('jinan', jinan_stations),
-                   ('xian', xian_stations),
+#                   ('tianjin', tianjin_stations),
+#                   ('tangshan', tangshan_stations),
+#                   ('baoding', baoding_stations),
+#                   ('shijiazhuang', shijiazhuang_stations),
+#                   ('xingtai+handan', xingtai_stations + handan_stations),
+#                   ('jinan', jinan_stations),
+#                   ('xian', xian_stations),
                    ])
 
 if __name__ == '__main__':
@@ -287,10 +285,10 @@ if __name__ == '__main__':
 #    name = 'huabei_filtered'
     for city in dirtiest_cities:
         train_data, valid_data = load_data3(stations=dirtiest_cities[city], 
-                                            train_stop=630, valid_start=680, valid_stop=840)
+                                            train_stop=953, valid_start=680, valid_stop=953)
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
-        name = city
+        name = city + '_epoch12'
         rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name,
                                    add_input_noise=beijing_only, add_target_noise=beijing_only)
@@ -305,22 +303,22 @@ if __name__ == '__main__':
         X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
         rlstm.save_normalization_info(name + '_norm_info.pkl')
         batch_size = (1 + (not beijing_only)) * 64
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, nb_epoch=300)
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, nb_epoch=12)
       
-    name = 'beijing'         
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    for city in dirtiest_cities:
-        name = city
-        rlstm.name = name
-        rlstm.load_normalization_info(name + '_norm_info.pkl')
-        rlstm.load_weights(name + '_weights.hdf5')
-        
-        train_data, valid_data = load_data3(stations=dirtiest_cities[city],  
-                                            train_stop=630, valid_start=680, valid_stop=840)
-        rlstm.data = [train_data, valid_data]
-        print '\n' + city
-        test_model(rlstm, dataset='train', show_details=False)
-        test_model(rlstm, dataset='valid', show_details=False)
+#    name = 'beijing'         
+#    rlstm = model_from_yaml(open(name + '.yaml').read())
+#    for city in dirtiest_cities:
+#        name = city
+#        rlstm.name = name
+#        rlstm.load_normalization_info(name + '_norm_info.pkl')
+#        rlstm.load_weights(name + '_weights.hdf5')
+#        
+#        train_data, valid_data = load_data3(stations=dirtiest_cities[city],  
+#                                            train_stop=630, valid_start=680, valid_stop=840)
+#        rlstm.data = [train_data, valid_data]
+#        print '\n' + city
+#        test_model(rlstm, dataset='train', show_details=False)
+#        test_model(rlstm, dataset='valid', show_details=False)
 
 #y = y_valid[((y_valid[:,:,0].min(axis=1) < 60) & (y_valid[:,:,0].max(axis=1) > 100)), :, 0]
 #i = np.random.randint(y.shape[0]); yp = rlstm.predict_on_batch([X_valid[0][i:i+1], X_valid[1][i:i+1], X_valid[2][i:i+1]])[0,:,0]; plt.plot(yp, label='yp'); plt.plot(y[i], label='y'); plt.legend(); plt.show()

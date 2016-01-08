@@ -35,11 +35,15 @@ def preprocess(data):
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     return data
 
+def normalize_pm25(pm25, threshold=300, decay_coef=.25):
+    return pm25 * (pm25 <= threshold) + (threshold + (pm25 - threshold) * decay_coef) * (pm25 > threshold)
+
 def load_data3(stations=None, lon_range=None, lat_range=None, 
                train_start=0, train_stop=None, valid_start=None, valid_stop=None, 
                segment=True, filter=False):
     data = generate_data(pm_stations=stations, lon_range=lon_range, lat_range=lat_range, 
                          starttime='20150901', endtime='20151229').result
+    data[:,:,-1] = normalize_pm25(data[:,:,-1])
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     
     if train_stop is None:
