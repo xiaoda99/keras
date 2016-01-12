@@ -9,7 +9,7 @@ def absolute_percent_error(predictions, targets, targets_mean):
 def absolute_error(predictions, targets):
     return np.abs(predictions - targets).mean(axis=0)
 
-threshold = 80
+#threshold = 80
     
 def misclass_error(predictions, targets):
     return ((predictions >= threshold) != (targets >= threshold)).mean(axis=0)
@@ -19,16 +19,18 @@ def downsample(sequences, pool_size):
     assert sequences.shape[1] % pool_size == 0
     return sequences.reshape((sequences.shape[0], sequences.shape[1] / pool_size, pool_size)).mean(axis=2) 
 
-def detection_error(predictions, targets, targets_mean=None, pool_size=1):
+def detection_error(predictions, targets, targets_mean=None, pool_size=1, pm_threshold=80):
     if targets_mean is not None:
         predictions = predictions + targets_mean
         targets = targets + targets_mean
+    if targets.max() < 20:
+        pm_threshold /= 100.
     if pool_size != 1:
         predictions = downsample(predictions, pool_size)
         targets = downsample(targets, pool_size)
-    alarm = (predictions >= threshold).mean(axis=0)
-    occur = (targets >= threshold).mean(axis=0)
-    hit = ((predictions >= threshold) & (targets >= threshold)).mean(axis=0)
+    alarm = (predictions >= pm_threshold).mean(axis=0)
+    occur = (targets >= pm_threshold).mean(axis=0)
+    hit = ((predictions >= pm_threshold) & (targets >= pm_threshold)).mean(axis=0)
     pod = hit / occur
     far = 1. - hit / alarm
     csi = hit / (occur + alarm - hit)

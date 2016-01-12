@@ -15,6 +15,9 @@ def get_fans(shape):
 def uniform_small(shape, scale=0.005):
     return sharedX(np.random.uniform(low=-scale, high=scale, size=shape))
 
+def uniform_positive(shape, scale=0.05):
+    return sharedX(np.random.uniform(low=0., high=scale, size=shape))
+
 def uniform(shape, scale=0.05):
     return sharedX(np.random.uniform(low=-scale, high=scale, size=shape))
 

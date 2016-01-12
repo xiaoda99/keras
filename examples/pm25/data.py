@@ -21,7 +21,9 @@ def segment_data(data, segment_len=44):
     return np.vstack(segments)
 
 def filter_data(data, pm_threshold=80):
-    pm = data[:,:,-1]
+    pm = data[:,:,-1] + data[:,:,-2]
+    if pm.max() < 20:
+        pm_threshold /= 100.
     print 'filter', (pm.max(axis=1) > pm_threshold).mean()
     return data[pm.max(axis=1) > pm_threshold]
 
@@ -44,6 +46,7 @@ def load_data3(stations=None, lon_range=None, lat_range=None,
     data = generate_data(pm_stations=stations, lon_range=lon_range, lat_range=lat_range, 
                          starttime='20150901', endtime='20151229').result
     data[:,:,-1] = normalize_pm25(data[:,:,-1])
+#    data[:,:,-2:] /= 100.
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     
     if train_stop is None:

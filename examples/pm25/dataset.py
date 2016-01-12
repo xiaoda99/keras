@@ -72,6 +72,7 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
         recent_humidity = recent_gfs[:,:,1]
         recent_rain = recent_gfs[:,:,4]
         recent_cloud = recent_gfs[:,:,5]
+        step = np.ones((gfs.shape[0], 1)) * (i - pred_range[0])
         
         Xi = np.hstack([
 #                        recent_gfs.reshape((recent_gfs.shape[0], -1)),
@@ -80,21 +81,27 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
                         recent_humidity,
                         recent_rain,
                         recent_cloud, 
+#                        step,
                         date_time[:,i,0:2], # exclude day of year feature
                         lonlat[:,i,:], 
                         pm25_mean[:,i,:],
-#                        recent_pm25_mean
                         ])
 #        print 'Xi.shape =', Xi.shape
         yi = pm25[:,i,:]
         X.append(Xi)
         y.append(yi)
         wind.append(recent_wind_speed)
+        
     init_pm25 = pm25[:,pred_range[0]-1,:]
-    init_gfs = gfs[:,:pred_range[0],:].reshape((gfs.shape[0], -1))
+    init_pm25_mean = pm25_mean[:,pred_range[0]-1,:]
+#    init_pm25 = pm25[:,:pred_range[0],:]
+#    init_pm25_mean = pm25_mean[:,:pred_range[0],:]
+#    init_gfs = gfs[:,:pred_range[0],:].reshape((gfs.shape[0], -1))
 #    X_init = np.hstack([init_pm25, init_gfs])
+
     hidden_init = init_pm25 
-    cell_init = init_pm25 + pm25_mean[:,pred_range[0]-1,:]
+    cell_init = init_pm25 + init_pm25_mean
+    
     cell_mean = pm25_mean[:,pred_range[0]:pred_range[1],:]
     X = np.dstack(X).transpose((0, 2, 1)) #.astype('float32')
 #    X = np.concatenate([gfs, date_time[:,:,:-1]], axis=2)[:,pred_range[0]:pred_range[1],:]

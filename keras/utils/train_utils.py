@@ -31,6 +31,25 @@ def build_rnn(in_dim, out_dim, h0_dim, h1_dim=None, layer_type=LSTM, return_sequ
     model.compile(loss="mse", optimizer="rmsprop")  
     return model
 
+def build_rlstm2(input_dim, h0_dim, h1_dim, output_dim=1, 
+                       lstm_init='zero', lr=.001, base_name='rlstm',
+                       add_input_noise=True, add_target_noise=False):
+    model = Sequential()  
+    if add_input_noise:
+        model.add(GaussianNoise(.1, input_shape=(None, input_dim)))
+    model.add(RLSTM(input_dim, h0_dim, h1_dim, output_dim, init=lstm_init,
+                    W_h0_regularizer=l2(0.0005), W_h1_regularizer=l2(0.0005), return_sequences=True))
+#    if add_target_noise:
+#        model.add(GaussianNoise(5.))
+    model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
+    
+    model.base_name = base_name
+    yaml_string = model.to_yaml()
+#    print(yaml_string)
+    with open(model.base_name+'.yaml', 'w') as f:
+        f.write(yaml_string)
+    return model
+
 def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, 
                        rec_layer_type=ReducedLSTMA, rec_layer_init='zero',
                        layer_type=TimeDistributedDense, lr=.001, base_name='rlstm',
@@ -49,8 +68,8 @@ def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
                     activation='relu'))
         
     model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
-    if add_target_noise:
-        model.add(GaussianNoise(10.))
+#    if add_target_noise:
+#        model.add(GaussianNoise(5.))
     model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
     
     model.base_name = base_name
@@ -124,8 +143,8 @@ def build_mlp(in_dim, out_dim, h0_dim, h1_dim, optimizer='rmsprop'):
         f.write(yaml_string)
     return model
 
-def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=300):
-    early_stopping = EarlyStopping(monitor='val_loss', patience=20)
+def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=300, patience=20):
+    early_stopping = EarlyStopping(monitor='val_loss', patience=patience)
     filepath = model.name + '_weights.hdf5'
     checkpointer = ModelCheckpoint(filepath=filepath, verbose=1, save_best_only=True)
     model.fit(X_train, y_train, 
