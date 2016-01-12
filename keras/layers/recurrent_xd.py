@@ -795,7 +795,7 @@ class ReducedLSTMOld(Recurrent):
         return dict(list(base_config.items()) + list(config.items()))
  
 class RLSTM(Recurrent):
-    def __init__(self, input_dim, h0_dim, h1_dim, output_dim, step_type='forget+inc',
+    def __init__(self, input_dim, h0_dim, h1_dim, output_dim, step_type='replace',
                  init='glorot_uniform', inner_init='orthogonal', forget_bias_init='one',
                  activation='tanh', inner_activation='hard_sigmoid', 
                  W_h0_regularizer=None, W_h1_regularizer=None, 
@@ -926,7 +926,7 @@ class RLSTM(Recurrent):
         xc_t = T.dot(h1_t, w_c) + b_c
         f_t = self.inner_activation(xf_t)
         b_t = self.activation(xc_t)
-        dh_t = T.dot(h_tm1, u_c) * 0.
+        dh_t = T.dot(h_tm1, u_c) * 1.
 #        c_t = f_t * activations.get('relu')(c_tm1 + b_t + dh_t)
 #        c_t = (f_t * 0. + 1.) * activations.get('relu')(b_t + dh_t)
 #        h_t = self.activation(c_t) - cm_t
