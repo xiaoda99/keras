@@ -29,7 +29,6 @@ layers:
 - {activation: linear, forget_bias_init: one, init: zero, inner_activation: sigmoid,
   inner_init: orthogonal, input_dim: null, input_length: null, name: ReducedLSTMA,
   output_dim: 1, return_sequences: true, truncate_gradient: -1}
-- {name: GaussianNoise, sigma: 10.0}
 loss: mean_squared_error
 name: Sequential
 optimizer: {epsilon: 9.9999999999999995e-07, lr: 0.0010000000474974513, name: RMSprop,

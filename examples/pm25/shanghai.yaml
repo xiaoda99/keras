@@ -3,7 +3,32 @@ layers:
 - input_shape: !!python/tuple [null, 23]
   name: GaussianNoise
   sigma: 0.10000000000000001
-- null
+- W_constraint: null
+  W_regularizer: {l1: 0.0, l2: 0.00050000000000000001, name: WeightRegularizer}
+  activation: relu
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  init: uniform_small
+  input_dim: 23
+  input_length: null
+  input_shape: !!python/tuple [null, 23]
+  name: TimeDistributedDense
+  output_dim: 20
+- W_constraint: null
+  W_regularizer: {l1: 0.0, l2: 0.00050000000000000001, name: WeightRegularizer}
+  activation: relu
+  activity_regularizer: null
+  b_constraint: null
+  b_regularizer: null
+  init: uniform_small
+  input_dim: null
+  input_length: null
+  name: TimeDistributedDense
+  output_dim: 20
+- {activation: linear, forget_bias_init: one, init: zero, inner_activation: sigmoid,
+  inner_init: orthogonal, input_dim: null, input_length: null, name: ReducedLSTMA,
+  output_dim: 1, return_sequences: true, truncate_gradient: -1}
 loss: mean_squared_error
 name: Sequential
 optimizer: {epsilon: 9.9999999999999995e-07, lr: 0.0010000000474974513, name: RMSprop,
