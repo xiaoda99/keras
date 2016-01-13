@@ -333,7 +333,7 @@ if __name__ == '__main__':
                                             filter=(not beijing_only))
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
-        name = area + '20150113'
+        name = area + '_20150113'
         rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name,
                                    add_input_noise=beijing_only, add_target_noise=False)
