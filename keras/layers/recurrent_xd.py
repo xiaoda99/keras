@@ -856,7 +856,7 @@ class RLSTM(Recurrent):
         self.U2_h0 = initializations.get('zero')((self.output_dim, self.h0_dim))
         self.U1_h0 = initializations.get('zero')((self.output_dim, self.h0_dim))
         
-        self.U_c = sharedX(-.05 * np.ones((self.output_dim, self.output_dim)))  #XD
+        self.U_c = sharedX(1. * np.ones((self.output_dim, self.output_dim)))  #XD
         self.U_f = sharedX(0. * np.ones((self.output_dim, self.output_dim)))
 
         self.params = [
@@ -901,16 +901,16 @@ class RLSTM(Recurrent):
     def _step_inc(self,
               x_t, cm_t, 
               h_tm2, h_tm1, c_tm2, c_tm1,
-              w_h0, u2_h0, u1_h0, b_h0, w_h1, b_h1, w_f, b_f, w_c, b_c, u_c):
+              w_h0, u2_h0, u1_h0, b_h0, w_h1, b_h1, w_f, b_f, w_c, b_c, u_c, u_f):
         h0_t = activations.get('relu')(T.dot(x_t, w_h0) + 1.*T.dot(c_tm2/100., u2_h0) + 1.*T.dot(c_tm1/100., u1_h0) + b_h0)
         h1_t = activations.get('relu')(T.dot(h0_t, w_h1) + b_h1)
-        xf_t = T.dot(h1_t, w_f) + b_f
+        xf_t = T.dot(h1_t, w_f) + b_f + 0.*T.dot(h_tm1/100., u_f)
         xc_t = T.dot(h1_t, w_c) + b_c
         f_t = self.inner_activation(xf_t)
         b_t = self.activation(xc_t)
-        dh_t = T.dot(h_tm1, u_c) * 0.
+        dh_t = T.dot(c_tm1, u_c) * 1.
 #        c_t = f_t * activations.get('relu')(c_tm1 + b_t + dh_t)
-        c_t = (f_t * 0. + 1.) * activations.get('relu')(c_tm1 + b_t + dh_t)
+        c_t = (f_t * 0. + 1.) * activations.get('relu')(b_t + dh_t)
         h_t = self.activation(c_t) - cm_t
         d_t = c_t - c_tm1
         dx_t = d_t - dh_t
@@ -919,10 +919,10 @@ class RLSTM(Recurrent):
     def _step_replace(self,
               x_t, cm_t, 
               h_tm2, h_tm1, c_tm2, c_tm1,
-              w_h0, u2_h0, u1_h0, b_h0, w_h1, b_h1, w_f, b_f, w_c, b_c, u_c):
+              w_h0, u2_h0, u1_h0, b_h0, w_h1, b_h1, w_f, b_f, w_c, b_c, u_c, u_f):
         h0_t = activations.get('tanh')(T.dot(x_t, w_h0) + 1.*T.dot(h_tm2/100., u2_h0) + 1.*T.dot(h_tm1/100., u1_h0) + b_h0)
         h1_t = activations.get('tanh')(T.dot(h0_t, w_h1) + b_h1)
-        xf_t = T.dot(h1_t, w_f) + b_f
+        xf_t = T.dot(h1_t, w_f) + b_f + 0.*T.dot(h_tm1/100., u_f)
         xc_t = T.dot(h1_t, w_c) + b_c
         f_t = self.inner_activation(xf_t)
         b_t = self.activation(xc_t)

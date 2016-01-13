@@ -92,10 +92,10 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
         y.append(yi)
         wind.append(recent_wind_speed)
         
-#    init_pm25 = pm25[:,pred_range[0]-1,:]
-#    init_pm25_mean = pm25_mean[:,pred_range[0]-1,:]
-    init_pm25 = pm25[:,:pred_range[0],:]
-    init_pm25_mean = pm25_mean[:,:pred_range[0],:]
+    init_pm25 = pm25[:,pred_range[0]-1,:]
+    init_pm25_mean = pm25_mean[:,pred_range[0]-1,:]
+#    init_pm25 = pm25[:,:pred_range[0],:]
+#    init_pm25_mean = pm25_mean[:,:pred_range[0],:]
 #    init_gfs = gfs[:,:pred_range[0],:].reshape((gfs.shape[0], -1))
 #    X_init = np.hstack([init_pm25, init_gfs])
 

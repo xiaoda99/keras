@@ -1,8 +1,5 @@
 class_mode: categorical
 layers:
-- input_shape: !!python/tuple [null, 23]
-  name: GaussianNoise
-  sigma: 0.10000000000000001
 - W_constraint: null
   W_regularizer: {l1: 0.0, l2: 0.00050000000000000001, name: WeightRegularizer}
   activation: relu
