@@ -307,7 +307,7 @@ city2stations = OrderedDict([
                    ])
 
 if __name__ == '__main__':
-    beijing_only = True
+    beijing_only = False
 #    if beijing_only:
 ##        train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
 #        train_data, valid_data = load_data3(stations=beijing_stations, 
@@ -323,20 +323,20 @@ if __name__ == '__main__':
 #                                            train_stop=630, valid_start=680, valid_stop=840,
 #                                            filter=False)
     
-#    for area in area2lonlat:
-    for city in city2stations:
+    for area in area2lonlat:
+#    for city in city2stations:
         train_data, valid_data = load_data3(
-#                                            lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
-                                            stations=city2stations[city],
-#                                            train_stop=630, valid_start=680, valid_stop=840,
-                                            train_stop=953, valid_start=680, valid_stop=953, 
+                                            lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
+#                                            stations=city2stations[city],
+                                            train_stop=630, valid_start=680, valid_stop=840,
+#                                            train_stop=953, valid_start=680, valid_stop=953, 
                                             filter=(not beijing_only))
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
-        name = city + '_epoch12_20160113'
+        name = area + '20150113'
         rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name,
-                                   add_input_noise=True, add_target_noise=False)
+                                   add_input_noise=beijing_only, add_target_noise=False)
 #        rlstm = build_rlstm2(X_train[0].shape[-1], h0_dim=20, h1_dim=20, base_name=name,
 #                                   add_input_noise=beijing_only, add_target_noise=beijing_only)
         rlstm.name = name
@@ -351,7 +351,7 @@ if __name__ == '__main__':
         rlstm.save_normalization_info(name + '_norm_info.pkl')
         batch_size = (1 + (not beijing_only)) * 64
         patience = (1 + int(beijing_only)) * 10
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=12)
+        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=300)
       
 #    name = 'shanghai'         
 #    rlstm = model_from_yaml(open(name + '.yaml').read())
