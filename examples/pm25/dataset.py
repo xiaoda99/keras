@@ -27,6 +27,12 @@ def delta(gfs):
     delta_gfs[:,-1,:] = gfs[:,-1,:]
     return delta_gfs
 
+def delta_single(gfs):
+    delta_gfs = np.zeros((gfs.shape[0], gfs.shape[1]-1))
+    for i in range(delta_gfs.shape[1]):
+        delta_gfs[:,i] = gfs[:,i+1] - gfs[:,i]
+    return delta_gfs
+
 def compute_wind_direction(u, v, one_hot=True):
     if not one_hot:
         return np.arctan2(u, v)
@@ -68,6 +74,7 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
 #        recent_wind_direction = compute_wind_direction(u.mean(axis=1, keepdims=True), 
 #                                                       v.mean(axis=1, keepdims=True), 
 #                                                       one_hot=True)
+#        recent_temperature = delta_single(recent_gfs[:,:,0])
         recent_temperature = recent_gfs[:,:,0]
         recent_humidity = recent_gfs[:,:,1]
         recent_rain = recent_gfs[:,:,4]
@@ -78,6 +85,7 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
 #                        recent_gfs.reshape((recent_gfs.shape[0], -1)),
                         recent_wind_direction,
                         recent_wind_speed,
+                        recent_temperature,
                         recent_humidity,
                         recent_rain,
                         recent_cloud, 

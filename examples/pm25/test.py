@@ -307,7 +307,7 @@ city2stations = OrderedDict([
                    ])
 
 if __name__ == '__main__':
-    beijing_only = False
+    beijing_only = True
 #    if beijing_only:
 ##        train_data, valid_data, test_data = load_data2(stations=[u'1003A', u'1004A',u'1005A', u'1006A', u'1007A', u'1011A'], segment=True)
 #        train_data, valid_data = load_data3(stations=beijing_stations, 
@@ -323,17 +323,17 @@ if __name__ == '__main__':
 #                                            train_stop=630, valid_start=680, valid_stop=840,
 #                                            filter=False)
     
-    for area in area2lonlat:
-#    for city in city2stations:
+#    for area in area2lonlat:
+    for city in city2stations:
         train_data, valid_data = load_data3(
-                                            lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
-#                                            stations=city2stations[city],
+#                                            lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
+                                            stations=city2stations[city],
                                             train_stop=630, valid_start=680, valid_stop=840,
 #                                            train_stop=953, valid_start=680, valid_stop=953, 
                                             filter=(not beijing_only))
         X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
         print 'X_train[0].shape =', X_train[0].shape
-        name = area + '_20150113'
+        name = city + '_newfeat'
         rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                    rec_layer_init='zero', base_name=name,
                                    add_input_noise=beijing_only, add_target_noise=False)
