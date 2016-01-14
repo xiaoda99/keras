@@ -1,6 +1,6 @@
 class_mode: categorical
 layers:
-- input_shape: !!python/tuple [null, 23]
+- input_shape: !!python/tuple [null, 26]
   name: GaussianNoise
   sigma: 0.10000000000000001
 - W_constraint: null
@@ -10,9 +10,9 @@ layers:
   b_constraint: null
   b_regularizer: null
   init: uniform_small
-  input_dim: 23
+  input_dim: 26
   input_length: null
-  input_shape: !!python/tuple [null, 23]
+  input_shape: !!python/tuple [null, 26]
   name: TimeDistributedDense
   output_dim: 20
 - W_constraint: null

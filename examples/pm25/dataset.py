@@ -54,6 +54,7 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
     X = []
     y = []
     wind = []
+    mean_temperature = gfs[:,pred_range[0]:pred_range[1],0].mean(axis=1, keepdims=True)
     for i in range(pred_range[0], pred_range[1]):
         if i - hist_len + 1 >= 0:
             recent_gfs = gfs[:,i-hist_len+1:i+1,0:]  # exclude temperature feature 
@@ -75,7 +76,7 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
 #                                                       v.mean(axis=1, keepdims=True), 
 #                                                       one_hot=True)
 #        recent_temperature = delta_single(recent_gfs[:,:,0])
-        recent_temperature = recent_gfs[:,:,0]
+        recent_temperature = recent_gfs[:,:,0] #- mean_temperature
         recent_humidity = recent_gfs[:,:,1]
         recent_rain = recent_gfs[:,:,4]
         recent_cloud = recent_gfs[:,:,5]
@@ -83,9 +84,9 @@ def transform_sequences(gfs, date_time, lonlat, pm25_mean, pm25, pred_range, his
         
         Xi = np.hstack([
 #                        recent_gfs.reshape((recent_gfs.shape[0], -1)),
+#                        recent_temperature,
                         recent_wind_direction,
                         recent_wind_speed,
-                        recent_temperature,
                         recent_humidity,
                         recent_rain,
                         recent_cloud, 

@@ -1,0 +1,3368 @@
+X_train[0].shape = (7032, 40, 26)
+
+training beijing
+Train on 7032 samples, validate on 1392 samples
+Before training:
+             beijing 9494.5161      0.03  -nan  0.03      0.03  -nan  0.03      0.02  -nan  0.02
+forget mean min: 0.731058 0.731059
+delta_x = 3.86167 delta_h = 2.49769
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.86167 3.86167 nan 3.86167
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+             beijing29096.3478      0.06  -nan  0.06      0.07  -nan  0.07      0.06  -nan  0.06
+forget mean min: 0.731059 0.731059
+delta_x = 8.09076 delta_h = 5.0167
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -8.09076 8.09076 nan 8.09076
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+1s - loss: 5418.5081 - val_loss: 10269.8731
+Epoch 00000: val_loss improved from inf to 10269.87314, saving model to beijing_weights.hdf5
+             beijing 2417.4941      0.85  0.33  0.60      0.86  0.31  0.62      0.86  0.30  0.63
+forget mean min: 0.923967 0.781487
+delta_x = 5.8239 delta_h = 2.69151
+U_c = [[-0.06125488]] U_f = [[ 0.]] b_c = [ 0.10668528] b_f = [ 1.0616591]
+incx.max(), incx.min(), incx.mean() 10.7618 0.375148 4.02538
+fgtx.max(), fgtx.min(), fgtx.mean() 8.44123 0.212692 3.1045
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.03037 5.8239 5.71044 5.9942
+W_c max, min, mean, abs_mean: 0.14158 0.137261 0.140766 0.140766
+W_f max, min, mean, abs_mean: 0.112214 0.108232 0.111522 0.111522
+             beijing10269.8732      0.71  0.12  0.65      0.70  0.09  0.66      0.72  0.07  0.68
+forget mean min: 0.90671 0.781487
+delta_x = 6.21094 delta_h = 3.86339
+U_c = [[-0.06125488]] U_f = [[ 0.]] b_c = [ 0.10668528] b_f = [ 1.0616591]
+incx.max(), incx.min(), incx.mean() 7.56977 0.375148 2.76297
+fgtx.max(), fgtx.min(), fgtx.mean() 5.91245 0.212692 2.10438
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.07896 6.21094 3.78103 7.92884
+W_c max, min, mean, abs_mean: 0.14158 0.137261 0.140766 0.140766
+W_f max, min, mean, abs_mean: 0.112214 0.108232 0.111522 0.111522
+Epoch 2/300
+1s - loss: 2054.0922 - val_loss: 7005.3449
+Epoch 00001: val_loss improved from 10269.87314 to 7005.34493, saving model to beijing_weights.hdf5
+             beijing 1827.4564      0.87  0.27  0.66      0.87  0.25  0.68      0.87  0.23  0.69
+forget mean min: 0.905402 0.738914
+delta_x = 6.45395 delta_h = 1.91431
+U_c = [[-0.03871325]] U_f = [[ 0.]] b_c = [ 0.11093741] b_f = [ 0.97894543]
+incx.max(), incx.min(), incx.mean() 11.8764 0.196519 4.23125
+fgtx.max(), fgtx.min(), fgtx.mean() 8.44001 0.061388 2.95573
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.728124 6.45395 6.11769 6.93185
+W_c max, min, mean, abs_mean: 0.15659 0.152187 0.155739 0.155739
+W_f max, min, mean, abs_mean: 0.112468 0.107512 0.111721 0.111721
+             beijing 7005.3450      0.85  0.12  0.76      0.84  0.09  0.78      0.86  0.07  0.81
+forget mean min: 0.917112 0.738914
+delta_x = 7.78716 delta_h = 2.92246
+U_c = [[-0.03871325]] U_f = [[ 0.]] b_c = [ 0.11093741] b_f = [ 0.97894543]
+incx.max(), incx.min(), incx.mean() 12.2222 0.196519 4.34419
+fgtx.max(), fgtx.min(), fgtx.mean() 8.6881 0.061388 3.03676
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.997365 7.78716 5.66053 10.9738
+W_c max, min, mean, abs_mean: 0.15659 0.152187 0.155739 0.155739
+W_f max, min, mean, abs_mean: 0.112468 0.107512 0.111721 0.111721
+Epoch 3/300
+1s - loss: 1757.8641 - val_loss: 7320.5447
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+1s - loss: 1679.0990 - val_loss: 6961.2947
+Epoch 00003: val_loss improved from 7005.34493 to 6961.29466, saving model to beijing_weights.hdf5
+             beijing 1640.9144      0.87  0.26  0.66      0.87  0.25  0.68      0.88  0.22  0.70
+forget mean min: 0.896674 0.701345
+delta_x = 6.42131 delta_h = 0.966572
+U_c = [[-0.01849139]] U_f = [[ 0.]] b_c = [ 0.11058485] b_f = [ 0.85371059]
+incx.max(), incx.min(), incx.mean() 12.8057 0.110585 4.19076
+fgtx.max(), fgtx.min(), fgtx.mean() 8.992 0.0 2.89001
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.502907 6.42131 5.79597 7.34895
+W_c max, min, mean, abs_mean: 0.168825 0.164315 0.167913 0.167913
+W_f max, min, mean, abs_mean: 0.119595 0.114335 0.118933 0.118933
+             beijing 6961.2946      0.85  0.11  0.77      0.85  0.08  0.79      0.87  0.06  0.82
+forget mean min: 0.913371 0.701345
+delta_x = 8.25419 delta_h = 1.50265
+U_c = [[-0.01849139]] U_f = [[ 0.]] b_c = [ 0.11058485] b_f = [ 0.85371059]
+incx.max(), incx.min(), incx.mean() 12.6787 0.110585 4.64652
+fgtx.max(), fgtx.min(), fgtx.mean() 8.90204 0.0 3.21285
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.931478 8.25419 5.97247 11.869
+W_c max, min, mean, abs_mean: 0.168825 0.164315 0.167913 0.167913
+W_f max, min, mean, abs_mean: 0.119595 0.114335 0.118933 0.118933
+Epoch 5/300
+1s - loss: 1624.8456 - val_loss: 6860.0165
+Epoch 00004: val_loss improved from 6961.29466 to 6860.01645, saving model to beijing_weights.hdf5
+             beijing 1599.0221      0.88  0.27  0.67      0.89  0.25  0.68      0.89  0.23  0.71
+forget mean min: 0.89652 0.689946
+delta_x = 6.51558 delta_h = 0.865191
+U_c = [[-0.0162786]] U_f = [[ 0.]] b_c = [ 0.11283931] b_f = [ 0.7998656]
+incx.max(), incx.min(), incx.mean() 13.2172 0.112839 4.2598
+fgtx.max(), fgtx.min(), fgtx.mean() 9.55929 0.0 3.0251
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.550442 6.51558 5.84053 7.54915
+W_c max, min, mean, abs_mean: 0.174387 0.169859 0.173455 0.173455
+W_f max, min, mean, abs_mean: 0.127156 0.121859 0.126531 0.126531
+             beijing 6860.0165      0.85  0.11  0.77      0.85  0.08  0.79      0.87  0.06  0.82
+forget mean min: 0.911986 0.689946
+delta_x = 8.23444 delta_h = 1.34069
+U_c = [[-0.0162786]] U_f = [[ 0.]] b_c = [ 0.11283931] b_f = [ 0.7998656]
+incx.max(), incx.min(), incx.mean() 12.6204 0.112839 4.65562
+fgtx.max(), fgtx.min(), fgtx.mean() 9.12392 0.0 3.31386
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.908821 8.23444 5.93934 11.9271
+W_c max, min, mean, abs_mean: 0.174387 0.169859 0.173455 0.173455
+W_f max, min, mean, abs_mean: 0.127156 0.121859 0.126531 0.126531
+Epoch 6/300
+1s - loss: 1577.1999 - val_loss: 6699.0537
+Epoch 00005: val_loss improved from 6860.01645 to 6699.05369, saving model to beijing_weights.hdf5
+             beijing 1542.6856      0.87  0.25  0.68      0.88  0.23  0.69      0.88  0.20  0.72
+forget mean min: 0.892387 0.676492
+delta_x = 6.47221 delta_h = 0.767525
+U_c = [[-0.01458877]] U_f = [[ 0.]] b_c = [ 0.1134747] b_f = [ 0.73769557]
+incx.max(), incx.min(), incx.mean() 13.2872 0.113475 4.1737
+fgtx.max(), fgtx.min(), fgtx.mean() 10.0041 0.0 3.08332
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.435129 6.47221 5.73295 7.59238
+W_c max, min, mean, abs_mean: 0.177898 0.173388 0.176971 0.176971
+W_f max, min, mean, abs_mean: 0.135057 0.129663 0.134391 0.134391
+             beijing 6699.0537      0.85  0.11  0.77      0.85  0.08  0.80      0.87  0.06  0.82
+forget mean min: 0.909366 0.676492
+delta_x = 8.3676 delta_h = 1.23322
+U_c = [[-0.01458877]] U_f = [[ 0.]] b_c = [ 0.1134747] b_f = [ 0.73769557]
+incx.max(), incx.min(), incx.mean() 12.808 0.113475 4.69809
+fgtx.max(), fgtx.min(), fgtx.mean() 9.64024 0.0 3.48157
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.880809 8.3676 6.03068 12.1922
+W_c max, min, mean, abs_mean: 0.177898 0.173388 0.176971 0.176971
+W_f max, min, mean, abs_mean: 0.135057 0.129663 0.134391 0.134391
+Epoch 7/300
+1s - loss: 1539.8079 - val_loss: 6653.2451
+Epoch 00006: val_loss improved from 6699.05369 to 6653.24509, saving model to beijing_weights.hdf5
+             beijing 1503.4058      0.86  0.22  0.69      0.87  0.20  0.71      0.87  0.17  0.73
+forget mean min: 0.88767 0.662037
+delta_x = 6.40607 delta_h = 0.803472
+U_c = [[-0.01574756]] U_f = [[ 0.]] b_c = [ 0.11470701] b_f = [ 0.67238307]
+incx.max(), incx.min(), incx.mean() 13.3447 0.114707 4.07063
+fgtx.max(), fgtx.min(), fgtx.mean() 10.5331 0.0 3.14952
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.307743 6.40607 5.60195 7.60844
+W_c max, min, mean, abs_mean: 0.180474 0.175986 0.179547 0.179547
+W_f max, min, mean, abs_mean: 0.14366 0.138164 0.142948 0.142948
+             beijing 6653.2450      0.85  0.10  0.77      0.85  0.07  0.80      0.87  0.06  0.82
+forget mean min: 0.90528 0.662037
+delta_x = 8.26853 delta_h = 1.31582
+U_c = [[-0.01574756]] U_f = [[ 0.]] b_c = [ 0.11470701] b_f = [ 0.67238307]
+incx.max(), incx.min(), incx.mean() 13.0633 0.114707 4.58642
+fgtx.max(), fgtx.min(), fgtx.mean() 10.3091 0.0 3.56019
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.987946 8.26853 5.96449 11.8772
+W_c max, min, mean, abs_mean: 0.180474 0.175986 0.179547 0.179547
+W_f max, min, mean, abs_mean: 0.14366 0.138164 0.142948 0.142948
+Epoch 8/300
+1s - loss: 1499.3984 - val_loss: 6481.7381
+Epoch 00007: val_loss improved from 6653.24509 to 6481.73808, saving model to beijing_weights.hdf5
+             beijing 1489.2855      0.89  0.25  0.69      0.90  0.23  0.71      0.90  0.20  0.73
+forget mean min: 0.886624 0.647473
+delta_x = 6.9989 delta_h = 0.755973
+U_c = [[-0.01382331]] U_f = [[ 0.]] b_c = [ 0.12268088] b_f = [ 0.60795176]
+incx.max(), incx.min(), incx.mean() 14.8092 0.122681 4.39196
+fgtx.max(), fgtx.min(), fgtx.mean() 12.2403 0.0 3.55819
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.500714 6.9989 6.10262 8.42736
+W_c max, min, mean, abs_mean: 0.18865 0.184159 0.187683 0.187683
+W_f max, min, mean, abs_mean: 0.157202 0.151576 0.156424 0.156424
+             beijing 6481.7381      0.85  0.10  0.78      0.85  0.07  0.80      0.87  0.06  0.83
+forget mean min: 0.902775 0.647473
+delta_x = 8.71735 delta_h = 1.21112
+U_c = [[-0.01382331]] U_f = [[ 0.]] b_c = [ 0.12268088] b_f = [ 0.60795176]
+incx.max(), incx.min(), incx.mean() 14.2047 0.122681 4.80744
+fgtx.max(), fgtx.min(), fgtx.mean() 11.7365 0.0 3.90448
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.82206 8.71735 6.36433 12.561
+W_c max, min, mean, abs_mean: 0.18865 0.184159 0.187683 0.187683
+W_f max, min, mean, abs_mean: 0.157202 0.151576 0.156424 0.156424
+Epoch 9/300
+1s - loss: 1465.9447 - val_loss: 6315.8512
+Epoch 00008: val_loss improved from 6481.73808 to 6315.85120, saving model to beijing_weights.hdf5
+             beijing 1429.1772      0.88  0.23  0.70      0.89  0.21  0.72      0.89  0.18  0.75
+forget mean min: 0.882993 0.633406
+delta_x = 6.95906 delta_h = 0.808128
+U_c = [[-0.01520375]] U_f = [[ 0.]] b_c = [ 0.12781096] b_f = [ 0.5468576]
+incx.max(), incx.min(), incx.mean() 14.6588 0.127811 4.2971
+fgtx.max(), fgtx.min(), fgtx.mean() 12.9119 0.0 3.70477
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.423008 6.95906 6.00651 8.47748
+W_c max, min, mean, abs_mean: 0.191899 0.187417 0.190906 0.190906
+W_f max, min, mean, abs_mean: 0.170487 0.164733 0.169638 0.169638
+             beijing 6315.8512      0.86  0.11  0.78      0.86  0.07  0.81      0.88  0.06  0.83
+forget mean min: 0.90202 0.633406
+delta_x = 9.01624 delta_h = 1.35384
+U_c = [[-0.01520375]] U_f = [[ 0.]] b_c = [ 0.12781096] b_f = [ 0.5468576]
+incx.max(), incx.min(), incx.mean() 15.0041 0.127811 4.94309
+fgtx.max(), fgtx.min(), fgtx.mean() 13.2188 0.0 4.27879
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.654926 9.01624 6.54793 13.3753
+W_c max, min, mean, abs_mean: 0.191899 0.187417 0.190906 0.190906
+W_f max, min, mean, abs_mean: 0.170487 0.164733 0.169638 0.169638
+Epoch 10/300
+1s - loss: 1430.7923 - val_loss: 6235.4519
+Epoch 00009: val_loss improved from 6315.85120 to 6235.45185, saving model to beijing_weights.hdf5
+             beijing 1382.5276      0.87  0.20  0.71      0.88  0.18  0.73      0.88  0.15  0.76
+forget mean min: 0.876322 0.616786
+delta_x = 6.96268 delta_h = 0.794215
+U_c = [[-0.01520895]] U_f = [[ 0.]] b_c = [ 0.13532367] b_f = [ 0.47592822]
+incx.max(), incx.min(), incx.mean() 15.0068 0.135324 4.22163
+fgtx.max(), fgtx.min(), fgtx.mean() 13.8235 0.0 3.79835
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.307956 6.96268 5.9536 8.54503
+W_c max, min, mean, abs_mean: 0.197154 0.192696 0.196134 0.196134
+W_f max, min, mean, abs_mean: 0.183228 0.177333 0.182315 0.182315
+             beijing 6235.4518      0.86  0.10  0.78      0.86  0.07  0.81      0.88  0.06  0.83
+forget mean min: 0.898095 0.616786
+delta_x = 9.20304 delta_h = 1.36824
+U_c = [[-0.01520895]] U_f = [[ 0.]] b_c = [ 0.13532367] b_f = [ 0.47592822]
+incx.max(), incx.min(), incx.mean() 15.824 0.135324 4.98468
+fgtx.max(), fgtx.min(), fgtx.mean() 14.583 0.0 4.50763
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.677188 9.20304 6.61003 13.9126
+W_c max, min, mean, abs_mean: 0.197154 0.192696 0.196134 0.196134
+W_f max, min, mean, abs_mean: 0.183228 0.177333 0.182315 0.182315
+Epoch 11/300
+1s - loss: 1390.2720 - val_loss: 6264.1879
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+1s - loss: 1354.7256 - val_loss: 6348.7288
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+1s - loss: 1327.5863 - val_loss: 6572.4880
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+1s - loss: 1307.3019 - val_loss: 6617.3975
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+1s - loss: 1284.7965 - val_loss: 6752.1740
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+1s - loss: 1256.3472 - val_loss: 7177.8002
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+1s - loss: 1242.3302 - val_loss: 7302.6976
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+1s - loss: 1225.1924 - val_loss: 7097.0185
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+1s - loss: 1209.4259 - val_loss: 7923.6453
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+1s - loss: 1191.1033 - val_loss: 8000.1270
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+1s - loss: 1180.6057 - val_loss: 8485.7372
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+1s - loss: 1173.2701 - val_loss: 7392.3211
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+1s - loss: 1151.7206 - val_loss: 8343.8929
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+1s - loss: 1142.2004 - val_loss: 8071.7099
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+1s - loss: 1138.2424 - val_loss: 7906.2911
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+1s - loss: 1119.6362 - val_loss: 8293.2748
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+1s - loss: 1107.1521 - val_loss: 8601.9302
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+1s - loss: 1099.7206 - val_loss: 8231.8209
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+1s - loss: 1096.9757 - val_loss: 8492.7339
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+1s - loss: 1087.7053 - val_loss: 8559.4526
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+1s - loss: 1077.0675 - val_loss: 8490.4497
+Epoch 00030: val_loss did not improve
+X_train[0].shape = (5274, 40, 26)
+
+training tianjin
+Train on 5274 samples, validate on 1044 samples
+Before training:
+             tianjin 5015.6057      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+delta_x = 3.33852 delta_h = 2.15111
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.33852 3.33852 nan 3.33852
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+             tianjin18553.9317      0.04  -nan  0.04      0.04  -nan  0.04      0.02  -nan  0.02
+forget mean min: 0.731059 0.731059
+delta_x = 5.9573 delta_h = 3.61017
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -5.9573 5.9573 nan 5.9573
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+1s - loss: 3261.7001 - val_loss: 9131.6247
+Epoch 00000: val_loss improved from inf to 9131.62467, saving model to tianjin_weights.hdf5
+             tianjin 1448.0805      0.42  0.21  0.37      0.44  0.14  0.41      0.44  0.09  0.42
+forget mean min: 0.938728 0.786366
+delta_x = 3.36564 delta_h = 2.28451
+U_c = [[-0.10200772]] U_f = [[ 0.]] b_c = [ 0.08794079] b_f = [ 1.08130932]
+incx.max(), incx.min(), incx.mean() 5.84547 0.322689 2.66822
+fgtx.max(), fgtx.min(), fgtx.mean() 5.44082 0.221847 2.43836
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.115083 3.36564 2.84755 4.18
+W_c max, min, mean, abs_mean: 0.11881 0.114633 0.117487 0.117487
+W_f max, min, mean, abs_mean: 0.111705 0.108282 0.111028 0.111028
+             tianjin 9131.6248      0.44  0.08  0.42      0.44  0.06  0.43      0.42  0.04  0.41
+forget mean min: 0.911016 0.786366
+delta_x = 4.14715 delta_h = 3.36115
+U_c = [[-0.10200772]] U_f = [[ 0.]] b_c = [ 0.08794079] b_f = [ 1.08130932]
+incx.max(), incx.min(), incx.mean() 3.95085 0.322689 1.77439
+fgtx.max(), fgtx.min(), fgtx.mean() 3.65045 0.221847 1.5937
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.47194 4.14715 1.11564 5.46258
+W_c max, min, mean, abs_mean: 0.11881 0.114633 0.117487 0.117487
+W_f max, min, mean, abs_mean: 0.111705 0.108282 0.111028 0.111028
+Epoch 2/300
+1s - loss: 1208.1999 - val_loss: 4937.5559
+Epoch 00001: val_loss improved from 9131.62467 to 4937.55587, saving model to tianjin_weights.hdf5
+             tianjin 1112.2333      0.74  0.23  0.60      0.77  0.17  0.66      0.77  0.13  0.68
+forget mean min: 0.929641 0.764429
+delta_x = 4.71648 delta_h = 2.64969
+U_c = [[-0.09046406]] U_f = [[ 0.]] b_c = [ 0.0977375] b_f = [ 1.02894127]
+incx.max(), incx.min(), incx.mean() 7.97187 0.265569 3.32323
+fgtx.max(), fgtx.min(), fgtx.mean() 6.95185 0.148177 2.8477
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.709278 4.71648 4.13097 5.83659
+W_c max, min, mean, abs_mean: 0.140261 0.135933 0.138799 0.138799
+W_f max, min, mean, abs_mean: 0.12345 0.119405 0.122543 0.122543
+             tianjin 4937.5558      0.92  0.24  0.71      0.92  0.23  0.73      0.94  0.20  0.76
+forget mean min: 0.948785 0.764429
+delta_x = 6.15733 delta_h = 3.71765
+U_c = [[-0.09046406]] U_f = [[ 0.]] b_c = [ 0.0977375] b_f = [ 1.02894127]
+incx.max(), incx.min(), incx.mean() 8.15151 0.265569 4.20384
+fgtx.max(), fgtx.min(), fgtx.mean() 7.11048 0.148177 3.62517
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.925484 6.15733 4.96923 9.10418
+W_c max, min, mean, abs_mean: 0.140261 0.135933 0.138799 0.138799
+W_f max, min, mean, abs_mean: 0.12345 0.119405 0.122543 0.122543
+Epoch 3/300
+1s - loss: 1074.3144 - val_loss: 4696.6516
+Epoch 00002: val_loss improved from 4937.55587 to 4696.65159, saving model to tianjin_weights.hdf5
+             tianjin 1044.1774      0.78  0.24  0.62      0.81  0.19  0.68      0.80  0.14  0.70
+forget mean min: 0.921305 0.729705
+delta_x = 5.18555 delta_h = 2.79557
+U_c = [[-0.08834731]] U_f = [[ 0.]] b_c = [ 0.09463202] b_f = [ 0.96459347]
+incx.max(), incx.min(), incx.mean() 9.96409 0.126795 3.5327
+fgtx.max(), fgtx.min(), fgtx.mean() 8.75518 0.0285307 3.0499
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.769689 5.18555 4.58546 6.29685
+W_c max, min, mean, abs_mean: 0.149782 0.145486 0.148316 0.148316
+W_f max, min, mean, abs_mean: 0.132876 0.127879 0.131572 0.131572
+             tianjin 4696.6517      0.93  0.28  0.68      0.94  0.27  0.70      0.95  0.25  0.72
+forget mean min: 0.953334 0.729705
+delta_x = 7.07223 delta_h = 4.15473
+U_c = [[-0.08834731]] U_f = [[ 0.]] b_c = [ 0.09463202] b_f = [ 0.96459347]
+incx.max(), incx.min(), incx.mean() 10.3533 0.126795 5.06659
+fgtx.max(), fgtx.min(), fgtx.mean() 9.10043 0.0285307 4.41064
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.99011 7.07223 5.97499 10.5158
+W_c max, min, mean, abs_mean: 0.149782 0.145486 0.148316 0.148316
+W_f max, min, mean, abs_mean: 0.132876 0.127879 0.131572 0.131572
+Epoch 4/300
+1s - loss: 1029.1260 - val_loss: 4638.6389
+Epoch 00003: val_loss improved from 4696.65159 to 4638.63888, saving model to tianjin_weights.hdf5
+             tianjin 1012.3922      0.80  0.27  0.62      0.83  0.21  0.68      0.83  0.18  0.70
+forget mean min: 0.921651 0.71094
+delta_x = 5.57037 delta_h = 2.89517
+U_c = [[-0.08709582]] U_f = [[ 0.]] b_c = [ 0.09106504] b_f = [ 0.8999548]
+incx.max(), incx.min(), incx.mean() 11.2219 0.091065 3.80337
+fgtx.max(), fgtx.min(), fgtx.mean() 10.1628 0.0 3.38948
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.00703 5.57037 4.99251 6.68575
+W_c max, min, mean, abs_mean: 0.159049 0.154832 0.157617 0.157617
+W_f max, min, mean, abs_mean: 0.145548 0.139902 0.143911 0.143911
+             tianjin 4638.6389      0.95  0.30  0.68      0.96  0.29  0.69      0.96  0.27  0.70
+forget mean min: 0.960104 0.71094
+delta_x = 7.58553 delta_h = 4.41471
+U_c = [[-0.08709582]] U_f = [[ 0.]] b_c = [ 0.09106504] b_f = [ 0.8999548]
+incx.max(), incx.min(), incx.mean() 12.0014 0.091065 5.67233
+fgtx.max(), fgtx.min(), fgtx.mean() 10.8746 0.0 5.09594
+delta mean, abs_mean, abs_mean+, abs_mean-: 2.79679 7.58553 6.68155 10.7342
+W_c max, min, mean, abs_mean: 0.159049 0.154832 0.157617 0.157617
+W_f max, min, mean, abs_mean: 0.145548 0.139902 0.143911 0.143911
+Epoch 5/300
+1s - loss: 1001.5283 - val_loss: 4737.4846
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+1s - loss: 977.0186 - val_loss: 4925.3939
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+1s - loss: 951.3619 - val_loss: 5076.2942
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+1s - loss: 924.1750 - val_loss: 5029.3747
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+1s - loss: 897.3485 - val_loss: 4841.8508
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+1s - loss: 868.4690 - val_loss: 4572.8426
+Epoch 00009: val_loss improved from 4638.63888 to 4572.84261, saving model to tianjin_weights.hdf5
+             tianjin  840.4202      0.80  0.19  0.68      0.83  0.14  0.73      0.82  0.12  0.73
+forget mean min: 0.907689 0.623551
+delta_x = 6.77762 delta_h = 2.31412
+U_c = [[-0.07217564]] U_f = [[ 0.]] b_c = [ 0.08599924] b_f = [ 0.50464964]
+incx.max(), incx.min(), incx.mean() 14.2456 0.0859992 4.55716
+fgtx.max(), fgtx.min(), fgtx.mean() 11.5278 0.0 3.64021
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.723147 6.77762 6.20111 7.65986
+W_c max, min, mean, abs_mean: 0.222653 0.218812 0.221107 0.221107
+W_f max, min, mean, abs_mean: 0.182484 0.174484 0.180019 0.180019
+             tianjin 4572.8425      0.97  0.28  0.70      0.97  0.28  0.70      0.97  0.28  0.71
+forget mean min: 0.960421 0.623551
+delta_x = 8.14935 delta_h = 3.49663
+U_c = [[-0.07217564]] U_f = [[ 0.]] b_c = [ 0.08599924] b_f = [ 0.50464964]
+incx.max(), incx.min(), incx.mean() 14.1848 0.0859992 6.20419
+fgtx.max(), fgtx.min(), fgtx.mean() 11.4785 0.0 4.98125
+delta mean, abs_mean, abs_mean+, abs_mean-: 2.45845 8.14935 6.8128 12.8474
+W_c max, min, mean, abs_mean: 0.222653 0.218812 0.221107 0.221107
+W_f max, min, mean, abs_mean: 0.182484 0.174484 0.180019 0.180019
+Epoch 11/300
+1s - loss: 837.3330 - val_loss: 4876.4745
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+1s - loss: 805.7994 - val_loss: 4598.0860
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+1s - loss: 775.1708 - val_loss: 4805.2274
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+1s - loss: 755.1321 - val_loss: 4720.2997
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+1s - loss: 734.5958 - val_loss: 4773.3529
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+1s - loss: 722.5283 - val_loss: 4899.0546
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+1s - loss: 715.3223 - val_loss: 5099.1187
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+1s - loss: 704.1410 - val_loss: 5250.6874
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+1s - loss: 693.5429 - val_loss: 5183.7512
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+1s - loss: 687.2456 - val_loss: 5432.6334
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+1s - loss: 680.2553 - val_loss: 5500.1349
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+1s - loss: 672.6332 - val_loss: 5359.4407
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+1s - loss: 667.1626 - val_loss: 5389.2022
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+1s - loss: 659.9966 - val_loss: 5327.3737
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+1s - loss: 657.7246 - val_loss: 5467.5591
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+1s - loss: 651.1882 - val_loss: 5474.8561
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+1s - loss: 645.8589 - val_loss: 5365.6432
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+1s - loss: 640.7731 - val_loss: 5517.6240
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+1s - loss: 637.3063 - val_loss: 5592.1295
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+1s - loss: 633.0886 - val_loss: 5741.1169
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+1s - loss: 629.2731 - val_loss: 5684.2116
+Epoch 00030: val_loss did not improve
+X_train[0].shape = (3516, 40, 26)
+
+training tangshan
+Train on 3516 samples, validate on 696 samples
+Before training:
+            tangshan 6869.6146      0.02  -nan  0.02      0.02  -nan  0.02      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+delta_x = 3.64554 delta_h = 2.28125
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.64554 3.64554 nan 3.64554
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+            tangshan21151.8067      0.04  -nan  0.04      0.04  -nan  0.04      0.03  -nan  0.03
+forget mean min: 0.731058 0.731059
+delta_x = 6.569 delta_h = 4.07136
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -6.569 6.569 nan 6.569
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 5454.5693 - val_loss: 14093.5388
+Epoch 00000: val_loss improved from inf to 14093.53880, saving model to tangshan_weights.hdf5
+            tangshan 3236.9009      0.13  0.02  0.12      0.13  0.01  0.13      0.14  0.01  0.14
+forget mean min: 0.896449 0.769649
+delta_x = 3.13054 delta_h = 2.6198
+U_c = [[-0.10723449]] U_f = [[ 0.]] b_c = [ 0.06564847] b_f = [ 1.06470084]
+incx.max(), incx.min(), incx.mean() 3.66854 0.211325 1.45637
+fgtx.max(), fgtx.min(), fgtx.mean() 3.50258 0.141632 1.352
+delta mean, abs_mean, abs_mean+, abs_mean-: -2.44465 3.13054 1.14296 3.98256
+W_c max, min, mean, abs_mean: 0.0926167 0.0881784 0.0918875 0.0918875
+W_f max, min, mean, abs_mean: 0.0899672 0.0862536 0.0893335 0.0893335
+            tangshan14093.5389      0.11  -nan  0.10      0.11  -nan  0.11      0.11  -nan  0.10
+forget mean min: 0.845766 0.769649
+delta_x = 7.19122 delta_h = 5.894
+U_c = [[-0.10723449]] U_f = [[ 0.]] b_c = [ 0.06564847] b_f = [ 1.06470084]
+incx.max(), incx.min(), incx.mean() 1.73897 0.211325 0.780698
+fgtx.max(), fgtx.min(), fgtx.mean() 1.62674 0.141632 0.695148
+delta mean, abs_mean, abs_mean+, abs_mean-: -7.19122 7.19122 nan 7.19122
+W_c max, min, mean, abs_mean: 0.0926167 0.0881784 0.0918875 0.0918875
+W_f max, min, mean, abs_mean: 0.0899672 0.0862536 0.0893335 0.0893335
+Epoch 2/300
+0s - loss: 2015.2162 - val_loss: 6236.4454
+Epoch 00001: val_loss improved from 14093.53880 to 6236.44539, saving model to tangshan_weights.hdf5
+            tangshan 1388.8326      0.80  0.25  0.63      0.85  0.22  0.68      0.86  0.21  0.70
+forget mean min: 0.950578 0.795331
+delta_x = 4.9875 delta_h = 2.63746
+U_c = [[-0.08211143]] U_f = [[ 0.]] b_c = [ 0.1045412] b_f = [ 1.08561599]
+incx.max(), incx.min(), incx.mean() 8.44577 0.407824 3.83395
+fgtx.max(), fgtx.min(), fgtx.mean() 7.4737 0.271749 3.34155
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.38005 4.9875 4.57031 5.94548
+W_c max, min, mean, abs_mean: 0.138504 0.134117 0.137782 0.137782
+W_f max, min, mean, abs_mean: 0.124169 0.120395 0.123455 0.123455
+            tangshan 6236.4454      0.85  0.13  0.75      0.88  0.08  0.81      0.87  0.08  0.81
+forget mean min: 0.939925 0.795331
+delta_x = 5.14903 delta_h = 2.99877
+U_c = [[-0.08211143]] U_f = [[ 0.]] b_c = [ 0.1045412] b_f = [ 1.08561599]
+incx.max(), incx.min(), incx.mean() 6.34394 0.407824 3.05618
+fgtx.max(), fgtx.min(), fgtx.mean() 5.59051 0.271749 2.64467
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.11047 5.14903 3.46932 7.48816
+W_c max, min, mean, abs_mean: 0.138504 0.134117 0.137782 0.137782
+W_f max, min, mean, abs_mean: 0.124169 0.120395 0.123455 0.123455
+Epoch 3/300
+0s - loss: 1281.0301 - val_loss: 4261.8556
+Epoch 00002: val_loss improved from 6236.44539 to 4261.85561, saving model to tangshan_weights.hdf5
+            tangshan 1197.1057      0.82  0.25  0.64      0.86  0.22  0.69      0.89  0.20  0.73
+forget mean min: 0.938805 0.770382
+delta_x = 5.77702 delta_h = 2.71333
+U_c = [[-0.0741898]] U_f = [[ 0.]] b_c = [ 0.10477693] b_f = [ 1.03925014]
+incx.max(), incx.min(), incx.mean() 9.70907 0.319248 4.20334
+fgtx.max(), fgtx.min(), fgtx.mean() 7.66733 0.171219 3.27199
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.43554 5.77702 5.16557 7.19114
+W_c max, min, mean, abs_mean: 0.15314 0.148654 0.152364 0.152364
+W_f max, min, mean, abs_mean: 0.122436 0.118074 0.121637 0.121637
+            tangshan 4261.8556      0.95  0.15  0.81      0.97  0.12  0.86      0.97  0.11  0.87
+forget mean min: 0.949776 0.770382
+delta_x = 7.05869 delta_h = 3.72165
+U_c = [[-0.0741898]] U_f = [[ 0.]] b_c = [ 0.10477693] b_f = [ 1.03925014]
+incx.max(), incx.min(), incx.mean() 10.2339 0.319248 4.7818
+fgtx.max(), fgtx.min(), fgtx.mean() 8.08632 0.171219 3.7338
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.15067 7.05869 5.65742 10.7629
+W_c max, min, mean, abs_mean: 0.15314 0.148654 0.152364 0.152364
+W_f max, min, mean, abs_mean: 0.122436 0.118074 0.121637 0.121637
+Epoch 4/300
+0s - loss: 1164.9922 - val_loss: 4168.2845
+Epoch 00003: val_loss improved from 4261.85561 to 4168.28446, saving model to tangshan_weights.hdf5
+            tangshan 1136.2982      0.79  0.21  0.65      0.84  0.17  0.72      0.87  0.15  0.76
+forget mean min: 0.930382 0.745005
+delta_x = 5.75476 delta_h = 2.65633
+U_c = [[-0.07373622]] U_f = [[ 0.]] b_c = [ 0.10094662] b_f = [ 0.99339783]
+incx.max(), incx.min(), incx.mean() 11.0012 0.205626 4.1672
+fgtx.max(), fgtx.min(), fgtx.mean() 8.20021 0.0787472 3.05902
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.16961 5.75476 5.02951 7.35684
+W_c max, min, mean, abs_mean: 0.157787 0.153321 0.157027 0.157027
+W_f max, min, mean, abs_mean: 0.119012 0.114179 0.118131 0.118131
+            tangshan 4168.2844      0.96  0.16  0.81      0.98  0.13  0.86      0.98  0.13  0.86
+forget mean min: 0.953136 0.745005
+delta_x = 7.4488 delta_h = 3.91474
+U_c = [[-0.07373622]] U_f = [[ 0.]] b_c = [ 0.10094662] b_f = [ 0.99339783]
+incx.max(), incx.min(), incx.mean() 11.97 0.205626 5.31465
+fgtx.max(), fgtx.min(), fgtx.mean() 8.92904 0.0787472 3.92227
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.7405 7.4488 6.28144 10.6286
+W_c max, min, mean, abs_mean: 0.157787 0.153321 0.157027 0.157027
+W_f max, min, mean, abs_mean: 0.119012 0.114179 0.118131 0.118131
+Epoch 5/300
+0s - loss: 1124.7625 - val_loss: 4268.6733
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+0s - loss: 1101.5878 - val_loss: 4371.0509
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+0s - loss: 1084.5002 - val_loss: 4518.9491
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+0s - loss: 1067.2351 - val_loss: 4711.5574
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+0s - loss: 1055.4717 - val_loss: 4634.2014
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+0s - loss: 1043.7424 - val_loss: 4685.9350
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+0s - loss: 1033.9501 - val_loss: 4732.7718
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+0s - loss: 1024.9486 - val_loss: 4923.6794
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+0s - loss: 1015.2316 - val_loss: 4933.4986
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+0s - loss: 1005.7803 - val_loss: 5147.8916
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+0s - loss: 995.2586 - val_loss: 5032.8643
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+0s - loss: 982.1190 - val_loss: 5052.4749
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+0s - loss: 969.2956 - val_loss: 5039.1998
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+0s - loss: 957.7337 - val_loss: 4919.0485
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+0s - loss: 946.1961 - val_loss: 5011.7571
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 936.3395 - val_loss: 4734.1529
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+0s - loss: 924.4646 - val_loss: 4787.1247
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+0s - loss: 914.9221 - val_loss: 4896.2466
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 905.5730 - val_loss: 4745.6277
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+0s - loss: 891.8930 - val_loss: 4892.6003
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+0s - loss: 883.1323 - val_loss: 4959.5145
+Epoch 00024: val_loss did not improve
+X_train[0].shape = (3516, 40, 26)
+
+training baoding
+Train on 3516 samples, validate on 696 samples
+Before training:
+             baoding 8388.2037      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.731058 0.731059
+delta_x = 4.55012 delta_h = 3.01036
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -4.55012 4.55012 nan 4.55012
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+             baoding46155.4407      0.06  -nan  0.06      0.07  -nan  0.07      0.08  -nan  0.08
+forget mean min: 0.731058 0.731059
+delta_x = 9.24267 delta_h = 5.17297
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -9.24267 9.24267 nan 9.24267
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 6465.1908 - val_loss: 38206.2875
+Epoch 00000: val_loss improved from inf to 38206.28749, saving model to baoding_weights.hdf5
+             baoding 3763.8871      0.27  0.13  0.26      0.28  0.09  0.27      0.27  0.08  0.26
+forget mean min: 0.891922 0.768744
+delta_x = 3.87851 delta_h = 3.29022
+U_c = [[-0.1045116]] U_f = [[ 0.]] b_c = [ 0.06505685] b_f = [ 1.0633657]
+incx.max(), incx.min(), incx.mean() 4.15604 0.208254 1.53406
+fgtx.max(), fgtx.min(), fgtx.mean() 3.93821 0.137869 1.41417
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.10668 3.87851 1.36404 4.87059
+W_c max, min, mean, abs_mean: 0.0923453 0.0893558 0.0916125 0.0916125
+W_f max, min, mean, abs_mean: 0.0885559 0.0878375 0.0882015 0.0882015
+             baoding38206.2872      0.09  -nan  0.08      0.09  -nan  0.09      0.12  -nan  0.12
+forget mean min: 0.801121 0.768744
+delta_x = 11.4152 delta_h = 8.58478
+U_c = [[-0.1045116]] U_f = [[ 0.]] b_c = [ 0.06505685] b_f = [ 1.0633657]
+incx.max(), incx.min(), incx.mean() 1.74775 0.208254 0.427698
+fgtx.max(), fgtx.min(), fgtx.mean() 1.61987 0.137869 0.349123
+delta mean, abs_mean, abs_mean+, abs_mean-: -11.4152 11.4152 nan 11.4152
+W_c max, min, mean, abs_mean: 0.0923453 0.0893558 0.0916125 0.0916125
+W_f max, min, mean, abs_mean: 0.0885559 0.0878375 0.0882015 0.0882015
+Epoch 2/300
+0s - loss: 2598.0085 - val_loss: 31628.0768
+Epoch 00001: val_loss improved from 38206.28749 to 31628.07680, saving model to baoding_weights.hdf5
+             baoding 1885.5576      0.79  0.29  0.60      0.82  0.28  0.62      0.81  0.28  0.61
+forget mean min: 0.93661 0.792829
+delta_x = 5.24071 delta_h = 2.69089
+U_c = [[-0.0669566]] U_f = [[ 0.]] b_c = [ 0.10343156] b_f = [ 1.08459723]
+incx.max(), incx.min(), incx.mean() 9.24186 0.40075 3.59803
+fgtx.max(), fgtx.min(), fgtx.mean() 7.91302 0.257468 3.02602
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.436811 5.24071 4.5724 6.33505
+W_c max, min, mean, abs_mean: 0.137381 0.134433 0.136615 0.136615
+W_f max, min, mean, abs_mean: 0.11892 0.117803 0.118303 0.118303
+             baoding31628.0771      0.31  0.08  0.30      0.31  0.02  0.31      0.31  0.01  0.30
+forget mean min: 0.878147 0.792829
+delta_x = 7.17576 delta_h = 4.71263
+U_c = [[-0.0669566]] U_f = [[ 0.]] b_c = [ 0.10343156] b_f = [ 1.08459723]
+incx.max(), incx.min(), incx.mean() 3.78956 0.40075 1.36729
+fgtx.max(), fgtx.min(), fgtx.mean() 3.19193 0.257468 1.09442
+delta mean, abs_mean, abs_mean+, abs_mean-: -7.00818 7.17576 0.757121 7.97449
+W_c max, min, mean, abs_mean: 0.137381 0.134433 0.136615 0.136615
+W_f max, min, mean, abs_mean: 0.11892 0.117803 0.118303 0.118303
+Epoch 3/300
+0s - loss: 1733.1760 - val_loss: 25083.7819
+Epoch 00002: val_loss improved from 31628.07680 to 25083.78193, saving model to baoding_weights.hdf5
+             baoding 1622.8638      0.85  0.27  0.64      0.89  0.25  0.68      0.89  0.25  0.68
+forget mean min: 0.92898 0.773495
+delta_x = 5.64714 delta_h = 2.27198
+U_c = [[-0.049719]] U_f = [[ 0.]] b_c = [ 0.11593184] b_f = [ 1.04741585]
+incx.max(), incx.min(), incx.mean() 10.3123 0.378273 4.07039
+fgtx.max(), fgtx.min(), fgtx.mean() 7.02426 0.180737 2.72423
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.60015 5.64714 4.94908 6.84167
+W_c max, min, mean, abs_mean: 0.158783 0.155813 0.157931 0.157931
+W_f max, min, mean, abs_mean: 0.109669 0.108089 0.108804 0.108804
+             baoding25083.7817      0.57  0.06  0.55      0.57  0.02  0.56      0.56  0.01  0.56
+forget mean min: 0.90526 0.773495
+delta_x = 6.61647 delta_h = 3.11217
+U_c = [[-0.049719]] U_f = [[ 0.]] b_c = [ 0.11593184] b_f = [ 1.04741585]
+incx.max(), incx.min(), incx.mean() 6.41796 0.378273 2.62562
+fgtx.max(), fgtx.min(), fgtx.mean() 4.34162 0.180737 1.72899
+delta mean, abs_mean, abs_mean+, abs_mean-: -4.58045 6.61647 2.91309 8.60588
+W_c max, min, mean, abs_mean: 0.158783 0.155813 0.157931 0.157931
+W_f max, min, mean, abs_mean: 0.109669 0.108089 0.108804 0.108804
+Epoch 4/300
+0s - loss: 1551.9033 - val_loss: 24283.1420
+Epoch 00003: val_loss improved from 25083.78193 to 24283.14204, saving model to baoding_weights.hdf5
+             baoding 1478.7059      0.84  0.25  0.66      0.88  0.22  0.70      0.88  0.22  0.70
+forget mean min: 0.92054 0.753752
+delta_x = 5.48321 delta_h = 1.82217
+U_c = [[-0.04033227]] U_f = [[ 0.]] b_c = [ 0.11963923] b_f = [ 1.0087738]
+incx.max(), incx.min(), incx.mean() 10.8549 0.309638 4.17354
+fgtx.max(), fgtx.min(), fgtx.mean() 6.2119 0.109948 2.34579
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.264793 5.48321 4.78366 6.53604
+W_c max, min, mean, abs_mean: 0.169297 0.166338 0.168462 0.168462
+W_f max, min, mean, abs_mean: 0.098263 0.0967564 0.0974847 0.0974847
+             baoding24283.1418      0.63  0.05  0.61      0.62  0.02  0.61      0.61  0.01  0.61
+forget mean min: 0.903523 0.753752
+delta_x = 6.51345 delta_h = 2.59334
+U_c = [[-0.04033227]] U_f = [[ 0.]] b_c = [ 0.11963923] b_f = [ 1.0087738]
+incx.max(), incx.min(), incx.mean() 7.39911 0.309638 3.08648
+fgtx.max(), fgtx.min(), fgtx.mean() 4.21243 0.109948 1.71683
+delta mean, abs_mean, abs_mean+, abs_mean-: -4.20667 6.51345 3.22945 8.33793
+W_c max, min, mean, abs_mean: 0.169297 0.166338 0.168462 0.168462
+W_f max, min, mean, abs_mean: 0.098263 0.0967564 0.0974847 0.0974847
+Epoch 5/300
+0s - loss: 1438.0679 - val_loss: 22951.6235
+Epoch 00004: val_loss improved from 24283.14204 to 22951.62348, saving model to baoding_weights.hdf5
+             baoding 1407.7822      0.88  0.25  0.68      0.91  0.23  0.71      0.91  0.23  0.71
+forget mean min: 0.922365 0.740138
+delta_x = 5.92298 delta_h = 1.5807
+U_c = [[-0.03243084]] U_f = [[ 0.]] b_c = [ 0.12695263] b_f = [ 0.97519827]
+incx.max(), incx.min(), incx.mean() 12.2265 0.255466 4.60172
+fgtx.max(), fgtx.min(), fgtx.mean() 6.73037 0.0714887 2.48911
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.529968 5.92298 5.23224 7.03411
+W_c max, min, mean, abs_mean: 0.180228 0.177278 0.179401 0.179401
+W_f max, min, mean, abs_mean: 0.100506 0.0990525 0.0997963 0.0997963
+             baoding22951.6239      0.68  0.06  0.65      0.67  0.02  0.66      0.66  0.01  0.66
+forget mean min: 0.906309 0.740138
+delta_x = 6.66288 delta_h = 2.14029
+U_c = [[-0.03243084]] U_f = [[ 0.]] b_c = [ 0.12695263] b_f = [ 0.97519827]
+incx.max(), incx.min(), incx.mean() 8.70533 0.255466 3.47612
+fgtx.max(), fgtx.min(), fgtx.mean() 4.77194 0.0714887 1.86305
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.68874 6.66288 3.80095 8.50216
+W_c max, min, mean, abs_mean: 0.180228 0.177278 0.179401 0.179401
+W_f max, min, mean, abs_mean: 0.100506 0.0990525 0.0997963 0.0997963
+Epoch 6/300
+0s - loss: 1365.9430 - val_loss: 22265.3188
+Epoch 00005: val_loss improved from 22951.62348 to 22265.31881, saving model to baoding_weights.hdf5
+             baoding 1325.3577      0.87  0.23  0.69      0.90  0.21  0.72      0.90  0.21  0.73
+forget mean min: 0.918792 0.725013
+delta_x = 5.93876 delta_h = 1.41529
+U_c = [[-0.02977394]] U_f = [[ 0.]] b_c = [ 0.12884767] b_f = [ 0.94241512]
+incx.max(), incx.min(), incx.mean() 12.5149 0.177442 4.56873
+fgtx.max(), fgtx.min(), fgtx.mean() 6.89544 0.0270533 2.47173
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.328008 5.93876 5.2215 7.01506
+W_c max, min, mean, abs_mean: 0.184552 0.181607 0.183736 0.183736
+W_f max, min, mean, abs_mean: 0.102961 0.101528 0.102292 0.102292
+             baoding22265.3190      0.70  0.06  0.67      0.69  0.02  0.67      0.68  0.02  0.67
+forget mean min: 0.906349 0.725013
+delta_x = 6.69814 delta_h = 2.00464
+U_c = [[-0.02977394]] U_f = [[ 0.]] b_c = [ 0.12884767] b_f = [ 0.94241512]
+incx.max(), incx.min(), incx.mean() 9.29381 0.177442 3.61777
+fgtx.max(), fgtx.min(), fgtx.mean() 5.1024 0.0270533 1.94238
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.48392 6.69814 3.97918 8.54027
+W_c max, min, mean, abs_mean: 0.184552 0.181607 0.183736 0.183736
+W_f max, min, mean, abs_mean: 0.102961 0.101528 0.102292 0.102292
+Epoch 7/300
+0s - loss: 1318.0374 - val_loss: 21810.3553
+Epoch 00006: val_loss improved from 22265.31881 to 21810.35528, saving model to baoding_weights.hdf5
+             baoding 1286.5812      0.86  0.23  0.69      0.89  0.21  0.72      0.90  0.21  0.73
+forget mean min: 0.919005 0.714028
+delta_x = 6.14136 delta_h = 1.43702
+U_c = [[-0.03047091]] U_f = [[ 0.]] b_c = [ 0.13137294] b_f = [ 0.91503018]
+incx.max(), incx.min(), incx.mean() 13.117 0.131373 4.64228
+fgtx.max(), fgtx.min(), fgtx.mean() 7.43712 0.0 2.58353
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.327794 6.14136 5.42581 7.19761
+W_c max, min, mean, abs_mean: 0.188141 0.185192 0.187333 0.187333
+W_f max, min, mean, abs_mean: 0.107967 0.106501 0.107295 0.107295
+             baoding21810.3553      0.71  0.06  0.68      0.70  0.03  0.68      0.69  0.02  0.68
+forget mean min: 0.906654 0.714028
+delta_x = 6.80135 delta_h = 2.05386
+U_c = [[-0.03047091]] U_f = [[ 0.]] b_c = [ 0.13137294] b_f = [ 0.91503018]
+incx.max(), incx.min(), incx.mean() 9.81784 0.131373 3.68047
+fgtx.max(), fgtx.min(), fgtx.mean() 5.5479 0.0 2.03274
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.36348 6.80135 4.18533 8.62455
+W_c max, min, mean, abs_mean: 0.188141 0.185192 0.187333 0.187333
+W_f max, min, mean, abs_mean: 0.107967 0.106501 0.107295 0.107295
+Epoch 8/300
+0s - loss: 1290.3979 - val_loss: 21778.9203
+Epoch 00007: val_loss improved from 21810.35528 to 21778.92029, saving model to baoding_weights.hdf5
+             baoding 1263.7261      0.85  0.22  0.69      0.88  0.20  0.72      0.88  0.20  0.72
+forget mean min: 0.918164 0.707799
+delta_x = 6.15319 delta_h = 1.37115
+U_c = [[-0.02941041]] U_f = [[ 0.]] b_c = [ 0.1300458] b_f = [ 0.8847177]
+incx.max(), incx.min(), incx.mean() 13.6411 0.130046 4.57917
+fgtx.max(), fgtx.min(), fgtx.mean() 8.05322 0.0 2.65192
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.240758 6.15319 5.43003 7.18852
+W_c max, min, mean, abs_mean: 0.188782 0.185822 0.187981 0.187981
+W_f max, min, mean, abs_mean: 0.112734 0.111233 0.112051 0.112051
+             baoding21778.9200      0.71  0.06  0.68      0.70  0.03  0.68      0.69  0.02  0.68
+forget mean min: 0.906763 0.707799
+delta_x = 6.73926 delta_h = 2.00509
+U_c = [[-0.02941041]] U_f = [[ 0.]] b_c = [ 0.1300458] b_f = [ 0.8847177]
+incx.max(), incx.min(), incx.mean() 9.86984 0.130046 3.63472
+fgtx.max(), fgtx.min(), fgtx.mean() 5.80563 0.0 2.08905
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.34212 6.73926 4.13755 8.55114
+W_c max, min, mean, abs_mean: 0.188782 0.185822 0.187981 0.187981
+W_f max, min, mean, abs_mean: 0.112734 0.111233 0.112051 0.112051
+Epoch 9/300
+0s - loss: 1269.6526 - val_loss: 21111.9687
+Epoch 00008: val_loss improved from 21778.92029 to 21111.96866, saving model to baoding_weights.hdf5
+             baoding 1253.0229      0.84  0.22  0.68      0.87  0.20  0.72      0.87  0.19  0.72
+forget mean min: 0.917908 0.702026
+delta_x = 6.21156 delta_h = 1.40098
+U_c = [[-0.03057314]] U_f = [[ 0.]] b_c = [ 0.12937637] b_f = [ 0.85696608]
+incx.max(), incx.min(), incx.mean() 13.9312 0.129376 4.54824
+fgtx.max(), fgtx.min(), fgtx.mean() 8.5165 0.0 2.72672
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.193591 6.21156 5.48011 7.2401
+W_c max, min, mean, abs_mean: 0.18974 0.186762 0.188936 0.188936
+W_f max, min, mean, abs_mean: 0.117297 0.115746 0.11659 0.11659
+             baoding21111.9686      0.72  0.06  0.68      0.71  0.03  0.69      0.71  0.02  0.69
+forget mean min: 0.908846 0.702026
+delta_x = 6.77844 delta_h = 2.09683
+U_c = [[-0.03057314]] U_f = [[ 0.]] b_c = [ 0.12937637] b_f = [ 0.85696608]
+incx.max(), incx.min(), incx.mean() 10.2284 0.129376 3.69995
+fgtx.max(), fgtx.min(), fgtx.mean() 6.23197 0.0 2.20335
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.18083 6.77844 4.22213 8.67595
+W_c max, min, mean, abs_mean: 0.18974 0.186762 0.188936 0.188936
+W_f max, min, mean, abs_mean: 0.117297 0.115746 0.11659 0.11659
+Epoch 10/300
+0s - loss: 1256.0473 - val_loss: 20644.6022
+Epoch 00009: val_loss improved from 21111.96866 to 20644.60220, saving model to baoding_weights.hdf5
+             baoding 1234.0072      0.84  0.22  0.69      0.87  0.20  0.72      0.87  0.19  0.72
+forget mean min: 0.917481 0.696222
+delta_x = 6.36971 delta_h = 1.41617
+U_c = [[-0.03069596]] U_f = [[ 0.]] b_c = [ 0.1293847] b_f = [ 0.82937008]
+incx.max(), incx.min(), incx.mean() 14.4299 0.129385 4.58262
+fgtx.max(), fgtx.min(), fgtx.mean() 9.10423 0.0 2.83514
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.21166 6.36971 5.63794 7.39559
+W_c max, min, mean, abs_mean: 0.191698 0.188704 0.190889 0.190889
+W_f max, min, mean, abs_mean: 0.122274 0.12066 0.121533 0.121533
+             baoding20644.6022      0.72  0.07  0.69      0.71  0.03  0.70      0.71  0.03  0.69
+forget mean min: 0.911912 0.696222
+delta_x = 6.81501 delta_h = 2.11247
+U_c = [[-0.03069596]] U_f = [[ 0.]] b_c = [ 0.1293847] b_f = [ 0.82937008]
+incx.max(), incx.min(), incx.mean() 10.5638 0.129385 3.7592
+fgtx.max(), fgtx.min(), fgtx.mean() 6.64323 0.0 2.31099
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.05373 6.81501 4.32025 8.73818
+W_c max, min, mean, abs_mean: 0.191698 0.188704 0.190889 0.190889
+W_f max, min, mean, abs_mean: 0.122274 0.12066 0.121533 0.121533
+Epoch 11/300
+0s - loss: 1234.3057 - val_loss: 19765.0927
+Epoch 00010: val_loss improved from 20644.60220 to 19765.09271, saving model to baoding_weights.hdf5
+             baoding 1214.7152      0.87  0.23  0.69      0.90  0.21  0.72      0.90  0.21  0.73
+forget mean min: 0.919331 0.690273
+delta_x = 6.68631 delta_h = 1.36398
+U_c = [[-0.0282458]] U_f = [[ 0.]] b_c = [ 0.13111579] b_f = [ 0.80139536]
+incx.max(), incx.min(), incx.mean() 15.3712 0.131116 4.78443
+fgtx.max(), fgtx.min(), fgtx.mean() 9.91037 0.0 3.02601
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.397187 6.68631 5.92277 7.82205
+W_c max, min, mean, abs_mean: 0.195892 0.192882 0.19508 0.19508
+W_f max, min, mean, abs_mean: 0.127628 0.125969 0.126864 0.126864
+             baoding19765.0926      0.74  0.07  0.70      0.73  0.04  0.71      0.73  0.03  0.72
+forget mean min: 0.917448 0.690273
+delta_x = 6.79914 delta_h = 1.94395
+U_c = [[-0.0282458]] U_f = [[ 0.]] b_c = [ 0.13111579] b_f = [ 0.80139536]
+incx.max(), incx.min(), incx.mean() 10.9039 0.131116 3.89675
+fgtx.max(), fgtx.min(), fgtx.mean() 7.00568 0.0 2.44884
+delta mean, abs_mean, abs_mean+, abs_mean-: -2.80707 6.79914 4.45842 8.69657
+W_c max, min, mean, abs_mean: 0.195892 0.192882 0.19508 0.19508
+W_f max, min, mean, abs_mean: 0.127628 0.125969 0.126864 0.126864
+Epoch 12/300
+0s - loss: 1213.3333 - val_loss: 19330.0810
+Epoch 00011: val_loss improved from 19765.09271 to 19330.08100, saving model to baoding_weights.hdf5
+             baoding 1189.1676      0.86  0.22  0.69      0.89  0.20  0.72      0.89  0.21  0.72
+forget mean min: 0.917882 0.683305
+delta_x = 6.82801 delta_h = 1.34437
+U_c = [[-0.02815207]] U_f = [[ 0.]] b_c = [ 0.13134938] b_f = [ 0.76900363]
+incx.max(), incx.min(), incx.mean() 15.9272 0.131349 4.82725
+fgtx.max(), fgtx.min(), fgtx.mean() 10.3775 0.0 3.08514
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.345793 6.82801 6.04689 7.96696
+W_c max, min, mean, abs_mean: 0.199574 0.196525 0.19873 0.19873
+W_f max, min, mean, abs_mean: 0.131374 0.129644 0.130567 0.130567
+             baoding19330.0809      0.75  0.07  0.71      0.74  0.04  0.72      0.74  0.03  0.72
+forget mean min: 0.921677 0.68367
+delta_x = 6.82343 delta_h = 1.9276
+U_c = [[-0.02815207]] U_f = [[ 0.]] b_c = [ 0.13134938] b_f = [ 0.76900363]
+incx.max(), incx.min(), incx.mean() 11.2778 0.133913 4.00467
+fgtx.max(), fgtx.min(), fgtx.mean() 7.32321 0.00168651 2.5448
+delta mean, abs_mean, abs_mean+, abs_mean-: -2.69819 6.82343 4.56103 8.69121
+W_c max, min, mean, abs_mean: 0.199574 0.196525 0.19873 0.19873
+W_f max, min, mean, abs_mean: 0.131374 0.129644 0.130567 0.130567
+Epoch 13/300
+0s - loss: 1196.4862 - val_loss: 18252.2920
+Epoch 00012: val_loss improved from 19330.08100 to 18252.29203, saving model to baoding_weights.hdf5
+             baoding 1162.9212      0.86  0.22  0.69      0.89  0.20  0.72      0.89  0.20  0.72
+forget mean min: 0.91783 0.676303
+delta_x = 6.92605 delta_h = 1.26101
+U_c = [[-0.02663556]] U_f = [[ 0.]] b_c = [ 0.1309686] b_f = [ 0.73683357]
+incx.max(), incx.min(), incx.mean() 16.3454 0.130969 4.86921
+fgtx.max(), fgtx.min(), fgtx.mean() 10.7998 0.0 3.15598
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.315911 6.92605 6.09083 8.15053
+W_c max, min, mean, abs_mean: 0.203163 0.200071 0.202273 0.202273
+W_f max, min, mean, abs_mean: 0.135612 0.133763 0.134732 0.134732
+             baoding18252.2920      0.77  0.09  0.72      0.77  0.05  0.74      0.76  0.04  0.74
+forget mean min: 0.929875 0.697083
+delta_x = 6.73785 delta_h = 1.82931
+U_c = [[-0.02663556]] U_f = [[ 0.]] b_c = [ 0.1309686] b_f = [ 0.73683357]
+incx.max(), incx.min(), incx.mean() 11.6389 0.276003 4.2011
+fgtx.max(), fgtx.min(), fgtx.mean() 7.66521 0.0966123 2.71106
+delta mean, abs_mean, abs_mean+, abs_mean-: -2.35756 6.73785 4.67446 8.55692
+W_c max, min, mean, abs_mean: 0.203163 0.200071 0.202273 0.202273
+W_f max, min, mean, abs_mean: 0.135612 0.133763 0.134732 0.134732
+Epoch 14/300
+0s - loss: 1173.8206 - val_loss: 17192.9886
+Epoch 00013: val_loss improved from 18252.29203 to 17192.98863, saving model to baoding_weights.hdf5
+             baoding 1136.8971      0.86  0.22  0.70      0.89  0.20  0.73      0.89  0.20  0.73
+forget mean min: 0.917741 0.66939
+delta_x = 7.10827 delta_h = 1.21988
+U_c = [[-0.02572731]] U_f = [[ 0.]] b_c = [ 0.13095288] b_f = [ 0.70542884]
+incx.max(), incx.min(), incx.mean() 16.9317 0.130953 4.96654
+fgtx.max(), fgtx.min(), fgtx.mean() 11.3212 0.0 3.2585
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.333762 7.10827 6.25304 8.36508
+W_c max, min, mean, abs_mean: 0.207481 0.20435 0.206544 0.206544
+W_f max, min, mean, abs_mean: 0.140116 0.138187 0.139186 0.139186
+             baoding17192.9887      0.79  0.10  0.73      0.79  0.06  0.75      0.78  0.04  0.76
+forget mean min: 0.937089 0.711424
+delta_x = 6.67211 delta_h = 1.76717
+U_c = [[-0.02572731]] U_f = [[ 0.]] b_c = [ 0.13095288] b_f = [ 0.70542884]
+incx.max(), incx.min(), incx.mean() 12.0121 0.423102 4.39979
+fgtx.max(), fgtx.min(), fgtx.mean() 8.00642 0.196883 2.87667
+delta mean, abs_mean, abs_mean+, abs_mean-: -2.01426 6.67211 4.7914 8.45082
+W_c max, min, mean, abs_mean: 0.207481 0.20435 0.206544 0.206544
+W_f max, min, mean, abs_mean: 0.140116 0.138187 0.139186 0.139186
+Epoch 15/300
+0s - loss: 1146.1153 - val_loss: 16152.9654
+Epoch 00014: val_loss improved from 17192.98863 to 16152.96538, saving model to baoding_weights.hdf5
+             baoding 1115.8254      0.87  0.22  0.70      0.90  0.20  0.73      0.90  0.21  0.73
+forget mean min: 0.917398 0.662575
+delta_x = 7.37471 delta_h = 1.22636
+U_c = [[-0.02571554]] U_f = [[ 0.]] b_c = [ 0.13130602] b_f = [ 0.67479134]
+incx.max(), incx.min(), incx.mean() 17.6654 0.131306 5.12426
+fgtx.max(), fgtx.min(), fgtx.mean() 11.8838 0.0 3.38404
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.39051 7.37471 6.51293 8.64679
+W_c max, min, mean, abs_mean: 0.212783 0.209616 0.211797 0.211797
+W_f max, min, mean, abs_mean: 0.144542 0.142522 0.143552 0.143552
+             baoding16152.9652      0.81  0.10  0.75      0.80  0.07  0.76      0.80  0.04  0.77
+forget mean min: 0.942729 0.71619
+delta_x = 6.66873 delta_h = 1.76116
+U_c = [[-0.02571554]] U_f = [[ 0.]] b_c = [ 0.13130602] b_f = [ 0.67479134]
+incx.max(), incx.min(), incx.mean() 12.3661 0.501391 4.61711
+fgtx.max(), fgtx.min(), fgtx.mean() 8.29234 0.250848 3.04039
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.66424 6.66873 4.87832 8.5542
+W_c max, min, mean, abs_mean: 0.212783 0.209616 0.211797 0.211797
+W_f max, min, mean, abs_mean: 0.144542 0.142522 0.143552 0.143552
+Epoch 16/300
+0s - loss: 1126.2729 - val_loss: 15903.8199
+Epoch 00015: val_loss improved from 16152.96538 to 15903.81993, saving model to baoding_weights.hdf5
+             baoding 1088.8472      0.86  0.21  0.70      0.88  0.19  0.73      0.88  0.19  0.73
+forget mean min: 0.914743 0.655676
+delta_x = 7.46886 delta_h = 1.21869
+U_c = [[-0.02631933]] U_f = [[ 0.]] b_c = [ 0.13024627] b_f = [ 0.64408493]
+incx.max(), incx.min(), incx.mean() 17.7971 0.130246 5.1248
+fgtx.max(), fgtx.min(), fgtx.mean() 12.0539 0.0 3.40777
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.273375 7.46886 6.57425 8.75
+W_c max, min, mean, abs_mean: 0.21623 0.213033 0.215197 0.215197
+W_f max, min, mean, abs_mean: 0.147913 0.145765 0.146833 0.146833
+             baoding15903.8199      0.82  0.10  0.75      0.81  0.07  0.76      0.81  0.04  0.78
+forget mean min: 0.943595 0.716548
+delta_x = 6.7544 delta_h = 1.78289
+U_c = [[-0.02631933]] U_f = [[ 0.]] b_c = [ 0.13024627] b_f = [ 0.64408493]
+incx.max(), incx.min(), incx.mean() 12.8822 0.54546 4.70209
+fgtx.max(), fgtx.min(), fgtx.mean() 8.7008 0.283319 3.11944
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.59367 6.7544 4.95498 8.70972
+W_c max, min, mean, abs_mean: 0.21623 0.213033 0.215197 0.215197
+W_f max, min, mean, abs_mean: 0.147913 0.145765 0.146833 0.146833
+Epoch 17/300
+0s - loss: 1109.3773 - val_loss: 15223.1767
+Epoch 00016: val_loss improved from 15903.81993 to 15223.17672, saving model to baoding_weights.hdf5
+             baoding 1072.0490      0.86  0.21  0.70      0.89  0.19  0.73      0.88  0.19  0.73
+forget mean min: 0.913533 0.648692
+delta_x = 7.67815 delta_h = 1.30131
+U_c = [[-0.02831701]] U_f = [[ 0.]] b_c = [ 0.12966865] b_f = [ 0.61329567]
+incx.max(), incx.min(), incx.mean() 18.5418 0.129669 5.22974
+fgtx.max(), fgtx.min(), fgtx.mean() 12.7075 0.0 3.51997
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.291825 7.67815 6.76788 8.9816
+W_c max, min, mean, abs_mean: 0.220225 0.217001 0.219151 0.219151
+W_f max, min, mean, abs_mean: 0.152408 0.150161 0.151258 0.151258
+             baoding15223.1763      0.83  0.11  0.76      0.82  0.07  0.78      0.82  0.05  0.79
+forget mean min: 0.946522 0.721072
+delta_x = 6.77071 delta_h = 1.88006
+U_c = [[-0.02831701]] U_f = [[ 0.]] b_c = [ 0.12966865] b_f = [ 0.61329567]
+incx.max(), incx.min(), incx.mean() 13.1869 0.617176 4.83543
+fgtx.max(), fgtx.min(), fgtx.mean() 9.01193 0.33649 3.24791
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.34919 6.77071 5.07652 8.71196
+W_c max, min, mean, abs_mean: 0.220225 0.217001 0.219151 0.219151
+W_f max, min, mean, abs_mean: 0.152408 0.150161 0.151258 0.151258
+Epoch 18/300
+0s - loss: 1091.5006 - val_loss: 14418.0234
+Epoch 00017: val_loss improved from 15223.17672 to 14418.02342, saving model to baoding_weights.hdf5
+             baoding 1047.5421      0.86  0.21  0.70      0.90  0.19  0.74      0.89  0.19  0.74
+forget mean min: 0.91336 0.641784
+delta_x = 7.88092 delta_h = 1.22873
+U_c = [[-0.02635727]] U_f = [[ 0.]] b_c = [ 0.12859213] b_f = [ 0.58311707]
+incx.max(), incx.min(), incx.mean() 18.8383 0.128592 5.31655
+fgtx.max(), fgtx.min(), fgtx.mean() 13.1938 0.0 3.6585
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.322471 7.88092 6.92371 9.2722
+W_c max, min, mean, abs_mean: 0.224177 0.220928 0.22306 0.22306
+W_f max, min, mean, abs_mean: 0.15854 0.156171 0.157304 0.157304
+             baoding14418.0234      0.84  0.11  0.77      0.83  0.07  0.78      0.83  0.05  0.80
+forget mean min: 0.94955 0.718098
+delta_x = 6.92367 delta_h = 1.81374
+U_c = [[-0.02635727]] U_f = [[ 0.]] b_c = [ 0.12859213] b_f = [ 0.58311707]
+incx.max(), incx.min(), incx.mean() 13.6876 0.627616 5.01481
+fgtx.max(), fgtx.min(), fgtx.mean() 9.56173 0.351928 3.44579
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.02128 6.92367 5.24623 9.08068
+W_c max, min, mean, abs_mean: 0.224177 0.220928 0.22306 0.22306
+W_f max, min, mean, abs_mean: 0.15854 0.156171 0.157304 0.157304
+Epoch 19/300
+0s - loss: 1075.1488 - val_loss: 14129.1306
+Epoch 00018: val_loss improved from 14418.02342 to 14129.13057, saving model to baoding_weights.hdf5
+             baoding 1028.9596      0.86  0.20  0.71      0.90  0.19  0.74      0.89  0.18  0.74
+forget mean min: 0.912229 0.634596
+delta_x = 8.02486 delta_h = 1.21792
+U_c = [[-0.0262198]] U_f = [[ 0.]] b_c = [ 0.12707663] b_f = [ 0.55198306]
+incx.max(), incx.min(), incx.mean() 19.2957 0.127077 5.36831
+fgtx.max(), fgtx.min(), fgtx.mean() 13.7561 0.0 3.76135
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.304029 8.02486 7.07497 9.38398
+W_c max, min, mean, abs_mean: 0.227662 0.224392 0.22651 0.22651
+W_f max, min, mean, abs_mean: 0.163883 0.161392 0.162559 0.162559
+             baoding14129.1305      0.85  0.11  0.77      0.84  0.07  0.79      0.84  0.05  0.80
+forget mean min: 0.950871 0.717721
+delta_x = 7.07834 delta_h = 1.8242
+U_c = [[-0.0262198]] U_f = [[ 0.]] b_c = [ 0.12707663] b_f = [ 0.55198306]
+incx.max(), incx.min(), incx.mean() 13.9217 0.658232 5.12153
+fgtx.max(), fgtx.min(), fgtx.mean() 9.89969 0.381204 3.58433
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.866242 7.07834 5.39374 9.36557
+W_c max, min, mean, abs_mean: 0.227662 0.224392 0.22651 0.22651
+W_f max, min, mean, abs_mean: 0.163883 0.161392 0.162559 0.162559
+Epoch 20/300
+0s - loss: 1063.9724 - val_loss: 14159.6101
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+0s - loss: 1045.7872 - val_loss: 13840.1466
+Epoch 00020: val_loss improved from 14129.13057 to 13840.14656, saving model to baoding_weights.hdf5
+             baoding 1007.5061      0.87  0.21  0.71      0.90  0.19  0.75      0.91  0.19  0.75
+forget mean min: 0.911314 0.621849
+delta_x = 8.3213 delta_h = 1.19014
+U_c = [[-0.02496707]] U_f = [[ 0.]] b_c = [ 0.12409922] b_f = [ 0.49740514]
+incx.max(), incx.min(), incx.mean() 20.0062 0.124099 5.52472
+fgtx.max(), fgtx.min(), fgtx.mean() 14.702 0.0 3.99355
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.375883 8.3213 7.32324 9.78034
+W_c max, min, mean, abs_mean: 0.233078 0.229775 0.231868 0.231868
+W_f max, min, mean, abs_mean: 0.17295 0.170222 0.171463 0.171463
+             baoding13840.1466      0.86  0.11  0.78      0.85  0.07  0.80      0.84  0.05  0.81
+forget mean min: 0.951576 0.690893
+delta_x = 7.31524 delta_h = 1.74522
+U_c = [[-0.02496707]] U_f = [[ 0.]] b_c = [ 0.12409922] b_f = [ 0.49740514]
+incx.max(), incx.min(), incx.mean() 14.306 0.539097 5.22042
+fgtx.max(), fgtx.min(), fgtx.mean() 10.4871 0.306893 3.76862
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.780147 7.31524 5.56586 9.80234
+W_c max, min, mean, abs_mean: 0.233078 0.229775 0.231868 0.231868
+W_f max, min, mean, abs_mean: 0.17295 0.170222 0.171463 0.171463
+Epoch 22/300
+0s - loss: 1036.6598 - val_loss: 14002.4651
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 1020.0307 - val_loss: 14038.2481
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+0s - loss: 1012.9008 - val_loss: 13861.3291
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+0s - loss: 1004.8980 - val_loss: 13979.3307
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+0s - loss: 993.3500 - val_loss: 14209.6611
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+0s - loss: 984.7042 - val_loss: 14102.0646
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+0s - loss: 967.5033 - val_loss: 14106.7790
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+0s - loss: 962.2399 - val_loss: 14659.3321
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+0s - loss: 949.4853 - val_loss: 15059.5073
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+0s - loss: 938.8314 - val_loss: 15082.7137
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+0s - loss: 927.7563 - val_loss: 15068.9789
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+0s - loss: 924.0272 - val_loss: 15015.0071
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+0s - loss: 909.1698 - val_loss: 15513.8252
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+0s - loss: 903.6411 - val_loss: 15680.8974
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+0s - loss: 898.1042 - val_loss: 15985.3610
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+0s - loss: 889.2335 - val_loss: 16274.8252
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+0s - loss: 886.9998 - val_loss: 15947.5000
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+0s - loss: 875.5245 - val_loss: 16023.2881
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+0s - loss: 867.5401 - val_loss: 16554.1930
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+0s - loss: 868.3444 - val_loss: 16718.5009
+Epoch 00040: val_loss did not improve
+Epoch 42/300
+0s - loss: 865.1014 - val_loss: 16581.4934
+Epoch 00041: val_loss did not improve
+X_train[0].shape = (4102, 40, 26)
+
+training shijiazhuang
+Train on 4102 samples, validate on 812 samples
+Before training:
+        shijiazhuang 5252.4778      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+delta_x = 3.20065 delta_h = 2.07456
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.20065 3.20065 nan 3.20065
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+        shijiazhuang38271.2621      0.07  -nan  0.06      0.08  -nan  0.08      0.10  -nan  0.10
+forget mean min: 0.731058 0.731059
+delta_x = 8.43602 delta_h = 4.9104
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -8.43602 8.43602 nan 8.43602
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 4011.4776 - val_loss: 21480.6881
+Epoch 00000: val_loss improved from inf to 21480.68810, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang 2243.9808      0.10  -nan  0.09      0.11  -nan  0.10      0.11  -nan  0.10
+forget mean min: 0.915532 0.776925
+delta_x = 2.86515 delta_h = 1.89178
+U_c = [[-0.10888626]] U_f = [[ 0.]] b_c = [ 0.07398426] b_f = [ 1.07341373]
+incx.max(), incx.min(), incx.mean() 4.79951 0.252481 1.8732
+fgtx.max(), fgtx.min(), fgtx.mean() 4.61734 0.174423 1.75803
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.22402 2.86515 1.98796 3.48174
+W_c max, min, mean, abs_mean: 0.101916 0.0993338 0.101194 0.101194
+W_f max, min, mean, abs_mean: 0.0991582 0.098227 0.0988819 0.0988819
+        shijiazhuang21480.6880      0.48  0.07  0.46      0.49  0.05  0.47      0.50  0.02  0.49
+forget mean min: 0.887284 0.776925
+delta_x = 6.83287 delta_h = 6.01699
+U_c = [[-0.10888626]] U_f = [[ 0.]] b_c = [ 0.07398426] b_f = [ 1.07341373]
+incx.max(), incx.min(), incx.mean() 2.79182 0.252481 1.26145
+fgtx.max(), fgtx.min(), fgtx.mean() 2.65565 0.174423 1.16029
+delta mean, abs_mean, abs_mean+, abs_mean-: -6.83106 6.83287 0.152211 6.8728
+W_c max, min, mean, abs_mean: 0.101916 0.0993338 0.101194 0.101194
+W_f max, min, mean, abs_mean: 0.0991582 0.098227 0.0988819 0.0988819
+Epoch 2/300
+0s - loss: 1634.9392 - val_loss: 10118.7910
+Epoch 00001: val_loss improved from 21480.68810 to 10118.79097, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang 1349.6850      0.71  0.33  0.53      0.74  0.32  0.55      0.73  0.30  0.56
+forget mean min: 0.938182 0.786085
+delta_x = 4.41467 delta_h = 1.59917
+U_c = [[-0.05615112]] U_f = [[ 0.]] b_c = [ 0.0972736] b_f = [ 1.07062113]
+incx.max(), incx.min(), incx.mean() 7.63476 0.356759 3.32546
+fgtx.max(), fgtx.min(), fgtx.mean() 6.70583 0.230864 2.87201
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.801094 4.41467 4.08357 4.99979
+W_c max, min, mean, abs_mean: 0.137194 0.134535 0.136391 0.136391
+W_f max, min, mean, abs_mean: 0.121629 0.120668 0.121345 0.121345
+        shijiazhuang10118.7910      0.92  0.09  0.84      0.92  0.08  0.86      0.92  0.06  0.87
+forget mean min: 0.948056 0.786085
+delta_x = 5.44907 delta_h = 3.29061
+U_c = [[-0.05615112]] U_f = [[ 0.]] b_c = [ 0.0972736] b_f = [ 1.07062113]
+incx.max(), incx.min(), incx.mean() 7.71796 0.356759 3.6642
+fgtx.max(), fgtx.min(), fgtx.mean() 6.77986 0.230864 3.17338
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.318465 5.44907 4.08436 7.7537
+W_c max, min, mean, abs_mean: 0.137194 0.134535 0.136391 0.136391
+W_f max, min, mean, abs_mean: 0.121629 0.120668 0.121345 0.121345
+Epoch 3/300
+0s - loss: 1284.7499 - val_loss: 9602.7238
+Epoch 00002: val_loss improved from 10118.79097 to 9602.72379, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang 1235.6371      0.71  0.30  0.54      0.73  0.29  0.56      0.72  0.27  0.57
+forget mean min: 0.932755 0.772318
+delta_x = 4.1915 delta_h = 1.012
+U_c = [[-0.03335763]] U_f = [[ 0.]] b_c = [ 0.08937092] b_f = [ 1.04035652]
+incx.max(), incx.min(), incx.mean() 7.46 0.283857 3.06387
+fgtx.max(), fgtx.min(), fgtx.mean() 6.86279 0.181092 2.76956
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.447589 4.1915 3.68283 5.05697
+W_c max, min, mean, abs_mean: 0.136893 0.134207 0.136074 0.136074
+W_f max, min, mean, abs_mean: 0.126999 0.125905 0.126701 0.126701
+        shijiazhuang 9602.7238      0.90  0.10  0.82      0.91  0.08  0.85      0.92  0.06  0.87
+forget mean min: 0.950129 0.772318
+delta_x = 5.46151 delta_h = 2.38893
+U_c = [[-0.03335763]] U_f = [[ 0.]] b_c = [ 0.08937092] b_f = [ 1.04035652]
+incx.max(), incx.min(), incx.mean() 7.5469 0.283857 3.70451
+fgtx.max(), fgtx.min(), fgtx.mean() 6.9437 0.181092 3.36606
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.149414 5.46151 4.09515 7.9833
+W_c max, min, mean, abs_mean: 0.136893 0.134207 0.136074 0.136074
+W_f max, min, mean, abs_mean: 0.126999 0.125905 0.126701 0.126701
+Epoch 4/300
+0s - loss: 1218.9977 - val_loss: 10011.6041
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+0s - loss: 1176.7788 - val_loss: 10121.3404
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+0s - loss: 1147.3937 - val_loss: 10401.4048
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+0s - loss: 1124.1650 - val_loss: 10782.1660
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+0s - loss: 1106.7648 - val_loss: 10328.7381
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+0s - loss: 1086.9734 - val_loss: 10731.3413
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+0s - loss: 1070.5616 - val_loss: 10156.3114
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+0s - loss: 1053.8532 - val_loss: 10676.9869
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+0s - loss: 1045.0241 - val_loss: 10202.7804
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+0s - loss: 1033.3687 - val_loss: 9854.4132
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+0s - loss: 1019.9692 - val_loss: 9758.7410
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+0s - loss: 1016.9955 - val_loss: 9768.3371
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+0s - loss: 1005.8919 - val_loss: 9861.3608
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+0s - loss: 999.1837 - val_loss: 9354.1048
+Epoch 00016: val_loss improved from 9602.72379 to 9354.10482, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  974.3767      0.72  0.26  0.58      0.75  0.24  0.60      0.76  0.22  0.63
+forget mean min: 0.913825 0.670885
+delta_x = 6.51433 delta_h = 0.564409
+U_c = [[-0.01763875]] U_f = [[ 0.]] b_c = [ 0.14208953] b_f = [ 0.71218973]
+incx.max(), incx.min(), incx.mean() 17.637 0.14209 4.15313
+fgtx.max(), fgtx.min(), fgtx.mean() 18.1649 0.0 4.16461
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.344336 6.51433 5.89754 7.37128
+W_c max, min, mean, abs_mean: 0.189805 0.186935 0.18897 0.18897
+W_f max, min, mean, abs_mean: 0.197876 0.194748 0.196206 0.196206
+        shijiazhuang 9354.1049      0.88  0.09  0.81      0.89  0.07  0.83      0.89  0.06  0.85
+forget mean min: 0.941001 0.670885
+delta_x = 6.87658 delta_h = 1.35263
+U_c = [[-0.01763875]] U_f = [[ 0.]] b_c = [ 0.14208953] b_f = [ 0.71218973]
+incx.max(), incx.min(), incx.mean() 12.257 0.14209 4.08689
+fgtx.max(), fgtx.min(), fgtx.mean() 12.5788 0.0 4.09579
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.773602 6.87658 4.73655 10.752
+W_c max, min, mean, abs_mean: 0.189805 0.186935 0.18897 0.18897
+W_f max, min, mean, abs_mean: 0.197876 0.194748 0.196206 0.196206
+Epoch 18/300
+0s - loss: 990.6669 - val_loss: 9354.1295
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+0s - loss: 984.1373 - val_loss: 9367.7474
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 982.5115 - val_loss: 9179.9290
+Epoch 00019: val_loss improved from 9354.10482 to 9179.92901, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  983.2583      0.66  0.21  0.56      0.68  0.18  0.59      0.67  0.12  0.61
+forget mean min: 0.90933 0.657
+delta_x = 6.39274 delta_h = 0.599998
+U_c = [[-0.02029677]] U_f = [[ 0.]] b_c = [ 0.14922771] b_f = [ 0.64995581]
+incx.max(), incx.min(), incx.mean() 17.5833 0.149228 3.98187
+fgtx.max(), fgtx.min(), fgtx.mean() 19.266 0.0 4.23533
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.165836 6.39274 5.73551 7.27019
+W_c max, min, mean, abs_mean: 0.192097 0.189063 0.191123 0.191123
+W_f max, min, mean, abs_mean: 0.213095 0.209644 0.211206 0.211206
+        shijiazhuang 9179.9290      0.88  0.09  0.81      0.89  0.08  0.83      0.89  0.06  0.85
+forget mean min: 0.942347 0.657
+delta_x = 6.87546 delta_h = 1.5262
+U_c = [[-0.02029677]] U_f = [[ 0.]] b_c = [ 0.14922771] b_f = [ 0.64995581]
+incx.max(), incx.min(), incx.mean() 12.4954 0.149228 4.06854
+fgtx.max(), fgtx.min(), fgtx.mean() 13.6435 0.0 4.33105
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.719131 6.87546 4.82406 10.4922
+W_c max, min, mean, abs_mean: 0.192097 0.189063 0.191123 0.191123
+W_f max, min, mean, abs_mean: 0.213095 0.209644 0.211206 0.211206
+Epoch 21/300
+0s - loss: 973.9814 - val_loss: 8792.3757
+Epoch 00020: val_loss improved from 9179.92901 to 8792.37572, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  963.6743      0.72  0.24  0.58      0.74  0.23  0.61      0.74  0.19  0.63
+forget mean min: 0.911627 0.652844
+delta_x = 6.52898 delta_h = 0.480206
+U_c = [[-0.01477491]] U_f = [[ 0.]] b_c = [ 0.15392916] b_f = [ 0.63156289]
+incx.max(), incx.min(), incx.mean() 18.0823 0.153929 4.10004
+fgtx.max(), fgtx.min(), fgtx.mean() 20.2628 0.0 4.45988
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.304887 6.52898 5.80306 7.56851
+W_c max, min, mean, abs_mean: 0.19534 0.192224 0.194304 0.194304
+W_f max, min, mean, abs_mean: 0.221546 0.218014 0.219602 0.219602
+        shijiazhuang 8792.3758      0.89  0.09  0.82      0.90  0.07  0.84      0.90  0.06  0.86
+forget mean min: 0.943985 0.652844
+delta_x = 7.1739 delta_h = 1.26914
+U_c = [[-0.01477491]] U_f = [[ 0.]] b_c = [ 0.15392916] b_f = [ 0.63156289]
+incx.max(), incx.min(), incx.mean() 13.1275 0.153929 4.30798
+fgtx.max(), fgtx.min(), fgtx.mean() 14.6628 0.0 4.69483
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.318552 7.1739 5.02033 11.8088
+W_c max, min, mean, abs_mean: 0.19534 0.192224 0.194304 0.194304
+W_f max, min, mean, abs_mean: 0.221546 0.218014 0.219602 0.219602
+Epoch 22/300
+0s - loss: 972.3924 - val_loss: 9736.6487
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 962.8764 - val_loss: 9035.1604
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+0s - loss: 960.3457 - val_loss: 8781.7239
+Epoch 00023: val_loss improved from 8792.37572 to 8781.72392, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  956.5384      0.67  0.21  0.57      0.69  0.18  0.60      0.68  0.12  0.62
+forget mean min: 0.907232 0.638291
+delta_x = 6.40726 delta_h = 0.615941
+U_c = [[-0.02054075]] U_f = [[ 0.]] b_c = [ 0.16375732] b_f = [ 0.56795406]
+incx.max(), incx.min(), incx.mean() 18.2112 0.163757 3.96518
+fgtx.max(), fgtx.min(), fgtx.mean() 21.3536 0.0 4.49776
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.142618 6.40726 5.67329 7.40948
+W_c max, min, mean, abs_mean: 0.197232 0.193922 0.196052 0.196052
+W_f max, min, mean, abs_mean: 0.234057 0.230294 0.231965 0.231965
+        shijiazhuang 8781.7238      0.88  0.09  0.81      0.89  0.07  0.83      0.90  0.05  0.86
+forget mean min: 0.941519 0.638291
+delta_x = 6.79392 delta_h = 1.58928
+U_c = [[-0.02054075]] U_f = [[ 0.]] b_c = [ 0.16375732] b_f = [ 0.56795406]
+incx.max(), incx.min(), incx.mean() 13.1308 0.163757 4.07011
+fgtx.max(), fgtx.min(), fgtx.mean() 15.3425 0.0 4.62185
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.563617 6.79392 4.77873 10.5675
+W_c max, min, mean, abs_mean: 0.197232 0.193922 0.196052 0.196052
+W_f max, min, mean, abs_mean: 0.234057 0.230294 0.231965 0.231965
+Epoch 25/300
+0s - loss: 958.3459 - val_loss: 8630.4808
+Epoch 00024: val_loss improved from 8781.72392 to 8630.48076, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  928.5333      0.72  0.25  0.58      0.75  0.23  0.61      0.75  0.20  0.63
+forget mean min: 0.911059 0.633903
+delta_x = 6.60152 delta_h = 0.613124
+U_c = [[-0.0192408]] U_f = [[ 0.]] b_c = [ 0.17162764] b_f = [ 0.54899651]
+incx.max(), incx.min(), incx.mean() 18.9255 0.171628 4.14451
+fgtx.max(), fgtx.min(), fgtx.mean() 22.5015 0.0 4.76672
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.307442 6.60152 5.83998 7.70431
+W_c max, min, mean, abs_mean: 0.20133 0.197924 0.20008 0.20008
+W_f max, min, mean, abs_mean: 0.242205 0.238354 0.240059 0.240059
+        shijiazhuang 8630.4807      0.89  0.09  0.82      0.89  0.07  0.84      0.90  0.05  0.86
+forget mean min: 0.942521 0.633903
+delta_x = 6.80516 delta_h = 1.52895
+U_c = [[-0.0192408]] U_f = [[ 0.]] b_c = [ 0.17162764] b_f = [ 0.54899651]
+incx.max(), incx.min(), incx.mean() 13.4673 0.171628 4.13943
+fgtx.max(), fgtx.min(), fgtx.mean() 15.9524 0.0 4.76055
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.425946 6.80516 4.8363 10.6188
+W_c max, min, mean, abs_mean: 0.20133 0.197924 0.20008 0.20008
+W_f max, min, mean, abs_mean: 0.242205 0.238354 0.240059 0.240059
+Epoch 26/300
+0s - loss: 950.5806 - val_loss: 8616.2508
+Epoch 00025: val_loss improved from 8630.48076 to 8616.25078, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  923.5631      0.71  0.24  0.58      0.73  0.22  0.61      0.73  0.18  0.63
+forget mean min: 0.909605 0.629397
+delta_x = 6.63065 delta_h = 0.559742
+U_c = [[-0.0175918]] U_f = [[ 0.]] b_c = [ 0.17646679] b_f = [ 0.52963018]
+incx.max(), incx.min(), incx.mean() 19.1596 0.176467 4.14147
+fgtx.max(), fgtx.min(), fgtx.mean() 22.8219 0.0 4.76675
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.26874 6.63065 5.84273 7.76649
+W_c max, min, mean, abs_mean: 0.203917 0.200425 0.202604 0.202604
+W_f max, min, mean, abs_mean: 0.245771 0.241826 0.243573 0.243573
+        shijiazhuang 8616.2509      0.89  0.09  0.81      0.89  0.07  0.84      0.90  0.05  0.86
+forget mean min: 0.942403 0.629397
+delta_x = 6.91239 delta_h = 1.44244
+U_c = [[-0.0175918]] U_f = [[ 0.]] b_c = [ 0.17646679] b_f = [ 0.52963018]
+incx.max(), incx.min(), incx.mean() 13.8332 0.176467 4.20858
+fgtx.max(), fgtx.min(), fgtx.mean() 16.4183 0.0 4.84735
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.379813 6.91239 4.91131 10.8857
+W_c max, min, mean, abs_mean: 0.203917 0.200425 0.202604 0.202604
+W_f max, min, mean, abs_mean: 0.245771 0.241826 0.243573 0.243573
+Epoch 27/300
+0s - loss: 944.9614 - val_loss: 8404.4704
+Epoch 00026: val_loss improved from 8616.25078 to 8404.47036, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  927.4894      0.71  0.23  0.58      0.73  0.21  0.61      0.73  0.17  0.63
+forget mean min: 0.909082 0.624831
+delta_x = 6.54008 delta_h = 0.569867
+U_c = [[-0.01789076]] U_f = [[ 0.]] b_c = [ 0.18132974] b_f = [ 0.5101043]
+incx.max(), incx.min(), incx.mean() 18.7302 0.18133 4.07495
+fgtx.max(), fgtx.min(), fgtx.mean() 22.7076 0.0 4.76652
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.25995 6.54008 5.70103 7.77987
+W_c max, min, mean, abs_mean: 0.205073 0.201472 0.203683 0.203683
+W_f max, min, mean, abs_mean: 0.251534 0.247606 0.249347 0.249347
+        shijiazhuang 8404.4703      0.89  0.09  0.82      0.90  0.07  0.84      0.91  0.05  0.86
+forget mean min: 0.943402 0.624831
+delta_x = 7.11579 delta_h = 1.57523
+U_c = [[-0.01789076]] U_f = [[ 0.]] b_c = [ 0.18132974] b_f = [ 0.5101043]
+incx.max(), incx.min(), incx.mean() 14.2301 0.18133 4.38819
+fgtx.max(), fgtx.min(), fgtx.mean() 17.1984 0.0 5.14991
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.00508636 7.11579 5.11235 11.6906
+W_c max, min, mean, abs_mean: 0.205073 0.201472 0.203683 0.203683
+W_f max, min, mean, abs_mean: 0.251534 0.247606 0.249347 0.249347
+Epoch 28/300
+0s - loss: 943.3946 - val_loss: 8473.7569
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+0s - loss: 937.3120 - val_loss: 8378.2616
+Epoch 00028: val_loss improved from 8404.47036 to 8378.26155, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  942.6073      0.76  0.25  0.60      0.78  0.24  0.63      0.78  0.21  0.65
+forget mean min: 0.910333 0.61536
+delta_x = 6.84551 delta_h = 0.534919
+U_c = [[-0.01574387]] U_f = [[ 0.]] b_c = [ 0.19423151] b_f = [ 0.4699004]
+incx.max(), incx.min(), incx.mean() 19.959 0.194232 4.29765
+fgtx.max(), fgtx.min(), fgtx.mean() 24.4186 0.0 5.06956
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.41145 6.84551 5.98413 8.17233
+W_c max, min, mean, abs_mean: 0.212669 0.208917 0.211174 0.211174
+W_f max, min, mean, abs_mean: 0.263126 0.25907 0.260896 0.260896
+        shijiazhuang 8378.2615      0.90  0.08  0.83      0.91  0.07  0.85      0.91  0.05  0.87
+forget mean min: 0.940698 0.61536
+delta_x = 7.49862 delta_h = 1.48863
+U_c = [[-0.01574387]] U_f = [[ 0.]] b_c = [ 0.19423151] b_f = [ 0.4699004]
+incx.max(), incx.min(), incx.mean() 14.8676 0.194232 4.62799
+fgtx.max(), fgtx.min(), fgtx.mean() 18.1282 0.0 5.4776
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.224211 7.49862 5.41695 12.6661
+W_c max, min, mean, abs_mean: 0.212669 0.208917 0.211174 0.211174
+W_f max, min, mean, abs_mean: 0.263126 0.25907 0.260896 0.260896
+Epoch 30/300
+0s - loss: 929.1446 - val_loss: 8574.6309
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+0s - loss: 925.6659 - val_loss: 8224.5031
+Epoch 00030: val_loss improved from 8378.26155 to 8224.50308, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  942.2593      0.78  0.29  0.59      0.81  0.28  0.61      0.83  0.27  0.63
+forget mean min: 0.912168 0.606859
+delta_x = 7.01868 delta_h = 0.535782
+U_c = [[-0.01495119]] U_f = [[ 0.]] b_c = [ 0.20666488] b_f = [ 0.43412632]
+incx.max(), incx.min(), incx.mean() 20.8613 0.206665 4.45652
+fgtx.max(), fgtx.min(), fgtx.mean() 25.4233 0.0 5.23099
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.502129 7.01868 6.12536 8.43911
+W_c max, min, mean, abs_mean: 0.220106 0.216186 0.218499 0.218499
+W_f max, min, mean, abs_mean: 0.271194 0.267024 0.268942 0.268942
+        shijiazhuang 8224.5031      0.90  0.08  0.84      0.91  0.07  0.86      0.92  0.05  0.88
+forget mean min: 0.941056 0.606859
+delta_x = 7.38738 delta_h = 1.38365
+U_c = [[-0.01495119]] U_f = [[ 0.]] b_c = [ 0.20666488] b_f = [ 0.43412632]
+incx.max(), incx.min(), incx.mean() 15.6112 0.206665 4.62468
+fgtx.max(), fgtx.min(), fgtx.mean() 18.9609 0.0 5.43787
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.140809 7.38738 5.30909 12.4507
+W_c max, min, mean, abs_mean: 0.220106 0.216186 0.218499 0.218499
+W_f max, min, mean, abs_mean: 0.271194 0.267024 0.268942 0.268942
+Epoch 32/300
+0s - loss: 925.3370 - val_loss: 8520.5600
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+0s - loss: 919.0766 - val_loss: 8176.6494
+Epoch 00032: val_loss improved from 8224.50308 to 8176.64942, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  888.4435      0.71  0.22  0.59      0.74  0.19  0.63      0.74  0.15  0.65
+forget mean min: 0.907025 0.597173
+delta_x = 6.7154 delta_h = 0.56041
+U_c = [[-0.01756817]] U_f = [[ 0.]] b_c = [ 0.21500137] b_f = [ 0.39369857]
+incx.max(), incx.min(), incx.mean() 20.1807 0.215001 4.20787
+fgtx.max(), fgtx.min(), fgtx.mean() 24.8484 0.0 4.96927
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.263753 6.7154 5.82081 8.05449
+W_c max, min, mean, abs_mean: 0.222798 0.218662 0.221047 0.221047
+W_f max, min, mean, abs_mean: 0.277348 0.273106 0.275102 0.275102
+        shijiazhuang 8176.6494      0.89  0.08  0.83      0.90  0.06  0.85      0.91  0.04  0.87
+forget mean min: 0.937626 0.597173
+delta_x = 7.24217 delta_h = 1.54362
+U_c = [[-0.01756817]] U_f = [[ 0.]] b_c = [ 0.21500137] b_f = [ 0.39369857]
+incx.max(), incx.min(), incx.mean() 15.1918 0.215001 4.46809
+fgtx.max(), fgtx.min(), fgtx.mean() 18.6392 0.0 5.29304
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.0925474 7.24217 5.09008 12.3194
+W_c max, min, mean, abs_mean: 0.222798 0.218662 0.221047 0.221047
+W_f max, min, mean, abs_mean: 0.277348 0.273106 0.275102 0.275102
+Epoch 34/300
+0s - loss: 916.4120 - val_loss: 8308.6789
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+0s - loss: 910.0574 - val_loss: 8101.5133
+Epoch 00034: val_loss improved from 8176.64942 to 8101.51331, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  884.9125      0.70  0.21  0.59      0.72  0.18  0.62      0.73  0.14  0.65
+forget mean min: 0.904874 0.588279
+delta_x = 6.69233 delta_h = 0.537701
+U_c = [[-0.01693569]] U_f = [[ 0.]] b_c = [ 0.22565496] b_f = [ 0.35685459]
+incx.max(), incx.min(), incx.mean() 20.3445 0.225655 4.1916
+fgtx.max(), fgtx.min(), fgtx.mean() 24.9096 0.0 4.91024
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.212418 6.69233 5.77495 8.05594
+W_c max, min, mean, abs_mean: 0.228463 0.22415 0.226597 0.226597
+W_f max, min, mean, abs_mean: 0.282809 0.278459 0.280551 0.280551
+        shijiazhuang 8101.5133      0.89  0.07  0.84      0.90  0.06  0.85      0.91  0.04  0.88
+forget mean min: 0.937026 0.588279
+delta_x = 7.27826 delta_h = 1.46194
+U_c = [[-0.01693569]] U_f = [[ 0.]] b_c = [ 0.22565496] b_f = [ 0.35685459]
+incx.max(), incx.min(), incx.mean() 15.4308 0.225655 4.52178
+fgtx.max(), fgtx.min(), fgtx.mean() 18.8256 0.0 5.31894
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.146092 7.27826 5.09418 12.3752
+W_c max, min, mean, abs_mean: 0.228463 0.22415 0.226597 0.226597
+W_f max, min, mean, abs_mean: 0.282809 0.278459 0.280551 0.280551
+Epoch 36/300
+0s - loss: 903.2775 - val_loss: 8336.5733
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+0s - loss: 904.4183 - val_loss: 8356.4229
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+0s - loss: 894.3122 - val_loss: 8183.8291
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+0s - loss: 894.4968 - val_loss: 8172.3403
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+0s - loss: 887.7974 - val_loss: 8216.6409
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+0s - loss: 885.5588 - val_loss: 8212.3466
+Epoch 00040: val_loss did not improve
+Epoch 42/300
+0s - loss: 882.6042 - val_loss: 8125.1588
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+0s - loss: 877.3486 - val_loss: 8293.4262
+Epoch 00042: val_loss did not improve
+Epoch 44/300
+0s - loss: 872.3088 - val_loss: 8264.9978
+Epoch 00043: val_loss did not improve
+Epoch 45/300
+0s - loss: 866.1089 - val_loss: 8132.4987
+Epoch 00044: val_loss did not improve
+Epoch 46/300
+0s - loss: 864.6871 - val_loss: 8106.9300
+Epoch 00045: val_loss did not improve
+Epoch 47/300
+0s - loss: 857.4178 - val_loss: 7989.9921
+Epoch 00046: val_loss improved from 8101.51331 to 7989.99211, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  848.7997      0.69  0.18  0.60      0.72  0.15  0.64      0.71  0.11  0.65
+forget mean min: 0.895089 0.544311
+delta_x = 6.85136 delta_h = 0.456382
+U_c = [[-0.01418277]] U_f = [[ 0.]] b_c = [ 0.29162872] b_f = [ 0.17770895]
+incx.max(), incx.min(), incx.mean() 21.1451 0.291629 4.35972
+fgtx.max(), fgtx.min(), fgtx.mean() 23.1745 0.0 4.52078
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.127459 6.85136 5.82385 8.38724
+W_c max, min, mean, abs_mean: 0.278358 0.272961 0.275878 0.275878
+W_f max, min, mean, abs_mean: 0.308682 0.304196 0.306579 0.306579
+        shijiazhuang 7989.9920      0.90  0.07  0.85      0.91  0.05  0.87      0.92  0.04  0.89
+forget mean min: 0.929055 0.544311
+delta_x = 7.98984 delta_h = 1.33658
+U_c = [[-0.01418277]] U_f = [[ 0.]] b_c = [ 0.29162872] b_f = [ 0.17770895]
+incx.max(), incx.min(), incx.mean() 17.2352 0.291629 5.07109
+fgtx.max(), fgtx.min(), fgtx.mean() 18.829 0.0 5.31121
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.101008 7.98984 5.49197 14.9754
+W_c max, min, mean, abs_mean: 0.278358 0.272961 0.275878 0.275878
+W_f max, min, mean, abs_mean: 0.308682 0.304196 0.306579 0.306579
+Epoch 48/300
+0s - loss: 861.9737 - val_loss: 7969.7593
+Epoch 00047: val_loss improved from 7989.99211 to 7969.75934, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  853.1557      0.78  0.25  0.62      0.81  0.23  0.65      0.82  0.20  0.68
+forget mean min: 0.903122 0.542213
+delta_x = 7.32954 delta_h = 0.473054
+U_c = [[-0.01338922]] U_f = [[ 0.]] b_c = [ 0.29978919] b_f = [ 0.16925414]
+incx.max(), incx.min(), incx.mean() 22.6985 0.299789 4.75307
+fgtx.max(), fgtx.min(), fgtx.mean() 24.5268 0.0 4.87629
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.427834 7.32954 6.25051 9.09408
+W_c max, min, mean, abs_mean: 0.286493 0.28104 0.283988 0.283988
+W_f max, min, mean, abs_mean: 0.313072 0.308552 0.310966 0.310966
+        shijiazhuang 7969.7595      0.90  0.07  0.84      0.92  0.05  0.87      0.92  0.04  0.89
+forget mean min: 0.928154 0.542213
+delta_x = 8.25405 delta_h = 1.26732
+U_c = [[-0.01338922]] U_f = [[ 0.]] b_c = [ 0.29978919] b_f = [ 0.16925414]
+incx.max(), incx.min(), incx.mean() 17.8715 0.299789 5.20551
+fgtx.max(), fgtx.min(), fgtx.mean() 19.2408 0.0 5.37161
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.102155 8.25405 5.67969 15.4171
+W_c max, min, mean, abs_mean: 0.286493 0.28104 0.283988 0.283988
+W_f max, min, mean, abs_mean: 0.313072 0.308552 0.310966 0.310966
+Epoch 49/300
+0s - loss: 857.2184 - val_loss: 7828.6434
+Epoch 00048: val_loss improved from 7969.75934 to 7828.64345, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  833.5841      0.74  0.21  0.62      0.77  0.18  0.66      0.77  0.15  0.68
+forget mean min: 0.901935 0.539223
+delta_x = 7.07934 delta_h = 0.552218
+U_c = [[-0.0167754]] U_f = [[ 0.]] b_c = [ 0.302614] b_f = [ 0.15721332]
+incx.max(), incx.min(), incx.mean() 21.7426 0.302614 4.59927
+fgtx.max(), fgtx.min(), fgtx.mean() 23.494 0.0 4.7082
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.339761 7.07934 6.00005 8.82729
+W_c max, min, mean, abs_mean: 0.287668 0.282119 0.285107 0.285107
+W_f max, min, mean, abs_mean: 0.314563 0.310008 0.312418 0.312418
+        shijiazhuang 7828.6435      0.90  0.07  0.84      0.91  0.05  0.87      0.92  0.04  0.89
+forget mean min: 0.927565 0.539223
+delta_x = 8.06541 delta_h = 1.54638
+U_c = [[-0.0167754]] U_f = [[ 0.]] b_c = [ 0.302614] b_f = [ 0.15721332]
+incx.max(), incx.min(), incx.mean() 17.2163 0.302614 5.12228
+fgtx.max(), fgtx.min(), fgtx.mean() 18.5337 0.0 5.2812
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.155748 8.06541 5.5886 14.9538
+W_c max, min, mean, abs_mean: 0.287668 0.282119 0.285107 0.285107
+W_f max, min, mean, abs_mean: 0.314563 0.310008 0.312418 0.312418
+Epoch 50/300
+0s - loss: 853.3099 - val_loss: 7829.2139
+Epoch 00049: val_loss did not improve
+Epoch 51/300
+0s - loss: 850.6531 - val_loss: 8482.6424
+Epoch 00050: val_loss did not improve
+Epoch 52/300
+0s - loss: 847.3057 - val_loss: 8068.4017
+Epoch 00051: val_loss did not improve
+Epoch 53/300
+0s - loss: 847.8476 - val_loss: 8324.1897
+Epoch 00052: val_loss did not improve
+Epoch 54/300
+0s - loss: 843.8887 - val_loss: 7979.9449
+Epoch 00053: val_loss did not improve
+Epoch 55/300
+0s - loss: 840.0307 - val_loss: 7828.4303
+Epoch 00054: val_loss improved from 7828.64345 to 7828.43028, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  813.7939      0.70  0.18  0.61      0.73  0.14  0.65      0.72  0.11  0.67
+forget mean min: 0.89426 0.52294
+delta_x = 7.03069 delta_h = 0.600446
+U_c = [[-0.0188807]] U_f = [[ 0.]] b_c = [ 0.32142073] b_f = [ 0.09182418]
+incx.max(), incx.min(), incx.mean() 21.1835 0.321421 4.52378
+fgtx.max(), fgtx.min(), fgtx.mean() 22.3833 0.0 4.50867
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.171595 7.03069 5.8589 8.89972
+W_c max, min, mean, abs_mean: 0.303379 0.297434 0.300629 0.300629
+W_f max, min, mean, abs_mean: 0.325108 0.319975 0.322544 0.322544
+        shijiazhuang 7828.4305      0.89  0.07  0.84      0.90  0.05  0.86      0.91  0.03  0.88
+forget mean min: 0.921343 0.52294
+delta_x = 7.97464 delta_h = 1.61152
+U_c = [[-0.0188807]] U_f = [[ 0.]] b_c = [ 0.32142073] b_f = [ 0.09182418]
+incx.max(), incx.min(), incx.mean() 17.0238 0.321421 5.03114
+fgtx.max(), fgtx.min(), fgtx.mean() 17.9198 0.0 5.0529
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.18563 7.97464 5.49853 13.9866
+W_c max, min, mean, abs_mean: 0.303379 0.297434 0.300629 0.300629
+W_f max, min, mean, abs_mean: 0.325108 0.319975 0.322544 0.322544
+Epoch 56/300
+0s - loss: 840.6153 - val_loss: 8530.7236
+Epoch 00055: val_loss did not improve
+Epoch 57/300
+0s - loss: 839.5477 - val_loss: 8059.6532
+Epoch 00056: val_loss did not improve
+Epoch 58/300
+0s - loss: 833.8661 - val_loss: 8415.1268
+Epoch 00057: val_loss did not improve
+Epoch 59/300
+0s - loss: 831.6570 - val_loss: 7857.7016
+Epoch 00058: val_loss did not improve
+Epoch 60/300
+0s - loss: 831.2298 - val_loss: 7900.4369
+Epoch 00059: val_loss did not improve
+Epoch 61/300
+0s - loss: 831.1856 - val_loss: 8252.9941
+Epoch 00060: val_loss did not improve
+Epoch 62/300
+0s - loss: 831.2833 - val_loss: 7565.9342
+Epoch 00061: val_loss improved from 7828.43028 to 7565.93419, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  797.6260      0.76  0.22  0.63      0.79  0.19  0.67      0.80  0.16  0.70
+forget mean min: 0.898054 0.509114
+delta_x = 7.36124 delta_h = 0.653337
+U_c = [[-0.01918008]] U_f = [[ 0.]] b_c = [ 0.34044436] b_f = [ 0.03645945]
+incx.max(), incx.min(), incx.mean() 21.5894 0.340444 4.78752
+fgtx.max(), fgtx.min(), fgtx.mean() 22.7472 0.0 4.76053
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.390793 7.36124 6.06316 9.66168
+W_c max, min, mean, abs_mean: 0.318612 0.31214 0.315589 0.315589
+W_f max, min, mean, abs_mean: 0.340879 0.335101 0.337837 0.337837
+        shijiazhuang 7565.9340      0.91  0.07  0.85      0.92  0.05  0.88      0.93  0.03  0.90
+forget mean min: 0.918693 0.509114
+delta_x = 8.36233 delta_h = 1.77183
+U_c = [[-0.01918008]] U_f = [[ 0.]] b_c = [ 0.34044436] b_f = [ 0.03645945]
+incx.max(), incx.min(), incx.mean() 17.7199 0.340444 5.32202
+fgtx.max(), fgtx.min(), fgtx.mean() 18.6043 0.0 5.33257
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.245721 8.36233 5.85258 15.3379
+W_c max, min, mean, abs_mean: 0.318612 0.31214 0.315589 0.315589
+W_f max, min, mean, abs_mean: 0.340879 0.335101 0.337837 0.337837
+Epoch 63/300
+0s - loss: 828.1718 - val_loss: 7749.3318
+Epoch 00062: val_loss did not improve
+Epoch 64/300
+0s - loss: 828.1485 - val_loss: 8009.5510
+Epoch 00063: val_loss did not improve
+Epoch 65/300
+0s - loss: 823.9893 - val_loss: 7563.7467
+Epoch 00064: val_loss improved from 7565.93419 to 7563.74675, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  787.2031      0.77  0.23  0.63      0.80  0.20  0.67      0.81  0.17  0.69
+forget mean min: 0.897038 0.503954
+delta_x = 7.44665 delta_h = 0.73117
+U_c = [[-0.02157852]] U_f = [[ 0.]] b_c = [ 0.34490597] b_f = [ 0.01581619]
+incx.max(), incx.min(), incx.mean() 22.2012 0.344906 4.8482
+fgtx.max(), fgtx.min(), fgtx.mean() 23.3143 0.0 4.80358
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.409448 7.44665 6.155 9.72497
+W_c max, min, mean, abs_mean: 0.323494 0.316832 0.320378 0.320378
+W_f max, min, mean, abs_mean: 0.344973 0.338928 0.341746 0.341746
+        shijiazhuang 7563.7467      0.90  0.06  0.85      0.92  0.04  0.88      0.92  0.03  0.90
+forget mean min: 0.914387 0.503954
+delta_x = 8.28638 delta_h = 1.9167
+U_c = [[-0.02157852]] U_f = [[ 0.]] b_c = [ 0.34490597] b_f = [ 0.01581619]
+incx.max(), incx.min(), incx.mean() 17.798 0.344906 5.25105
+fgtx.max(), fgtx.min(), fgtx.mean() 18.6168 0.0 5.23316
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.106607 8.28638 5.79688 14.8143
+W_c max, min, mean, abs_mean: 0.323494 0.316832 0.320378 0.320378
+W_f max, min, mean, abs_mean: 0.344973 0.338928 0.341746 0.341746
+Epoch 66/300
+0s - loss: 823.6613 - val_loss: 8001.9491
+Epoch 00065: val_loss did not improve
+Epoch 67/300
+0s - loss: 820.0154 - val_loss: 7853.9655
+Epoch 00066: val_loss did not improve
+Epoch 68/300
+0s - loss: 821.5770 - val_loss: 7805.1893
+Epoch 00067: val_loss did not improve
+Epoch 69/300
+0s - loss: 822.0203 - val_loss: 8052.3000
+Epoch 00068: val_loss did not improve
+Epoch 70/300
+0s - loss: 825.0420 - val_loss: 7521.6133
+Epoch 00069: val_loss improved from 7563.74675 to 7521.61329, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  821.5281      0.80  0.26  0.62      0.83  0.25  0.65      0.84  0.23  0.67
+forget mean min: 0.894206 0.497869
+delta_x = 7.69315 delta_h = 0.793976
+U_c = [[-0.02192432]] U_f = [[ 0.]] b_c = [ 0.35647959] b_f = [-0.00852479]
+incx.max(), incx.min(), incx.mean() 23.2862 0.35648 5.00439
+fgtx.max(), fgtx.min(), fgtx.mean() 24.0143 0.0 4.86764
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.480067 7.69315 6.35273 10.1104
+W_c max, min, mean, abs_mean: 0.335074 0.328073 0.331777 0.331777
+W_f max, min, mean, abs_mean: 0.351136 0.344325 0.347464 0.347464
+        shijiazhuang 7521.6133      0.91  0.06  0.86      0.92  0.04  0.88      0.93  0.03  0.90
+forget mean min: 0.913751 0.497869
+delta_x = 8.32823 delta_h = 1.92288
+U_c = [[-0.02192432]] U_f = [[ 0.]] b_c = [ 0.35647959] b_f = [-0.00852479]
+incx.max(), incx.min(), incx.mean() 18.254 0.35648 5.32675
+fgtx.max(), fgtx.min(), fgtx.mean() 18.7435 0.0 5.20508
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.0950071 8.32823 5.91667 14.285
+W_c max, min, mean, abs_mean: 0.335074 0.328073 0.331777 0.331777
+W_f max, min, mean, abs_mean: 0.351136 0.344325 0.347464 0.347464
+Epoch 71/300
+0s - loss: 821.3130 - val_loss: 7862.5465
+Epoch 00070: val_loss did not improve
+Epoch 72/300
+0s - loss: 818.8259 - val_loss: 7686.4727
+Epoch 00071: val_loss did not improve
+Epoch 73/300
+0s - loss: 820.2126 - val_loss: 7970.9841
+Epoch 00072: val_loss did not improve
+Epoch 74/300
+0s - loss: 815.3016 - val_loss: 8270.3402
+Epoch 00073: val_loss did not improve
+Epoch 75/300
+0s - loss: 813.2800 - val_loss: 7724.5380
+Epoch 00074: val_loss did not improve
+Epoch 76/300
+0s - loss: 813.4712 - val_loss: 7840.7746
+Epoch 00075: val_loss did not improve
+Epoch 77/300
+0s - loss: 808.7985 - val_loss: 7641.5233
+Epoch 00076: val_loss did not improve
+Epoch 78/300
+0s - loss: 810.2460 - val_loss: 7482.2604
+Epoch 00077: val_loss improved from 7521.61329 to 7482.26040, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  803.5437      0.68  0.16  0.60      0.70  0.12  0.64      0.70  0.08  0.66
+forget mean min: 0.883661 0.489582
+delta_x = 7.18639 delta_h = 0.684404
+U_c = [[-0.02162612]] U_f = [[ 0.]] b_c = [ 0.36005414] b_f = [-0.04167721]
+incx.max(), incx.min(), incx.mean() 21.9832 0.360054 4.58729
+fgtx.max(), fgtx.min(), fgtx.mean() 22.8132 0.0 4.45978
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.0790412 7.18639 5.88 9.29815
+W_c max, min, mean, abs_mean: 0.339374 0.331378 0.335699 0.335699
+W_f max, min, mean, abs_mean: 0.358414 0.35069 0.354166 0.354166
+        shijiazhuang 7482.2604      0.90  0.06  0.85      0.92  0.04  0.88      0.92  0.03  0.90
+forget mean min: 0.912837 0.489582
+delta_x = 8.28934 delta_h = 1.96276
+U_c = [[-0.02162612]] U_f = [[ 0.]] b_c = [ 0.36005414] b_f = [-0.04167721]
+incx.max(), incx.min(), incx.mean() 18.2133 0.360054 5.32419
+fgtx.max(), fgtx.min(), fgtx.mean() 18.835 0.0 5.237
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.197482 8.28934 5.84479 14.767
+W_c max, min, mean, abs_mean: 0.339374 0.331378 0.335699 0.335699
+W_f max, min, mean, abs_mean: 0.358414 0.35069 0.354166 0.354166
+Epoch 79/300
+0s - loss: 811.2462 - val_loss: 8285.6301
+Epoch 00078: val_loss did not improve
+Epoch 80/300
+0s - loss: 812.9655 - val_loss: 7786.0412
+Epoch 00079: val_loss did not improve
+Epoch 81/300
+0s - loss: 806.1706 - val_loss: 7741.8018
+Epoch 00080: val_loss did not improve
+Epoch 82/300
+0s - loss: 806.9449 - val_loss: 7534.6739
+Epoch 00081: val_loss did not improve
+Epoch 83/300
+0s - loss: 806.3471 - val_loss: 8027.6415
+Epoch 00082: val_loss did not improve
+Epoch 84/300
+0s - loss: 810.0369 - val_loss: 7512.1923
+Epoch 00083: val_loss did not improve
+Epoch 85/300
+0s - loss: 803.2033 - val_loss: 7762.0402
+Epoch 00084: val_loss did not improve
+Epoch 86/300
+0s - loss: 804.0743 - val_loss: 7503.8322
+Epoch 00085: val_loss did not improve
+Epoch 87/300
+0s - loss: 802.1685 - val_loss: 7641.6370
+Epoch 00086: val_loss did not improve
+Epoch 88/300
+0s - loss: 805.3570 - val_loss: 7640.7302
+Epoch 00087: val_loss did not improve
+Epoch 89/300
+0s - loss: 805.6819 - val_loss: 7475.9456
+Epoch 00088: val_loss improved from 7482.26040 to 7475.94555, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  776.4386      0.70  0.18  0.61      0.73  0.14  0.65      0.73  0.10  0.67
+forget mean min: 0.884901 0.482011
+delta_x = 7.4854 delta_h = 0.733625
+U_c = [[-0.02299065]] U_f = [[ 0.]] b_c = [ 0.36753747] b_f = [-0.07198731]
+incx.max(), incx.min(), incx.mean() 23.5616 0.367537 4.78908
+fgtx.max(), fgtx.min(), fgtx.mean() 24.3416 0.0 4.64029
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.176723 7.4854 6.13293 9.73635
+W_c max, min, mean, abs_mean: 0.353061 0.343232 0.348779 0.348779
+W_f max, min, mean, abs_mean: 0.371355 0.361846 0.366025 0.366025
+        shijiazhuang 7475.9456      0.90  0.06  0.85      0.91  0.04  0.87      0.92  0.03  0.89
+forget mean min: 0.911671 0.482011
+delta_x = 8.41376 delta_h = 2.07733
+U_c = [[-0.02299065]] U_f = [[ 0.]] b_c = [ 0.36753747] b_f = [-0.07198731]
+incx.max(), incx.min(), incx.mean() 19.5581 0.367537 5.40548
+fgtx.max(), fgtx.min(), fgtx.mean() 20.1393 0.0 5.28686
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.217424 8.41376 5.97972 14.726
+W_c max, min, mean, abs_mean: 0.353061 0.343232 0.348779 0.348779
+W_f max, min, mean, abs_mean: 0.371355 0.361846 0.366025 0.366025
+Epoch 90/300
+0s - loss: 800.6633 - val_loss: 7593.6969
+Epoch 00089: val_loss did not improve
+Epoch 91/300
+0s - loss: 800.8160 - val_loss: 7659.0718
+Epoch 00090: val_loss did not improve
+Epoch 92/300
+0s - loss: 798.8446 - val_loss: 7344.2760
+Epoch 00091: val_loss improved from 7475.94555 to 7344.27604, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  782.0770      0.70  0.16  0.62      0.72  0.12  0.66      0.72  0.08  0.68
+forget mean min: 0.884293 0.480491
+delta_x = 7.32553 delta_h = 0.743182
+U_c = [[-0.02330728]] U_f = [[ 0.]] b_c = [ 0.36885551] b_f = [-0.07807575]
+incx.max(), incx.min(), incx.mean() 22.9422 0.368856 4.70658
+fgtx.max(), fgtx.min(), fgtx.mean() 23.8393 0.0 4.58102
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.168741 7.32553 6.00989 9.50423
+W_c max, min, mean, abs_mean: 0.355527 0.344961 0.350985 0.350985
+W_f max, min, mean, abs_mean: 0.376272 0.366283 0.370656 0.370656
+        shijiazhuang 7344.2760      0.91  0.06  0.85      0.92  0.04  0.88      0.92  0.03  0.90
+forget mean min: 0.91287 0.480491
+delta_x = 8.61647 delta_h = 2.23317
+U_c = [[-0.02330728]] U_f = [[ 0.]] b_c = [ 0.36885551] b_f = [-0.07807575]
+incx.max(), incx.min(), incx.mean() 19.8443 0.368856 5.60092
+fgtx.max(), fgtx.min(), fgtx.mean() 20.5666 0.0 5.52512
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.624004 8.61647 6.20695 15.6326
+W_c max, min, mean, abs_mean: 0.355527 0.344961 0.350985 0.350985
+W_f max, min, mean, abs_mean: 0.376272 0.366283 0.370656 0.370656
+Epoch 93/300
+0s - loss: 798.0810 - val_loss: 7440.4556
+Epoch 00092: val_loss did not improve
+Epoch 94/300
+0s - loss: 800.7358 - val_loss: 7497.7762
+Epoch 00093: val_loss did not improve
+Epoch 95/300
+0s - loss: 792.8592 - val_loss: 7919.2518
+Epoch 00094: val_loss did not improve
+Epoch 96/300
+0s - loss: 796.3348 - val_loss: 7496.8938
+Epoch 00095: val_loss did not improve
+Epoch 97/300
+0s - loss: 793.4632 - val_loss: 7822.2812
+Epoch 00096: val_loss did not improve
+Epoch 98/300
+0s - loss: 793.1222 - val_loss: 7457.4318
+Epoch 00097: val_loss did not improve
+Epoch 99/300
+0s - loss: 792.4515 - val_loss: 7577.5318
+Epoch 00098: val_loss did not improve
+Epoch 100/300
+0s - loss: 796.4430 - val_loss: 7794.6977
+Epoch 00099: val_loss did not improve
+Epoch 101/300
+0s - loss: 794.9370 - val_loss: 7826.0420
+Epoch 00100: val_loss did not improve
+Epoch 102/300
+0s - loss: 791.9463 - val_loss: 7760.8707
+Epoch 00101: val_loss did not improve
+Epoch 103/300
+0s - loss: 787.4576 - val_loss: 7639.6703
+Epoch 00102: val_loss did not improve
+Epoch 104/300
+0s - loss: 792.1073 - val_loss: 7467.8354
+Epoch 00103: val_loss did not improve
+Epoch 105/300
+0s - loss: 788.4519 - val_loss: 7890.7930
+Epoch 00104: val_loss did not improve
+Epoch 106/300
+0s - loss: 789.5260 - val_loss: 7998.2023
+Epoch 00105: val_loss did not improve
+Epoch 107/300
+0s - loss: 789.6445 - val_loss: 7348.9434
+Epoch 00106: val_loss did not improve
+Epoch 108/300
+0s - loss: 787.0129 - val_loss: 7461.0684
+Epoch 00107: val_loss did not improve
+Epoch 109/300
+0s - loss: 790.1837 - val_loss: 7705.1493
+Epoch 00108: val_loss did not improve
+Epoch 110/300
+0s - loss: 788.7500 - val_loss: 7251.8921
+Epoch 00109: val_loss improved from 7344.27604 to 7251.89214, saving model to shijiazhuang_weights.hdf5
+        shijiazhuang  751.7370      0.72  0.18  0.62      0.75  0.14  0.67      0.75  0.10  0.69
+forget mean min: 0.887363 0.469566
+delta_x = 7.40212 delta_h = 0.815975
+U_c = [[-0.02538568]] U_f = [[ 0.]] b_c = [ 0.36820069] b_f = [-0.12188851]
+incx.max(), incx.min(), incx.mean() 24.2199 0.368201 4.78921
+fgtx.max(), fgtx.min(), fgtx.mean() 25.4406 0.0 4.71643
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.235404 7.40212 6.09569 9.59319
+W_c max, min, mean, abs_mean: 0.372461 0.356367 0.366033 0.366033
+W_f max, min, mean, abs_mean: 0.398558 0.384067 0.390353 0.390353
+        shijiazhuang 7251.8921      0.91  0.06  0.86      0.92  0.04  0.88      0.93  0.03  0.90
+forget mean min: 0.918565 0.469566
+delta_x = 8.76588 delta_h = 2.52229
+U_c = [[-0.02538568]] U_f = [[ 0.]] b_c = [ 0.36820069] b_f = [-0.12188851]
+incx.max(), incx.min(), incx.mean() 21.3251 0.368201 5.80736
+fgtx.max(), fgtx.min(), fgtx.mean() 22.3516 0.0 5.80128
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.04776 8.76588 6.40775 16.4751
+W_c max, min, mean, abs_mean: 0.372461 0.356367 0.366033 0.366033
+W_f max, min, mean, abs_mean: 0.398558 0.384067 0.390353 0.390353
+Epoch 111/300
+0s - loss: 786.1982 - val_loss: 7488.3964
+Epoch 00110: val_loss did not improve
+Epoch 112/300
+0s - loss: 787.0018 - val_loss: 7314.8370
+Epoch 00111: val_loss did not improve
+Epoch 113/300
+0s - loss: 779.7913 - val_loss: 7404.0029
+Epoch 00112: val_loss did not improve
+Epoch 114/300
+0s - loss: 788.4323 - val_loss: 7612.8679
+Epoch 00113: val_loss did not improve
+Epoch 115/300
+0s - loss: 787.4052 - val_loss: 7291.5608
+Epoch 00114: val_loss did not improve
+Epoch 116/300
+0s - loss: 784.2166 - val_loss: 7290.4071
+Epoch 00115: val_loss did not improve
+Epoch 117/300
+0s - loss: 785.8191 - val_loss: 7274.9677
+Epoch 00116: val_loss did not improve
+Epoch 118/300
+0s - loss: 778.6575 - val_loss: 7507.4260
+Epoch 00117: val_loss did not improve
+Epoch 119/300
+0s - loss: 780.8414 - val_loss: 7540.8794
+Epoch 00118: val_loss did not improve
+Epoch 120/300
+0s - loss: 783.2724 - val_loss: 7775.7653
+Epoch 00119: val_loss did not improve
+Epoch 121/300
+0s - loss: 782.1850 - val_loss: 7808.1893
+Epoch 00120: val_loss did not improve
+Epoch 122/300
+0s - loss: 777.8047 - val_loss: 7610.9875
+Epoch 00121: val_loss did not improve
+Epoch 123/300
+0s - loss: 780.2949 - val_loss: 7631.7029
+Epoch 00122: val_loss did not improve
+Epoch 124/300
+0s - loss: 777.8632 - val_loss: 8046.9325
+Epoch 00123: val_loss did not improve
+Epoch 125/300
+0s - loss: 781.8167 - val_loss: 7989.4510
+Epoch 00124: val_loss did not improve
+Epoch 126/300
+0s - loss: 776.1969 - val_loss: 7575.0371
+Epoch 00125: val_loss did not improve
+Epoch 127/300
+0s - loss: 776.8035 - val_loss: 7603.8050
+Epoch 00126: val_loss did not improve
+Epoch 128/300
+0s - loss: 772.6394 - val_loss: 8418.8903
+Epoch 00127: val_loss did not improve
+Epoch 129/300
+0s - loss: 775.8070 - val_loss: 7746.9441
+Epoch 00128: val_loss did not improve
+Epoch 130/300
+0s - loss: 776.9976 - val_loss: 8044.3409
+Epoch 00129: val_loss did not improve
+Epoch 131/300
+0s - loss: 774.2953 - val_loss: 7667.5841
+Epoch 00130: val_loss did not improve
+X_train[0].shape = (4688, 40, 26)
+
+training xingtai+handan
+Train on 4688 samples, validate on 928 samples
+Before training:
+      xingtai+handan 5959.4548      0.01  -nan  0.01      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+delta_x = 4.03135 delta_h = 2.64033
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -4.03135 4.03135 nan 4.03135
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+      xingtai+handan36023.8026      0.06  -nan  0.05      0.06  -nan  0.06      0.06  -nan  0.06
+forget mean min: 0.731058 0.731059
+delta_x = 8.5357 delta_h = 4.83842
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -8.5357 8.5357 nan 8.5357
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+1s - loss: 4092.2707 - val_loss: 15690.8161
+Epoch 00000: val_loss improved from inf to 15690.81612, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1949.1291      0.21  0.17  0.19      0.21  0.13  0.20      0.22  0.10  0.20
+forget mean min: 0.940167 0.782293
+delta_x = 2.54463 delta_h = 2.00361
+U_c = [[-0.11375319]] U_f = [[ 0.]] b_c = [ 0.08092608] b_f = [ 1.07829165]
+incx.max(), incx.min(), incx.mean() 4.6638 0.289473 2.17831
+fgtx.max(), fgtx.min(), fgtx.mean() 4.41202 0.200789 2.0192
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.03788 2.54463 1.66583 3.27021
+W_c max, min, mean, abs_mean: 0.11103 0.106559 0.109979 0.109979
+W_f max, min, mean, abs_mean: 0.106586 0.103622 0.105884 0.105884
+      xingtai+handan15690.8161      0.66  0.11  0.61      0.65  0.07  0.62      0.67  0.06  0.64
+forget mean min: 0.929138 0.783502
+delta_x = 5.20246 delta_h = 4.92573
+U_c = [[-0.11375319]] U_f = [[ 0.]] b_c = [ 0.08092608] b_f = [ 1.07829165]
+incx.max(), incx.min(), incx.mean() 4.71031 0.296857 2.03752
+fgtx.max(), fgtx.min(), fgtx.mean() 4.45675 0.207898 1.88364
+delta mean, abs_mean, abs_mean+, abs_mean-: -4.19505 5.20246 1.96443 6.31903
+W_c max, min, mean, abs_mean: 0.11103 0.106559 0.109979 0.109979
+W_f max, min, mean, abs_mean: 0.106586 0.103622 0.105884 0.105884
+Epoch 2/300
+0s - loss: 1525.2245 - val_loss: 9859.6988
+Epoch 00001: val_loss improved from 15690.81612 to 9859.69876, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1388.0773      0.78  0.35  0.55      0.81  0.32  0.58      0.82  0.31  0.60
+forget mean min: 0.954288 0.79324
+delta_x = 4.38975 delta_h = 1.83972
+U_c = [[-0.0608209]] U_f = [[ 0.]] b_c = [ 0.0996649] b_f = [ 1.07919669]
+incx.max(), incx.min(), incx.mean() 7.22375 0.38028 3.43682
+fgtx.max(), fgtx.min(), fgtx.mean() 6.73677 0.265374 3.15573
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.889613 4.38975 3.91064 5.38482
+W_c max, min, mean, abs_mean: 0.138436 0.13394 0.137306 0.137306
+W_f max, min, mean, abs_mean: 0.130638 0.127559 0.129846 0.129846
+      xingtai+handan 9859.6986      0.91  0.15  0.78      0.91  0.11  0.82      0.92  0.09  0.84
+forget mean min: 0.967446 0.79324
+delta_x = 5.62887 delta_h = 3.3427
+U_c = [[-0.0608209]] U_f = [[ 0.]] b_c = [ 0.0996649] b_f = [ 1.07919669]
+incx.max(), incx.min(), incx.mean() 8.15121 0.38028 4.04512
+fgtx.max(), fgtx.min(), fgtx.mean() 7.61379 0.265374 3.73095
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.4649 5.62887 4.12429 9.88381
+W_c max, min, mean, abs_mean: 0.138436 0.13394 0.137306 0.137306
+W_f max, min, mean, abs_mean: 0.130638 0.127559 0.129846 0.129846
+Epoch 3/300
+0s - loss: 1341.5073 - val_loss: 9750.1559
+Epoch 00002: val_loss improved from 9859.69876 to 9750.15588, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1309.5369      0.71  0.31  0.54      0.75  0.27  0.59      0.74  0.25  0.59
+forget mean min: 0.950033 0.785138
+delta_x = 4.13396 delta_h = 1.59105
+U_c = [[-0.05454751]] U_f = [[ 0.]] b_c = [ 0.0890463] b_f = [ 1.05836487]
+incx.max(), incx.min(), incx.mean() 6.31994 0.30191 2.94011
+fgtx.max(), fgtx.min(), fgtx.mean() 6.95163 0.2375 3.18087
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.385303 4.13396 3.46136 5.39865
+W_c max, min, mean, abs_mean: 0.127428 0.122995 0.126355 0.126355
+W_f max, min, mean, abs_mean: 0.141843 0.138481 0.140976 0.140976
+      xingtai+handan 9750.1558      0.91  0.15  0.78      0.92  0.11  0.82      0.92  0.09  0.84
+forget mean min: 0.969612 0.785138
+delta_x = 5.51824 delta_h = 3.05641
+U_c = [[-0.05454751]] U_f = [[ 0.]] b_c = [ 0.0890463] b_f = [ 1.05836487]
+incx.max(), incx.min(), incx.mean() 7.14196 0.30191 3.74179
+fgtx.max(), fgtx.min(), fgtx.mean() 7.86877 0.2375 4.07529
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.420629 5.51824 3.87231 10.9314
+W_c max, min, mean, abs_mean: 0.127428 0.122995 0.126355 0.126355
+W_f max, min, mean, abs_mean: 0.141843 0.138481 0.140976 0.140976
+Epoch 4/300
+0s - loss: 1293.9199 - val_loss: 9408.0440
+Epoch 00003: val_loss improved from 9750.15588 to 9408.04403, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1269.7875      0.74  0.30  0.56      0.77  0.27  0.60      0.78  0.25  0.62
+forget mean min: 0.953072 0.776159
+delta_x = 4.16089 delta_h = 1.60081
+U_c = [[-0.05504107]] U_f = [[ 0.]] b_c = [ 0.08768235] b_f = [ 1.03516865]
+incx.max(), incx.min(), incx.mean() 6.58979 0.25408 2.91319
+fgtx.max(), fgtx.min(), fgtx.mean() 8.13705 0.208251 3.536
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.487159 4.16089 3.48858 5.50255
+W_c max, min, mean, abs_mean: 0.125765 0.121377 0.124737 0.124737
+W_f max, min, mean, abs_mean: 0.157097 0.153369 0.156107 0.156107
+      xingtai+handan 9408.0441      0.93  0.16  0.80      0.94  0.11  0.84      0.93  0.09  0.85
+forget mean min: 0.973265 0.776159
+delta_x = 5.67874 delta_h = 3.09232
+U_c = [[-0.05504107]] U_f = [[ 0.]] b_c = [ 0.08768235] b_f = [ 1.03516865]
+incx.max(), incx.min(), incx.mean() 7.10314 0.25408 3.80235
+fgtx.max(), fgtx.min(), fgtx.mean() 8.77961 0.208251 4.64877
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.793133 5.67874 4.06284 12.0022
+W_c max, min, mean, abs_mean: 0.125765 0.121377 0.124737 0.124737
+W_f max, min, mean, abs_mean: 0.157097 0.153369 0.156107 0.156107
+Epoch 5/300
+0s - loss: 1256.6872 - val_loss: 9099.0762
+Epoch 00004: val_loss improved from 9408.04403 to 9099.07622, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1237.0792      0.75  0.29  0.57      0.79  0.26  0.62      0.79  0.24  0.63
+forget mean min: 0.950114 0.758139
+delta_x = 4.41994 delta_h = 1.54143
+U_c = [[-0.05049103]] U_f = [[ 0.]] b_c = [ 0.09103572] b_f = [ 1.00203538]
+incx.max(), incx.min(), incx.mean() 7.33553 0.202836 3.02946
+fgtx.max(), fgtx.min(), fgtx.mean() 9.1016 0.140469 3.69172
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.491093 4.41994 3.67189 5.93005
+W_c max, min, mean, abs_mean: 0.132871 0.128504 0.131869 0.131869
+W_f max, min, mean, abs_mean: 0.166915 0.162671 0.16568 0.16568
+      xingtai+handan 9099.0760      0.94  0.16  0.80      0.94  0.12  0.84      0.94  0.09  0.85
+forget mean min: 0.974527 0.758139
+delta_x = 6.19651 delta_h = 3.08121
+U_c = [[-0.05049103]] U_f = [[ 0.]] b_c = [ 0.09103572] b_f = [ 1.00203538]
+incx.max(), incx.min(), incx.mean() 7.59988 0.202836 4.17822
+fgtx.max(), fgtx.min(), fgtx.mean() 9.43392 0.140469 5.13503
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.19095 6.19651 4.57235 13.0244
+W_c max, min, mean, abs_mean: 0.132871 0.128504 0.131869 0.131869
+W_f max, min, mean, abs_mean: 0.166915 0.162671 0.16568 0.16568
+Epoch 6/300
+0s - loss: 1222.2362 - val_loss: 9000.3842
+Epoch 00005: val_loss improved from 9099.07622 to 9000.38416, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1200.0598      0.78  0.30  0.58      0.81  0.27  0.63      0.82  0.25  0.64
+forget mean min: 0.950687 0.741181
+delta_x = 4.59728 delta_h = 1.62231
+U_c = [[-0.05349998]] U_f = [[ 0.]] b_c = [ 0.09606755] b_f = [ 0.9733516]
+incx.max(), incx.min(), incx.mean() 8.77428 0.159019 3.19084
+fgtx.max(), fgtx.min(), fgtx.mean() 10.8574 0.0787642 3.87195
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.611792 4.59728 3.84854 6.1649
+W_c max, min, mean, abs_mean: 0.140882 0.136558 0.139969 0.139969
+W_f max, min, mean, abs_mean: 0.176574 0.171908 0.175122 0.175122
+      xingtai+handan 9000.3841      0.95  0.16  0.81      0.95  0.11  0.85      0.94  0.09  0.86
+forget mean min: 0.975346 0.741181
+delta_x = 6.08818 delta_h = 3.12306
+U_c = [[-0.05349998]] U_f = [[ 0.]] b_c = [ 0.09606755] b_f = [ 0.9733516]
+incx.max(), incx.min(), incx.mean() 7.31611 0.159019 4.16861
+fgtx.max(), fgtx.min(), fgtx.mean() 9.03336 0.0787642 5.09534
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.22383 6.08818 4.59803 11.8714
+W_c max, min, mean, abs_mean: 0.140882 0.136558 0.139969 0.139969
+W_f max, min, mean, abs_mean: 0.176574 0.171908 0.175122 0.175122
+Epoch 7/300
+0s - loss: 1181.6461 - val_loss: 9238.6003
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+0s - loss: 1144.2135 - val_loss: 9165.0784
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+0s - loss: 1116.5236 - val_loss: 8980.9598
+Epoch 00008: val_loss improved from 9000.38416 to 8980.95983, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1110.7702      0.80  0.29  0.60      0.85  0.25  0.66      0.85  0.23  0.68
+forget mean min: 0.946485 0.703345
+delta_x = 5.42676 delta_h = 1.18268
+U_c = [[-0.03694439]] U_f = [[ 0.]] b_c = [ 0.11254487] b_f = [ 0.86327821]
+incx.max(), incx.min(), incx.mean() 13.5063 0.112545 3.72855
+fgtx.max(), fgtx.min(), fgtx.mean() 14.9919 0.0 4.04754
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.6211 5.42676 4.5415 7.19074
+W_c max, min, mean, abs_mean: 0.174038 0.16955 0.173122 0.173122
+W_f max, min, mean, abs_mean: 0.195607 0.190452 0.193786 0.193786
+      xingtai+handan 8980.9597      0.96  0.16  0.81      0.96  0.12  0.85      0.95  0.09  0.86
+forget mean min: 0.974195 0.703345
+delta_x = 6.51983 delta_h = 2.37729
+U_c = [[-0.03694439]] U_f = [[ 0.]] b_c = [ 0.11254487] b_f = [ 0.86327821]
+incx.max(), incx.min(), incx.mean() 9.99671 0.112545 4.48273
+fgtx.max(), fgtx.min(), fgtx.mean() 11.0639 0.0 4.89182
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.05008 6.51983 4.85999 12.3637
+W_c max, min, mean, abs_mean: 0.174038 0.16955 0.173122 0.173122
+W_f max, min, mean, abs_mean: 0.195607 0.190452 0.193786 0.193786
+Epoch 10/300
+0s - loss: 1098.2395 - val_loss: 8874.3401
+Epoch 00009: val_loss improved from 8980.95983 to 8874.34011, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1089.9477      0.80  0.29  0.60      0.85  0.25  0.66      0.85  0.22  0.68
+forget mean min: 0.943925 0.69631
+delta_x = 5.64682 delta_h = 1.15487
+U_c = [[-0.03563349]] U_f = [[ 0.]] b_c = [ 0.11341172] b_f = [ 0.8297888]
+incx.max(), incx.min(), incx.mean() 14.0676 0.113412 3.81049
+fgtx.max(), fgtx.min(), fgtx.mean() 15.5173 0.0 4.11128
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.580202 5.64682 4.70471 7.49024
+W_c max, min, mean, abs_mean: 0.179904 0.175351 0.178958 0.178958
+W_f max, min, mean, abs_mean: 0.200902 0.195696 0.19901 0.19901
+      xingtai+handan 8874.3402      0.96  0.16  0.81      0.96  0.12  0.85      0.95  0.09  0.87
+forget mean min: 0.974465 0.69631
+delta_x = 6.54818 delta_h = 2.32104
+U_c = [[-0.03563349]] U_f = [[ 0.]] b_c = [ 0.11341172] b_f = [ 0.8297888]
+incx.max(), incx.min(), incx.mean() 10.4231 0.113412 4.54696
+fgtx.max(), fgtx.min(), fgtx.mean() 11.4648 0.0 4.93035
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.08858 6.54818 4.91856 12.204
+W_c max, min, mean, abs_mean: 0.179904 0.175351 0.178958 0.178958
+W_f max, min, mean, abs_mean: 0.200902 0.195696 0.19901 0.19901
+Epoch 11/300
+0s - loss: 1083.0799 - val_loss: 8827.7569
+Epoch 00010: val_loss improved from 8874.34011 to 8827.75694, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1061.7821      0.75  0.25  0.60      0.78  0.21  0.65      0.79  0.18  0.67
+forget mean min: 0.939311 0.688616
+delta_x = 5.6316 delta_h = 1.17548
+U_c = [[-0.039218]] U_f = [[ 0.]] b_c = [ 0.11103949] b_f = [ 0.79365557]
+incx.max(), incx.min(), incx.mean() 13.8621 0.111039 3.68572
+fgtx.max(), fgtx.min(), fgtx.mean() 15.3565 0.0 3.9921
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.326173 5.6316 4.60508 7.512
+W_c max, min, mean, abs_mean: 0.18217 0.177558 0.181197 0.181197
+W_f max, min, mean, abs_mean: 0.204367 0.199079 0.202357 0.202357
+      xingtai+handan 8827.7568      0.95  0.15  0.82      0.96  0.11  0.85      0.95  0.09  0.86
+forget mean min: 0.972189 0.688616
+delta_x = 6.45227 delta_h = 2.40958
+U_c = [[-0.039218]] U_f = [[ 0.]] b_c = [ 0.11103949] b_f = [ 0.79365557]
+incx.max(), incx.min(), incx.mean() 10.4517 0.111039 4.41695
+fgtx.max(), fgtx.min(), fgtx.mean() 11.5482 0.0 4.80881
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.853664 6.45227 4.762 12.0197
+W_c max, min, mean, abs_mean: 0.18217 0.177558 0.181197 0.181197
+W_f max, min, mean, abs_mean: 0.204367 0.199079 0.202357 0.202357
+Epoch 12/300
+0s - loss: 1069.5342 - val_loss: 8634.7015
+Epoch 00011: val_loss improved from 8827.75694 to 8634.70147, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1052.3681      0.80  0.28  0.61      0.84  0.23  0.67      0.85  0.21  0.69
+forget mean min: 0.941923 0.681577
+delta_x = 5.84942 delta_h = 1.14164
+U_c = [[-0.03589527]] U_f = [[ 0.]] b_c = [ 0.11061235] b_f = [ 0.76102996]
+incx.max(), incx.min(), incx.mean() 14.5819 0.110612 3.87995
+fgtx.max(), fgtx.min(), fgtx.mean() 16.3632 0.0 4.26217
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.531982 5.84942 4.8179 7.87209
+W_c max, min, mean, abs_mean: 0.187987 0.183291 0.186974 0.186974
+W_f max, min, mean, abs_mean: 0.213559 0.208179 0.211423 0.211423
+      xingtai+handan 8634.7015      0.96  0.15  0.82      0.96  0.11  0.85      0.95  0.09  0.87
+forget mean min: 0.973861 0.681577
+delta_x = 6.59733 delta_h = 2.34741
+U_c = [[-0.03589527]] U_f = [[ 0.]] b_c = [ 0.11061235] b_f = [ 0.76102996]
+incx.max(), incx.min(), incx.mean() 10.8399 0.110612 4.58659
+fgtx.max(), fgtx.min(), fgtx.mean() 12.1322 0.0 5.06131
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.12403 6.59733 4.95158 12.4217
+W_c max, min, mean, abs_mean: 0.187987 0.183291 0.186974 0.186974
+W_f max, min, mean, abs_mean: 0.213559 0.208179 0.211423 0.211423
+Epoch 13/300
+0s - loss: 1057.2763 - val_loss: 8590.2839
+Epoch 00012: val_loss improved from 8634.70147 to 8590.28388, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1042.4245      0.73  0.24  0.60      0.77  0.19  0.65      0.77  0.16  0.67
+forget mean min: 0.935992 0.673922
+delta_x = 5.8172 delta_h = 1.09407
+U_c = [[-0.03627731]] U_f = [[ 0.]] b_c = [ 0.105904] b_f = [ 0.72597736]
+incx.max(), incx.min(), incx.mean() 14.2384 0.105904 3.69599
+fgtx.max(), fgtx.min(), fgtx.mean() 16.3175 0.0 4.14521
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.225029 5.8172 4.67951 7.88976
+W_c max, min, mean, abs_mean: 0.188258 0.18347 0.187191 0.187191
+W_f max, min, mean, abs_mean: 0.218408 0.212927 0.216138 0.216138
+      xingtai+handan 8590.2839      0.95  0.15  0.82      0.96  0.11  0.85      0.95  0.09  0.86
+forget mean min: 0.972078 0.673922
+delta_x = 6.60481 delta_h = 2.31463
+U_c = [[-0.03627731]] U_f = [[ 0.]] b_c = [ 0.105904] b_f = [ 0.72597736]
+incx.max(), incx.min(), incx.mean() 10.6932 0.105904 4.46825
+fgtx.max(), fgtx.min(), fgtx.mean() 12.2245 0.0 5.03699
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.891332 6.60481 4.81847 12.8598
+W_c max, min, mean, abs_mean: 0.188258 0.18347 0.187191 0.187191
+W_f max, min, mean, abs_mean: 0.218408 0.212927 0.216138 0.216138
+Epoch 14/300
+0s - loss: 1047.0400 - val_loss: 8507.3794
+Epoch 00013: val_loss improved from 8590.28388 to 8507.37945, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1038.1842      0.72  0.23  0.59      0.76  0.18  0.65      0.76  0.15  0.67
+forget mean min: 0.934503 0.66698
+delta_x = 5.86604 delta_h = 1.15572
+U_c = [[-0.03884057]] U_f = [[ 0.]] b_c = [ 0.10295404] b_f = [ 0.6945585]
+incx.max(), incx.min(), incx.mean() 14.4808 0.102954 3.68733
+fgtx.max(), fgtx.min(), fgtx.mean() 16.888 0.0 4.21023
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.180978 5.86604 4.7042 7.95617
+W_c max, min, mean, abs_mean: 0.191027 0.186136 0.189893 0.189893
+W_f max, min, mean, abs_mean: 0.225443 0.219863 0.223052 0.223052
+      xingtai+handan 8507.3795      0.95  0.15  0.82      0.95  0.11  0.86      0.95  0.09  0.87
+forget mean min: 0.970583 0.66698
+delta_x = 6.53943 delta_h = 2.39324
+U_c = [[-0.03884057]] U_f = [[ 0.]] b_c = [ 0.10295404] b_f = [ 0.6945585]
+incx.max(), incx.min(), incx.mean() 10.7281 0.102954 4.38181
+fgtx.max(), fgtx.min(), fgtx.mean() 12.4805 0.0 5.02608
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.763211 6.53943 4.7019 12.9258
+W_c max, min, mean, abs_mean: 0.191027 0.186136 0.189893 0.189893
+W_f max, min, mean, abs_mean: 0.225443 0.219863 0.223052 0.223052
+Epoch 15/300
+0s - loss: 1038.5736 - val_loss: 8289.6959
+Epoch 00014: val_loss improved from 8507.37945 to 8289.69588, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1016.4838      0.78  0.27  0.61      0.83  0.22  0.67      0.83  0.19  0.70
+forget mean min: 0.938163 0.660494
+delta_x = 6.07446 delta_h = 1.03925
+U_c = [[-0.0323398]] U_f = [[ 0.]] b_c = [ 0.10255978] b_f = [ 0.66549575]
+incx.max(), incx.min(), incx.mean() 15.4094 0.10256 3.89491
+fgtx.max(), fgtx.min(), fgtx.mean() 18.2269 0.0 4.51587
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.41446 6.07446 4.90358 8.36418
+W_c max, min, mean, abs_mean: 0.19662 0.191624 0.195417 0.195417
+W_f max, min, mean, abs_mean: 0.235231 0.229521 0.232702 0.232702
+      xingtai+handan 8289.6959      0.96  0.15  0.82      0.96  0.11  0.85      0.95  0.09  0.87
+forget mean min: 0.972698 0.660494
+delta_x = 6.71741 delta_h = 2.20494
+U_c = [[-0.0323398]] U_f = [[ 0.]] b_c = [ 0.10255978] b_f = [ 0.66549575]
+incx.max(), incx.min(), incx.mean() 11.0818 0.10256 4.56683
+fgtx.max(), fgtx.min(), fgtx.mean() 13.074 0.0 5.31609
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.04648 6.71741 4.9202 13.4371
+W_c max, min, mean, abs_mean: 0.19662 0.191624 0.195417 0.195417
+W_f max, min, mean, abs_mean: 0.235231 0.229521 0.232702 0.232702
+Epoch 16/300
+0s - loss: 1028.5787 - val_loss: 8182.4590
+Epoch 00015: val_loss improved from 8289.69588 to 8182.45898, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1012.0145      0.80  0.28  0.62      0.85  0.23  0.68      0.86  0.20  0.71
+forget mean min: 0.939504 0.653598
+delta_x = 6.18728 delta_h = 1.115
+U_c = [[-0.03437588]] U_f = [[ 0.]] b_c = [ 0.10056169] b_f = [ 0.63489151]
+incx.max(), incx.min(), incx.mean() 15.5541 0.100562 3.97661
+fgtx.max(), fgtx.min(), fgtx.mean() 18.8527 0.0 4.72869
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.519551 6.18728 5.01165 8.56471
+W_c max, min, mean, abs_mean: 0.199837 0.194719 0.198553 0.198553
+W_f max, min, mean, abs_mean: 0.244884 0.239062 0.242232 0.242232
+      xingtai+handan 8182.4590      0.96  0.15  0.82      0.96  0.11  0.86      0.95  0.09  0.87
+forget mean min: 0.973727 0.653598
+delta_x = 6.75882 delta_h = 2.3301
+U_c = [[-0.03437588]] U_f = [[ 0.]] b_c = [ 0.10056169] b_f = [ 0.63489151]
+incx.max(), incx.min(), incx.mean() 11.0618 0.100562 4.6242
+fgtx.max(), fgtx.min(), fgtx.mean() 13.3726 0.0 5.51887
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.19803 6.75882 5.01746 13.4263
+W_c max, min, mean, abs_mean: 0.199837 0.194719 0.198553 0.198553
+W_f max, min, mean, abs_mean: 0.244884 0.239062 0.242232 0.242232
+Epoch 17/300
+0s - loss: 1021.6674 - val_loss: 8237.0230
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+0s - loss: 1013.9241 - val_loss: 7920.7187
+Epoch 00017: val_loss improved from 8182.45898 to 7920.71867, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan  995.7616      0.80  0.27  0.62      0.85  0.22  0.68      0.85  0.19  0.71
+forget mean min: 0.936793 0.6402
+delta_x = 6.35808 delta_h = 1.14724
+U_c = [[-0.03501204]] U_f = [[ 0.]] b_c = [ 0.09590343] b_f = [ 0.57623303]
+incx.max(), incx.min(), incx.mean() 16.0738 0.0959034 4.0297
+fgtx.max(), fgtx.min(), fgtx.mean() 19.973 0.0 4.91748
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.500225 6.35808 5.13331 8.82259
+W_c max, min, mean, abs_mean: 0.207225 0.201908 0.205793 0.205793
+W_f max, min, mean, abs_mean: 0.260225 0.254136 0.257255 0.257255
+      xingtai+handan 7920.7186      0.96  0.15  0.82      0.96  0.11  0.86      0.95  0.09  0.87
+forget mean min: 0.973107 0.6402
+delta_x = 7.10818 delta_h = 2.52009
+U_c = [[-0.03501204]] U_f = [[ 0.]] b_c = [ 0.09590343] b_f = [ 0.57623303]
+incx.max(), incx.min(), incx.mean() 11.598 0.0959034 4.87033
+fgtx.max(), fgtx.min(), fgtx.mean() 14.3784 0.0 5.96845
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.51926 7.10818 5.38526 14.0442
+W_c max, min, mean, abs_mean: 0.207225 0.201908 0.205793 0.205793
+W_f max, min, mean, abs_mean: 0.260225 0.254136 0.257255 0.257255
+Epoch 19/300
+0s - loss: 1005.9597 - val_loss: 7978.4386
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 999.2826 - val_loss: 7911.4416
+Epoch 00019: val_loss improved from 7920.71867 to 7911.44161, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan  976.5875      0.80  0.26  0.62      0.84  0.21  0.69      0.85  0.19  0.71
+forget mean min: 0.935694 0.627264
+delta_x = 6.4514 delta_h = 1.09974
+U_c = [[-0.03385455]] U_f = [[ 0.]] b_c = [ 0.09181178] b_f = [ 0.52049661]
+incx.max(), incx.min(), incx.mean() 16.4634 0.0918118 4.05779
+fgtx.max(), fgtx.min(), fgtx.mean() 20.714 0.0 5.01798
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.456319 6.4514 5.17319 9.01912
+W_c max, min, mean, abs_mean: 0.21435 0.208858 0.212774 0.212774
+W_f max, min, mean, abs_mean: 0.272459 0.266163 0.269217 0.269217
+      xingtai+handan 7911.4415      0.96  0.15  0.82      0.96  0.11  0.86      0.95  0.09  0.87
+forget mean min: 0.973803 0.627264
+delta_x = 7.05398 delta_h = 2.46794
+U_c = [[-0.03385455]] U_f = [[ 0.]] b_c = [ 0.09181178] b_f = [ 0.52049661]
+incx.max(), incx.min(), incx.mean() 11.7095 0.0918118 4.87251
+fgtx.max(), fgtx.min(), fgtx.mean() 14.6993 0.0 6.04898
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.55006 7.05398 5.34763 14.0745
+W_c max, min, mean, abs_mean: 0.21435 0.208858 0.212774 0.212774
+W_f max, min, mean, abs_mean: 0.272459 0.266163 0.269217 0.269217
+Epoch 21/300
+0s - loss: 991.4825 - val_loss: 7719.5041
+Epoch 00020: val_loss improved from 7911.44161 to 7719.50407, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan 1002.5918      0.84  0.29  0.62      0.88  0.25  0.68      0.90  0.22  0.71
+forget mean min: 0.937952 0.622157
+delta_x = 6.62108 delta_h = 1.17216
+U_c = [[-0.03411572]] U_f = [[ 0.]] b_c = [ 0.09222118] b_f = [ 0.49871379]
+incx.max(), incx.min(), incx.mean() 17.0801 0.0922212 4.2569
+fgtx.max(), fgtx.min(), fgtx.mean() 21.4209 0.0 5.2515
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.684939 6.62108 5.407 9.14964
+W_c max, min, mean, abs_mean: 0.219793 0.214229 0.218155 0.218155
+W_f max, min, mean, abs_mean: 0.27849 0.272074 0.275087 0.275087
+      xingtai+handan 7719.5040      0.96  0.14  0.82      0.96  0.10  0.86      0.95  0.09  0.87
+forget mean min: 0.973081 0.622157
+delta_x = 7.12185 delta_h = 2.56405
+U_c = [[-0.03411572]] U_f = [[ 0.]] b_c = [ 0.09222118] b_f = [ 0.49871379]
+incx.max(), incx.min(), incx.mean() 12.0236 0.0922212 4.96898
+fgtx.max(), fgtx.min(), fgtx.mean() 15.045 0.0 6.14959
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.69998 7.12185 5.46835 14.0192
+W_c max, min, mean, abs_mean: 0.219793 0.214229 0.218155 0.218155
+W_f max, min, mean, abs_mean: 0.27849 0.272074 0.275087 0.275087
+Epoch 22/300
+0s - loss: 987.3563 - val_loss: 7631.1864
+Epoch 00021: val_loss improved from 7719.50407 to 7631.18642, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan  959.9786      0.76  0.24  0.61      0.81  0.19  0.68      0.81  0.16  0.70
+forget mean min: 0.930922 0.616014
+delta_x = 6.51649 delta_h = 1.11438
+U_c = [[-0.03576417]] U_f = [[ 0.]] b_c = [ 0.08809771] b_f = [ 0.4726623]
+incx.max(), incx.min(), incx.mean() 16.3976 0.0880977 4.0127
+fgtx.max(), fgtx.min(), fgtx.mean() 20.5835 0.0 4.95311
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.288118 6.51649 5.17001 9.10806
+W_c max, min, mean, abs_mean: 0.221278 0.215644 0.219576 0.219576
+W_f max, min, mean, abs_mean: 0.280684 0.274165 0.277123 0.277123
+      xingtai+handan 7631.1864      0.95  0.14  0.82      0.96  0.10  0.86      0.95  0.09  0.87
+forget mean min: 0.97103 0.616014
+delta_x = 7.14166 delta_h = 2.54752
+U_c = [[-0.03576417]] U_f = [[ 0.]] b_c = [ 0.08809771] b_f = [ 0.4726623]
+incx.max(), incx.min(), incx.mean() 11.6794 0.0880977 4.85096
+fgtx.max(), fgtx.min(), fgtx.mean() 14.6289 0.0 6.01126
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.40398 7.14166 5.33581 14.4004
+W_c max, min, mean, abs_mean: 0.221278 0.215644 0.219576 0.219576
+W_f max, min, mean, abs_mean: 0.280684 0.274165 0.277123 0.277123
+Epoch 23/300
+0s - loss: 976.6643 - val_loss: 7589.9283
+Epoch 00022: val_loss improved from 7631.18642 to 7589.92827, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan  951.8857      0.78  0.25  0.62      0.83  0.20  0.69      0.84  0.17  0.72
+forget mean min: 0.932412 0.610597
+delta_x = 6.59452 delta_h = 1.13723
+U_c = [[-0.03597361]] U_f = [[ 0.]] b_c = [ 0.08715291] b_f = [ 0.4498232]
+incx.max(), incx.min(), incx.mean() 16.894 0.0871529 4.10588
+fgtx.max(), fgtx.min(), fgtx.mean() 21.1857 0.0 5.06583
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.387686 6.59452 5.26963 9.19517
+W_c max, min, mean, abs_mean: 0.226135 0.220422 0.224358 0.224358
+W_f max, min, mean, abs_mean: 0.286579 0.279929 0.282819 0.282819
+      xingtai+handan 7589.9283      0.96  0.14  0.82      0.96  0.10  0.86      0.95  0.09  0.87
+forget mean min: 0.973034 0.610597
+delta_x = 7.14671 delta_h = 2.65018
+U_c = [[-0.03597361]] U_f = [[ 0.]] b_c = [ 0.08715291] b_f = [ 0.4498232]
+incx.max(), incx.min(), incx.mean() 11.8127 0.0871529 4.9946
+fgtx.max(), fgtx.min(), fgtx.mean() 14.7805 0.0 6.18634
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.7029 7.14671 5.48539 14.0779
+W_c max, min, mean, abs_mean: 0.226135 0.220422 0.224358 0.224358
+W_f max, min, mean, abs_mean: 0.286579 0.279929 0.282819 0.282819
+Epoch 24/300
+0s - loss: 971.8704 - val_loss: 7731.3508
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+0s - loss: 962.3158 - val_loss: 7653.3297
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+0s - loss: 953.0123 - val_loss: 7705.6670
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+0s - loss: 944.7802 - val_loss: 7853.7642
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+0s - loss: 938.6048 - val_loss: 7525.6885
+Epoch 00027: val_loss improved from 7589.92827 to 7525.68854, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan  910.3221      0.77  0.24  0.62      0.82  0.18  0.69      0.82  0.15  0.72
+forget mean min: 0.925387 0.580111
+delta_x = 6.90324 delta_h = 1.18977
+U_c = [[-0.03777286]] U_f = [[ 0.]] b_c = [ 0.07929567] b_f = [ 0.32322973]
+incx.max(), incx.min(), incx.mean() 18.6918 0.0792957 4.2314
+fgtx.max(), fgtx.min(), fgtx.mean() 22.8128 0.0 5.08919
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.258166 6.90324 5.48232 9.57878
+W_c max, min, mean, abs_mean: 0.248955 0.242776 0.246659 0.246659
+W_f max, min, mean, abs_mean: 0.306867 0.299668 0.302331 0.302331
+      xingtai+handan 7525.6886      0.95  0.14  0.82      0.96  0.10  0.86      0.95  0.09  0.87
+forget mean min: 0.97058 0.580111
+delta_x = 7.2713 delta_h = 2.69511
+U_c = [[-0.03777286]] U_f = [[ 0.]] b_c = [ 0.07929567] b_f = [ 0.32322973]
+incx.max(), incx.min(), incx.mean() 13.1439 0.0792957 5.05894
+fgtx.max(), fgtx.min(), fgtx.mean() 16.0129 0.0 6.10379
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.55076 7.2713 5.50322 14.412
+W_c max, min, mean, abs_mean: 0.248955 0.242776 0.246659 0.246659
+W_f max, min, mean, abs_mean: 0.306867 0.299668 0.302331 0.302331
+Epoch 29/300
+0s - loss: 931.8693 - val_loss: 7666.5225
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+0s - loss: 927.1907 - val_loss: 7580.3466
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+0s - loss: 920.4908 - val_loss: 7634.4535
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+0s - loss: 911.4823 - val_loss: 7780.7565
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+0s - loss: 906.9209 - val_loss: 7740.3447
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+0s - loss: 898.7861 - val_loss: 7534.0885
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+0s - loss: 894.7703 - val_loss: 7597.9424
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+0s - loss: 891.6231 - val_loss: 7738.4295
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+0s - loss: 882.7852 - val_loss: 7654.2138
+Epoch 00036: val_loss did not improve
+Epoch 38/300
+0s - loss: 883.4477 - val_loss: 7665.2356
+Epoch 00037: val_loss did not improve
+Epoch 39/300
+0s - loss: 876.9627 - val_loss: 7569.6506
+Epoch 00038: val_loss did not improve
+Epoch 40/300
+0s - loss: 874.1842 - val_loss: 7695.6067
+Epoch 00039: val_loss did not improve
+Epoch 41/300
+0s - loss: 871.0066 - val_loss: 7452.7707
+Epoch 00040: val_loss improved from 7525.68854 to 7452.77074, saving model to xingtai+handan_weights.hdf5
+      xingtai+handan  837.1632      0.78  0.22  0.64      0.83  0.17  0.71      0.84  0.14  0.74
+forget mean min: 0.919791 0.520142
+delta_x = 7.65908 delta_h = 1.14922
+U_c = [[-0.03640347]] U_f = [[ 0.]] b_c = [ 0.06169315] b_f = [ 0.08060972]
+incx.max(), incx.min(), incx.mean() 22.8241 0.0616932 4.74312
+fgtx.max(), fgtx.min(), fgtx.mean() 26.1985 0.0 5.38817
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.291291 7.65908 6.17433 10.3429
+W_c max, min, mean, abs_mean: 0.307813 0.299904 0.304112 0.304112
+W_f max, min, mean, abs_mean: 0.356672 0.346079 0.350031 0.350031
+      xingtai+handan 7452.7707      0.95  0.13  0.83      0.95  0.09  0.87      0.95  0.08  0.88
+forget mean min: 0.964375 0.520142
+delta_x = 7.78209 delta_h = 2.64945
+U_c = [[-0.03640347]] U_f = [[ 0.]] b_c = [ 0.06169315] b_f = [ 0.08060972]
+incx.max(), incx.min(), incx.mean() 14.8949 0.0616932 5.30569
+fgtx.max(), fgtx.min(), fgtx.mean() 17.0722 0.0 6.03615
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.23698 7.78209 5.75316 15.1392
+W_c max, min, mean, abs_mean: 0.307813 0.299904 0.304112 0.304112
+W_f max, min, mean, abs_mean: 0.356672 0.346079 0.350031 0.350031
+Epoch 42/300
+0s - loss: 866.5145 - val_loss: 7481.7336
+Epoch 00041: val_loss did not improve
+Epoch 43/300
+0s - loss: 864.4087 - val_loss: 7539.8549
+Epoch 00042: val_loss did not improve
+Epoch 44/300
+0s - loss: 861.1225 - val_loss: 7657.0115
+Epoch 00043: val_loss did not improve
+Epoch 45/300
+0s - loss: 858.9837 - val_loss: 7732.9334
+Epoch 00044: val_loss did not improve
+Epoch 46/300
+0s - loss: 856.1785 - val_loss: 7695.7962
+Epoch 00045: val_loss did not improve
+Epoch 47/300
+0s - loss: 853.9311 - val_loss: 7660.5333
+Epoch 00046: val_loss did not improve
+Epoch 48/300
+0s - loss: 851.4739 - val_loss: 7733.0569
+Epoch 00047: val_loss did not improve
+Epoch 49/300
+0s - loss: 848.4659 - val_loss: 7673.4457
+Epoch 00048: val_loss did not improve
+Epoch 50/300
+0s - loss: 846.8469 - val_loss: 7752.1381
+Epoch 00049: val_loss did not improve
+Epoch 51/300
+0s - loss: 844.9337 - val_loss: 7806.3407
+Epoch 00050: val_loss did not improve
+Epoch 52/300
+0s - loss: 844.7813 - val_loss: 7752.1056
+Epoch 00051: val_loss did not improve
+Epoch 53/300
+0s - loss: 843.1607 - val_loss: 7744.0249
+Epoch 00052: val_loss did not improve
+Epoch 54/300
+0s - loss: 838.8117 - val_loss: 7639.6554
+Epoch 00053: val_loss did not improve
+Epoch 55/300
+0s - loss: 836.2710 - val_loss: 7718.1688
+Epoch 00054: val_loss did not improve
+Epoch 56/300
+0s - loss: 833.4033 - val_loss: 7683.2665
+Epoch 00055: val_loss did not improve
+Epoch 57/300
+0s - loss: 834.8850 - val_loss: 7555.7250
+Epoch 00056: val_loss did not improve
+Epoch 58/300
+0s - loss: 834.7152 - val_loss: 7586.7678
+Epoch 00057: val_loss did not improve
+Epoch 59/300
+0s - loss: 829.5976 - val_loss: 7624.4308
+Epoch 00058: val_loss did not improve
+Epoch 60/300
+0s - loss: 829.4939 - val_loss: 7725.3803
+Epoch 00059: val_loss did not improve
+Epoch 61/300
+0s - loss: 825.4627 - val_loss: 7514.0502
+Epoch 00060: val_loss did not improve
+Epoch 62/300
+0s - loss: 826.8776 - val_loss: 7656.2683
+Epoch 00061: val_loss did not improve
+X_train[0].shape = (2930, 40, 26)
+
+training jinan
+Train on 2930 samples, validate on 580 samples
+Before training:
+               jinan 8715.5537      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.731058 0.731059
+delta_x = 4.97181 delta_h = 3.17364
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -4.97181 4.97181 nan 4.97181
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+               jinan21458.7413      0.04  -nan  0.04      0.04  -nan  0.04      0.03  -nan  0.03
+forget mean min: 0.731058 0.731059
+delta_x = 7.36854 delta_h = 4.8035
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -7.36854 7.36854 nan 7.36854
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 7234.2914 - val_loss: 15931.7935
+Epoch 00000: val_loss improved from inf to 15931.79347, saving model to jinan_weights.hdf5
+               jinan 5020.7978      0.06  -nan  0.06      0.06  -nan  0.06      0.06  -nan  0.06
+forget mean min: 0.87301 0.76294
+delta_x = 4.74513 delta_h = 3.86896
+U_c = [[-0.10279765]] U_f = [[ 0.]] b_c = [ 0.05609818] b_f = [ 1.05716634]
+incx.max(), incx.min(), incx.mean() 2.68366 0.167682 1.01637
+fgtx.max(), fgtx.min(), fgtx.mean() 2.63004 0.111697 0.961182
+delta mean, abs_mean, abs_mean+, abs_mean-: -4.72283 4.74513 0.371432 4.88047
+W_c max, min, mean, abs_mean: 0.080239 0.0756206 0.0795162 0.0795162
+W_f max, min, mean, abs_mean: 0.0801646 0.0756988 0.0795958 0.0795958
+               jinan15931.7931      0.07  -nan  0.07      0.07  -nan  0.07      0.08  -nan  0.08
+forget mean min: 0.821567 0.76294
+delta_x = 9.11101 delta_h = 7.43656
+U_c = [[-0.10279765]] U_f = [[ 0.]] b_c = [ 0.05609818] b_f = [ 1.05716634]
+incx.max(), incx.min(), incx.mean() 1.15856 0.167682 0.537452
+fgtx.max(), fgtx.min(), fgtx.mean() 1.1035 0.111697 0.481813
+delta mean, abs_mean, abs_mean+, abs_mean-: -9.11101 9.11101 nan 9.11101
+W_c max, min, mean, abs_mean: 0.080239 0.0756206 0.0795162 0.0795162
+W_f max, min, mean, abs_mean: 0.0801646 0.0756988 0.0795958 0.0795958
+Epoch 2/300
+0s - loss: 3406.2049 - val_loss: 9475.1195
+Epoch 00001: val_loss improved from 15931.79347 to 9475.11952, saving model to jinan_weights.hdf5
+               jinan 2425.4105      0.68  0.31  0.52      0.69  0.26  0.56      0.71  0.22  0.59
+forget mean min: 0.958626 0.791556
+delta_x = 3.13392 delta_h = 2.40743
+U_c = [[-0.11722632]] U_f = [[ 0.]] b_c = [ 0.09374128] b_f = [ 1.08705163]
+incx.max(), incx.min(), incx.mean() 7.04812 0.357798 3.00038
+fgtx.max(), fgtx.min(), fgtx.mean() 6.51231 0.247279 2.72188
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.117583 3.13392 2.66957 3.85714
+W_c max, min, mean, abs_mean: 0.125145 0.120617 0.124422 0.124422
+W_f max, min, mean, abs_mean: 0.117146 0.112716 0.116516 0.116516
+               jinan 9475.1196      0.61  0.11  0.57      0.61  0.08  0.58      0.60  0.04  0.59
+forget mean min: 0.909495 0.791556
+delta_x = 5.39024 delta_h = 4.96397
+U_c = [[-0.11722632]] U_f = [[ 0.]] b_c = [ 0.09374128] b_f = [ 1.08705163]
+incx.max(), incx.min(), incx.mean() 3.59218 0.357798 1.58346
+fgtx.max(), fgtx.min(), fgtx.mean() 3.27606 0.247279 1.39503
+delta mean, abs_mean, abs_mean+, abs_mean-: -5.32662 5.39024 0.974882 5.53917
+W_c max, min, mean, abs_mean: 0.125145 0.120617 0.124422 0.124422
+W_f max, min, mean, abs_mean: 0.117146 0.112716 0.116516 0.116516
+Epoch 3/300
+0s - loss: 2211.0450 - val_loss: 6379.5480
+Epoch 00002: val_loss improved from 9475.11952 to 6379.54799, saving model to jinan_weights.hdf5
+               jinan 2053.0422      0.82  0.34  0.58      0.84  0.30  0.62      0.87  0.27  0.66
+forget mean min: 0.960059 0.789172
+delta_x = 4.13297 delta_h = 2.79831
+U_c = [[-0.10574874]] U_f = [[ 0.]] b_c = [ 0.11397093] b_f = [ 1.07345271]
+incx.max(), incx.min(), incx.mean() 9.30963 0.423492 3.85779
+fgtx.max(), fgtx.min(), fgtx.mean() 7.32286 0.246486 2.98136
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.08926 4.13297 3.68569 5.21982
+W_c max, min, mean, abs_mean: 0.15489 0.15033 0.154118 0.154118
+W_f max, min, mean, abs_mean: 0.123377 0.118819 0.122732 0.122732
+               jinan 6379.5480      0.87  0.14  0.76      0.87  0.11  0.79      0.86  0.06  0.81
+forget mean min: 0.934699 0.789172
+delta_x = 4.51947 delta_h = 3.61665
+U_c = [[-0.10574874]] U_f = [[ 0.]] b_c = [ 0.11397093] b_f = [ 1.07345271]
+incx.max(), incx.min(), incx.mean() 6.54441 0.423492 2.82532
+fgtx.max(), fgtx.min(), fgtx.mean() 5.12082 0.246486 2.15916
+delta mean, abs_mean, abs_mean+, abs_mean-: -2.34671 4.51947 2.33327 6.42423
+W_c max, min, mean, abs_mean: 0.15489 0.15033 0.154118 0.154118
+W_f max, min, mean, abs_mean: 0.123377 0.118819 0.122732 0.122732
+Epoch 4/300
+0s - loss: 1955.6900 - val_loss: 5093.6740
+Epoch 00003: val_loss improved from 6379.54799 to 5093.67401, saving model to jinan_weights.hdf5
+               jinan 1863.8017      0.81  0.33  0.58      0.83  0.29  0.62      0.85  0.27  0.65
+forget mean min: 0.947376 0.770303
+delta_x = 5.15466 delta_h = 3.00469
+U_c = [[-0.10289989]] U_f = [[ 0.]] b_c = [ 0.13151035] b_f = [ 1.03968215]
+incx.max(), incx.min(), incx.mean() 12.1719 0.420901 4.68045
+fgtx.max(), fgtx.min(), fgtx.mean() 7.08744 0.170342 2.67769
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.08562 5.15466 4.79895 5.81575
+W_c max, min, mean, abs_mean: 0.185206 0.180593 0.18438 0.18438
+W_f max, min, mean, abs_mean: 0.109277 0.104447 0.108534 0.108534
+               jinan 5093.6741      0.90  0.14  0.78      0.90  0.11  0.81      0.90  0.06  0.85
+forget mean min: 0.937658 0.770303
+delta_x = 6.0182 delta_h = 4.13919
+U_c = [[-0.10289989]] U_f = [[ 0.]] b_c = [ 0.13151035] b_f = [ 1.03968215]
+incx.max(), incx.min(), incx.mean() 9.82273 0.420901 4.40838
+fgtx.max(), fgtx.min(), fgtx.mean() 5.70466 0.170342 2.51754
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.649395 6.0182 4.54121 8.1535
+W_c max, min, mean, abs_mean: 0.185206 0.180593 0.18438 0.18438
+W_f max, min, mean, abs_mean: 0.109277 0.104447 0.108534 0.108534
+Epoch 5/300
+0s - loss: 1811.7870 - val_loss: 4446.8660
+Epoch 00004: val_loss improved from 5093.67401 to 4446.86595, saving model to jinan_weights.hdf5
+               jinan 1753.7832      0.80  0.33  0.57      0.82  0.28  0.62      0.84  0.25  0.66
+forget mean min: 0.937446 0.754999
+delta_x = 5.68767 delta_h = 2.96019
+U_c = [[-0.10064924]] U_f = [[ 0.]] b_c = [ 0.14469108] b_f = [ 1.00981867]
+incx.max(), incx.min(), incx.mean() 14.2992 0.401922 5.38993
+fgtx.max(), fgtx.min(), fgtx.mean() 6.36347 0.115635 2.3581
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.01939 5.68767 5.27421 6.40959
+W_c max, min, mean, abs_mean: 0.211569 0.206836 0.210612 0.210612
+W_f max, min, mean, abs_mean: 0.0954902 0.0905073 0.0946849 0.0946849
+               jinan 4446.8659      0.92  0.16  0.78      0.91  0.13  0.81      0.92  0.08  0.84
+forget mean min: 0.938704 0.754999
+delta_x = 6.96818 delta_h = 4.53414
+U_c = [[-0.10064924]] U_f = [[ 0.]] b_c = [ 0.14469108] b_f = [ 1.00981867]
+incx.max(), incx.min(), incx.mean() 12.2925 0.401922 5.83171
+fgtx.max(), fgtx.min(), fgtx.mean() 5.46129 0.115635 2.55671
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.528242 6.96818 5.9581 8.68139
+W_c max, min, mean, abs_mean: 0.211569 0.206836 0.210612 0.210612
+W_f max, min, mean, abs_mean: 0.0954902 0.0905073 0.0946849 0.0946849
+Epoch 6/300
+0s - loss: 1717.6962 - val_loss: 4046.0354
+Epoch 00005: val_loss improved from 4446.86595 to 4046.03540, saving model to jinan_weights.hdf5
+               jinan 1670.1062      0.80  0.32  0.58      0.83  0.28  0.63      0.85  0.25  0.66
+forget mean min: 0.929466 0.742962
+delta_x = 6.28131 delta_h = 2.92587
+U_c = [[-0.09417659]] U_f = [[ 0.]] b_c = [ 0.15595101] b_f = [ 0.98277617]
+incx.max(), incx.min(), incx.mean() 16.837 0.376218 6.19717
+fgtx.max(), fgtx.min(), fgtx.mean() 5.95679 0.0786462 2.15731
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.10799 6.28131 5.96839 6.78977
+W_c max, min, mean, abs_mean: 0.23644 0.231655 0.23543 0.23543
+W_f max, min, mean, abs_mean: 0.0848124 0.0798072 0.0840712 0.0840712
+               jinan 4046.0354      0.93  0.18  0.78      0.93  0.14  0.80      0.93  0.10  0.84
+forget mean min: 0.938829 0.742962
+delta_x = 7.54735 delta_h = 4.58253
+U_c = [[-0.09417659]] U_f = [[ 0.]] b_c = [ 0.15595101] b_f = [ 0.98277617]
+incx.max(), incx.min(), incx.mean() 14.8276 0.376218 7.06396
+fgtx.max(), fgtx.min(), fgtx.mean() 5.23921 0.0786462 2.46683
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.26116 7.54735 6.85395 8.794
+W_c max, min, mean, abs_mean: 0.23644 0.231655 0.23543 0.23543
+W_f max, min, mean, abs_mean: 0.0848124 0.0798072 0.0840712 0.0840712
+Epoch 7/300
+0s - loss: 1648.7787 - val_loss: 3766.0921
+Epoch 00006: val_loss improved from 4046.03540 to 3766.09207, saving model to jinan_weights.hdf5
+               jinan 1609.8983      0.82  0.32  0.59      0.84  0.28  0.64      0.86  0.25  0.67
+forget mean min: 0.923221 0.733532
+delta_x = 6.76277 delta_h = 2.99398
+U_c = [[-0.09361419]] U_f = [[ 0.]] b_c = [ 0.16626352] b_f = [ 0.9591195]
+incx.max(), incx.min(), incx.mean() 19.366 0.345918 6.94669
+fgtx.max(), fgtx.min(), fgtx.mean() 5.71851 0.0534952 2.01949
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.2282 6.76277 6.59082 7.02749
+W_c max, min, mean, abs_mean: 0.258767 0.253935 0.257707 0.257707
+W_f max, min, mean, abs_mean: 0.0774476 0.0724075 0.0767553 0.0767553
+               jinan 3766.0920      0.94  0.18  0.78      0.94  0.15  0.81      0.94  0.11  0.84
+forget mean min: 0.936884 0.733532
+delta_x = 7.82161 delta_h = 4.57759
+U_c = [[-0.09361419]] U_f = [[ 0.]] b_c = [ 0.16626352] b_f = [ 0.9591195]
+incx.max(), incx.min(), incx.mean() 17.2448 0.345918 8.0093
+fgtx.max(), fgtx.min(), fgtx.mean() 5.08667 0.0534952 2.33597
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.53225 7.82161 7.61277 8.15431
+W_c max, min, mean, abs_mean: 0.258767 0.253935 0.257707 0.257707
+W_f max, min, mean, abs_mean: 0.0774476 0.0724075 0.0767553 0.0767553
+Epoch 8/300
+0s - loss: 1590.8054 - val_loss: 3692.0666
+Epoch 00007: val_loss improved from 3766.09207 to 3692.06657, saving model to jinan_weights.hdf5
+               jinan 1551.8974      0.81  0.31  0.60      0.84  0.27  0.64      0.86  0.23  0.68
+forget mean min: 0.915719 0.723972
+delta_x = 7.04735 delta_h = 2.90594
+U_c = [[-0.09153412]] U_f = [[ 0.]] b_c = [ 0.17234226] b_f = [ 0.93481833]
+incx.max(), incx.min(), incx.mean() 21.102 0.288274 7.52381
+fgtx.max(), fgtx.min(), fgtx.mean() 5.31662 0.0294339 1.86743
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.13761 7.04735 6.92649 7.22188
+W_c max, min, mean, abs_mean: 0.27953 0.274659 0.278433 0.278433
+W_f max, min, mean, abs_mean: 0.0714336 0.0662956 0.0707278 0.0707278
+               jinan 3692.0665      0.95  0.18  0.78      0.95  0.15  0.81      0.94  0.11  0.84
+forget mean min: 0.932599 0.723972
+delta_x = 8.06198 delta_h = 4.46224
+U_c = [[-0.09153412]] U_f = [[ 0.]] b_c = [ 0.17234226] b_f = [ 0.93481833]
+incx.max(), incx.min(), incx.mean() 18.9724 0.288274 8.78778
+fgtx.max(), fgtx.min(), fgtx.mean() 4.77562 0.0294339 2.1885
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.52451 8.06198 8.18755 7.88465
+W_c max, min, mean, abs_mean: 0.27953 0.274659 0.278433 0.278433
+W_f max, min, mean, abs_mean: 0.0714336 0.0662956 0.0707278 0.0707278
+Epoch 9/300
+0s - loss: 1541.5270 - val_loss: 3541.5121
+Epoch 00008: val_loss improved from 3692.06657 to 3541.51206, saving model to jinan_weights.hdf5
+               jinan 1506.8010      0.81  0.30  0.60      0.85  0.26  0.65      0.86  0.23  0.69
+forget mean min: 0.91052 0.716356
+delta_x = 7.26566 delta_h = 2.80726
+U_c = [[-0.08644141]] U_f = [[ 0.]] b_c = [ 0.1760373] b_f = [ 0.91403532]
+incx.max(), incx.min(), incx.mean() 22.2534 0.230954 8.01654
+fgtx.max(), fgtx.min(), fgtx.mean() 5.00056 0.0124211 1.77587
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.11884 7.26566 7.15633 7.4203
+W_c max, min, mean, abs_mean: 0.29685 0.291947 0.295729 0.295729
+W_f max, min, mean, abs_mean: 0.0676793 0.0624655 0.0669826 0.0669826
+               jinan 3541.5120      0.97  0.18  0.80      0.97  0.14  0.83      0.96  0.11  0.86
+forget mean min: 0.930313 0.716356
+delta_x = 8.22847 delta_h = 4.19866
+U_c = [[-0.08644141]] U_f = [[ 0.]] b_c = [ 0.1760373] b_f = [ 0.91403532]
+incx.max(), incx.min(), incx.mean() 19.9386 0.230954 9.44849
+fgtx.max(), fgtx.min(), fgtx.mean() 4.4762 0.0124211 2.1002
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.56135 8.22847 8.59992 7.73772
+W_c max, min, mean, abs_mean: 0.29685 0.291947 0.295729 0.295729
+W_f max, min, mean, abs_mean: 0.0676793 0.0624655 0.0669826 0.0669826
+Epoch 10/300
+0s - loss: 1497.1362 - val_loss: 3552.6934
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+0s - loss: 1458.6027 - val_loss: 3352.8027
+Epoch 00010: val_loss improved from 3541.51206 to 3352.80266, saving model to jinan_weights.hdf5
+               jinan 1426.7271      0.80  0.27  0.61      0.83  0.23  0.66      0.85  0.19  0.71
+forget mean min: 0.898154 0.705364
+delta_x = 7.47914 delta_h = 2.52466
+U_c = [[-0.07861085]] U_f = [[ 0.]] b_c = [ 0.17890427] b_f = [ 0.87297422]
+incx.max(), incx.min(), incx.mean() 23.5371 0.178904 8.75482
+fgtx.max(), fgtx.min(), fgtx.mean() 4.33147 0.0 1.59028
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.817621 7.47914 7.25907 7.77264
+W_c max, min, mean, abs_mean: 0.327667 0.322745 0.326557 0.326557
+W_f max, min, mean, abs_mean: 0.0612599 0.0558497 0.0605558 0.0605558
+               jinan 3352.8027      0.98  0.17  0.81      0.98  0.13  0.85      0.97  0.10  0.87
+forget mean min: 0.920992 0.705364
+delta_x = 8.6849 delta_h = 3.71522
+U_c = [[-0.07861085]] U_f = [[ 0.]] b_c = [ 0.17890427] b_f = [ 0.87297422]
+incx.max(), incx.min(), incx.mean() 22.1139 0.178904 10.4632
+fgtx.max(), fgtx.min(), fgtx.mean() 4.06752 0.0 1.90707
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.20518 8.6849 9.01218 8.28699
+W_c max, min, mean, abs_mean: 0.327667 0.322745 0.326557 0.326557
+W_f max, min, mean, abs_mean: 0.0612599 0.0558497 0.0605558 0.0605558
+Epoch 12/300
+0s - loss: 1426.5504 - val_loss: 3350.2917
+Epoch 00011: val_loss improved from 3352.80266 to 3350.29173, saving model to jinan_weights.hdf5
+               jinan 1392.7929      0.80  0.28  0.62      0.84  0.23  0.67      0.85  0.20  0.71
+forget mean min: 0.895169 0.701253
+delta_x = 7.74759 delta_h = 2.38802
+U_c = [[-0.07344501]] U_f = [[ 0.]] b_c = [ 0.17924693] b_f = [ 0.85327101]
+incx.max(), incx.min(), incx.mean() 24.1685 0.179247 9.16178
+fgtx.max(), fgtx.min(), fgtx.mean() 4.17961 0.0 1.56501
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.843693 7.74759 7.52349 8.04583
+W_c max, min, mean, abs_mean: 0.343237 0.338316 0.342147 0.342147
+W_f max, min, mean, abs_mean: 0.0602987 0.0547957 0.0596123 0.0596123
+               jinan 3350.2917      0.98  0.18  0.81      0.98  0.14  0.85      0.97  0.11  0.87
+forget mean min: 0.921331 0.701253
+delta_x = 9.12238 delta_h = 3.64372
+U_c = [[-0.07344501]] U_f = [[ 0.]] b_c = [ 0.17924693] b_f = [ 0.85327101]
+incx.max(), incx.min(), incx.mean() 23.7549 0.179247 11.2128
+fgtx.max(), fgtx.min(), fgtx.mean() 4.10753 0.0 1.92235
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.57355 9.12238 9.25226 8.94448
+W_c max, min, mean, abs_mean: 0.343237 0.338316 0.342147 0.342147
+W_f max, min, mean, abs_mean: 0.0602987 0.0547957 0.0596123 0.0596123
+Epoch 13/300
+0s - loss: 1399.8128 - val_loss: 3288.2177
+Epoch 00012: val_loss improved from 3350.29173 to 3288.21771, saving model to jinan_weights.hdf5
+               jinan 1366.3756      0.80  0.27  0.62      0.83  0.22  0.67      0.85  0.19  0.71
+forget mean min: 0.891685 0.697852
+delta_x = 7.81433 delta_h = 2.2297
+U_c = [[-0.06862812]] U_f = [[ 0.]] b_c = [ 0.17717214] b_f = [ 0.83708912]
+incx.max(), incx.min(), incx.mean() 24.4118 0.177172 9.35433
+fgtx.max(), fgtx.min(), fgtx.mean() 4.03544 0.0 1.52813
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.73317 7.81433 7.50995 8.2163
+W_c max, min, mean, abs_mean: 0.353994 0.349061 0.352912 0.352912
+W_f max, min, mean, abs_mean: 0.0594505 0.0538605 0.0587659 0.0587659
+               jinan 3288.2177      0.98  0.18  0.81      0.98  0.14  0.84      0.97  0.11  0.87
+forget mean min: 0.917698 0.697852
+delta_x = 9.35288 delta_h = 3.42041
+U_c = [[-0.06862812]] U_f = [[ 0.]] b_c = [ 0.17717214] b_f = [ 0.83708912]
+incx.max(), incx.min(), incx.mean() 24.6587 0.177172 11.4357
+fgtx.max(), fgtx.min(), fgtx.mean() 4.07652 0.0 1.8747
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.3738 9.35288 9.34155 9.36815
+W_c max, min, mean, abs_mean: 0.353994 0.349061 0.352912 0.352912
+W_f max, min, mean, abs_mean: 0.0594505 0.0538605 0.0587659 0.0587659
+Epoch 14/300
+0s - loss: 1371.3591 - val_loss: 3304.9841
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+0s - loss: 1348.0446 - val_loss: 3270.1901
+Epoch 00014: val_loss improved from 3288.21771 to 3270.19010, saving model to jinan_weights.hdf5
+               jinan 1319.2703      0.79  0.24  0.63      0.81  0.19  0.68      0.83  0.16  0.72
+forget mean min: 0.886646 0.690652
+delta_x = 7.99059 delta_h = 1.90243
+U_c = [[-0.0597156]] U_f = [[ 0.]] b_c = [ 0.1724412] b_f = [ 0.80316907]
+incx.max(), incx.min(), incx.mean() 24.2616 0.172441 9.63832
+fgtx.max(), fgtx.min(), fgtx.mean() 3.79361 0.0 1.49069
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.547659 7.99059 7.58587 8.51152
+W_c max, min, mean, abs_mean: 0.373695 0.368773 0.372664 0.372664
+W_f max, min, mean, abs_mean: 0.0593965 0.0535768 0.0586887 0.0586887
+               jinan 3270.1901      0.98  0.19  0.80      0.98  0.15  0.84      0.98  0.12  0.86
+forget mean min: 0.916537 0.690652
+delta_x = 9.87875 delta_h = 3.11534
+U_c = [[-0.0597156]] U_f = [[ 0.]] b_c = [ 0.1724412] b_f = [ 0.80316907]
+incx.max(), incx.min(), incx.mean() 26.0482 0.172441 12.1284
+fgtx.max(), fgtx.min(), fgtx.mean() 4.07493 0.0 1.88284
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.53282 9.87875 9.77653 10.022
+W_c max, min, mean, abs_mean: 0.373695 0.368773 0.372664 0.372664
+W_f max, min, mean, abs_mean: 0.0593965 0.0535768 0.0586887 0.0586887
+Epoch 16/300
+0s - loss: 1322.8443 - val_loss: 3212.7168
+Epoch 00015: val_loss improved from 3270.19010 to 3212.71680, saving model to jinan_weights.hdf5
+               jinan 1296.0474      0.82  0.27  0.63      0.85  0.22  0.68      0.87  0.19  0.72
+forget mean min: 0.889325 0.686933
+delta_x = 8.46681 delta_h = 1.7711
+U_c = [[-0.05103911]] U_f = [[ 0.]] b_c = [ 0.17070091] b_f = [ 0.78582048]
+incx.max(), incx.min(), incx.mean() 25.5068 0.170701 10.0147
+fgtx.max(), fgtx.min(), fgtx.mean() 4.00631 0.0 1.55658
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.799658 8.46681 8.05349 9.0267
+W_c max, min, mean, abs_mean: 0.384437 0.379505 0.383421 0.383421
+W_f max, min, mean, abs_mean: 0.0613544 0.0553897 0.0606302 0.0606302
+               jinan 3212.7168      0.98  0.20  0.79      0.99  0.16  0.83      0.99  0.13  0.87
+forget mean min: 0.919612 0.686933
+delta_x = 10.4409 delta_h = 2.89612
+U_c = [[-0.05103911]] U_f = [[ 0.]] b_c = [ 0.17070091] b_f = [ 0.78582048]
+incx.max(), incx.min(), incx.mean() 26.8988 0.170701 12.5862
+fgtx.max(), fgtx.min(), fgtx.mean() 4.2264 0.0 1.96321
+delta mean, abs_mean, abs_mean+, abs_mean-: 1.9128 10.4409 10.3073 10.6406
+W_c max, min, mean, abs_mean: 0.384437 0.379505 0.383421 0.383421
+W_f max, min, mean, abs_mean: 0.0613544 0.0553897 0.0606302 0.0606302
+Epoch 17/300
+0s - loss: 1306.0948 - val_loss: 3268.1847
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+0s - loss: 1292.1880 - val_loss: 3355.4900
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+0s - loss: 1275.6668 - val_loss: 3465.8522
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 1257.4301 - val_loss: 3568.2396
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+0s - loss: 1244.0335 - val_loss: 3624.7253
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+0s - loss: 1231.7426 - val_loss: 3636.9450
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 1215.0907 - val_loss: 4016.6017
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+0s - loss: 1205.7922 - val_loss: 3825.5118
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+0s - loss: 1194.8338 - val_loss: 4034.3336
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+0s - loss: 1181.1897 - val_loss: 4141.9678
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+0s - loss: 1169.1586 - val_loss: 4478.4596
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+0s - loss: 1160.3183 - val_loss: 4720.8179
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+0s - loss: 1150.0122 - val_loss: 4735.4921
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+0s - loss: 1141.0458 - val_loss: 4671.7931
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+0s - loss: 1128.3842 - val_loss: 4992.5387
+Epoch 00030: val_loss did not improve
+Epoch 32/300
+0s - loss: 1117.7693 - val_loss: 5153.9268
+Epoch 00031: val_loss did not improve
+Epoch 33/300
+0s - loss: 1111.4341 - val_loss: 6064.8237
+Epoch 00032: val_loss did not improve
+Epoch 34/300
+0s - loss: 1100.0838 - val_loss: 6376.9450
+Epoch 00033: val_loss did not improve
+Epoch 35/300
+0s - loss: 1097.1651 - val_loss: 6384.9132
+Epoch 00034: val_loss did not improve
+Epoch 36/300
+0s - loss: 1088.6137 - val_loss: 6568.5423
+Epoch 00035: val_loss did not improve
+Epoch 37/300
+0s - loss: 1078.3314 - val_loss: 6002.0279
+Epoch 00036: val_loss did not improve
+X_train[0].shape = (7032, 40, 26)
+
+training xian
+Train on 7032 samples, validate on 1392 samples
+Before training:
+                xian 3305.8251      0.01  -nan  0.01      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+delta_x = 3.2568 delta_h = 2.14914
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -3.2568 3.2568 nan 3.2568
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+                xian14473.9814      0.03  -nan  0.03      0.03  -nan  0.03      0.01  -nan  0.01
+forget mean min: 0.731059 0.731059
+delta_x = 4.79727 delta_h = 2.65739
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+delta mean, abs_mean, abs_mean+, abs_mean-: -4.79727 4.79727 nan 4.79727
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+1s - loss: 1718.6035 - val_loss: 7343.6574
+Epoch 00000: val_loss improved from inf to 7343.65743, saving model to xian_weights.hdf5
+                xian  813.2094      0.42  0.37  0.34      0.46  0.36  0.36      0.48  0.32  0.39
+forget mean min: 0.939405 0.790872
+delta_x = 3.27375 delta_h = 2.23444
+U_c = [[-0.11385407]] U_f = [[ 0.]] b_c = [ 0.09158592] b_f = [ 1.08803463]
+incx.max(), incx.min(), incx.mean() 7.7476 0.349279 2.69872
+fgtx.max(), fgtx.min(), fgtx.mean() 7.19399 0.242155 2.4498
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.168112 3.27375 2.92946 3.76402
+W_c max, min, mean, abs_mean: 0.121114 0.117702 0.120582 0.120582
+W_f max, min, mean, abs_mean: 0.113979 0.112233 0.113309 0.113309
+                xian 7343.6575      0.18  0.01  0.18      0.18  0.00  0.18      0.18  0.00  0.18
+forget mean min: 0.903132 0.790872
+delta_x = 3.47759 delta_h = 2.82034
+U_c = [[-0.11385407]] U_f = [[ 0.]] b_c = [ 0.09158592] b_f = [ 1.08803463]
+incx.max(), incx.min(), incx.mean() 3.80172 0.349279 1.56889
+fgtx.max(), fgtx.min(), fgtx.mean() 3.48624 0.242155 1.38817
+delta mean, abs_mean, abs_mean+, abs_mean-: -2.95411 3.47759 1.1737 4.13884
+W_c max, min, mean, abs_mean: 0.121114 0.117702 0.120582 0.120582
+W_f max, min, mean, abs_mean: 0.113979 0.112233 0.113309 0.113309
+Epoch 2/300
+1s - loss: 776.9621 - val_loss: 6179.1474
+Epoch 00001: val_loss improved from 7343.65743 to 6179.14743, saving model to xian_weights.hdf5
+                xian  749.0025      0.45  0.36  0.36      0.49  0.35  0.39      0.51  0.31  0.42
+forget mean min: 0.937968 0.779829
+delta_x = 3.16741 delta_h = 1.92247
+U_c = [[-0.09523723]] U_f = [[ 0.]] b_c = [ 0.09009071] b_f = [ 1.06264448]
+incx.max(), incx.min(), incx.mean() 6.9514 0.321769 2.76799
+fgtx.max(), fgtx.min(), fgtx.mean() 5.98283 0.202026 2.33505
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.177826 3.16741 2.80724 3.69836
+W_c max, min, mean, abs_mean: 0.129752 0.126298 0.129229 0.129229
+W_f max, min, mean, abs_mean: 0.113455 0.111402 0.112687 0.112687
+                xian 6179.1475      0.28  0.01  0.27      0.27  0.01  0.27      0.27  0.00  0.27
+forget mean min: 0.916771 0.779829
+delta_x = 3.10293 delta_h = 2.34029
+U_c = [[-0.09523723]] U_f = [[ 0.]] b_c = [ 0.09009071] b_f = [ 1.06264448]
+incx.max(), incx.min(), incx.mean() 4.6251 0.321769 1.97804
+fgtx.max(), fgtx.min(), fgtx.mean() 3.95437 0.202026 1.64624
+delta mean, abs_mean, abs_mean+, abs_mean-: -2.11793 3.10293 1.36968 4.07608
+W_c max, min, mean, abs_mean: 0.129752 0.126298 0.129229 0.129229
+W_f max, min, mean, abs_mean: 0.113455 0.111402 0.112687 0.112687
+Epoch 3/300
+1s - loss: 738.3998 - val_loss: 5775.3129
+Epoch 00002: val_loss improved from 6179.14743 to 5775.31285, saving model to xian_weights.hdf5
+                xian  725.4139      0.44  0.34  0.36      0.47  0.34  0.38      0.50  0.30  0.41
+forget mean min: 0.931286 0.766002
+delta_x = 3.08977 delta_h = 1.67745
+U_c = [[-0.0815483]] U_f = [[ 0.]] b_c = [ 0.08683477] b_f = [ 1.03424144]
+incx.max(), incx.min(), incx.mean() 7.27151 0.284338 2.85328
+fgtx.max(), fgtx.min(), fgtx.mean() 5.51558 0.151628 2.12377
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.00505485 3.08977 2.73916 3.5416
+W_c max, min, mean, abs_mean: 0.140401 0.136912 0.13987 0.13987
+W_f max, min, mean, abs_mean: 0.108207 0.105975 0.10738 0.10738
+                xian 5775.3129      0.33  0.01  0.32      0.32  0.01  0.32      0.32  0.00  0.32
+forget mean min: 0.91818 0.766002
+delta_x = 3.23828 delta_h = 2.10969
+U_c = [[-0.0815483]] U_f = [[ 0.]] b_c = [ 0.08683477] b_f = [ 1.03424144]
+incx.max(), incx.min(), incx.mean() 5.52746 0.284338 2.33541
+fgtx.max(), fgtx.min(), fgtx.mean() 4.17668 0.151628 1.72622
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.80294 3.23828 1.71539 4.33372
+W_c max, min, mean, abs_mean: 0.140401 0.136912 0.13987 0.13987
+W_f max, min, mean, abs_mean: 0.108207 0.105975 0.10738 0.10738
+Epoch 4/300
+1s - loss: 716.6546 - val_loss: 5243.7315
+Epoch 00003: val_loss improved from 5775.31285 to 5243.73150, saving model to xian_weights.hdf5
+                xian  704.4091      0.52  0.37  0.40      0.57  0.36  0.43      0.60  0.33  0.46
+forget mean min: 0.932613 0.758308
+delta_x = 3.30091 delta_h = 1.61019
+U_c = [[-0.07349966]] U_f = [[ 0.]] b_c = [ 0.08586855] b_f = [ 1.0153923]
+incx.max(), incx.min(), incx.mean() 8.14846 0.26209 3.11367
+fgtx.max(), fgtx.min(), fgtx.mean() 5.85753 0.128033 2.19973
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.21666 3.30091 3.03788 3.66256
+W_c max, min, mean, abs_mean: 0.152266 0.148716 0.151698 0.151698
+W_f max, min, mean, abs_mean: 0.111046 0.108736 0.110214 0.110214
+                xian 5243.7315      0.41  0.01  0.40      0.41  0.01  0.40      0.40  0.00  0.40
+forget mean min: 0.92289 0.758308
+delta_x = 3.4687 delta_h = 1.98974
+U_c = [[-0.07349966]] U_f = [[ 0.]] b_c = [ 0.08586855] b_f = [ 1.0153923]
+incx.max(), incx.min(), incx.mean() 6.41867 0.26209 2.66683
+fgtx.max(), fgtx.min(), fgtx.mean() 4.60082 0.128033 1.8751
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.42825 3.4687 2.09826 4.76566
+W_c max, min, mean, abs_mean: 0.152266 0.148716 0.151698 0.151698
+W_f max, min, mean, abs_mean: 0.111046 0.108736 0.110214 0.110214
+Epoch 5/300
+1s - loss: 700.7512 - val_loss: 5210.7226
+Epoch 00004: val_loss improved from 5243.73150 to 5210.72259, saving model to xian_weights.hdf5
+                xian  691.6475      0.48  0.33  0.39      0.52  0.32  0.41      0.54  0.30  0.44
+forget mean min: 0.930781 0.749456
+delta_x = 3.20685 delta_h = 1.44598
+U_c = [[-0.06823713]] U_f = [[ 0.]] b_c = [ 0.0794271] b_f = [ 0.99673128]
+incx.max(), incx.min(), incx.mean() 8.30908 0.215682 3.03634
+fgtx.max(), fgtx.min(), fgtx.mean() 5.97818 0.0989829 2.14796
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.063213 3.20685 2.9054 3.59483
+W_c max, min, mean, abs_mean: 0.155751 0.152131 0.155147 0.155147
+W_f max, min, mean, abs_mean: 0.113548 0.111182 0.112705 0.112705
+                xian 5210.7227      0.41  0.01  0.41      0.41  0.01  0.41      0.40  0.00  0.40
+forget mean min: 0.922797 0.749456
+delta_x = 3.4922 delta_h = 1.88368
+U_c = [[-0.06823713]] U_f = [[ 0.]] b_c = [ 0.0794271] b_f = [ 0.99673128]
+incx.max(), incx.min(), incx.mean() 6.52878 0.215682 2.69801
+fgtx.max(), fgtx.min(), fgtx.mean() 4.68493 0.0989829 1.9022
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.41406 3.4922 2.062 4.94498
+W_c max, min, mean, abs_mean: 0.155751 0.152131 0.155147 0.155147
+W_f max, min, mean, abs_mean: 0.113548 0.111182 0.112705 0.112705
+Epoch 6/300
+1s - loss: 688.8225 - val_loss: 4876.8450
+Epoch 00005: val_loss improved from 5210.72259 to 4876.84498, saving model to xian_weights.hdf5
+                xian  678.6790      0.56  0.36  0.42      0.61  0.35  0.45      0.64  0.33  0.49
+forget mean min: 0.93155 0.738576
+delta_x = 3.33587 delta_h = 1.36264
+U_c = [[-0.06062582]] U_f = [[ 0.]] b_c = [ 0.07365303] b_f = [ 0.97417521]
+incx.max(), incx.min(), incx.mean() 8.87484 0.161259 3.10856
+fgtx.max(), fgtx.min(), fgtx.mean() 6.46997 0.0644051 2.23103
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.149343 3.33587 3.07673 3.67435
+W_c max, min, mean, abs_mean: 0.161799 0.158127 0.161181 0.161181
+W_f max, min, mean, abs_mean: 0.119471 0.116933 0.118491 0.118491
+                xian 4876.8450      0.47  0.02  0.46      0.47  0.01  0.46      0.46  0.00  0.46
+forget mean min: 0.927319 0.738576
+delta_x = 3.64884 delta_h = 1.73684
+U_c = [[-0.06062582]] U_f = [[ 0.]] b_c = [ 0.07365303] b_f = [ 0.97417521]
+incx.max(), incx.min(), incx.mean() 7.08445 0.161259 2.84596
+fgtx.max(), fgtx.min(), fgtx.mean() 5.15381 0.0644051 2.038
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.19067 3.64884 2.25979 5.30524
+W_c max, min, mean, abs_mean: 0.161799 0.158127 0.161181 0.161181
+W_f max, min, mean, abs_mean: 0.119471 0.116933 0.118491 0.118491
+Epoch 7/300
+1s - loss: 674.9395 - val_loss: 4862.8130
+Epoch 00006: val_loss improved from 4876.84498 to 4862.81296, saving model to xian_weights.hdf5
+                xian  661.4148      0.52  0.34  0.41      0.57  0.33  0.45      0.59  0.31  0.47
+forget mean min: 0.93459 0.721287
+delta_x = 3.19817 delta_h = 1.24516
+U_c = [[-0.05793445]] U_f = [[ 0.]] b_c = [ 0.06304904] b_f = [ 0.94318384]
+incx.max(), incx.min(), incx.mean() 8.79854 0.0730429 3.03797
+fgtx.max(), fgtx.min(), fgtx.mean() 6.70351 0.00767064 2.28292
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.111284 3.19817 2.97297 3.48086
+W_c max, min, mean, abs_mean: 0.164219 0.16047 0.163569 0.163569
+W_f max, min, mean, abs_mean: 0.126583 0.123916 0.125524 0.125524
+                xian 4862.8129      0.47  0.02  0.46      0.47  0.01  0.46      0.47  0.01  0.46
+forget mean min: 0.93151 0.721287
+delta_x = 3.53691 delta_h = 1.62427
+U_c = [[-0.05793445]] U_f = [[ 0.]] b_c = [ 0.06304904] b_f = [ 0.94318384]
+incx.max(), incx.min(), incx.mean() 7.00379 0.0730429 2.82394
+fgtx.max(), fgtx.min(), fgtx.mean() 5.32625 0.00767064 2.11868
+delta mean, abs_mean, abs_mean+, abs_mean-: -1.12104 3.53691 2.23292 5.07365
+W_c max, min, mean, abs_mean: 0.164219 0.16047 0.163569 0.163569
+W_f max, min, mean, abs_mean: 0.126583 0.123916 0.125524 0.125524
+Epoch 8/300
+1s - loss: 658.6836 - val_loss: 4494.8464
+Epoch 00007: val_loss improved from 4862.81296 to 4494.84641, saving model to xian_weights.hdf5
+                xian  647.2016      0.59  0.37  0.44      0.65  0.36  0.48      0.68  0.34  0.50
+forget mean min: 0.937267 0.711796
+delta_x = 3.31203 delta_h = 1.19145
+U_c = [[-0.05306147]] U_f = [[ 0.]] b_c = [ 0.05296351] b_f = [ 0.90412223]
+incx.max(), incx.min(), incx.mean() 9.24501 0.0529635 3.07112
+fgtx.max(), fgtx.min(), fgtx.mean() 7.50099 0.0 2.4629
+delta mean, abs_mean, abs_mean+, abs_mean-: 0.229473 3.31203 3.11865 3.56607
+W_c max, min, mean, abs_mean: 0.169169 0.165375 0.168504 0.168504
+W_f max, min, mean, abs_mean: 0.138691 0.135892 0.137508 0.137508
+                xian 4494.8465      0.52  0.03  0.51      0.53  0.02  0.52      0.52  0.01  0.52
+forget mean min: 0.939429 0.711796
+delta_x = 3.6701 delta_h = 1.49763
+U_c = [[-0.05306147]] U_f = [[ 0.]] b_c = [ 0.05296351] b_f = [ 0.90412223]
+incx.max(), incx.min(), incx.mean() 7.5113 0.0529635 2.9496
+fgtx.max(), fgtx.min(), fgtx.mean() 6.08625 0.0 2.36374
+delta mean, abs_mean, abs_mean+, abs_mean-: -0.810346 3.6701 2.47761 5.29752
+W_c max, min, mean, abs_mean: 0.169169 0.165375 0.168504 0.168504
+W_f max, min, mean, abs_mean: 0.138691 0.135892 0.137508 0.137508
+Epoch 9/300
+1s - loss: 646.8856 - val_loss: 4904.6773
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+1s - loss: 637.4969 - val_loss: 4826.0522
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+1s - loss: 627.1535 - val_loss: 4634.7824
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+1s - loss: 614.7685 - val_loss: 4792.2111
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+1s - loss: 605.7136 - val_loss: 4661.0113
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+1s - loss: 596.8009 - val_loss: 4695.2365
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+1s - loss: 588.6221 - val_loss: 4947.2365
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+1s - loss: 582.9971 - val_loss: 4828.3265
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+1s - loss: 576.0441 - val_loss: 5386.6402
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+1s - loss: 572.5773 - val_loss: 5260.1217
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+1s - loss: 568.8161 - val_loss: 5307.1833
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+1s - loss: 564.6651 - val_loss: 5486.1702
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+1s - loss: 560.2473 - val_loss: 5891.5821
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+1s - loss: 556.2455 - val_loss: 5458.6363
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+1s - loss: 553.3557 - val_loss: 6001.5632
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+1s - loss: 550.0150 - val_loss: 5966.2358
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+1s - loss: 546.9514 - val_loss: 5925.8804
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+1s - loss: 544.6024 - val_loss: 6146.8247
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+1s - loss: 542.6095 - val_loss: 5975.2423
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+1s - loss: 539.3630 - val_loss: 6022.0330
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+1s - loss: 538.8023 - val_loss: 6540.5093
+Epoch 00028: val_loss did not improve
+
+beijing
+             beijing 1382.5276      0.87  0.20  0.71      0.88  0.18  0.73      0.88  0.15  0.76
+forget mean min: 0.876322 0.616786
+delta_x = 6.96268 delta_h = 0.794215
+U_c = [[-0.01520895]] U_f = [[ 0.]] b_c = [ 0.13532367] b_f = [ 0.47592822]
+incx.max(), incx.min(), incx.mean() 15.0068 0.135324 4.22163
+fgtx.max(), fgtx.min(), fgtx.mean() 13.8235 0.0 3.79835
+             beijing 6235.4518      0.86  0.10  0.78      0.86  0.07  0.81      0.88  0.06  0.83
+forget mean min: 0.898095 0.616786
+delta_x = 9.20304 delta_h = 1.36824
+U_c = [[-0.01520895]] U_f = [[ 0.]] b_c = [ 0.13532367] b_f = [ 0.47592822]
+incx.max(), incx.min(), incx.mean() 15.824 0.135324 4.98468
+fgtx.max(), fgtx.min(), fgtx.mean() 14.583 0.0 4.50763
+
+tianjin
+             tianjin  840.4202      0.80  0.19  0.68      0.83  0.14  0.73      0.82  0.12  0.73
+forget mean min: 0.907689 0.623551
+delta_x = 6.77762 delta_h = 2.31412
+U_c = [[-0.07217564]] U_f = [[ 0.]] b_c = [ 0.08599924] b_f = [ 0.50464964]
+incx.max(), incx.min(), incx.mean() 14.2456 0.0859992 4.55716
+fgtx.max(), fgtx.min(), fgtx.mean() 11.5278 0.0 3.64021
+             tianjin 4572.8425      0.97  0.28  0.70      0.97  0.28  0.70      0.97  0.28  0.71
+forget mean min: 0.960421 0.623551
+delta_x = 8.14935 delta_h = 3.49663
+U_c = [[-0.07217564]] U_f = [[ 0.]] b_c = [ 0.08599924] b_f = [ 0.50464964]
+incx.max(), incx.min(), incx.mean() 14.1848 0.0859992 6.20419
+fgtx.max(), fgtx.min(), fgtx.mean() 11.4785 0.0 4.98125
+
+tangshan
+            tangshan 1136.2982      0.79  0.21  0.65      0.84  0.17  0.72      0.87  0.15  0.76
+forget mean min: 0.930382 0.745005
+delta_x = 5.75476 delta_h = 2.65633
+U_c = [[-0.07373622]] U_f = [[ 0.]] b_c = [ 0.10094662] b_f = [ 0.99339783]
+incx.max(), incx.min(), incx.mean() 11.0012 0.205626 4.1672
+fgtx.max(), fgtx.min(), fgtx.mean() 8.20021 0.0787472 3.05902
+            tangshan 4168.2844      0.96  0.16  0.81      0.98  0.13  0.86      0.98  0.13  0.86
+forget mean min: 0.953136 0.745005
+delta_x = 7.4488 delta_h = 3.91474
+U_c = [[-0.07373622]] U_f = [[ 0.]] b_c = [ 0.10094662] b_f = [ 0.99339783]
+incx.max(), incx.min(), incx.mean() 11.97 0.205626 5.31465
+fgtx.max(), fgtx.min(), fgtx.mean() 8.92904 0.0787472 3.92227
+
+baoding
+             baoding 1007.5061      0.87  0.21  0.71      0.90  0.19  0.75      0.91  0.19  0.75
+forget mean min: 0.911314 0.621849
+delta_x = 8.3213 delta_h = 1.19014
+U_c = [[-0.02496707]] U_f = [[ 0.]] b_c = [ 0.12409922] b_f = [ 0.49740514]
+incx.max(), incx.min(), incx.mean() 20.0062 0.124099 5.52472
+fgtx.max(), fgtx.min(), fgtx.mean() 14.702 0.0 3.99355
+             baoding13840.1466      0.86  0.11  0.78      0.85  0.07  0.80      0.84  0.05  0.81
+forget mean min: 0.951576 0.690893
+delta_x = 7.31524 delta_h = 1.74522
+U_c = [[-0.02496707]] U_f = [[ 0.]] b_c = [ 0.12409922] b_f = [ 0.49740514]
+incx.max(), incx.min(), incx.mean() 14.306 0.539097 5.22042
+fgtx.max(), fgtx.min(), fgtx.mean() 10.4871 0.306893 3.76862
+
+shijiazhuang
+        shijiazhuang  751.7370      0.72  0.18  0.62      0.75  0.14  0.67      0.75  0.10  0.69
+forget mean min: 0.887363 0.469566
+delta_x = 7.40212 delta_h = 0.815975
+U_c = [[-0.02538568]] U_f = [[ 0.]] b_c = [ 0.36820069] b_f = [-0.12188851]
+incx.max(), incx.min(), incx.mean() 24.2199 0.368201 4.78921
+fgtx.max(), fgtx.min(), fgtx.mean() 25.4406 0.0 4.71643
+        shijiazhuang 7251.8921      0.91  0.06  0.86      0.92  0.04  0.88      0.93  0.03  0.90
+forget mean min: 0.918565 0.469566
+delta_x = 8.76588 delta_h = 2.52229
+U_c = [[-0.02538568]] U_f = [[ 0.]] b_c = [ 0.36820069] b_f = [-0.12188851]
+incx.max(), incx.min(), incx.mean() 21.3251 0.368201 5.80736
+fgtx.max(), fgtx.min(), fgtx.mean() 22.3516 0.0 5.80128
+
+xingtai+handan
+      xingtai+handan  837.1632      0.78  0.22  0.64      0.83  0.17  0.71      0.84  0.14  0.74
+forget mean min: 0.919791 0.520142
+delta_x = 7.65908 delta_h = 1.14922
+U_c = [[-0.03640347]] U_f = [[ 0.]] b_c = [ 0.06169315] b_f = [ 0.08060972]
+incx.max(), incx.min(), incx.mean() 22.8241 0.0616932 4.74312
+fgtx.max(), fgtx.min(), fgtx.mean() 26.1985 0.0 5.38817
+      xingtai+handan 7452.7707      0.95  0.13  0.83      0.95  0.09  0.87      0.95  0.08  0.88
+forget mean min: 0.964375 0.520142
+delta_x = 7.78209 delta_h = 2.64945
+U_c = [[-0.03640347]] U_f = [[ 0.]] b_c = [ 0.06169315] b_f = [ 0.08060972]
+incx.max(), incx.min(), incx.mean() 14.8949 0.0616932 5.30569
+fgtx.max(), fgtx.min(), fgtx.mean() 17.0722 0.0 6.03615
+
+jinan
+               jinan 1296.0474      0.82  0.27  0.63      0.85  0.22  0.68      0.87  0.19  0.72
+forget mean min: 0.889325 0.686933
+delta_x = 8.46681 delta_h = 1.7711
+U_c = [[-0.05103911]] U_f = [[ 0.]] b_c = [ 0.17070091] b_f = [ 0.78582048]
+incx.max(), incx.min(), incx.mean() 25.5068 0.170701 10.0147
+fgtx.max(), fgtx.min(), fgtx.mean() 4.00631 0.0 1.55658
+               jinan 3212.7168      0.98  0.20  0.79      0.99  0.16  0.83      0.99  0.13  0.87
+forget mean min: 0.919612 0.686933
+delta_x = 10.4409 delta_h = 2.89612
+U_c = [[-0.05103911]] U_f = [[ 0.]] b_c = [ 0.17070091] b_f = [ 0.78582048]
+incx.max(), incx.min(), incx.mean() 26.8988 0.170701 12.5862
+fgtx.max(), fgtx.min(), fgtx.mean() 4.2264 0.0 1.96321
+
+xian
+                xian  647.2016      0.59  0.37  0.44      0.65  0.36  0.48      0.68  0.34  0.50
+forget mean min: 0.937267 0.711796
+delta_x = 3.31203 delta_h = 1.19145
+U_c = [[-0.05306147]] U_f = [[ 0.]] b_c = [ 0.05296351] b_f = [ 0.90412223]
+incx.max(), incx.min(), incx.mean() 9.24501 0.0529635 3.07112
+fgtx.max(), fgtx.min(), fgtx.mean() 7.50099 0.0 2.4629
+                xian 4494.8465      0.52  0.03  0.51      0.53  0.02  0.52      0.52  0.01  0.52
+forget mean min: 0.939429 0.711796
+delta_x = 3.6701 delta_h = 1.49763
+U_c = [[-0.05306147]] U_f = [[ 0.]] b_c = [ 0.05296351] b_f = [ 0.90412223]
+incx.max(), incx.min(), incx.mean() 7.5113 0.0529635 2.9496
+fgtx.max(), fgtx.min(), fgtx.mean() 6.08625 0.0 2.36374
