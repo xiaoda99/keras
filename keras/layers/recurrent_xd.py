@@ -1010,7 +1010,7 @@ class ReducedLSTMA(Recurrent):
 #        self.activation = activations.get(activation)
         self.activation = activations.get('linear') #XD
 #        self.inner_activation = activations.get(inner_activation)
-        self.inner_activation = activations.get('sigmoid') #XD
+        self.inner_activation = activations.get('hard_sigmoid') #XD
         self.truncate_gradient = truncate_gradient
         self.return_sequences = return_sequences
         self.initial_weights = weights

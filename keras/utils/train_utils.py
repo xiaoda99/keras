@@ -60,12 +60,12 @@ def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
     model.add(layer_type(h0_dim, input_dim=input_dim, 
                     init='uniform_small', 
                     W_regularizer=l2(0.0005),
-                    activation='relu'))
+                    activation='tanh'))
     if h1_dim is not None:
         model.add(layer_type(h1_dim, 
                     init='uniform_small', 
                     W_regularizer=l2(0.0005),
-                    activation='relu'))
+                    activation='tanh'))
         
     model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
     if add_target_noise:
