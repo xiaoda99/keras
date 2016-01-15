@@ -7,7 +7,7 @@ import numpy as np
 from keras.models_xd import Sequential, model_from_yaml
 from keras.layers.core import Dense, TimeDistributedMaxoutDense, TimeDistributedDense, Dropout, Activation
 from keras.layers.noise import GaussianNoise
-from keras.layers.recurrent_xd import RLSTM, ReducedLSTM, ReducedLSTMA, LSTM, LSTM2, SimpleRNN, GRU
+from keras.layers.recurrent_xd import RLSTM, ReducedLSTM, ReducedLSTMA, LSTM, SimpleRNN, GRU
 from keras.optimizers import SGD, Adam, RMSprop
 from keras.utils import np_utils
 
@@ -41,6 +41,33 @@ def build_rlstm2(input_dim, h0_dim, h1_dim, output_dim=1,
                     W_h0_regularizer=l2(0.0005), W_h1_regularizer=l2(0.0005), return_sequences=True))
 #    if add_target_noise:
 #        model.add(GaussianNoise(5.))
+    model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
+    
+    model.base_name = base_name
+    yaml_string = model.to_yaml()
+#    print(yaml_string)
+    with open(model.base_name+'.yaml', 'w') as f:
+        f.write(yaml_string)
+    return model
+
+def build_model(input_dim, h0_dim=20, h1_dim=20, output_dim=1, 
+                       rec_layer_type=ReducedLSTMA, rec_layer_init='zero',
+                       layer_type=TimeDistributedDense, lr=.001, base_name='rlstm',
+                       add_input_noise=True, add_target_noise=True):
+    model = Sequential()  
+    if add_input_noise:
+        model.add(GaussianNoise(.1, input_shape=(None, input_dim)))
+    model.add(LSTM(h0_dim, input_dim=input_dim, 
+                    init='uniform_small',
+                    activation='tanh'))
+    model.add(Dropout(.4))
+    model.add(LSTM(h1_dim, 
+                init='uniform_small',
+                activation='tanh'))
+    model.add(Dropout(.4))    
+    model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
+    if add_target_noise:
+        model.add(GaussianNoise(5.))
     model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
     
     model.base_name = base_name

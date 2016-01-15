@@ -1,0 +1,1413 @@
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+X_train[0].shape = (4302, 40, 23)
+
+training nanjing0
+Train on 4302 samples, validate on 387 samples
+Before training:
+            nanjing0 4435.2515      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 3.47014 nan 3.47014
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+            nanjing015977.8665      0.03  -nan  0.03      0.03  -nan  0.03      0.01  -nan  0.01
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 6.14476 nan 6.14476
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 3145.2491 - val_loss: 9275.9910
+Epoch 00000: val_loss improved from inf to 9275.99096, saving model to nanjing0_weights.hdf5
+            nanjing0 1532.5726      0.09  0.16  0.08      0.09  -nan  0.08      0.08  -nan  0.08
+            nanjing0 9275.9909      0.22  -nan  0.22      0.23  0.02  0.23      0.22  -nan  0.22
+forget mean min: 0.896961 0.797291
+incx.max(), incx.min(), incx.mean() 4.13921 0.381902 1.50309
+fgtx.max(), fgtx.min(), fgtx.mean() 3.91374 0.294602 1.37456
+abs_mean, abs_mean+, abs_mean-: 5.38446 1.9862 6.31726
+U_c = [[-0.11493476]] U_f = [[ 0.]] b_c = [ 0.07606225] b_f = [ 1.07484841]
+W_c max, min, mean, abs_mean: 0.104548 0.103688 0.104228 0.104228
+W_f max, min, mean, abs_mean: 0.100943 0.100147 0.100399 0.100399
+Epoch 2/300
+0s - loss: 1146.4444 - val_loss: 5427.8139
+Epoch 00001: val_loss improved from 9275.99096 to 5427.81390, saving model to nanjing0_weights.hdf5
+            nanjing0  984.5255      0.51  0.41  0.38      0.52  0.41  0.38      0.52  0.38  0.40
+            nanjing0 5427.8139      0.76  0.19  0.64      0.76  0.17  0.66      0.73  0.16  0.64
+forget mean min: 0.96906 0.866355
+incx.max(), incx.min(), incx.mean() 6.84029 0.962822 3.31672
+fgtx.max(), fgtx.min(), fgtx.mean() 6.07135 0.772372 2.8946
+abs_mean, abs_mean+, abs_mean-: 2.96174 3.24467 2.63788
+U_c = [[-0.11958419]] U_f = [[ 0.]] b_c = [ 0.10614266] b_f = [ 1.09673595]
+W_c max, min, mean, abs_mean: 0.139954 0.138866 0.139563 0.139563
+W_f max, min, mean, abs_mean: 0.126504 0.125313 0.125829 0.125829
+Epoch 3/300
+0s - loss: 930.2278 - val_loss: 4615.4607
+Epoch 00002: val_loss improved from 5427.81390 to 4615.46067, saving model to nanjing0_weights.hdf5
+            nanjing0  883.2045      0.55  0.38  0.41      0.56  0.38  0.42      0.57  0.35  0.44
+            nanjing0 4615.4606      0.96  0.24  0.73      0.96  0.21  0.76      0.96  0.18  0.78
+forget mean min: 0.976732 0.872222
+incx.max(), incx.min(), incx.mean() 7.94626 1.26724 4.53341
+fgtx.max(), fgtx.min(), fgtx.mean() 5.86801 0.860698 3.30936
+abs_mean, abs_mean+, abs_mean-: 3.7845 4.51772 2.39459
+U_c = [[-0.10970911]] U_f = [[ 0.]] b_c = [ 0.11919765] b_f = [ 1.06005323]
+W_c max, min, mean, abs_mean: 0.162571 0.160828 0.161875 0.161875
+W_f max, min, mean, abs_mean: 0.122087 0.120505 0.12136 0.12136
+Epoch 4/300
+0s - loss: 862.4126 - val_loss: 4460.8161
+Epoch 00003: val_loss improved from 4615.46067 to 4460.81607, saving model to nanjing0_weights.hdf5
+            nanjing0  837.0052      0.59  0.36  0.45      0.61  0.35  0.46      0.61  0.32  0.47
+            nanjing0 4460.8161      0.97  0.24  0.74      0.97  0.21  0.77      0.96  0.18  0.79
+forget mean min: 0.974973 0.862908
+incx.max(), incx.min(), incx.mean() 9.43356 1.39795 5.18514
+fgtx.max(), fgtx.min(), fgtx.mean() 5.96889 0.816651 3.2449
+abs_mean, abs_mean+, abs_mean-: 4.25221 4.9142 2.82582
+U_c = [[-0.09767686]] U_f = [[ 0.]] b_c = [ 0.12426358] b_f = [ 1.02300918]
+W_c max, min, mean, abs_mean: 0.176267 0.174342 0.175497 0.175497
+W_f max, min, mean, abs_mean: 0.113319 0.111602 0.112525 0.112525
+Epoch 5/300
+0s - loss: 821.9403 - val_loss: 4468.9235
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+0s - loss: 788.4315 - val_loss: 4529.0670
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+0s - loss: 761.5082 - val_loss: 4456.7028
+Epoch 00006: val_loss improved from 4460.81607 to 4456.70283, saving model to nanjing0_weights.hdf5
+            nanjing0  746.9441      0.66  0.37  0.48      0.70  0.36  0.50      0.72  0.33  0.53
+            nanjing0 4456.7030      0.97  0.24  0.74      0.98  0.21  0.77      0.97  0.18  0.79
+forget mean min: 0.961423 0.825646
+incx.max(), incx.min(), incx.mean() 12.2304 1.47396 6.17461
+fgtx.max(), fgtx.min(), fgtx.mean() 5.48034 0.607812 2.73714
+abs_mean, abs_mean+, abs_mean-: 5.15132 5.73752 4.3078
+U_c = [[-0.05938745]] U_f = [[ 0.]] b_c = [ 0.13211541] b_f = [ 0.94726384]
+W_c max, min, mean, abs_mean: 0.219015 0.216512 0.217993 0.217993
+W_f max, min, mean, abs_mean: 0.0996034 0.0975958 0.0987466 0.0987466
+Epoch 8/300
+0s - loss: 741.0218 - val_loss: 4515.0642
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+0s - loss: 722.7083 - val_loss: 4580.1045
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+0s - loss: 706.7899 - val_loss: 4596.3015
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+0s - loss: 693.3462 - val_loss: 4604.7455
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+0s - loss: 677.2688 - val_loss: 4657.0150
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+0s - loss: 663.5525 - val_loss: 4660.3180
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+0s - loss: 650.9741 - val_loss: 4754.7706
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+0s - loss: 637.4324 - val_loss: 4713.4814
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+0s - loss: 626.5012 - val_loss: 4728.0877
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+0s - loss: 615.0234 - val_loss: 4754.9897
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+0s - loss: 603.6183 - val_loss: 5018.9490
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+0s - loss: 595.1024 - val_loss: 4953.3239
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 585.3750 - val_loss: 5046.7955
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+0s - loss: 576.0924 - val_loss: 5146.2511
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+0s - loss: 568.2903 - val_loss: 5310.5703
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 560.0938 - val_loss: 5198.1950
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+0s - loss: 553.3293 - val_loss: 6059.6301
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+0s - loss: 546.0590 - val_loss: 5704.6568
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+0s - loss: 539.5776 - val_loss: 5727.3962
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+0s - loss: 534.7900 - val_loss: 6174.9949
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+0s - loss: 529.1173 - val_loss: 5784.8531
+Epoch 00027: val_loss did not improve
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+X_train[0].shape = (4302, 40, 23)
+
+training shanghai0
+Train on 4302 samples, validate on 387 samples
+Before training:
+           shanghai0 3869.9090      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 3.24008 nan 3.24008
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+           shanghai014288.0140      0.03  -nan  0.03      0.02  -nan  0.02      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 5.11598 nan 5.11598
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 2726.9881 - val_loss: 7666.4514
+Epoch 00000: val_loss improved from inf to 7666.45139, saving model to shanghai0_weights.hdf5
+           shanghai0 1303.2872      0.07  0.49  0.06      0.07  0.47  0.06      0.07  0.63  0.06
+           shanghai0 7666.4514      0.10  -nan  0.10      0.10  0.46  0.09      0.10  0.30  0.09
+forget mean min: 0.91811 0.805596
+incx.max(), incx.min(), incx.mean() 4.04544 0.43328 1.63543
+fgtx.max(), fgtx.min(), fgtx.mean() 3.85954 0.347856 1.51657
+abs_mean, abs_mean+, abs_mean-: 3.42443 1.21257 3.84902
+U_c = [[-0.11380881]] U_f = [[ 0.]] b_c = [ 0.07548696] b_f = [ 1.07379043]
+W_c max, min, mean, abs_mean: 0.10417 0.101684 0.103303 0.103303
+W_f max, min, mean, abs_mean: 0.100783 0.100031 0.100436 0.100436
+Epoch 2/300
+0s - loss: 1009.0237 - val_loss: 4905.0413
+Epoch 00001: val_loss improved from 7666.45139 to 4905.04130, saving model to shanghai0_weights.hdf5
+           shanghai0  841.7613      0.50  0.39  0.38      0.52  0.36  0.40      0.52  0.35  0.40
+           shanghai0 4905.0412      0.63  0.26  0.51      0.61  0.23  0.50      0.56  0.17  0.49
+forget mean min: 0.958561 0.813799
+incx.max(), incx.min(), incx.mean() 6.90646 0.700456 3.82135
+fgtx.max(), fgtx.min(), fgtx.mean() 4.65277 0.401632 2.53947
+abs_mean, abs_mean+, abs_mean-: 3.68269 3.66808 3.70301
+U_c = [[-0.11947091]] U_f = [[ 0.]] b_c = [ 0.11415143] b_f = [ 1.07325208]
+W_c max, min, mean, abs_mean: 0.153596 0.151153 0.152739 0.152739
+W_f max, min, mean, abs_mean: 0.104982 0.104255 0.104631 0.104631
+Epoch 3/300
+0s - loss: 744.8065 - val_loss: 4236.5387
+Epoch 00002: val_loss improved from 4905.04130 to 4236.53871, saving model to shanghai0_weights.hdf5
+           shanghai0  672.8027      0.53  0.34  0.41      0.57  0.30  0.45      0.61  0.25  0.50
+           shanghai0 4236.5386      0.79  0.23  0.64      0.76  0.21  0.63      0.75  0.13  0.67
+forget mean min: 0.939909 0.798989
+incx.max(), incx.min(), incx.mean() 11.9572 1.14152 6.21236
+fgtx.max(), fgtx.min(), fgtx.mean() 4.07589 0.342182 2.0927
+abs_mean, abs_mean+, abs_mean-: 5.72682 5.80389 5.61306
+U_c = [[-0.10502969]] U_f = [[ 0.]] b_c = [ 0.15032254] b_f = [ 1.03780675]
+W_c max, min, mean, abs_mean: 0.201153 0.198759 0.200331 0.200331
+W_f max, min, mean, abs_mean: 0.0694869 0.0687851 0.0691586 0.0691586
+Epoch 4/300
+0s - loss: 637.1362 - val_loss: 3897.7167
+Epoch 00003: val_loss improved from 4236.53871 to 3897.71666, saving model to shanghai0_weights.hdf5
+           shanghai0  604.6342      0.59  0.35  0.45      0.61  0.32  0.48      0.66  0.26  0.53
+           shanghai0 3897.7166      0.84  0.24  0.67      0.83  0.22  0.67      0.82  0.15  0.72
+forget mean min: 0.930343 0.795297
+incx.max(), incx.min(), incx.mean() 15.8449 1.66626 8.16492
+fgtx.max(), fgtx.min(), fgtx.mean() 3.63059 0.344601 1.85072
+abs_mean, abs_mean+, abs_mean-: 6.53278 6.73263 6.20659
+U_c = [[-0.10165358]] U_f = [[ 0.]] b_c = [ 0.17934218] b_f = [ 1.01255453]
+W_c max, min, mean, abs_mean: 0.237741 0.235412 0.236984 0.236984
+W_f max, min, mean, abs_mean: 0.0552427 0.0545536 0.0549238 0.0549238
+Epoch 5/300
+0s - loss: 588.1373 - val_loss: 3684.5588
+Epoch 00004: val_loss improved from 3897.71666 to 3684.55876, saving model to shanghai0_weights.hdf5
+           shanghai0  578.7461      0.71  0.37  0.50      0.75  0.35  0.53      0.79  0.32  0.57
+           shanghai0 3684.5588      0.87  0.27  0.66      0.87  0.24  0.68      0.88  0.17  0.74
+forget mean min: 0.924073 0.790726
+incx.max(), incx.min(), incx.mean() 17.896 2.07274 9.57157
+fgtx.max(), fgtx.min(), fgtx.mean() 3.25664 0.345413 1.7251
+abs_mean, abs_mean+, abs_mean-: 6.88503 7.4591 6.00918
+U_c = [[-0.09114043]] U_f = [[ 0.]] b_c = [ 0.1953294] b_f = [ 0.98389667]
+W_c max, min, mean, abs_mean: 0.267335 0.265012 0.266577 0.266577
+W_f max, min, mean, abs_mean: 0.0494304 0.0486795 0.0490473 0.0490473
+Epoch 6/300
+0s - loss: 561.2702 - val_loss: 3970.0514
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+0s - loss: 541.1601 - val_loss: 3801.2209
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+0s - loss: 528.8791 - val_loss: 3884.3496
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+0s - loss: 517.6500 - val_loss: 3751.1376
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+0s - loss: 508.2799 - val_loss: 3652.5470
+Epoch 00009: val_loss improved from 3684.55876 to 3652.54701, saving model to shanghai0_weights.hdf5
+           shanghai0  500.0686      0.69  0.31  0.53      0.74  0.26  0.59      0.76  0.25  0.61
+           shanghai0 3652.5471      0.85  0.27  0.65      0.84  0.24  0.66      0.84  0.16  0.73
+forget mean min: 0.906719 0.765618
+incx.max(), incx.min(), incx.mean() 20.1272 2.17147 9.99977
+fgtx.max(), fgtx.min(), fgtx.mean() 3.18147 0.316631 1.56564
+abs_mean, abs_mean+, abs_mean-: 7.00795 7.76156 6.20859
+U_c = [[-0.07075594]] U_f = [[ 0.]] b_c = [ 0.1868622] b_f = [ 0.86709702]
+W_c max, min, mean, abs_mean: 0.316226 0.313806 0.315369 0.315369
+W_f max, min, mean, abs_mean: 0.0509143 0.0497506 0.0503178 0.0503178
+Epoch 11/300
+0s - loss: 500.3084 - val_loss: 3941.3602
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+0s - loss: 491.9976 - val_loss: 3921.2862
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+0s - loss: 485.4901 - val_loss: 3730.3547
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+0s - loss: 478.1623 - val_loss: 4063.2865
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+0s - loss: 471.9807 - val_loss: 3693.0640
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+0s - loss: 464.6407 - val_loss: 3912.0619
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+0s - loss: 458.9708 - val_loss: 3746.7419
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+0s - loss: 452.4152 - val_loss: 4035.5171
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+0s - loss: 445.5966 - val_loss: 3784.8752
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 439.4452 - val_loss: 4210.7509
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+0s - loss: 434.6409 - val_loss: 3883.1920
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+0s - loss: 427.9301 - val_loss: 4109.6150
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 423.2533 - val_loss: 4017.0124
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+0s - loss: 417.4667 - val_loss: 3770.2117
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+0s - loss: 413.7382 - val_loss: 3849.9926
+Epoch 00024: val_loss did not improve
+Epoch 26/300
+0s - loss: 408.5971 - val_loss: 3937.5013
+Epoch 00025: val_loss did not improve
+Epoch 27/300
+0s - loss: 404.9073 - val_loss: 4034.6668
+Epoch 00026: val_loss did not improve
+Epoch 28/300
+0s - loss: 400.9660 - val_loss: 4034.3419
+Epoch 00027: val_loss did not improve
+Epoch 29/300
+0s - loss: 397.5979 - val_loss: 4132.6138
+Epoch 00028: val_loss did not improve
+Epoch 30/300
+0s - loss: 393.6113 - val_loss: 4188.7573
+Epoch 00029: val_loss did not improve
+Epoch 31/300
+0s - loss: 388.3403 - val_loss: 4244.7575
+Epoch 00030: val_loss did not improve
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+X_train[0].shape = (5258, 40, 23)
+
+training hangzhou0
+Train on 5258 samples, validate on 473 samples
+Before training:
+           hangzhou0 3573.4289      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 3.22436 nan 3.22436
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+           hangzhou014030.6241      0.03  -nan  0.03      0.02  -nan  0.02      0.02  -nan  0.02
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 5.86037 nan 5.86037
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 2137.0502 - val_loss: 7506.0900
+Epoch 00000: val_loss improved from inf to 7506.09004, saving model to hangzhou0_weights.hdf5
+           hangzhou0  919.3707      0.31  0.30  0.27      0.36  0.26  0.31      0.38  0.21  0.33
+           hangzhou0 7506.0902      0.22  0.47  0.19      0.23  0.43  0.20      0.22  0.40  0.20
+forget mean min: 0.916889 0.784892
+incx.max(), incx.min(), incx.mean() 5.1872 0.309698 1.88244
+fgtx.max(), fgtx.min(), fgtx.mean() 4.81266 0.212781 1.69604
+abs_mean, abs_mean+, abs_mean-: 4.42214 2.37521 5.25975
+U_c = [[-0.12018051]] U_f = [[ 0.]] b_c = [ 0.08409295] b_f = [ 1.08162737]
+W_c max, min, mean, abs_mean: 0.113517 0.111341 0.113053 0.113053
+W_f max, min, mean, abs_mean: 0.106896 0.106354 0.106625 0.106625
+Epoch 2/300
+0s - loss: 786.0778 - val_loss: 5948.6978
+Epoch 00001: val_loss improved from 7506.09004 to 5948.69782, saving model to hangzhou0_weights.hdf5
+           hangzhou0  719.4714      0.53  0.36  0.41      0.59  0.33  0.45      0.62  0.30  0.49
+           hangzhou0 5948.6978      0.60  0.39  0.45      0.62  0.36  0.48      0.67  0.30  0.53
+forget mean min: 0.950812 0.790794
+incx.max(), incx.min(), incx.mean() 7.5804 0.446366 3.37542
+fgtx.max(), fgtx.min(), fgtx.mean() 5.44973 0.245971 2.38254
+abs_mean, abs_mean+, abs_mean-: 3.62137 3.54952 3.68389
+U_c = [[-0.12947665]] U_f = [[ 0.]] b_c = [ 0.10917448] b_f = [ 1.08374906]
+W_c max, min, mean, abs_mean: 0.151374 0.149272 0.150917 0.150917
+W_f max, min, mean, abs_mean: 0.110546 0.109646 0.110088 0.110088
+Epoch 3/300
+0s - loss: 692.6907 - val_loss: 5942.6927
+Epoch 00002: val_loss improved from 5948.69782 to 5942.69265, saving model to hangzhou0_weights.hdf5
+           hangzhou0  666.6235      0.51  0.33  0.41      0.57  0.29  0.46      0.61  0.24  0.50
+           hangzhou0 5942.6926      0.62  0.39  0.47      0.62  0.36  0.48      0.69  0.28  0.56
+forget mean min: 0.942515 0.778164
+incx.max(), incx.min(), incx.mean() 8.819 0.443009 3.71408
+fgtx.max(), fgtx.min(), fgtx.mean() 5.13394 0.195549 2.12416
+abs_mean, abs_mean+, abs_mean-: 3.71064 3.18902 4.19884
+U_c = [[-0.10849055]] U_f = [[ 0.]] b_c = [ 0.11135592] b_f = [ 1.05945051]
+W_c max, min, mean, abs_mean: 0.171147 0.169339 0.170727 0.170727
+W_f max, min, mean, abs_mean: 0.101472 0.0999018 0.100662 0.100662
+Epoch 4/300
+0s - loss: 651.0110 - val_loss: 6095.3191
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+0s - loss: 621.0367 - val_loss: 6159.0270
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+0s - loss: 600.8946 - val_loss: 6313.5729
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+0s - loss: 586.0966 - val_loss: 6375.8422
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+0s - loss: 576.5354 - val_loss: 6429.0664
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+0s - loss: 566.0024 - val_loss: 6153.4008
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+0s - loss: 557.4320 - val_loss: 6279.5003
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+0s - loss: 548.7797 - val_loss: 6164.1093
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+0s - loss: 540.2378 - val_loss: 6166.4983
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+0s - loss: 532.2115 - val_loss: 5994.4807
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+0s - loss: 525.6579 - val_loss: 6492.7984
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+0s - loss: 517.9850 - val_loss: 6622.0447
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+0s - loss: 512.5590 - val_loss: 6534.6782
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+0s - loss: 505.6863 - val_loss: 6538.8529
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+0s - loss: 500.0901 - val_loss: 6513.9251
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+0s - loss: 495.4586 - val_loss: 6738.7695
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 489.4601 - val_loss: 6907.2843
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+0s - loss: 485.3932 - val_loss: 6603.7714
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+0s - loss: 480.8763 - val_loss: 6945.9055
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 476.7425 - val_loss: 6850.0752
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+0s - loss: 472.3690 - val_loss: 6900.5187
+Epoch 00023: val_loss did not improve
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+X_train[0].shape = (4302, 40, 23)
+
+training hefei0
+Train on 4302 samples, validate on 387 samples
+Before training:
+              hefei0 6559.5943      0.01  -nan  0.01      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 4.18789 nan 4.18789
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+              hefei019659.8769      0.04  -nan  0.04      0.04  -nan  0.04      0.02  -nan  0.02
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 7.15982 nan 7.15982
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 4791.6833 - val_loss: 10697.4753
+Epoch 00000: val_loss improved from inf to 10697.47531, saving model to hefei0_weights.hdf5
+              hefei0 2600.4756      0.16  0.36  0.14      0.17  0.31  0.16      0.18  0.24  0.17
+              hefei010697.4757      0.36  0.16  0.33      0.36  0.08  0.35      0.34  0.04  0.33
+forget mean min: 0.909979 0.794924
+incx.max(), incx.min(), incx.mean() 3.9381 0.361036 1.55009
+fgtx.max(), fgtx.min(), fgtx.mean() 3.78192 0.278646 1.4432
+abs_mean, abs_mean+, abs_mean-: 5.58763 1.20661 6.51361
+U_c = [[-0.11811414]] U_f = [[ 0.]] b_c = [ 0.07653546] b_f = [ 1.07621717]
+W_c max, min, mean, abs_mean: 0.104317 0.101307 0.10372 0.10372
+W_f max, min, mean, abs_mean: 0.102137 0.101129 0.101587 0.101587
+Epoch 2/300
+0s - loss: 1971.3822 - val_loss: 6532.4980
+Epoch 00001: val_loss improved from 10697.47531 to 6532.49797, saving model to hefei0_weights.hdf5
+              hefei0 1693.6455      0.63  0.42  0.43      0.67  0.40  0.47      0.70  0.36  0.50
+              hefei0 6532.4978      0.98  0.28  0.71      0.98  0.24  0.75      0.98  0.16  0.82
+forget mean min: 0.978201 0.877639
+incx.max(), incx.min(), incx.mean() 6.58308 1.07486 3.50379
+fgtx.max(), fgtx.min(), fgtx.mean() 5.85425 0.871959 3.06902
+abs_mean, abs_mean+, abs_mean-: 2.71754 2.45307 3.59538
+U_c = [[-0.13213302]] U_f = [[ 0.]] b_c = [ 0.11085635] b_f = [ 1.09830129]
+W_c max, min, mean, abs_mean: 0.144464 0.141143 0.143579 0.143579
+W_f max, min, mean, abs_mean: 0.130735 0.129395 0.129875 0.129875
+Epoch 3/300
+0s - loss: 1579.5009 - val_loss: 5822.8781
+Epoch 00002: val_loss improved from 6532.49797 to 5822.87810, saving model to hefei0_weights.hdf5
+              hefei0 1498.1775      0.72  0.44  0.46      0.77  0.42  0.49      0.79  0.39  0.52
+              hefei0 5822.8780      0.99  0.29  0.70      0.99  0.25  0.74      0.99  0.17  0.82
+forget mean min: 0.97884 0.884749
+incx.max(), incx.min(), incx.mean() 10.0215 1.71314 5.43761
+fgtx.max(), fgtx.min(), fgtx.mean() 6.1282 0.977549 3.2865
+abs_mean, abs_mean+, abs_mean-: 4.26785 4.50935 3.42199
+U_c = [[-0.10183223]] U_f = [[ 0.]] b_c = [ 0.1362922] b_f = [ 1.06064522]
+W_c max, min, mean, abs_mean: 0.186515 0.182992 0.185473 0.185473
+W_f max, min, mean, abs_mean: 0.11604 0.114339 0.114984 0.114984
+Epoch 4/300
+0s - loss: 1455.7511 - val_loss: 5780.8556
+Epoch 00003: val_loss improved from 5822.87810 to 5780.85562, saving model to hefei0_weights.hdf5
+              hefei0 1414.9681      0.63  0.40  0.44      0.68  0.37  0.48      0.70  0.33  0.52
+              hefei0 5780.8558      0.98  0.28  0.71      0.99  0.24  0.75      0.99  0.16  0.83
+forget mean min: 0.967617 0.854057
+incx.max(), incx.min(), incx.mean() 11.0305 1.77397 6.33725
+fgtx.max(), fgtx.min(), fgtx.mean() 4.9673 0.743347 2.82567
+abs_mean, abs_mean+, abs_mean-: 5.16042 5.48029 4.47469
+U_c = [[-0.08990616]] U_f = [[ 0.]] b_c = [ 0.14495058] b_f = [ 1.02343547]
+W_c max, min, mean, abs_mean: 0.209707 0.206001 0.208489 0.208489
+W_f max, min, mean, abs_mean: 0.0959627 0.0944998 0.0951385 0.0951385
+Epoch 5/300
+0s - loss: 1380.7511 - val_loss: 5952.3277
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+0s - loss: 1316.4107 - val_loss: 5985.1745
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+0s - loss: 1266.7624 - val_loss: 6172.2635
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+0s - loss: 1228.3960 - val_loss: 6487.6414
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+0s - loss: 1197.6163 - val_loss: 6679.4356
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+0s - loss: 1172.7696 - val_loss: 6695.8356
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+0s - loss: 1153.6373 - val_loss: 6906.7582
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+0s - loss: 1136.5489 - val_loss: 6889.2959
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+0s - loss: 1121.5813 - val_loss: 7135.9848
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+0s - loss: 1109.4551 - val_loss: 7567.8230
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+0s - loss: 1097.0283 - val_loss: 7320.2523
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+0s - loss: 1082.8276 - val_loss: 7446.5828
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+0s - loss: 1075.8012 - val_loss: 7505.7597
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+0s - loss: 1062.6383 - val_loss: 7566.9093
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+0s - loss: 1051.2783 - val_loss: 8088.3043
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 1041.3059 - val_loss: 7743.0730
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+0s - loss: 1029.4108 - val_loss: 7788.8346
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+0s - loss: 1020.0244 - val_loss: 7773.2298
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 1009.5641 - val_loss: 8050.6314
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+0s - loss: 997.7030 - val_loss: 7951.6032
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+0s - loss: 991.8916 - val_loss: 7827.1135
+Epoch 00024: val_loss did not improve
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+X_train[0].shape = (4780, 40, 23)
+
+training wuhan0
+Train on 4780 samples, validate on 430 samples
+Before training:
+              wuhan0 5770.2618      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 4.03532 nan 4.03532
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+              wuhan023318.8311      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.731058 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 6.08368 nan 6.08368
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+0s - loss: 4011.4358 - val_loss: 13224.1350
+Epoch 00000: val_loss improved from inf to 13224.13503, saving model to wuhan0_weights.hdf5
+              wuhan0 2108.2269      0.23  0.36  0.20      0.25  0.30  0.22      0.25  0.28  0.22
+              wuhan013224.1355      0.24  0.17  0.23      0.24  0.11  0.23      0.24  0.08  0.23
+forget mean min: 0.915952 0.82712
+incx.max(), incx.min(), incx.mean() 4.25552 0.580965 1.67383
+fgtx.max(), fgtx.min(), fgtx.mean() 4.05444 0.486104 1.5474
+abs_mean, abs_mean+, abs_mean-: 4.57295 1.50923 5.38993
+U_c = [[-0.11924221]] U_f = [[ 0.]] b_c = [ 0.08041484] b_f = [ 1.07924569]
+W_c max, min, mean, abs_mean: 0.109404 4.05705e-06 0.103457 0.103457
+W_f max, min, mean, abs_mean: 0.105954 1.21225e-05 0.100474 0.100474
+Epoch 2/300
+0s - loss: 1784.9925 - val_loss: 10038.5059
+Epoch 00001: val_loss improved from 13224.13503 to 10038.50585, saving model to wuhan0_weights.hdf5
+              wuhan0 1642.7000      0.57  0.48  0.37      0.59  0.45  0.40      0.59  0.42  0.41
+              wuhan010038.5059      0.52  0.14  0.48      0.52  0.10  0.49      0.53  0.07  0.51
+forget mean min: 0.959489 0.872636
+incx.max(), incx.min(), incx.mean() 6.6647 0.942498 2.85403
+fgtx.max(), fgtx.min(), fgtx.mean() 6.53263 0.831468 2.73597
+abs_mean, abs_mean+, abs_mean-: 3.47202 3.37951 3.54326
+U_c = [[-0.12353676]] U_f = [[ 0.]] b_c = [ 0.10798957] b_f = [ 1.09300327]
+W_c max, min, mean, abs_mean: 0.133201 4.00947e-06 0.125905 0.125905
+W_f max, min, mean, abs_mean: 0.132371 1.18246e-05 0.125447 0.125447
+Epoch 3/300
+0s - loss: 1554.4272 - val_loss: 11169.5755
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+0s - loss: 1406.2849 - val_loss: 11373.3600
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+0s - loss: 1288.2021 - val_loss: 11014.2181
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+0s - loss: 1197.5613 - val_loss: 11220.0703
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+0s - loss: 1131.8484 - val_loss: 12313.8768
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+0s - loss: 1081.4401 - val_loss: 11653.6765
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+0s - loss: 1040.4623 - val_loss: 12534.7188
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+0s - loss: 1000.7482 - val_loss: 12157.4674
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+0s - loss: 968.1903 - val_loss: 12573.4665
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+0s - loss: 933.6816 - val_loss: 12368.2529
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+0s - loss: 900.4689 - val_loss: 12929.4829
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+0s - loss: 878.4214 - val_loss: 12713.3322
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+0s - loss: 853.8360 - val_loss: 12811.5435
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+0s - loss: 835.0721 - val_loss: 13455.2140
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+0s - loss: 817.3597 - val_loss: 13091.8627
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+0s - loss: 799.8979 - val_loss: 13336.6363
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+0s - loss: 786.7720 - val_loss: 13686.6609
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+0s - loss: 776.1408 - val_loss: 13032.8049
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+0s - loss: 759.8766 - val_loss: 13704.4366
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+0s - loss: 755.0701 - val_loss: 14245.1588
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+0s - loss: 742.8771 - val_loss: 14146.6493
+Epoch 00022: val_loss did not improve
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+
+nanjing0
+            nanjing0  746.9441      0.66  0.37  0.48      0.70  0.36  0.50      0.72  0.33  0.53
+            nanjing0 4456.7030      0.97  0.24  0.74      0.98  0.21  0.77      0.97  0.18  0.79
+forget mean min: 0.961423 0.825646
+incx.max(), incx.min(), incx.mean() 12.2304 1.47396 6.17461
+fgtx.max(), fgtx.min(), fgtx.mean() 5.48034 0.607812 2.73714
+abs_mean, abs_mean+, abs_mean-: 5.15132 5.73752 4.3078
+U_c = [[-0.05938745]] U_f = [[ 0.]] b_c = [ 0.13211541] b_f = [ 0.94726384]
+W_c max, min, mean, abs_mean: 0.219015 0.216512 0.217993 0.217993
+W_f max, min, mean, abs_mean: 0.0996034 0.0975958 0.0987466 0.0987466
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+
+shanghai0
+           shanghai0  500.0686      0.69  0.31  0.53      0.74  0.26  0.59      0.76  0.25  0.61
+           shanghai0 3652.5471      0.85  0.27  0.65      0.84  0.24  0.66      0.84  0.16  0.73
+forget mean min: 0.906719 0.765618
+incx.max(), incx.min(), incx.mean() 20.1272 2.17147 9.99977
+fgtx.max(), fgtx.min(), fgtx.mean() 3.18147 0.316631 1.56564
+abs_mean, abs_mean+, abs_mean-: 7.00795 7.76156 6.20859
+U_c = [[-0.07075594]] U_f = [[ 0.]] b_c = [ 0.1868622] b_f = [ 0.86709702]
+W_c max, min, mean, abs_mean: 0.316226 0.313806 0.315369 0.315369
+W_f max, min, mean, abs_mean: 0.0509143 0.0497506 0.0503178 0.0503178
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+
+hangzhou0
+           hangzhou0  666.6235      0.51  0.33  0.41      0.57  0.29  0.46      0.61  0.24  0.50
+           hangzhou0 5942.6926      0.62  0.39  0.47      0.62  0.36  0.48      0.69  0.28  0.56
+forget mean min: 0.942515 0.778164
+incx.max(), incx.min(), incx.mean() 8.819 0.443009 3.71408
+fgtx.max(), fgtx.min(), fgtx.mean() 5.13394 0.195549 2.12416
+abs_mean, abs_mean+, abs_mean-: 3.71064 3.18902 4.19884
+U_c = [[-0.10849055]] U_f = [[ 0.]] b_c = [ 0.11135592] b_f = [ 1.05945051]
+W_c max, min, mean, abs_mean: 0.171147 0.169339 0.170727 0.170727
+W_f max, min, mean, abs_mean: 0.101472 0.0999018 0.100662 0.100662
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+
+hefei0
+              hefei0 1414.9681      0.63  0.40  0.44      0.68  0.37  0.48      0.70  0.33  0.52
+              hefei0 5780.8558      0.98  0.28  0.71      0.99  0.24  0.75      0.99  0.16  0.83
+forget mean min: 0.967617 0.854057
+incx.max(), incx.min(), incx.mean() 11.0305 1.77397 6.33725
+fgtx.max(), fgtx.min(), fgtx.mean() 4.9673 0.743347 2.82567
+abs_mean, abs_mean+, abs_mean-: 5.16042 5.48029 4.47469
+U_c = [[-0.08990616]] U_f = [[ 0.]] b_c = [ 0.14495058] b_f = [ 1.02343547]
+W_c max, min, mean, abs_mean: 0.209707 0.206001 0.208489 0.208489
+W_f max, min, mean, abs_mean: 0.0959627 0.0944998 0.0951385 0.0951385
+filter out segment 353 397
+filter out segment 354 398
+filter out segment 355 399
+filter out segment 356 400
+filter out segment 357 401
+filter out segment 358 402
+filter out segment 359 403
+filter out segment 360 404
+filter out segment 361 405
+filter out segment 362 406
+filter out segment 363 407
+filter out segment 364 408
+filter out segment 365 409
+filter out segment 366 410
+filter out segment 367 411
+filter out segment 368 412
+filter out segment 369 413
+filter out segment 370 414
+filter out segment 371 415
+filter out segment 372 416
+filter out segment 373 417
+filter out segment 374 418
+filter out segment 375 419
+filter out segment 376 420
+filter out segment 377 421
+filter out segment 378 422
+filter out segment 379 423
+filter out segment 380 424
+filter out segment 381 425
+filter out segment 382 426
+filter out segment 383 427
+filter out segment 384 428
+filter out segment 385 429
+filter out segment 386 430
+filter out segment 387 431
+filter out segment 388 432
+filter out segment 389 433
+filter out segment 390 434
+filter out segment 391 435
+filter out segment 392 436
+filter out segment 393 437
+filter out segment 394 438
+filter out segment 395 439
+filter out segment 396 440
+filter out segment 397 441
+filter out segment 398 442
+filter out segment 399 443
+filter out segment 400 444
+filter out segment 401 445
+filter out segment 402 446
+filter out segment 403 447
+filter out segment 404 448
+filter out segment 405 449
+filter out segment 406 450
+filter out segment 407 451
+filter out segment 408 452
+filter out segment 409 453
+filter out segment 410 454
+filter out segment 411 455
+filter out segment 412 456
+filter out segment 413 457
+filter out segment 414 458
+filter out segment 415 459
+filter out segment 416 460
+filter out segment 417 461
+filter out segment 418 462
+filter out segment 419 463
+filter out segment 420 464
+
+wuhan0
+              wuhan0 1642.7000      0.57  0.48  0.37      0.59  0.45  0.40      0.59  0.42  0.41
+              wuhan010038.5059      0.52  0.14  0.48      0.52  0.10  0.49      0.53  0.07  0.51
+forget mean min: 0.959489 0.872636
+incx.max(), incx.min(), incx.mean() 6.6647 0.942498 2.85403
+fgtx.max(), fgtx.min(), fgtx.mean() 6.53263 0.831468 2.73597
+abs_mean, abs_mean+, abs_mean-: 3.47202 3.37951 3.54326
+U_c = [[-0.12353676]] U_f = [[ 0.]] b_c = [ 0.10798957] b_f = [ 1.09300327]
+W_c max, min, mean, abs_mean: 0.133201 4.00947e-06 0.125905 0.125905
+W_f max, min, mean, abs_mean: 0.132371 1.18246e-05 0.125447 0.125447

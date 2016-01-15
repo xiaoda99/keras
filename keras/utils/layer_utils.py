@@ -12,7 +12,7 @@ from ..layers.embeddings import Embedding, WordContextProduct
 from ..layers.noise import GaussianNoise, GaussianDropout
 from ..layers.normalization import BatchNormalization
 #from ..layers.recurrent import SimpleRNN, SimpleDeepRNN, GRU, LSTM, JZS1, JZS2, JZS3
-from ..layers.recurrent_xd import LSTM, LSTM2, ReducedLSTMA, ReducedLSTMB, GRU  #XD
+from ..layers.recurrent_xd import LSTM, ReducedLSTMA, ReducedLSTMB, GRU  #XD
 from ..layers import containers
 from .. import regularizers
 from .. import constraints

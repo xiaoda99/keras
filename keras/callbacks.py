@@ -195,14 +195,14 @@ class ModelCheckpoint(Callback):
                     self.best = current
                     self.model.save_weights(filepath, overwrite=True)
                     
-                    
+                    #XD
+                    from examples.pm25.test import test_model #XD
+                    test_model(self.model, dataset='train', show_details=False)
+                    test_model(self.model, dataset='valid')
+                        
                 else:
                     if self.verbose > 0:
                         print("Epoch %05d: %s did not improve" % (epoch, self.monitor))
-                #XD
-                from examples.pm25.test import test_model #XD
-                test_model(self.model, dataset='train', show_details=False)
-                test_model(self.model, dataset='valid')
         else:
             if self.verbose > 0:
                 print("Epoch %05d: saving model to %s" % (epoch, filepath))

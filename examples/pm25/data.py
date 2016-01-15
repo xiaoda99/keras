@@ -14,7 +14,7 @@ def segment_data(data, segment_len=44):
         fluctuate_indices = np.where(np.diff(a) != 0)[0] + 1
         fluctuate_indices = np.concatenate([np.array([0,]), fluctuate_indices, np.array([a.shape[0]])])
         if np.diff(fluctuate_indices).max() >= 13: 
-            print 'filter out segment', i, i + segment_len
+#            print 'filter out segment', i, i + segment_len
             continue
         
         segments.append(segment)
