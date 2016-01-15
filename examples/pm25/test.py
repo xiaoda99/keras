@@ -161,20 +161,20 @@ def test_model(model, dataset='test', show_details=True):
                                                                   pod1, far1, csi1, 
                                                                   pod4, far4, csi4,
                                                                   pod8, far8, csi8)
-    print 'forget mean min:', fgts.mean(), fgts.min()
-    print 'delta_x =', np.abs(dxs).mean(), 'delta_h =', np.abs(dhs).mean()
-    layer = model.get_rlstm_layer()
-    print 'U_c =',layer.U_c.get_value(), 'U_f =',layer.U_f.get_value(), 'b_c =',layer.b_c.get_value(), 'b_f =',layer.b_f.get_value()
-    print 'incx.max(), incx.min(), incx.mean()', incx.max(), incx.min(), incx.mean()
-    print 'fgtx.max(), fgtx.min(), fgtx.mean()', fgtx.max(), fgtx.min(), fgtx.mean()
-    
     if show_details:
-        print 'delta mean, abs_mean, abs_mean+, abs_mean-:', dxs.mean(), np.abs(dxs).mean(), np.abs(dxs[dxs>0]).mean(), np.abs(dxs[dxs<0]).mean()
-        
+        print 'forget mean min:', fgts.mean(), fgts.min()
+        print 'incx.max(), incx.min(), incx.mean()', incx.max(), incx.min(), incx.mean()
+        print 'fgtx.max(), fgtx.min(), fgtx.mean()', fgtx.max(), fgtx.min(), fgtx.mean()
+#        print 'delta_x =', np.abs(dxs).mean(), 'delta_h =', np.abs(dhs).mean()
+        print 'abs_mean, abs_mean+, abs_mean-:', np.abs(dxs).mean(), np.abs(dxs[dxs>0]).mean(), np.abs(dxs[dxs<0]).mean()
+        layer = model.get_rlstm_layer()
         W_c =layer.W_c.get_value()
         W_f =layer.W_f.get_value()
+        print 'U_c =',layer.U_c.get_value(), 'U_f =',layer.U_f.get_value(), 'b_c =',layer.b_c.get_value(), 'b_f =',layer.b_f.get_value()
         print 'W_c max, min, mean, abs_mean:', W_c.max(), W_c.min(), W_c.mean(), np.abs(W_c).mean()
-        print 'W_f max, min, mean, abs_mean:', W_f.max(), W_f.min(), W_f.mean(), np.abs(W_f).mean()  
+        print 'W_f max, min, mean, abs_mean:', W_f.max(), W_f.min(), W_f.mean(), np.abs(W_f).mean()
+    
+          
     
 def plot_example(data, predictions, model_labels, feature_indices=[0,], feature_labels=['wind speed',], 
                  model_states=[], state_labels=[], pred_range=pred_range):
@@ -225,12 +225,14 @@ def filter_data(data):
     cond = (pm25[:,:].max(axis=1) > 160) & (pm25[:,:].min(axis=1) < 60)
     return data[cond]
      
-def load_rlstm(base_name, i=0):
+def load_rlstm(base_name, i=None):
     rlstm = model_from_yaml(open(base_name + '.yaml').read())
     rlstm.base_name = base_name
-    rlstm.name = base_name + str(i)
-    rlstm.load_weights(base_name + str(i) + '_weights.hdf5')
-    rlstm.load_normalization_info()
+    rlstm.name = base_name
+    if i is not None:
+        rlstm.name = rlstm.name + str(i)
+    rlstm.load_weights(rlstm.name + '_weights.hdf5')
+    rlstm.load_normalization_info(rlstm.name + '_norm_info.pkl')
     return rlstm
 
 dongbei_lon_range=[0., 1000.]  #
@@ -325,54 +327,56 @@ if __name__ == '__main__':
     
 #    for area in area2lonlat:
     for city in city2stations:
-        train_data, valid_data = load_data3(
-#                                            lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
-                                            stations=city2stations[city],
-                                            train_stop=630, valid_start=680, valid_stop=840,
-#                                            train_stop=953, valid_start=680, valid_stop=953, 
-                                            filter=(not beijing_only))
-        X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
-        print 'X_train[0].shape =', X_train[0].shape
-        name = city + '_test' 
-        rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
-                                   rec_layer_init='zero', base_name=name,
-                                   add_input_noise=beijing_only, add_target_noise=False)
-#        rlstm = build_rlstm2(X_train[0].shape[-1], h0_dim=20, h1_dim=20, base_name=name,
-#                                   add_input_noise=beijing_only, add_target_noise=beijing_only)
-        rlstm.name = name
-        rlstm.data = [train_data, valid_data]
-        rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
-#        rlstm.X_mask[:6] = 0  # wind direction
-#        rlstm.X_mask[-5:-3] = not beijing_only  # datetime
-#        rlstm.X_mask[-3:-1] = 0  # lonlat
-        rlstm.X_mask[-1:] = not beijing_only  # pm25 mean
-        print '\ntraining', rlstm.name
-        X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
-        rlstm.save_normalization_info(name + '_norm_info.pkl')
-        batch_size = (1 + (not beijing_only)) * 64
-        patience = (1 + int(beijing_only)) * 10
-        train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=300)
+        for i in range(10):
+            train_data, valid_data = load_data3(
+    #                                            lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
+                                                stations=city2stations[city],
+                                                train_stop=630, valid_start=680, valid_stop=840,
+    #                                            train_stop=953, valid_start=680, valid_stop=953, 
+                                                filter=(not beijing_only))
+            X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
+            print 'X_train[0].shape =', X_train[0].shape
+            name = city + '+temp-time'
+            rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
+                                       rec_layer_init='zero', base_name=name,
+                                       add_input_noise=beijing_only, add_target_noise=False)
+    #        rlstm = build_rlstm2(X_train[0].shape[-1], h0_dim=20, h1_dim=20, base_name=name,
+    #                                   add_input_noise=beijing_only, add_target_noise=beijing_only)
+            rlstm.name = name + str(i)
+            rlstm.data = [train_data, valid_data]
+            rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
+    #        rlstm.X_mask[:6] = 0  # wind direction
+    #        rlstm.X_mask[-5:-3] = not beijing_only  # datetime
+    #        rlstm.X_mask[-3:-1] = 0  # lonlat
+            rlstm.X_mask[-1:] = not beijing_only  # pm25 mean
+            print '\ntraining', rlstm.name
+            X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
+            rlstm.save_normalization_info(name + '_norm_info.pkl')
+            batch_size = (1 + (not beijing_only)) * 64
+            patience = (1 + int(beijing_only)) * 10
+            train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience+10, nb_epoch=300)
       
-#    name = 'beijing'         
-#    rlstm = model_from_yaml(open(name + '.yaml').read())
-##    rlstm.name = name
-##    rlstm.load_normalization_info(name + '_norm_info.pkl')
-##    rlstm.load_weights(name + '_weights.hdf5')
-##    for area in area2lonlat:
-#    for city in city2stations:
-#        name = city
-#        rlstm.name = name
-#        rlstm.load_normalization_info(name + '_norm_info.pkl')
-#        rlstm.load_weights(name + '_weights.hdf5')
-#        
-#        train_data, valid_data = load_data3(
-##                                            lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1],
-#                                            stations=city2stations[city],
-#                                            train_stop=630, valid_start=680, valid_stop=840)
-#        rlstm.data = [train_data, valid_data]
-#        print '\n' + city
-#        test_model(rlstm, dataset='train', show_details=False)
-#        test_model(rlstm, dataset='valid', show_details=False)
+    name = 'beijing' + '+temp-time'        
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+#    rlstm.name = name
+#    rlstm.load_normalization_info(name + '_norm_info.pkl')
+#    rlstm.load_weights(name + '_weights.hdf5')
+#    for area in area2lonlat:
+    for city in city2stations:
+        for i in range(10):
+            name = city + '+temp-time'
+            rlstm.name = name + str(i)
+            rlstm.load_normalization_info(name + '_norm_info.pkl')
+            rlstm.load_weights(rlstm.name + '_weights.hdf5')
+            
+            train_data, valid_data = load_data3(
+    #                                            lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1],
+                                                stations=city2stations[city],
+                                                train_stop=630, valid_start=680, valid_stop=840)
+            rlstm.data = [train_data, valid_data]
+            print '\n' + rlstm.name
+            test_model(rlstm, dataset='train', show_details=False)
+            test_model(rlstm, dataset='valid', show_details=True)
 
 #y = y_valid[((y_valid[:,:,0].min(axis=1) < 60) & (y_valid[:,:,0].max(axis=1) > 100)), :, 0]
 #i = np.random.randint(y.shape[0]); yp = rlstm.predict_on_batch([X_valid[0][i:i+1], X_valid[1][i:i+1], X_valid[2][i:i+1]])[0,:,0]; plt.plot(yp, label='yp'); plt.plot(y[i], label='y'); plt.legend(); plt.show()

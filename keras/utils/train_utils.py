@@ -69,7 +69,7 @@ def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
         
     model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
     if add_target_noise:
-        model.add(GaussianNoise(10.))
+        model.add(GaussianNoise(5.))
     model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
     
     model.base_name = base_name

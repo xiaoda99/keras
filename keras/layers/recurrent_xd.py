@@ -1053,7 +1053,7 @@ class ReducedLSTMA(Recurrent):
         self.params = [
 #            self.W_i, self.U_i, self.b_i,
             self.W_c, self.U_c, self.b_c,
-            self.W_f, self.U_f, self.b_f,
+            self.W_f, self.U_f, #self.b_f,
 #            self.W_o, self.U_o, self.b_o,
         ]
 
