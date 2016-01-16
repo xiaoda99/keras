@@ -1,0 +1,249 @@
+filter 0.90353838539
+filter 0.991426530126
+X_train[0].shape = (142385, 40, 23)
+
+training huabei0
+Train on 142385 samples, validate on 41630 samples
+Before training:
+             huabei0 9468.4467      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.700005 0.7
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 4.48679 nan 4.48679
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+             huabei024269.5520      0.04  -nan  0.04      0.04  -nan  0.04      0.03  -nan  0.03
+forget mean min: 0.699999 0.7
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 8.53195 nan 8.53195
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+15s - loss: 2981.1054 - val_loss: 7047.5014
+Epoch 00000: val_loss improved from inf to 7047.50137, saving model to huabei0_weights.hdf5
+             huabei0 2468.4050      0.73  0.32  0.54      0.74  0.30  0.57      0.75  0.28  0.58
+             huabei0 7047.5014      0.94  0.26  0.71      0.94  0.24  0.73      0.94  0.21  0.75
+forget mean min: 0.94592 0.554146
+incx.max(), incx.min(), incx.mean() 11.8322 -5.4708 8.22564
+fgtx.max(), fgtx.min(), fgtx.mean() 1.62425 -0.880012 1.10217
+abs_mean, abs_mean+, abs_mean-: 8.06797 7.2303 9.69839
+U_c = [[-0.07564358]] U_f = [[ 0.]] b_c = [ 0.6115545] b_f = [ 1.15074396]
+W_c max, min, mean, abs_mean: 0.583489 -0.583486 -0.116449 0.581787
+W_f max, min, mean, abs_mean: 0.0863786 -0.0861757 -0.0173397 0.0842179
+Epoch 2/300
+15s - loss: 2303.1455 - val_loss: 6802.8018
+Epoch 00001: val_loss improved from 7047.50137 to 6802.80179, saving model to huabei0_weights.hdf5
+             huabei0 2191.3001      0.73  0.29  0.56      0.74  0.26  0.59      0.75  0.24  0.61
+             huabei0 6802.8018      0.90  0.22  0.72      0.90  0.19  0.74      0.90  0.17  0.76
+forget mean min: 0.919989 0.566893
+incx.max(), incx.min(), incx.mean() 16.3999 -5.9467 9.8365
+fgtx.max(), fgtx.min(), fgtx.mean() 1.77465 -0.750198 1.03125
+abs_mean, abs_mean+, abs_mean-: 9.54972 8.56826 10.8967
+U_c = [[-0.06437723]] U_f = [[ 0.]] b_c = [ 0.81712049] b_f = [ 1.08466125]
+W_c max, min, mean, abs_mean: 0.822647 -0.820267 -0.16356 0.81872
+W_f max, min, mean, abs_mean: 0.0966207 -0.108299 -0.019997 0.0932367
+Epoch 3/300
+15s - loss: 2109.6800 - val_loss: 6640.8980
+Epoch 00002: val_loss improved from 6802.80179 to 6640.89804, saving model to huabei0_weights.hdf5
+             huabei0 2049.4387      0.76  0.30  0.57      0.78  0.27  0.60      0.79  0.25  0.63
+             huabei0 6640.8980      0.88  0.19  0.73      0.88  0.16  0.75      0.88  0.14  0.77
+forget mean min: 0.915382 0.501738
+incx.max(), incx.min(), incx.mean() 18.6856 -8.69593 9.56365
+fgtx.max(), fgtx.min(), fgtx.mean() 2.17306 -1.04232 1.08252
+abs_mean, abs_mean+, abs_mean-: 11.3123 10.0643 12.9827
+U_c = [[-0.05672744]] U_f = [[ 0.]] b_c = [ 0.93000168] b_f = [ 1.05101299]
+W_c max, min, mean, abs_mean: 0.959545 -0.950557 -0.178605 0.931194
+W_f max, min, mean, abs_mean: 0.123892 -0.191627 -0.0288482 0.114091
+Epoch 4/300
+15s - loss: 1996.4134 - val_loss: 6546.8630
+Epoch 00003: val_loss improved from 6640.89804 to 6546.86299, saving model to huabei0_weights.hdf5
+             huabei0 1994.9639      0.73  0.27  0.57      0.75  0.24  0.60      0.76  0.22  0.62
+             huabei0 6546.8630      0.88  0.19  0.72      0.88  0.17  0.75      0.88  0.15  0.76
+forget mean min: 0.911062 0.472295
+incx.max(), incx.min(), incx.mean() 19.2966 -9.98633 9.64061
+fgtx.max(), fgtx.min(), fgtx.mean() 2.29799 -1.16273 1.08353
+abs_mean, abs_mean+, abs_mean-: 11.1446 9.76081 12.8569
+U_c = [[-0.05519867]] U_f = [[ 0.]] b_c = [ 1.01559281] b_f = [ 1.02420676]
+W_c max, min, mean, abs_mean: 1.02091 -1.01532 -0.177955 0.975868
+W_f max, min, mean, abs_mean: 0.140264 -0.270918 -0.0357454 0.124008
+Epoch 5/300
+15s - loss: 1924.6514 - val_loss: 6641.4855
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+15s - loss: 1871.6811 - val_loss: 6861.8217
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+15s - loss: 1828.6077 - val_loss: 6890.0496
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+15s - loss: 1795.4477 - val_loss: 6942.8301
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+15s - loss: 1769.8039 - val_loss: 6623.2366
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+15s - loss: 1750.0666 - val_loss: 6578.1490
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+15s - loss: 1732.7360 - val_loss: 6456.1934
+Epoch 00010: val_loss improved from 6546.86299 to 6456.19336, saving model to huabei0_weights.hdf5
+             huabei0 1716.3156      0.79  0.27  0.61      0.81  0.24  0.64      0.82  0.22  0.67
+             huabei0 6456.1934      0.89  0.19  0.74      0.90  0.16  0.77      0.90  0.14  0.78
+forget mean min: 0.891661 0.266212
+incx.max(), incx.min(), incx.mean() 22.4388 -13.0766 12.3651
+fgtx.max(), fgtx.min(), fgtx.mean() 2.83365 -2.04501 1.13172
+abs_mean, abs_mean+, abs_mean-: 12.7673 11.0669 15.0308
+U_c = [[-0.0393447]] U_f = [[ 0.]] b_c = [ 1.41122758] b_f = [ 0.87607074]
+W_c max, min, mean, abs_mean: 1.43324 -1.31079 -0.198334 1.15906
+W_f max, min, mean, abs_mean: 0.279952 -0.471437 -0.0493738 0.161169
+Epoch 12/300
+15s - loss: 1716.0878 - val_loss: 6337.6932
+Epoch 00011: val_loss improved from 6456.19336 to 6337.69320, saving model to huabei0_weights.hdf5
+             huabei0 1692.7483      0.79  0.27  0.61      0.81  0.24  0.65      0.82  0.22  0.67
+             huabei0 6337.6932      0.89  0.18  0.75      0.89  0.15  0.77      0.89  0.13  0.78
+forget mean min: 0.887282 0.254782
+incx.max(), incx.min(), incx.mean() 22.7062 -13.0237 12.6713
+fgtx.max(), fgtx.min(), fgtx.mean() 2.87472 -2.08862 1.12127
+abs_mean, abs_mean+, abs_mean-: 12.8692 11.1387 15.1686
+U_c = [[-0.04065337]] U_f = [[ 0.]] b_c = [ 1.46322894] b_f = [ 0.86253119]
+W_c max, min, mean, abs_mean: 1.48749 -1.38032 -0.191052 1.167
+W_f max, min, mean, abs_mean: 0.292436 -0.485004 -0.0515037 0.163072
+Epoch 13/300
+15s - loss: 1699.3179 - val_loss: 6442.8671
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+15s - loss: 1681.9072 - val_loss: 6249.5739
+Epoch 00013: val_loss improved from 6337.69320 to 6249.57388, saving model to huabei0_weights.hdf5
+             huabei0 1697.0136      0.80  0.28  0.61      0.82  0.25  0.65      0.83  0.23  0.67
+             huabei0 6249.5739      0.88  0.18  0.74      0.89  0.15  0.77      0.89  0.13  0.78
+forget mean min: 0.879244 0.271983
+incx.max(), incx.min(), incx.mean() 23.2286 -11.0185 13.3135
+fgtx.max(), fgtx.min(), fgtx.mean() 3.01887 -1.97717 1.10574
+abs_mean, abs_mean+, abs_mean-: 12.9471 11.1126 15.2888
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
+Epoch 15/300
+15s - loss: 1665.1095 - val_loss: 6397.3343
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+15s - loss: 1647.6596 - val_loss: 6847.2805
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+15s - loss: 1631.8941 - val_loss: 6697.8010
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+15s - loss: 1615.6426 - val_loss: 6955.0201
+Epoch 00017: val_loss did not improve
+Epoch 19/300
+15s - loss: 1601.3613 - val_loss: 6347.7907
+Epoch 00018: val_loss did not improve
+Epoch 20/300
+15s - loss: 1588.5730 - val_loss: 6806.4202
+Epoch 00019: val_loss did not improve
+Epoch 21/300
+15s - loss: 1575.2037 - val_loss: 6750.1350
+Epoch 00020: val_loss did not improve
+Epoch 22/300
+15s - loss: 1563.3238 - val_loss: 6673.4396
+Epoch 00021: val_loss did not improve
+Epoch 23/300
+15s - loss: 1551.1188 - val_loss: 6434.5056
+Epoch 00022: val_loss did not improve
+Epoch 24/300
+15s - loss: 1538.8525 - val_loss: 6641.0626
+Epoch 00023: val_loss did not improve
+Epoch 25/300
+15s - loss: 1528.2040 - val_loss: 6499.7621
+Epoch 00024: val_loss did not improve
+
+beijing
+             huabei0 2251.6789      0.95  0.26  0.71      0.96  0.24  0.73      0.96  0.23  0.75
+             huabei0 8486.5969      0.85  0.21  0.70      0.85  0.16  0.73      0.86  0.15  0.75
+forget mean min: 0.864846 0.479987
+incx.max(), incx.min(), incx.mean() 23.0717 -4.52444 11.579
+fgtx.max(), fgtx.min(), fgtx.mean() 3.01887 -0.937154 1.09451
+abs_mean, abs_mean+, abs_mean-: 16.9327 13.693 20.9025
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
+
+tianjin
+             huabei0 1577.7570      0.84  0.22  0.68      0.85  0.17  0.72      0.86  0.14  0.75
+             huabei0 6448.6596      0.89  0.14  0.78      0.89  0.11  0.80      0.91  0.10  0.82
+forget mean min: 0.857156 0.363001
+incx.max(), incx.min(), incx.mean() 22.2713 -4.94503 12.0572
+fgtx.max(), fgtx.min(), fgtx.mean() 2.62662 -1.52208 1.0164
+abs_mean, abs_mean+, abs_mean-: 15.6105 12.9178 18.7185
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
+
+tangshan
+             huabei0 1400.0570      0.86  0.17  0.73      0.90  0.14  0.78      0.90  0.12  0.80
+             huabei0 6322.5023      0.92  0.14  0.80      0.94  0.09  0.86      0.94  0.09  0.86
+forget mean min: 0.865571 0.432418
+incx.max(), incx.min(), incx.mean() 21.9005 -5.35579 12.1671
+fgtx.max(), fgtx.min(), fgtx.mean() 2.44495 -1.175 1.05031
+abs_mean, abs_mean+, abs_mean-: 15.0964 12.1388 18.6821
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
+
+baoding
+             huabei0 2910.2279      0.94  0.23  0.74      0.95  0.21  0.76      0.95  0.21  0.75
+             huabei0 7152.7986      0.96  0.09  0.88      0.96  0.06  0.91      0.98  0.02  0.96
+forget mean min: 0.904917 0.502932
+incx.max(), incx.min(), incx.mean() 23.1204 -2.29249 15.0439
+fgtx.max(), fgtx.min(), fgtx.mean() 2.80142 -0.82243 1.29023
+abs_mean, abs_mean+, abs_mean-: 18.8399 14.6729 24.4393
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
+
+shijiazhuang
+             huabei0 1882.9218      0.89  0.29  0.65      0.91  0.28  0.67      0.92  0.26  0.70
+             huabei0 7763.2451      0.95  0.20  0.76      0.95  0.15  0.81      0.95  0.12  0.85
+forget mean min: 0.90107 0.4881
+incx.max(), incx.min(), incx.mean() 22.994 -2.75696 14.4763
+fgtx.max(), fgtx.min(), fgtx.mean() 2.93171 -0.896589 1.27353
+abs_mean, abs_mean+, abs_mean-: 16.7728 14.0397 20.436
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
+
+xingtai+handan
+             huabei0 2131.0905      0.89  0.26  0.67      0.91  0.23  0.72      0.93  0.21  0.74
+             huabei0 7910.8648      0.96  0.13  0.84      0.96  0.09  0.87      0.95  0.06  0.90
+forget mean min: 0.910155 0.482489
+incx.max(), incx.min(), incx.mean() 21.885 -0.952833 15.7746
+fgtx.max(), fgtx.min(), fgtx.mean() 2.60162 -0.924642 1.30884
+abs_mean, abs_mean+, abs_mean-: 16.9934 14.9912 19.7863
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
+
+jinan
+             huabei0 2218.7354      0.84  0.27  0.64      0.84  0.24  0.67      0.84  0.22  0.68
+             huabei0 5177.7100      0.92  0.08  0.86      0.93  0.06  0.88      0.94  0.04  0.91
+forget mean min: 0.89892 0.398959
+incx.max(), incx.min(), incx.mean() 21.6025 -1.6644 15.7285
+fgtx.max(), fgtx.min(), fgtx.mean() 2.39775 -1.34229 1.19582
+abs_mean, abs_mean+, abs_mean-: 13.5225 12.2498 15.197
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
+
+xian
+             huabei0 2584.4556      0.72  0.53  0.40      0.74  0.53  0.41      0.76  0.53  0.41
+             huabei0 7061.5042      0.82  0.06  0.78      0.84  0.04  0.81      0.86  0.02  0.85
+forget mean min: 0.871578 0.541684
+incx.max(), incx.min(), incx.mean() 21.0673 0.641576 12.3947
+fgtx.max(), fgtx.min(), fgtx.mean() 2.4033 -0.628667 1.06414
+abs_mean, abs_mean+, abs_mean-: 11.6142 10.4226 12.7672
+U_c = [[-0.03585203]] U_f = [[ 0.]] b_c = [ 1.56945086] b_f = [ 0.83708763]
+W_c max, min, mean, abs_mean: 1.59074 -1.55078 -0.176313 1.18719
+W_f max, min, mean, abs_mean: 0.318143 -0.524441 -0.0589996 0.170787
