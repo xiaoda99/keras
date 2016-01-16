@@ -245,17 +245,17 @@ xibei_lon_range=[103.6, 112.4]  #lanzhou-chengdu to taiyuan-changsha
 xibei_lat_range=[34.15, 40.4] # xi'an-xuzhou to beijing
 
 huadong_lon_range=[112.4, 1000.] # taiyuan-changsha to sea
-#huadong_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
-huadong_lat_range=[29.6, 34.15] # hangzhou to xi'an-xuzhou
+huadong_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
+#huadong_lat_range=[29.6, 34.15] # hangzhou to xi'an-xuzhou
 
 huaxi_lon_range=[103.6, 112.4] # lanzhou-chengdu to taiyuan-changsha
 huaxi_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
 
 area2lonlat = OrderedDict([
 #                     ('dongbei', (dongbei_lon_range, dongbei_lat_range)),
-                     ('huabei', (huabei_lon_range, huabei_lat_range)),
+#                     ('huabei', (huabei_lon_range, huabei_lat_range)),
 #                     ('xibei', (xibei_lon_range, xibei_lat_range)),
-#                     ('huadong', (huadong_lon_range, huadong_lat_range)),
+                     ('huadong', (huadong_lon_range, huadong_lat_range)),
 #                     ('huaxi', (huaxi_lon_range, huaxi_lat_range)),
                      ])
 
@@ -291,22 +291,22 @@ nanchang_stations = [str(i)+'A' for i in range(1290, 1299)] #9
 changsha_stations = [str(i)+'A' for i in range(1335, 1345)] #10
 
 city2stations = OrderedDict([
-                   ('beijing', beijing_stations),
-                   ('tianjin', tianjin_stations),
-                   ('tangshan', tangshan_stations),
-                   ('baoding', baoding_stations),
-                   ('shijiazhuang', shijiazhuang_stations),
-                   ('xingtai+handan', xingtai_stations + handan_stations),
-                   ('jinan', jinan_stations),
-                   ('xian', xian_stations),
+#                   ('beijing', beijing_stations),
+#                   ('tianjin', tianjin_stations),
+#                   ('tangshan', tangshan_stations),
+#                   ('baoding', baoding_stations),
+#                   ('shijiazhuang', shijiazhuang_stations),
+#                   ('xingtai+handan', xingtai_stations + handan_stations),
+#                   ('jinan', jinan_stations),
+#                   ('xian', xian_stations),
                    
-#                   ('nanjing', nanjing_stations),
-#                   ('shanghai', shanghai_stations),
-#                   ('hangzhou', hangzhou_stations),
-#                   ('hefei', hefei_stations),
-#                   ('wuhan', wuhan_stations),
-#                   ('nanchang', nanchang_stations),
-#                   ('changsha', changsha_stations),
+                   ('nanjing', nanjing_stations),
+                   ('shanghai', shanghai_stations),
+                   ('hangzhou', hangzhou_stations),
+                   ('hefei', hefei_stations),
+                   ('wuhan', wuhan_stations),
+                   ('nanchang', nanchang_stations),
+                   ('changsha', changsha_stations),
                    
 #                   ('chongqing', chongqing_stations),
 #                   ('chengdu', chengdu_stations),
@@ -347,7 +347,7 @@ if __name__ == '__main__':
             patience = (1 + int(beijing_only)) * 10
             train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=300)
       
-    name = 'huabei'      
+    name = 'huadong'      
     rlstm = model_from_yaml(open(name + '.yaml').read())
     rlstm.name = name + str(0)
     rlstm.load_normalization_info(name + '_norm_info.pkl')

@@ -1,0 +1,145 @@
+filter 0.792837695654
+filter 0.977081213108
+X_train[0].shape = (146185, 40, 23)
+
+training huadong0
+Train on 146185 samples, validate on 48004 samples
+Before training:
+            huadong0 4826.1457      0.01  -nan  0.01      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.731055 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 3.57658 nan 3.57658
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+            huadong011127.5744      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.731059 0.731059
+incx.max(), incx.min(), incx.mean() 0.0 0.0 0.0
+fgtx.max(), fgtx.min(), fgtx.mean() 0.0 0.0 0.0
+abs_mean, abs_mean+, abs_mean-: 5.72111 nan 5.72111
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+W_c max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+W_f max, min, mean, abs_mean: 0.0 0.0 0.0 0.0
+Epoch 1/300
+15s - loss: 1387.6871 - val_loss: 2725.1006
+Epoch 00000: val_loss improved from inf to 2725.10065, saving model to huadong0_weights.hdf5
+            huadong0 1177.8467      0.56  0.42  0.40      0.59  0.40  0.43      0.61  0.37  0.45
+            huadong0 2725.1006      0.84  0.27  0.64      0.84  0.24  0.67      0.85  0.21  0.69
+forget mean min: 0.940577 0.72429
+incx.max(), incx.min(), incx.mean() 19.0146 0.413664 6.31874
+fgtx.max(), fgtx.min(), fgtx.mean() 7.11872 0.070367 2.30796
+abs_mean, abs_mean+, abs_mean-: 5.79126 5.45191 6.28826
+U_c = [[-0.05745065]] U_f = [[ 0.]] b_c = [ 0.22795574] b_f = [ 0.89547676]
+W_c max, min, mean, abs_mean: 0.263942 0.261194 0.262809 0.262809
+W_f max, min, mean, abs_mean: 0.100216 0.0982392 0.0995867 0.0995867
+Epoch 2/300
+15s - loss: 1161.8921 - val_loss: 2738.0310
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+15s - loss: 1142.3792 - val_loss: 2839.6287
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+15s - loss: 1128.7783 - val_loss: 2761.1162
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+15s - loss: 1116.4703 - val_loss: 2800.2970
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+15s - loss: 1105.6128 - val_loss: 2792.3606
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+15s - loss: 1095.3572 - val_loss: 2820.6300
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+15s - loss: 1086.0770 - val_loss: 2821.3700
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+15s - loss: 1078.9756 - val_loss: 2791.4578
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+15s - loss: 1073.4483 - val_loss: 2843.2209
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+15s - loss: 1067.3072 - val_loss: 2823.1218
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+15s - loss: 1062.2395 - val_loss: 2905.8434
+Epoch 00011: val_loss did not improve
+
+nanjing
+            huadong0  828.6312      0.48  0.42  0.36      0.49  0.42  0.36      0.50  0.38  0.38
+            huadong0 3020.4024      0.90  0.21  0.73      0.91  0.17  0.76      0.91  0.16  0.77
+forget mean min: 0.937315 0.72429
+incx.max(), incx.min(), incx.mean() 17.0702 0.413664 6.34807
+fgtx.max(), fgtx.min(), fgtx.mean() 6.38199 0.070367 2.31906
+abs_mean, abs_mean+, abs_mean-: 6.47209 5.59554 7.82915
+U_c = [[-0.05745065]] U_f = [[ 0.]] b_c = [ 0.22795574] b_f = [ 0.89547676]
+W_c max, min, mean, abs_mean: 0.263942 0.261194 0.262809 0.262809
+W_f max, min, mean, abs_mean: 0.100216 0.0982392 0.0995867 0.0995867
+
+shanghai
+            huadong0  747.3073      0.48  0.41  0.36      0.49  0.39  0.37      0.51  0.37  0.39
+            huadong0 2540.9519      0.72  0.37  0.51      0.73  0.35  0.52      0.74  0.30  0.56
+forget mean min: 0.927104 0.725442
+incx.max(), incx.min(), incx.mean() 13.8765 0.428906 5.60409
+fgtx.max(), fgtx.min(), fgtx.mean() 5.17174 0.0761425 2.03713
+abs_mean, abs_mean+, abs_mean-: 5.53818 4.75716 6.60503
+U_c = [[-0.05745065]] U_f = [[ 0.]] b_c = [ 0.22795574] b_f = [ 0.89547676]
+W_c max, min, mean, abs_mean: 0.263942 0.261194 0.262809 0.262809
+W_f max, min, mean, abs_mean: 0.100216 0.0982392 0.0995867 0.0995867
+
+hangzhou
+            huadong0  755.4933      0.44  0.49  0.31      0.48  0.46  0.34      0.50  0.42  0.37
+            huadong0 2698.1911      0.86  0.26  0.65      0.88  0.22  0.71      0.90  0.20  0.74
+forget mean min: 0.938607 0.760313
+incx.max(), incx.min(), incx.mean() 14.844 0.911256 6.1647
+fgtx.max(), fgtx.min(), fgtx.mean() 5.53839 0.25892 2.24958
+abs_mean, abs_mean+, abs_mean-: 5.86827 5.48413 6.3733
+U_c = [[-0.05745065]] U_f = [[ 0.]] b_c = [ 0.22795574] b_f = [ 0.89547676]
+W_c max, min, mean, abs_mean: 0.263942 0.261194 0.262809 0.262809
+W_f max, min, mean, abs_mean: 0.100216 0.0982392 0.0995867 0.0995867
+
+hefei
+            huadong0 1500.6781      0.53  0.37  0.41      0.56  0.35  0.43      0.58  0.29  0.46
+            huadong0 3726.1197      0.97  0.24  0.74      0.97  0.20  0.78      0.97  0.17  0.81
+forget mean min: 0.945067 0.72429
+incx.max(), incx.min(), incx.mean() 17.3057 0.413664 6.67643
+fgtx.max(), fgtx.min(), fgtx.mean() 6.4712 0.070367 2.44349
+abs_mean, abs_mean+, abs_mean-: 6.53476 5.90744 7.44035
+U_c = [[-0.05745065]] U_f = [[ 0.]] b_c = [ 0.22795574] b_f = [ 0.89547676]
+W_c max, min, mean, abs_mean: 0.263942 0.261194 0.262809 0.262809
+W_f max, min, mean, abs_mean: 0.100216 0.0982392 0.0995867 0.0995867
+
+wuhan
+            huadong0 1268.4179      0.58  0.40  0.42      0.61  0.38  0.45      0.62  0.37  0.46
+            huadong0 4274.0165      0.90  0.12  0.80      0.90  0.07  0.84      0.92  0.03  0.89
+forget mean min: 0.948739 0.740106
+incx.max(), incx.min(), incx.mean() 15.5217 0.626573 6.55205
+fgtx.max(), fgtx.min(), fgtx.mean() 5.79525 0.151042 2.3964
+abs_mean, abs_mean+, abs_mean-: 5.47064 5.10298 5.98474
+U_c = [[-0.05745065]] U_f = [[ 0.]] b_c = [ 0.22795574] b_f = [ 0.89547676]
+W_c max, min, mean, abs_mean: 0.263942 0.261194 0.262809 0.262809
+W_f max, min, mean, abs_mean: 0.100216 0.0982392 0.0995867 0.0995867
+
+nanchang
+            huadong0  909.0409      0.14  0.44  0.12      0.15  0.47  0.13      0.13  0.52  0.12
+            huadong0 1769.6943      0.43  0.32  0.36      0.41  0.33  0.34      0.42  0.32  0.35
+forget mean min: 0.925907 0.732289
+incx.max(), incx.min(), incx.mean() 13.981 0.520339 5.21859
+fgtx.max(), fgtx.min(), fgtx.mean() 5.21147 0.110791 1.89112
+abs_mean, abs_mean+, abs_mean-: 4.34945 4.22607 4.47322
+U_c = [[-0.05745065]] U_f = [[ 0.]] b_c = [ 0.22795574] b_f = [ 0.89547676]
+W_c max, min, mean, abs_mean: 0.263942 0.261194 0.262809 0.262809
+W_f max, min, mean, abs_mean: 0.100216 0.0982392 0.0995867 0.0995867
+
+changsha
+            huadong0  901.3101      0.54  0.53  0.33      0.52  0.51  0.34      0.52  0.47  0.36
+            huadong0 1942.2004      0.82  0.23  0.66      0.82  0.21  0.67      0.82  0.17  0.70
+forget mean min: 0.944794 0.754226
+incx.max(), incx.min(), incx.mean() 12.9616 0.823845 6.03285
+fgtx.max(), fgtx.min(), fgtx.mean() 4.82525 0.225801 2.19968
+abs_mean, abs_mean+, abs_mean-: 4.23943 4.21906 4.26883
+U_c = [[-0.05745065]] U_f = [[ 0.]] b_c = [ 0.22795574] b_f = [ 0.89547676]
+W_c max, min, mean, abs_mean: 0.263942 0.261194 0.262809 0.262809
+W_f max, min, mean, abs_mean: 0.100216 0.0982392 0.0995867 0.0995867
