@@ -145,7 +145,8 @@ def model_from_config(config, custom_layers={}):
         optimizer = optimizers.get(optimizer_name, optimizer_params)
 
         if model_name == 'Sequential':
-            model.compile(loss=loss, optimizer=optimizer, class_mode=class_mode, theano_mode=theano_mode)
+            model.compile(loss=loss, optimizer=optimizer, class_mode=class_mode, theano_mode=theano_mode,
+                          predict_only=True)  #XD speed up compile
         elif model_name == 'Graph':
             model.compile(loss=loss, optimizer=optimizer, theano_mode=theano_mode)
 
@@ -391,7 +392,8 @@ class Sequential(Model, containers.Sequential):
                 return layer
         return None
     
-    def compile(self, optimizer, loss, class_mode="categorical", theano_mode=None):
+    def compile(self, optimizer, loss, class_mode="categorical", theano_mode=None, 
+                predict_only=False):  #XD 
         self.optimizer = optimizers.get(optimizer)
 
         self.loss = objectives.get(loss)
@@ -427,24 +429,24 @@ class Sequential(Model, containers.Sequential):
 #        misclass.name = 'misclass'
 #        pred_mean.name = 'pred_mean'
 #        pred_stdev.name = 'pred_stdev'
-        def mean_gain(y_true, y_pred):
-            max_pred_gain = y_pred.max(axis=1).dimshuffle(0, 'x') * T.ones_like(y_pred)
-            max_mask = T.cast(y_pred >= max_pred_gain, 'float32')
-            return ((y_true * max_mask).sum(axis=1) * (y_pred.max(axis=1) > 0.)).mean()
-        
-        def gain_per_trade(y_true, y_pred):
-            max_pred_gain = y_pred.max(axis=1).dimshuffle(0, 'x') * T.ones_like(y_pred)
-            max_mask = T.cast(y_pred >= max_pred_gain, 'float32')
-            return ((y_true * max_mask).sum(axis=1) * (y_pred.max(axis=1) > 0.)).sum() / (y_pred.max(axis=1) > 0.).sum()
-        
-        def optimal_mean_gain(y_true):
-            return (y_true.max(axis=1) * (y_true.max(axis=1) > 0.)).mean()
-        
-        def optimal_gain_per_trade(y_true):
-            return (y_true.max(axis=1) * (y_true.max(axis=1) > 0.)).sum() / (y_true.max(axis=1) > 0.).sum()
-    
-        trade_freq = (self.y_test.max(axis=1) > 0.).mean()
-        optimal_trade_freq = (self.y.max(axis=1) > 0.).mean()
+#        def mean_gain(y_true, y_pred):
+#            max_pred_gain = y_pred.max(axis=1).dimshuffle(0, 'x') * T.ones_like(y_pred)
+#            max_mask = T.cast(y_pred >= max_pred_gain, 'float32')
+#            return ((y_true * max_mask).sum(axis=1) * (y_pred.max(axis=1) > 0.)).mean()
+#        
+#        def gain_per_trade(y_true, y_pred):
+#            max_pred_gain = y_pred.max(axis=1).dimshuffle(0, 'x') * T.ones_like(y_pred)
+#            max_mask = T.cast(y_pred >= max_pred_gain, 'float32')
+#            return ((y_true * max_mask).sum(axis=1) * (y_pred.max(axis=1) > 0.)).sum() / (y_pred.max(axis=1) > 0.).sum()
+#        
+#        def optimal_mean_gain(y_true):
+#            return (y_true.max(axis=1) * (y_true.max(axis=1) > 0.)).mean()
+#        
+#        def optimal_gain_per_trade(y_true):
+#            return (y_true.max(axis=1) * (y_true.max(axis=1) > 0.)).sum() / (y_true.max(axis=1) > 0.).sum()
+#    
+#        trade_freq = (self.y_test.max(axis=1) > 0.).mean()
+#        optimal_trade_freq = (self.y.max(axis=1) > 0.).mean()
         
         if class_mode == "categorical":
             train_accuracy = T.mean(T.eq(T.argmax(self.y, axis=-1), T.argmax(self.y_train, axis=-1)))
@@ -491,16 +493,9 @@ class Sequential(Model, containers.Sequential):
             test_ins = [self.X_test, self.y, self.weights]
             predict_ins = [self.X_test]
             
-        self._train = theano.function(train_ins, train_loss, updates=updates,
-                                      allow_input_downcast=True, mode=theano_mode)
-        self._train_with_acc = theano.function(train_ins, [train_loss, train_accuracy], updates=updates,
-                                               allow_input_downcast=True, mode=theano_mode)
         self._predict = theano.function(predict_ins, self.y_test,
                                         allow_input_downcast=True, mode=theano_mode)
-        self._test = theano.function(test_ins, test_loss,
-                                     allow_input_downcast=True, mode=theano_mode)
-        self._test_with_acc = theano.function(test_ins, [test_loss, test_accuracy],
-                                              allow_input_downcast=True, mode=theano_mode)
+
         #XD
 #        self._monitor = None
         layer = self.get_rlstm_layer()
@@ -517,6 +512,18 @@ class Sequential(Model, containers.Sequential):
 #                                                   trade_freq,
 #                                                   optimal_trade_freq],
 #                                              allow_input_downcast=True, mode=theano_mode, on_unused_input='warn')
+        #XD
+        if predict_only:
+            return
+        
+        self._train = theano.function(train_ins, train_loss, updates=updates,
+                                      allow_input_downcast=True, mode=theano_mode)
+#        self._train_with_acc = theano.function(train_ins, [train_loss, train_accuracy], updates=updates,
+#                                               allow_input_downcast=True, mode=theano_mode)
+        self._test = theano.function(test_ins, test_loss,
+                                     allow_input_downcast=True, mode=theano_mode)
+#        self._test_with_acc = theano.function(test_ins, [test_loss, test_accuracy],
+#                                              allow_input_downcast=True, mode=theano_mode)
 
     def train_on_batch(self, X, y, accuracy=False, class_weight=None, sample_weight=None):
         X = standardize_X(X)

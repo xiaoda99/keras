@@ -245,8 +245,8 @@ xibei_lon_range=[103.6, 112.4]  #lanzhou-chengdu to taiyuan-changsha
 xibei_lat_range=[34.15, 40.4] # xi'an-xuzhou to beijing
 
 huadong_lon_range=[112.4, 1000.] # taiyuan-changsha to sea
-huadong_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
-#huadong_lat_range=[29.6, 34.15] # hangzhou to xi'an-xuzhou
+#huadong_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
+huadong_lat_range=[29.6, 34.15] # hangzhou to xi'an-xuzhou
 
 huaxi_lon_range=[103.6, 112.4] # lanzhou-chengdu to taiyuan-changsha
 huaxi_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
@@ -258,6 +258,10 @@ area2lonlat = OrderedDict([
                      ('huadong', (huadong_lon_range, huadong_lat_range)),
 #                     ('huaxi', (huaxi_lon_range, huaxi_lat_range)),
                      ])
+
+haerbin_stations = [str(i)+'A' for i in range(1129, 1141)]  #12
+changchun_stations = [str(i)+'A' for i in range(1119, 1129)]  #10
+shenyang_stations = [str(i)+'A' for i in range(1098, 1109)]  #11
 
 beijing_stations = [str(i)+'A' for i in range(1001, 1013)]  #12
 #langfang_stations = [str(i)+'A' for i in range(1067, 1071)]  #4
@@ -309,20 +313,21 @@ city2stations = OrderedDict([
                    ])
 
 if __name__ == '__main__':
-    beijing_only = True
+    beijing_only = False
     
-#    for area in area2lonlat:
-    for city in city2stations:
+    for area in area2lonlat:
+#    for city in city2stations:
         for i in range(1):
             train_data, valid_data = load_data3(
-#                                                lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
-                                                stations=city2stations[city],
+                                                lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
+#                                                stations=city2stations[city], 
+                                                starttime='20150913', endtime='20160113',
 #                                                train_stop=630, valid_start=680, valid_stop=840,
-                                                train_start=0, train_stop=840, valid_start=870, valid_stop=-1, 
-                                                filter=True)
+#                                                train_start=0, train_stop=840, valid_start=870, valid_stop=-1,
+                                                filter=(not beijing_only))
             X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
             print 'X_train[0].shape =', X_train[0].shape
-            name = city
+            name = area
             rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
                                        rec_layer_init='zero', base_name=name,
                                        add_input_noise=beijing_only, add_target_noise=False)
@@ -342,24 +347,26 @@ if __name__ == '__main__':
             patience = (1 + int(beijing_only)) * 10
             train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=300)
       
-    name = 'shanghai'      
+    name = 'huadong'      
     rlstm = model_from_yaml(open(name + '.yaml').read())
-#    rlstm.name = name + str(0)
-#    rlstm.load_normalization_info(name + '_norm_info.pkl')
-#    rlstm.load_weights(rlstm.name + '_weights.hdf5')
+    rlstm.name = name + str(0)
+    rlstm.load_normalization_info(name + '_norm_info.pkl')
+    rlstm.load_weights(rlstm.name + '_weights.hdf5')
 #    for area in area2lonlat:
     for city in city2stations:
         for i in range(1):
-            name = city
-            rlstm.name = name + str(i)
-            rlstm.load_normalization_info(name + '_norm_info.pkl')
-            rlstm.load_weights(rlstm.name + '_weights.hdf5')
+#            name = city
+#            rlstm.name = name + str(i)
+#            rlstm.load_normalization_info(name + '_norm_info.pkl')
+#            rlstm.load_weights(rlstm.name + '_weights.hdf5')
             
             train_data, valid_data = load_data3(
 #                                                lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1],
-                                                stations=city2stations[city],
+                                                stations=city2stations[city], 
+                                                starttime='20150913', endtime='20160113',
 #                                                train_stop=630, valid_start=680, valid_stop=840,
-                                                train_start=0, train_stop=840, valid_start=870, valid_stop=-1)
+#                                                train_start=0, train_stop=840, valid_start=870, valid_stop=-1
+                                                )
             rlstm.data = [train_data, valid_data]
             print '\n' + city
             test_model(rlstm, dataset='train', show_details=False)
