@@ -163,16 +163,16 @@ def test_model(model, dataset='test', show_details=True):
                                                                   pod8, far8, csi8)
     if show_details:
         print 'forget mean min:', fgts.mean(), fgts.min()
-        print 'incx.max(), incx.min(), incx.mean()', incx.max(), incx.min(), incx.mean()
-        print 'fgtx.max(), fgtx.min(), fgtx.mean()', fgtx.max(), fgtx.min(), fgtx.mean()
+#        print 'incx.max(), incx.min(), incx.mean()', incx.max(), incx.min(), incx.mean()
+#        print 'fgtx.max(), fgtx.min(), fgtx.mean()', fgtx.max(), fgtx.min(), fgtx.mean()
 #        print 'delta_x =', np.abs(dxs).mean(), 'delta_h =', np.abs(dhs).mean()
         print 'abs_mean, abs_mean+, abs_mean-:', np.abs(dxs).mean(), np.abs(dxs[dxs>0]).mean(), np.abs(dxs[dxs<0]).mean()
         layer = model.get_rlstm_layer()
         W_c =layer.W_c.get_value()
         W_f =layer.W_f.get_value()
         print 'U_c =',layer.U_c.get_value(), 'U_f =',layer.U_f.get_value(), 'b_c =',layer.b_c.get_value(), 'b_f =',layer.b_f.get_value()
-        print 'W_c max, min, mean, abs_mean:', W_c.max(), W_c.min(), W_c.mean(), np.abs(W_c).mean()
-        print 'W_f max, min, mean, abs_mean:', W_f.max(), W_f.min(), W_f.mean(), np.abs(W_f).mean()
+#        print 'W_c max, min, mean, abs_mean:', W_c.max(), W_c.min(), W_c.mean(), np.abs(W_c).mean()
+#        print 'W_f max, min, mean, abs_mean:', W_f.max(), W_f.min(), W_f.mean(), np.abs(W_f).mean()
     
           
     
@@ -241,22 +241,31 @@ dongbei_lat_range=[40.4, 1000.] # beijing to ~
 huabei_lon_range=[112.4, 1000.]  #taiyuan-changsha to sea
 huabei_lat_range=[34.15, 40.4] # xi'an-xuzhou to beijing
 
-xibei_lon_range=[103.6, 112.4]  #lanzhou-chengdu to taiyuan-changsha
+#xibei_lon_range=[103.6, 112.4]  #lanzhou-chengdu to taiyuan-changsha
+xibei_lon_range=[0., 112.4]  #mountain to taiyuan-changsha
 xibei_lat_range=[34.15, 40.4] # xi'an-xuzhou to beijing
 
 huadong_lon_range=[112.4, 1000.] # taiyuan-changsha to sea
-huadong_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
-#huadong_lat_range=[29.6, 34.15] # hangzhou to xi'an-xuzhou
+#huadong_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
+huadong_lat_range=[29.3, 34.15] # chongqing to xi'an-xuzhou
 
-huaxi_lon_range=[103.6, 112.4] # lanzhou-chengdu to taiyuan-changsha
-huaxi_lat_range=[28.1, 34.15] # changsha to xi'an-xuzhou
+#huaxi_lon_range=[103.6, 112.4] # lanzhou-chengdu to taiyuan-changsha
+huaxi_lon_range=[0., 112.4] # mountain to taiyuan-changsha
+huaxi_lat_range=[29.3, 34.15] # chongqing to xi'an-xuzhou
+
+huanan_lon_range=[0., 1000.] # mountain to sea
+huanan_lat_range=[0., 29.3] # sea to chongqing
+
+huabeihuadong_lon_range=[112.4, 1000.] # taiyuan-changsha to sea
+huabeihuadong_lat_range=[28.1, 40.4] # changsha to beijing
 
 area2lonlat = OrderedDict([
-#                     ('dongbei', (dongbei_lon_range, dongbei_lat_range)),
-#                     ('huabei', (huabei_lon_range, huabei_lat_range)),
-#                     ('xibei', (xibei_lon_range, xibei_lat_range)),
+                     ('dongbei', (dongbei_lon_range, dongbei_lat_range)),
+                     ('huabei', (huabei_lon_range, huabei_lat_range)),
+                     ('xibei', (xibei_lon_range, xibei_lat_range)),
                      ('huadong', (huadong_lon_range, huadong_lat_range)),
-#                     ('huaxi', (huaxi_lon_range, huaxi_lat_range)),
+                     ('huaxi', (huaxi_lon_range, huaxi_lat_range)),
+                     ('huanan', (huanan_lon_range, huanan_lat_range)),
                      ])
 
 haerbin_stations = [str(i)+'A' for i in range(1129, 1141)]  #12
@@ -289,89 +298,164 @@ hefei_stations = [str(i)+'A' for i in range(1270, 1280)] #10
 wuhan_stations = [str(i)+'A' for i in range(1325, 1335)] #10
 nanchang_stations = [str(i)+'A' for i in range(1290, 1299)] #9
 changsha_stations = [str(i)+'A' for i in range(1335, 1345)] #10
+guangzhou_stations = [str(i)+'A' for i in range(1345, 1356)] #11
 
 city2stations = OrderedDict([
-#                   ('beijing', beijing_stations),
-#                   ('tianjin', tianjin_stations),
-#                   ('tangshan', tangshan_stations),
-#                   ('baoding', baoding_stations),
-#                   ('shijiazhuang', shijiazhuang_stations),
-#                   ('xingtai+handan', xingtai_stations + handan_stations),
-#                   ('jinan', jinan_stations),
-#                   ('xian', xian_stations),
+                   ('haerbin', haerbin_stations),
+                   ('changchun', changchun_stations),
+                   ('shenyang', shenyang_stations),
+                   
+                   ('beijing', beijing_stations),
+                   ('tianjin', tianjin_stations),
+                   ('tangshan', tangshan_stations),
+                   ('baoding', baoding_stations),
+                   ('shijiazhuang', shijiazhuang_stations),
+                   ('xingtai+handan', xingtai_stations + handan_stations),
+                   ('jinan', jinan_stations),
+                   
+                   ('xian', xian_stations),
                    
                    ('nanjing', nanjing_stations),
                    ('shanghai', shanghai_stations),
                    ('hangzhou', hangzhou_stations),
                    ('hefei', hefei_stations),
                    ('wuhan', wuhan_stations),
+                   
+                   ('chongqing', chongqing_stations),
+                   ('chengdu', chengdu_stations),
+
                    ('nanchang', nanchang_stations),
                    ('changsha', changsha_stations),
-                   
-#                   ('chongqing', chongqing_stations),
-#                   ('chengdu', chengdu_stations),
+                   ('guangzhou', guangzhou_stations),
                    ])
 
-if __name__ == '__main__':
+dongbei_cities = ['haerbin', 'changchun', 'shenyang']
+huabei_cities = ['beijing', 'tianjin', 'tangshan', 'baoding', 'shijiazhuang', 'xingtai+handan', 'jinan']
+xibei_cities = ['xian',]
+huadong_cities = ['nanjing', 'shanghai', 'hangzhou', 'hefei', 'wuhan']
+huaxi_cities = ['chongqing', 'chengdu']
+huanan_cities = ['nanchang', 'changsha', 'guangzhou']
+
+starttime = '20150916'
+endtime = '20160116'
+
+def test_cities(cities, repeat=1):
+    beijing_only = True
+    
+    for city in cities:
+        for i in range(repeat):
+            train_data, valid_data = load_data3(stations=city2stations[city], 
+                                                starttime=starttime, endtime=endtime,
+                                                filter=(not beijing_only), normalize_target=False)
+            X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
+            print 'X_train[0].shape =', X_train[0].shape
+            name = city
+            rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
+                                       rec_layer_init='zero', fix_b_f=True, base_name=name,
+                                       add_input_noise=beijing_only, add_target_noise=False)
+            rlstm.name = name + str(i)
+            rlstm.data = [train_data, valid_data]
+            
+            rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
+            rlstm.X_mask[-1:] = not beijing_only  # pm25 mean
+            
+            print '\ntraining', rlstm.name
+            X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
+            rlstm.save_normalization_info(name + '_norm_info.pkl')
+            batch_size = (1 + (not beijing_only)) * 64
+#            patience = (1 + int(beijing_only)) * 10
+            patience = 10
+            train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=300)
+      
+    for city in cities:
+        for i in range(repeat):
+            name = city
+            rlstm = model_from_yaml(open(name + '.yaml').read())
+            rlstm.name = name + str(i)
+            rlstm.load_normalization_info(name + '_norm_info.pkl')
+            rlstm.load_weights(rlstm.name + '_weights.hdf5')
+            
+            train_data, valid_data = load_data3(stations=city2stations[city], 
+                                                starttime=starttime, endtime=endtime)
+            rlstm.data = [train_data, valid_data]
+            print '\n' + rlstm.name
+            test_model(rlstm, dataset='train', show_details=False)
+            test_model(rlstm, dataset='valid', show_details=True)
+     
+def test_areas(areas, repeat=1):
     beijing_only = False
     
-    for area in area2lonlat:
-#    for city in city2stations:
-        for i in range(1):
-            train_data, valid_data = load_data3(
-                                                lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1], 
-#                                                stations=city2stations[city], 
-                                                starttime='20150913', endtime='20160113',
-#                                                train_stop=630, valid_start=680, valid_stop=840,
-#                                                train_start=0, train_stop=840, valid_start=870, valid_stop=-1,
+    for area in areas:
+        for i in range(repeat):
+            train_data, valid_data = load_data3(lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1],
+                                                starttime=starttime, endtime=endtime,
                                                 filter=(not beijing_only))
             X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
             print 'X_train[0].shape =', X_train[0].shape
             name = area
             rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
-                                       rec_layer_init='zero', base_name=name,
+                                       rec_layer_init='zero', fix_b_f=False, base_name=name,
                                        add_input_noise=beijing_only, add_target_noise=False)
-    #        rlstm = build_rlstm2(X_train[0].shape[-1], h0_dim=20, h1_dim=20, base_name=name,
-    #                                   add_input_noise=beijing_only, add_target_noise=beijing_only)
             rlstm.name = name + str(i)
             rlstm.data = [train_data, valid_data]
+            
             rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
-    #        rlstm.X_mask[:6] = 0  # wind direction
-    #        rlstm.X_mask[-5:-3] = not beijing_only  # datetime
-    #        rlstm.X_mask[-3:-1] = 0  # lonlat
             rlstm.X_mask[-1:] = not beijing_only  # pm25 mean
+            
             print '\ntraining', rlstm.name
             X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
             rlstm.save_normalization_info(name + '_norm_info.pkl')
             batch_size = (1 + (not beijing_only)) * 64
-            patience = (1 + int(beijing_only)) * 10
+#            patience = (1 + int(beijing_only)) * 10
+            patience = 10
             train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=300)
       
-    name = 'huadong'      
-    rlstm = model_from_yaml(open(name + '.yaml').read())
-    rlstm.name = name + str(0)
-    rlstm.load_normalization_info(name + '_norm_info.pkl')
-    rlstm.load_weights(rlstm.name + '_weights.hdf5')
-#    for area in area2lonlat:
-    for city in city2stations:
-        for i in range(1):
-#            name = city
-#            rlstm = model_from_yaml(open(name + '.yaml').read())
-#            rlstm.name = name + str(i)
-#            rlstm.load_normalization_info(name + '_norm_info.pkl')
-#            rlstm.load_weights(rlstm.name + '_weights.hdf5')
+    for area in areas:
+        for i in range(repeat):
+            name = area
+            rlstm = model_from_yaml(open(name + '.yaml').read())
+            rlstm.name = name + str(i)
+            rlstm.load_normalization_info(name + '_norm_info.pkl')
+            rlstm.load_weights(rlstm.name + '_weights.hdf5')
             
-            train_data, valid_data = load_data3(
-#                                                lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1],
-                                                stations=city2stations[city], 
-                                                starttime='20150913', endtime='20160113',
-#                                                train_stop=630, valid_start=680, valid_stop=840,
-#                                                train_start=0, train_stop=840, valid_start=870, valid_stop=-1
+            train_data, valid_data = load_data3(lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1],
+                                                starttime=starttime, endtime=endtime
                                                 )
             rlstm.data = [train_data, valid_data]
-            print '\n' + city
+            print '\n' + rlstm.name
             test_model(rlstm, dataset='train', show_details=False)
             test_model(rlstm, dataset='valid', show_details=True)
+            
+def test_area_on_cities(area, i, cities):  
+    name = area      
+    rlstm = model_from_yaml(open(name + '.yaml').read())
+    rlstm.name = name + str(i)
+    rlstm.load_normalization_info(name + '_norm_info.pkl')
+    rlstm.load_weights(rlstm.name + '_weights.hdf5')
+    print '\n In' + area
+    for city in cities:
+        train_data, valid_data = load_data3(stations=city2stations[city], 
+                                            starttime=starttime, endtime=endtime,
+                                            )
+        rlstm.data = [train_data, valid_data]
+        print '\n' + city
+        test_model(rlstm, dataset='train', show_details=False)
+        test_model(rlstm, dataset='valid', show_details=True)
+            
+if __name__ == '__main__':
+#    cities = city2stations.keys()
+#    cities = ['haerbin']
+#    test_cities(cities, repeat=1)
+    
+#    areas = area2lonlat.keys()
+#    test_areas(areas, repeat=3)
+    
+    test_area_on_cities('dongbei', 0, dongbei_cities)
+    test_area_on_cities('huabei', 0, huabei_cities)
+    test_area_on_cities('xibei', 0, xibei_cities)
+    test_area_on_cities('huadong', 0, huadong_cities)
+    test_area_on_cities('huaxi', 0, huaxi_cities)
+    test_area_on_cities('huanan', 0, huanan_cities)
 
 #y = y_valid[((y_valid[:,:,0].min(axis=1) < 60) & (y_valid[:,:,0].max(axis=1) > 100)), :, 0]
 #i = np.random.randint(y.shape[0]); yp = rlstm.predict_on_batch([X_valid[0][i:i+1], X_valid[1][i:i+1], X_valid[2][i:i+1]])[0,:,0]; plt.plot(yp, label='yp'); plt.plot(y[i], label='y'); plt.legend(); plt.show()

@@ -128,12 +128,16 @@ def normalize(X_train, X_valid, model):
         X_train = X_train.reshape((X_train.shape[0] * X_train.shape[1], X_train.shape[2]))
         X_valid = X_valid.reshape((X_valid.shape[0] * X_valid.shape[1], X_valid.shape[2]))
         reshaped = True
-    X_all = np.vstack([X_train, X_valid])
-    X_mean = X_all.mean(axis=0)
-    X_all = X_all - X_mean
-    X_stdev = np.sqrt(X_all.var(axis=0))
+#    X_all = np.vstack([X_train, X_valid])
+#    X_mean = X_all.mean(axis=0)
+#    X_all = X_all - X_mean
+#    X_stdev = np.sqrt(X_all.var(axis=0))
     
+    X_mean = X_train.mean(axis=0)
     X_train -= X_mean
+    X_stdev = np.sqrt(X_train.var(axis=0))
+    
+#    X_train -= X_mean
     X_train /= X_stdev
     X_valid -= X_mean
     X_valid /= X_stdev

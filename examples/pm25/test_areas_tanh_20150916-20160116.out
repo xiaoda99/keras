@@ -1,0 +1,1460 @@
+filter 0.780352672948
+filter 0.892594671838
+X_train[0].shape = (97889, 40, 23)
+
+training dongbei0
+Train on 97889 samples, validate on 34979 samples
+Before training:
+            dongbei011810.2962      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.700001 0.7
+abs_mean, abs_mean+, abs_mean-: 4.0118 nan 4.0118
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+            dongbei010466.2026      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.699999 0.7
+abs_mean, abs_mean+, abs_mean-: 5.52697 nan 5.52697
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+17s - loss: 6733.3019 - val_loss: 5064.9669
+Epoch 00000: val_loss improved from inf to 5064.96694, saving model to dongbei0_weights.hdf5
+            dongbei0 6125.9145      0.68  0.44  0.44      0.70  0.40  0.48      0.71  0.37  0.50
+            dongbei0 5064.9669      0.68  0.48  0.42      0.70  0.46  0.44      0.71  0.45  0.45
+forget mean min: 0.951074 0.221746
+abs_mean, abs_mean+, abs_mean-: 6.59837 4.27604 13.7146
+U_c = [[-0.11430526]] U_f = [[ 0.]] b_c = [ 0.27737725] b_f = [ 1.15392351]
+Epoch 2/300
+17s - loss: 6108.8929 - val_loss: 5158.8434
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+14s - loss: 6050.3935 - val_loss: 5075.9225
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+20s - loss: 5958.9075 - val_loss: 4966.2106
+Epoch 00003: val_loss improved from 5064.96694 to 4966.21063, saving model to dongbei0_weights.hdf5
+            dongbei0 5874.2616      0.62  0.44  0.41      0.64  0.41  0.45      0.65  0.38  0.47
+            dongbei0 4966.2106      0.67  0.48  0.42      0.68  0.46  0.43      0.69  0.46  0.44
+forget mean min: 0.937225 0.265931
+abs_mean, abs_mean+, abs_mean-: 8.60182 6.48498 12.8136
+U_c = [[-0.04100123]] U_f = [[ 0.]] b_c = [ 0.37899998] b_f = [ 1.20140898]
+Epoch 5/300
+20s - loss: 5750.3108 - val_loss: 5104.6234
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+21s - loss: 5536.8841 - val_loss: 5253.2950
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+21s - loss: 5375.8100 - val_loss: 6209.7276
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 5059.2322 - val_loss: 5704.9618
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+21s - loss: 4545.1308 - val_loss: 6637.6568
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+21s - loss: 4214.8296 - val_loss: 5979.9814
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+21s - loss: 4011.1592 - val_loss: 7520.2074
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+21s - loss: 3834.4394 - val_loss: 7078.5842
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+22s - loss: 3685.8853 - val_loss: 7159.0263
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+23s - loss: 3568.2575 - val_loss: 6235.7998
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+23s - loss: 3466.9533 - val_loss: 7487.1736
+Epoch 00014: val_loss did not improve
+filter 0.780352672948
+filter 0.892594671838
+X_train[0].shape = (97889, 40, 23)
+
+training dongbei1
+Train on 97889 samples, validate on 34979 samples
+Before training:
+            dongbei111810.2962      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.700001 0.7
+abs_mean, abs_mean+, abs_mean-: 4.0118 nan 4.0118
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+            dongbei110466.2026      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.699999 0.7
+abs_mean, abs_mean+, abs_mean-: 5.52697 nan 5.52697
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+21s - loss: 6706.7984 - val_loss: 5267.7152
+Epoch 00000: val_loss improved from inf to 5267.71519, saving model to dongbei1_weights.hdf5
+            dongbei1 6134.0107      0.65  0.43  0.43      0.68  0.40  0.47      0.69  0.37  0.49
+            dongbei1 5267.7152      0.64  0.48  0.40      0.65  0.46  0.42      0.66  0.45  0.43
+forget mean min: 0.946413 0.233845
+abs_mean, abs_mean+, abs_mean-: 6.52538 4.10667 12.9031
+U_c = [[-0.11223777]] U_f = [[ 0.]] b_c = [ 0.27079707] b_f = [ 1.15261424]
+Epoch 2/300
+21s - loss: 6108.1676 - val_loss: 5165.4526
+Epoch 00001: val_loss improved from 5267.71519 to 5165.45259, saving model to dongbei1_weights.hdf5
+            dongbei1 6082.8264      0.69  0.45  0.44      0.71  0.42  0.47      0.72  0.39  0.49
+            dongbei1 5165.4526      0.65  0.49  0.40      0.66  0.47  0.42      0.68  0.45  0.43
+forget mean min: 0.951072 0.188502
+abs_mean, abs_mean+, abs_mean-: 6.7927 4.39646 13.731
+U_c = [[-0.09567619]] U_f = [[ 0.]] b_c = [ 0.27974239] b_f = [ 1.18502033]
+Epoch 3/300
+21s - loss: 6043.6200 - val_loss: 4735.3734
+Epoch 00002: val_loss improved from 5165.45259 to 4735.37343, saving model to dongbei1_weights.hdf5
+            dongbei1 5988.9205      0.65  0.44  0.43      0.67  0.41  0.46      0.68  0.38  0.48
+            dongbei1 4735.3734      0.70  0.47  0.43      0.72  0.46  0.45      0.73  0.44  0.46
+forget mean min: 0.94932 0.178339
+abs_mean, abs_mean+, abs_mean-: 7.54298 5.12636 13.9801
+U_c = [[-0.09060127]] U_f = [[ 0.]] b_c = [ 0.30401608] b_f = [ 1.19845045]
+Epoch 4/300
+21s - loss: 5960.2187 - val_loss: 5194.8118
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+21s - loss: 5830.1758 - val_loss: 5076.0812
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+21s - loss: 5530.9289 - val_loss: 5186.4602
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+22s - loss: 5185.0148 - val_loss: 6038.3826
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+22s - loss: 4667.9878 - val_loss: 5435.5538
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+22s - loss: 4293.5041 - val_loss: 6215.7651
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+22s - loss: 4112.2183 - val_loss: 7290.6732
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+22s - loss: 3934.2854 - val_loss: 8717.5762
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+17s - loss: 3740.3224 - val_loss: 11568.9655
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+21s - loss: 3575.5713 - val_loss: 13064.1169
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+22s - loss: 3441.5895 - val_loss: 12898.3608
+Epoch 00013: val_loss did not improve
+filter 0.780352672948
+filter 0.892594671838
+X_train[0].shape = (97889, 40, 23)
+
+training dongbei2
+Train on 97889 samples, validate on 34979 samples
+Before training:
+            dongbei211810.2962      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.700001 0.7
+abs_mean, abs_mean+, abs_mean-: 4.0118 nan 4.0118
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+            dongbei210466.2026      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.699999 0.7
+abs_mean, abs_mean+, abs_mean-: 5.52697 nan 5.52697
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+18s - loss: 6725.4992 - val_loss: 5133.2807
+Epoch 00000: val_loss improved from inf to 5133.28065, saving model to dongbei2_weights.hdf5
+            dongbei2 6127.7379      0.65  0.43  0.44      0.68  0.39  0.47      0.69  0.36  0.49
+            dongbei2 5133.2806      0.66  0.48  0.41      0.68  0.46  0.43      0.69  0.44  0.45
+forget mean min: 0.948269 0.226607
+abs_mean, abs_mean+, abs_mean-: 6.58179 4.1923 13.2804
+U_c = [[-0.11773642]] U_f = [[ 0.]] b_c = [ 0.27330682] b_f = [ 1.15211403]
+Epoch 2/300
+13s - loss: 6107.3697 - val_loss: 5159.6954
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+14s - loss: 6042.8877 - val_loss: 4871.3330
+Epoch 00002: val_loss improved from 5133.28065 to 4871.33298, saving model to dongbei2_weights.hdf5
+            dongbei2 5979.1397      0.66  0.45  0.43      0.68  0.41  0.46      0.69  0.38  0.48
+            dongbei2 4871.3330      0.69  0.48  0.42      0.70  0.47  0.43      0.71  0.46  0.44
+forget mean min: 0.949403 0.194395
+abs_mean, abs_mean+, abs_mean-: 7.47636 5.14541 13.5935
+U_c = [[-0.07745504]] U_f = [[ 0.]] b_c = [ 0.30395657] b_f = [ 1.19692457]
+Epoch 4/300
+13s - loss: 5943.4948 - val_loss: 5272.5963
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+13s - loss: 5704.8230 - val_loss: 4922.3385
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+14s - loss: 5437.3039 - val_loss: 5337.8875
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+14s - loss: 5083.5468 - val_loss: 5430.9610
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+14s - loss: 4605.5787 - val_loss: 6961.9337
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+15s - loss: 4293.3654 - val_loss: 7413.7679
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 4043.1276 - val_loss: 8034.1452
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+23s - loss: 3831.8496 - val_loss: 9777.9969
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+23s - loss: 3688.0224 - val_loss: 11914.4842
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+23s - loss: 3558.6238 - val_loss: 14000.6137
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+23s - loss: 3447.5652 - val_loss: 11128.5788
+Epoch 00013: val_loss did not improve
+filter 0.906374993507
+filter 0.98973229132
+X_train[0].shape = (139589, 40, 23)
+
+training huabei0
+Train on 139589 samples, validate on 47618 samples
+Before training:
+             huabei010742.8292      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.700004 0.7
+abs_mean, abs_mean+, abs_mean-: 4.61568 nan 4.61567
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+             huabei029854.4651      0.04  -nan  0.04      0.04  -nan  0.04      0.03  -nan  0.03
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 8.77076 nan 8.77076
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+27s - loss: 3758.4500 - val_loss: 10688.0826
+Epoch 00000: val_loss improved from inf to 10688.08259, saving model to huabei0_weights.hdf5
+             huabei0 3234.8395      0.74  0.32  0.55      0.75  0.30  0.57      0.75  0.27  0.59
+             huabei010688.0826      0.95  0.28  0.69      0.95  0.25  0.72      0.95  0.23  0.74
+forget mean min: 0.939445 0.497595
+abs_mean, abs_mean+, abs_mean-: 8.87486 7.69815 11.0151
+U_c = [[-0.06769904]] U_f = [[ 0.]] b_c = [ 0.63749278] b_f = [ 1.14141476]
+Epoch 2/300
+30s - loss: 3043.3826 - val_loss: 10893.5940
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+32s - loss: 2798.3889 - val_loss: 10095.7606
+Epoch 00002: val_loss improved from 10688.08259 to 10095.76060, saving model to huabei0_weights.hdf5
+             huabei0 2677.8996      0.76  0.29  0.58      0.78  0.26  0.61      0.78  0.24  0.63
+             huabei010095.7606      0.89  0.22  0.71      0.90  0.20  0.74      0.90  0.18  0.75
+forget mean min: 0.902678 0.51607
+abs_mean, abs_mean+, abs_mean-: 11.5847 10.2282 13.3062
+U_c = [[-0.04252555]] U_f = [[ 0.]] b_c = [ 1.09071827] b_f = [ 1.03770888]
+Epoch 4/300
+32s - loss: 2617.2721 - val_loss: 9881.8731
+Epoch 00003: val_loss improved from 10095.76060 to 9881.87310, saving model to huabei0_weights.hdf5
+             huabei0 2540.3405      0.78  0.29  0.59      0.80  0.27  0.62      0.80  0.24  0.64
+             huabei0 9881.8731      0.88  0.20  0.72      0.88  0.17  0.75      0.88  0.15  0.76
+forget mean min: 0.895824 0.472844
+abs_mean, abs_mean+, abs_mean-: 12.6193 10.954 14.6828
+U_c = [[-0.03649262]] U_f = [[ 0.]] b_c = [ 1.21560991] b_f = [ 1.00716901]
+Epoch 5/300
+31s - loss: 2506.4842 - val_loss: 9596.5832
+Epoch 00004: val_loss improved from 9881.87310 to 9596.58319, saving model to huabei0_weights.hdf5
+             huabei0 2495.3241      0.80  0.30  0.59      0.82  0.28  0.62      0.83  0.25  0.65
+             huabei0 9596.5832      0.88  0.20  0.72      0.89  0.17  0.75      0.89  0.15  0.76
+forget mean min: 0.894528 0.426816
+abs_mean, abs_mean+, abs_mean-: 12.8923 11.2139 15.0298
+U_c = [[-0.03274925]] U_f = [[ 0.]] b_c = [ 1.31988227] b_f = [ 0.97712862]
+Epoch 6/300
+32s - loss: 2441.6924 - val_loss: 9816.8747
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+32s - loss: 2392.5041 - val_loss: 10655.0582
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+32s - loss: 2354.7126 - val_loss: 10498.4682
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+31s - loss: 2320.8065 - val_loss: 10934.8118
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+32s - loss: 2292.0081 - val_loss: 11016.9632
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+32s - loss: 2265.3508 - val_loss: 11394.5123
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+25s - loss: 2240.7901 - val_loss: 12023.6582
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+28s - loss: 2215.4916 - val_loss: 11555.9262
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+33s - loss: 2193.3255 - val_loss: 11783.1743
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+33s - loss: 2171.8730 - val_loss: 11416.3275
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+33s - loss: 2153.7374 - val_loss: 11638.0131
+Epoch 00015: val_loss did not improve
+filter 0.906374993507
+filter 0.98973229132
+X_train[0].shape = (139589, 40, 23)
+
+training huabei1
+Train on 139589 samples, validate on 47618 samples
+Before training:
+             huabei110742.8292      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.700004 0.7
+abs_mean, abs_mean+, abs_mean-: 4.61568 nan 4.61567
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+             huabei129854.4651      0.04  -nan  0.04      0.04  -nan  0.04      0.03  -nan  0.03
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 8.77076 nan 8.77076
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+31s - loss: 3767.6808 - val_loss: 10787.8239
+Epoch 00000: val_loss improved from inf to 10787.82389, saving model to huabei1_weights.hdf5
+             huabei1 3230.2014      0.72  0.31  0.55      0.74  0.28  0.57      0.74  0.26  0.59
+             huabei110787.8239      0.94  0.27  0.69      0.94  0.25  0.72      0.94  0.23  0.74
+forget mean min: 0.936338 0.506382
+abs_mean, abs_mean+, abs_mean-: 8.65529 7.54285 10.6086
+U_c = [[-0.07222048]] U_f = [[ 0.]] b_c = [ 0.64078158] b_f = [ 1.13979805]
+Epoch 2/300
+31s - loss: 3024.9765 - val_loss: 10796.3172
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+28s - loss: 2770.4668 - val_loss: 10414.7194
+Epoch 00002: val_loss improved from 10787.82389 to 10414.71937, saving model to huabei1_weights.hdf5
+             huabei1 2682.8357      0.76  0.30  0.57      0.77  0.27  0.60      0.78  0.24  0.62
+             huabei110414.7193      0.89  0.22  0.71      0.89  0.19  0.74      0.90  0.17  0.75
+forget mean min: 0.901617 0.516245
+abs_mean, abs_mean+, abs_mean-: 11.3431 9.95847 13.0571
+U_c = [[-0.04129385]] U_f = [[ 0.]] b_c = [ 1.10271633] b_f = [ 1.0340606]
+Epoch 4/300
+26s - loss: 2619.0748 - val_loss: 9717.1351
+Epoch 00003: val_loss improved from 10414.71937 to 9717.13514, saving model to huabei1_weights.hdf5
+             huabei1 2540.9263      0.77  0.29  0.58      0.79  0.26  0.62      0.80  0.24  0.64
+             huabei1 9717.1351      0.89  0.20  0.72      0.89  0.18  0.75      0.89  0.16  0.76
+forget mean min: 0.898642 0.470469
+abs_mean, abs_mean+, abs_mean-: 12.4756 11.0692 14.2583
+U_c = [[-0.04098737]] U_f = [[ 0.]] b_c = [ 1.22705746] b_f = [ 1.00595379]
+Epoch 5/300
+29s - loss: 2509.5292 - val_loss: 9547.2224
+Epoch 00004: val_loss improved from 9717.13514 to 9547.22242, saving model to huabei1_weights.hdf5
+             huabei1 2440.4297      0.77  0.29  0.59      0.79  0.26  0.62      0.80  0.23  0.64
+             huabei1 9547.2224      0.88  0.20  0.72      0.88  0.17  0.75      0.88  0.15  0.76
+forget mean min: 0.892407 0.432104
+abs_mean, abs_mean+, abs_mean-: 12.299 10.8264 14.1495
+U_c = [[-0.02908706]] U_f = [[ 0.]] b_c = [ 1.34194613] b_f = [ 0.97938865]
+Epoch 6/300
+20s - loss: 2428.9997 - val_loss: 9820.1133
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+20s - loss: 2375.9507 - val_loss: 10343.4686
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+20s - loss: 2330.9106 - val_loss: 10213.1449
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+20s - loss: 2290.0698 - val_loss: 10367.9098
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+20s - loss: 2256.9640 - val_loss: 10127.1209
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 2228.1201 - val_loss: 10008.5624
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+20s - loss: 2204.8496 - val_loss: 10685.9086
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+21s - loss: 2184.5830 - val_loss: 10287.4298
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+21s - loss: 2165.9687 - val_loss: 10359.3484
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+21s - loss: 2145.3843 - val_loss: 10588.0786
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+21s - loss: 2126.5510 - val_loss: 10337.8877
+Epoch 00015: val_loss did not improve
+filter 0.906374993507
+filter 0.98973229132
+X_train[0].shape = (139589, 40, 23)
+
+training huabei2
+Train on 139589 samples, validate on 47618 samples
+Before training:
+             huabei210742.8292      0.02  -nan  0.02      0.02  -nan  0.02      0.01  -nan  0.01
+forget mean min: 0.700004 0.7
+abs_mean, abs_mean+, abs_mean-: 4.61568 nan 4.61567
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+             huabei229854.4651      0.04  -nan  0.04      0.04  -nan  0.04      0.03  -nan  0.03
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 8.77076 nan 8.77076
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+29s - loss: 3762.8297 - val_loss: 10739.2654
+Epoch 00000: val_loss improved from inf to 10739.26535, saving model to huabei2_weights.hdf5
+             huabei2 3191.0156      0.75  0.33  0.55      0.77  0.30  0.58      0.77  0.28  0.59
+             huabei210739.2653      0.95  0.28  0.69      0.95  0.25  0.72      0.96  0.23  0.74
+forget mean min: 0.942246 0.503943
+abs_mean, abs_mean+, abs_mean-: 9.03115 7.95057 11.1169
+U_c = [[-0.07013077]] U_f = [[ 0.]] b_c = [ 0.64088821] b_f = [ 1.14629292]
+Epoch 2/300
+29s - loss: 2991.0585 - val_loss: 10829.6918
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+30s - loss: 2761.6101 - val_loss: 10235.5591
+Epoch 00002: val_loss improved from 10739.26535 to 10235.55910, saving model to huabei2_weights.hdf5
+             huabei2 2669.0574      0.74  0.28  0.57      0.76  0.25  0.61      0.76  0.22  0.63
+             huabei210235.5591      0.89  0.22  0.71      0.89  0.19  0.74      0.90  0.17  0.75
+forget mean min: 0.90132 0.543345
+abs_mean, abs_mean+, abs_mean-: 11.4414 10.1065 13.0751
+U_c = [[-0.04580436]] U_f = [[ 0.]] b_c = [ 1.09986234] b_f = [ 1.04498112]
+Epoch 4/300
+30s - loss: 2579.3217 - val_loss: 10118.7743
+Epoch 00003: val_loss improved from 10235.55910 to 10118.77426, saving model to huabei2_weights.hdf5
+             huabei2 2507.7973      0.77  0.29  0.58      0.79  0.26  0.62      0.80  0.24  0.64
+             huabei210118.7743      0.87  0.21  0.71      0.88  0.18  0.74      0.88  0.16  0.76
+forget mean min: 0.893721 0.510745
+abs_mean, abs_mean+, abs_mean-: 12.0197 10.4089 13.9316
+U_c = [[-0.03565869]] U_f = [[ 0.]] b_c = [ 1.23489189] b_f = [ 1.01400661]
+Epoch 5/300
+30s - loss: 2455.0881 - val_loss: 9871.6177
+Epoch 00004: val_loss improved from 10118.77426 to 9871.61769, saving model to huabei2_weights.hdf5
+             huabei2 2474.3078      0.80  0.30  0.59      0.82  0.28  0.63      0.83  0.25  0.65
+             huabei2 9871.6177      0.89  0.22  0.72      0.90  0.19  0.74      0.90  0.17  0.76
+forget mean min: 0.895366 0.479486
+abs_mean, abs_mean+, abs_mean-: 12.87 11.3149 14.9157
+U_c = [[-0.02729947]] U_f = [[ 0.]] b_c = [ 1.3429513] b_f = [ 0.98268682]
+Epoch 6/300
+30s - loss: 2381.9473 - val_loss: 9900.3021
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+30s - loss: 2331.8256 - val_loss: 10123.6757
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+30s - loss: 2288.5670 - val_loss: 9970.5352
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+28s - loss: 2254.2710 - val_loss: 10117.7943
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+23s - loss: 2226.8253 - val_loss: 10192.1175
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+29s - loss: 2199.0762 - val_loss: 10332.5379
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+24s - loss: 2176.4237 - val_loss: 10887.7164
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+30s - loss: 2151.6229 - val_loss: 10561.5060
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+31s - loss: 2127.0399 - val_loss: 12163.1060
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+25s - loss: 2104.0667 - val_loss: 10532.6567
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+31s - loss: 2081.9936 - val_loss: 11144.2424
+Epoch 00015: val_loss did not improve
+filter 0.737507246377
+filter 0.906556701031
+X_train[0].shape = (57249, 40, 23)
+
+training xibei0
+Train on 57249 samples, validate on 21984 samples
+Before training:
+              xibei0 6025.7321      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.53726 nan 3.53727
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+              xibei017364.5169      0.03  -nan  0.03      0.03  -nan  0.03      0.02  -nan  0.02
+forget mean min: 0.7 0.7
+abs_mean, abs_mean+, abs_mean-: 6.29177 nan 6.29177
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+11s - loss: 2443.1604 - val_loss: 5745.2761
+Epoch 00000: val_loss improved from inf to 5745.27611, saving model to xibei0_weights.hdf5
+              xibei0 1913.5078      0.50  0.34  0.40      0.54  0.31  0.43      0.56  0.29  0.46
+              xibei0 5745.2761      0.89  0.33  0.61      0.91  0.31  0.64      0.92  0.29  0.67
+forget mean min: 0.972147 0.650854
+abs_mean, abs_mean+, abs_mean-: 3.79262 3.93073 3.25695
+U_c = [[-0.09362642]] U_f = [[ 0.]] b_c = [ 0.29534549] b_f = [ 1.17813003]
+Epoch 2/300
+12s - loss: 1883.8477 - val_loss: 5781.1849
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+12s - loss: 1848.3123 - val_loss: 5547.5576
+Epoch 00002: val_loss improved from 5745.27611 to 5547.55762, saving model to xibei0_weights.hdf5
+              xibei0 1842.6228      0.53  0.34  0.42      0.58  0.31  0.46      0.60  0.29  0.48
+              xibei0 5547.5576      0.87  0.31  0.62      0.90  0.29  0.65      0.91  0.27  0.68
+forget mean min: 0.952671 0.654699
+abs_mean, abs_mean+, abs_mean-: 5.19267 5.23835 5.09588
+U_c = [[-0.08457795]] U_f = [[ 0.]] b_c = [ 0.4504022] b_f = [ 1.16622329]
+Epoch 4/300
+12s - loss: 1806.1882 - val_loss: 5539.2850
+Epoch 00003: val_loss improved from 5547.55762 to 5539.28498, saving model to xibei0_weights.hdf5
+              xibei0 1793.4374      0.57  0.35  0.44      0.62  0.32  0.48      0.65  0.30  0.51
+              xibei0 5539.2850      0.88  0.33  0.62      0.91  0.31  0.65      0.92  0.29  0.67
+forget mean min: 0.952526 0.640582
+abs_mean, abs_mean+, abs_mean-: 5.72007 5.81393 5.52182
+U_c = [[-0.07920723]] U_f = [[ 0.]] b_c = [ 0.50748259] b_f = [ 1.15662408]
+Epoch 5/300
+12s - loss: 1771.3244 - val_loss: 6150.4202
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+11s - loss: 1735.3577 - val_loss: 5851.3752
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+8s - loss: 1690.2005 - val_loss: 5714.5294
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+8s - loss: 1650.1273 - val_loss: 5975.4414
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+8s - loss: 1617.9560 - val_loss: 6082.0821
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+8s - loss: 1585.8512 - val_loss: 6244.5492
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+8s - loss: 1555.4155 - val_loss: 6256.6670
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+8s - loss: 1528.5511 - val_loss: 6526.5663
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+8s - loss: 1505.9292 - val_loss: 6342.4104
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+8s - loss: 1488.9746 - val_loss: 6211.9573
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+8s - loss: 1473.1857 - val_loss: 6138.4572
+Epoch 00014: val_loss did not improve
+filter 0.737507246377
+filter 0.906556701031
+X_train[0].shape = (57249, 40, 23)
+
+training xibei1
+Train on 57249 samples, validate on 21984 samples
+Before training:
+              xibei1 6025.7321      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.53726 nan 3.53727
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+              xibei117364.5169      0.03  -nan  0.03      0.03  -nan  0.03      0.02  -nan  0.02
+forget mean min: 0.7 0.7
+abs_mean, abs_mean+, abs_mean-: 6.29177 nan 6.29177
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+7s - loss: 2444.5331 - val_loss: 5699.8011
+Epoch 00000: val_loss improved from inf to 5699.80113, saving model to xibei1_weights.hdf5
+              xibei1 1898.2607      0.54  0.36  0.41      0.58  0.33  0.45      0.61  0.31  0.48
+              xibei1 5699.8011      0.90  0.33  0.62      0.92  0.31  0.65      0.93  0.29  0.67
+forget mean min: 0.972048 0.569177
+abs_mean, abs_mean+, abs_mean-: 4.1295 4.12269 4.1582
+U_c = [[-0.09530581]] U_f = [[ 0.]] b_c = [ 0.30014157] b_f = [ 1.17582011]
+Epoch 2/300
+7s - loss: 1884.0883 - val_loss: 5808.8774
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+8s - loss: 1849.4431 - val_loss: 6080.4311
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+8s - loss: 1805.6396 - val_loss: 5639.2928
+Epoch 00003: val_loss improved from 5699.80113 to 5639.29278, saving model to xibei1_weights.hdf5
+              xibei1 1787.4454      0.61  0.38  0.45      0.66  0.35  0.49      0.69  0.33  0.52
+              xibei1 5639.2928      0.90  0.34  0.61      0.93  0.32  0.64      0.94  0.31  0.66
+forget mean min: 0.957504 0.612642
+abs_mean, abs_mean+, abs_mean-: 5.90834 6.03773 5.5843
+U_c = [[-0.08154354]] U_f = [[ 0.]] b_c = [ 0.51275504] b_f = [ 1.15420163]
+Epoch 5/300
+7s - loss: 1770.7627 - val_loss: 5546.6846
+Epoch 00004: val_loss improved from 5639.29278 to 5546.68465, saving model to xibei1_weights.hdf5
+              xibei1 1755.3829      0.57  0.35  0.44      0.62  0.31  0.48      0.65  0.29  0.51
+              xibei1 5546.6847      0.89  0.33  0.61      0.91  0.31  0.64      0.92  0.29  0.66
+forget mean min: 0.950465 0.593458
+abs_mean, abs_mean+, abs_mean-: 6.33161 6.41221 6.15855
+U_c = [[-0.08374012]] U_f = [[ 0.]] b_c = [ 0.55156147] b_f = [ 1.14054942]
+Epoch 6/300
+12s - loss: 1726.4535 - val_loss: 5664.4859
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+11s - loss: 1675.3298 - val_loss: 5647.4302
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 1637.5709 - val_loss: 5828.8420
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1604.7948 - val_loss: 5901.6585
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+8s - loss: 1576.4754 - val_loss: 6122.5905
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+8s - loss: 1553.6828 - val_loss: 6110.1070
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+11s - loss: 1533.0915 - val_loss: 6190.4844
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+8s - loss: 1515.4847 - val_loss: 6271.1582
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+9s - loss: 1497.4771 - val_loss: 6101.4837
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+12s - loss: 1481.1451 - val_loss: 6129.4822
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+11s - loss: 1466.5692 - val_loss: 6256.4219
+Epoch 00015: val_loss did not improve
+filter 0.737507246377
+filter 0.906556701031
+X_train[0].shape = (57249, 40, 23)
+
+training xibei2
+Train on 57249 samples, validate on 21984 samples
+Before training:
+              xibei2 6025.7321      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.53726 nan 3.53727
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+              xibei217364.5169      0.03  -nan  0.03      0.03  -nan  0.03      0.02  -nan  0.02
+forget mean min: 0.7 0.7
+abs_mean, abs_mean+, abs_mean-: 6.29177 nan 6.29177
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+12s - loss: 2446.1497 - val_loss: 5749.8114
+Epoch 00000: val_loss improved from inf to 5749.81140, saving model to xibei2_weights.hdf5
+              xibei2 1896.8412      0.56  0.37  0.42      0.61  0.34  0.46      0.63  0.32  0.49
+              xibei2 5749.8114      0.90  0.34  0.61      0.92  0.32  0.64      0.93  0.30  0.66
+forget mean min: 0.973119 0.584242
+abs_mean, abs_mean+, abs_mean-: 4.14283 4.18554 3.95309
+U_c = [[-0.09098393]] U_f = [[ 0.]] b_c = [ 0.29916754] b_f = [ 1.17939782]
+Epoch 2/300
+12s - loss: 1884.8324 - val_loss: 5708.4226
+Epoch 00001: val_loss improved from 5749.81140 to 5708.42256, saving model to xibei2_weights.hdf5
+              xibei2 1877.4551      0.52  0.35  0.41      0.56  0.32  0.45      0.59  0.30  0.47
+              xibei2 5708.4226      0.89  0.33  0.62      0.91  0.31  0.65      0.92  0.29  0.67
+forget mean min: 0.963166 0.59721
+abs_mean, abs_mean+, abs_mean-: 4.83335 4.85175 4.78319
+U_c = [[-0.08928037]] U_f = [[ 0.]] b_c = [ 0.38671964] b_f = [ 1.17870128]
+Epoch 3/300
+12s - loss: 1850.5875 - val_loss: 5669.6314
+Epoch 00002: val_loss improved from 5708.42256 to 5669.63141, saving model to xibei2_weights.hdf5
+              xibei2 1827.5307      0.57  0.36  0.43      0.61  0.33  0.47      0.64  0.31  0.50
+              xibei2 5669.6314      0.89  0.33  0.62      0.92  0.31  0.65      0.92  0.29  0.67
+forget mean min: 0.958209 0.639541
+abs_mean, abs_mean+, abs_mean-: 5.28602 5.34755 5.13177
+U_c = [[-0.07854879]] U_f = [[ 0.]] b_c = [ 0.44705215] b_f = [ 1.1683569]
+Epoch 4/300
+12s - loss: 1805.6140 - val_loss: 5681.4758
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+12s - loss: 1766.4407 - val_loss: 5706.4764
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+12s - loss: 1719.1148 - val_loss: 5839.4577
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+12s - loss: 1673.8587 - val_loss: 5624.4257
+Epoch 00006: val_loss improved from 5669.63141 to 5624.42569, saving model to xibei2_weights.hdf5
+              xibei2 1651.0160      0.61  0.34  0.46      0.66  0.31  0.51      0.68  0.28  0.54
+              xibei2 5624.4257      0.86  0.31  0.62      0.89  0.28  0.65      0.90  0.27  0.67
+forget mean min: 0.933543 0.580596
+abs_mean, abs_mean+, abs_mean-: 7.12715 6.94381 7.40486
+U_c = [[-0.07301609]] U_f = [[ 0.]] b_c = [ 0.63791293] b_f = [ 1.11764717]
+Epoch 8/300
+12s - loss: 1635.6173 - val_loss: 5877.3752
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 1600.0383 - val_loss: 5667.4270
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+12s - loss: 1571.6424 - val_loss: 5857.9835
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+12s - loss: 1548.5033 - val_loss: 6234.0490
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+12s - loss: 1527.8692 - val_loss: 5959.9668
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+12s - loss: 1512.1926 - val_loss: 6359.3397
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+12s - loss: 1496.3166 - val_loss: 6351.9232
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+11s - loss: 1481.3111 - val_loss: 6113.6600
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+8s - loss: 1466.9396 - val_loss: 6276.3768
+Epoch 00015: val_loss did not improve
+Epoch 17/300
+8s - loss: 1455.3072 - val_loss: 6410.4394
+Epoch 00016: val_loss did not improve
+Epoch 18/300
+12s - loss: 1443.4746 - val_loss: 5999.4488
+Epoch 00017: val_loss did not improve
+filter 0.837071076025
+filter 0.984913251194
+X_train[0].shape = (127876, 40, 23)
+
+training huadong0
+Train on 127876 samples, validate on 47004 samples
+Before training:
+            huadong0 5438.3415      0.01  -nan  0.01      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.700004 0.7
+abs_mean, abs_mean+, abs_mean-: 3.78463 nan 3.78463
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+            huadong012669.2432      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 6.20609 nan 6.20609
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+26s - loss: 1742.4697 - val_loss: 3483.6704
+Epoch 00000: val_loss improved from inf to 3483.67041, saving model to huadong0_weights.hdf5
+            huadong0 1500.2667      0.61  0.47  0.39      0.64  0.46  0.41      0.65  0.44  0.43
+            huadong0 3483.6704      0.93  0.29  0.67      0.93  0.26  0.70      0.93  0.24  0.72
+forget mean min: 0.961022 0.399184
+abs_mean, abs_mean+, abs_mean-: 5.88945 5.05874 7.99916
+U_c = [[-0.06804259]] U_f = [[ 0.]] b_c = [ 0.34855321] b_f = [ 1.16910005]
+Epoch 2/300
+26s - loss: 1464.6326 - val_loss: 3452.1707
+Epoch 00001: val_loss improved from 3483.67041 to 3452.17070, saving model to huadong0_weights.hdf5
+            huadong0 1469.3341      0.40  0.41  0.32      0.41  0.39  0.33      0.41  0.37  0.34
+            huadong0 3452.1707      0.84  0.24  0.66      0.85  0.22  0.69      0.86  0.19  0.71
+forget mean min: 0.938301 0.502834
+abs_mean, abs_mean+, abs_mean-: 5.39838 4.43596 6.79817
+U_c = [[-0.05941841]] U_f = [[ 0.]] b_c = [ 0.4401724] b_f = [ 1.16307139]
+Epoch 3/300
+27s - loss: 1401.3267 - val_loss: 3212.9996
+Epoch 00002: val_loss improved from 3452.17070 to 3212.99962, saving model to huadong0_weights.hdf5
+            huadong0 1396.1888      0.60  0.45  0.40      0.63  0.44  0.42      0.64  0.42  0.44
+            huadong0 3212.9996      0.86  0.24  0.68      0.87  0.21  0.71      0.87  0.19  0.73
+forget mean min: 0.932462 0.583505
+abs_mean, abs_mean+, abs_mean-: 6.30648 5.57208 7.39005
+U_c = [[-0.05278327]] U_f = [[ 0.]] b_c = [ 0.54971713] b_f = [ 1.1349529]
+Epoch 4/300
+27s - loss: 1336.2977 - val_loss: 3529.8914
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+27s - loss: 1269.7610 - val_loss: 3648.6575
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+27s - loss: 1209.4601 - val_loss: 3795.3400
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+28s - loss: 1169.6615 - val_loss: 3626.5735
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+28s - loss: 1139.7518 - val_loss: 3702.5845
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+28s - loss: 1113.7070 - val_loss: 3689.3369
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+28s - loss: 1088.9573 - val_loss: 3793.3914
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+28s - loss: 1067.7479 - val_loss: 4400.5903
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+28s - loss: 1048.9115 - val_loss: 4005.0521
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+28s - loss: 1030.9443 - val_loss: 4064.8076
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+28s - loss: 1012.7356 - val_loss: 3692.5120
+Epoch 00013: val_loss did not improve
+filter 0.837071076025
+filter 0.984913251194
+X_train[0].shape = (127876, 40, 23)
+
+training huadong1
+Train on 127876 samples, validate on 47004 samples
+Before training:
+            huadong1 5438.3415      0.01  -nan  0.01      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.700004 0.7
+abs_mean, abs_mean+, abs_mean-: 3.78463 nan 3.78463
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+            huadong112669.2432      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 6.20609 nan 6.20609
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+26s - loss: 1746.7540 - val_loss: 3463.8660
+Epoch 00000: val_loss improved from inf to 3463.86601, saving model to huadong1_weights.hdf5
+            huadong1 1489.6310      0.47  0.42  0.35      0.49  0.40  0.37      0.50  0.37  0.38
+            huadong1 3463.8660      0.85  0.26  0.66      0.86  0.23  0.68      0.86  0.21  0.70
+forget mean min: 0.947844 0.413772
+abs_mean, abs_mean+, abs_mean-: 5.41286 4.45715 7.06541
+U_c = [[-0.06962005]] U_f = [[ 0.]] b_c = [ 0.34974709] b_f = [ 1.16413629]
+Epoch 2/300
+26s - loss: 1460.0342 - val_loss: 3462.4916
+Epoch 00001: val_loss improved from 3463.86601 to 3462.49162, saving model to huadong1_weights.hdf5
+            huadong1 1438.3824      0.48  0.41  0.36      0.50  0.40  0.38      0.51  0.37  0.39
+            huadong1 3462.4916      0.87  0.26  0.67      0.88  0.23  0.70      0.88  0.21  0.72
+forget mean min: 0.940768 0.506897
+abs_mean, abs_mean+, abs_mean-: 5.55054 4.69709 6.84192
+U_c = [[-0.05979781]] U_f = [[ 0.]] b_c = [ 0.45520169] b_f = [ 1.15977645]
+Epoch 3/300
+26s - loss: 1389.6678 - val_loss: 3751.2473
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+24s - loss: 1317.3715 - val_loss: 3443.4384
+Epoch 00003: val_loss improved from 3462.49162 to 3443.43836, saving model to huadong1_weights.hdf5
+            huadong1 1331.1973      0.56  0.42  0.40      0.59  0.41  0.42      0.60  0.38  0.44
+            huadong1 3443.4383      0.88  0.25  0.67      0.88  0.23  0.70      0.89  0.20  0.72
+forget mean min: 0.933308 0.549393
+abs_mean, abs_mean+, abs_mean-: 7.32043 6.65349 8.26671
+U_c = [[-0.04485135]] U_f = [[ 0.]] b_c = [ 0.64648998] b_f = [ 1.09090745]
+Epoch 5/300
+27s - loss: 1252.8607 - val_loss: 3428.9597
+Epoch 00004: val_loss improved from 3443.43836 to 3428.95969, saving model to huadong1_weights.hdf5
+            huadong1 1267.5485      0.63  0.41  0.44      0.66  0.39  0.47      0.69  0.36  0.50
+            huadong1 3428.9597      0.83  0.24  0.66      0.84  0.21  0.69      0.84  0.19  0.71
+forget mean min: 0.923456 0.484773
+abs_mean, abs_mean+, abs_mean-: 7.76108 7.08757 8.64346
+U_c = [[-0.04579907]] U_f = [[ 0.]] b_c = [ 0.74025035] b_f = [ 1.04799044]
+Epoch 6/300
+27s - loss: 1201.1341 - val_loss: 3531.4213
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+27s - loss: 1159.6141 - val_loss: 3713.2832
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+28s - loss: 1126.7760 - val_loss: 3729.0914
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+28s - loss: 1102.7937 - val_loss: 3719.6773
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+28s - loss: 1082.6562 - val_loss: 3831.3641
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+28s - loss: 1063.7859 - val_loss: 3702.1244
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+28s - loss: 1045.9816 - val_loss: 3749.1428
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+21s - loss: 1029.8581 - val_loss: 4147.7930
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+25s - loss: 1015.1814 - val_loss: 3861.7778
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+28s - loss: 1001.0595 - val_loss: 4009.6189
+Epoch 00014: val_loss did not improve
+Epoch 16/300
+28s - loss: 986.2045 - val_loss: 3745.2134
+Epoch 00015: val_loss did not improve
+filter 0.837071076025
+filter 0.984913251194
+X_train[0].shape = (127876, 40, 23)
+
+training huadong2
+Train on 127876 samples, validate on 47004 samples
+Before training:
+            huadong2 5438.3415      0.01  -nan  0.01      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.700004 0.7
+abs_mean, abs_mean+, abs_mean-: 3.78463 nan 3.78463
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+            huadong212669.2432      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 6.20609 nan 6.20609
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+24s - loss: 1741.1522 - val_loss: 3449.4975
+Epoch 00000: val_loss improved from inf to 3449.49754, saving model to huadong2_weights.hdf5
+            huadong2 1482.0838      0.57  0.46  0.38      0.59  0.45  0.40      0.60  0.43  0.41
+            huadong2 3449.4976      0.91  0.29  0.67      0.91  0.26  0.69      0.92  0.24  0.71
+forget mean min: 0.95736 0.403522
+abs_mean, abs_mean+, abs_mean-: 5.59597 4.72821 7.50607
+U_c = [[-0.07466219]] U_f = [[ 0.]] b_c = [ 0.34462216] b_f = [ 1.16900492]
+Epoch 2/300
+18s - loss: 1455.9868 - val_loss: 3458.4074
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+27s - loss: 1388.3742 - val_loss: 3346.9738
+Epoch 00002: val_loss improved from 3449.49754 to 3346.97382, saving model to huadong2_weights.hdf5
+            huadong2 1368.3158      0.48  0.39  0.37      0.51  0.37  0.39      0.52  0.34  0.41
+            huadong2 3346.9738      0.83  0.23  0.67      0.84  0.20  0.69      0.84  0.18  0.71
+forget mean min: 0.926591 0.58053
+abs_mean, abs_mean+, abs_mean-: 6.09968 5.31969 7.10276
+U_c = [[-0.04824392]] U_f = [[ 0.]] b_c = [ 0.56265962] b_f = [ 1.12879395]
+Epoch 4/300
+24s - loss: 1327.1906 - val_loss: 3291.7986
+Epoch 00003: val_loss improved from 3346.97382 to 3291.79863, saving model to huadong2_weights.hdf5
+            huadong2 1300.9836      0.56  0.41  0.40      0.59  0.39  0.43      0.60  0.36  0.45
+            huadong2 3291.7986      0.85  0.23  0.68      0.85  0.20  0.70      0.86  0.18  0.72
+forget mean min: 0.921345 0.512004
+abs_mean, abs_mean+, abs_mean-: 6.84068 6.22225 7.62824
+U_c = [[-0.04222944]] U_f = [[ 0.]] b_c = [ 0.66697681] b_f = [ 1.09478354]
+Epoch 5/300
+27s - loss: 1283.4527 - val_loss: 3423.8436
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+27s - loss: 1237.6563 - val_loss: 3409.0096
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+27s - loss: 1196.9217 - val_loss: 3667.8195
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+27s - loss: 1160.9738 - val_loss: 3602.1321
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+28s - loss: 1130.7879 - val_loss: 3608.2635
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+28s - loss: 1105.5125 - val_loss: 3686.9020
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+28s - loss: 1082.4956 - val_loss: 3647.5036
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+27s - loss: 1063.0425 - val_loss: 3675.6325
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+28s - loss: 1044.0103 - val_loss: 3580.3767
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+28s - loss: 1028.1512 - val_loss: 3813.9955
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+28s - loss: 1013.1267 - val_loss: 3674.8935
+Epoch 00014: val_loss did not improve
+filter 0.622349982034
+filter 0.894521598364
+X_train[0].shape = (46764, 40, 23)
+
+training huaxi0
+Train on 46764 samples, validate on 20998 samples
+Before training:
+              huaxi0 3834.6536      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.29847 nan 3.29847
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+              huaxi010482.9021      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.7 0.7
+abs_mean, abs_mean+, abs_mean-: 5.09259 nan 5.09259
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+9s - loss: 1431.6765 - val_loss: 2304.2125
+Epoch 00000: val_loss improved from inf to 2304.21251, saving model to huaxi0_weights.hdf5
+              huaxi0  936.4149      0.33  0.43  0.26      0.37  0.40  0.30      0.39  0.38  0.32
+              huaxi0 2304.2125      0.73  0.23  0.61      0.75  0.20  0.63      0.76  0.18  0.65
+forget mean min: 0.981714 0.676662
+abs_mean, abs_mean+, abs_mean-: 2.14651 1.98624 2.56927
+U_c = [[-0.06953599]] U_f = [[ 0.]] b_c = [ 0.17506567] b_f = [ 1.16698742]
+Epoch 2/300
+9s - loss: 925.4978 - val_loss: 2218.7759
+Epoch 00001: val_loss improved from 2304.21251 to 2218.77586, saving model to huaxi0_weights.hdf5
+              huaxi0  917.9169      0.37  0.44  0.29      0.41  0.42  0.32      0.44  0.40  0.34
+              huaxi0 2218.7759      0.79  0.24  0.63      0.80  0.22  0.66      0.81  0.20  0.68
+forget mean min: 0.985087 0.647635
+abs_mean, abs_mean+, abs_mean-: 2.17909 2.00156 2.80316
+U_c = [[-0.06347246]] U_f = [[ 0.]] b_c = [ 0.18840548] b_f = [ 1.16981804]
+Epoch 3/300
+10s - loss: 897.1289 - val_loss: 2130.1523
+Epoch 00002: val_loss improved from 2218.77586 to 2130.15232, saving model to huaxi0_weights.hdf5
+              huaxi0  882.6550      0.38  0.42  0.30      0.42  0.40  0.33      0.45  0.38  0.35
+              huaxi0 2130.1523      0.81  0.24  0.65      0.83  0.22  0.67      0.84  0.20  0.70
+forget mean min: 0.979845 0.660534
+abs_mean, abs_mean+, abs_mean-: 2.5666 2.31674 3.27427
+U_c = [[-0.05322726]] U_f = [[ 0.]] b_c = [ 0.22414595] b_f = [ 1.16061246]
+Epoch 4/300
+7s - loss: 867.6996 - val_loss: 2179.5424
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+9s - loss: 843.0923 - val_loss: 2196.4739
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+10s - loss: 826.6037 - val_loss: 2260.3383
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 812.0117 - val_loss: 2290.6958
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 797.9639 - val_loss: 2239.2530
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 785.2388 - val_loss: 2455.2427
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+10s - loss: 771.6412 - val_loss: 2300.1090
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 754.4552 - val_loss: 2525.7048
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+6s - loss: 738.1100 - val_loss: 2322.4164
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+8s - loss: 723.5753 - val_loss: 2351.5509
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+10s - loss: 709.8655 - val_loss: 2553.6740
+Epoch 00013: val_loss did not improve
+filter 0.622349982034
+filter 0.894521598364
+X_train[0].shape = (46764, 40, 23)
+
+training huaxi1
+Train on 46764 samples, validate on 20998 samples
+Before training:
+              huaxi1 3834.6536      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.29847 nan 3.29847
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+              huaxi110482.9021      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.7 0.7
+abs_mean, abs_mean+, abs_mean-: 5.09259 nan 5.09259
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+9s - loss: 1433.3131 - val_loss: 2213.5465
+Epoch 00000: val_loss improved from inf to 2213.54649, saving model to huaxi1_weights.hdf5
+              huaxi1  933.4456      0.32  0.42  0.26      0.37  0.40  0.29      0.39  0.38  0.31
+              huaxi1 2213.5465      0.78  0.23  0.63      0.79  0.20  0.66      0.80  0.18  0.68
+forget mean min: 0.983049 0.66283
+abs_mean, abs_mean+, abs_mean-: 2.33672 2.12381 2.98566
+U_c = [[-0.07052954]] U_f = [[ 0.]] b_c = [ 0.17812952] b_f = [ 1.16998196]
+Epoch 2/300
+10s - loss: 926.7607 - val_loss: 2296.2657
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+10s - loss: 901.0182 - val_loss: 2208.8981
+Epoch 00002: val_loss improved from 2213.54649 to 2208.89814, saving model to huaxi1_weights.hdf5
+              huaxi1  895.3423      0.32  0.39  0.27      0.36  0.36  0.30      0.39  0.34  0.32
+              huaxi1 2208.8981      0.75  0.22  0.62      0.76  0.20  0.64      0.77  0.18  0.66
+forget mean min: 0.975049 0.653542
+abs_mean, abs_mean+, abs_mean-: 2.49496 2.22198 3.09733
+U_c = [[-0.05372767]] U_f = [[ 0.]] b_c = [ 0.22906671] b_f = [ 1.1648587]
+Epoch 4/300
+10s - loss: 871.5291 - val_loss: 2131.1989
+Epoch 00003: val_loss improved from 2208.89814 to 2131.19894, saving model to huaxi1_weights.hdf5
+              huaxi1  859.4626      0.37  0.41  0.30      0.42  0.38  0.33      0.44  0.36  0.35
+              huaxi1 2131.1989      0.81  0.24  0.65      0.82  0.22  0.67      0.83  0.20  0.69
+forget mean min: 0.96929 0.626456
+abs_mean, abs_mean+, abs_mean-: 2.92562 2.7377 3.30935
+U_c = [[-0.04140406]] U_f = [[ 0.]] b_c = [ 0.28789732] b_f = [ 1.15703881]
+Epoch 5/300
+10s - loss: 845.9192 - val_loss: 2189.3086
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+10s - loss: 825.7621 - val_loss: 2202.2146
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 806.8972 - val_loss: 2246.7318
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 791.6906 - val_loss: 2232.9092
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 781.8035 - val_loss: 2255.8374
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+10s - loss: 772.5557 - val_loss: 2286.2946
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 763.6517 - val_loss: 3013.5573
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 752.2984 - val_loss: 2301.7848
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 739.3340 - val_loss: 2484.8006
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+9s - loss: 727.6616 - val_loss: 2328.4750
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+10s - loss: 714.9636 - val_loss: 2446.7984
+Epoch 00014: val_loss did not improve
+filter 0.622349982034
+filter 0.894521598364
+X_train[0].shape = (46764, 40, 23)
+
+training huaxi2
+Train on 46764 samples, validate on 20998 samples
+Before training:
+              huaxi2 3834.6536      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.29847 nan 3.29847
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+              huaxi210482.9021      0.02  -nan  0.02      0.01  -nan  0.01      0.00  -nan  0.00
+forget mean min: 0.7 0.7
+abs_mean, abs_mean+, abs_mean-: 5.09259 nan 5.09259
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+9s - loss: 1424.9853 - val_loss: 2193.4908
+Epoch 00000: val_loss improved from inf to 2193.49081, saving model to huaxi2_weights.hdf5
+              huaxi2  932.4030      0.32  0.42  0.26      0.36  0.39  0.29      0.39  0.37  0.31
+              huaxi2 2193.4908      0.78  0.23  0.63      0.80  0.21  0.66      0.81  0.18  0.68
+forget mean min: 0.984292 0.653991
+abs_mean, abs_mean+, abs_mean-: 2.26041 2.09045 2.82849
+U_c = [[-0.07171015]] U_f = [[ 0.]] b_c = [ 0.17757541] b_f = [ 1.1667465]
+Epoch 2/300
+10s - loss: 927.6300 - val_loss: 2297.9567
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+10s - loss: 903.6038 - val_loss: 2174.1196
+Epoch 00002: val_loss improved from 2193.49081 to 2174.11962, saving model to huaxi2_weights.hdf5
+              huaxi2  886.6746      0.36  0.42  0.28      0.40  0.40  0.32      0.43  0.38  0.34
+              huaxi2 2174.1196      0.79  0.23  0.64      0.80  0.21  0.66      0.81  0.19  0.68
+forget mean min: 0.977516 0.649682
+abs_mean, abs_mean+, abs_mean-: 2.45049 2.25198 2.94162
+U_c = [[-0.0545819]] U_f = [[ 0.]] b_c = [ 0.23096134] b_f = [ 1.16245949]
+Epoch 4/300
+9s - loss: 875.0476 - val_loss: 2270.0570
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+10s - loss: 846.4756 - val_loss: 2266.4790
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+10s - loss: 826.0687 - val_loss: 2180.6009
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+10s - loss: 808.0311 - val_loss: 2297.8385
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+10s - loss: 792.6831 - val_loss: 2282.9250
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+10s - loss: 778.7737 - val_loss: 2286.5016
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+10s - loss: 762.9013 - val_loss: 2253.4621
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+10s - loss: 746.3587 - val_loss: 2272.6853
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+10s - loss: 733.3496 - val_loss: 2374.4835
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+10s - loss: 721.6907 - val_loss: 2277.3695
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+10s - loss: 710.0540 - val_loss: 2691.3950
+Epoch 00013: val_loss did not improve
+filter 0.398393719807
+filter 0.632770618557
+X_train[0].shape = (98961, 40, 23)
+
+training huanan0
+Train on 98961 samples, validate on 49103 samples
+Before training:
+             huanan0 2869.8706      0.00  -nan  0.00      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.700001 0.7
+abs_mean, abs_mean+, abs_mean-: 2.93801 nan 2.93801
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+             huanan0 5101.7944      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.59249 nan 3.59249
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+21s - loss: 800.8708 - val_loss: 1277.8875
+Epoch 00000: val_loss improved from inf to 1277.88746, saving model to huanan0_weights.hdf5
+             huanan0  633.4874      0.21  0.42  0.18      0.25  0.40  0.21      0.29  0.35  0.24
+             huanan0 1277.8875      0.21  0.16  0.20      0.22  0.11  0.21      0.23  0.08  0.22
+forget mean min: 0.939063 0.506738
+abs_mean, abs_mean+, abs_mean-: 3.05271 2.88251 3.29961
+U_c = [[-0.09670651]] U_f = [[ 0.]] b_c = [ 0.31157511] b_f = [ 1.16279578]
+Epoch 2/300
+20s - loss: 609.8303 - val_loss: 1307.0161
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+20s - loss: 590.5943 - val_loss: 1450.3084
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+20s - loss: 578.6112 - val_loss: 1263.8523
+Epoch 00003: val_loss improved from 1277.88746 to 1263.85230, saving model to huanan0_weights.hdf5
+             huanan0  592.9196      0.34  0.45  0.27      0.38  0.44  0.30      0.42  0.40  0.33
+             huanan0 1263.8523      0.31  0.22  0.28      0.33  0.19  0.30      0.33  0.16  0.31
+forget mean min: 0.90482 0.560655
+abs_mean, abs_mean+, abs_mean-: 3.76969 3.73706 3.80384
+U_c = [[-0.0403126]] U_f = [[ 0.]] b_c = [ 0.51881891] b_f = [ 1.10292137]
+Epoch 5/300
+22s - loss: 566.9546 - val_loss: 1359.3716
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+17s - loss: 554.9891 - val_loss: 1624.4233
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+19s - loss: 544.2640 - val_loss: 1375.7822
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+21s - loss: 535.4986 - val_loss: 1619.2712
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+22s - loss: 528.1826 - val_loss: 1687.2759
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+22s - loss: 521.7101 - val_loss: 1532.2378
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+20s - loss: 516.1700 - val_loss: 1641.4182
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+22s - loss: 511.6351 - val_loss: 1541.3840
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+22s - loss: 507.8170 - val_loss: 1624.8886
+Epoch 00012: val_loss did not improve
+Epoch 14/300
+21s - loss: 504.5233 - val_loss: 1678.1717
+Epoch 00013: val_loss did not improve
+Epoch 15/300
+22s - loss: 501.2979 - val_loss: 1723.3835
+Epoch 00014: val_loss did not improve
+filter 0.398393719807
+filter 0.632770618557
+X_train[0].shape = (98961, 40, 23)
+
+training huanan1
+Train on 98961 samples, validate on 49103 samples
+Before training:
+             huanan1 2869.8706      0.00  -nan  0.00      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.700001 0.7
+abs_mean, abs_mean+, abs_mean-: 2.93801 nan 2.93801
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+             huanan1 5101.7944      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.59249 nan 3.59249
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+21s - loss: 805.8668 - val_loss: 1411.8532
+Epoch 00000: val_loss improved from inf to 1411.85317, saving model to huanan1_weights.hdf5
+             huanan1  628.9852      0.10  0.31  0.09      0.11  0.30  0.10      0.12  0.28  0.10
+             huanan1 1411.8532      0.16  0.12  0.15      0.17  0.08  0.16      0.17  0.05  0.16
+forget mean min: 0.931305 0.516166
+abs_mean, abs_mean+, abs_mean-: 2.92792 2.63857 3.28899
+U_c = [[-0.09437508]] U_f = [[ 0.]] b_c = [ 0.30842033] b_f = [ 1.16865146]
+Epoch 2/300
+15s - loss: 610.2504 - val_loss: 1310.1178
+Epoch 00001: val_loss improved from 1411.85317 to 1310.11785, saving model to huanan1_weights.hdf5
+             huanan1  601.6751      0.17  0.30  0.15      0.18  0.28  0.16      0.19  0.24  0.17
+             huanan1 1310.1178      0.22  0.15  0.21      0.23  0.11  0.22      0.24  0.10  0.22
+forget mean min: 0.914484 0.552552
+abs_mean, abs_mean+, abs_mean-: 3.19057 3.09658 3.28745
+U_c = [[-0.05977283]] U_f = [[ 0.]] b_c = [ 0.40205568] b_f = [ 1.14991736]
+Epoch 3/300
+21s - loss: 592.3486 - val_loss: 1472.3638
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+21s - loss: 581.0949 - val_loss: 1433.8244
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+22s - loss: 570.2055 - val_loss: 1570.6325
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+20s - loss: 558.8414 - val_loss: 1500.8235
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+19s - loss: 549.2935 - val_loss: 1628.8447
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+14s - loss: 541.3679 - val_loss: 1449.4564
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+14s - loss: 533.5372 - val_loss: 1669.4416
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+14s - loss: 527.1701 - val_loss: 1633.3969
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+15s - loss: 521.9333 - val_loss: 1501.2178
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+15s - loss: 517.0813 - val_loss: 1579.5680
+Epoch 00011: val_loss did not improve
+Epoch 13/300
+15s - loss: 512.6879 - val_loss: 1424.0383
+Epoch 00012: val_loss did not improve
+filter 0.398393719807
+filter 0.632770618557
+X_train[0].shape = (98961, 40, 23)
+
+training huanan2
+Train on 98961 samples, validate on 49103 samples
+Before training:
+             huanan2 2869.8706      0.00  -nan  0.00      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.700001 0.7
+abs_mean, abs_mean+, abs_mean-: 2.93801 nan 2.93801
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+             huanan2 5101.7944      0.01  -nan  0.01      0.00  -nan  0.00      0.00  -nan  0.00
+forget mean min: 0.699998 0.7
+abs_mean, abs_mean+, abs_mean-: 3.59249 nan 3.59249
+U_c = [[-0.05]] U_f = [[ 0.]] b_c = [ 0.] b_f = [ 1.]
+Epoch 1/300
+19s - loss: 802.3818 - val_loss: 1284.6488
+Epoch 00000: val_loss improved from inf to 1284.64876, saving model to huanan2_weights.hdf5
+             huanan2  634.5060      0.27  0.44  0.22      0.32  0.43  0.25      0.36  0.39  0.29
+             huanan2 1284.6488      0.25  0.15  0.23      0.26  0.12  0.25      0.27  0.09  0.26
+forget mean min: 0.936555 0.477466
+abs_mean, abs_mean+, abs_mean-: 3.11995 2.93617 3.37325
+U_c = [[-0.09414119]] U_f = [[ 0.]] b_c = [ 0.30949426] b_f = [ 1.16647732]
+Epoch 2/300
+21s - loss: 609.9096 - val_loss: 1534.0779
+Epoch 00001: val_loss did not improve
+Epoch 3/300
+21s - loss: 592.1479 - val_loss: 1358.9067
+Epoch 00002: val_loss did not improve
+Epoch 4/300
+22s - loss: 580.5668 - val_loss: 1457.4013
+Epoch 00003: val_loss did not improve
+Epoch 5/300
+19s - loss: 571.2199 - val_loss: 1417.3909
+Epoch 00004: val_loss did not improve
+Epoch 6/300
+18s - loss: 563.1116 - val_loss: 1576.7505
+Epoch 00005: val_loss did not improve
+Epoch 7/300
+19s - loss: 554.5419 - val_loss: 1608.4421
+Epoch 00006: val_loss did not improve
+Epoch 8/300
+21s - loss: 544.1344 - val_loss: 1708.0111
+Epoch 00007: val_loss did not improve
+Epoch 9/300
+17s - loss: 535.7020 - val_loss: 1474.6055
+Epoch 00008: val_loss did not improve
+Epoch 10/300
+15s - loss: 527.9906 - val_loss: 1564.7517
+Epoch 00009: val_loss did not improve
+Epoch 11/300
+22s - loss: 520.9113 - val_loss: 1733.0563
+Epoch 00010: val_loss did not improve
+Epoch 12/300
+17s - loss: 514.3808 - val_loss: 1582.3210
+Epoch 00011: val_loss did not improve
+
+dongbei0
+            dongbei0 4795.7211      0.62  0.46  0.40      0.64  0.43  0.43      0.65  0.39  0.46
+            dongbei0 4565.5547      0.67  0.49  0.41      0.68  0.47  0.42      0.69  0.46  0.43
+forget mean min: 0.935512 0.265931
+abs_mean, abs_mean+, abs_mean-: 8.33664 6.38204 12.1967
+U_c = [[-0.04100123]] U_f = [[ 0.]] b_c = [ 0.37899998] b_f = [ 1.20140898]
+
+dongbei1
+            dongbei1 4884.8584      0.65  0.46  0.42      0.67  0.42  0.45      0.68  0.39  0.47
+            dongbei1 4358.0516      0.70  0.48  0.43      0.72  0.46  0.44      0.73  0.45  0.46
+forget mean min: 0.949157 0.178339
+abs_mean, abs_mean+, abs_mean-: 7.3223 5.07473 13.3952
+U_c = [[-0.09060127]] U_f = [[ 0.]] b_c = [ 0.30401608] b_f = [ 1.19845045]
+
+dongbei2
+            dongbei2 4877.5694      0.66  0.46  0.42      0.68  0.43  0.45      0.69  0.40  0.47
+            dongbei2 4478.1813      0.69  0.49  0.41      0.70  0.47  0.43      0.71  0.46  0.44
+forget mean min: 0.948722 0.194395
+abs_mean, abs_mean+, abs_mean-: 7.25262 5.08489 12.9604
+U_c = [[-0.07745504]] U_f = [[ 0.]] b_c = [ 0.30395657] b_f = [ 1.19692457]
+
+huabei0
+             huabei0 2323.2559      0.80  0.31  0.59      0.82  0.28  0.62      0.83  0.26  0.64
+             huabei0 9514.0804      0.88  0.20  0.72      0.89  0.17  0.75      0.89  0.16  0.76
+forget mean min: 0.894016 0.426816
+abs_mean, abs_mean+, abs_mean-: 12.8285 11.1707 14.9349
+U_c = [[-0.03274925]] U_f = [[ 0.]] b_c = [ 1.31988227] b_f = [ 0.97712862]
+
+huabei1
+             huabei1 2265.5204      0.77  0.29  0.59      0.79  0.26  0.62      0.80  0.24  0.64
+             huabei1 9460.8182      0.88  0.20  0.72      0.88  0.17  0.75      0.88  0.15  0.76
+forget mean min: 0.891769 0.432104
+abs_mean, abs_mean+, abs_mean-: 12.2392 10.7892 14.0541
+U_c = [[-0.02908706]] U_f = [[ 0.]] b_c = [ 1.34194613] b_f = [ 0.97938865]
+
+huabei2
+             huabei2 2299.9230      0.80  0.31  0.59      0.82  0.28  0.62      0.83  0.26  0.64
+             huabei2 9783.3064      0.89  0.22  0.72      0.90  0.19  0.74      0.90  0.17  0.76
+forget mean min: 0.894726 0.479486
+abs_mean, abs_mean+, abs_mean-: 12.8128 11.2764 14.8283
+U_c = [[-0.02729947]] U_f = [[ 0.]] b_c = [ 1.3429513] b_f = [ 0.98268682]
+
+xibei0
+              xibei0 1436.1792      0.57  0.37  0.43      0.62  0.34  0.47      0.65  0.31  0.50
+              xibei0 5116.6935      0.88  0.34  0.61      0.91  0.31  0.64      0.92  0.30  0.66
+forget mean min: 0.948705 0.640582
+abs_mean, abs_mean+, abs_mean-: 5.55429 5.69698 5.26435
+U_c = [[-0.07920723]] U_f = [[ 0.]] b_c = [ 0.50748259] b_f = [ 1.15662408]
+
+xibei1
+              xibei1 1399.8839      0.57  0.36  0.43      0.62  0.33  0.48      0.65  0.30  0.51
+              xibei1 5130.2971      0.89  0.34  0.61      0.91  0.32  0.64      0.92  0.30  0.66
+forget mean min: 0.946716 0.593458
+abs_mean, abs_mean+, abs_mean-: 6.14306 6.27934 5.86151
+U_c = [[-0.08374012]] U_f = [[ 0.]] b_c = [ 0.55156147] b_f = [ 1.14054942]
+
+xibei2
+              xibei2 1314.8715      0.61  0.35  0.46      0.66  0.32  0.50      0.68  0.30  0.53
+              xibei2 5194.7425      0.86  0.32  0.62      0.89  0.29  0.65      0.90  0.28  0.67
+forget mean min: 0.9302 0.580596
+abs_mean, abs_mean+, abs_mean-: 6.90591 6.79304 7.07444
+U_c = [[-0.07301609]] U_f = [[ 0.]] b_c = [ 0.63791293] b_f = [ 1.11764717]
+
+huadong0
+            huadong0 1236.4482      0.60  0.46  0.39      0.63  0.45  0.41      0.64  0.43  0.43
+            huadong0 3179.7732      0.86  0.24  0.68      0.87  0.21  0.70      0.87  0.19  0.72
+forget mean min: 0.932039 0.583505
+abs_mean, abs_mean+, abs_mean-: 6.26989 5.55091 7.32998
+U_c = [[-0.05278327]] U_f = [[ 0.]] b_c = [ 0.54971713] b_f = [ 1.1349529]
+
+huadong1
+            huadong1 1130.1876      0.63  0.42  0.43      0.66  0.40  0.46      0.69  0.37  0.49
+            huadong1 3394.4952      0.83  0.24  0.66      0.84  0.21  0.68      0.84  0.19  0.70
+forget mean min: 0.922989 0.484773
+abs_mean, abs_mean+, abs_mean-: 7.71886 7.05873 8.58413
+U_c = [[-0.04579907]] U_f = [[ 0.]] b_c = [ 0.74025035] b_f = [ 1.04799044]
+
+huadong2
+            huadong2 1164.4861      0.56  0.42  0.40      0.59  0.40  0.42      0.60  0.37  0.44
+            huadong2 3262.7284      0.85  0.23  0.68      0.85  0.20  0.70      0.86  0.18  0.72
+forget mean min: 0.92101 0.512004
+abs_mean, abs_mean+, abs_mean-: 6.80377 6.19795 7.57697
+U_c = [[-0.04222944]] U_f = [[ 0.]] b_c = [ 0.66697681] b_f = [ 1.09478354]
+
+huaxi0
+              huaxi0  682.6647      0.38  0.43  0.29      0.42  0.40  0.33      0.45  0.39  0.35
+              huaxi0 1958.4570      0.81  0.24  0.64      0.83  0.22  0.67      0.84  0.20  0.69
+forget mean min: 0.978169 0.660534
+abs_mean, abs_mean+, abs_mean-: 2.51165 2.28477 3.13741
+U_c = [[-0.05322726]] U_f = [[ 0.]] b_c = [ 0.22414595] b_f = [ 1.16061246]
+
+huaxi1
+              huaxi1  658.6911      0.37  0.41  0.29      0.42  0.39  0.33      0.44  0.37  0.35
+              huaxi1 1954.4735      0.81  0.24  0.64      0.82  0.22  0.67      0.83  0.20  0.69
+forget mean min: 0.966865 0.626456
+abs_mean, abs_mean+, abs_mean-: 2.85501 2.68535 3.19568
+U_c = [[-0.04140406]] U_f = [[ 0.]] b_c = [ 0.28789732] b_f = [ 1.15703881]
+
+huaxi2
+              huaxi2  684.4029      0.36  0.43  0.28      0.40  0.40  0.32      0.43  0.38  0.34
+              huaxi2 1995.3544      0.79  0.24  0.63      0.80  0.22  0.65      0.81  0.20  0.68
+forget mean min: 0.975661 0.649682
+abs_mean, abs_mean+, abs_mean-: 2.39444 2.21634 2.82571
+U_c = [[-0.0545819]] U_f = [[ 0.]] b_c = [ 0.23096134] b_f = [ 1.16245949]
+
+huanan0
+             huanan0  469.4667      0.34  0.47  0.26      0.38  0.45  0.29      0.42  0.42  0.32
+             huanan0  930.3172      0.31  0.24  0.28      0.33  0.20  0.30      0.33  0.17  0.31
+forget mean min: 0.899446 0.549999
+abs_mean, abs_mean+, abs_mean-: 3.59428 3.63078 3.55265
+U_c = [[-0.0403126]] U_f = [[ 0.]] b_c = [ 0.51881891] b_f = [ 1.10292137]
+
+huanan1
+             huanan1  429.3946      0.16  0.30  0.15      0.18  0.28  0.16      0.19  0.24  0.17
+             huanan1  937.6812      0.22  0.15  0.21      0.23  0.11  0.22      0.24  0.10  0.22
+forget mean min: 0.910187 0.552552
+abs_mean, abs_mean+, abs_mean-: 3.05252 3.04245 3.06409
+U_c = [[-0.05977283]] U_f = [[ 0.]] b_c = [ 0.40205568] b_f = [ 1.14991736]
+
+huanan2
+             huanan2  462.2033      0.27  0.45  0.22      0.32  0.44  0.25      0.36  0.40  0.29
+             huanan2  931.4571      0.25  0.15  0.23      0.26  0.12  0.25      0.27  0.09  0.26
+forget mean min: 0.934612 0.477466
+abs_mean, abs_mean+, abs_mean-: 2.98259 2.88994 3.12906
+U_c = [[-0.09414119]] U_f = [[ 0.]] b_c = [ 0.30949426] b_f = [ 1.16647732]

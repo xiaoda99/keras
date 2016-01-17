@@ -857,20 +857,16 @@ class ReducedLSTMA(Recurrent):
     def __init__(self, output_dim,
                  init='glorot_uniform', inner_init='orthogonal', forget_bias_init='one',
                  activation='tanh', inner_activation='hard_sigmoid', 
-                 forget_type='new',  #XD
+                 fix_b_f=False,  #XD
                  weights=None, truncate_gradient=-1, return_sequences=False,
                  input_dim=None, input_length=None, **kwargs):
         self.output_dim = output_dim
-#        init = 'zero'  #XD
-#        init = 'uniform'
-#        inner_init = 'uniform'  #XD
         self.init = initializations.get(init)
         self.inner_init = initializations.get(inner_init)
         self.forget_bias_init = initializations.get(forget_bias_init)
 #        self.activation = activations.get(activation)
         self.activation = activations.get('linear') #XD
-#        self.inner_activation = activations.get(inner_activation)
-        self.inner_activation = activations.get('sigmoid') #XD
+        self.inner_activation = activations.get(inner_activation)
         self.truncate_gradient = truncate_gradient
         self.return_sequences = return_sequences
         self.initial_weights = weights
@@ -881,9 +877,8 @@ class ReducedLSTMA(Recurrent):
             kwargs['input_shape'] = (self.input_length, self.input_dim)
             
         #XD
+        self.fix_b_f = fix_b_f
         self.set_init_input()  
-        assert forget_type in ['no', 'old', 'new']
-        self.forget_type = forget_type
         
         super(ReducedLSTMA, self).__init__(**kwargs)
 
@@ -913,9 +908,12 @@ class ReducedLSTMA(Recurrent):
         self.params = [
 #            self.W_i, self.U_i, self.b_i,
             self.W_c, self.U_c, self.b_c,
-            self.W_f, self.U_f, self.b_f,
+            self.W_f, self.U_f, #self.b_f,
 #            self.W_o, self.U_o, self.b_o,
         ]
+        if not self.fix_b_f:
+#            print 'add b_f'
+            self.params.append(self.b_f)
 
         if self.initial_weights is not None:
             self.set_weights(self.initial_weights)
@@ -990,6 +988,7 @@ class ReducedLSTMA(Recurrent):
                   "forget_bias_init": self.forget_bias_init.__name__,
                   "activation": self.activation.__name__,
                   "inner_activation": self.inner_activation.__name__,
+                  "fix_b_f": self.fix_b_f,
                   "truncate_gradient": self.truncate_gradient,
                   "return_sequences": self.return_sequences,
                   "input_dim": self.input_dim,

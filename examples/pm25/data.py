@@ -38,20 +38,22 @@ def preprocess(data):
     return data
 
 def normalize_pm25(pm25, threshold=300, decay_coef=.25):
+#def normalize_pm25(pm25, threshold=250, decay_coef=.2):
     return pm25 * (pm25 <= threshold) + (threshold + (pm25 - threshold) * decay_coef) * (pm25 > threshold)
     
 def load_data3(stations=None, lon_range=None, lat_range=None, starttime='20150901', endtime='20151229',
                train_start=0, train_stop=None, valid_start=None, valid_stop=None, 
-               segment=True, filter=False):
+               segment=True, filter=False, normalize_target=False):
     data = generate_data(pm_stations=stations, lon_range=lon_range, lat_range=lat_range, 
                          starttime=starttime, endtime=endtime).result
-    data[:,:,-1] = normalize_pm25(data[:,:,-1])
+    if normalize_target:
+        data[:,:,-1] = normalize_pm25(data[:,:,-1])
 #    data[:,:,-2:] /= 100.
     data[:,:,-1] -= data[:,:,-2] # subtract pm25 mean from pm25 target
     
     if train_stop is None:
-#        train_stop = int(round(data.shape[1] * 3. / 4))
-        train_stop = 750
+        train_stop = int(round(data.shape[1] * 3. / 4))
+#        train_stop = 750
     if valid_start is None:
         valid_start = train_stop
     if valid_stop is None:

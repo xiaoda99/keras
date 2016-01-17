@@ -203,6 +203,7 @@ class ModelCheckpoint(Callback):
                 else:
                     if self.verbose > 0:
                         print("Epoch %05d: %s did not improve" % (epoch, self.monitor))
+                        
         else:
             if self.verbose > 0:
                 print("Epoch %05d: saving model to %s" % (epoch, filepath))

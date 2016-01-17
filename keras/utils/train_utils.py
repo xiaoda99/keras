@@ -78,7 +78,7 @@ def build_model(input_dim, h0_dim=20, h1_dim=20, output_dim=1,
     return model
 
 def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1, 
-                       rec_layer_type=ReducedLSTMA, rec_layer_init='zero',
+                       rec_layer_type=ReducedLSTMA, rec_layer_init='zero', fix_b_f=False,
                        layer_type=TimeDistributedDense, lr=.001, base_name='rlstm',
                        add_input_noise=True, add_target_noise=True):
     model = Sequential()  
@@ -87,14 +87,14 @@ def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
     model.add(layer_type(h0_dim, input_dim=input_dim, 
                     init='uniform_small', 
                     W_regularizer=l2(0.0005),
-                    activation='relu'))
+                    activation='tanh'))
     if h1_dim is not None:
         model.add(layer_type(h1_dim, 
                     init='uniform_small', 
                     W_regularizer=l2(0.0005),
-                    activation='relu'))
+                    activation='tanh'))
         
-    model.add(rec_layer_type(output_dim, init=rec_layer_init, return_sequences=True))
+    model.add(rec_layer_type(output_dim, init=rec_layer_init, fix_b_f=fix_b_f, return_sequences=True))
     if add_target_noise:
         model.add(GaussianNoise(5.))
     model.compile(loss="mse", optimizer=RMSprop(lr=lr))  
