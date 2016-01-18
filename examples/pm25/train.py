@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import sys
 import shutil
@@ -117,3 +118,12 @@ if __name__ == '__main__':
     train_model('huanan')
     train_model('tianjin', is_city=True)
     train_model('shanghai', is_city=True)
+
+    #rsync
+    machine_list = ["10.144.246.254", "inner.wrapper2.api.caiyunapp.com", "10.174.213.150", "10.251.17.17"]
+
+    print "rsync start"
+    for machine in machine_list :
+        os.system('rsync -av /ldata/pm25data/pm25model/rlstm/* caiyun@'+machine+':/ldata/pm25data/pm25model/rlstm/')
+
+    print "rsync finished"

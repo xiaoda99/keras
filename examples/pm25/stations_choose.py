@@ -6,7 +6,8 @@ import pandas as pd
 import numpy as np
 import copy
 
-savedir = '/home/xd/data/pm25data/'
+#savedir = '/home/xd/data/pm25data/'
+savedir = '/home/yuhe/data_manipulate/data_save/'
 Pm_starttime = datetime.datetime(2015, 4, 1, 8)
 #start_time_norm = '20150401'
 #start = start_time_norm + '08'
