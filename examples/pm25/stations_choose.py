@@ -8,12 +8,11 @@ import copy
 
 savedir = '/home/xd/data/pm25data/'
 Pm_starttime = datetime.datetime(2015, 4, 1, 8)
-start_time_norm = '20150401'
-#end_time = (datetime.datetime.today() - datetime.timedelta(days=2)).strftime('%Y%m%d')
-#end_time = '20151229'
-end_time = '20160116'
-start = start_time_norm + '08'
-end = end_time + '08'
+#start_time_norm = '20150401'
+#start = start_time_norm + '08'
+##end_time = (datetime.datetime.today() - datetime.timedelta(days=2)).strftime('%Y%m%d')
+#end_time = '20160116'
+#end = end_time + '08'
 # Pm_stoptime = datetime.datetime(2015, 12, 8, 0)
 
 
@@ -24,8 +23,17 @@ class generate_data():
                  lon_range=None,
                  lat_range=None,
                  starttime='20150801',
-                 endtime='20151207'
+                 endtime='20151207',
+                 latest=False
                  ):
+        start_time_norm = '20150401'
+        start = start_time_norm + '08'
+        if latest:
+            end_time = (datetime.datetime.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
+        else:
+            end_time = '20160116'
+        end = end_time + '08'
+        
         matrix = cPickle.load(gzip.open(
             savedir + 'Dataset'+'-'+start+'-'+end+'.pkl.gz'
             ))

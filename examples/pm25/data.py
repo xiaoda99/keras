@@ -1,6 +1,7 @@
 import numpy as np
 import cPickle
 import gzip
+import datetime
 
 from stations_choose import generate_data
 
@@ -40,12 +41,17 @@ def preprocess(data):
 def normalize_pm25(pm25, threshold=300, decay_coef=.25):
 #def normalize_pm25(pm25, threshold=250, decay_coef=.2):
     return pm25 * (pm25 <= threshold) + (threshold + (pm25 - threshold) * decay_coef) * (pm25 > threshold)
-    
-def load_data3(stations=None, lon_range=None, lat_range=None, starttime='20150901', endtime='20151229',
+  
+def load_data3(stations=None, lon_range=None, lat_range=None, starttime='20150916', endtime='20160116', latest=False,
                train_start=0, train_stop=None, valid_start=None, valid_stop=None, 
                segment=True, filter=False, normalize_target=False):
+    if latest:
+        endtime = (datetime.datetime.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
+        starttime = (datetime.datetime.today() - datetime.timedelta(days=121)).strftime('%Y%m%d')
+    print 'time range:', starttime, '-', endtime
     data = generate_data(pm_stations=stations, lon_range=lon_range, lat_range=lat_range, 
-                         starttime=starttime, endtime=endtime).result
+                         starttime=starttime, endtime=endtime, latest=latest).result
+#    print starttime, endtime, data.shape
     if normalize_target:
         data[:,:,-1] = normalize_pm25(data[:,:,-1])
 #    data[:,:,-2:] /= 100.
@@ -57,17 +63,20 @@ def load_data3(stations=None, lon_range=None, lat_range=None, starttime='2015090
     if valid_start is None:
         valid_start = train_stop
     if valid_stop is None:
-        valid_stop = data.shape[1]
+        valid_stop = -1
     train_data = data[:,train_start:train_stop,:]
     valid_data = data[:,valid_start:valid_stop,:]
+    train_data2 = data[:,-(train_stop - train_start):,:]
     
     if segment:
         train_data = segment_data(train_data)
         valid_data = segment_data(valid_data)
+        train_data2 = segment_data(train_data2)
     if filter:
         train_data = filter_data(train_data)
         valid_data = filter_data(valid_data)
-    return train_data, valid_data
+        train_data2 = filter_data(train_data2)
+    return train_data, valid_data, train_data2
     
 def load_data2(stations=None, segment=True):
 #    data = np.load('/home/xd/data/pm25data/raw.npy').astype('float32')
