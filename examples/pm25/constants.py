@@ -2,7 +2,7 @@ try:
     from collections import OrderedDict
 except:
     from ordereddict import OrderedDict
-    
+   
 pred_range = [2, 42]
 
 dongbei_lon_range=[0., 1000.]  #
