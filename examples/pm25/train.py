@@ -23,7 +23,7 @@ from constants import *
 
 def get_train_result(model):
     datetime_str = datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    return '%s   %d   %7.1f %7.1f   %4.2f %4.2f %4.2f   %4.2f %4.2f %4.2f   %4.2f %4.2f %4.2f   %4.2f %4.2f   %4.2f %4.1f %4.1f' % \
+    return '%s  %2d   %7.1f %7.1f   %4.2f %4.2f %4.2f   %4.2f %4.2f %4.2f   %4.2f %4.2f %4.2f   %4.2f %4.2f   %4.2f %4.1f %4.1f' % \
         ((datetime_str, model.epoch, model.train_result[0]) + tuple(model.valid_result)) 
 #                                              model.valid_result[0],  # mse
 #                                              model.valid_result[1], model.valid_result[2], model.valid_result[3],
