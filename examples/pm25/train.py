@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import sys
 import shutil
@@ -22,7 +23,7 @@ from constants import *
 
 def get_train_result(model):
     datetime_str = datetime.datetime.today().strftime('%Y-%m-%d %H:%M')
-    return '%s   %d   %7.1f %7.1f   %4.2f %4.2f %4.2f   %4.2f %4.2f %4.2f   %4.2f %4.2f %4.2f   %4.2f %4.2f   %4.2f %4.1f %4.1f' % \
+    return '%s  %2d   %7.1f %7.1f   %4.2f %4.2f %4.2f   %4.2f %4.2f %4.2f   %4.2f %4.2f %4.2f   %4.2f %4.2f   %4.2f %4.1f %4.1f' % \
         ((datetime_str, model.epoch, model.train_result[0]) + tuple(model.valid_result)) 
 #                                              model.valid_result[0],  # mse
 #                                              model.valid_result[1], model.valid_result[2], model.valid_result[3],
@@ -117,3 +118,12 @@ if __name__ == '__main__':
     train_model('huanan')
     train_model('tianjin', is_city=True)
     train_model('shanghai', is_city=True)
+
+    #rsync
+    machine_list = ["10.144.246.254", "inner.wrapper2.api.caiyunapp.com", "10.174.213.150", "10.251.17.17"]
+
+    print "rsync start"
+    for machine in machine_list :
+        os.system('rsync -av /ldata/pm25data/pm25model/rlstm/* caiyun@'+machine+':/ldata/pm25data/pm25model/rlstm/')
+
+    print "rsync finished"

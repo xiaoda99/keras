@@ -2,9 +2,9 @@ class_mode: categorical
 layers:
 - input_shape: !!python/tuple [null, 23]
   name: GaussianNoise
-  sigma: 0.10000000000000001
+  sigma: 0.1
 - W_constraint: null
-  W_regularizer: {l1: 0.0, l2: 0.00050000000000000001, name: WeightRegularizer}
+  W_regularizer: {l1: 0.0, l2: 0.0005, name: WeightRegularizer}
   activation: tanh
   activity_regularizer: null
   b_constraint: null
@@ -16,7 +16,7 @@ layers:
   name: TimeDistributedDense
   output_dim: 20
 - W_constraint: null
-  W_regularizer: {l1: 0.0, l2: 0.00050000000000000001, name: WeightRegularizer}
+  W_regularizer: {l1: 0.0, l2: 0.0005, name: WeightRegularizer}
   activation: tanh
   activity_regularizer: null
   b_constraint: null
@@ -31,6 +31,5 @@ layers:
   output_dim: 1, return_sequences: true, truncate_gradient: -1}
 loss: mean_squared_error
 name: Sequential
-optimizer: {epsilon: 9.9999999999999995e-07, lr: 0.0010000000474974513, name: RMSprop,
-  rho: 0.89999997615814209}
+optimizer: {epsilon: 1.0e-06, lr: 0.0010000000474974513, name: RMSprop, rho: 0.8999999761581421}
 theano_mode: null
