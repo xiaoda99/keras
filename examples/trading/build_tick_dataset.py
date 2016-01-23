@@ -12,13 +12,11 @@ import matplotlib.gridspec as gridspec
 from profilehooks import profile
 import csv
 
-from ifshort_rnn import build_rnn, build_mlp, train
-
-#from ordereddict import OrderedDict
-OrderedDict = dict
-
-from preprocessor2 import *
-            
+try: 
+    from collections import OrderedDict
+except:
+    from ordereddict import OrderedDict
+    
 base_dir = '/home/xd/data/trading'
 
 def get_day_dir(exchange, year, month, day):
@@ -56,9 +54,10 @@ def load_ticks(exchange, commodity, year, months, use_cache=True):
         ticks = OrderedDict()
         for month in months:
             fname = '%s/ticks_%s%d%02d.pkl' % (base_dir, commodity, year % 1000, month)
-            print 'Loading', fname
+            print 'Loading', fname, '...'
             with open(fname) as f:
                 dict_stack(ticks, cPickle.load(f))
+            print 'Done.'
         return ticks
         
     paths = get_paths(exchange, commodity, year, months)
@@ -106,7 +105,7 @@ def load_ticks(exchange, commodity, year, months, use_cache=True):
                         dict_append(ticks, prev_tick)
                         n_ticks += 1
                 if tick['ask_price'] == 0 or tick['bid_price'] == 0:
-                    print now, 'ask_price =', tick['ask_price'], 'bid_price =', tick['bid_price'], tick['ask_vol'], tick['bid_vol']
+#                    print now, 'ask_price =', tick['ask_price'], 'bid_price =', tick['bid_price'], tick['ask_vol'], tick['bid_vol']
                     if not tick['last_price'] > 0:
                         print 'last_price =', tick['last_price']
                         assert False
@@ -186,16 +185,27 @@ def callback(context, data, len, score, latest_score):
 #    now += 1
     game.Play(context, 1)
    
-#if __name__ == "__main__":
-##    for exchange, commodity in [('zc', 'SR'), ('zc', 'MA'), ('zc', 'TA'), ('dc', 'l'), ('dc', 'pp'), ('sc', 'ru')]:
-#    for exchange, commodity in [('zc', 'SR')]:
-#        year = 2015  
-#        for month in range(1, 10):  
-#            ticks = load_ticks(exchange, commodity, year, [month], use_cache=False)
-#            fname = '%s/ticks_%s%d%02d.pkl' % (base_dir, commodity, year % 1000, month)
-#            print 'Saving', fname, '...'
-#            with open(fname, 'w') as f:
-#                cPickle.dump(ticks, f)
+if __name__ == "__main__":
+    for exchange, commodity in [ 
+                                ('zc', 'MA'), 
+                                ('zc', 'TA'), 
+                                ('dc', 'l'), 
+                                ('dc', 'pp'), 
+                                
+                                ('zc', 'SR'),
+                                ('dc', 'p'),
+                                ('dc', 'cs'),
+                                  
+                                ('sc', 'zn'),
+                                ('sc', 'ni'),
+                                ]:
+        year = 2015  
+        for month in range(7, 12):  
+            ticks = load_ticks(exchange, commodity, year, [month], use_cache=False)
+            fname = '%s/ticks_%s%d%02d.pkl' % (base_dir, commodity, year % 1000, month)
+            print 'Saving', fname, '...'
+            with open(fname, 'w') as f:
+                cPickle.dump(ticks, f)
        
 
 #game = ctypes.CDLL("game.so")
@@ -209,80 +219,80 @@ def callback(context, data, len, score, latest_score):
 #    game.RunOne(context)
 #ticks = as_arrays(ticks)
 
-ticks = load_ticks('zc', 'SR', 2015, range(1, 10), use_cache=True)
-
-print 'Initializing preprocessor...'
-pp = Preprocessor(output_step=2)
-pp.set_generators([
-    Gain(pp, t=10, smooth=2),
-    Gain(pp, t=30, smooth=10),
-    Gain(pp, t=120, smooth=30),
-    Gain(pp, t=360, smooth=90),
-#    Gain(pp, t=1800, smooth=450, last_n=1),
-#    KD(pp, t=10, last_n=1),
-    KD(pp, t=30, last_n=1),
-    KD(pp, t=120, last_n=1),
-#    KD(pp, t=360, last_n=1),
-#    RSI(pp, t=10, last_n=1),
-    RSI(pp, t=30, last_n=1),
-    RSI(pp, t=120, last_n=1),
-#    RSI(pp, t=360, last_n=1),
-    ])
- 
-pp2 = Preprocessor(output_step=2)
-pp2.set_generators([
-    Gain(pp2, t=10, smooth=1, last_n=3, skip=2),
-    Gain(pp2, t=30, smooth=1, last_n=3, skip=10),
-    Gain(pp2, t=120, smooth=1, last_n=3, skip=30),
-    Gain(pp2, t=360, smooth=1, last_n=3, skip=90),
-#    Gain(pp2, t=1800, smooth=450, last_n=1),
-#    KD(pp2, t=10, last_n=3, skip=3),
-    KD(pp2, t=30, last_n=3, skip=10),
-    KD(pp2, t=120, last_n=3, skip=30),
-#    KD(pp2, t=360, last_n=3, skip=90),
-#    RSI(pp2, t=10, last_n=3, skip=3),
-    RSI(pp2, t=30, last_n=3, skip=10),
-    RSI(pp2, t=120, last_n=3, skip=30),
-#    RSI(pp2, t=360, last_n=3, skip=90),
-    ])
-
-ppv = Preprocessor(output_step=2)
-ppv.set_generators([   
-#    MA(ppv, input_key='open_vol', t=30),
-#    MA(ppv, input_key='open_vol', t=120),
-#    MA(ppv, input_key='open_vol', t=360),
-#    MA(ppv, input_key='close_vol', t=30),
-#    MA(ppv, input_key='close_vol', t=120),
-#    MA(ppv, input_key='close_vol', t=360),
-#    MA(ppv, input_key='pos_inc', t=30),
-#    MA(ppv, input_key='pos_inc', t=120),
-#    MA(ppv, input_key='pos_inc', t=360),
-    Gain(ppv, input_key='vol', t=10, smooth=2, normalize=False),
-    Gain(ppv, input_key='vol', t=30, smooth=10, normalize=False),
-    Gain(ppv, input_key='vol', t=120, smooth=30, normalize=False),
-    Gain(ppv, input_key='vol', t=360, smooth=90, normalize=False),
-    MA(ppv, input_key='vol', t=10),
-    MA(ppv, input_key='vol', t=30),
-    MA(ppv, input_key='vol', t=120),
-    MA(ppv, input_key='vol', t=360),
-#    GainMA(pp, input_key='ask_vol', t=30, smooth=10, normalize=False, last_n=1),
-    ])
-
-print 'Building dataset...'
-t0 = time.time()
-Xd = pp.preprocess(ticks, output='X')
-Xd2 = pp2.preprocess(ticks, output='X')
-Xdv = ppv.preprocess(ticks, output='X')
-Yd = pp.preprocess(ticks, output='Y', transaction_cost=.0005)
-t1 = time.time()
-print 'Done.', t1 - t0, 'seconds'
-
-
-X = build(Xd)
-X2 = build(Xd2)
-Xv = build(Xdv, includes=['gain',])
-Y = build(Yd, includes=['30',])
-X_train, X_test = split(np.hstack([X, Xv]), extremum_cutoff=.001)
-Y_train, Y_test = split(Y, extremum_cutoff=.001, normalize=False)
+#ticks = load_ticks('zc', 'SR', 2015, range(1, 10), use_cache=True)
+#
+#print 'Initializing preprocessor...'
+#pp = Preprocessor(output_step=2)
+#pp.set_generators([
+#    Gain(pp, t=10, smooth=2),
+#    Gain(pp, t=30, smooth=10),
+#    Gain(pp, t=120, smooth=30),
+#    Gain(pp, t=360, smooth=90),
+##    Gain(pp, t=1800, smooth=450, last_n=1),
+##    KD(pp, t=10, last_n=1),
+#    KD(pp, t=30, last_n=1),
+#    KD(pp, t=120, last_n=1),
+##    KD(pp, t=360, last_n=1),
+##    RSI(pp, t=10, last_n=1),
+#    RSI(pp, t=30, last_n=1),
+#    RSI(pp, t=120, last_n=1),
+##    RSI(pp, t=360, last_n=1),
+#    ])
+# 
+#pp2 = Preprocessor(output_step=2)
+#pp2.set_generators([
+#    Gain(pp2, t=10, smooth=1, last_n=3, skip=2),
+#    Gain(pp2, t=30, smooth=1, last_n=3, skip=10),
+#    Gain(pp2, t=120, smooth=1, last_n=3, skip=30),
+#    Gain(pp2, t=360, smooth=1, last_n=3, skip=90),
+##    Gain(pp2, t=1800, smooth=450, last_n=1),
+##    KD(pp2, t=10, last_n=3, skip=3),
+#    KD(pp2, t=30, last_n=3, skip=10),
+#    KD(pp2, t=120, last_n=3, skip=30),
+##    KD(pp2, t=360, last_n=3, skip=90),
+##    RSI(pp2, t=10, last_n=3, skip=3),
+#    RSI(pp2, t=30, last_n=3, skip=10),
+#    RSI(pp2, t=120, last_n=3, skip=30),
+##    RSI(pp2, t=360, last_n=3, skip=90),
+#    ])
+#
+#ppv = Preprocessor(output_step=2)
+#ppv.set_generators([   
+##    MA(ppv, input_key='open_vol', t=30),
+##    MA(ppv, input_key='open_vol', t=120),
+##    MA(ppv, input_key='open_vol', t=360),
+##    MA(ppv, input_key='close_vol', t=30),
+##    MA(ppv, input_key='close_vol', t=120),
+##    MA(ppv, input_key='close_vol', t=360),
+##    MA(ppv, input_key='pos_inc', t=30),
+##    MA(ppv, input_key='pos_inc', t=120),
+##    MA(ppv, input_key='pos_inc', t=360),
+#    Gain(ppv, input_key='vol', t=10, smooth=2, normalize=False),
+#    Gain(ppv, input_key='vol', t=30, smooth=10, normalize=False),
+#    Gain(ppv, input_key='vol', t=120, smooth=30, normalize=False),
+#    Gain(ppv, input_key='vol', t=360, smooth=90, normalize=False),
+#    MA(ppv, input_key='vol', t=10),
+#    MA(ppv, input_key='vol', t=30),
+#    MA(ppv, input_key='vol', t=120),
+#    MA(ppv, input_key='vol', t=360),
+##    GainMA(pp, input_key='ask_vol', t=30, smooth=10, normalize=False, last_n=1),
+#    ])
+#
+#print 'Building dataset...'
+#t0 = time.time()
+#Xd = pp.preprocess(ticks, output='X')
+#Xd2 = pp2.preprocess(ticks, output='X')
+#Xdv = ppv.preprocess(ticks, output='X')
+#Yd = pp.preprocess(ticks, output='Y', transaction_cost=.0005)
+#t1 = time.time()
+#print 'Done.', t1 - t0, 'seconds'
+#
+#
+#X = build(Xd)
+#X2 = build(Xd2)
+#Xv = build(Xdv, includes=['gain',])
+#Y = build(Yd, includes=['30',])
+#X_train, X_test = split(np.hstack([X, Xv]), extremum_cutoff=.001)
+#Y_train, Y_test = split(Y, extremum_cutoff=.001, normalize=False)
 #mlp = build_mlp(X_train.shape[-1], Y_train.shape[-1], 30, 15)
 #train(X_train, Y_train * 10000., X_test, Y_test * 10000, mlp, batch_size=1000)
