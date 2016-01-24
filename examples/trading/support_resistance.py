@@ -31,9 +31,9 @@ class EMA(object):
 class SaliencyEMA():
     def __init__(self, 
                  simulator,
-                 n = 60 * 60 * 2,  # 1 hour
+                 n = 15 * 60 * 2,  # 1 hour
                  stdev_coef = 1.5,
-                 days = 5,
+                 days = 1,
                  trading_hours_per_day = 3.75,
                  tick_size = 1,
                  smooth_n = 3
@@ -171,7 +171,7 @@ class IntensityEMA():
     
 class Simulator():
     def __init__(self, history, step_size=1, 
-                 show_freq = 30 * 60 * 2, # 3 minutes
+                 show_freq = 5 * 60 * 2, # 3 minutes
                  saliency_scale = 6*1e7,
                  saliency2_scale = 8*1e5,
                  intensity_scale = 3*1e5,
@@ -228,8 +228,8 @@ class Simulator():
 #        y = self.indicators[2].smoothed_saliency_ema
 #        ax = self._plot_histogram(gs[2], y, self.saliency_scale, label='stdev=1.5', sharex=ax0)
         
-        y = self.indicators[2].smoothed_intensity_ema2
-        ax = self._plot_histogram(gs[0], y, self.intensity2_scale, label='mean_intensity', sharex=ax0)
+        y = self.indicators[1].smoothed_intensity_ema2
+        ax = self._plot_histogram(gs[3], y, self.intensity2_scale, label='mean_intensity', sharex=ax0)
         
         plt.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)
         plt.draw()

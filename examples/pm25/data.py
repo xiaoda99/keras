@@ -46,8 +46,13 @@ def load_data3(stations=None, lon_range=None, lat_range=None, starttime='2015091
                train_start=0, train_stop=None, valid_start=None, valid_stop=None, 
                segment=True, filter=False, normalize_target=False):
     if latest:
-        endtime = (datetime.datetime.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
-        starttime = (datetime.datetime.today() - datetime.timedelta(days=121)).strftime('%Y%m%d')
+        if endtime is None:
+            endtime = (datetime.datetime.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
+        if starttime is None:
+            starttime = (datetime.datetime.today() - datetime.timedelta(days=121)).strftime('%Y%m%d')
+    else:
+        assert starttime is not None
+        assert endtime is not None
     print 'time range:', starttime, '-', endtime
     data = generate_data(pm_stations=stations, lon_range=lon_range, lat_range=lat_range, 
                          starttime=starttime, endtime=endtime, latest=latest).result
@@ -63,7 +68,7 @@ def load_data3(stations=None, lon_range=None, lat_range=None, starttime='2015091
     if valid_start is None:
         valid_start = train_stop
     if valid_stop is None:
-        valid_stop = -1
+        valid_stop = data.shape[1]
     train_data = data[:,train_start:train_stop,:]
     valid_data = data[:,valid_start:valid_stop,:]
     train_data2 = data[:,-(train_stop - train_start):,:]

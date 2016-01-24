@@ -47,9 +47,9 @@ def train_model(name, is_city=False, latest=True):
     if is_city:
         if name == 'beijing':
             train_data, valid_data, train_data2 = load_data3(stations=city2stations[name],
-                                                starttime='20150901', endtime='20160116',
+                                                starttime='20150901', endtime='20160123',
                                                 train_stop=630, valid_start=680,
-                                                latest=latest,
+                                                latest=True,
                                                 filter=False)
         else:
             train_data, valid_data, train_data2 = load_data3(stations=city2stations[name],
@@ -110,6 +110,7 @@ def train_model(name, is_city=False, latest=True):
             shutil.copy(f, model_dir)
 
 if __name__ == '__main__':
+#    train_model('beijing', is_city=True)
     train_model('dongbei')
     train_model('huabei')
     train_model('xibei')
