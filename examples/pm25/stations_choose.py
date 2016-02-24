@@ -32,12 +32,12 @@ class generate_data():
                  latest=False
                  ):
         start_time_norm = '20150401'
-        start = start_time_norm + '08'
+        start = start_time_norm + '02'
         if latest:
             end_time = (datetime.datetime.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
         else:
             end_time = '20160116'
-        end = end_time + '08'
+        end = end_time + '02'
         
         matrix = cPickle.load(gzip.open(
             savedir + 'Dataset'+'-'+start+'-'+end+'.pkl.gz'

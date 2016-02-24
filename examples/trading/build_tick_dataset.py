@@ -69,6 +69,7 @@ def load_ticks(exchange, commodity, year, months, use_cache=True):
             prev_tick = None
             n_ticks = 0
             reader.next()
+            ticks_today = OrderedDict()
             for data in reader:
                 now = datetime.datetime.strptime(data[2], '%Y-%m-%d %H:%M:%S.%f')
                 if prev is None and not (now.time().minute == 0 and now.time().second in [0, 1]):
@@ -102,7 +103,9 @@ def load_ticks(exchange, commodity, year, months, use_cache=True):
                     if n_missed > 100:
                         print now, 'n_missed =', n_missed, 'dt.seconds =', dt.seconds
                     for _ in range(n_missed):
+                        prev_tick['time_in_ticks'] = n_ticks  # fix this bug in 20160126
                         dict_append(ticks, prev_tick)
+#                        dict_append(ticks_today, tick)
                         n_ticks += 1
                 if tick['ask_price'] == 0 or tick['bid_price'] == 0:
 #                    print now, 'ask_price =', tick['ask_price'], 'bid_price =', tick['bid_price'], tick['ask_vol'], tick['bid_vol']
@@ -119,11 +122,16 @@ def load_ticks(exchange, commodity, year, months, use_cache=True):
                 if tick['bid_vol'] == 0:
                     tick['bid_vol'] = tick['ask_vol']
                 tick['time_in_ticks'] = n_ticks
+                if tick['time_in_ticks'] == 0 and ticks.has_key('last_price') and abs(tick['last_price'] - ticks['last_price'][-1]) > 400:
+                    print '*******************************************big jump!', path
                 dict_append(ticks, tick)
+#                dict_append(ticks_today, tick)
                 n_ticks += 1
                 prev = now
                 prev_tick = tick
             print path, n_ticks
+#            plt.plot(ticks_today['last_price'])
+            plt.show()
     return as_arrays(ticks)
 
 def make_tick2(data):
@@ -187,112 +195,26 @@ def callback(context, data, len, score, latest_score):
    
 if __name__ == "__main__":
     for exchange, commodity in [ 
-                                ('zc', 'MA'), 
-                                ('zc', 'TA'), 
-                                ('dc', 'l'), 
+#                                ('zc', 'MA'), 
+#                                ('zc', 'TA'), 
+#                                ('dc', 'l'), 
                                 ('dc', 'pp'), 
                                 
-                                ('zc', 'SR'),
-                                ('dc', 'p'),
-                                ('dc', 'cs'),
-                                  
-                                ('sc', 'zn'),
-                                ('sc', 'ni'),
+#                                ('zc', 'SR'),
+#                                ('dc', 'p'),
+#                                ('dc', 'cs'),
+#                                  
+#                                ('sc', 'zn'),
+#                                ('sc', 'ni'),
                                 ]:
         year = 2015  
-        for month in range(7, 12):  
+        for month in range(1, 12):  
+            print 'month =', month
             ticks = load_ticks(exchange, commodity, year, [month], use_cache=False)
             fname = '%s/ticks_%s%d%02d.pkl' % (base_dir, commodity, year % 1000, month)
             print 'Saving', fname, '...'
             with open(fname, 'w') as f:
                 cPickle.dump(ticks, f)
+     
+    ticks = load_ticks('dc', 'pp', 2015, range(1,12), use_cache=True)
        
-
-#game = ctypes.CDLL("game.so")
-#CMPFUNC = ctypes.CFUNCTYPE(None, ctypes.c_void_p, ctypes.POINTER(ctypes.c_int), ctypes.c_int, ctypes.c_int, ctypes.c_int) 
-#_callback = CMPFUNC(callback)
-#context = game.CreateContext('cfg_test.xml')
-#game.RegisterCallback(context, _callback)
-#print 'Running game...'
-#ticks = OrderedDict()
-#while not game.IsFinish(context):
-#    game.RunOne(context)
-#ticks = as_arrays(ticks)
-
-#ticks = load_ticks('zc', 'SR', 2015, range(1, 10), use_cache=True)
-#
-#print 'Initializing preprocessor...'
-#pp = Preprocessor(output_step=2)
-#pp.set_generators([
-#    Gain(pp, t=10, smooth=2),
-#    Gain(pp, t=30, smooth=10),
-#    Gain(pp, t=120, smooth=30),
-#    Gain(pp, t=360, smooth=90),
-##    Gain(pp, t=1800, smooth=450, last_n=1),
-##    KD(pp, t=10, last_n=1),
-#    KD(pp, t=30, last_n=1),
-#    KD(pp, t=120, last_n=1),
-##    KD(pp, t=360, last_n=1),
-##    RSI(pp, t=10, last_n=1),
-#    RSI(pp, t=30, last_n=1),
-#    RSI(pp, t=120, last_n=1),
-##    RSI(pp, t=360, last_n=1),
-#    ])
-# 
-#pp2 = Preprocessor(output_step=2)
-#pp2.set_generators([
-#    Gain(pp2, t=10, smooth=1, last_n=3, skip=2),
-#    Gain(pp2, t=30, smooth=1, last_n=3, skip=10),
-#    Gain(pp2, t=120, smooth=1, last_n=3, skip=30),
-#    Gain(pp2, t=360, smooth=1, last_n=3, skip=90),
-##    Gain(pp2, t=1800, smooth=450, last_n=1),
-##    KD(pp2, t=10, last_n=3, skip=3),
-#    KD(pp2, t=30, last_n=3, skip=10),
-#    KD(pp2, t=120, last_n=3, skip=30),
-##    KD(pp2, t=360, last_n=3, skip=90),
-##    RSI(pp2, t=10, last_n=3, skip=3),
-#    RSI(pp2, t=30, last_n=3, skip=10),
-#    RSI(pp2, t=120, last_n=3, skip=30),
-##    RSI(pp2, t=360, last_n=3, skip=90),
-#    ])
-#
-#ppv = Preprocessor(output_step=2)
-#ppv.set_generators([   
-##    MA(ppv, input_key='open_vol', t=30),
-##    MA(ppv, input_key='open_vol', t=120),
-##    MA(ppv, input_key='open_vol', t=360),
-##    MA(ppv, input_key='close_vol', t=30),
-##    MA(ppv, input_key='close_vol', t=120),
-##    MA(ppv, input_key='close_vol', t=360),
-##    MA(ppv, input_key='pos_inc', t=30),
-##    MA(ppv, input_key='pos_inc', t=120),
-##    MA(ppv, input_key='pos_inc', t=360),
-#    Gain(ppv, input_key='vol', t=10, smooth=2, normalize=False),
-#    Gain(ppv, input_key='vol', t=30, smooth=10, normalize=False),
-#    Gain(ppv, input_key='vol', t=120, smooth=30, normalize=False),
-#    Gain(ppv, input_key='vol', t=360, smooth=90, normalize=False),
-#    MA(ppv, input_key='vol', t=10),
-#    MA(ppv, input_key='vol', t=30),
-#    MA(ppv, input_key='vol', t=120),
-#    MA(ppv, input_key='vol', t=360),
-##    GainMA(pp, input_key='ask_vol', t=30, smooth=10, normalize=False, last_n=1),
-#    ])
-#
-#print 'Building dataset...'
-#t0 = time.time()
-#Xd = pp.preprocess(ticks, output='X')
-#Xd2 = pp2.preprocess(ticks, output='X')
-#Xdv = ppv.preprocess(ticks, output='X')
-#Yd = pp.preprocess(ticks, output='Y', transaction_cost=.0005)
-#t1 = time.time()
-#print 'Done.', t1 - t0, 'seconds'
-#
-#
-#X = build(Xd)
-#X2 = build(Xd2)
-#Xv = build(Xdv, includes=['gain',])
-#Y = build(Yd, includes=['30',])
-#X_train, X_test = split(np.hstack([X, Xv]), extremum_cutoff=.001)
-#Y_train, Y_test = split(Y, extremum_cutoff=.001, normalize=False)
-#mlp = build_mlp(X_train.shape[-1], Y_train.shape[-1], 30, 15)
-#train(X_train, Y_train * 10000., X_test, Y_test * 10000, mlp, batch_size=1000)

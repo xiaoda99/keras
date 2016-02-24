@@ -2,6 +2,7 @@ import time
 import numpy as np
 import pylab as plt
 import matplotlib.gridspec as gridspec
+from profilehooks import profile
 
 from build_tick_dataset import *
 
@@ -16,6 +17,10 @@ class EMA(object):
         self.sum = 0.
         self.sum_cnt = 0
            
+    def reset(self):
+        self.sum = 0.
+        self.sum_cnt = 0
+        
     def step(self, x):
         if self.n == 1:
             return x
@@ -60,8 +65,8 @@ class SaliencyEMA():
         self.ny_stdev_EMA = EMA(self.m * 1. / self.n)
         
         self.start_tick = self.n * 4
-        self.saliency = np.zeros(self.price.max() + 1)
-        self.saliency2 = np.zeros(self.price.max() + 1)
+        self.saliency = np.zeros(self.price.max() + self.simulator.stopprofit + 10)
+        self.saliency2 = np.zeros(self.price.max() + self.simulator.stopprofit + 10)
         self.saliency_EMA = EMA(self.m)
         self.saliency2_EMA = EMA(self.m)
         self.mean_saliency_EMA = EMA(self.m * 1. / self.n)
@@ -76,8 +81,8 @@ class SaliencyEMA():
                 saliency_ema[level] > saliency_ema[level + self.tick_size] * 5.:
             if name is not None:
                 print name
-            print 'smooth out abnormal saliency at', level, \
-                'mean_saliency =', mean_saliency, 'saliency =', saliency_ema[level]
+#            print 'smooth out abnormal saliency at', level, \
+#                'mean_saliency =', mean_saliency, 'saliency =', saliency_ema[level]
             saliency_ema[level] = mean_saliency
             
     def smooth(self, saliency_ema):
@@ -90,9 +95,9 @@ class SaliencyEMA():
     def get_max_of_max(self, sr_level):
         low = sr_level
         high = sr_level
-        while self.smoothed_saliency_ema[low] >= self.mean_saliency_ema * 4.:
+        while self.smoothed_saliency_ema[low] >= self.mean_saliency_ema * self.simulator.openable_normalized_saliency:
             low -= 1
-        while self.smoothed_saliency_ema[high] >= self.mean_saliency_ema * 4.:
+        while self.smoothed_saliency_ema[high] >= self.mean_saliency_ema * self.simulator.openable_normalized_saliency:
             high += 1
         max_saliency = self.smoothed_saliency_ema[low : high].max()
         sr_level = self.smoothed_saliency_ema[low : high].argmax() + low
@@ -105,7 +110,7 @@ class SaliencyEMA():
         nearby_saliency = self.smoothed_saliency_ema[last_price - distance : last_price + distance + 1]
         max_saliency = nearby_saliency.max()
         sr_level = nearby_saliency.argmax() + last_price - distance
-        if max_saliency >= self.mean_saliency_ema * 4.:
+        if max_saliency >= self.mean_saliency_ema * self.simulator.openable_normalized_saliency:
             sr_level, max_saliency = self.get_max_of_max(sr_level)
         return sr_level, max_saliency 
            
@@ -129,6 +134,12 @@ class SaliencyEMA():
         level = self.price[self.simulator.now - self.n]
         self.saliency[level] = abs(ny)
         self.saliency_ema = self.saliency_EMA.step(self.saliency)
+        
+        if self.simulator.history['time_in_ticks'][self.simulator.now - 1] == 0 and \
+                abs(self.price[self.simulator.now - 1] - self.price[self.simulator.now - 2]) > 400:
+            self.saliency_EMA.reset()
+            self.saliency_ema *= 0.
+            print 'Reset saliency on month change.' 
         
         if (self.simulator.now - self.start_tick) % self.n == 0:  
             floor = self.price[self.simulator.now - self.start_tick : self.simulator.now].min()
@@ -209,61 +220,103 @@ CLOSED = 0
 class Simulator():
     def __init__(self, history, step_size=1, 
                  show_freq = 30 * 60 * 2, 
-                 zoomin_show_freq = 3 * 60 * 2,
-                 saliency_scale = 6*1e7,
-                 intensity_scale = 3*1e5,
+                 zoomin_show_freq = 30 * 60 * 2,
+                 zoomin_show_len = 5 * 3.75 * 60 * 60 * 2,
+                 saliency_scale = 7*1e7,
+                 openable_normalized_saliency=2.,
+                 closable_normalized_saliency=2.,
+                 intensity_scale = 1*1e6,
                  intensity2_scale = 3*1e2,
                  tick_size=1,
+                 trading_hours_per_day = 3.75,
                  stoploss=6,
                  stopprofit=30,
-                 sleeptime_on_action = 2
+                 sleeptime_on_action = 0
                  ):
         self.__dict__.update(locals())
         del self.self
         self.stoploss *= self.tick_size
         self.stopprofit *= self.tick_size
-    
+        self.ticks_per_day = int(self.trading_hours_per_day * 60 * 60 * 2)
+        
         self.now = 0
         self.indicators = []
         
         self.sr_level = None
+        self.last_sr_level = None
         self.stopprofit_level = None
         self.stoploss_level = None
+        self.stopprofit_price = None
+        self.stoploss_price = None
         self.pending_open_level = None
         self.open_level = None
         self.open_price = None
         self.state = CLOSED
         self.gains = []
+        self.total_gain = 0
+        self.equity_curve = np.zeros_like(self.history['last_price'])
+        self.figure_cnt = 0
         
     def add_indicator(self, indicator):
         self.indicators.append(indicator)
-            
+         
+#    @profile   
     def step(self, step_size=1):
         self.now += step_size
         for indicator in self.indicators:
             indicator.step()
     
+#    @profile
     def do(self):
         if self.now - self.indicators[0].m < self.indicators[0].n:
             return
         
         if self.state == OPENED:
-            if not self.try_stop_loss():
-                self.try_stop_profit()
+            if not self.try_early_quit():
+                if self.try_stop_loss():
+                    self.try_place(after_stop_loss=True)
+                else:
+                    self.try_stop_profit()
         elif self.state == PLACED:
             self.try_open()
         else:
             assert self.state == CLOSED
             self.try_place()
             
-        if self.state != CLOSED and self.now % self.zoomin_show_freq == 0:
+        self.equity_curve[self.now - 1] = self.total_gain
+            
+        if self.now % self.zoomin_show_freq == 0: # and self.state != CLOSED:
             self.zoomin_show()
         
+    def try_early_quit(self):
+        last_price = self.history['last_price'][self.now - 1]
+        if self.now == self.history['last_price'].shape[0] or \
+                self.history['time_in_ticks'][self.now] == 0 and \
+                abs(self.history['last_price'][self.now] - last_price) > 400: # change month
+            print self.figure_cnt, 'early quit at', last_price
+            if (last_price - self.open_price) * (self.stoploss_level - self.open_price) > 0:
+                self.stoploss_price = last_price
+                self.close(False)
+            else:
+                self.stopprofit_price = last_price
+                self.close(True)
+            return True
+        return False
+    
     def try_stop_loss(self):
         last_price = self.history['last_price'][self.now - 1]
-        if (last_price - self.sr_level) * (self.stoploss_level - self.sr_level) > 0 and \
-                abs(last_price - self.sr_level) >= abs(self.stoploss_level - self.sr_level):
-            self.close(last_price, False)
+        if (last_price - self.open_price) * (self.stoploss_level - self.open_price) > 0 and \
+                abs(last_price - self.open_price) >= abs(self.stoploss_level - self.open_price):
+            self.stoploss_price = last_price
+            self.last_sr_level = self.sr_level
+            
+#            if abs(self.stoploss_price - self.stoploss_level) > abs(self.open_level - self.stoploss_level):
+            if abs(self.stoploss_price - self.open_price) > abs(self.stoploss_level - self.open_level) * 2.:
+                print 'time_in_ticks =', int(self.history['time_in_ticks'][self.now - 1]), '/', self.ticks_per_day, 
+                print 'loss =', abs(self.stoploss_price - self.open_price),
+                print 'open_exceed =', abs(self.open_price - self.open_level), 'stoploss_exceed =', abs(self.stoploss_price - self.stoploss_level)
+            
+            self.close(False)
             return True
         return False
     
@@ -273,31 +326,38 @@ class Simulator():
         if abs(last_price - self.sr_level) < self.stopprofit:
             if abs(last_price - self.sr_level) >= self.stoploss and \
                     abs(sr_level - self.sr_level) > self.stoploss and \
-                    saliency >= self.indicators[0].mean_saliency_ema * 4. and \
+                    saliency >= self.indicators[0].mean_saliency_ema * self.closable_normalized_saliency and \
                     saliency > self.indicators[0].smoothed_saliency_ema[self.sr_level]:
-                self.stopprofit_level = sr_level
-                self.close(last_price, True)
+#                self.stopprofit_level = sr_level
+                self.stopprofit_price = last_price
+                self.close(True)
                 return True
             else:
                 return False
         else:
-            if saliency >= self.indicators[0].mean_saliency_ema * 2.:
-                self.stopprofit_level = sr_level
-                self.close(last_price, True)
+            if saliency >= self.indicators[0].mean_saliency_ema * 3.:
+#            if True:
+#                self.stopprofit_level = sr_level
+                self.stopprofit_price = last_price
+                self.close(True)
                 return True
             else:
                 return False
           
-    def close(self, last_price, is_stop_profit):
+    def close(self, is_stop_profit):
+        last_price = self.history['last_price'][self.now - 1]
         self.state = CLOSED
+#        print self.figure_cnt, 'close at', last_price, 'is_stop_profit =', is_stop_profit
+#        if not is_stop_profit:
+#            print 'last_sr_level =', self.last_sr_level
         self.zoomin_show(self.sleeptime_on_action)
         
         gain = abs(last_price - self.open_price)
         if not is_stop_profit:
             gain *= -1.
-        if gain < 0 and abs(gain) > self.stoploss * 1.5 * 2:
-            print gain, '->', -self.stoploss * 1.5 * 2
-            gain = -self.stoploss * 1.5 * 2
+#        if gain < 0 and abs(gain) > self.stoploss * 1.5 * 2:
+#            print gain, '->', -self.stoploss * 1.5 * 2
+#            gain = -self.stoploss * 1.5 * 2
 #        else:
 #            print gain
         if gain % self.tick_size != 0:
@@ -305,19 +365,34 @@ class Simulator():
             assert False
         gain /= self.tick_size
         self.gains.append(gain)
+        self.total_gain += gain 
         
         self.sr_level = None
         self.open_level = None
         self.stoploss_level = None
         self.stopprofit_level = None
+        self.open_price = None
+        self.stoploss_price = None
+        self.stopprofit_price = None
           
-    def try_place(self): 
-        last_price = self.history['last_price'][self.now - 1]
-        sr_level, saliency = self.indicators[0].get_nearby_sr_level(self.stoploss/2)
-        if saliency >= self.indicators[0].mean_saliency_ema * 4. and abs(last_price - sr_level) < self.stoploss:
+    def try_place(self, after_stop_loss=False): 
+#        if self.history['time_in_ticks'][self.now - 1] < 3 * 60 * 2 or \
+#                self.history['time_in_ticks'][self.now - 1] > self.ticks_per_day - 15 * 60 * 2:
+#            return False
+        if after_stop_loss:
+            assert self.last_sr_level is not None
+            last_price = self.last_sr_level
+            self.last_sr_level = None
+#            print self.figure_cnt, 'Try to place after stop loss at', last_price
+        else:
+            last_price = self.history['last_price'][self.now - 1]
+        sr_level, saliency = self.indicators[0].get_nearby_sr_level(self.stoploss)
+        if saliency >= self.indicators[0].mean_saliency_ema * self.openable_normalized_saliency and abs(last_price - sr_level) < self.stoploss:
             self.sr_level = sr_level
             self.pending_open_level = [self.sr_level - self.stoploss, self.sr_level + self.stoploss]
             self.state = PLACED
+#            if after_stop_loss:
+#                print self.figure_cnt, 'Place after stop loss at', last_price
             self.zoomin_show(self.sleeptime_on_action)
             return True
         return False
@@ -335,24 +410,29 @@ class Simulator():
             self.open_price = last_price
             self.state = OPENED
             self.zoomin_show(self.sleeptime_on_action)
+            
+            if abs(self.open_price - self.open_level) > abs(self.open_level - self.stoploss_level):
+                print 'time_in_ticks =', int(self.history['time_in_ticks'][self.now - 1]), '/', self.ticks_per_day, 
+                print 'open_exceed =', abs(self.open_price - self.open_level)
             return True
         return False
                      
     def showable(self):
         return self.now - self.indicators[0].m >= self.indicators[0].n and self.now % self.show_freq == 0
       
-    def zoomin_show(self, sleeptime=0.5):
+    def zoomin_show(self, sleeptime=0.0):
+        self.figure_cnt += 1
         return
         self.indicators[0].smooth_all()
         
-        plt.ion()
+#        plt.ion()
         plt.clf()
         gs = gridspec.GridSpec(2, 1, height_ratios=[3,1])
 #        gs = gridspec.GridSpec(1, 1)
         
         y = self.indicators[0].smoothed_saliency_ema
         y_mean = self.indicators[0].mean_saliency_ema
-        show_len = self.indicators[0].n
+        show_len = self.zoomin_show_len
         
         scale = self.saliency_scale
         scale = scale * show_len * 1. / self.indicators[0].m
@@ -360,48 +440,68 @@ class Simulator():
         ax0 = plt.subplot(gs[0])
         price = self.history['last_price'][self.now - show_len : self.now]
         plt.plot(price)
-        floor = min(self.sr_level - self.stopprofit, price.min())
-        ceil = max(self.sr_level + self.stopprofit, price.max())
-        plt.plot(np.ones_like(price) * self.sr_level, color='k')
-        if self.state == PLACED:
-            assert self.pending_open_level is not None
-            plt.plot(np.ones_like(price) * (self.pending_open_level[0]), '--', color='k', label='pending open')
-            plt.plot(np.ones_like(price) * (self.pending_open_level[1]), '--', color='k', label='pending open')
+        if self.sr_level is None:
+            floor = price.min() - 1
+            ceil = price.max() + 1
         else:
-            assert self.state == OPENED or self.state == CLOSED
-            assert self.open_level is not None
-            assert self.stoploss_level is not None
-            assert self.open_level != self.sr_level
-            assert self.stoploss_level != self.sr_level
-            plt.plot(np.ones_like(price) * self.open_level, '--', color='k', label='open')
-            plt.plot(np.ones_like(price) * self.stoploss_level, color='r', label='stoploss')
-            if self.open_level > self.sr_level > 0:
-                stopprofit_level0 = self.sr_level + self.stopprofit
+            floor = min(self.sr_level - self.stopprofit, price.min()) - 1
+            ceil = max(self.sr_level + self.stopprofit, price.max()) + 1
+        
+        day_begin = np.where(self.history['time_in_ticks'][self.now - show_len : self.now] == 0)[0]
+        for x in day_begin:
+            plt.axvline(x, color='k', linestyle=':')
+        
+        if self.sr_level is not None:
+            plt.plot(np.ones_like(price) * self.sr_level, color='k')
+            if self.state == PLACED:
+                assert self.pending_open_level is not None
+                plt.plot(np.ones_like(price) * (self.pending_open_level[0]), '--', color='k', label='pending open')
+                plt.plot(np.ones_like(price) * (self.pending_open_level[1]), '--', color='k', label='pending open')
             else:
-                stopprofit_level0 = self.sr_level - self.stopprofit
-            plt.plot(np.ones_like(price) * stopprofit_level0, 
-                     color='g', label='stopprofit0')
-            if self.state == CLOSED and self.stopprofit_level is not None:
-                plt.plot(np.ones_like(price) * self.stopprofit_level, color='g', label='stopprofit')
+                assert self.state == OPENED or self.state == CLOSED
+                assert self.open_level is not None
+                assert self.stoploss_level is not None
+                assert self.open_level != self.sr_level
+                assert self.stoploss_level != self.sr_level
+                plt.plot(np.ones_like(price) * self.open_level, '--', color='k', label='open')
+                plt.plot(np.ones_like(price) * self.stoploss_level, '--', color='r', label='stoploss0')
+                if self.open_level > self.sr_level:
+                    stopprofit_level0 = self.sr_level + self.stopprofit
+                else:
+                    stopprofit_level0 = self.sr_level - self.stopprofit
+                plt.plot(np.ones_like(price) * stopprofit_level0, '--',
+                         color='g', label='stopprofit0')
+                if self.state == CLOSED:
+                    if self.stopprofit_price is not None:
+                        plt.plot(np.ones_like(price) * self.stopprofit_price, color='g', label='stopprofit')
+                    if self.stoploss_price is not None:
+                        plt.plot(np.ones_like(price) * self.stoploss_price, color='r', label='stoploss')
             
         y = y[floor : ceil + 1] * scale
-        y[y > show_len * 1.2] = show_len * 1.2
-        plt.barh(np.arange(floor, ceil + 1) - 0.5, y, 1.0,
+#        y[y > show_len * 1.2] = show_len * 1.2
+        plt.barh(np.arange(floor, ceil + 1) - 0.5, y, np.ones_like(y),
                  alpha=0.2, color='r', edgecolor='none')
         if y_mean is not None:
             y_mean = int(y_mean * 2. * scale)
             ax0.set_xticks(np.arange(0, show_len, y_mean))
-        plt.grid()
-        plt.legend(loc='upper right')
+#            ax0.set_yticks(np.arange(floor, ceil + 1, 1000)) # remove horizontal grid
+            for xmaj in ax0.xaxis.get_majorticklocs():
+                ax0.axvline(x=xmaj,ls='-', color='r')
+            
+#        plt.grid(color='r', linestyle='-')
+#        plt.legend(loc='upper right')
         
         ax = plt.subplot(gs[1], sharex=ax0)
         pos = self.history['pos'][self.now - show_len : self.now]
-        plt.plot(pos)
+        plt.plot(pos, label='pos')
         plt.grid()
         plt.legend(loc='upper right')
         
         plt.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05)
-        plt.draw()
+        plt.savefig('figures/%d.png' % self.figure_cnt, bbox_inches='tight')
+        self.figure_cnt += 1
+#        plt.draw()
+#        plt.show()
         time.sleep(sleeptime)
         
     def _plot_histogram(self, gs, y, scale, y_mean=None, show_len=None, label=None, sharex=None):
@@ -456,30 +556,47 @@ class Simulator():
     def finished(self):
         return self.now >= self.history['last_price'].shape[0] 
     
+    def plot_equity_curve(self):
+        plt.clf()
+        gs = gridspec.GridSpec(2, 1, height_ratios=[1,1])
+        ax0 = plt.subplot(gs[0])
+        price = self.history['last_price']
+        plt.plot(price, label='price')
+        plt.legend()
+        plt.grid()
+        ax = plt.subplot(gs[1], sharex=ax0)
+        plt.plot(self.equity_curve, label='equity_curve')
+#        plt.legend()
+        plt.grid()
+        plt.savefig('figures/equity_curve22.png', bbox_inches='tight')
+        
     def run(self):
         while not self.finished():
             self.step()
             self.do()
-        print self.gains
+#        print self.gains
         self.gains = np.array(self.gains)
         mean_gain = self.gains[self.gains > 0].mean()
         mean_loss = -self.gains[self.gains < 0].mean()
         print 'total_gain =', self.gains.sum(), 'total_trades =', self.gains.size, \
             'gain/trade =', self.gains.mean(), 'winning rate =', (self.gains > 0).mean(), \
             'mean_gain / mean_loss =', mean_gain, '/', mean_loss, '=', mean_gain / mean_loss 
+        self.plot_equity_curve()
+#        plt.show()
+#        raw_input()
                 
 if __name__ == '__main__':
 #    ticks = load_ticks('zc', 'SR', 2015, [9,], use_cache=True); tick_size = 1; trading_hours_per_day = 6.25
-#    ticks = load_ticks('zc', 'MA', 2015, [11,], use_cache=True); tick_size = 1; trading_hours_per_day = 6.25
+#    ticks = load_ticks('zc', 'MA', 2015, [7,12], use_cache=True); tick_size = 1; trading_hours_per_day = 6.25
 #    ticks = load_ticks('zc', 'TA', 2015, [11,], use_cache=True); tick_size = 2; trading_hours_per_day = 6.25
-    ticks = load_ticks('dc', 'pp', 2015, [11], use_cache=True); tick_size = 1; trading_hours_per_day = 3.75
-#    ticks = load_ticks('sc', 'zn', 2015, [11,], use_cache=True); tick_size = 5; trading_hours_per_day = 7.75
-    s = Simulator(ticks, tick_size=tick_size)
-    for indicator in [
-            SaliencyEMA(s, tick_size=tick_size, trading_hours_per_day=trading_hours_per_day),
-#            IntensityEMA(s, tick_size=tick_size, trading_hours_per_day=trading_hours_per_day),
-            ]:
-        s.add_indicator(indicator)
-    s.run()
+#    for month in range(7, 9):
+    if True:
+        ticks = load_ticks('dc', 'pp', 2015, range(9, 11), use_cache=True); tick_size = 1; trading_hours_per_day = 3.75
+        s = Simulator(ticks, tick_size=tick_size, trading_hours_per_day=trading_hours_per_day)
+        for indicator in [
+                SaliencyEMA(s, tick_size=tick_size, trading_hours_per_day=trading_hours_per_day),
+                ]:
+            s.add_indicator(indicator)
+        s.run()
 
     
