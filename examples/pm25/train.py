@@ -121,7 +121,12 @@ if __name__ == '__main__':
     train_model('shanghai', is_city=True)
 
     #rsync
-    machine_list = ["10.144.246.254", "inner.wrapper2.api.caiyunapp.com", "10.174.213.150", "10.251.17.17"]
+    machine_list = [
+            "10.144.246.254", 
+            "inner.wrapper2.api.caiyunapp.com", 
+            "10.174.213.150", "10.251.17.17", 
+            "10.165.41.213"
+            ]
 
     print "rsync start"
     for machine in machine_list :
