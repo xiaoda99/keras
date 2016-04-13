@@ -42,7 +42,7 @@ def normalize_pm25(pm25, threshold=300, decay_coef=.25):
 #def normalize_pm25(pm25, threshold=250, decay_coef=.2):
     return pm25 * (pm25 <= threshold) + (threshold + (pm25 - threshold) * decay_coef) * (pm25 > threshold)
   
-def load_data3(stations=None, lon_range=None, lat_range=None, starttime='20150916', endtime='20160116', latest=False,
+def load_data3(stations=None, lon_range=None, lat_range=None, starttime=None, endtime=None, latest=False,
                train_start=0, train_stop=None, valid_start=None, valid_stop=None, 
                segment=True, filter=False, normalize_target=False):
     if latest:
