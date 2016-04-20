@@ -15,6 +15,7 @@ from keras.initializations import uniform
 from keras.regularizers import l2
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from examples.pm25.dataset import normalize #XD
+from examples.pm25.config import model_savedir  #XD
 
 def build_rnn(in_dim, out_dim, h0_dim, h1_dim=None, layer_type=LSTM, return_sequences=False):
     model = Sequential()  
@@ -46,7 +47,7 @@ def build_rlstm2(input_dim, h0_dim, h1_dim, output_dim=1,
     model.base_name = base_name
     yaml_string = model.to_yaml()
 #    print(yaml_string)
-    with open(model.base_name+'.yaml', 'w') as f:
+    with open(model_savedir + model.base_name+'.yaml', 'w') as f:
         f.write(yaml_string)
     return model
 
@@ -73,7 +74,7 @@ def build_model(input_dim, h0_dim=20, h1_dim=20, output_dim=1,
     model.base_name = base_name
     yaml_string = model.to_yaml()
 #    print(yaml_string)
-    with open(model.base_name+'.yaml', 'w') as f:
+    with open(model_savedir + model.base_name+'.yaml', 'w') as f:
         f.write(yaml_string)
     return model
 
@@ -102,7 +103,7 @@ def build_rlstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
     model.base_name = base_name
     yaml_string = model.to_yaml()
 #    print(yaml_string)
-    with open(model.base_name+'.yaml', 'w') as f:
+    with open(model_savedir + model.base_name+'.yaml', 'w') as f:
         f.write(yaml_string)
     return model
 
@@ -138,7 +139,7 @@ def build_reduced_lstm(input_dim, h0_dim=40, h1_dim=None, output_dim=1,
     model.base_name = base_name
     yaml_string = model.to_yaml()
 #    print(yaml_string)
-    with open(model.base_name+'.yaml', 'w') as f:
+    with open(model_savedir + model.base_name+'.yaml', 'w') as f:
         f.write(yaml_string)
     return model
 
@@ -166,13 +167,13 @@ def build_mlp(in_dim, out_dim, h0_dim, h1_dim, optimizer='rmsprop'):
     
 #    model.get_config(verbose=1)
     yaml_string = model.to_yaml()
-    with open('mlp.yaml', 'w') as f:
+    with open(model_savedir + 'mlp.yaml', 'w') as f:
         f.write(yaml_string)
     return model
 
 def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=300, patience=20):
     early_stopping = EarlyStopping(monitor='val_loss', patience=patience)
-    filepath = model.name + '_weights.hdf5'
+    filepath = mdoel_savedir + model.name + '_weights.hdf5'
     checkpointer = ModelCheckpoint(filepath=filepath, verbose=1, save_best_only=True)
     model.fit(X_train, y_train, 
               batch_size=batch_size, 
@@ -183,13 +184,13 @@ def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=30
               callbacks=[early_stopping, checkpointer])
 
 def load_mlp():
-    mlp = model_from_yaml(open('mlp40-40_batch4096.yaml').read())
-    mlp.load_weights('mlp40-40_batch4096_weights.hdf5')
+    mlp = model_from_yaml(open(model_savedir + 'mlp40-40_batch4096.yaml').read())
+    mlp.load_weights(model_savedir + 'mlp40-40_batch4096_weights.hdf5')
     return mlp
 
 def load_rlstm(name='rlstm'):
-    rlstm = model_from_yaml(open('rlstm_test' + '.yaml').read())
-    rlstm.load_weights(name + '_weights.hdf5')
+    rlstm = model_from_yaml(open(model_savedir + 'rlstm_test' + '.yaml').read())
+    rlstm.load_weights(model_savedir + name + '_weights.hdf5')
     rlstm.name = name
     return rlstm
 

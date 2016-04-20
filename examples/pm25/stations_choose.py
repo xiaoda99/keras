@@ -34,19 +34,23 @@ class generate_data():
         start_time_norm = '20150401'
         start = start_time_norm + '02'
         if latest:
-            end_time = (datetime.datetime.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
+            #end_time = (datetime.datetime.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
+            end_time = datetime.datetime.today().strftime('%Y%m%d')
         else:
             end_time = '20160116'
         end = end_time + '02'
         
+        print 'Training on Dataset'+'_'+start+'_'+end+'.pkl.gz'
         matrix = cPickle.load(gzip.open(
-            savedir + 'Dataset'+'-'+start+'-'+end+'.pkl.gz'
+            savedir + 'Dataset'+'_'+start+'_'+end+'.pkl.gz'
             ))
-        stations = pickle.load(gzip.open(savedir + 'stations_all_index.pkl.gz'))
+        stations = pickle.load(gzip.open(
+            savedir + 'dataindex'+'_'+start+'_'+end+'.pkl.gz'
+            ))
         #data = {key: matrix[stations[key]] for key in stations}
         data = {}
         for key in stations:
-            data[key] = matrix[stations[key]]
+            data[key] = matrix[stations.index(key)]
         d = pd.DataFrame(data.items())
         d.columns = ['station_name', 'pm25_data']
         d.index = d.station_name

@@ -13,6 +13,7 @@ from keras.utils.train_utils import *
 from data import load_data, load_data2, load_data3, segment_data
 from errors import *
 from dataset import *
+from config import model_savedir
 
 try: 
     from collections import OrderedDict
@@ -33,7 +34,7 @@ def get_train_result(model):
 
 def estimate_early_stop_epoch(name, mov_avg_len=3):
     log_file = name + '.log'
-    with open(log_file) as f:
+    with open(model_savedir + log_file) as f:
         epochs = [int(line.split()[2]) for line in f.readlines()]
     print 'epochs =', epochs
     if len(epochs) < mov_avg_len:
@@ -72,14 +73,14 @@ def train_model(name, is_city=False, latest=True):
     
     print '\ntraining', rlstm.name
     X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
-    rlstm.save_normalization_info(rlstm.name + '_norm_info.pkl')
+    rlstm.save_normalization_info(model_savedir + rlstm.name + '_norm_info.pkl')
     batch_size = (1 + int(not is_city)) * 64
     patience = 10 + int(is_city) * 10
     train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=300)
     
     result_str = get_train_result(rlstm)
     print 'result_str =', result_str
-    with open(name + '.log', 'a') as f:
+    with open(model_savedir + name + '.log', 'a') as f:
         f.write(result_str + '\n')
     epoch = estimate_early_stop_epoch(name)
     
@@ -96,18 +97,11 @@ def train_model(name, is_city=False, latest=True):
     
     print '\ntraining', rlstm.name
     X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
-    rlstm.save_normalization_info(rlstm.name + '_norm_info.pkl')
+    rlstm.save_normalization_info(model_savedir + rlstm.name + '_norm_info.pkl')
     batch_size = (1 + int(not is_city)) * 64
     patience = 10 + int(is_city) * 10
     train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=epoch)
     
-    model_dir = '/ldata/pm25data/pm25model/rlstm/'
-    if os.path.isdir(model_dir):
-        for f in [name + '.log', name + '.yaml', 
-                     name + '_valid_norm_info.pkl', name + '_valid_weights.hdf5', 
-                     name + '_norm_info.pkl', name + '_weights.hdf5',
-                     ]:
-            shutil.copy(f, model_dir)
 
 if __name__ == '__main__':
 #    train_model('beijing', is_city=True)

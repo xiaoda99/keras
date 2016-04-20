@@ -10,6 +10,7 @@ from keras.utils.train_utils import *
 from data import load_data, load_data2, load_data3, segment_data
 from errors import *
 from dataset import *
+from config import model_savedir
 
 try: 
     from collections import OrderedDict
@@ -227,13 +228,13 @@ def filter_data(data):
     return data[cond]
      
 def load_rlstm(base_name, i=None):
-    rlstm = model_from_yaml(open(base_name + '.yaml').read())
+    rlstm = model_from_yaml(open(model_savedir + base_name + '.yaml').read())
     rlstm.base_name = base_name
     rlstm.name = base_name
     if i is not None:
         rlstm.name = rlstm.name + str(i)
-    rlstm.load_weights(rlstm.name + '_weights.hdf5')
-    rlstm.load_normalization_info(rlstm.name + '_norm_info.pkl')
+    rlstm.load_weights(model_savedir + rlstm.name + '_weights.hdf5')
+    rlstm.load_normalization_info(model_savedir + rlstm.name + '_norm_info.pkl')
     return rlstm
 
 starttime = '20150916'
@@ -270,10 +271,10 @@ def test_cities(cities, repeat=1):
     for city in cities:
         for i in range(repeat):
             name = city
-            rlstm = model_from_yaml(open(name + '.yaml').read())
+            rlstm = model_from_yaml(open(model_savedir + name + '.yaml').read())
             rlstm.name = name + str(i)
-            rlstm.load_normalization_info(name + '_norm_info.pkl')
-            rlstm.load_weights(rlstm.name + '_weights.hdf5')
+            rlstm.load_normalization_info(model_savedir + name + '_norm_info.pkl')
+            rlstm.load_weights(model_savedir + rlstm.name + '_weights.hdf5')
             
             train_data, valid_data = load_data3(stations=city2stations[city], 
                                                 starttime=starttime, endtime=endtime)
@@ -313,10 +314,10 @@ def test_areas(areas, repeat=1):
     for area in areas:
         for i in range(repeat):
             name = area
-            rlstm = model_from_yaml(open(name + '.yaml').read())
+            rlstm = model_from_yaml(open(model_savedir + name + '.yaml').read())
             rlstm.name = name + str(i)
-            rlstm.load_normalization_info(name + '_norm_info.pkl')
-            rlstm.load_weights(rlstm.name + '_weights.hdf5')
+            rlstm.load_normalization_info(model_savedir + name + '_norm_info.pkl')
+            rlstm.load_weights(model_savedir + rlstm.name + '_weights.hdf5')
             
             train_data, valid_data = load_data3(lon_range=area2lonlat[area][0], lat_range=area2lonlat[area][1],
                                                 starttime=starttime, endtime=endtime
@@ -328,10 +329,10 @@ def test_areas(areas, repeat=1):
             
 def test_area_on_cities(area, i, cities):  
     name = area      
-    rlstm = model_from_yaml(open(name + '.yaml').read())
+    rlstm = model_from_yaml(open(model_savedir + name + '.yaml').read())
     rlstm.name = name + str(i)
-    rlstm.load_normalization_info(name + '_norm_info.pkl')
-    rlstm.load_weights(rlstm.name + '_weights.hdf5')
+    rlstm.load_normalization_info(model_savedir + name + '_norm_info.pkl')
+    rlstm.load_weights(model_savedir + rlstm.name + '_weights.hdf5')
     print '\n In' + area
     for city in cities:
         train_data, valid_data = load_data3(stations=city2stations[city], 
