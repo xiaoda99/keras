@@ -6,6 +6,16 @@ dist/*
 build/*
 keras/datasets/data/*
 keras/datasets/temp/*
+examples/pm25/*.pkl
+examples/pm25/*.pkl.gz
+examples/pm25/*.hdf5
+examples/pm25/*.out
+examples/pm25/*.out2
+examples/pm25/*.out~
+examples/pm25/*.yaml
+examples/pm25/*.log
+examples/pm25/*.npy
+Keras.egg-info/*
 docs/site/*
 docs/theme/*
 tags
