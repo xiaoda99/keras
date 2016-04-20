@@ -101,6 +101,16 @@ def train_model(name, is_city=False, latest=True):
     batch_size = (1 + int(not is_city)) * 64
     patience = 10 + int(is_city) * 10
     train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=epoch)
+
+    # model_dir = '/ldata/pm25data/pm25model/rlstm/'
+    # if os.path.isdir(model_dir):
+    #     for f in [model_savedir + name + '.log',
+    #               model_savedir + name + '.yaml',
+    #               model_savedir + name + '_valid_norm_info.pkl',
+    #               model_savedir + name + '_valid_weights.hdf5',
+    #               model_savedir + name + '_norm_info.pkl',
+    #               model_savedir + name + '_weights.hdf5', ]:
+    #         shutil.copy(f, model_dir)
     
 
 if __name__ == '__main__':

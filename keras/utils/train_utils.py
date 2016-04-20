@@ -173,7 +173,7 @@ def build_mlp(in_dim, out_dim, h0_dim, h1_dim, optimizer='rmsprop'):
 
 def train(X_train, y_train, X_valid, y_valid, model, batch_size=128, nb_epoch=300, patience=20):
     early_stopping = EarlyStopping(monitor='val_loss', patience=patience)
-    filepath = mdoel_savedir + model.name + '_weights.hdf5'
+    filepath = model_savedir + model.name + '_weights.hdf5'
     checkpointer = ModelCheckpoint(filepath=filepath, verbose=1, save_best_only=True)
     model.fit(X_train, y_train, 
               batch_size=batch_size, 
