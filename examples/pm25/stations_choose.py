@@ -6,6 +6,7 @@ import datetime
 import pandas as pd
 import numpy as np
 import copy
+from config import startday_string, today_string
 
 savedir = '/home/yuhe/data_manipulate/data_save/'  # on swarma
 if not os.path.isdir(savedir):
@@ -29,16 +30,10 @@ class generate_data():
                  lat_range=None,
                  starttime='20150801',
                  endtime='20151207',
-                 latest=False
                  ):
         start_time_norm = '20150401'
         start = start_time_norm + '02'
-        if latest:
-            #end_time = (datetime.datetime.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
-            end_time = datetime.datetime.today().strftime('%Y%m%d')
-        else:
-            end_time = '20160116'
-        end = end_time + '02'
+        end = today_string + '02'
         
         print 'Training on Dataset'+'_'+start+'_'+end+'.pkl.gz'
         matrix = cPickle.load(gzip.open(

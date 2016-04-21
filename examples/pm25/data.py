@@ -2,6 +2,10 @@ import numpy as np
 import cPickle
 import gzip
 import datetime
+from config import heating_start, heating_end, \
+        today, startdaytime, startday_string, \
+        yesterday_string
+
 
 from stations_choose import generate_data
 
@@ -144,3 +148,103 @@ def load_data():
 #f = gzip.open('forXiaodaDataset-20150401-20151207_huabei+lonlat.pkl.gz', 'wb')
 #cPickle.dump(a, f)
 #f.close()
+
+def load_data4(
+        stations=None,
+        lon_range=None,
+        lat_range=None,
+        heating=False,
+        segment=True,
+        filter=False,
+        normalize_target=False):
+
+    data = generate_data(
+        pm_stations=stations,
+        lon_range=lon_range,
+        lat_range=lat_range,
+        starttime=startday_string,
+        endtime=yesterday_string,
+        )
+    data_starttime = data.starttime
+    data = data.result
+    # print starttime, endtime, data.shape
+    if normalize_target:
+        data[:, :, -1] = normalize_pm25(data[:, :, -1])
+    # data[:,:,-2:] /= 100.
+    data[:, :, -1] -= data[:, :, -2]
+    # subtract pm25 mean from pm25 target
+
+    if heating:
+        if today > heating_start - datetime.timedelta(days=46) and \
+                today < heating_start:
+                    train_endtime = heating_start.replace(
+                            year=heating_start.year - 1) - datetime.timedelta(days=1)
+                    train_starttime = train_endtime - datetime.timedelta(days=90)
+                    valid_starttime = today - datetime.timedelta(days=31)
+                    valid_endtime = valid_starttime + datetime.timedelta(days=30)
+        # before 12 month but must in same heating state period
+        elif today > heating_end - datetime.timedelta(days=46) and \
+                today < heating_end:
+                    train_endtime = heating_end.replace(
+                            year=heating_end.year - 1) - datetime.timedelta(days=1)
+                    train_starttime = train_endtime - datetime.timedelta(days=90)
+                    valid_starttime = today - datetime.timedelta(days=31)
+                    valid_endtime = valid_starttime + datetime.timedelta(days=30)
+        elif today < heating_start + datetime.timedelta(days=46) and \
+                today > heating_start:
+                    train_starttime = heating_start.replace(
+                        year=heating_start.year - 1) + datetime.timedelta(days=1)
+                    train_endtime = train_starttime + datetime.timedelta(days=90)
+                    if today > heating_start + datetime.timedelta(days=31):
+                        valid_starttime = today - datetime.timedelta(days=31)
+                        valid_endtime = valid_starttime + datetime.timedelta(days=30)
+                    else:
+                        valid_starttime = train_endtime
+                        valid_endtime = valid_starttime + datetime.timedelta(days=30)
+        elif today < heating_end + datetime.timedelta(days=46) and \
+                today > heating_end:
+                    train_starttime = heating_end.replace(
+                        year=heating_end.year - 1) + datetime.timedelta(days=1)
+                    train_endtime = train_starttime + datetime.timedelta(days=90)
+                    if today > heating_end + datetime.timedelta(days=31):
+                        valid_starttime = today - datetime.timedelta(days=31)
+                        valid_endtime = valid_starttime + datetime.timedelta(days=30)
+                    else:
+                        valid_starttime = train_endtime
+                        valid_endtime = valid_starttime + datetime.timedelta(days=30)
+        else:
+            train_starttime = today - datetime.timedelta(days=406)
+            train_endtime = train_starttime + datetime.timedelta(days=90)
+            valid_starttime = today - datetime.timedelta(days=31)
+            valid_endtime = valid_starttime + datetime.timedelta(days=30)
+    else:
+        train_starttime = today - datetime.timedelta(days=406)
+        train_endtime = train_starttime + datetime.timedelta(days=90)
+        valid_starttime = today - datetime.timedelta(days=31)
+        valid_endtime = valid_starttime + datetime.timedelta(days=30)
+
+    if train_starttime < startdaytime:
+        train_starttime = startdaytime
+        train_endtime = train_starttime + datetime.timedelta(days=90)
+        valid_starttime = train_endtime
+        valid_endtime = valid_starttime + datetime.timedelta(days=30)
+
+    timediff = train_starttime - data_starttime
+    train_start = timediff.days * 8 + timediff.seconds / 7200
+    timediff = train_endtime - data_starttime
+    train_stop = timediff.days * 8 + timediff.seconds / 7200
+    timediff = valid_starttime - data_starttime
+    valid_start = timediff.days * 8 + timediff.seconds / 7200
+    timediff = valid_endtime - data_starttime
+    valid_stop = timediff.days * 8 + timediff.seconds / 7200
+
+    train_data = data[:, train_start:train_stop, :]
+    valid_data = data[:, valid_start:valid_stop, :]
+
+    if segment:
+        train_data = segment_data(train_data)
+        valid_data = segment_data(valid_data)
+    if filter:
+        train_data = filter_data(train_data)
+        valid_data = filter_data(valid_data)
+    return train_data, valid_data

@@ -10,7 +10,7 @@ import gzip
 from keras.layers.recurrent_xd import RLSTM, ReducedLSTM, ReducedLSTMA, ReducedLSTMB
 from keras.optimizers import RMSprop
 from keras.utils.train_utils import *
-from data import load_data, load_data2, load_data4, segment_data
+from data import load_data, load_data2, load_data3, segment_data
 from errors import *
 from dataset import *
 from config import model_savedir
@@ -46,16 +46,19 @@ def estimate_early_stop_epoch(name, mov_avg_len=3):
     
 def train_model(name, is_city=False, latest=True):
     if is_city:
-        if name == 'shanghai':
-            train_data, valid_data = load_data4(stations=city2stations[name],
-                                                heating=False,
+        if name == 'beijing':
+            train_data, valid_data, train_data2 = load_data3(stations=city2stations[name],
+                                                starttime='20150901', endtime='20160123',
+                                                train_stop=630, valid_start=680,
+                                                latest=True,
                                                 filter=False)
         else:
-            train_data, valid_data = load_data4(stations=city2stations[name],
-                                                heating=True,
+            train_data, valid_data, train_data2 = load_data3(stations=city2stations[name],
+                                                latest=latest,
                                                 filter=False)
     else:
-        train_data, valid_data = load_data4(lon_range=area2lonlat[name][0], lat_range=area2lonlat[name][1],
+        train_data, valid_data, train_data2 = load_data3(lon_range=area2lonlat[name][0], lat_range=area2lonlat[name][1],
+                                            latest=latest,
                                             filter=True)
     X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
     print 'X_train[0].shape =', X_train[0].shape
@@ -79,48 +82,58 @@ def train_model(name, is_city=False, latest=True):
     print 'result_str =', result_str
     with open(model_savedir + name + '.log', 'a') as f:
         f.write(result_str + '\n')
-    # epoch = estimate_early_stop_epoch(name)
-    # 
-    # X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data2, valid_data, pred_range=pred_range, hist_len=3)
-    # print 'X_train[0].shape =', X_train[0].shape
-    # rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
-    #                            rec_layer_init='zero', fix_b_f=is_city, base_name=name,
-    #                            add_input_noise=is_city, add_target_noise=False)
-    # rlstm.name = name
-    # rlstm.data = [train_data, valid_data]
-    # 
-    # rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
-    # rlstm.X_mask[-1:] = not is_city  # pm25 mean
-    # 
-    # print '\ntraining', rlstm.name
-    # X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
-    # rlstm.save_normalization_info(model_savedir + rlstm.name + '_norm_info.pkl')
-    # batch_size = (1 + int(not is_city)) * 64
-    # patience = 10 + int(is_city) * 10
-    # train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=epoch)
+    epoch = estimate_early_stop_epoch(name)
+    
+    X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data2, valid_data, pred_range=pred_range, hist_len=3)
+    print 'X_train[0].shape =', X_train[0].shape
+    rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
+                               rec_layer_init='zero', fix_b_f=is_city, base_name=name,
+                               add_input_noise=is_city, add_target_noise=False)
+    rlstm.name = name
+    rlstm.data = [train_data, valid_data]
+    
+    rlstm.X_mask = np.ones((X_train[0].shape[-1],), dtype='int')
+    rlstm.X_mask[-1:] = not is_city  # pm25 mean
+    
+    print '\ntraining', rlstm.name
+    X_train[0], X_valid[0] = normalize(X_train[0], X_valid[0], rlstm)
+    rlstm.save_normalization_info(model_savedir + rlstm.name + '_norm_info.pkl')
+    batch_size = (1 + int(not is_city)) * 64
+    patience = 10 + int(is_city) * 10
+    train(X_train, y_train, X_valid, y_valid, rlstm, batch_size=batch_size, patience=patience, nb_epoch=epoch)
+
+    # model_dir = '/ldata/pm25data/pm25model/rlstm/'
+    # if os.path.isdir(model_dir):
+    #     for f in [model_savedir + name + '.log',
+    #               model_savedir + name + '.yaml',
+    #               model_savedir + name + '_valid_norm_info.pkl',
+    #               model_savedir + name + '_valid_weights.hdf5',
+    #               model_savedir + name + '_norm_info.pkl',
+    #               model_savedir + name + '_weights.hdf5', ]:
+    #         shutil.copy(f, model_dir)
     
 
 if __name__ == '__main__':
 #    train_model('beijing', is_city=True)
-    # train_model('dongbei')
-    # train_model('huabei')
-    # train_model('xibei')
-    # train_model('huadong')
-    # train_model('huaxi')
-    # train_model('huanan')
-    # train_model('tianjin', is_city=True)
+    train_model('dongbei')
+    train_model('huabei')
+    train_model('xibei')
+    train_model('huadong')
+    train_model('huaxi')
+    train_model('huanan')
+    train_model('tianjin', is_city=True)
     train_model('shanghai', is_city=True)
 
     #rsync
-    # machine_list = [
-    #         "10.144.246.254", 
-    #         "inner.wrapper2.api.caiyunapp.com", 
-    #         "10.174.213.150", "10.251.17.17", 
-    #         "10.165.41.213"
-    #         ]
+    machine_list = [
+            "10.144.246.254", 
+            "inner.wrapper2.api.caiyunapp.com", 
+            "10.174.213.150", "10.251.17.17", 
+            "10.165.41.213"
+            ]
 
-    # print "rsync start"
-    # for machine in machine_list :
-    #     os.system('rsync -av /ldata/pm25data/pm25model/rlstm/* caiyun@'+machine+':/ldata/pm25data/pm25model/rlstm/')
+    print "rsync start"
+    for machine in machine_list :
+        os.system('rsync -av /ldata/pm25data/pm25model/rlstm/* caiyun@'+machine+':/ldata/pm25data/pm25model/rlstm/')
 
-    # print "rsync finished"
+    print "rsync finished"
