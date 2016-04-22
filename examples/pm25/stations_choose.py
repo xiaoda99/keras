@@ -9,6 +9,7 @@ import copy
 from config import startday_string, today_string
 
 savedir = '/home/yuhe/data_manipulate/data_save/'  # on swarma
+conf_dir = '/home/yuhe/data_manipulate/'  # on swarma
 if not os.path.isdir(savedir):
     savedir = '/home/xd/data/pm25data/'  # on GPU_station@bupt
     assert os.path.isdir(savedir)
@@ -50,7 +51,7 @@ class generate_data():
         d.columns = ['station_name', 'pm25_data']
         d.index = d.station_name
         stations_lonlat = cPickle.load(gzip.open(
-            savedir + 'pm25lonlat.pkl.gz'
+            conf_dir + 'pm25lonlat.pkl.gz'
             ))
         d['lon'] = d['station_name'].apply(lambda x: stations_lonlat[x][0])
         d['lat'] = d['station_name'].apply(lambda x: stations_lonlat[x][1])
