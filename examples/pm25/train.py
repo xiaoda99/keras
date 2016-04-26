@@ -49,14 +49,20 @@ def train_model(name, is_city=False, latest=True):
         if name == 'shanghai':
             train_data, valid_data = load_data4(stations=city2stations[name],
                                                 heating=False,
-                                                filter=False)
+                                                filter=True)
         else:
             train_data, valid_data = load_data4(stations=city2stations[name],
                                                 heating=True,
-                                                filter=False)
+                                                filter=True)
     else:
-        train_data, valid_data = load_data4(lon_range=area2lonlat[name][0], lat_range=area2lonlat[name][1],
-                                            filter=True)
+        if name == 'huabei' or  name == 'dongbei':
+            train_data, valid_data = load_data4(lon_range=area2lonlat[name][0], lat_range=area2lonlat[name][1],
+                    heating=True,
+                    filter=True)
+        else:
+            train_data, valid_data = load_data4(lon_range=area2lonlat[name][0], lat_range=area2lonlat[name][1],
+                    heating=False,
+                    filter=True)
     X_train, y_train, X_valid, y_valid = build_lstm_dataset(train_data, valid_data, pred_range=pred_range, hist_len=3)
     print 'X_train[0].shape =', X_train[0].shape
     rlstm = build_rlstm(X_train[0].shape[-1], h0_dim=20, h1_dim=20, 
@@ -101,7 +107,7 @@ def train_model(name, is_city=False, latest=True):
     
 
 if __name__ == '__main__':
-#    train_model('beijing', is_city=True)
+    train_model('beijing', is_city=True)
     train_model('dongbei')
     train_model('huabei')
     train_model('xibei')
